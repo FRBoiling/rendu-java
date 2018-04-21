@@ -1,8 +1,9 @@
-package core.network;
+package core.network.handler;
 
 import Protocol.MsgId.Id;
 import com.google.protobuf.MessageLite;
 import com.google.protobuf.MessageLiteOrBuilder;
+import core.network.Packet;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
 import java.util.List;

@@ -1,5 +1,6 @@
-package core.network;
+package core.network.handler;
 
+import core.network.Packet;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
@@ -15,7 +16,7 @@ public class PacketWriter  extends MessageToByteEncoder<Packet> {
     protected void encode(ChannelHandlerContext channelHandlerContext, Packet packet, ByteBuf out) throws Exception {
         int msgLength =packet.getMsgLength();
         int msgId = packet.getMsgId();
-        ByteBuf msg = wrappedBuffer(packet.msg);
+        ByteBuf msg = wrappedBuffer(packet.getMsg());
 
         out.ensureWritable(Short.BYTES +Integer.BYTES+ msgLength);
         out.writeShortLE(msgLength);

@@ -26,6 +26,5 @@ public class Packet {
         buff.getBytes(buff.readerIndex(), array, offset, length);
         this.msg = array;
         msgLength = (short) msg.length;
-
     }
 }
