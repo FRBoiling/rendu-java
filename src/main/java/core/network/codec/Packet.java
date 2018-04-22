@@ -1,4 +1,4 @@
-package core.network;
+package core.network.codec;
 
 import io.netty.buffer.ByteBuf;
 import lombok.Getter;
@@ -9,9 +9,9 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain=true)
 public class Packet {
-     int msgId;
-     short msgLength;
-     byte[] msg;
+    int msgId;
+    short msgLength;
+    public byte[] msg;
 
     public void setMsg(ByteBuf buff) {
         final byte[] array;
