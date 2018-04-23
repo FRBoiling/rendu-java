@@ -23,11 +23,11 @@ public class GameContext {
 //        serverType = option.getServerType();
 //        openTime = option.getOpenTime();
 //        openDayZeroTime = TimeUtil.getZeroClockTime(openTime.getTime());
-
+//
 //        LOGGER.info("开服时间：{}", openTime);int
 //        LOGGER.info("开服当天凌晨0点时间戳：{}", openDayZeroTime);
 //        LOGGER.info("开服距离开服当天凌晨：{}", (openTime.getTime() - openDayZeroTime));
-
+//
 //        combineTime = option.getCombineTime();
 //        if (combineTime != null) {
 //            combineDayZeroTime = TimeUtil.getZeroClockTime(option.getCombineTime().getTime());

@@ -1,22 +1,20 @@
-package server;
+package client;
 
-import Protocol.Client.Gate.C2GIdGenerater;
-import Protocol.MsgId.Id;
 import core.network.server.ServerNetworkService;
 import core.network.server.ServerNetworkServiceBuilder;
-import lombok.Data;
-import server.constant.GameConst;
-import server.processor.LogicProcessor;
+import server.GameMessageAndHandler;
+import server.MessageRouter;
+import server.NetworkListener;
+import server.ServerOption;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * User: FReedom
  * Date: 2018-04-23
- * Time: 15:13
+ * Time: 21:59
  */
-@Data
-public class GameServer {
+public class GameClient {
     private ServerNetworkService netWork;
 
     private boolean state = false;

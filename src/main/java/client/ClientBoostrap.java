@@ -1,19 +1,21 @@
-package server;
+package client;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import server.GameContext;
+import server.GameServer;
+import server.ServerOption;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * User: FReedom
- * Date: 2018-04-22
+ * Date: 2018-04-23
  * Time: 21:31
  */
+
 @Slf4j
-public class GameServerBootstrap {
-//    public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
+public class ClientBoostrap {
+    //    public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
 
     public static void main(String[] args) throws Exception {
         String configPath = "config.properties";
@@ -31,7 +33,5 @@ public class GameServerBootstrap {
 //        BackServer backServer = GameContext.createBackServer();
 //        backServer.start();
 //        LOGGER.warn("后台服务器启动成功...");
-
     }
-
 }
