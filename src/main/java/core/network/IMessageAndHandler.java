@@ -3,15 +3,11 @@ package core.network;
 import core.network.codec.Packet;
 
 /**
- * Copyright © 2018 四月
- * Boil blood. All rights reserved.
- *
- * @Prject: ServerCluster-Java
- * @Package: core.network
- * @Description: ${todo}
- * @author: Boiling
- * @date: 2018/4/22 0022 13:11
- * @version: V1.0
+ * Created with IntelliJ IDEA.
+ * Description:
+ * User: FReedom
+ * Date: 2018-04-22
+ * Time: 12:13
  */
 public interface IMessageAndHandler {
 //    /**
@@ -31,10 +27,10 @@ public interface IMessageAndHandler {
 
     /**
      * 获取handler
-     * @param handlerName
+     * @param messageId
      * @return
      */
-    AbstractHandler getHandler(String handlerName);
+    AbstractHandler getHandler(int messageId);
 
     /**
      * 注册
@@ -43,4 +39,5 @@ public interface IMessageAndHandler {
      */
     void register(int messageId, Class<? extends AbstractHandler> handler);
 
+    void register();
 }

@@ -41,9 +41,9 @@ public class ServerNetworkServiceBuilder implements INetworkServiceBuilder {
     private INetworkEventListener listener;
 
     /**
-     * 消息队列
+     * 消息池
      */
-    private IMessageAndHandler messageQueue;
+    private IMessageAndHandler messageAndHandler;
 
     @Override
     public IService createService() {

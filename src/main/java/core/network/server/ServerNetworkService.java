@@ -18,15 +18,11 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Copyright © 2018 四月
- * Boilling blood. All rights reserved.
- *
- * @Prject: ServerCluster-Java
- * @Package: core.network.server
- * @Description: ${todo}
- * @author: Boiling
- * @date: 2018/4/22 0022 12:56
- * @version: V1.0
+ * Created with IntelliJ IDEA.
+ * Description:
+ * User: FReedom
+ * Date: 2018-04-22
+ * Time: 13:17
  */
 public class ServerNetworkService implements IService {
 
@@ -57,7 +53,7 @@ public class ServerNetworkService implements IService {
         bootstrap.childOption(ChannelOption.SO_RCVBUF, 128 * 1024);
         bootstrap.childOption(ChannelOption.SO_SNDBUF, 128 * 1024);
 
-        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
+//        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
         bootstrap.childHandler(new ServerSocketChannelInitializer(builder));
     }
 

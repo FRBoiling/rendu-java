@@ -2,18 +2,15 @@ package core.base.concurrent.command;
 
 import core.base.concurrent.queue.ICommandQueue;
 
+
 /**
- * Copyright © 2018 四月
- * Boil blood. All rights reserved.
- *
- * @Prject: ServerCluster-Java
- * @Package: core.base
- * @Description:
- *  * 拥有一个队列的命令.
- *  * 该命令可以放入QueueDriver中执行.
- * @author: Boiling
- * @date: 2018/4/22 0022 22:46
- * @version: V1.0
+ * Created with IntelliJ IDEA.
+ * Description:
+ *  *  * 拥有一个队列的命令.
+ *  *  * 该命令可以放入QueueDriver中执行.
+ * User: FReedom
+ * Date: 2018-04-23
+ * Time: 15:13
  */
 public interface IQueueDriverCommand  extends ICommand{
 
@@ -45,18 +42,18 @@ public interface IQueueDriverCommand  extends ICommand{
      */
     void setCommandQueue(ICommandQueue<IQueueDriverCommand> commandQueue);
 
-    /**
-     * 获取一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
-     *
-     * @return Object
-     */
-    Object getParam();
-
-    /**
-     * 设置一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
-     *
-     * @param param param
-     */
-    void setParam(Object param);
+//    /**
+//     * 获取一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
+//     *
+//     * @return Object
+//     */
+//    Object getParam();
+//
+//    /**
+//     * 设置一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
+//     *
+//     * @param param param
+//     */
+//    void setParam(Object param);
 
 }

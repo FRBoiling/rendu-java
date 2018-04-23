@@ -1,7 +1,12 @@
 package server;
 
+import Protocol.Client.Gate.C2GIdGenerater;
+import Protocol.MsgId.Id;
 import core.network.server.ServerNetworkService;
+import core.network.server.ServerNetworkServiceBuilder;
 import lombok.Data;
+import server.constant.GameConst;
+import server.processor.LogicProcessor;
 
 /**
  * Copyright © 2018 四月
@@ -30,33 +35,31 @@ public class GameServer {
         GameMessageAndHandler pool = new GameMessageAndHandler();
 
         router = new MessageRouter(pool);
-        NetworkServiceBuilder builder = new NetworkServiceBuilder();
-        builder.setImessageandhandler(pool);
+        ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
+        builder.setMessageAndHandler(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
-        builder.setPort(option.getGameServerPort());
+        builder.setPort(8201);
         builder.setListener(new NetworkListener());
         builder.setConsumer(router);
 
-        //登录和下线
-        router.registerProcessor(GameConst.QueueId.LOGIN_LOGOUT, new LoginProcessor());
-        //业务队列
-        router.registerProcessor(GameConst.QueueId.LOGIC, new LogicProcessor());
+        router.initRouter();
+
 
         // 创建网络服务
-        netWork = builder.createService();
+        netWork = (ServerNetworkService) builder.createService();
 
-        // 初始化数据库
-        DataCenter.init(option);
+//        // 初始化数据库
+//        DataCenter.init(option);
 
-        //初始化配置文件
-        ConfigDataManager.getInstance().init();
+//        //初始化配置文件
+//        ConfigDataManager.getInstance().init();
 
-        // 注册事件
-        EventRegister.registerPreparedListeners();
+//        // 注册事件
+//        EventRegister.registerPreparedListeners();
 
-        //开启定时任务
-        ScheduleManager.getInstance().start();
+//        //开启定时任务
+//        ScheduleManager.getInstance().start();
     }
 
     public MessageRouter getRouter() {

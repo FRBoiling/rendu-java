@@ -36,13 +36,13 @@ public class PacketReader  extends ByteToMessageDecoder {
 
         buffer.markReaderIndex();
 
-        short tmp = buffer.readShort();
+        short tmp = buffer.readShortLE(); //客户端是c#的，所以用LE的函数
         if (tmp >= 0) {
             if (!buffer.isReadable()) {
                 buffer.resetReaderIndex();
                 return 0;
             }
-            return tmp + Integer.BYTES;
+            return tmp + Integer.BYTES;//数据（protobuf）和 消息ID（int） 的长度和
         } else {
             buffer.resetReaderIndex();
             return 0;

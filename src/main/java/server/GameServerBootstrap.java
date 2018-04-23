@@ -1,5 +1,6 @@
 package server;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,8 +15,9 @@ import org.slf4j.LoggerFactory;
  * @date: 2018/4/23 0023 1:10
  * @version: V1.0
  */
+@Slf4j
 public class GameServerBootstrap {
-    public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
+//    public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
 
     public static void main(String[] args) throws Exception {
        String configPath = "config.properties";
@@ -27,7 +29,8 @@ public class GameServerBootstrap {
 
         GameServer server = GameContext.createGameServer();
         server.start();
-        LOGGER.warn("游戏服务器启动成功...");
+//        LOGGER.warn("游戏服务器启动成功...");
+        log.warn("游戏服务器启动成功...");
 
 //        BackServer backServer = GameContext.createBackServer();
 //        backServer.start();

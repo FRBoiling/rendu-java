@@ -1,11 +1,15 @@
 package server;
 
+import core.base.common.AttributeUtil;
+import core.network.AbstractHandler;
 import core.network.IMessageAndHandler;
 import core.network.INetworkConsumer;
 import core.network.IProcessor;
 import core.network.codec.Packet;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
+import server.constant.GameConst;
+import server.processor.LogicProcessor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +26,7 @@ import java.util.Map;
  * @version: V1.0
  */
 @Slf4j
-public class MessageRouter implements INetworkConsumer {
+class MessageRouter implements INetworkConsumer {
 
 
     private Map<Integer, IProcessor> processors = new HashMap<>(10);
@@ -33,7 +37,15 @@ public class MessageRouter implements INetworkConsumer {
         this.msgPool = msgPool;
     }
 
-    public void registerProcessor(int queueId, IProcessor consumer) {
+    public void initRouter()
+    {
+        //        //登录和下线
+//        router.registerProcessor(GameConst.QueueId.LOGIN_LOGOUT, new LoginProcessor());
+        //业务队列
+        registerProcessor(GameConst.QueueId.LOGIC, new LogicProcessor());
+    }
+
+    private void registerProcessor(int queueId, IProcessor consumer) {
         processors.put(queueId, consumer);
     }
 
@@ -42,27 +54,24 @@ public class MessageRouter implements INetworkConsumer {
     public void consume(Packet packet, Channel channel) {
 
         //将消息分发到指定的队列中，该队列有可能在同一个进程，也有可能不在同一个进程
-
-        int queueId = 1;
+        int queueId = GameConst.QueueId.LOGIC;
 
         IProcessor processor = processors.get(queueId);
         if (processor == null) {
             log.error("找不到可用的消息处理器[{}]", queueId);
             return;
         }
-        log.debug("收到消息:" + packet.getMsgId());
-//        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
-//
-//        if (session == null) {
-//            return;
-//        }
-//
-//        AbstractHandler handler = msgPool.getHandler(msg.getClass().getName());
-//        handler.setMessage(msg);
+        log.info("收到消息:0x{}" , Integer.toHexString(packet.getMsgId()));
+        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
+
+        if (session == null) {
+            return;
+        }
+
+        AbstractHandler handler = msgPool.getHandler(packet.getMsgId());
+        handler.setMessage(packet.msg);
 //        handler.setParam(session);
-//        log.debug("收到消息:" + msg);
-//
-//        processor.process(handler);
+        processor.process(handler);
 
     }
 
