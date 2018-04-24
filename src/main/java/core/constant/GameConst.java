@@ -1,4 +1,4 @@
-package server.constant;
+package core.constant;
 
 /**
  * Created with IntelliJ IDEA.

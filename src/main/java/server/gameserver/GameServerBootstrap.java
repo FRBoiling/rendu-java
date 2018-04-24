@@ -1,8 +1,8 @@
-package server;
+package server.gameserver;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import server.ServerServiceContext;
+import server.ServerOption;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,9 +21,9 @@ public class GameServerBootstrap {
 //            configPath = args[0];
 //        }
         ServerOption option = new ServerOption(configPath);
-        GameContext.init(option);
+        ServerServiceContext.init(option);
 
-        GameServer server = GameContext.createGameServer();
+        GameServer server = ServerServiceContext.createGameServer();
         server.start();
 //        LOGGER.warn("游戏服务器启动成功...");
         log.warn("游戏服务器启动成功...");

@@ -1,4 +1,4 @@
-package server;
+package server.gameserver;
 
 import Protocol.Client.Gate.C2G;
 import Protocol.Client.Gate.C2GIdGenerater;
@@ -11,10 +11,10 @@ import server.system.user.handler.TestHandler;
 import java.util.HashMap;
 
 @Slf4j
-public class GameMessageAndHandler implements IMessageAndHandler {
+public class GameServerMessageAndHandler implements IMessageAndHandler {
     private final HashMap<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>(10);
 
-    public GameMessageAndHandler() {
+    public GameServerMessageAndHandler() {
         C2GIdGenerater.GenerateId();
         register();
     }

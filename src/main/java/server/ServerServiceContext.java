@@ -1,6 +1,8 @@
 package server;
 
 import lombok.extern.slf4j.Slf4j;
+import server.gameserver.GameServer;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -10,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 
 @Slf4j
-public class GameContext {
+public class ServerServiceContext {
 
     private static ServerOption option;
     private static int serverId;
@@ -18,7 +20,7 @@ public class GameContext {
     private static boolean closed;
 
     public static void init(ServerOption option) {
-        GameContext.option = option;
+        ServerServiceContext.option = option;
 //        serverId = option.getServerId();
 //        serverType = option.getServerType();
 //        openTime = option.getOpenTime();
@@ -142,6 +144,6 @@ public class GameContext {
     }
 
     public static void setClosed(boolean closed) {
-        GameContext.closed = closed;
+        ServerServiceContext.closed = closed;
     }
 }

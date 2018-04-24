@@ -1,4 +1,4 @@
-package server;
+package client;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,12 +8,11 @@ import java.text.ParseException;
  * Created with IntelliJ IDEA.
  * Description:
  * User: FReedom
- * Date: 2018-04-23
- * Time: 1:58
+ * Date: 2018-04-24
+ * Time: 11:06
  */
-
-public class ServerOption {
-    public ServerOption(String configPath) throws IOException, ParseException {
+public class ClientOption {
+    public ClientOption(String configPath) throws IOException, ParseException {
 //        this.configPath = configPath;
         build();
     }
@@ -67,4 +66,5 @@ public class ServerOption {
             }
         }
     }
+
 }

@@ -12,8 +12,10 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.util.concurrent.Future;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.rmi.runtime.Log;
 
 import java.util.concurrent.TimeUnit;
 
@@ -24,9 +26,9 @@ import java.util.concurrent.TimeUnit;
  * Date: 2018-04-22
  * Time: 13:17
  */
+@Slf4j
 public class ServerNetworkService implements IService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ServerNetworkService.class);
     private ServiceState state;
     private EventLoopGroup bossGroup;
     private EventLoopGroup workerGroup;
@@ -66,7 +68,7 @@ public class ServerNetworkService implements IService {
             throw new RuntimeException(e);
         }
         this.state = ServiceState.RUNNING;
-        LOGGER.info("Server on port:{} is start", port);
+        log.info("Server on port:{} is start", port);
     }
 
     @Override
@@ -78,9 +80,9 @@ public class ServerNetworkService implements IService {
             bf.get(5000, TimeUnit.MILLISECONDS);
             wf.get(5000, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
-            LOGGER.info("Netty服务器关闭失败", e);
+            log.info("Netty服务器关闭失败", e);
         }
-        LOGGER.info("Netty Server on port:{} is closed", port);
+        log.info("Netty Server on port:{} is closed", port);
     }
 
     @Override

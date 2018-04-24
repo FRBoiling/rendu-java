@@ -1,10 +1,9 @@
-package client;
+package server.gameserver;
 
 import core.network.server.ServerNetworkService;
 import core.network.server.ServerNetworkServiceBuilder;
-import server.GameMessageAndHandler;
-import server.MessageRouter;
-import server.NetworkListener;
+import lombok.Data;
+import core.network.NetworkListener;
 import server.ServerOption;
 
 /**
@@ -12,23 +11,24 @@ import server.ServerOption;
  * Description:
  * User: FReedom
  * Date: 2018-04-23
- * Time: 21:59
+ * Time: 15:13
  */
-public class GameClient {
+@Data
+public class GameServer {
     private ServerNetworkService netWork;
 
     private boolean state = false;
 
-    private MessageRouter router;
+    private GameServerMessageRouter router;
 
     public GameServer(ServerOption option) throws Exception {
         int bossLoopGroupCount = 4;
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
 
-        GameMessageAndHandler pool = new GameMessageAndHandler();
+        GameServerMessageAndHandler pool = new GameServerMessageAndHandler();
 
-        router = new MessageRouter(pool);
+        router = new GameServerMessageRouter(pool);
         ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
         builder.setMessageAndHandler(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);
@@ -56,7 +56,7 @@ public class GameClient {
 //        ScheduleManager.getInstance().start();
     }
 
-    public MessageRouter getRouter() {
+    public GameServerMessageRouter getRouter() {
         return this.router;
     }
 

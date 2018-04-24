@@ -1,52 +1,41 @@
-package server;
+package client;
 
-import Protocol.Client.Gate.C2GIdGenerater;
-import Protocol.MsgId.Id;
-import core.network.server.ServerNetworkService;
-import core.network.server.ServerNetworkServiceBuilder;
-import lombok.Data;
-import server.constant.GameConst;
-import server.processor.LogicProcessor;
+import core.network.NetworkListener;
+import core.network.client.ClientNetworkService;
+import core.network.client.ClientNetworkServiceBuilder;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * User: FReedom
  * Date: 2018-04-23
- * Time: 15:13
+ * Time: 21:59
  */
-@Data
-public class GameServer {
-    private ServerNetworkService netWork;
+public class Client {
+    private ClientNetworkService netWork;
 
     private boolean state = false;
 
-    private MessageRouter router;
+    private ClientMessageRouter router;
 
-    public GameServer(ServerOption option) throws Exception {
-        int bossLoopGroupCount = 4;
+    public Client(ClientOption option) throws Exception {
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
 
-        GameMessageAndHandler pool = new GameMessageAndHandler();
+        ClientMessageAndHandler pool = new ClientMessageAndHandler();
 
-        router = new MessageRouter(pool);
-        ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
+        router = new ClientMessageRouter(pool);
+        ClientNetworkServiceBuilder builder = new ClientNetworkServiceBuilder();
         builder.setMessageAndHandler(pool);
-        builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
+        builder.setIp("127.0.0.1");
         builder.setPort(8201);
         builder.setListener(new NetworkListener());
         builder.setConsumer(router);
-
         router.initRouter();
 
-
         // 创建网络服务
-        netWork = (ServerNetworkService) builder.createService();
-
-//        // 初始化数据库
-//        DataCenter.init(option);
+        netWork = (ClientNetworkService) builder.createService();
 
 //        //初始化配置文件
 //        ConfigDataManager.getInstance().init();
@@ -58,10 +47,9 @@ public class GameServer {
 //        ScheduleManager.getInstance().start();
     }
 
-    public MessageRouter getRouter() {
+    public ClientMessageRouter getRouter() {
         return this.router;
     }
-
 
     public void start() {
         netWork.start();

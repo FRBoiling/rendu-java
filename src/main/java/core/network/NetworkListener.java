@@ -1,12 +1,12 @@
-package server;
+package core.network;
 
 import core.base.common.AttributeUtil;
 import core.network.INetworkEventListener;
-import core.network.IProcessor;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import lombok.extern.slf4j.Slf4j;
-import server.constant.GameConst;
+import server.Session;
+import server.SessionKey;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,7 +25,7 @@ public class NetworkListener implements INetworkEventListener {
             session = new Session(channel);
             session.setChannel(channel);
             AttributeUtil.set(channel, SessionKey.SESSION, session);
-            log.info("接收到新的连接：" + channel.toString());
+            log.info("建立新的连接：" + channel.toString());
         } else {
             log.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
         }

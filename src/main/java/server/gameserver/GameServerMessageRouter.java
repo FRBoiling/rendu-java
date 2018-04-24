@@ -1,4 +1,4 @@
-package server;
+package server.gameserver;
 
 import core.base.common.AttributeUtil;
 import core.network.AbstractHandler;
@@ -8,7 +8,9 @@ import core.network.IProcessor;
 import core.network.codec.Packet;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
-import server.constant.GameConst;
+import server.Session;
+import server.SessionKey;
+import core.constant.GameConst;
 import server.processor.LogicProcessor;
 
 import java.util.HashMap;
@@ -26,14 +28,14 @@ import java.util.Map;
  * @version: V1.0
  */
 @Slf4j
-class MessageRouter implements INetworkConsumer {
+class GameServerMessageRouter implements INetworkConsumer {
 
 
     private Map<Integer, IProcessor> processors = new HashMap<>(10);
 
     private IMessageAndHandler msgPool;
 
-    public MessageRouter(IMessageAndHandler msgPool) {
+    public GameServerMessageRouter(IMessageAndHandler msgPool) {
         this.msgPool = msgPool;
     }
 

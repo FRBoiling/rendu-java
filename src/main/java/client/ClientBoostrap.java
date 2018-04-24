@@ -1,8 +1,7 @@
 package client;
 
 import lombok.extern.slf4j.Slf4j;
-import server.GameContext;
-import server.GameServer;
+import server.ServerServiceContext;
 import server.ServerOption;
 
 /**
@@ -22,16 +21,11 @@ public class ClientBoostrap {
 //        if (args.length > 0) {
 //            configPath = args[0];
 //        }
-        ServerOption option = new ServerOption(configPath);
-        GameContext.init(option);
+        ClientOption option = new ClientOption(configPath);
+        ClientServiceContext.init(option);
 
-        GameServer server = GameContext.createGameServer();
-        server.start();
-//        LOGGER.warn("游戏服务器启动成功...");
-        log.warn("游戏服务器启动成功...");
-
-//        BackServer backServer = GameContext.createBackServer();
-//        backServer.start();
-//        LOGGER.warn("后台服务器启动成功...");
+        Client client = ClientServiceContext.createClient();
+        client.start();
+        log.warn("客户端启动成功...");
     }
 }
