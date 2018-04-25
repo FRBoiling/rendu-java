@@ -11,6 +11,7 @@ import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
+import io.netty.channel.WriteBufferWaterMark;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -49,7 +50,9 @@ public class ClientNetworkService implements IService {
         bootstrap.option(ChannelOption.TCP_NODELAY, true);
         bootstrap.option(ChannelOption.SO_RCVBUF, 128 * 1024);
         bootstrap.option(ChannelOption.SO_SNDBUF, 128 * 1024);
-        bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 30000);
+        bootstrap.option(ChannelOption.WRITE_BUFFER_WATER_MARK ,new WriteBufferWaterMark(64*1024,1024* 1024));
+        bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 15000);
+
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
         bootstrap.handler(new ClientSocketChannelInitializer(builder));
     }

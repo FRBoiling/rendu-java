@@ -47,7 +47,7 @@ public class NetworkListener implements INetworkEventListener {
         log.error("closeSession ");
         if (session == null || session.getUser() == null) {
             //下线
-            log.error("玩家断开连接[没有找到用户信息]");
+            log.error("服务端断开连接[没有找到服务端信息]");
             return;
         }
 

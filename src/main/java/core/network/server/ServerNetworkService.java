@@ -7,6 +7,7 @@ import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
+import io.netty.channel.WriteBufferWaterMark;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
@@ -54,7 +55,7 @@ public class ServerNetworkService implements IService {
         bootstrap.childOption(ChannelOption.TCP_NODELAY, true);
         bootstrap.childOption(ChannelOption.SO_RCVBUF, 128 * 1024);
         bootstrap.childOption(ChannelOption.SO_SNDBUF, 128 * 1024);
-
+        bootstrap.childOption(ChannelOption.WRITE_BUFFER_WATER_MARK ,new WriteBufferWaterMark(64*1024,1024* 1024));
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
         bootstrap.childHandler(new ServerSocketChannelInitializer(builder));
     }
