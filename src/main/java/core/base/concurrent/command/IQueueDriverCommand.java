@@ -42,18 +42,18 @@ public interface IQueueDriverCommand  extends ICommand{
      */
     void setCommandQueue(ICommandQueue<IQueueDriverCommand> commandQueue);
 
-//    /**
-//     * 获取一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
-//     *
-//     * @return Object
-//     */
-//    Object getParam();
-//
-//    /**
-//     * 设置一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
-//     *
-//     * @param param param
-//     */
-//    void setParam(Object param);
+    /**
+     * 获取一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
+     *
+     * @return Object
+     */
+    Object getParam();
+
+    /**
+     * 设置一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
+     *
+     * @param param param
+     */
+    void setParam(Object param);
 
 }

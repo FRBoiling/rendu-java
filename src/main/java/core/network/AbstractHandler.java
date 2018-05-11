@@ -49,15 +49,15 @@ public class AbstractHandler <T> implements IQueueDriverCommand {
 
     }
 
-//    @Override
-//    public Object getParam() {
-//        return null;
-//    }
-//
-//    @Override
-//    public void setParam(Object param) {
-//
-//    }
+    @Override
+    public Object getParam() {
+        return null;
+    }
+
+    @Override
+    public void setParam(Object param) {
+
+    }
 
     @Override
     public void doAction() {

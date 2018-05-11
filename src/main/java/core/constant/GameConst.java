@@ -12,10 +12,10 @@ public interface GameConst {
 
     interface QueueId {
 
-//        /**
-//         * 登录和下线队列
-//         */
-//        int LOGIN_LOGOUT = 0;
+        /**
+         * 登录和下线队列
+         */
+        int LOGIN_LOGOUT = 0;
 
         /**
          * 业务队列

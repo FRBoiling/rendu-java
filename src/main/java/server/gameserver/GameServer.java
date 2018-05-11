@@ -17,8 +17,9 @@ import server.ServerOption;
 public class GameServer {
     private ServerNetworkService netWork;
 
+    //tcp 连接状态
     private boolean state = false;
-
+    //消息处理分发
     private GameServerMessageRouter router;
 
     public GameServer(ServerOption option) throws Exception {
@@ -29,6 +30,8 @@ public class GameServer {
         GameServerMessageAndHandler pool = new GameServerMessageAndHandler();
 
         router = new GameServerMessageRouter(pool);
+        router.initRouter();
+
         ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
         builder.setMessageAndHandler(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);
@@ -36,9 +39,6 @@ public class GameServer {
         builder.setPort(8201);
         builder.setListener(new NetworkListener());
         builder.setConsumer(router);
-
-        router.initRouter();
-
 
         // 创建网络服务
         netWork = (ServerNetworkService) builder.createService();

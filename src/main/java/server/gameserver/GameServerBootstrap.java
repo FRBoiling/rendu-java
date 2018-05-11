@@ -25,7 +25,6 @@ public class GameServerBootstrap {
 
         GameServer server = ServerServiceContext.createGameServer();
         server.start();
-//        LOGGER.warn("游戏服务器启动成功...");
         log.warn("游戏服务器启动成功...");
 
 //        BackServer backServer = GameContext.createBackServer();

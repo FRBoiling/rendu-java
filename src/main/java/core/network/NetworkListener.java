@@ -23,7 +23,6 @@ public class NetworkListener implements INetworkEventListener {
         Session session = AttributeUtil.get(channel, SessionKey.SESSION);
         if (session == null) {
             session = new Session(channel);
-            session.setChannel(channel);
             AttributeUtil.set(channel, SessionKey.SESSION, session);
             log.info("建立新的连接：" + channel.toString());
         } else {
