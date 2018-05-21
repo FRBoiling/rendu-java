@@ -1,10 +1,9 @@
 package server.command;
 
+
 import core.base.common.AttributeUtil;
 import core.base.concurrent.command.AbstractCommand;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import server.Session;
 import server.SessionKey;
 import server.system.user.UserManager;
@@ -36,5 +35,15 @@ public class LogoutCommond extends AbstractCommand {
         //登出
         UserManager.getInstance().logout(session);
         log.error("网络连接断开，处理玩家下线逻辑->{}", session.getUser().toString());
+    }
+
+    @Override
+    public Object getParam() {
+        return null;
+    }
+
+    @Override
+    public void setParam(Object param) {
+
     }
 }
