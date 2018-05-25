@@ -71,7 +71,7 @@ class GameServerMessageRouter implements INetworkConsumer {
 //        processor.process(handler); //这里执行
 
         //frTODO:单逻辑线程的话，这里要做的是将消息加入到消息队列
-
+        log.debug("msg go to exec");
     }
 
     public IProcessor getProcessor(int queueId) {

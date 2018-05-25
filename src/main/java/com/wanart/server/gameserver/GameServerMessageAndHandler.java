@@ -6,6 +6,7 @@ import com.wanart.server.system.user.handler.TestHandler;
 import lombok.extern.slf4j.Slf4j;
 import protocol.msgId.Id;
 import protocol.server.client.S2C;
+import protocol.server.client.S2CIdGenerater;
 
 import java.util.HashMap;
 
@@ -14,6 +15,7 @@ public class GameServerMessageAndHandler implements IMessageAndHandler {
     private final HashMap<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>(10);
 
     public GameServerMessageAndHandler() {
+        S2CIdGenerater.GenerateId();
         register();
     }
 
