@@ -4,6 +4,8 @@ import com.wanart.core.network.AbstractHandler;
 import com.wanart.core.network.IMessageAndHandler;
 import com.wanart.server.system.user.handler.TestHandler;
 import lombok.extern.slf4j.Slf4j;
+import protocol.msgId.Id;
+import protocol.server.client.S2C;
 
 import java.util.HashMap;
 
@@ -19,14 +21,12 @@ public class ClientMessageAndHandler implements IMessageAndHandler {
     private final HashMap<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>(10);
 
     public ClientMessageAndHandler() {
-        protocol.client.gate.C2GIdGenerater.GenerateId();
-        protocol.gate.client.G2CIdGenerater.GenerateId();
         register();
     }
 
     @Override
     public void register() {
-        register(protocol.msgId.Id.getInst().getMessageId(protocol.gate.client.G2C.G2CTest1.class), TestHandler.class);
+        register(Id.getInst().getMessageId(S2C.CSLoginReq.class), TestHandler.class);
 //        register(Id.getInst().getMessageId(C2G.C2GTest2.class), TestHandler2.class);
 //        register(Id.getInst().getMessageId(C2G.C2GTest3.class), TestHandler3.class);
     }

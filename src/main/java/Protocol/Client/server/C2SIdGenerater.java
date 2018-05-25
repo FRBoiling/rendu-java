@@ -4,12 +4,12 @@
  //     Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.
  // </auto-generated>
  //------------------------------------------------------------------------------
-package protocol.client.gate;
+package protocol.client.server;
 import protocol.msgId.Id;
-public class C2GIdGenerater{
+public class C2SIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(protocol.client.gate.C2G.C2GTest1.class, 0x1200001);
-          Id.getInst().SetMessage(protocol.client.gate.C2G.C2GTest2.class, 0x1200002);
-          Id.getInst().SetMessage(protocol.client.gate.C2G.C2GTest3.class, 0x1200003);
+          Id.getInst().SetMessage(C2S.GOODS_INFO.class, 0x1200001);
+          Id.getInst().SetMessage(C2S.GOODS_INFO_ARRAY.class, 0x1200002);
+          Id.getInst().SetMessage(C2S.C2GTest3.class, 0x1200003);
      }
 }
