@@ -4,17 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>ServerCluster</groupId>
-  <artifactId>servers</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>core</module>
-        <module>protocol</module>
-        <module>servers</module>
-    </modules>
+  <groupId>protocol</groupId>
+  <artifactId>protocol</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
-    <name>servers</name>
+  <name>protocol</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -30,6 +24,12 @@
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>3.5.1</version>
     </dependency>
   </dependencies>
 
