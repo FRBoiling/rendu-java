@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="core" />
         <module name="protocol" />
-        <module name="servers" />
+        <module name="realm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
