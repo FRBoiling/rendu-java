@@ -2,7 +2,7 @@ package core.network.client;
 
 import core.network.IMessageAndHandler;
 import core.network.*;
-import core.network.server.INetworkEventListener;
+import core.network.INetworkEventListener;
 import lombok.Data;
 
 /**

@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>realm</groupId>
-    <artifactId>realm</artifactId>
+    <groupId>global</groupId>
+    <artifactId>global</artifactId>
 
-    <name>realm</name>
+    <name>global</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

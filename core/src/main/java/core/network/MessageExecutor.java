@@ -1,7 +1,6 @@
 package core.network;
 
 import core.network.codec.Packet;
-import core.network.server.INetworkEventListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;

@@ -2,7 +2,7 @@ package servers.client;
 
 import core.network.client.ClientNetworkService;
 import core.network.client.ClientNetworkServiceBuilder;
-import core.network.server.NetworkListener;
+import core.network.NetworkListener;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package core.network.server;
+package core.network;
 
 import core.base.common.AttributeUtil;
 import core.base.common.Session;

@@ -18,6 +18,9 @@
     <url>http://www.example.com</url>
     <modules>
         <module>realm</module>
+        <module>world</module>
+        <module>gate</module>
+        <module>global</module>
     </modules>
 
     <properties>

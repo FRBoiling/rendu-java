@@ -1,6 +1,6 @@
 package servers.server.gameserver;
 
-import core.network.server.NetworkListener;
+import core.network.NetworkListener;
 import core.network.server.ServerNetworkService;
 import core.network.server.ServerNetworkServiceBuilder;
 import lombok.Data;

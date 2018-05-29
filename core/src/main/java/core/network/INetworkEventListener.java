@@ -1,4 +1,4 @@
-package core.network.server;
+package core.network;
 
 import io.netty.channel.ChannelHandlerContext;
 
