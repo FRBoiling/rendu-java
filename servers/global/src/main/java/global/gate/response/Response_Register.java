@@ -1,4 +1,4 @@
-package global.gate;
+package global.gate.response;
 
 import core.base.common.Session;
 import core.base.concurrent.command.AbstractHandler;

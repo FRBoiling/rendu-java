@@ -11,6 +11,7 @@ import io.netty.channel.WriteBufferWaterMark;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.Future;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
@@ -28,6 +29,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 @Slf4j
+@Data
 public class ClientNetworkService implements IService {
     private ServiceState state;
     private EventLoopGroup workerGroup;
@@ -53,15 +55,22 @@ public class ClientNetworkService implements IService {
     }
 
     @Override
-    public void start() {
+    public void start(){
+//        try {
+//            ChannelFuture f = bootstrap.connect(builder.getIp(), builder.getPort());
+//            f.sync();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//        this.state = ServiceState.RUNNING;
+
         try {
             ChannelFuture f = bootstrap.connect(builder.getIp(), builder.getPort());
+            f.addListener(new ClientConnectionListener(this));
             f.sync();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+//            throw new RuntimeException(e);
         }
-        this.state = ServiceState.RUNNING;
-        log.info("client is start");
     }
 
     @Override

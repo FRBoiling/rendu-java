@@ -11,6 +11,7 @@ import io.netty.channel.WriteBufferWaterMark;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.util.concurrent.Future;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
@@ -23,11 +24,11 @@ import java.util.concurrent.TimeUnit;
  * Time: 13:17
  */
 @Slf4j
+@Data
 public class ServerNetworkService implements IService {
-
     private ServiceState state;
-    private EventLoopGroup bossGroup;
-    private EventLoopGroup workerGroup;
+    private EventLoopGroup acceptorGroup;
+    private EventLoopGroup IOGroup;
     private ServerBootstrap bootstrap;
     private ServerNetworkServiceBuilder builder;
 
@@ -35,16 +36,16 @@ public class ServerNetworkService implements IService {
 
     ServerNetworkService(final INetworkServiceBuilder serviceBuilder) {
         builder = (ServerNetworkServiceBuilder) serviceBuilder;
-        int bossLoopGroupCount = builder.getBossLoopGroupCount();
-        int workerLoopGroupCount = builder.getWorkerLoopGroupCount();
+        int acceptorGroupCount = builder.getAcceptorGroupCount();
+        int ioGroupCount = builder.getIOGroupCount();
 
         port = builder.getPort();
 
-        bossGroup = new NioEventLoopGroup(bossLoopGroupCount);
-        workerGroup = new NioEventLoopGroup(workerLoopGroupCount);
+        acceptorGroup = new NioEventLoopGroup(acceptorGroupCount);
+        IOGroup = new NioEventLoopGroup(ioGroupCount);
 
         bootstrap = new ServerBootstrap();
-        bootstrap.group(bossGroup, workerGroup);
+        bootstrap.group(acceptorGroup, IOGroup);
         bootstrap.channel(NioServerSocketChannel.class);
         bootstrap.option(ChannelOption.SO_BACKLOG, 1024);
         bootstrap.childOption(ChannelOption.TCP_NODELAY, true);
@@ -57,21 +58,29 @@ public class ServerNetworkService implements IService {
 
     @Override
     public void start() {
+//        try {
+//            ChannelFuture f = bootstrap.bind(port);
+//            f.sync();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//        this.state = ServiceState.RUNNING;
+//        log.info("Server on port:{} is start", port);
+
         try {
             ChannelFuture f = bootstrap.bind(port);
+            f.addListener(new ServerBindListener(this));
             f.sync();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        this.state = ServiceState.RUNNING;
-        log.info("Server on port:{} is start", port);
     }
 
     @Override
     public void stop() {
         this.state = ServiceState.STOPPED;
-        Future<?> bf = bossGroup.shutdownGracefully();
-        Future<?> wf = workerGroup.shutdownGracefully();
+        Future<?> bf = acceptorGroup.shutdownGracefully();
+        Future<?> wf = IOGroup.shutdownGracefully();
         try {
             bf.get(5000, TimeUnit.MILLISECONDS);
             wf.get(5000, TimeUnit.MILLISECONDS);

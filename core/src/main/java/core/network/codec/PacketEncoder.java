@@ -6,7 +6,6 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
 import protocol.msgId.Id;
-import protocol.server.client.S2C;
 
 import java.util.List;
 
@@ -17,8 +16,7 @@ import java.util.List;
 public class PacketEncoder extends MessageToMessageEncoder<MessageLiteOrBuilder> {
     protected void encode(ChannelHandlerContext channelHandlerContext, MessageLiteOrBuilder msg, List<Object> out) throws Exception {
        Packet packet = new Packet();
-       int msgId = Id.getInst().getMessageId(S2C.CSLoginReq.class);
-
+       int msgId = Id.getInst().getMessageId(msg.getClass());
        packet.setMsgId(msgId);
         if (msg instanceof MessageLite) {
             packet.msg = ((MessageLite) msg).toByteArray();

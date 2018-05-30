@@ -2,6 +2,8 @@ package core.network;
 
 import core.base.concurrent.command.AbstractHandler;
 
+import java.util.HashMap;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -25,19 +27,42 @@ public interface IMessageAndHandler {
 //     */
 //    int getMessageId(AbstractMessage message);
 
+    HashMap<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>(10);
+
     /**
      * 获取handler
      * @param messageId
      * @return
      */
-    AbstractHandler getHandler(int messageId);
+    default AbstractHandler getHandler(int messageId) {
+        Class<? extends AbstractHandler> clazz = handlers.get(messageId);
+        if (clazz != null) {
+            try {
+                return clazz.newInstance();
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        return null;
+    }
 
     /**
      * 注册
      * @param messageId
      * @param handler
      */
-    void register(int messageId, Class<? extends AbstractHandler> handler);
+    default AbstractHandler register(int messageId, Class<? extends AbstractHandler> handler)
+    {
+        Class<? extends AbstractHandler> clazz = handlers.get(messageId);
+        if (clazz != null) {
+            try {
+                return clazz.newInstance();
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        return null;
+    }
 
     void register();
 }

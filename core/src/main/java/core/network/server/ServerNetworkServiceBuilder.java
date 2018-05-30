@@ -19,11 +19,11 @@ public class ServerNetworkServiceBuilder implements INetworkServiceBuilder {
     /**
      * 网络线程池线程数量
      */
-    private int bossLoopGroupCount;
+    private int acceptorGroupCount;
     /**
      * 工作线程池线程数量
      */
-    private int workerLoopGroupCount;
+    private int IOGroupCount;
 
     /**
      * 监听端口
