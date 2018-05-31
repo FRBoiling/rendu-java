@@ -5,9 +5,8 @@
  // </auto-generated>
  //------------------------------------------------------------------------------
 package protocol.msgId;
-import com.google.protobuf.MessageLite;
 import java.util.HashMap;
-
+import com.google.protobuf.MessageLite;
 public class Id{
      private static final Id inst = new Id();
      private HashMap<Class<? extends MessageLite>, Integer> clazzIdMap = new HashMap<Class<? extends MessageLite>, Integer>();

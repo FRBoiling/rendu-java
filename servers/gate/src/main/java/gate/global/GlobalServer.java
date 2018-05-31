@@ -26,6 +26,7 @@ public class GlobalServer implements IServer {
 
         GlobalServerResponseMng responseMng = new GlobalServerResponseMng();
         GlobalServerMsgRouter msgRouter = new GlobalServerMsgRouter();
+        GlobalServerSessionMng sessionMng = new GlobalServerSessionMng();
 
         ClientNetworkServiceBuilder builder = new ClientNetworkServiceBuilder();
         builder.setMessageAndHandler(responseMng);
@@ -33,7 +34,7 @@ public class GlobalServer implements IServer {
         builder.setWorkerLoopGroupCount(IOGroupCount);
         builder.setIp("127.0.0.1");
         builder.setPort(8201);
-        builder.setListener(new NetworkListener());
+        builder.setListener(new NetworkListener(sessionMng));
 
         // 创建网络服务
         netWork = (ClientNetworkService) builder.createService();

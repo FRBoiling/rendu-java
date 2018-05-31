@@ -1,7 +1,8 @@
 package core.network;
 
+import core.base.common.AbstractSession;
 import core.base.common.AttributeUtil;
-import core.base.common.Session;
+import core.base.common.ISessionManager;
 import core.base.common.SessionKey;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
@@ -16,14 +17,20 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class NetworkListener implements INetworkEventListener {
+    ISessionManager sessionMng;
+     public NetworkListener(ISessionManager mng)
+     {
+          this.sessionMng = mng;
+     }
     @Override
     public void onConnected(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
-        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
+        AbstractSession session = AttributeUtil.get(channel, SessionKey.SESSION);
         if (session == null) {
-            session = new Session(channel);
+            session = sessionMng.createSession(channel);
             AttributeUtil.set(channel, SessionKey.SESSION, session);
             log.info("建立新的连接：" + channel.toString());
+            session.OnConnected();
         } else {
             log.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
         }
@@ -32,8 +39,15 @@ public class NetworkListener implements INetworkEventListener {
     @Override
     public void onDisconnected(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
-        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
-        closeSession(session);
+        log.info("断开连接：" + channel.toString());
+        AbstractSession session = AttributeUtil.get(channel, SessionKey.SESSION);
+        if ( session == null)
+        {
+            //下线
+            log.error("[没有找到有效会话]");
+        }else {
+            session.OnDisConnected();
+        }
     }
 
     @Override
@@ -41,15 +55,22 @@ public class NetworkListener implements INetworkEventListener {
 
     }
 
-    public static void closeSession(Session session) {
-        log.error("closeSession ");
-        if (session == null || !session.isRegistered()) {
-            //下线
-            log.error("服务端断开连接[没有找到会话注册信息]");
-            return;
-        }
-
-//        IProcessor processor = GameContext.getGameServer().getRouter().getProcessor(GameConst.QueueId.LOGIN_LOGOUT);
-//        processor.process(new LogoutCommand(session));
-    }
+//    public static void closeSession(AbstractSession session) {
+//        log.error("closeSession ");
+//        if (session == null ) {
+//            //下线
+//            log.error("[没有找到有效会话]");
+//        }
+//        else {
+//            if (!session.isRegistered()) {
+//                //下线
+//                log.error("[没有找到会话注册信息]");
+//            } else {
+//
+//            }
+//        }
+//
+////        IProcessor processor = GameContext.getGameServer().getRouter().getProcessor(GameConst.QueueId.LOGIN_LOGOUT);
+////        processor.process(new LogoutCommand(session));
+//    }
 }

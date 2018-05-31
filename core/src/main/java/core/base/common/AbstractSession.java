@@ -15,7 +15,7 @@ import java.net.InetSocketAddress;
  */
 @Slf4j
 @Data
-public class Session {
+public abstract class AbstractSession {
 
     private Channel channel;
 
@@ -25,9 +25,20 @@ public class Session {
 
     private volatile boolean offline = false;
 
-    public Session(Channel channel) {
+    public AbstractSession(Channel channel) {
         this.channel = channel;
         isRegistered = false;
+    }
+
+    public abstract void OnConnected();
+    public void OnDisConnected()
+    {
+        if (isRegistered) {
+
+        } else {
+            //下线
+            log.error("[没有找到会话注册信息]");
+        }
     }
 //
 //    public Channel getChannel() {

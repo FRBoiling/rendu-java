@@ -24,6 +24,7 @@ public class GateServer implements IServer {
 
         GateServerResponseMng responseMng = new GateServerResponseMng();
         GateServerMsgRouter msgRouter = new GateServerMsgRouter();
+        GateServerSessionMng sessionMng = new GateServerSessionMng();
 
         ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
         builder.setMessageAndHandler(responseMng);
@@ -31,7 +32,7 @@ public class GateServer implements IServer {
         builder.setAcceptorGroupCount(bossLoopGroupCount);
         builder.setIOGroupCount(workerLoopGroupCount);
         builder.setPort(8201);
-        builder.setListener(new NetworkListener());
+        builder.setListener(new NetworkListener(sessionMng));
 
         // 创建网络服务
         netWork = (ServerNetworkService) builder.createService();

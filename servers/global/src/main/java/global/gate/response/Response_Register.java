@@ -1,6 +1,5 @@
 package global.gate.response;
 
-import core.base.common.Session;
 import core.base.concurrent.command.AbstractHandler;
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,8 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 public class Response_Register extends AbstractHandler<byte[]> {
     @Override
     public void doAction() {
-        Session session = (Session) this.session;
+//        Session session = (Session) this.session;
         log.info("Response_Register");
-        //UserManager.getInstance().login(session, message.getLoginName());
+//        UserManager.getInstance().login(session, message.getLoginName());
     }
 }

@@ -1,6 +1,7 @@
 package gate.global;
 
 import core.network.IMessageAndHandler;
+import protocol.gate.global.G2GMIdGenerater;
 import protocol.global.gate.GM2GIdGenerater;
 
 /**
@@ -14,6 +15,7 @@ import protocol.global.gate.GM2GIdGenerater;
 public class GlobalServerResponseMng implements IMessageAndHandler {
     public GlobalServerResponseMng() {
         GM2GIdGenerater.GenerateId();
+        G2GMIdGenerater.GenerateId();
         register();
     }
 

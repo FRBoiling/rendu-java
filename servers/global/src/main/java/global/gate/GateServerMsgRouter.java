@@ -16,6 +16,6 @@ public class GateServerMsgRouter implements INetworkConsumer {
     @Override
     public void consume(Packet packet, Channel channel) {
         //TODO:boil 单逻辑线程的话，这里要做的是将消息加入到消息队列
-        log.debug("msg go to exec");
+        log.info("msg go to exec");
     }
 }
