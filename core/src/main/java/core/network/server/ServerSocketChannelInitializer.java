@@ -1,7 +1,6 @@
 package core.network.server;
 
-import core.network.INetworkServiceBuilder;
-import core.network.MessageExecutor;
+import core.network.IService;
 import core.network.codec.*;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
@@ -19,11 +18,10 @@ import io.netty.channel.ChannelPipeline;
  * @version: V1.0
  */
 public class ServerSocketChannelInitializer extends ChannelInitializer {
-    private ServerNetworkServiceBuilder builder;
+    private IService service;
 
-    ServerSocketChannelInitializer(INetworkServiceBuilder builder) {
-        this.builder =(ServerNetworkServiceBuilder) builder;
-
+    ServerSocketChannelInitializer(IService service) {
+        this.service = service;
     }
 
     @Override
@@ -37,7 +35,7 @@ public class ServerSocketChannelInitializer extends ChannelInitializer {
         pip.addLast(new PacketDecoder());
         pip.addLast(new PacketWriter());
         pip.addLast(new PacketEncoder());
-        pip.addLast(new MessageExecutor(builder.getConsumer(), builder.getListener()));
+        pip.addLast(new ServerMessageExecutor(service));
 //        for (ChannelHandler handler : builder.getExtraHandlers()) {
 //            pip.addLast(handler);
 //        }

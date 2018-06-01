@@ -1,31 +1,33 @@
-package core.network;
+package core.network.server;
 
+import core.network.INetworkConsumer;
+import core.network.INetworkEventListener;
+import core.network.IService;
+import core.network.client.ClientNetworkService;
 import core.network.codec.Packet;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Copyright © 2018 四月
- * Boil blood. All rights reserved.
- *
- * @Prject: ServerCluster-Java
- * @Package: core.network
- * @Description: ${todo}
- * @author: Boiling
- * @date: 2018/4/22 0022 15:53
- * @version: V1.0
+ * Created with IntelliJ IDEA.
+ * Description:
+ * User: Boiling
+ * Date: 2018-06-01
+ * Time: 11:37
  */
-
 @Slf4j
-public class MessageExecutor extends SimpleChannelInboundHandler<Packet> {
+public class ServerMessageExecutor extends SimpleChannelInboundHandler<Packet> {
     private INetworkConsumer consumer;
     private INetworkEventListener listener;
+    private ServerNetworkService service;
 
-    public MessageExecutor(INetworkConsumer consumer, INetworkEventListener listener) {
-        this.consumer = consumer;
-        this.listener = listener;
+    public ServerMessageExecutor(IService servic) {
+        this.service = (ServerNetworkService)servic;
+        this.consumer = this.service.getBuilder().getConsumer();
+        this.listener = this.service.getBuilder().getListener();
     }
+
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Packet msg) throws Exception {
         log.debug("channelRead0 recv");
@@ -46,5 +48,4 @@ public class MessageExecutor extends SimpleChannelInboundHandler<Packet> {
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         this.listener.onDisconnected(ctx);
     }
-
 }

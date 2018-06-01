@@ -30,7 +30,11 @@ public abstract class AbstractSession {
         isRegistered = false;
     }
 
-    public abstract void OnConnected();
+    public void OnConnected()
+    {
+//        log.info("{}",channel.remoteAddress());
+    }
+
     public void OnDisConnected()
     {
         if (isRegistered) {

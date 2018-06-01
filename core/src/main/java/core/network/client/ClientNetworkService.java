@@ -51,7 +51,7 @@ public class ClientNetworkService implements IService {
         bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 15000);
 
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
-        bootstrap.handler(new ClientSocketChannelInitializer(builder));
+        bootstrap.handler(new ClientSocketChannelInitializer(this));
     }
 
     @Override
@@ -63,7 +63,6 @@ public class ClientNetworkService implements IService {
 //            throw new RuntimeException(e);
 //        }
 //        this.state = ServiceState.RUNNING;
-
         try {
             ChannelFuture f = bootstrap.connect(builder.getIp(), builder.getPort());
             f.addListener(new ClientConnectionListener(this));

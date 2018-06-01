@@ -53,7 +53,7 @@ public class ServerNetworkService implements IService {
         bootstrap.childOption(ChannelOption.SO_SNDBUF, 128 * 1024);
         bootstrap.childOption(ChannelOption.WRITE_BUFFER_WATER_MARK ,new WriteBufferWaterMark(64*1024,1024* 1024));
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
-        bootstrap.childHandler(new ServerSocketChannelInitializer(builder));
+        bootstrap.childHandler(new ServerSocketChannelInitializer(this));
     }
 
     @Override

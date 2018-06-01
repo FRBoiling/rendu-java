@@ -4,9 +4,13 @@ import core.base.common.AbstractSession;
 import core.base.common.AttributeUtil;
 import core.base.common.ISessionManager;
 import core.base.common.SessionKey;
+import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.EventLoop;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -40,6 +44,7 @@ public class NetworkListener implements INetworkEventListener {
     public void onDisconnected(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
         log.info("断开连接：" + channel.toString());
+
         AbstractSession session = AttributeUtil.get(channel, SessionKey.SESSION);
         if ( session == null)
         {

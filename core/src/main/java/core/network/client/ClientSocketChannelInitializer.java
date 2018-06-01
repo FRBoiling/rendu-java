@@ -1,7 +1,6 @@
 package core.network.client;
 
-import core.network.INetworkServiceBuilder;
-import core.network.MessageExecutor;
+import core.network.IService;
 import core.network.codec.*;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
@@ -15,9 +14,9 @@ import io.netty.channel.ChannelPipeline;
  * Time: 10:03
  */
 public class ClientSocketChannelInitializer extends ChannelInitializer {
-    private ClientNetworkServiceBuilder builder;
-    ClientSocketChannelInitializer(INetworkServiceBuilder builder) {
-        this.builder =(ClientNetworkServiceBuilder) builder;
+    private IService service;
+    ClientSocketChannelInitializer(IService service) {
+        this.service = service;
     }
 
     @Override
@@ -27,6 +26,6 @@ public class ClientSocketChannelInitializer extends ChannelInitializer {
         pip.addLast(new PacketDecoder());
         pip.addLast(new PacketWriter());
         pip.addLast(new PacketEncoder());
-        pip.addLast(new MessageExecutor(builder.getConsumer(), builder.getListener()));
+        pip.addLast(new ClientMessageExecutor(service));
     }
 }
