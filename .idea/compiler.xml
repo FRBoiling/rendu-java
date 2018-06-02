@@ -10,6 +10,7 @@
         <module name="core" />
         <module name="gate" />
         <module name="global" />
+        <module name="network" />
         <module name="protocol" />
         <module name="realm" />
         <module name="world" />
