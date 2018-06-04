@@ -18,22 +18,6 @@ import static java.util.concurrent.TimeUnit.SECONDS;
  * Time: 18:00
  */
 
-public class AbstractConnector extends AbstractNettyConnector {
-
-    protected void init() {
-        super.init();
-
-    }
-
-    @Override
-    protected EventLoopGroup initEventLoopGroup(int nthread, ThreadFactory bossFactory) {
-        return null;
-    }
-
-    @Override
-    public Channel connect(int port, String host) {
-        return null;
-    }
-
+public abstract class AbstractConnector extends AbstractNettyConnector {
 
 }

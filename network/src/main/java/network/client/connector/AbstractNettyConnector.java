@@ -51,14 +51,22 @@ public abstract class AbstractNettyConnector implements IConnector {
          * 当然也要看当前的JVM是否只是使用堆外内存，换而言之就是是否能够获取到Unsafe对象#PlatformDependent.directBufferPreferred()
          */
         allocator = new PooledByteBufAllocator(PlatformDependent.directBufferPreferred());
+        bootstrapLock = new Object();
         bootstrap = new Bootstrap().group(ioGroup);
         //ByteBufAllocator 配置
         bootstrap.option(ChannelOption.ALLOCATOR, allocator);
     }
 
-    protected abstract EventLoopGroup initEventLoopGroup(int nthread, ThreadFactory bossFactory);
+    protected abstract EventLoopGroup initEventLoopGroup(int ioGroupCount, ThreadFactory bossFactory);
 
-    public abstract  Channel connect(int port, String host);
+    protected Bootstrap bootstrap() {
+        return bootstrap;
+    }
+
+    protected Object bootstrapLock()
+    {
+        return bootstrapLock;
+    }
 
     @Override
     public void shutdownGracefully() {

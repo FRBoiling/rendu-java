@@ -50,8 +50,8 @@ public abstract class AbstractNettyAcceptor implements IAcceptor {
     public abstract ChannelFuture bind(SocketAddress localAddress);
 
     protected void init(){
-        ThreadFactory acceptorGroupFactory = new DefaultThreadFactory("netty.acceptor.boss");
-        ThreadFactory ioGroupFactory = new DefaultThreadFactory("netty.acceptor.worker");
+        ThreadFactory acceptorGroupFactory = new DefaultThreadFactory("netty.acceptor.acceptor");
+        ThreadFactory ioGroupFactory = new DefaultThreadFactory("netty.acceptor.io");
 
         acceptorGroup = initEventLoopGroup(1, acceptorGroupFactory);
 
@@ -79,6 +79,7 @@ public abstract class AbstractNettyAcceptor implements IAcceptor {
         log.info("netty acceptor server start");
         if (sync) {
             future.channel().closeFuture().sync();
+            log.info("netty acceptor server start");
         }
     }
 

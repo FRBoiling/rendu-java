@@ -1,11 +1,18 @@
-package core.network.codec;
+package network.codec;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import io.netty.handler.codec.CorruptedFrameException;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.List;
 
+/**
+ * 数据包接收器
+ * @author boiling
+ */
 /**
  * **************************************************************************************************
  * Protocol
@@ -21,12 +28,10 @@ import java.util.List;
  * = 4 // 消息 id int 类型
  * + 2 // 消息体body长度, short类型
  */
-/**
- * 数据包接收器
- * @author boiling
- */
-public class PacketReader  extends ByteToMessageDecoder {
+@Slf4j
+public class MessageReader extends ByteToMessageDecoder {
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> out)throws Exception {
+        log.info("PacketDecoder");
         in.markReaderIndex();
         int preIndex = in.readerIndex();
         int length = ReadPacketLength(in);
@@ -48,10 +53,8 @@ public class PacketReader  extends ByteToMessageDecoder {
         if (!buffer.isReadable()) {
             return 0;
         }
-
         buffer.markReaderIndex();
-
-       short tmp = buffer.readShortLE(); //客户端是c#的，用LE的函数
+       short tmp = buffer.readShortLE(); //客户端是c#的，用统一用LE的函数吧
 //        short tmp = buffer.readShort();
         if (tmp >= 0) {
             if (!buffer.isReadable()) {
@@ -63,7 +66,5 @@ public class PacketReader  extends ByteToMessageDecoder {
             buffer.resetReaderIndex();
             return 0;
         }
-
-
     }
 }

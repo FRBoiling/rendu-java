@@ -1,10 +1,17 @@
-package core.network.codec;
+package network.codec;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
+import lombok.extern.slf4j.Slf4j;
 
 import static io.netty.buffer.Unpooled.wrappedBuffer;
+
+/**
+ * 数据包发送器
+ * @author boiling
+ */
 
 /**
  * **************************************************************************************************
@@ -21,13 +28,12 @@ import static io.netty.buffer.Unpooled.wrappedBuffer;
  * = 4 // 消息 id int 类型
  * + 2 // 消息体body长度, short类型
  */
-/**
- * 数据包发送器
- * @author boiling
- */
-public class PacketWriter extends MessageToByteEncoder<Packet> {
+@Slf4j
+@ChannelHandler.Sharable
+public class MessageWriter extends MessageToByteEncoder<Packet> {
     @Override
-    protected void encode(ChannelHandlerContext channelHandlerContext, Packet packet, ByteBuf out) throws Exception {
+    protected void encode(ChannelHandlerContext ctx, Packet packet, ByteBuf out) throws Exception {
+        log.info("MessageWriter");
         int msgLength =packet.getMsgLength();
         int msgId = packet.getMsgId();
         ByteBuf msg = wrappedBuffer(packet.getMsg());
