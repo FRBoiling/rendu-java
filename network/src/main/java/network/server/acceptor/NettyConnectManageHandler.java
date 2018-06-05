@@ -1,6 +1,7 @@
 package network.server.acceptor;
 
 import io.netty.channel.ChannelDuplexHandler;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,7 @@ import java.net.SocketAddress;
  */
 
 @Slf4j
+@ChannelHandler.Sharable
 public class NettyConnectManageHandler extends ChannelDuplexHandler {
     AbstractAcceptor abstractAcceptor;
 
@@ -56,6 +58,29 @@ public class NettyConnectManageHandler extends ChannelDuplexHandler {
 
         if (abstractAcceptor.getChannelEventListener() != null) {
             abstractAcceptor.putNettyEvent(new NettyEvent(NettyEventType.CLOSE, remoteAddress.toString(), ctx.channel()));
+        }
+    }
+
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        final String local = ctx.channel().localAddress().toString();
+        final String remote = ctx.channel().remoteAddress().toString();
+        log.info("NETTY CLIENT PIPELINE: CONNECT  {} => {}", local, remote);
+        super.channelActive(ctx);
+
+        if (abstractAcceptor.getChannelEventListener() != null) {
+            abstractAcceptor.putNettyEvent(new NettyEvent(NettyEventType.CONNECT, remote, ctx.channel()));
+        }
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        final String remoteAddress = ctx.channel().remoteAddress().toString();
+        log.info("NETTY CLIENT PIPELINE: DISCONNECT {}", remoteAddress);
+        super.channelInactive(ctx);
+
+        if (abstractAcceptor.getChannelEventListener() != null) {
+            abstractAcceptor.putNettyEvent(new NettyEvent(NettyEventType.CLOSE, remoteAddress, ctx.channel()));
         }
     }
 

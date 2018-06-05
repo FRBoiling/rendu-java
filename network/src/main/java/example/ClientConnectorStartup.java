@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import network.client.connector.DefaultCommonClientConnector;
 import network.codec.Packet;
 import protocol.gate.global.G2GM;
+import protocol.gate.global.G2GMIdGenerater;
+import protocol.global.gate.GM2GIdGenerater;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,9 +23,13 @@ public class ClientConnectorStartup {
         DefaultCommonClientConnector clientConnector = new DefaultCommonClientConnector();
         Channel channel = clientConnector.connect(20011, "127.0.0.1");
 
-        G2GM.MSG_GM2G_REQ_Register.Builder builder = G2GM.MSG_GM2G_REQ_Register.newBuilder();
-        builder.setId(1);
 
+        G2GMIdGenerater.GenerateId();
+        GM2GIdGenerater.GenerateId();
+        log.info("ClientConnectorStartup ready ...");
+
+        G2GM.MSG_G2GM_REQ_Register.Builder builder = G2GM.MSG_G2GM_REQ_Register.newBuilder();
+        builder.setId(1);
         //获取到channel发送双方规定的message格式的信息
         channel.writeAndFlush(builder.build()).addListener(new ChannelFutureListener() {
 
@@ -33,7 +39,7 @@ public class ClientConnectorStartup {
                 }
             }
         });
-        log.info("ClientConnectorStartup ready ...");
+//        channel.writeAndFlush(builder.build());
 
 //        //防止对象处理发生异常的情况
 //        MessageNonAck msgNonAck = new MessageNonAck(message, channel);

@@ -1,17 +1,17 @@
 package network.server.acceptor;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.timeout.IdleStateHandler;
+import lombok.extern.slf4j.Slf4j;
 import network.codec.*;
 import network.common.NativeSupport;
+import network.common.NettyEvent;
+import network.common.NettyEventType;
 
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
@@ -25,22 +25,16 @@ import java.util.concurrent.TimeUnit;
  * Date: 2018-06-04
  * Time: 13:13
  */
-
+@Slf4j
 public class DefaultCommonServerAcceptor extends AbstractAcceptor {
 
     private final IChannelEventListener channelEventListener;
-    //每隔60s的时间内如果没有接受到任何的read事件的话，则会触发userEventTriggered事件，并指定IdleState的类型为READER_IDLE
-    private final IdleStateHandler idleStateHandler = new IdleStateHandler(60, 0, 0, TimeUnit.SECONDS);
     //acceptor的trigger     //因为我们在client端设置了每隔30s会发送一个心跳包过来，如果60s都没有收到心跳，则说明链路发生了问题
     private final AcceptorIdleStateTrigger idleStateTrigger = new AcceptorIdleStateTrigger();
-    //拆包
-    private final MessageReader reader = new MessageReader();
     //封包
     private final MessageWriter writer = new MessageWriter();
     //message的编码器
     private final MessageEncoder encoder = new MessageEncoder();
-    //message的解码器
-    private final MessageDecoder decoder = new MessageDecoder();
     //Ack的编码器
     private final AcknowledgeEncoder ackEncoder = new AcknowledgeEncoder();
     //连接管理
@@ -83,17 +77,22 @@ public class DefaultCommonServerAcceptor extends AbstractAcceptor {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
                         ch.pipeline().addLast(
-                                idleStateHandler,
+                                //每隔60s的时间内如果没有接受到任何的read事件的话，则会触发userEventTriggered事件，并指定IdleState的类型为READER_IDLE
+                                new IdleStateHandler(60, 0, 0, TimeUnit.SECONDS),
                                 idleStateTrigger,
-                                reader,
-                                decoder,
-                                encoder,
                                 writer,
+                                encoder,
                                 ackEncoder,
+                                //拆包
+                                new MessageReader(),
+                                //message的解码器
+                                new MessageDecoder(),
                                 nettyConnectManageHandler,
-                                messageHandler);
+                                messageHandler
+                             );
                     }
                 });
         return boot.bind(localAddress);
     }
+
 }

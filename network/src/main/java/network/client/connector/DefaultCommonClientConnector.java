@@ -25,8 +25,6 @@ import static java.util.concurrent.TimeUnit.SECONDS;
  */
 
 public class DefaultCommonClientConnector extends AbstractConnector {
-    //每隔30s的时间触发一次userEventTriggered的方法，并且指定IdleState的状态位是WRITER_IDLE
-    private final IdleStateHandler idleStateHandler = new IdleStateHandler(0, 30, 0, TimeUnit.SECONDS);
 
     protected final HashedWheelTimer timer = new HashedWheelTimer(new ThreadFactory() {
         private AtomicInteger threadIndex = new AtomicInteger(0);
@@ -37,14 +35,10 @@ public class DefaultCommonClientConnector extends AbstractConnector {
 
     //实现userEventTriggered方法，并在state是WRITER_IDLE的时候发送一个心跳包到sever端，告诉server端我还活着
     private final ConnectorIdleStateTrigger idleStateTrigger = new ConnectorIdleStateTrigger();
-    //拆包
-    private final MessageReader reader = new MessageReader();
     //封包
     private final MessageWriter writer = new MessageWriter();
     //message的编码器
     private final MessageEncoder encoder = new MessageEncoder();
-    //message的解码器
-    private final MessageDecoder decoder = new MessageDecoder();
     //Ack的编码器
     private final AcknowledgeEncoder ackEncoder = new AcknowledgeEncoder();
 
@@ -79,18 +73,21 @@ public class DefaultCommonClientConnector extends AbstractConnector {
         Bootstrap boot = bootstrap();
         boot.channel(NioSocketChannel.class);
         // 重连watchdog
-        final ConnectionWatchdog watchdog = new ConnectionWatchdog(boot, timer, port,host) {
+        final ConnectorWatchdog watchdog = new ConnectorWatchdog(boot, timer, port,host) {
 
             public ChannelHandler[] handlers() {
                 return new ChannelHandler[] {
-                        //将自己[ConnectionWatchdog]装载到handler链中，当链路断掉之后，会触发ConnectionWatchdog #channelInActive方法
+                        //将自己[ConnectorWatchdog]装载到handler链中，当链路断掉之后，会触发ConnectionWatchdog #channelInActive方法
                         this,
-                        idleStateHandler,
+                        //每隔30s的时间触发一次userEventTriggered的方法，并且指定IdleState的状态位是WRITER_IDLE
+                        new IdleStateHandler(0, 30, 0, TimeUnit.SECONDS),
                         idleStateTrigger,
-                        reader,
-                        decoder,
-                        encoder,
                         writer,
+                        encoder,
+                        //拆包
+                        new MessageReader(),
+                        //message的解码器
+                        new MessageDecoder(),
                         ackEncoder,
                         messageHandler
                 };

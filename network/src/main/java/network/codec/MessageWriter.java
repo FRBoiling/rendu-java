@@ -10,6 +10,7 @@ import static io.netty.buffer.Unpooled.wrappedBuffer;
 
 /**
  * 数据包发送器
+ *
  * @author boiling
  */
 
@@ -33,14 +34,14 @@ import static io.netty.buffer.Unpooled.wrappedBuffer;
 public class MessageWriter extends MessageToByteEncoder<Packet> {
     @Override
     protected void encode(ChannelHandlerContext ctx, Packet packet, ByteBuf out) throws Exception {
-        log.info("MessageWriter");
-        int msgLength =packet.getMsgLength();
+//        log.info("MessageWriter");
         int msgId = packet.getMsgId();
+        int msgLength = packet.getMsgLength();
         ByteBuf msg = wrappedBuffer(packet.getMsg());
 
-        out.ensureWritable(Short.BYTES +Integer.BYTES+ msgLength);
-        out.writeShortLE(msgLength);
-        out.writeIntLE(msgId);
-        out.writeBytes(msg,msg.readerIndex(),msgLength);
+        out.ensureWritable(Short.BYTES + Integer.BYTES + msgLength);
+        out.writeShort(msgLength);
+        out.writeInt(msgId);
+        out.writeBytes(msg, msg.readerIndex(), msgLength);
     }
 }

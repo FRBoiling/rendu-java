@@ -19,7 +19,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 @Slf4j
 @ChannelHandler.Sharable
-public abstract class ConnectionWatchdog extends ChannelInboundHandlerAdapter implements TimerTask, IChannelHandlerHolder {
+public abstract class ConnectorWatchdog extends ChannelInboundHandlerAdapter implements TimerTask, IChannelHandlerHolder {
     private final Bootstrap bootstrap;
     private final Timer timer;
     private final int port;
@@ -28,7 +28,7 @@ public abstract class ConnectionWatchdog extends ChannelInboundHandlerAdapter im
     private volatile boolean reconnect = true;
     private int attempts;
 
-    public ConnectionWatchdog(Bootstrap bootstrap, Timer timer, int port, String host) {
+    public ConnectorWatchdog(Bootstrap bootstrap, Timer timer, int port, String host) {
         this.bootstrap = bootstrap;
         this.timer = timer;
         this.port = port;

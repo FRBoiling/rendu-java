@@ -22,7 +22,7 @@ import java.util.List;
 public class MessageEncoder extends MessageToMessageEncoder<MessageLiteOrBuilder> {
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, MessageLiteOrBuilder msg, List<Object> out) throws Exception {
-        log.info("MessageEncoder");
+//        log.info("MessageEncoder");
         Packet packet = new Packet();
         int msgId = Id.getInst().getMessageId(msg.getClass());
         packet.setMsgId(msgId);

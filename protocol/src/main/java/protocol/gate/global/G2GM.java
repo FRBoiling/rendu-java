@@ -14,8 +14,395 @@ public final class G2GM {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface MSG_GM2G_REQ_RegisterOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.gate.global.MSG_GM2G_REQ_Register)
+  public interface MSG_G2GM_HEARTBEATOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.gate.global.MSG_G2GM_HEARTBEAT)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code protocol.gate.global.MSG_G2GM_HEARTBEAT}
+   */
+  public  static final class MSG_G2GM_HEARTBEAT extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protocol.gate.global.MSG_G2GM_HEARTBEAT)
+      MSG_G2GM_HEARTBEATOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MSG_G2GM_HEARTBEAT.newBuilder() to construct.
+    private MSG_G2GM_HEARTBEAT(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MSG_G2GM_HEARTBEAT() {
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MSG_G2GM_HEARTBEAT(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return G2GM.internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_descriptor;
+    }
+
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return G2GM.internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              MSG_G2GM_HEARTBEAT.class, Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof MSG_G2GM_HEARTBEAT)) {
+        return super.equals(obj);
+      }
+      MSG_G2GM_HEARTBEAT other = (MSG_G2GM_HEARTBEAT) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static MSG_G2GM_HEARTBEAT parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_G2GM_HEARTBEAT parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_G2GM_HEARTBEAT parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_G2GM_HEARTBEAT parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_G2GM_HEARTBEAT parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_G2GM_HEARTBEAT parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_G2GM_HEARTBEAT parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static MSG_G2GM_HEARTBEAT parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MSG_G2GM_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static MSG_G2GM_HEARTBEAT parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MSG_G2GM_HEARTBEAT parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static MSG_G2GM_HEARTBEAT parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(MSG_G2GM_HEARTBEAT prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocol.gate.global.MSG_G2GM_HEARTBEAT}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protocol.gate.global.MSG_G2GM_HEARTBEAT)
+        MSG_G2GM_HEARTBEATOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return G2GM.internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_descriptor;
+      }
+
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return G2GM.internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                MSG_G2GM_HEARTBEAT.class, Builder.class);
+      }
+
+      // Construct using protocol.gate.global.G2GM.MSG_G2GM_HEARTBEAT.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return G2GM.internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_descriptor;
+      }
+
+      public MSG_G2GM_HEARTBEAT getDefaultInstanceForType() {
+        return MSG_G2GM_HEARTBEAT.getDefaultInstance();
+      }
+
+      public MSG_G2GM_HEARTBEAT build() {
+        MSG_G2GM_HEARTBEAT result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public MSG_G2GM_HEARTBEAT buildPartial() {
+        MSG_G2GM_HEARTBEAT result = new MSG_G2GM_HEARTBEAT(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof MSG_G2GM_HEARTBEAT) {
+          return mergeFrom((MSG_G2GM_HEARTBEAT)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(MSG_G2GM_HEARTBEAT other) {
+        if (other == MSG_G2GM_HEARTBEAT.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        MSG_G2GM_HEARTBEAT parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (MSG_G2GM_HEARTBEAT) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protocol.gate.global.MSG_G2GM_HEARTBEAT)
+    }
+
+    // @@protoc_insertion_point(class_scope:protocol.gate.global.MSG_G2GM_HEARTBEAT)
+    private static final MSG_G2GM_HEARTBEAT DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new MSG_G2GM_HEARTBEAT();
+    }
+
+    public static MSG_G2GM_HEARTBEAT getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @Deprecated public static final com.google.protobuf.Parser<MSG_G2GM_HEARTBEAT>
+        PARSER = new com.google.protobuf.AbstractParser<MSG_G2GM_HEARTBEAT>() {
+      public MSG_G2GM_HEARTBEAT parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MSG_G2GM_HEARTBEAT(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MSG_G2GM_HEARTBEAT> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<MSG_G2GM_HEARTBEAT> getParserForType() {
+      return PARSER;
+    }
+
+    public MSG_G2GM_HEARTBEAT getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MSG_G2GM_REQ_RegisterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.gate.global.MSG_G2GM_REQ_Register)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -28,18 +415,18 @@ public final class G2GM {
     int getId();
   }
   /**
-   * Protobuf type {@code protocol.gate.global.MSG_GM2G_REQ_Register}
+   * Protobuf type {@code protocol.gate.global.MSG_G2GM_REQ_Register}
    */
-  public  static final class MSG_GM2G_REQ_Register extends
+  public  static final class MSG_G2GM_REQ_Register extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.gate.global.MSG_GM2G_REQ_Register)
-      MSG_GM2G_REQ_RegisterOrBuilder {
+      // @@protoc_insertion_point(message_implements:protocol.gate.global.MSG_G2GM_REQ_Register)
+      MSG_G2GM_REQ_RegisterOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MSG_GM2G_REQ_Register.newBuilder() to construct.
-    private MSG_GM2G_REQ_Register(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MSG_G2GM_REQ_Register.newBuilder() to construct.
+    private MSG_G2GM_REQ_Register(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MSG_GM2G_REQ_Register() {
+    private MSG_G2GM_REQ_Register() {
       id_ = 0;
     }
 
@@ -48,7 +435,7 @@ public final class G2GM {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MSG_GM2G_REQ_Register(
+    private MSG_G2GM_REQ_Register(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -93,14 +480,14 @@ public final class G2GM {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return G2GM.internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_descriptor;
+      return G2GM.internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return G2GM.internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_fieldAccessorTable
+      return G2GM.internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_GM2G_REQ_Register.class, Builder.class);
+              MSG_G2GM_REQ_Register.class, Builder.class);
     }
 
     private int bitField0_;
@@ -160,10 +547,10 @@ public final class G2GM {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_GM2G_REQ_Register)) {
+      if (!(obj instanceof MSG_G2GM_REQ_Register)) {
         return super.equals(obj);
       }
-      MSG_GM2G_REQ_Register other = (MSG_GM2G_REQ_Register) obj;
+      MSG_G2GM_REQ_Register other = (MSG_G2GM_REQ_Register) obj;
 
       boolean result = true;
       result = result && (hasId() == other.hasId());
@@ -191,69 +578,69 @@ public final class G2GM {
       return hash;
     }
 
-    public static MSG_GM2G_REQ_Register parseFrom(
+    public static MSG_G2GM_REQ_Register parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_GM2G_REQ_Register parseFrom(
+    public static MSG_G2GM_REQ_Register parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_GM2G_REQ_Register parseFrom(
+    public static MSG_G2GM_REQ_Register parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_GM2G_REQ_Register parseFrom(
+    public static MSG_G2GM_REQ_Register parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_GM2G_REQ_Register parseFrom(byte[] data)
+    public static MSG_G2GM_REQ_Register parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_GM2G_REQ_Register parseFrom(
+    public static MSG_G2GM_REQ_Register parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_GM2G_REQ_Register parseFrom(java.io.InputStream input)
+    public static MSG_G2GM_REQ_Register parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_GM2G_REQ_Register parseFrom(
+    public static MSG_G2GM_REQ_Register parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_GM2G_REQ_Register parseDelimitedFrom(java.io.InputStream input)
+    public static MSG_G2GM_REQ_Register parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_GM2G_REQ_Register parseDelimitedFrom(
+    public static MSG_G2GM_REQ_Register parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_GM2G_REQ_Register parseFrom(
+    public static MSG_G2GM_REQ_Register parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_GM2G_REQ_Register parseFrom(
+    public static MSG_G2GM_REQ_Register parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -265,7 +652,7 @@ public final class G2GM {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_GM2G_REQ_Register prototype) {
+    public static Builder newBuilder(MSG_G2GM_REQ_Register prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -280,25 +667,25 @@ public final class G2GM {
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.gate.global.MSG_GM2G_REQ_Register}
+     * Protobuf type {@code protocol.gate.global.MSG_G2GM_REQ_Register}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.gate.global.MSG_GM2G_REQ_Register)
-        MSG_GM2G_REQ_RegisterOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protocol.gate.global.MSG_G2GM_REQ_Register)
+        MSG_G2GM_REQ_RegisterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return G2GM.internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_descriptor;
+        return G2GM.internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return G2GM.internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_fieldAccessorTable
+        return G2GM.internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_GM2G_REQ_Register.class, Builder.class);
+                MSG_G2GM_REQ_Register.class, Builder.class);
       }
 
-      // Construct using protocol.gate.global.G2GM.MSG_GM2G_REQ_Register.newBuilder()
+      // Construct using protocol.gate.global.G2GM.MSG_G2GM_REQ_Register.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -322,23 +709,23 @@ public final class G2GM {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return G2GM.internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_descriptor;
+        return G2GM.internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_descriptor;
       }
 
-      public MSG_GM2G_REQ_Register getDefaultInstanceForType() {
-        return MSG_GM2G_REQ_Register.getDefaultInstance();
+      public MSG_G2GM_REQ_Register getDefaultInstanceForType() {
+        return MSG_G2GM_REQ_Register.getDefaultInstance();
       }
 
-      public MSG_GM2G_REQ_Register build() {
-        MSG_GM2G_REQ_Register result = buildPartial();
+      public MSG_G2GM_REQ_Register build() {
+        MSG_G2GM_REQ_Register result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_GM2G_REQ_Register buildPartial() {
-        MSG_GM2G_REQ_Register result = new MSG_GM2G_REQ_Register(this);
+      public MSG_G2GM_REQ_Register buildPartial() {
+        MSG_G2GM_REQ_Register result = new MSG_G2GM_REQ_Register(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -377,16 +764,16 @@ public final class G2GM {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_GM2G_REQ_Register) {
-          return mergeFrom((MSG_GM2G_REQ_Register)other);
+        if (other instanceof MSG_G2GM_REQ_Register) {
+          return mergeFrom((MSG_G2GM_REQ_Register)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_GM2G_REQ_Register other) {
-        if (other == MSG_GM2G_REQ_Register.getDefaultInstance()) return this;
+      public Builder mergeFrom(MSG_G2GM_REQ_Register other) {
+        if (other == MSG_G2GM_REQ_Register.getDefaultInstance()) return this;
         if (other.hasId()) {
           setId(other.getId());
         }
@@ -406,11 +793,11 @@ public final class G2GM {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_GM2G_REQ_Register parsedMessage = null;
+        MSG_G2GM_REQ_Register parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_GM2G_REQ_Register) e.getUnfinishedMessage();
+          parsedMessage = (MSG_G2GM_REQ_Register) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -463,49 +850,54 @@ public final class G2GM {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.gate.global.MSG_GM2G_REQ_Register)
+      // @@protoc_insertion_point(builder_scope:protocol.gate.global.MSG_G2GM_REQ_Register)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.gate.global.MSG_GM2G_REQ_Register)
-    private static final MSG_GM2G_REQ_Register DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protocol.gate.global.MSG_G2GM_REQ_Register)
+    private static final MSG_G2GM_REQ_Register DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_GM2G_REQ_Register();
+      DEFAULT_INSTANCE = new MSG_G2GM_REQ_Register();
     }
 
-    public static MSG_GM2G_REQ_Register getDefaultInstance() {
+    public static MSG_G2GM_REQ_Register getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_GM2G_REQ_Register>
-        PARSER = new com.google.protobuf.AbstractParser<MSG_GM2G_REQ_Register>() {
-      public MSG_GM2G_REQ_Register parsePartialFrom(
+    @Deprecated public static final com.google.protobuf.Parser<MSG_G2GM_REQ_Register>
+        PARSER = new com.google.protobuf.AbstractParser<MSG_G2GM_REQ_Register>() {
+      public MSG_G2GM_REQ_Register parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MSG_GM2G_REQ_Register(input, extensionRegistry);
+        return new MSG_G2GM_REQ_Register(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MSG_GM2G_REQ_Register> parser() {
+    public static com.google.protobuf.Parser<MSG_G2GM_REQ_Register> parser() {
       return PARSER;
     }
 
     @Override
-    public com.google.protobuf.Parser<MSG_GM2G_REQ_Register> getParserForType() {
+    public com.google.protobuf.Parser<MSG_G2GM_REQ_Register> getParserForType() {
       return PARSER;
     }
 
-    public MSG_GM2G_REQ_Register getDefaultInstanceForType() {
+    public MSG_G2GM_REQ_Register getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_descriptor;
+    internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_fieldAccessorTable;
+      internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -515,8 +907,9 @@ public final class G2GM {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\nG2GM.proto\022\024protocol.gate.global\"#\n\025MS" +
-      "G_GM2G_REQ_Register\022\n\n\002id\030\001 \002(\r"
+      "\n\nG2GM.proto\022\024protocol.gate.global\"\024\n\022MS" +
+      "G_G2GM_HEARTBEAT\"#\n\025MSG_G2GM_REQ_Registe" +
+      "r\022\n\n\002id\030\001 \002(\r"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -530,11 +923,17 @@ public final class G2GM {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_descriptor =
+    internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_fieldAccessorTable = new
+    internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protocol_gate_global_MSG_GM2G_REQ_Register_descriptor,
+        internal_static_protocol_gate_global_MSG_G2GM_HEARTBEAT_descriptor,
+        new String[] { });
+    internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_descriptor,
         new String[] { "Id", });
   }
 

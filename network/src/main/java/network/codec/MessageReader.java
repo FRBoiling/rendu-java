@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 
 /**
- * 数据包接收器
+ * 数据包接收器(半包拆包)
  * @author boiling
  */
 /**
@@ -31,7 +31,7 @@ import java.util.List;
 @Slf4j
 public class MessageReader extends ByteToMessageDecoder {
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> out)throws Exception {
-        log.info("PacketDecoder");
+//        log.info("MessageReader");
         in.markReaderIndex();
         int preIndex = in.readerIndex();
         int length = ReadPacketLength(in);
@@ -54,8 +54,8 @@ public class MessageReader extends ByteToMessageDecoder {
             return 0;
         }
         buffer.markReaderIndex();
-       short tmp = buffer.readShortLE(); //客户端是c#的，用统一用LE的函数吧
-//        short tmp = buffer.readShort();
+//       short tmp = buffer.readShortLE(); //客户端是c#的，用统一用LE的函数吧
+        short tmp = buffer.readShort();
         if (tmp >= 0) {
             if (!buffer.isReadable()) {
                 buffer.resetReaderIndex();
