@@ -13,7 +13,6 @@ import java.util.List;
  */
 @Slf4j
 public class PacketDecoder extends ByteToMessageDecoder {
-    private static int count = 0;
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> out) throws Exception {
         int length = in.readableBytes();
         int msg_id = in.readIntLE();
@@ -24,6 +23,5 @@ public class PacketDecoder extends ByteToMessageDecoder {
         packet.setMsgId(msg_id);
         packet.setMsg(msg);
         out.add(packet);
-        log.info("received message total count {}", ++count);
     }
 }

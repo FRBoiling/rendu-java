@@ -50,16 +50,14 @@ public abstract class ClientWatchdog extends ChannelInboundHandlerAdapter implem
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        boolean doReconnect = reconnect;
         if (reconnect) {
-            if (attempts < 3) {
+            if (attempts < 12) { //尝试连接12次
                 attempts++;
+                long timeout = 2 << attempts;
+                timer.newTimeout(this, timeout, MILLISECONDS);
+                log.warn("Disconnect on {}, host {}, port: {}, reconnect: {} attempts:{}.", ctx.channel(), port, host, reconnect, attempts);
             }
-            long timeout = 2 << attempts;
-            timer.newTimeout(this, timeout, MILLISECONDS);
         }
-
-        log.warn("Disconnect on {}, host {}, port: {}, reconnect: {} attemppts:{}.", ctx.channel(), port, host, doReconnect, attempts);
         ctx.fireChannelInactive();
     }
 
@@ -91,6 +89,8 @@ public abstract class ClientWatchdog extends ChannelInboundHandlerAdapter implem
                 log.warn("Reconnect with {}:{}, {}.", host, port, succeed ? "succeed" : "failed");
                 if (!succeed) {
                     f.channel().pipeline().fireChannelInactive();
+                }else{
+                    System.out.println("重连成功");
                 }
             }
         });
