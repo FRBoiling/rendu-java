@@ -5,6 +5,7 @@ import core.network.INetworkConsumer;
 import core.network.INetworkEventListener;
 import core.network.IService;
 import core.network.codec.Packet;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -19,15 +20,14 @@ import java.util.concurrent.TimeUnit;
  * Time: 11:21
  */
 @Slf4j
+@ChannelHandler.Sharable
 public class ClientMessageExecutor extends SimpleChannelInboundHandler<Packet> {
     private INetworkConsumer consumer;
     private INetworkEventListener listener;
-    private ClientNetworkService service;
 
-    public ClientMessageExecutor(IService service) {
-        this.service = (ClientNetworkService)service;
-        this.consumer = this.service.getBuilder().getConsumer();
-        this.listener = this.service.getBuilder().getListener();
+    public ClientMessageExecutor(INetworkConsumer consumer,INetworkEventListener listener) {
+        this.consumer = consumer;
+        this.listener = listener;
     }
 
     @Override
@@ -48,13 +48,5 @@ public class ClientMessageExecutor extends SimpleChannelInboundHandler<Packet> {
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         this.listener.onDisconnected(ctx);
-        ctx.channel().closeFuture().sync();
-        ctx.channel().eventLoop().schedule(new Runnable() {
-            @Override
-            public void run() {
-                log.info("channelInactive reconnect2");
-                service.start();
-            }
-        }, 1L, TimeUnit.SECONDS);
     }
 }

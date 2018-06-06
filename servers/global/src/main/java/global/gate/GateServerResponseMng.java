@@ -28,6 +28,6 @@ public class GateServerResponseMng implements IMessageAndHandler {
 
     @Override
     public void register() {
-        register(Id.getInst().getMessageId(G2GM.MSG_GM2G_REQ_Register.class), Response_Register.class);
+        register(Id.getInst().getMessageId(G2GM.MSG_G2GM_REQ_Register.class), Response_Register.class);
     }
 }

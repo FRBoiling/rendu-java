@@ -13,7 +13,7 @@ import lombok.Data;
  * Time: 10:03
  */
 @Data
-public class ClientNetworkServiceBuilder implements INetworkServiceBuilder {
+public class ClientNetworkServiceBuilder implements INetworkServiceBuilder,IClient {
     /**
      * 工作线程池线程数量
      */
@@ -37,7 +37,6 @@ public class ClientNetworkServiceBuilder implements INetworkServiceBuilder {
      */
     private int port;
 
-
     /**
      * 连接IP
      */
@@ -46,5 +45,16 @@ public class ClientNetworkServiceBuilder implements INetworkServiceBuilder {
     @Override
     public IService createService() {
         return new ClientNetworkService(this);
+    }
+
+    @Override
+    public void connect(String host,int port) {
+        this.port = port;
+        this.ip = host;
+    }
+
+    @Override
+    public void shutdownGracefully() {
+
     }
 }

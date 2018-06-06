@@ -1,6 +1,7 @@
 package core.network.server;
 
 import core.network.*;
+import core.network.client.IClient;
 import lombok.Data;
 
 /**

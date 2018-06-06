@@ -1,20 +1,21 @@
 package core.network.client;
 
+import core.base.exception.ConnectFailedException;
 import core.network.INetworkServiceBuilder;
 import core.network.IService;
 import core.network.ServiceState;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
-import io.netty.channel.WriteBufferWaterMark;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.util.HashedWheelTimer;
 import io.netty.util.concurrent.Future;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Copyright © 2018 四月
@@ -34,13 +35,17 @@ public class ClientNetworkService implements IService {
     private ServiceState state;
     private EventLoopGroup workerGroup;
     private Bootstrap bootstrap;
+    private Object bootstrapLock;
     private ClientNetworkServiceBuilder builder;
+    private ClientSocketChannelInitializer channelInitializer;
 
     ClientNetworkService(final INetworkServiceBuilder serviceBuilder) {
         builder = (ClientNetworkServiceBuilder) serviceBuilder;
         int workerLoopGroupCount = builder.getWorkerLoopGroupCount();
         workerGroup = new NioEventLoopGroup(workerLoopGroupCount);
+        channelInitializer = new ClientSocketChannelInitializer(builder.getConsumer(),builder.getListener());
 
+        bootstrapLock =new Object();
         bootstrap = new Bootstrap();
         bootstrap.group(workerGroup);
         bootstrap.channel(NioSocketChannel.class);
@@ -51,24 +56,23 @@ public class ClientNetworkService implements IService {
         bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 15000);
 
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
-        bootstrap.handler(new ClientSocketChannelInitializer(this));
     }
 
     @Override
     public void start(){
-//        try {
-//            ChannelFuture f = bootstrap.connect(builder.getIp(), builder.getPort());
-//            f.sync();
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//        this.state = ServiceState.RUNNING;
         try {
-            ChannelFuture f = bootstrap.connect(builder.getIp(), builder.getPort());
-            f.addListener(new ClientConnectionListener(this));
+            channelInitializer.getWatchdog().init(bootstrap,builder.getIp(), builder.getPort());
+            channelInitializer.getWatchdog().setReconnect(true);
+            ChannelFuture f;
+            synchronized (bootstrapLock) {
+                bootstrap.handler(channelInitializer);
+                f = bootstrap.connect(builder.getIp(), builder.getPort());
+                f.addListener(new ClientConnectionListener(this));
+            }
             f.sync();
         } catch (Exception e) {
 //            throw new RuntimeException(e);
+            throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails", e);
         }
     }
 
@@ -79,9 +83,9 @@ public class ClientNetworkService implements IService {
         try {
             wf.get(5000, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
-            log.info("Netty客户端关闭失败", e);
+            log.error("Netty client stop failed ", e);
         }
-        log.info("Netty client stop");
+        log.info("Netty client stop!");
     }
 
     @Override

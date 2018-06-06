@@ -44,6 +44,7 @@ public abstract class AbstractSession {
             log.error("[没有找到会话注册信息]");
         }
     }
+
 //
 //    public Channel getChannel() {
 //        return channel;
@@ -99,4 +100,6 @@ public abstract class AbstractSession {
     public void sendMessage(Object msg) {
         channel.writeAndFlush(msg);
     }
+
+    public abstract void sendHeartBeat();
 }

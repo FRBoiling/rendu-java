@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Data
-public class ServerNetworkService implements IService {
+public class ServerNetworkService implements IService ,IServer{
     private ServiceState state;
     private EventLoopGroup acceptorGroup;
     private EventLoopGroup IOGroup;
@@ -58,15 +58,6 @@ public class ServerNetworkService implements IService {
 
     @Override
     public void start() {
-//        try {
-//            ChannelFuture f = bootstrap.bind(port);
-//            f.sync();
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//        this.state = ServiceState.RUNNING;
-//        log.info("Server on port:{} is start", port);
-
         try {
             ChannelFuture f = bootstrap.bind(port);
             f.addListener(new ServerBindListener(this));
@@ -105,4 +96,13 @@ public class ServerNetworkService implements IService {
         return state == ServiceState.STOPPED;
     }
 
+    @Override
+    public void bind(int port) {
+
+    }
+
+    @Override
+    public void shutdownGracefully() {
+
+    }
 }

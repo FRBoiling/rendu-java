@@ -1,10 +1,15 @@
 package core.network.server;
 
+import core.network.IChannelHandlerHolder;
 import core.network.IService;
 import core.network.codec.*;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
+import io.netty.handler.timeout.IdleStateHandler;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Copyright © 2018 四月
@@ -17,27 +22,51 @@ import io.netty.channel.ChannelPipeline;
  * @date: 2018/4/22 0022 15:28
  * @version: V1.0
  */
-public class ServerSocketChannelInitializer extends ChannelInitializer {
+public class ServerSocketChannelInitializer extends ChannelInitializer implements IChannelHandlerHolder {
     private IService service;
+    //acceptor的trigger     //因为我们在client端设置了每隔30s会发送一个心跳包过来，如果60s都没有收到心跳，则说明链路发生了问题
+    private final ServerIdleStateTrigger idleStateTrigger = new ServerIdleStateTrigger();
+    //封包
+    private final PacketWriter writer = new PacketWriter();
+    //message的编码器
+    private final PacketEncoder encoder = new PacketEncoder();
+    //
+    private ServerMessageExecutor messageExecutor;
+    //
+    ChannelHandler[] handlers;
+
+//    //Ack的编码器
+//    private final AcknowledgeEncoder ackEncoder = new AcknowledgeEncoder();
+//    //连接管理
+//    private final NettyConnectManageHandler nettyConnectManageHandler = new NettyConnectManageHandler(this);
+//    //SimpleChannelInboundHandler类型的handler只处理@{link Message}类型的数据
+//    private final AcceptorMessageHandler messageHandler = new AcceptorMessageHandler();
 
     ServerSocketChannelInitializer(IService service) {
         this.service = service;
+        messageExecutor = new ServerMessageExecutor(service);
     }
 
     @Override
     protected void initChannel(Channel channel) throws Exception {
         ChannelPipeline pip = channel.pipeline();
-        int maxLength = 1048576;
-        int lengthFieldLength = 4;
-        int ignoreLength = -4;
-        int offset = 0;
-        pip.addLast(new PacketReader());
-        pip.addLast(new PacketDecoder());
-        pip.addLast(new PacketWriter());
-        pip.addLast(new PacketEncoder());
-        pip.addLast(new ServerMessageExecutor(service));
-//        for (ChannelHandler handler : builder.getExtraHandlers()) {
-//            pip.addLast(handler);
-//        }
+        handlers = new ChannelHandler[]{
+                //每隔60s的时间内如果没有接受到任何的read事件的话，则会触发userEventTriggered事件，并指定IdleState的类型为READER_IDLE
+                new IdleStateHandler(60, 0, 0, TimeUnit.SECONDS),
+                idleStateTrigger,
+                writer,
+                encoder,
+                //拆包
+                new PacketReader(),
+                //message的解码器
+                new PacketDecoder(),
+                messageExecutor
+        };
+        pip.addLast(handlers);
+    }
+
+    @Override
+    public ChannelHandler[] handlers() {
+        return handlers;
     }
 }

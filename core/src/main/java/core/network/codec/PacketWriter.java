@@ -1,6 +1,7 @@
 package core.network.codec;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 
@@ -25,6 +26,7 @@ import static io.netty.buffer.Unpooled.wrappedBuffer;
  * 数据包发送器
  * @author boiling
  */
+@ChannelHandler.Sharable
 public class PacketWriter extends MessageToByteEncoder<Packet> {
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, Packet packet, ByteBuf out) throws Exception {

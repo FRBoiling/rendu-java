@@ -1,13 +1,9 @@
 package gate.global;
 
 import core.base.common.AbstractSession;
-import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
-import io.netty.channel.EventLoop;
 import lombok.extern.slf4j.Slf4j;
 import protocol.gate.global.G2GM;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,17 +19,24 @@ public class GlobalServerSession extends AbstractSession {
     }
     public void OnConnected() {
         super.OnConnected();
-        SendRegister();
+        sendRegister();
     }
     public void OnDisConnected(){
         super.OnDisConnected();
-        getChannel().closeFuture();
     }
-    public void SendRegister()
+
+    @Override
+    public void sendHeartBeat() {
+        G2GM.MSG_G2GM_HEARTBEAT.Builder builder = G2GM.MSG_G2GM_HEARTBEAT.newBuilder();
+        sendMessage(builder.build());
+        log.info("sendHeartBeat----------{}",1);
+    }
+
+    public void sendRegister()
     {
-        G2GM.MSG_GM2G_REQ_Register.Builder builder = G2GM.MSG_GM2G_REQ_Register.newBuilder();
+        G2GM.MSG_G2GM_REQ_Register.Builder builder = G2GM.MSG_G2GM_REQ_Register.newBuilder();
         builder.setId(1);
         sendMessage(builder.build());
-        log.info("SendRegister----------{}",1);
+        log.info("sendRegister----------{}",1);
     }
 }

@@ -20,4 +20,9 @@ public class GateServerSession extends AbstractSession {
     public void OnConnected() {
 
     }
+
+    @Override
+    public void sendHeartBeat() {
+
+    }
 }

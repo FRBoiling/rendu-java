@@ -5,6 +5,7 @@ import core.network.INetworkEventListener;
 import core.network.IService;
 import core.network.client.ClientNetworkService;
 import core.network.codec.Packet;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
  * Time: 11:37
  */
 @Slf4j
+@ChannelHandler.Sharable
 public class ServerMessageExecutor extends SimpleChannelInboundHandler<Packet> {
     private INetworkConsumer consumer;
     private INetworkEventListener listener;

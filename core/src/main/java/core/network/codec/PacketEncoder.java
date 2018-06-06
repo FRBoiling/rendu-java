@@ -2,6 +2,7 @@ package core.network.codec;
 
 import com.google.protobuf.MessageLite;
 import com.google.protobuf.MessageLiteOrBuilder;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
 import protocol.msgId.Id;
@@ -12,6 +13,7 @@ import java.util.List;
  * 数据包编码器
  * @author boiling
  */
+@ChannelHandler.Sharable
 public class PacketEncoder extends MessageToMessageEncoder<MessageLiteOrBuilder> {
     protected void encode(ChannelHandlerContext channelHandlerContext, MessageLiteOrBuilder msg, List<Object> out) throws Exception {
        Packet packet = new Packet();
