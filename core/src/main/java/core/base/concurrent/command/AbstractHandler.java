@@ -56,7 +56,7 @@ public class AbstractHandler <T> implements IQueueDriverCommand {
 
     @Override
     public void doAction() {
-        log.debug ("doAction");
+        log.info ("doAction");
         try {
             long time = System.currentTimeMillis();
 //            if (filter != null && !filter.before(this)) {

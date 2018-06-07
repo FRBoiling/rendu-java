@@ -1,7 +1,6 @@
 package core.network.server;
 
 import core.network.*;
-import core.network.client.IClient;
 import lombok.Data;
 
 /**
@@ -16,7 +15,7 @@ import lombok.Data;
  * @version: V1.0
  */
 @Data
-public class ServerNetworkServiceBuilder implements INetworkServiceBuilder {
+public class ServerNetworkServiceBuilder implements INetworkServiceBuilder,ISocketServer {
     /**
      * 网络线程池线程数量
      */
@@ -44,10 +43,20 @@ public class ServerNetworkServiceBuilder implements INetworkServiceBuilder {
     /**
      * 消息池
      */
-    private IMessageAndHandler messageAndHandler;
+    private IResponseHandlerManager responseHandlerManager;
 
     @Override
     public IService createService() {
         return new ServerNetworkService(this);
+    }
+
+    @Override
+    public void bind(int port) {
+        this.port =port;
+    }
+
+    @Override
+    public void shutdownGracefully() {
+
     }
 }

@@ -1,6 +1,6 @@
 package servers.server.processor;
 
-import core.base.IProcessor;
+import core.base.common.IProcessor;
 import core.base.concurrent.command.IQueueDriverCommand;
 
 import java.util.concurrent.ExecutorService;

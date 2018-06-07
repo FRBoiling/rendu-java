@@ -1,8 +1,8 @@
 package servers.server.gameserver;
 
 
-import core.base.IProcessor;
-import core.network.IMessageAndHandler;
+import core.base.common.IProcessor;
+import core.network.IResponseHandlerManager;
 import core.network.INetworkConsumer;
 import core.network.codec.Packet;
 import io.netty.channel.Channel;
@@ -31,9 +31,9 @@ class GameServerMessageRouter implements INetworkConsumer {
 
     private Map<Integer, IProcessor> processors = new HashMap<>(10);
 
-    private IMessageAndHandler msgPool;
+    private IResponseHandlerManager msgPool;
 
-    public GameServerMessageRouter(IMessageAndHandler msgPool) {
+    public GameServerMessageRouter(IResponseHandlerManager msgPool) {
         this.msgPool = msgPool;
     }
 
@@ -72,7 +72,7 @@ class GameServerMessageRouter implements INetworkConsumer {
 //        processor.process(handler); //这里执行
 
         //frTODO:单逻辑线程的话，这里要做的是将消息加入到消息队列
-        log.debug("msg go to exec");
+        log.info("msg go to exec");
     }
 
     public IProcessor getProcessor(int queueId) {

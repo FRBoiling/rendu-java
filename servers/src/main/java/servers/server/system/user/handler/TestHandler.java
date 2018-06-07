@@ -1,6 +1,6 @@
 package servers.server.system.user.handler;
 
-import core.base.common.Session;
+import core.base.common.AbstractSession;
 import core.base.concurrent.command.AbstractHandler;
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 public class TestHandler extends AbstractHandler<byte[]> {
     @Override
     public void doAction() {
-        Session session = (Session) this.session;
+        AbstractSession session = (AbstractSession) this.session;
         log.info("TestHandler");
         //UserManager.getInstance().login(session, message.getLoginName());
     }

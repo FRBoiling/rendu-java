@@ -22,11 +22,11 @@ public class Client {
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
 
-        ClientMessageAndHandler pool = new ClientMessageAndHandler();
+        ClientMessageAndHandlerManager pool = new ClientMessageAndHandlerManager();
 
         router = new ClientMessageRouter(pool);
         ClientNetworkServiceBuilder builder = new ClientNetworkServiceBuilder();
-        builder.setMessageAndHandler(pool);
+        builder.setResponseHandlerManager(pool);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setIp("127.0.0.1");
         builder.setPort(8201);

@@ -11,24 +11,9 @@ import java.util.HashMap;
  * Date: 2018-04-22
  * Time: 12:13
  */
-public interface IMessageAndHandler {
-//    /**
-//     * 获取消息
-//     *
-//     * @param messageId
-//     * @return
-//     */
-//    AbstractMessage getMessage(int messageId);
-//
-//    /**
-//     * 获取消息id
-//     * @param message
-//     * @return
-//     */
-//    int getMessageId(AbstractMessage message);
+public interface IResponseHandlerManager {
 
     HashMap<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>(10);
-
     /**
      * 获取handler
      * @param messageId

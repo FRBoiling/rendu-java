@@ -1,6 +1,6 @@
 package global.gate;
 
-import core.base.common.IServer;
+import core.base.serverframe.IServer;
 import core.network.NetworkListener;
 import core.network.server.ServerNetworkService;
 import core.network.server.ServerNetworkServiceBuilder;
@@ -27,7 +27,7 @@ public class GateServer implements IServer {
         GateServerSessionMng sessionMng = new GateServerSessionMng();
 
         ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
-        builder.setMessageAndHandler(responseMng);
+        builder.setResponseHandlerManager(responseMng);
         builder.setConsumer(msgRouter);
         builder.setAcceptorGroupCount(bossLoopGroupCount);
         builder.setIOGroupCount(workerLoopGroupCount);

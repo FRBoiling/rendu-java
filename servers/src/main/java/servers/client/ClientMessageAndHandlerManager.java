@@ -1,18 +1,23 @@
-package servers.server.gameserver;
+package servers.client;
 
 import core.base.concurrent.command.AbstractHandler;
-import core.network.IMessageAndHandler;
+import core.network.IResponseHandlerManager;
 import lombok.extern.slf4j.Slf4j;
-
 
 import java.util.HashMap;
 
+/**
+ * Created with IntelliJ IDEA.
+ * Description:
+ * User: FReedom
+ * Date: 2018-04-24
+ * Time: 10:53
+ */
 @Slf4j
-public class GameServerMessageAndHandler implements IMessageAndHandler {
+public class ClientMessageAndHandlerManager implements IResponseHandlerManager {
     private final HashMap<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>(10);
 
-    public GameServerMessageAndHandler() {
-//        S2CIdGenerater.GenerateId();
+    public ClientMessageAndHandlerManager() {
         register();
     }
 
@@ -35,6 +40,4 @@ public class GameServerMessageAndHandler implements IMessageAndHandler {
         }
         return null;
     }
-
-
 }

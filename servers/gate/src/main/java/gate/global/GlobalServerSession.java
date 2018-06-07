@@ -29,7 +29,6 @@ public class GlobalServerSession extends AbstractSession {
     public void sendHeartBeat() {
         G2GM.MSG_G2GM_HEARTBEAT.Builder builder = G2GM.MSG_G2GM_HEARTBEAT.newBuilder();
         sendMessage(builder.build());
-        log.info("sendHeartBeat----------{}",1);
     }
 
     public void sendRegister()
@@ -37,6 +36,5 @@ public class GlobalServerSession extends AbstractSession {
         G2GM.MSG_G2GM_REQ_Register.Builder builder = G2GM.MSG_G2GM_REQ_Register.newBuilder();
         builder.setId(1);
         sendMessage(builder.build());
-        log.info("sendRegister----------{}",1);
     }
 }

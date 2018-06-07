@@ -28,13 +28,13 @@ public class GameServer {
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
 
-        GameServerMessageAndHandler pool = new GameServerMessageAndHandler();
+        GameServerMessageAndHandlerManager pool = new GameServerMessageAndHandlerManager();
 
         router = new GameServerMessageRouter(pool);
         router.initRouter();
 
         ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
-        builder.setMessageAndHandler(pool);
+        builder.setResponseHandlerManager(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(8201);

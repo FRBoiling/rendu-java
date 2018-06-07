@@ -1,6 +1,6 @@
 package servers.server.system.user;
 
-import core.base.common.Session;
+import core.base.common.AbstractSession;
 import lombok.extern.slf4j.Slf4j;
 import servers.server.basedata.User;
 
@@ -27,7 +27,7 @@ public class UserManager {
      *
      * @param session session
      */
-    public void login(Session session, String loginName) {
+    public void login(AbstractSession session, String loginName) {
         if (loginName.isEmpty()) {
             return;
         }
@@ -78,7 +78,7 @@ public class UserManager {
     /**
      * 退出
      */
-    public void logout(Session session) {
+    public void logout(AbstractSession session) {
 //        DataCenter.updateData(session.getUser().getId(), DataType.USER, true);
 //        EventUtil.fireEvent(EventType.LOGOUT, session.getUser());
     }

@@ -1,4 +1,6 @@
-package core.network.server;
+package core.network.client;
+
+import io.netty.channel.Channel;
 
 /**
  * Created with IntelliJ IDEA.
@@ -8,7 +10,7 @@ package core.network.server;
  * Time: 17:49
  */
 
-public interface IServer {
-    void bind(int port);
+public interface ISocketClient {
+    void connect(String host,int port);
     void shutdownGracefully();
 }

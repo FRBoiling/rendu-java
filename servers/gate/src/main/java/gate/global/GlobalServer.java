@@ -1,6 +1,7 @@
 package gate.global;
 
-import core.base.common.IServer;
+import common.constant.SystemConst;
+import core.base.serverframe.IServer;
 import core.network.NetworkListener;
 import core.network.client.ClientNetworkService;
 import core.network.client.ClientNetworkServiceBuilder;
@@ -19,15 +20,16 @@ public class GlobalServer implements IServer {
     private boolean state;
 
     public GlobalServer() throws Exception {
-        int IOGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
-                : Runtime.getRuntime().availableProcessors();
+//        int IOGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
+//                : Runtime.getRuntime().availableProcessors();
+        int IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
 
         GlobalServerResponseMng responseMng = new GlobalServerResponseMng();
         GlobalServerMsgRouter msgRouter = new GlobalServerMsgRouter();
         GlobalServerSessionMng sessionMng = new GlobalServerSessionMng();
 
         ClientNetworkServiceBuilder builder = new ClientNetworkServiceBuilder();
-        builder.setMessageAndHandler(responseMng);
+        builder.setResponseHandlerManager(responseMng);
         builder.setConsumer(msgRouter);
         builder.setWorkerLoopGroupCount(IOGroupCount);
         builder.setIp("127.0.0.1");

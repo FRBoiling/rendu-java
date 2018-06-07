@@ -1,4 +1,4 @@
-package core.base.common;
+package core.base.serverframe;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,7 +23,7 @@ public interface IServer {
     /**
      * update
      */
-    void  update();
+    void update();
 
     /**
      * 获取当前服务的状态

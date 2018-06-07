@@ -1,4 +1,4 @@
-package core.base;
+package core.base.common;
 
 
 import core.base.concurrent.command.IQueueDriverCommand;

@@ -1,12 +1,8 @@
 package servers.client;
 
 
-import core.base.IProcessor;
-import core.base.common.AttributeUtil;
-import core.base.common.Session;
-import core.base.common.SessionKey;
-import core.base.concurrent.command.AbstractHandler;
-import core.network.IMessageAndHandler;
+import core.base.common.IProcessor;
+import core.network.IResponseHandlerManager;
 import core.network.INetworkConsumer;
 import core.network.codec.Packet;
 import io.netty.channel.Channel;
@@ -29,9 +25,9 @@ import java.util.Map;
 public class ClientMessageRouter implements INetworkConsumer {
     private Map<Integer, IProcessor> processors = new HashMap<>(10);
 
-    private IMessageAndHandler msgPool;
+    private IResponseHandlerManager msgPool;
 
-    public ClientMessageRouter(IMessageAndHandler msgPool) {
+    public ClientMessageRouter(IResponseHandlerManager msgPool) {
         this.msgPool = msgPool;
     }
 
@@ -47,21 +43,21 @@ public class ClientMessageRouter implements INetworkConsumer {
     @SuppressWarnings("unchecked")
     @Override
     public void consume(Packet packet, Channel channel) {
-        Integer queueId = GameConst.QueueId.LOGIC;
-        IProcessor processor = processors.get(queueId);
-        if (processor == null) {
-            log.error("找不到可用的消息处理器[{}]", queueId);
-            return;
-        }
-        log.info("收到消息:0x{}", Integer.toHexString(packet.getMsgId()));
-        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
-
-        if (session == null) {
-            return;
-        }
-        AbstractHandler handler = msgPool.getHandler(packet.getMsgId());
-        handler.setMessage(packet.msg);
-        processor.process(handler);
+//        Integer queueId = GameConst.QueueId.LOGIC;
+//        IProcessor processor = processors.get(queueId);
+//        if (processor == null) {
+//            log.error("找不到可用的消息处理器[{}]", queueId);
+//            return;
+//        }
+//        log.info("收到消息:0x{}", Integer.toHexString(packet.getMsgId()));
+//        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
+//
+//        if (session == null) {
+//            return;
+//        }
+//        AbstractHandler handler = msgPool.getHandler(packet.getMsgId());
+//        handler.setMessage(packet.msg);
+//        processor.process(handler);
     }
 
     public IProcessor getProcessor(int queueId) {

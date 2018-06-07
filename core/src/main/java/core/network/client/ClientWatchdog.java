@@ -86,11 +86,12 @@ public abstract class ClientWatchdog extends ChannelInboundHandlerAdapter implem
         future.addListener(new ChannelFutureListener() {
             public void operationComplete(ChannelFuture f) throws Exception {
                 boolean succeed = f.isSuccess();
-                log.warn("Reconnect with {}:{}, {}.", host, port, succeed ? "succeed" : "failed");
+//                log.warn("Reconnect with {}:{}, {}.", host, port, succeed ? "succeed" : "failed");
                 if (!succeed) {
                     f.channel().pipeline().fireChannelInactive();
                 }else{
-                    System.out.println("重连成功");
+//                    System.out.println("重连成功");
+                    log.info("重连成功");
                 }
             }
         });

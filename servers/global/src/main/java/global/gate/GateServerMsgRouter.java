@@ -1,5 +1,6 @@
 package global.gate;
 import core.network.INetworkConsumer;
+import core.network.IResponseHandlerManager;
 import core.network.codec.Packet;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,11 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class GateServerMsgRouter implements INetworkConsumer {
+//    private IResponseHandlerManager responseHandlerManager;
+//
+//    public GateServerMsgRouter(IResponseHandlerManager responseHandlerManager) {
+//        this.responseHandlerManager = responseHandlerManager;
+//    }
     @Override
     public void consume(Packet packet, Channel channel) {
         //TODO:boil 单逻辑线程的话，这里要做的是将消息加入到消息队列

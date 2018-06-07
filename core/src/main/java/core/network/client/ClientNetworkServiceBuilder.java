@@ -1,6 +1,6 @@
 package core.network.client;
 
-import core.network.IMessageAndHandler;
+import core.network.IResponseHandlerManager;
 import core.network.*;
 import core.network.INetworkEventListener;
 import lombok.Data;
@@ -13,7 +13,7 @@ import lombok.Data;
  * Time: 10:03
  */
 @Data
-public class ClientNetworkServiceBuilder implements INetworkServiceBuilder,IClient {
+public class ClientNetworkServiceBuilder implements INetworkServiceBuilder,ISocketClient {
     /**
      * 工作线程池线程数量
      */
@@ -28,9 +28,9 @@ public class ClientNetworkServiceBuilder implements INetworkServiceBuilder,IClie
      */
     private INetworkEventListener listener;
     /**
-     * 消息池
+     * 响应管理器
      */
-    private IMessageAndHandler messageAndHandler;
+    private IResponseHandlerManager responseHandlerManager;
 
     /**
      * 连接端口
