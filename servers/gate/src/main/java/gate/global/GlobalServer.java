@@ -1,6 +1,8 @@
 package gate.global;
 
 import common.constant.SystemConst;
+import core.base.concurrent.queue.QueueDriver;
+import core.base.concurrent.queue.QueueExecutor;
 import core.base.serverframe.IServer;
 import core.network.NetworkListener;
 import core.network.client.ClientNetworkService;
@@ -23,10 +25,11 @@ public class GlobalServer implements IServer {
 //        int IOGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
 //                : Runtime.getRuntime().availableProcessors();
         int IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
-
+        QueueExecutor queueExecutor = new QueueExecutor("queue.executor",1,IOGroupCount);
+        QueueDriver queueDriver = new QueueDriver(queueExecutor,"queue.driver",1,1024);
         GlobalServerResponseMng responseMng = new GlobalServerResponseMng();
-        GlobalServerMsgRouter msgRouter = new GlobalServerMsgRouter();
-        GlobalServerSessionMng sessionMng = new GlobalServerSessionMng();
+        responseMng.register();
+        GlobalServerMsgRouter msgRouter = new GlobalServerMsgRouter(responseMng,queueDriver);
 
         ClientNetworkServiceBuilder builder = new ClientNetworkServiceBuilder();
         builder.setResponseHandlerManager(responseMng);
@@ -34,7 +37,7 @@ public class GlobalServer implements IServer {
         builder.setWorkerLoopGroupCount(IOGroupCount);
         builder.setIp("127.0.0.1");
         builder.setPort(8201);
-        builder.setListener(new NetworkListener(sessionMng));
+        builder.setListener(new NetworkListener(GlobalServerSessionMng.getInstance()));
 
         // 创建网络服务
         netWork = (ClientNetworkService) builder.createService();

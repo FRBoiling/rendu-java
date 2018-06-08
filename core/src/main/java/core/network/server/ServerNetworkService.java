@@ -2,6 +2,7 @@ package core.network.server;
 
 import core.network.INetworkServiceBuilder;
 import core.network.IService;
+import core.network.NativeSupport;
 import core.network.ServiceState;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBufAllocator;
@@ -10,14 +11,17 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.WriteBufferWaterMark;
+import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.util.concurrent.DefaultThreadFactory;
 import io.netty.util.concurrent.Future;
 import io.netty.util.internal.PlatformDependent;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -42,12 +46,17 @@ public class ServerNetworkService implements IService, ISocketServer {
     ServerNetworkService(final INetworkServiceBuilder serviceBuilder) {
         builder = (ServerNetworkServiceBuilder) serviceBuilder;
         int acceptorGroupCount = builder.getAcceptorGroupCount();
-        int ioGroupCount = builder.getIOGroupCount();
+        int IOGroupCount = builder.getIOGroupCount();
 
         port = builder.getPort();
 
-        acceptorGroup = new NioEventLoopGroup(acceptorGroupCount);
-        IOGroup = new NioEventLoopGroup(ioGroupCount);
+//        acceptorGroup = new NioEventLoopGroup(acceptorGroupCount);
+//        IOGroup = new NioEventLoopGroup(ioGroupCount);
+
+        ThreadFactory accepterFactory = new DefaultThreadFactory("netty.acceptor.accepter");
+        ThreadFactory IOFactory = new DefaultThreadFactory("netty.acceptor.io");
+        acceptorGroup = initEventLoopGroup(acceptorGroupCount,accepterFactory);
+        IOGroup = initEventLoopGroup(IOGroupCount,IOFactory);
 
         bootstrap = new ServerBootstrap();
         bootstrap.group(acceptorGroup, IOGroup);
@@ -56,6 +65,12 @@ public class ServerNetworkService implements IService, ISocketServer {
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
         bootstrap.childHandler(new ServerSocketChannelInitializer(this));
     }
+
+
+    protected EventLoopGroup initEventLoopGroup(int threadCount, ThreadFactory bossFactory) {
+        return NativeSupport.isSupportNativeET() ? new EpollEventLoopGroup(threadCount, bossFactory) : new NioEventLoopGroup(threadCount, bossFactory);
+    }
+
 
     public void InitOption1() {
         bootstrap.option(ChannelOption.SO_BACKLOG, 1024);
@@ -66,8 +81,6 @@ public class ServerNetworkService implements IService, ISocketServer {
     }
 
     public void InitOption2() {
-
-
         /**
          * backlog参数的含义:
          * 一个未完成连接的队列，此队列维护着那些已收到了客户端SYN分节信息，等待完成三路握手的连接，socket的状态是SYN_RCVD

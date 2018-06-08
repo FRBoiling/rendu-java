@@ -1,16 +1,12 @@
 package core.network;
 
 import core.base.common.AbstractSession;
+import core.base.common.AbstractSessionManager;
 import core.base.common.AttributeUtil;
-import core.base.common.ISessionManager;
 import core.base.common.SessionKey;
-import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.EventLoop;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,8 +17,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 public class NetworkListener implements INetworkEventListener {
-    ISessionManager sessionMng;
-     public NetworkListener(ISessionManager mng)
+    AbstractSessionManager sessionMng;
+     public NetworkListener(AbstractSessionManager mng)
      {
           this.sessionMng = mng;
      }

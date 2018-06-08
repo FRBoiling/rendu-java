@@ -25,6 +25,8 @@ public abstract class AbstractSession {
 
     private volatile boolean offline = false;
 
+    private String key;
+
     public AbstractSession(Channel channel) {
         this.channel = channel;
         isRegistered = false;

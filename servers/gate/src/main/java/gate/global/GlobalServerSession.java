@@ -35,6 +35,8 @@ public class GlobalServerSession extends AbstractSession {
     {
         G2GM.MSG_G2GM_REQ_Register.Builder builder = G2GM.MSG_G2GM_REQ_Register.newBuilder();
         builder.setId(1);
-        sendMessage(builder.build());
+        builder.setStrId("11");
+        G2GM.MSG_G2GM_REQ_Register msg = builder.build();
+        sendMessage(msg);
     }
 }

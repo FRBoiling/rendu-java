@@ -1,6 +1,6 @@
 package servers.client;
 
-import core.base.concurrent.command.AbstractHandler;
+import core.base.concurrent.queue.AbstractHandler;
 import core.network.IResponseHandlerManager;
 import lombok.extern.slf4j.Slf4j;
 

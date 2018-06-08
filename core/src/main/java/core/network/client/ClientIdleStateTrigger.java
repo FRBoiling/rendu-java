@@ -33,10 +33,8 @@ public class ClientIdleStateTrigger extends ChannelInboundHandlerAdapter {
                 if (session == null) {
                     log.error("[没有找到有效会话]");
                 } else {
-                    //TODO:boil发送心跳包
-                    session.sendHeartBeat();
+                    session.sendHeartBeat(); //发送心跳包
                 }
-
             }
         } else {
             super.userEventTriggered(ctx, evt);

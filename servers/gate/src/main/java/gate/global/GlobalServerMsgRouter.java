@@ -3,6 +3,8 @@ package gate.global;
 import core.base.common.AbstractSession;
 import core.base.common.AttributeUtil;
 import core.base.common.SessionKey;
+import core.base.concurrent.queue.QueueDriver;
+import core.network.AbstractMsgRouter;
 import core.network.INetworkConsumer;
 import core.network.IResponseHandlerManager;
 import core.network.codec.Packet;
@@ -17,11 +19,8 @@ import lombok.extern.slf4j.Slf4j;
  * Time: 14:36
  */
 @Slf4j
-public class GlobalServerMsgRouter implements INetworkConsumer {
-    @Override
-    public void consume(Packet packet, Channel channel) {
-        GlobalServerSession session =(GlobalServerSession)AttributeUtil.get(channel, SessionKey.SESSION);
-        //TODO:boil 单逻辑线程的话，这里要做的是将消息加入到消息队列
-        log.info("msg go to exec");
+public class GlobalServerMsgRouter extends AbstractMsgRouter {
+    public GlobalServerMsgRouter(IResponseHandlerManager responseHandlerManager, QueueDriver queueDriver) {
+        super(responseHandlerManager, queueDriver);
     }
 }

@@ -1,7 +1,7 @@
 package servers.server.processor;
 
 import core.base.common.IProcessor;
-import core.base.concurrent.command.IQueueDriverCommand;
+import core.base.concurrent.queue.IQueueDriverAction;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -21,7 +21,7 @@ public class LogicProcessor implements IProcessor {
             new ThreadPoolExecutor.CallerRunsPolicy());
 
     @Override
-    public void process(IQueueDriverCommand handler) {
+    public void process(IQueueDriverAction handler) {
         this.executor.execute(handler);
     }
 }

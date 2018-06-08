@@ -19,11 +19,20 @@ public final class GM2G {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 id = 1;</code>
+     * <code>required uint32 result = 1;</code>
+     */
+    boolean hasResult();
+    /**
+     * <code>required uint32 result = 1;</code>
+     */
+    int getResult();
+
+    /**
+     * <code>required uint32 id = 2;</code>
      */
     boolean hasId();
     /**
-     * <code>required uint32 id = 1;</code>
+     * <code>required uint32 id = 2;</code>
      */
     int getId();
   }
@@ -40,6 +49,7 @@ public final class GM2G {
       super(builder);
     }
     private MSG_GM2G_RES_Register() {
+      result_ = 0;
       id_ = 0;
     }
 
@@ -76,6 +86,11 @@ public final class GM2G {
             }
             case 8: {
               bitField0_ |= 0x00000001;
+              result_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
               id_ = input.readUInt32();
               break;
             }
@@ -104,16 +119,31 @@ public final class GM2G {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private int result_;
     /**
-     * <code>required uint32 id = 1;</code>
+     * <code>required uint32 result = 1;</code>
      */
-    public boolean hasId() {
+    public boolean hasResult() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 id = 1;</code>
+     * <code>required uint32 result = 1;</code>
+     */
+    public int getResult() {
+      return result_;
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private int id_;
+    /**
+     * <code>required uint32 id = 2;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required uint32 id = 2;</code>
      */
     public int getId() {
       return id_;
@@ -125,6 +155,10 @@ public final class GM2G {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasResult()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasId()) {
         memoizedIsInitialized = 0;
         return false;
@@ -136,7 +170,10 @@ public final class GM2G {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, id_);
+        output.writeUInt32(1, result_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -148,7 +185,11 @@ public final class GM2G {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
+          .computeUInt32Size(1, result_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -166,6 +207,11 @@ public final class GM2G {
       MSG_GM2G_RES_Register other = (MSG_GM2G_RES_Register) obj;
 
       boolean result = true;
+      result = result && (hasResult() == other.hasResult());
+      if (hasResult()) {
+        result = result && (getResult()
+            == other.getResult());
+      }
       result = result && (hasId() == other.hasId());
       if (hasId()) {
         result = result && (getId()
@@ -182,6 +228,10 @@ public final class GM2G {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult();
+      }
       if (hasId()) {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId();
@@ -315,8 +365,10 @@ public final class GM2G {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        result_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -343,6 +395,10 @@ public final class GM2G {
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
+        }
+        result.result_ = result_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
         }
         result.id_ = id_;
         result.bitField0_ = to_bitField0_;
@@ -387,6 +443,9 @@ public final class GM2G {
 
       public Builder mergeFrom(MSG_GM2G_RES_Register other) {
         if (other == MSG_GM2G_RES_Register.getDefaultInstance()) return this;
+        if (other.hasResult()) {
+          setResult(other.getResult());
+        }
         if (other.hasId()) {
           setId(other.getId());
         }
@@ -396,6 +455,9 @@ public final class GM2G {
       }
 
       public final boolean isInitialized() {
+        if (!hasResult()) {
+          return false;
+        }
         if (!hasId()) {
           return false;
         }
@@ -421,33 +483,65 @@ public final class GM2G {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private int result_ ;
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 result = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasResult() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 result = 1;</code>
+       */
+      public int getResult() {
+        return result_;
+      }
+      /**
+       * <code>required uint32 result = 1;</code>
+       */
+      public Builder setResult(int value) {
+        bitField0_ |= 0x00000001;
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint32 result = 1;</code>
+       */
+      public Builder clearResult() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        result_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <code>required uint32 id = 2;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required uint32 id = 2;</code>
        */
       public int getId() {
         return id_;
       }
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 id = 2;</code>
        */
       public Builder setId(int value) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 id = 2;</code>
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         id_ = 0;
         onChanged();
         return this;
@@ -515,8 +609,9 @@ public final class GM2G {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\nGM2G.proto\022\024protocol.global.gate\"#\n\025MS" +
-      "G_GM2G_RES_Register\022\n\n\002id\030\001 \002(\r"
+      "\n\nGM2G.proto\022\024protocol.global.gate\"3\n\025MS" +
+      "G_GM2G_RES_Register\022\016\n\006result\030\001 \002(\r\022\n\n\002i" +
+      "d\030\002 \002(\r"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -535,7 +630,7 @@ public final class GM2G {
     internal_static_protocol_global_gate_MSG_GM2G_RES_Register_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_global_gate_MSG_GM2G_RES_Register_descriptor,
-        new String[] { "Id", });
+        new String[] { "Result", "Id", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

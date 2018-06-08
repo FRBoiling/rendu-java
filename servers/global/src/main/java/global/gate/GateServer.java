@@ -1,5 +1,8 @@
 package global.gate;
 
+import common.constant.SystemConst;
+import core.base.concurrent.queue.QueueDriver;
+import core.base.concurrent.queue.QueueExecutor;
 import core.base.serverframe.IServer;
 import core.network.NetworkListener;
 import core.network.server.ServerNetworkService;
@@ -18,21 +21,22 @@ public class GateServer implements IServer {
     private boolean state;
 
     public GateServer() throws Exception {
-        int bossLoopGroupCount = 4;
-        int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
-                : Runtime.getRuntime().availableProcessors();
+        int acceptorGroupCount = 1;
+        int IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
 
+        QueueExecutor queueExecutor = new QueueExecutor("queue.executor",1,IOGroupCount);
+        QueueDriver queueDriver = new QueueDriver(queueExecutor,"queue.driver",1,1024);
         GateServerResponseMng responseMng = new GateServerResponseMng();
-        GateServerMsgRouter msgRouter = new GateServerMsgRouter();
-        GateServerSessionMng sessionMng = new GateServerSessionMng();
+        responseMng.register();
+        GateServerMsgRouter msgRouter = new GateServerMsgRouter(responseMng,queueDriver);
 
         ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
         builder.setResponseHandlerManager(responseMng);
         builder.setConsumer(msgRouter);
-        builder.setAcceptorGroupCount(bossLoopGroupCount);
-        builder.setIOGroupCount(workerLoopGroupCount);
+        builder.setAcceptorGroupCount(acceptorGroupCount);
+        builder.setIOGroupCount(IOGroupCount);
         builder.setPort(8201);
-        builder.setListener(new NetworkListener(sessionMng));
+        builder.setListener(new NetworkListener(GateServerSessionMng.getInstance()));
 
         // 创建网络服务
         netWork = (ServerNetworkService) builder.createService();

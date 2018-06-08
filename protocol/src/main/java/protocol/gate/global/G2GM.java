@@ -406,13 +406,27 @@ public final class G2GM {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 id = 1;</code>
+     * <code>optional uint32 id = 1;</code>
      */
     boolean hasId();
     /**
-     * <code>required uint32 id = 1;</code>
+     * <code>optional uint32 id = 1;</code>
      */
     int getId();
+
+    /**
+     * <code>optional string strId = 2;</code>
+     */
+    boolean hasStrId();
+    /**
+     * <code>optional string strId = 2;</code>
+     */
+    String getStrId();
+    /**
+     * <code>optional string strId = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getStrIdBytes();
   }
   /**
    * Protobuf type {@code protocol.gate.global.MSG_G2GM_REQ_Register}
@@ -428,6 +442,7 @@ public final class G2GM {
     }
     private MSG_G2GM_REQ_Register() {
       id_ = 0;
+      strId_ = "";
     }
 
     @Override
@@ -466,6 +481,12 @@ public final class G2GM {
               id_ = input.readUInt32();
               break;
             }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              strId_ = bs;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -494,16 +515,58 @@ public final class G2GM {
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
     /**
-     * <code>required uint32 id = 1;</code>
+     * <code>optional uint32 id = 1;</code>
      */
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 id = 1;</code>
+     * <code>optional uint32 id = 1;</code>
      */
     public int getId() {
       return id_;
+    }
+
+    public static final int STRID_FIELD_NUMBER = 2;
+    private volatile Object strId_;
+    /**
+     * <code>optional string strId = 2;</code>
+     */
+    public boolean hasStrId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string strId = 2;</code>
+     */
+    public String getStrId() {
+      Object ref = strId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          strId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string strId = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStrIdBytes() {
+      Object ref = strId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        strId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -512,10 +575,6 @@ public final class G2GM {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -524,6 +583,9 @@ public final class G2GM {
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, strId_);
       }
       unknownFields.writeTo(output);
     }
@@ -536,6 +598,9 @@ public final class G2GM {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, strId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -558,6 +623,11 @@ public final class G2GM {
         result = result && (getId()
             == other.getId());
       }
+      result = result && (hasStrId() == other.hasStrId());
+      if (hasStrId()) {
+        result = result && getStrId()
+            .equals(other.getStrId());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -572,6 +642,10 @@ public final class G2GM {
       if (hasId()) {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId();
+      }
+      if (hasStrId()) {
+        hash = (37 * hash) + STRID_FIELD_NUMBER;
+        hash = (53 * hash) + getStrId().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -704,6 +778,8 @@ public final class G2GM {
         super.clear();
         id_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
+        strId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -732,6 +808,10 @@ public final class G2GM {
           to_bitField0_ |= 0x00000001;
         }
         result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.strId_ = strId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -777,15 +857,17 @@ public final class G2GM {
         if (other.hasId()) {
           setId(other.getId());
         }
+        if (other.hasStrId()) {
+          bitField0_ |= 0x00000002;
+          strId_ = other.strId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
-        if (!hasId()) {
-          return false;
-        }
         return true;
       }
 
@@ -810,19 +892,19 @@ public final class G2GM {
 
       private int id_ ;
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>optional uint32 id = 1;</code>
        */
       public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>optional uint32 id = 1;</code>
        */
       public int getId() {
         return id_;
       }
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>optional uint32 id = 1;</code>
        */
       public Builder setId(int value) {
         bitField0_ |= 0x00000001;
@@ -831,11 +913,87 @@ public final class G2GM {
         return this;
       }
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>optional uint32 id = 1;</code>
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private Object strId_ = "";
+      /**
+       * <code>optional string strId = 2;</code>
+       */
+      public boolean hasStrId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string strId = 2;</code>
+       */
+      public String getStrId() {
+        Object ref = strId_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            strId_ = s;
+          }
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>optional string strId = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStrIdBytes() {
+        Object ref = strId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          strId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string strId = 2;</code>
+       */
+      public Builder setStrId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        strId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string strId = 2;</code>
+       */
+      public Builder clearStrId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        strId_ = getDefaultInstance().getStrId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string strId = 2;</code>
+       */
+      public Builder setStrIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        strId_ = value;
         onChanged();
         return this;
       }
@@ -908,8 +1066,8 @@ public final class G2GM {
   static {
     String[] descriptorData = {
       "\n\nG2GM.proto\022\024protocol.gate.global\"\024\n\022MS" +
-      "G_G2GM_HEARTBEAT\"#\n\025MSG_G2GM_REQ_Registe" +
-      "r\022\n\n\002id\030\001 \002(\r"
+      "G_G2GM_HEARTBEAT\"2\n\025MSG_G2GM_REQ_Registe" +
+      "r\022\n\n\002id\030\001 \001(\r\022\r\n\005strId\030\002 \001(\t"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -934,7 +1092,7 @@ public final class G2GM {
     internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_gate_global_MSG_G2GM_REQ_Register_descriptor,
-        new String[] { "Id", });
+        new String[] { "Id", "StrId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

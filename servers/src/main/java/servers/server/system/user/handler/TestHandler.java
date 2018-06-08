@@ -1,7 +1,7 @@
 package servers.server.system.user.handler;
 
 import core.base.common.AbstractSession;
-import core.base.concurrent.command.AbstractHandler;
+import core.base.concurrent.queue.AbstractHandler;
 import lombok.extern.slf4j.Slf4j;
 
 /**

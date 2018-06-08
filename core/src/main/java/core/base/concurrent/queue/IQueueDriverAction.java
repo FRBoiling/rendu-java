@@ -1,17 +1,14 @@
-package core.base.concurrent.command;
-
-import core.base.concurrent.queue.ICommandQueue;
+package core.base.concurrent.queue;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
- *  *  * 拥有一个队列的命令.
- *  *  * 该命令可以放入QueueDriver中执行.
- * User: FReedom
+ *  *  * 此行为可以放入QueueDriver中执行.
+ * User: Boiling
  * Date: 2018-04-23
  * Time: 15:13
  */
-public interface IQueueDriverCommand  extends ICommand{
+public interface IQueueDriverAction extends IAction {
 
     /**
      * 获取队列id
@@ -30,16 +27,16 @@ public interface IQueueDriverCommand  extends ICommand{
     /**
      * 获取所在队列
      *
-     * @return ICommandQueue
+     * @return IMessageQueue
      */
-    ICommandQueue<IQueueDriverCommand> getCommandQueue();
+    IMessageQueue<IQueueDriverAction> getActionQueue();
 
     /**
      * 设置所在队列
      *
      * @param commandQueue commandQueue
      */
-    void setCommandQueue(ICommandQueue<IQueueDriverCommand> commandQueue);
+    void setActionQueue(IMessageQueue<IQueueDriverAction> commandQueue);
 
     /**
      * 获取一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数

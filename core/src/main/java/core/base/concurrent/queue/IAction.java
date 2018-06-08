@@ -1,4 +1,6 @@
-package core.base.concurrent.command;
+package core.base.concurrent.queue;
+
+import com.google.protobuf.InvalidProtocolBufferException;
 
 /**
  * Copyright © 2018 四月
@@ -13,17 +15,21 @@ package core.base.concurrent.command;
  */
 
 @FunctionalInterface
-public interface ICommand extends Runnable{
+public interface IAction extends Runnable{
     /**
      * 执行
      */
-    void doAction();
+    void doAction() throws InvalidProtocolBufferException;
 
     /**
      * 运行
      */
     @Override
     default void run() {
-        doAction();
+        try {
+            doAction();
+        } catch (InvalidProtocolBufferException e) {
+            e.printStackTrace();
+        }
     }
 }

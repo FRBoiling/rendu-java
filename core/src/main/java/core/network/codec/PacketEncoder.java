@@ -21,11 +21,13 @@ public class PacketEncoder extends MessageToMessageEncoder<MessageLiteOrBuilder>
        packet.setMsgId(msgId);
         if (msg instanceof MessageLite) {
             packet.msg = ((MessageLite) msg).toByteArray();
+            packet.setMsgLength((short) packet.msg.length);
             out.add(packet);
             return;
         }
         if (msg instanceof MessageLite.Builder) {
             packet.msg = ((MessageLite.Builder) msg).build().toByteArray();
+            packet.setMsgLength((short) packet.msg.length);
             out.add(packet);
         }
     }

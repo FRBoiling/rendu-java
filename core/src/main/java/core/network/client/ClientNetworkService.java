@@ -3,23 +3,23 @@ package core.network.client;
 import core.base.exception.ConnectFailedException;
 import core.network.INetworkServiceBuilder;
 import core.network.IService;
+import core.network.NativeSupport;
 import core.network.ServiceState;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
+import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.util.HashedWheelTimer;
+import io.netty.util.concurrent.DefaultThreadFactory;
 import io.netty.util.concurrent.Future;
 import io.netty.util.internal.PlatformDependent;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -39,7 +39,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 @Data
 public class ClientNetworkService implements IService {
     private  ServiceState state;
-    private final EventLoopGroup workerGroup;
+    private final EventLoopGroup IOGroup;
     private final Bootstrap bootstrap;
     private final Object bootstrapLock;
     private final ClientNetworkServiceBuilder builder;
@@ -48,17 +48,25 @@ public class ClientNetworkService implements IService {
 
     ClientNetworkService(final INetworkServiceBuilder serviceBuilder) {
         builder = (ClientNetworkServiceBuilder) serviceBuilder;
-        int workerLoopGroupCount = builder.getWorkerLoopGroupCount();
-        workerGroup = new NioEventLoopGroup(workerLoopGroupCount);
+        int IOLoopGroupCount = builder.getWorkerLoopGroupCount();
+
+//      IOGroup = new NioEventLoopGroup(IOLoopGroupCount);
+
+        ThreadFactory IOFactory = new DefaultThreadFactory("client.connector.io");
+        IOGroup = initEventLoopGroup(IOLoopGroupCount,IOFactory);
         channelInitializer = new ClientSocketChannelInitializer(builder.getConsumer(),builder.getListener());
 
         bootstrapLock =new Object();
         bootstrap = new Bootstrap();
-        bootstrap.group(workerGroup);
+        bootstrap.group(IOGroup);
         bootstrap.channel(NioSocketChannel.class);
         InitOption2();
 
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
+    }
+
+    protected EventLoopGroup initEventLoopGroup(int threadCount, ThreadFactory workerFactory) {
+        return NativeSupport.isSupportNativeET() ? new EpollEventLoopGroup(threadCount, workerFactory) : new NioEventLoopGroup(threadCount, workerFactory);
     }
 
     public void InitOption1() {
@@ -105,7 +113,7 @@ public class ClientNetworkService implements IService {
     @Override
     public void stop() {
         this.state = ServiceState.STOPPED;
-        Future<?> wf = workerGroup.shutdownGracefully();
+        Future<?> wf = IOGroup.shutdownGracefully();
         try {
             wf.get(5000, TimeUnit.MILLISECONDS);
         } catch (Exception e) {

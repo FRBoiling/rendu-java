@@ -12,7 +12,6 @@
         <module>core</module>
         <module>protocol</module>
         <module>servers</module>
-        <module>network</module>
         <module>common</module>
     </modules>
 

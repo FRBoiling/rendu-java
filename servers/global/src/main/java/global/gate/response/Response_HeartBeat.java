@@ -1,4 +1,4 @@
-package gate.global.response;
+package global.gate.response;
 
 import core.base.concurrent.queue.AbstractHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -7,15 +7,15 @@ import lombok.extern.slf4j.Slf4j;
  * Created with IntelliJ IDEA.
  * Description:
  * User: Boiling
- * Date: 2018-06-07
- * Time: 16:42
+ * Date: 2018-06-08
+ * Time: 15:56
  */
 @Slf4j
-public class Response_GateRegister_Res extends AbstractHandler<byte[]> {
+public class Response_HeartBeat  extends AbstractHandler<byte[]> {
     @Override
     public void doAction() {
 //        Session session = (Session) this.session;
-        log.info("Response_GateRegister_Res");
+        log.info("Response_HeartBeat");
 //        UserManager.getInstance().login(session, message.getLoginName());
     }
 }

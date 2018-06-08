@@ -1,6 +1,6 @@
 package core.network;
 
-import core.base.concurrent.command.AbstractHandler;
+import core.base.concurrent.queue.AbstractHandler;
 
 import java.util.HashMap;
 
@@ -36,17 +36,16 @@ public interface IResponseHandlerManager {
      * @param messageId
      * @param handler
      */
-    default AbstractHandler register(int messageId, Class<? extends AbstractHandler> handler)
+    default boolean register(int messageId, Class<? extends AbstractHandler> handler)
     {
         Class<? extends AbstractHandler> clazz = handlers.get(messageId);
         if (clazz != null) {
-            try {
-                return clazz.newInstance();
-            } catch (Exception e) {
-                return null;
-            }
+            return false;
         }
-        return null;
+        else{
+            handlers.put(messageId, handler);
+        }
+        return true;
     }
 
     void register();

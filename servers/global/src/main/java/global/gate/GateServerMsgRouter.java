@@ -1,8 +1,7 @@
 package global.gate;
-import core.network.INetworkConsumer;
+import core.base.concurrent.queue.QueueDriver;
+import core.network.AbstractMsgRouter;
 import core.network.IResponseHandlerManager;
-import core.network.codec.Packet;
-import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -13,15 +12,9 @@ import lombok.extern.slf4j.Slf4j;
  * Time: 9:57
  */
 @Slf4j
-public class GateServerMsgRouter implements INetworkConsumer {
-//    private IResponseHandlerManager responseHandlerManager;
-//
-//    public GateServerMsgRouter(IResponseHandlerManager responseHandlerManager) {
-//        this.responseHandlerManager = responseHandlerManager;
-//    }
-    @Override
-    public void consume(Packet packet, Channel channel) {
-        //TODO:boil 单逻辑线程的话，这里要做的是将消息加入到消息队列
-        log.info("msg go to exec");
+public class GateServerMsgRouter extends AbstractMsgRouter {
+
+    public GateServerMsgRouter(IResponseHandlerManager responseHandlerManager, QueueDriver queueDriver) {
+        super(responseHandlerManager, queueDriver);
     }
 }

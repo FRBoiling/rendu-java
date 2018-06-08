@@ -1,7 +1,7 @@
 package global.gate;
 
 import core.base.common.AbstractSession;
-import core.base.common.ISessionManager;
+import core.base.common.AbstractSessionManager;
 import io.netty.channel.Channel;
 
 /**
@@ -12,15 +12,20 @@ import io.netty.channel.Channel;
  * Time: 16:09
  */
 
-public class GateServerSessionMng implements ISessionManager {
-    @Override
-    public void register(AbstractSession session) {
-
+public class GateServerSessionMng extends AbstractSessionManager {
+    private static volatile GateServerSessionMng INSTANCE = new GateServerSessionMng();
+    private GateServerSessionMng(){
     }
 
-    @Override
-    public void unregister(AbstractSession session) {
-
+    public static GateServerSessionMng getInstance() {
+        if (INSTANCE == null) {
+            synchronized (GateServerSessionMng.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new GateServerSessionMng();
+                }
+            }
+        }
+        return INSTANCE;
     }
 
     @Override

@@ -1,7 +1,7 @@
 package core.base.common;
 
 
-import core.base.concurrent.command.IQueueDriverCommand;
+import core.base.concurrent.queue.IQueueDriverAction;
 
 /**
  * Copyright © 2018 四月
@@ -20,5 +20,5 @@ public interface IProcessor {
      *
      * @param handler
      */
-    void process(IQueueDriverCommand handler);
+    void process(IQueueDriverAction handler);
 }
