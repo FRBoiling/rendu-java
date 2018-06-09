@@ -54,7 +54,7 @@ public class ClientSocketChannelInitializer extends ChannelInitializer implement
                         //将[ConnectorWatchdog]装载到handler链中，当链路断掉之后，会触发ConnectionWatchdog #channelInActive方法
                         this,
                         //每隔30s的时间触发一次userEventTriggered的方法，并且指定IdleState的状态位是WRITER_IDLE
-                        new IdleStateHandler(0, 30, 0, TimeUnit.SECONDS),
+                        new IdleStateHandler(0, 50, 0, TimeUnit.SECONDS),
                         idleStateTrigger,
                         writer,
                         encoder,

@@ -25,7 +25,7 @@ public abstract class AbstractSession {
 
     private volatile boolean offline = false;
 
-    private String key;
+    private ISessionTag tag;
 
     public AbstractSession(Channel channel) {
         this.channel = channel;
@@ -39,8 +39,9 @@ public abstract class AbstractSession {
 
     public void OnDisConnected()
     {
+        offline = true;
         if (isRegistered) {
-
+            log.info("{} disconnect ",getKey());
         } else {
             //下线
             log.error("[没有找到会话注册信息]");
@@ -104,4 +105,11 @@ public abstract class AbstractSession {
     }
 
     public abstract void sendHeartBeat();
+
+    public String getKey() {
+        if ( tag == null){
+            return "";
+        }
+        return tag.getKey();
+    }
 }

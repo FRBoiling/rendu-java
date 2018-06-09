@@ -1,9 +1,11 @@
 package gate.global;
 
 import core.base.common.AbstractSession;
+import gate.GateServiceContext;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
 import protocol.gate.global.G2GM;
+import protocol.server.register.ServerRegister;
 
 /**
  * Created with IntelliJ IDEA.
@@ -33,10 +35,11 @@ public class GlobalServerSession extends AbstractSession {
 
     public void sendRegister()
     {
-        G2GM.MSG_G2GM_REQ_Register.Builder builder = G2GM.MSG_G2GM_REQ_Register.newBuilder();
-        builder.setId(1);
-        builder.setStrId("11");
-        G2GM.MSG_G2GM_REQ_Register msg = builder.build();
-        sendMessage(msg);
+        ServerRegister.MSG_REQ_Server_Register.Builder builder = ServerRegister.MSG_REQ_Server_Register.newBuilder();
+        builder.setGroupId(GateServiceContext.tag.getGroupId());
+        builder.setSubId(GateServiceContext.tag.getSubId());
+        builder.setServerType(GateServiceContext.tag.getType().ordinal());
+
+        sendMessage(builder.build());
     }
 }

@@ -13,7 +13,6 @@ public class GlobalService
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
         String configPath = "config.properties";
 //        if (args.length > 0) {
 //            configPath = args[0];
@@ -21,6 +20,7 @@ public class GlobalService
 //        ServerOption option = new ServerOption(configPath);
 //        ServerServiceContext.init(option);
 
+        GlobalServiceContext.Init();
         GateServer server = GlobalServiceContext.createGateServer();
         server.start();
         log.warn("GateServer启动成功...");

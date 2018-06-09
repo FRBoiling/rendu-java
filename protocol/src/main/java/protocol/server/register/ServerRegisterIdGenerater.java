@@ -4,10 +4,12 @@
  //     Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.
  // </auto-generated>
  //------------------------------------------------------------------------------
-package protocol.gate.global;
+package protocol.server.register;
 import protocol.msgId.Id;
-public class G2GMIdGenerater{
+public class ServerRegisterIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(G2GM.MSG_G2GM_HEARTBEAT.class, 0x210001);
+          Id.getInst().SetMessage(ServerRegister.MSG_REQ_Server_Register.class, 0xFF0001);
+          Id.getInst().SetMessage(ServerRegister.MSG_RES_Server_Register.class, 0xFF0002);
+          Id.getInst().SetMessage(ServerRegister.ConnectInfo.class, 0xFF0003);
      }
 }

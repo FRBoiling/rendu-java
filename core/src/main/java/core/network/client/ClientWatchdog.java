@@ -50,7 +50,7 @@ public abstract class ClientWatchdog extends ChannelInboundHandlerAdapter implem
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        if (reconnect) {
+        if (isReconnect()) {
             if (attempts < 12) { //尝试连接12次
                 attempts++;
                 long timeout = 2 << attempts;

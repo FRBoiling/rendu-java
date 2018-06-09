@@ -1,5 +1,6 @@
 package global;
 
+import core.base.model.AbstractServiceContext;
 import global.gate.GateServer;
 
 /**
@@ -10,9 +11,7 @@ import global.gate.GateServer;
  * Time: 11:04
  */
 
-public class GlobalServiceContext {
-//    private static ServerOption option;
-    private static int serverId;
+public class GlobalServiceContext extends AbstractServiceContext {
     private static GateServer gateServer;
     private static boolean closed;
 

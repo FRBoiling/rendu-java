@@ -8,7 +8,7 @@ public class GateService
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        GateServiceContext.Init();
         String configPath = "config.properties";
 //        if (args.length > 0) {
 //            configPath = args[0];
