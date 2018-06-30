@@ -35,7 +35,7 @@ public class GateServer implements IServer {
         builder.setConsumer(msgRouter);
         builder.setAcceptorGroupCount(acceptorGroupCount);
         builder.setIOGroupCount(IOGroupCount);
-        builder.setPort(8201);
+        builder.setPort(9001);
         builder.setListener(new NetworkListener(GateServerSessionMng.getInstance()));
 
         // 创建网络服务

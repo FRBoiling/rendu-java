@@ -36,7 +36,7 @@ public class GlobalServer implements IServer {
         builder.setConsumer(msgRouter);
         builder.setWorkerLoopGroupCount(IOGroupCount);
         builder.setIp("127.0.0.1");
-        builder.setPort(8201);
+        builder.setPort(9001);
         builder.setListener(new NetworkListener(GlobalServerSessionMng.getInstance()));
 
         // 创建网络服务
