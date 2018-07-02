@@ -1,7 +1,7 @@
 package gate.connectionmanager;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import common.constant.Errorcode;
+import constant.Errorcode;
 import core.base.common.AbstractSession;
 import core.base.concurrent.queue.AbstractHandler;
 import core.base.model.ServerTag;

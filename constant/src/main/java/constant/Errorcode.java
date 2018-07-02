@@ -1,4 +1,4 @@
-package common.constant;
+package constant;
 
 /**
  * Created with IntelliJ IDEA.

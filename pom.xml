@@ -13,6 +13,7 @@
         <module>protocol</module>
         <module>servers</module>
         <module>common</module>
+        <module>constant</module>
     </modules>
 
     <name>servers</name>

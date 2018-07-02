@@ -1,6 +1,6 @@
 package global.gate;
 
-import common.constant.SystemConst;
+import constant.SystemConst;
 import core.base.concurrent.queue.QueueDriver;
 import core.base.concurrent.queue.QueueExecutor;
 import core.base.serverframe.IServer;
