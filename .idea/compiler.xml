@@ -32,6 +32,7 @@
       <module name="servers" target="1.8" />
       <module name="world" target="1.7" />
       <module name="worldmanager" target="1.8" />
+      <module name="xmlparser" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
