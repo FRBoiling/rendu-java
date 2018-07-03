@@ -35,4 +35,47 @@ public class Data {
         attrHashMap.put(attr.key,attr);
         return true;
     }
+
+    public Attr getAttr(String key){
+        return attrHashMap.get(key);
+    }
+
+    public String getString(String key) {
+        Attr attr = getAttr(key);
+        if (attr == null){
+            return "";
+        }
+        else {
+            return attr.getString();
+        }
+    }
+
+    public int getInteger(String key) {
+        Attr attr = getAttr(key);
+        if (attr == null){
+            return 0;
+        }
+        else {
+            return attr.getInteger();
+        }
+    }
+
+    public Float getFloat(String key) {
+        Attr attr = getAttr(key);
+        if (attr == null){
+            return 0f;
+        }
+        else {
+            return attr.getFloat();
+        }
+    }
+
+    public Boolean getBoolean(String key) {
+        Attr attr = getAttr(key);
+        if (attr == null){
+            return  false;
+        }else{
+            return attr.getBoolen();
+        }
+    }
 }

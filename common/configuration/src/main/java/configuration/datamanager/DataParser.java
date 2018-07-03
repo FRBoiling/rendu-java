@@ -73,9 +73,6 @@ public class DataParser{
         return dataList;
     }
 
-//    private AttrValueType getAttrValueType(String value,Object outValue){}
-
-
     private Document readXmlDocument(String filePath){
         InputStream in = null;
         Document doc = null;

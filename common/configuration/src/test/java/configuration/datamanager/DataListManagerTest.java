@@ -41,6 +41,11 @@ public void testParse() throws Exception {
     DataListManager.getInstance().Parse("D:/GitHub/ServerCluster-CSharp/Bin/Data/XML/ServerConfig.xml");
 
     DataList dataList = DataListManager.getInstance().getDataList("ServerConfig");
+    Data data = dataList.getData(1);
+    String strPort = data.getString("NETIp");
+    Integer nPort = data.getInteger("NETPort");
+    Boolean bPort = data.getBoolean("GatePort");
+
 } 
 
 

@@ -49,7 +49,18 @@ public class DataList extends AbstractMap {
         }
 
         data.setRootElement(this);
+        dataListById.put(data.getId(),data);
+        if(data.getName()!=null){
+            dataListByName.put(data.getName(),data);
+        }
+        return true;
+    }
 
-        return false;
+    public Data getData(String name){
+        return dataListByName.get(name);
+    }
+
+    public Data getData(int id){
+        return dataListById.get(id);
     }
 }
