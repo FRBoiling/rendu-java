@@ -60,7 +60,7 @@ public class ServerNetworkService implements IService, ISocketServer {
         bootstrap = new ServerBootstrap();
         bootstrap.group(acceptorGroup, IOGroup);
         bootstrap.channel(NioServerSocketChannel.class);
-        InitOption2();
+        InitOption1();
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
         bootstrap.childHandler(new ServerSocketChannelInitializer(this));
     }

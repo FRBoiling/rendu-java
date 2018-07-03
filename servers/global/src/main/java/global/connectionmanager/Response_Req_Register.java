@@ -3,7 +3,7 @@ package global.connectionmanager;
 import com.google.protobuf.InvalidProtocolBufferException;
 import constant.Errorcode;
 import core.base.common.AbstractSession;
-import core.base.concurrent.queue.AbstractHandler;
+import core.base.concurrent.AbstractHandler;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import global.GlobalServiceContext;

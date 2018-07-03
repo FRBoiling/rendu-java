@@ -1,14 +1,8 @@
 package gate.global;
 
-import core.base.common.AbstractSession;
-import core.base.common.AttributeUtil;
-import core.base.common.SessionKey;
-import core.base.concurrent.queue.QueueDriver;
+import core.base.concurrent.QueueDriver;
 import core.network.AbstractMsgRouter;
-import core.network.INetworkConsumer;
 import core.network.IResponseHandlerManager;
-import core.network.codec.Packet;
-import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -20,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class GlobalServerMsgRouter extends AbstractMsgRouter {
-    public GlobalServerMsgRouter(IResponseHandlerManager responseHandlerManager, QueueDriver queueDriver) {
-        super(responseHandlerManager, queueDriver);
+    public GlobalServerMsgRouter(IResponseHandlerManager responseHandlerManager) {
+        super(responseHandlerManager);
     }
 }

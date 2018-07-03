@@ -2,7 +2,7 @@ package gate;
 
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
-import core.base.serviceframe.DriverRunnable;
+import core.base.serviceframe.DriverThread;
 import core.base.serviceframe.IService;
 import core.network.ServiceState;
 import gate.global.GlobalServer;
@@ -17,6 +17,8 @@ import gate.global.GlobalServer;
 
 public class GateServiceContext implements IService {
     public static ServerTag tag;
+    DriverThread mainThread;
+
     private GlobalServer globalServer;
 
     public void initServers(){
@@ -55,17 +57,24 @@ public class GateServiceContext implements IService {
 
     @Override
     public void start() {
-        DriverRunnable mainThread = new DriverRunnable( "MainThread_Gate",this);
-        mainThread.run();
-    }
-
-    @Override
-    public void update() {
-
+        mainThread= new DriverThread( "MainThread_Gate",this);
+        mainThread.start();
     }
 
     @Override
     public void stop() {
+
+    }
+
+    @Override
+    public void update() {
+        while (true){
+            try {
+                globalServer.update();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 

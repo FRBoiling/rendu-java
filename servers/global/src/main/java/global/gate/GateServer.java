@@ -1,8 +1,8 @@
 package global.gate;
 
 import constant.SystemConst;
-import core.base.concurrent.queue.QueueDriver;
-import core.base.concurrent.queue.QueueExecutor;
+import core.base.concurrent.QueueDriver;
+import core.base.concurrent.QueueExecutor;
 import core.base.serviceframe.IService;
 import core.network.NetworkListener;
 import core.network.ServiceState;
@@ -25,18 +25,16 @@ public class GateServer implements IService {
         int acceptorGroupCount = 1;
         int IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
 
-        QueueExecutor queueExecutor = new QueueExecutor("queue.executor",1,IOGroupCount);
-        QueueDriver queueDriver = new QueueDriver(queueExecutor,"queue.driver",1,1024);
         GateServerResponseMng responseMng = new GateServerResponseMng();
         responseMng.register();
-        GateServerMsgRouter msgRouter = new GateServerMsgRouter(responseMng,queueDriver);
+        GateServerMsgRouter msgRouter = new GateServerMsgRouter(responseMng);
 
         ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
         builder.setResponseHandlerManager(responseMng);
         builder.setConsumer(msgRouter);
         builder.setAcceptorGroupCount(acceptorGroupCount);
         builder.setIOGroupCount(IOGroupCount);
-        builder.setPort(9001);
+        builder.setPort(9002);
         builder.setListener(new NetworkListener(GateServerSessionMng.getInstance()));
 
         // 创建网络服务
@@ -49,7 +47,7 @@ public class GateServer implements IService {
     }
     @Override
     public void update() {
-
+        GateServerSessionMng.getInstance().update();
     }
     @Override
     public void start() {

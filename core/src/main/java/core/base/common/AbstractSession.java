@@ -1,5 +1,9 @@
 package core.base.common;
 
+import core.base.concurrent.IDriver;
+import core.base.concurrent.IQueueDriverAction;
+import core.base.concurrent.queue.MessageDriver;
+import core.base.concurrent.queue.MessageExecutor;
 import io.netty.channel.Channel;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -27,9 +31,14 @@ public abstract class AbstractSession {
 
     private ISessionTag tag;
 
+    private final MessageDriver messageDriver;
+    private final MessageExecutor messageExecutor;
+
     public AbstractSession(Channel channel) {
         this.channel = channel;
         isRegistered = false;
+        messageDriver = new MessageDriver("MsgDri_"+tag.getKey(),1024);
+        messageExecutor = new MessageExecutor("MsgExec_"+tag.getKey(),1024);
     }
 
     public void OnConnected()
@@ -99,6 +108,15 @@ public abstract class AbstractSession {
 //            log.error("", e);
 //        }
 //    }
+    public void update(){
+        synchronized (messageDriver.getActions()) {
+           while (messageDriver.getActions().size()>0){
+               IQueueDriverAction action = messageDriver.getActions().poll();
+               messageExecutor.addAction(action);
+           }
+        }
+        messageExecutor.execute();
+    }
 
     public void sendMessage(Object msg) {
         channel.writeAndFlush(msg);

@@ -3,8 +3,10 @@ package core.network;
 import core.base.common.AbstractSession;
 import core.base.common.AttributeUtil;
 import core.base.common.SessionKey;
-import core.base.concurrent.queue.AbstractHandler;
-import core.base.concurrent.queue.QueueDriver;
+import core.base.concurrent.AbstractHandler;
+import core.base.concurrent.IDriver;
+import core.base.concurrent.QueueDriver;
+import core.base.concurrent.queue.MessageDriver;
 import core.network.codec.Packet;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
@@ -19,18 +21,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public abstract class AbstractMsgRouter implements INetworkConsumer {
     private IResponseHandlerManager responseHandlerManager;
-    private QueueDriver queueDriver;
 
-    public AbstractMsgRouter(IResponseHandlerManager responseHandlerManager,QueueDriver queueDriver) {
+    public AbstractMsgRouter(IResponseHandlerManager responseHandlerManager) {
         this.responseHandlerManager = responseHandlerManager;
-        this.queueDriver = queueDriver;
     }
     @Override
     public void consume(Packet packet, Channel channel) {
-        //TODO:boil 单逻辑线程的话，这里要做的是将消息加入到消息队列
-
-
-
         AbstractSession session = AttributeUtil.get(channel, SessionKey.SESSION);
         if (session == null) {
             return;
@@ -45,6 +41,6 @@ public abstract class AbstractMsgRouter implements INetworkConsumer {
 
         handler.setMessage(packet.getMsg());
         handler.setParam(session);
-        queueDriver.addAction(handler);
+        session.getMessageDriver().addAction(handler);
     }
 }

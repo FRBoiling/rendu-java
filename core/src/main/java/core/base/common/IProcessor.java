@@ -1,7 +1,7 @@
 package core.base.common;
 
 
-import core.base.concurrent.queue.IQueueDriverAction;
+import core.base.concurrent.IQueueDriverAction;
 
 /**
  * Copyright © 2018 四月

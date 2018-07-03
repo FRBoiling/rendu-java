@@ -1,4 +1,4 @@
-package core.base.concurrent.queue;
+package core.base.concurrent;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 

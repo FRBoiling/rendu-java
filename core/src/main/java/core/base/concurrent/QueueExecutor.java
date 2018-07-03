@@ -1,5 +1,7 @@
-package core.base.concurrent.queue;
+package core.base.concurrent;
 
+import core.base.concurrent.IQueueDriverAction;
+import core.base.concurrent.queue.IMessageQueue;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;

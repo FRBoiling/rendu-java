@@ -1,6 +1,6 @@
 package core.network;
 
-import core.base.concurrent.queue.AbstractHandler;
+import core.base.concurrent.AbstractHandler;
 
 import java.util.HashMap;
 

@@ -1,8 +1,6 @@
 package gate.global;
 
 import constant.SystemConst;
-import core.base.concurrent.queue.QueueDriver;
-import core.base.concurrent.queue.QueueExecutor;
 import core.base.serviceframe.IService;
 import core.network.NetworkListener;
 import core.network.ServiceState;
@@ -19,25 +17,25 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class GlobalServer implements IService {
-    private ClientNetworkService netWork;
+    private final ClientNetworkService netWork;
     private ServiceState state;
 
     public GlobalServer() throws Exception {
 //        int IOGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
 //                : Runtime.getRuntime().availableProcessors();
         int IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
-        QueueExecutor queueExecutor = new QueueExecutor("queue.executor",1,IOGroupCount);
-        QueueDriver queueDriver = new QueueDriver(queueExecutor,"queue.driver",1,1024);
-        GlobalServerResponseMng responseMng = new GlobalServerResponseMng();
-        responseMng.register();
-        GlobalServerMsgRouter msgRouter = new GlobalServerMsgRouter(responseMng,queueDriver);
 
+        GlobalServerResponseMng responseMng = new GlobalServerResponseMng();
+
+        responseMng.register();
+
+        GlobalServerMsgRouter msgRouter = new GlobalServerMsgRouter(responseMng);
         ClientNetworkServiceBuilder builder = new ClientNetworkServiceBuilder();
         builder.setResponseHandlerManager(responseMng);
         builder.setConsumer(msgRouter);
         builder.setWorkerLoopGroupCount(IOGroupCount);
         builder.setIp("127.0.0.1");
-        builder.setPort(9001);
+        builder.setPort(9002);
         builder.setListener(new NetworkListener(GlobalServerSessionMng.getInstance()));
 
         // 创建网络服务
@@ -51,7 +49,7 @@ public class GlobalServer implements IService {
 
     @Override
     public void update() {
-
+        GlobalServerSessionMng.getInstance().update();
     }
 
     @Override

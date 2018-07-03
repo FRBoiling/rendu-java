@@ -1,5 +1,5 @@
 package global.gate;
-import core.base.concurrent.queue.QueueDriver;
+import core.base.concurrent.QueueDriver;
 import core.network.AbstractMsgRouter;
 import core.network.IResponseHandlerManager;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GateServerMsgRouter extends AbstractMsgRouter {
 
-    public GateServerMsgRouter(IResponseHandlerManager responseHandlerManager, QueueDriver queueDriver) {
-        super(responseHandlerManager, queueDriver);
+    public GateServerMsgRouter(IResponseHandlerManager responseHandlerManager) {
+        super(responseHandlerManager);
     }
 }

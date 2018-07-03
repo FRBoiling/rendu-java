@@ -55,6 +55,16 @@ public abstract class AbstractSessionManager {
         }
         return true;
     }
+    
+    public void update(){
+        for (AbstractSession session: sessions.values()) {
+            try {
+                session.update();
+            }catch (Exception e){
+                log.error(e.toString());
+            }
+        }
+    }
 
     public abstract AbstractSession createSession(Channel channel);
 }

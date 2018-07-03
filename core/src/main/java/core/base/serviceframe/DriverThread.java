@@ -11,10 +11,10 @@ package core.base.serviceframe;
 /**
  * 主线程驱动
  */
-public class DriverRunnable implements Runnable {
+public class DriverThread extends Thread {
     private String threadName;
     IService service;
-    public DriverRunnable(String name, IService service) {
+    public DriverThread(String name, IService service) {
         this.service =service;
         threadName = name;
         System.out.println("Creating " +  threadName );

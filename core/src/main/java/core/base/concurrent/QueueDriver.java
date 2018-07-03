@@ -1,5 +1,7 @@
-package core.base.concurrent.queue;
+package core.base.concurrent;
 
+import core.base.concurrent.queue.IMessageQueue;
+import core.base.concurrent.queue.MessageQueue;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -10,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  * Time: 11:06
  */
 @Slf4j
-public class QueueDriver {
+public class QueueDriver implements IDriver {
     /**
      * 队列最大数量
      */
@@ -32,6 +34,7 @@ public class QueueDriver {
      */
     private QueueExecutor executor;
 
+
     public QueueDriver(QueueExecutor executor, String name, long id, int maxQueueSize) {
         this.executor = executor;
         this.name = name;
@@ -46,6 +49,7 @@ public class QueueDriver {
      *
      * @param action action
      */
+    @Override
     public boolean addAction(IQueueDriverAction action) {
 
         if (action.getQueueId() > 0 && action.getQueueId() != this.queueId) {
@@ -75,4 +79,10 @@ public class QueueDriver {
         }
         return result;
     }
+
+    @Override
+    public IMessageQueue<IQueueDriverAction> getActions() {
+        return null;
+    }
+
 }

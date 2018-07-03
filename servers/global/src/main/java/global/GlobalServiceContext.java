@@ -1,9 +1,8 @@
 package global;
 
-import core.base.model.AbstractServiceContext;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
-import core.base.serviceframe.DriverRunnable;
+import core.base.serviceframe.DriverThread;
 import core.base.serviceframe.IService;
 import core.network.ServiceState;
 import global.gate.GateServer;
@@ -18,6 +17,8 @@ import global.gate.GateServer;
 
 public class GlobalServiceContext implements IService {
     public static ServerTag tag;
+    DriverThread mainThread;
+
     private GateServer gateServer;
 
     public GateServer createGateServer() {
@@ -56,8 +57,8 @@ public class GlobalServiceContext implements IService {
 
     @Override
     public void start() {
-        DriverRunnable mainThread = new DriverRunnable( "MainThread_Global",this);
-        mainThread.run();
+        mainThread = new DriverThread( "MainThread_Global",this);
+        mainThread.start();
     }
 
     @Override
@@ -67,7 +68,14 @@ public class GlobalServiceContext implements IService {
 
     @Override
     public void update() {
-
+        while (true){
+            try {
+                Thread.sleep(100);
+                gateServer.update();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
