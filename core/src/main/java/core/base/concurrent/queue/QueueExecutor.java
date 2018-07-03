@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created with IntelliJ IDEA.
- * Description:
+ * Description: 队列执行器
  * User: Boiling
  * Date: 2018-06-08
  * Time: 11:09
@@ -71,13 +71,13 @@ public class QueueExecutor extends ThreadPoolExecutor {
         IMessageQueue<IQueueDriverAction> queue = action.getActionQueue();
 
         synchronized (queue) {
-            IQueueDriverAction nextCommand = queue.poll();
-            if (nextCommand == null) {
+            IQueueDriverAction nextAction = queue.poll();
+            if (nextAction == null) {
                 // 执行完毕后如果队列中没有任务了，那么设置运行标记为false
                 queue.setRunning(false);
             } else {
                 // 执行完毕后如果队列中还有任务，那么继续执行下一个
-                execute(nextCommand);
+                execute(nextAction);
                 //LOGGER.error("存在任务，继续执行任务");
             }
         }

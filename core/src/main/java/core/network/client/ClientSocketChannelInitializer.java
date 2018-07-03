@@ -3,7 +3,6 @@ package core.network.client;
 import core.network.IChannelHandlerHolder;
 import core.network.INetworkConsumer;
 import core.network.INetworkEventListener;
-import core.network.IService;
 import core.network.codec.*;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;

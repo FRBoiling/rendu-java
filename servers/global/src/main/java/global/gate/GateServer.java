@@ -3,8 +3,9 @@ package global.gate;
 import constant.SystemConst;
 import core.base.concurrent.queue.QueueDriver;
 import core.base.concurrent.queue.QueueExecutor;
-import core.base.serverframe.IServer;
+import core.base.serviceframe.IService;
 import core.network.NetworkListener;
+import core.network.ServiceState;
 import core.network.server.ServerNetworkService;
 import core.network.server.ServerNetworkServiceBuilder;
 
@@ -16,9 +17,9 @@ import core.network.server.ServerNetworkServiceBuilder;
  * Time: 9:47
  */
 
-public class GateServer implements IServer {
+public class GateServer implements IService {
     private ServerNetworkService netWork;
-    private boolean state;
+    private ServiceState state;
 
     public GateServer() throws Exception {
         int acceptorGroupCount = 1;
@@ -43,26 +44,29 @@ public class GateServer implements IServer {
     }
 
     @Override
+    public void init(String[] args) {
+
+    }
+    @Override
+    public void update() {
+
+    }
+    @Override
     public void start() {
         netWork.start();
         if (netWork.isOpened()) {
-            state =true;
+            state =ServiceState.RUNNING;
         }
     }
 
     @Override
     public void stop() {
         netWork.stop();
-        state = false;
+        state = ServiceState.STOPPED;
     }
 
     @Override
-    public void update() {
-
-    }
-
-    @Override
-    public boolean getState() {
+    public ServiceState getState() {
         return state;
     }
 }

@@ -1,7 +1,15 @@
-package core.network;
+package core.base.serviceframe;
 
+
+import core.network.ServiceState;
 
 public interface IService {
+    /**
+     * init
+     * @param args
+     */
+    void init(String[] args);
+
     /**
      * start
      */
@@ -11,6 +19,11 @@ public interface IService {
      * stop
      */
     void stop();
+
+    /**
+     * update
+     */
+    void update();
 
     /**
      * 获取当前服务的状态

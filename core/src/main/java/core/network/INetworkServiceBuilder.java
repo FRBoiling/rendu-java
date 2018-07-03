@@ -1,5 +1,7 @@
 package core.network;
 
+import core.base.serviceframe.IService;
+
 /**
  * Copyright © 2018 四月
  * Boil blood. All rights reserved.

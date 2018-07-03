@@ -1,6 +1,11 @@
 package global;
 
 import core.base.model.AbstractServiceContext;
+import core.base.model.ServerTag;
+import core.base.model.ServerType;
+import core.base.serviceframe.DriverRunnable;
+import core.base.serviceframe.IService;
+import core.network.ServiceState;
 import global.gate.GateServer;
 
 /**
@@ -11,11 +16,11 @@ import global.gate.GateServer;
  * Time: 11:04
  */
 
-public class GlobalServiceContext extends AbstractServiceContext {
-    private static GateServer gateServer;
-    private static boolean closed;
+public class GlobalServiceContext implements IService {
+    public static ServerTag tag;
+    private GateServer gateServer;
 
-    public static GateServer createGateServer() {
+    public GateServer createGateServer() {
         try {
             gateServer = new GateServer();
             return gateServer;
@@ -23,4 +28,51 @@ public class GlobalServiceContext extends AbstractServiceContext {
             throw new RuntimeException(e);
         }
     }
+
+    public void initServers(){
+        gateServer = createGateServer();
+        gateServer.start();
+    }
+
+    @Override
+    public void init(String[] args){
+        ServerType serverType = ServerType.Global;
+        Object [] tagParam = new Object[]{
+                serverType,
+                0,
+                0
+        };
+        if (args.length>=2){
+            Integer groupId = Integer.parseInt(args[0]);
+            Integer subId = Integer.parseInt(args[1]);
+            tag = new ServerTag();
+            tagParam[1] = groupId;
+            tagParam[2] = subId;
+        }
+        tag.initTag(tagParam);
+
+        initServers();
+    }
+
+    @Override
+    public void start() {
+        DriverRunnable mainThread = new DriverRunnable( "MainThread_Global",this);
+        mainThread.run();
+    }
+
+    @Override
+    public void stop() {
+
+    }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public ServiceState getState() {
+        return null;
+    }
+
 }

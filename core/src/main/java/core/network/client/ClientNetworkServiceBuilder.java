@@ -1,5 +1,6 @@
 package core.network.client;
 
+import core.base.serviceframe.IService;
 import core.network.IResponseHandlerManager;
 import core.network.*;
 import core.network.INetworkEventListener;

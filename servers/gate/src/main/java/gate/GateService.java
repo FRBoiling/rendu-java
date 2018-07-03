@@ -6,18 +6,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GateService
 {
+    static GateServiceContext context;
     public static void main( String[] args )
     {
-        GateServiceContext.Init();
-        String configPath = "config.properties";
-//        if (args.length > 0) {
-//            configPath = args[0];
-//        }
-//        ServerOption option = new ServerOption(configPath);
-//        ServerServiceContext.init(option);
-
-        GlobalServer server = GateServiceContext.createGlobalServer();
-        server.start();
-        log.warn("GlobalClient启动成功...");
+        context = new GateServiceContext();
+        context.init(args);
+        context.start();
+        log.warn("GateService启动成功...");
     }
 }

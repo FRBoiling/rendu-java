@@ -1,7 +1,7 @@
 package core.network.server;
 
 import core.network.INetworkServiceBuilder;
-import core.network.IService;
+import core.base.serviceframe.IService;
 import core.network.NativeSupport;
 import core.network.ServiceState;
 import io.netty.bootstrap.ServerBootstrap;
@@ -19,7 +19,6 @@ import io.netty.util.concurrent.Future;
 import io.netty.util.internal.PlatformDependent;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
@@ -149,27 +148,13 @@ public class ServerNetworkService implements IService, ISocketServer {
 
     @Override
     public void start() {
-        try {
-            ChannelFuture f = bootstrap.bind(port);
-            f.addListener(new ServerBindListener(this));
-            f.sync();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        bind(port);
     }
 
     @Override
     public void stop() {
         this.state = ServiceState.STOPPED;
-        Future<?> bf = acceptorGroup.shutdownGracefully();
-        Future<?> wf = IOGroup.shutdownGracefully();
-        try {
-            bf.get(5000, TimeUnit.MILLISECONDS);
-            wf.get(5000, TimeUnit.MILLISECONDS);
-        } catch (Exception e) {
-            log.info("Netty服务器关闭失败", e);
-        }
-        log.info("Netty Server on port:{} is closed", port);
+        shutdownGracefully();
     }
 
     @Override
@@ -189,11 +174,34 @@ public class ServerNetworkService implements IService, ISocketServer {
 
     @Override
     public void bind(int port) {
+        try {
+            ChannelFuture f = bootstrap.bind(port);
+            f.addListener(new ServerBindListener(this));
+            f.sync();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void init(String[] args) {
 
     }
 
     @Override
-    public void shutdownGracefully() {
+    public void update() {
+    }
 
+    @Override
+    public void shutdownGracefully() {
+        Future<?> bf = acceptorGroup.shutdownGracefully();
+        Future<?> wf = IOGroup.shutdownGracefully();
+        try {
+            bf.get(5000, TimeUnit.MILLISECONDS);
+            wf.get(5000, TimeUnit.MILLISECONDS);
+        } catch (Exception e) {
+            log.info("Netty服务器关闭失败", e);
+        }
+        log.info("Netty Server on port:{} is closed", port);
     }
 }

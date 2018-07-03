@@ -2,7 +2,7 @@ package core.network.client;
 
 import core.base.exception.ConnectFailedException;
 import core.network.INetworkServiceBuilder;
-import core.network.IService;
+import core.base.serviceframe.IService;
 import core.network.NativeSupport;
 import core.network.ServiceState;
 import io.netty.bootstrap.Bootstrap;
@@ -37,7 +37,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 @Slf4j
 @Data
-public class ClientNetworkService implements IService {
+public class ClientNetworkService implements IService ,ISocketClient {
     private  ServiceState state;
     private final EventLoopGroup IOGroup;
     private final Bootstrap bootstrap;
@@ -92,34 +92,24 @@ public class ClientNetworkService implements IService {
     }
 
     @Override
+    public void init(String[] args) {
+
+    }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
     public void start(){
-        try {
-            channelInitializer.getWatchdog().init(bootstrap,builder.getIp(), builder.getPort());
-            channelInitializer.getWatchdog().setReconnect(true);
-            ChannelFuture f;
-            synchronized (bootstrapLock) {
-                bootstrap.handler(channelInitializer);
-                f = bootstrap.connect(builder.getIp(), builder.getPort());
-                f.addListener(new ClientConnectionListener(this));
-            }
-            f.sync();
-        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//            throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails", e);
-              throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails:"+e.getMessage());
-        }
+        connect(builder.getIp(),builder.getPort());
     }
 
     @Override
     public void stop() {
         this.state = ServiceState.STOPPED;
-        Future<?> wf = IOGroup.shutdownGracefully();
-        try {
-            wf.get(5000, TimeUnit.MILLISECONDS);
-        } catch (Exception e) {
-            log.error("Netty client stop failed ", e);
-        }
-        log.info("Netty client stop!");
+        shutdownGracefully();
     }
 
     @Override
@@ -135,5 +125,35 @@ public class ClientNetworkService implements IService {
     @Override
     public ServiceState getState() {
         return this.state;
+    }
+
+    @Override
+    public void connect(String host, int port) {
+        try {
+            channelInitializer.getWatchdog().init(bootstrap,host, port);
+            channelInitializer.getWatchdog().setReconnect(true);
+            ChannelFuture f;
+            synchronized (bootstrapLock) {
+                bootstrap.handler(channelInitializer);
+                f = bootstrap.connect(host, port);
+                f.addListener(new ClientConnectionListener(this));
+            }
+            f.sync();
+        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//            throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails", e);
+            //throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails:"+e.getMessage());
+        }
+    }
+
+    @Override
+    public void shutdownGracefully() {
+        Future<?> wf = IOGroup.shutdownGracefully();
+        try {
+            wf.get(5000, TimeUnit.MILLISECONDS);
+        } catch (Exception e) {
+            log.error("Netty client stop failed ", e);
+        }
+        log.info("Netty client stop!");
     }
 }

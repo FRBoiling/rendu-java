@@ -3,8 +3,9 @@ package gate.global;
 import constant.SystemConst;
 import core.base.concurrent.queue.QueueDriver;
 import core.base.concurrent.queue.QueueExecutor;
-import core.base.serverframe.IServer;
+import core.base.serviceframe.IService;
 import core.network.NetworkListener;
+import core.network.ServiceState;
 import core.network.client.ClientNetworkService;
 import core.network.client.ClientNetworkServiceBuilder;
 import lombok.extern.slf4j.Slf4j;
@@ -17,9 +18,9 @@ import lombok.extern.slf4j.Slf4j;
  * Time: 14:36
  */
 @Slf4j
-public class GlobalServer implements IServer {
+public class GlobalServer implements IService {
     private ClientNetworkService netWork;
-    private boolean state;
+    private ServiceState state;
 
     public GlobalServer() throws Exception {
 //        int IOGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
@@ -44,17 +45,8 @@ public class GlobalServer implements IServer {
     }
 
     @Override
-    public void start() {
-        netWork.start();
-        if (netWork.isOpened()) {
-            state = true;
-        }
-    }
+    public void init(String[] args) {
 
-    @Override
-    public void stop() {
-        netWork.stop();
-        state = false;
     }
 
     @Override
@@ -63,7 +55,23 @@ public class GlobalServer implements IServer {
     }
 
     @Override
-    public boolean getState() {
+    public void start() {
+        netWork.start();
+        if (netWork.isOpened()) {
+            state = ServiceState.RUNNING;
+        }
+    }
+
+    @Override
+    public void stop() {
+        netWork.stop();
+        state = ServiceState.STOPPED;
+    }
+
+    @Override
+    public ServiceState getState() {
         return state;
     }
+
+
 }

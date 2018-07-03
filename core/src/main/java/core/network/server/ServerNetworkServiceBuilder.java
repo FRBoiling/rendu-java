@@ -1,5 +1,6 @@
 package core.network.server;
 
+import core.base.serviceframe.IService;
 import core.network.*;
 import lombok.Data;
 

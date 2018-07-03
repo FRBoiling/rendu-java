@@ -28,6 +28,9 @@ public abstract class AbstractMsgRouter implements INetworkConsumer {
     @Override
     public void consume(Packet packet, Channel channel) {
         //TODO:boil 单逻辑线程的话，这里要做的是将消息加入到消息队列
+
+
+
         AbstractSession session = AttributeUtil.get(channel, SessionKey.SESSION);
         if (session == null) {
             return;
