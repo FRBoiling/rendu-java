@@ -1,7 +1,5 @@
-package core.base.concurrent;
+package core.base.concurrent.queue;
 
-import core.base.concurrent.queue.IMessageQueue;
-import core.base.concurrent.queue.MessageQueue;
 import lombok.extern.slf4j.Slf4j;
 
 /**

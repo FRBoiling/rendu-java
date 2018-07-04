@@ -38,20 +38,12 @@ public class GlobalServiceContext implements IService {
     @Override
     public void init(String[] args){
         ServerType serverType = ServerType.Global;
-        Object [] tagParam = new Object[]{
-                serverType,
-                0,
-                0
-        };
+        tag = new ServerTag();
         if (args.length>=2){
             Integer groupId = Integer.parseInt(args[0]);
             Integer subId = Integer.parseInt(args[1]);
-            tag = new ServerTag();
-            tagParam[1] = groupId;
-            tagParam[2] = subId;
+            tag.setTag(serverType,groupId,subId);
         }
-        tag.initTag(tagParam);
-
         initServers();
     }
 

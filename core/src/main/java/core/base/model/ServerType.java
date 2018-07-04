@@ -9,6 +9,7 @@ package core.base.model;
  */
 
 public enum ServerType {
+    Default,
     Gate,
     Global
 }

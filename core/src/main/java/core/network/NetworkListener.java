@@ -4,6 +4,7 @@ import core.base.common.AbstractSession;
 import core.base.common.AbstractSessionManager;
 import core.base.common.AttributeUtil;
 import core.base.common.SessionKey;
+import core.base.sequence.IResponseHandler;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import lombok.extern.slf4j.Slf4j;
@@ -18,9 +19,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class NetworkListener implements INetworkEventListener {
     AbstractSessionManager sessionMng;
-     public NetworkListener(AbstractSessionManager mng)
+    IResponseHandlerManager responseMng;
+     public NetworkListener(AbstractSessionManager sessionMng, IResponseHandlerManager responseMng)
      {
-          this.sessionMng = mng;
+         this.sessionMng = sessionMng;
+         this.responseMng = responseMng;
      }
     @Override
     public void onConnected(ChannelHandlerContext ctx) {
@@ -29,6 +32,8 @@ public class NetworkListener implements INetworkEventListener {
         if (session == null) {
             try {
                 session = sessionMng.createSession(channel);
+                session.setResponseMng(responseMng);
+
                 AttributeUtil.set(channel, SessionKey.SESSION, session);
                 sessionMng.addSession(session);
                 log.info("建立新的连接：" + channel.toString());

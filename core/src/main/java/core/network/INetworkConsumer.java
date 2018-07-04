@@ -16,7 +16,6 @@ import io.netty.channel.Channel;
  */
 public interface INetworkConsumer {
     /**
-     * 执行具体的指令
      *
      * @param packet packet
      * @param channel channel

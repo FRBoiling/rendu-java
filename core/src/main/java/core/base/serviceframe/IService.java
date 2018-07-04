@@ -1,6 +1,5 @@
 package core.base.serviceframe;
 
-
 import core.network.ServiceState;
 
 public interface IService {

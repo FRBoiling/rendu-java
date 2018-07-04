@@ -1,6 +1,4 @@
-package core.base.concurrent;
-
-import core.base.concurrent.queue.IMessageQueue;
+package core.base.concurrent.queue;
 
 /**
  * Created with IntelliJ IDEA.

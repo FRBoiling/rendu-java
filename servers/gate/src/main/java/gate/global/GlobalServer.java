@@ -26,17 +26,15 @@ public class GlobalServer implements IService {
         int IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
 
         GlobalServerResponseMng responseMng = new GlobalServerResponseMng();
-
         responseMng.register();
 
-        GlobalServerMsgRouter msgRouter = new GlobalServerMsgRouter(responseMng);
+        GlobalServerMsgRouter msgRouter = new GlobalServerMsgRouter();
         ClientNetworkServiceBuilder builder = new ClientNetworkServiceBuilder();
-        builder.setResponseHandlerManager(responseMng);
         builder.setConsumer(msgRouter);
         builder.setWorkerLoopGroupCount(IOGroupCount);
         builder.setIp("127.0.0.1");
         builder.setPort(9002);
-        builder.setListener(new NetworkListener(GlobalServerSessionMng.getInstance()));
+        builder.setListener(new NetworkListener(GlobalServerSessionMng.getInstance(),responseMng));
 
         // 创建网络服务
         netWork = (ClientNetworkService) builder.createService();

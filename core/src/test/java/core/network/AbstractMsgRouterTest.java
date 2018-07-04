@@ -1,8 +1,8 @@
 package core.network; 
 
 import core.base.concurrent.AbstractHandler;
-import core.base.concurrent.QueueDriver;
-import core.base.concurrent.QueueExecutor;
+import core.base.concurrent.queue.QueueDriver;
+import core.base.concurrent.queue.QueueExecutor;
 import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After;
@@ -53,10 +53,10 @@ public void testConsume() throws Exception {
         public void run(){
                 Thread t = Thread.currentThread();
                 String name = t.getName();
-                AbstractHandler handler =new TestHandler();
-                handler.setParam(id);
-                queueDriver.addAction(handler);
-                System.out.println("AbstractMsgRouter cur thread name=" + name);
+//                AbstractHandler handler =new TestHandler();
+//                handler.setParam(id);
+//                queueDriver.addAction(handler);
+//                System.out.println("AbstractMsgRouter cur thread name=" + name);
         }
     }
 }

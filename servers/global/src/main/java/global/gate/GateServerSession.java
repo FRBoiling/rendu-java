@@ -1,6 +1,8 @@
 package global.gate;
 
 import core.base.common.AbstractSession;
+import core.base.model.ServerTag;
+import core.base.model.ServerType;
 import io.netty.channel.Channel;
 
 /**
@@ -14,6 +16,9 @@ import io.netty.channel.Channel;
 public class GateServerSession extends AbstractSession {
     public GateServerSession(Channel channel) {
         super(channel);
+        ServerTag tag =new ServerTag();
+        tag.setTag(ServerType.Gate,0,0);
+        setTag(tag);
     }
 
     @Override

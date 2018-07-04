@@ -1,6 +1,8 @@
-package core.base.concurrent.queue;
+package core.base.sequence;
 
-import core.base.concurrent.IQueueDriverAction;
+import core.base.concurrent.queue.IQueueDriverAction;
+import core.base.concurrent.queue.IMessageQueue;
+import core.base.concurrent.queue.MessageQueue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -35,9 +37,7 @@ public class MessageExecutor {
     }
 
     public void execute(){
-        while (queue.size()>0){
-            queue.poll().run();
-        }
+
     }
 
     public boolean addAction(IQueueDriverAction action){

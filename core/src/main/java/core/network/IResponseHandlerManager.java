@@ -1,7 +1,6 @@
 package core.network;
 
-import core.base.concurrent.AbstractHandler;
-
+import core.base.sequence.IResponseHandler;
 import java.util.HashMap;
 
 /**
@@ -13,14 +12,14 @@ import java.util.HashMap;
  */
 public interface IResponseHandlerManager {
 
-    HashMap<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>(10);
+    HashMap<Integer, Class<? extends IResponseHandler>> handlers = new HashMap<>(10);
     /**
      * 获取handler
      * @param messageId
      * @return
      */
-    default AbstractHandler getHandler(int messageId) {
-        Class<? extends AbstractHandler> clazz = handlers.get(messageId);
+    default IResponseHandler getHandler(int messageId) {
+        Class<? extends IResponseHandler> clazz = handlers.get(messageId);
         if (clazz != null) {
             try {
                 return clazz.newInstance();
@@ -36,9 +35,9 @@ public interface IResponseHandlerManager {
      * @param messageId
      * @param handler
      */
-    default boolean register(int messageId, Class<? extends AbstractHandler> handler)
+    default boolean register(int messageId, Class<? extends IResponseHandler> handler)
     {
-        Class<? extends AbstractHandler> clazz = handlers.get(messageId);
+        Class<? extends IResponseHandler> clazz = handlers.get(messageId);
         if (clazz != null) {
             return false;
         }

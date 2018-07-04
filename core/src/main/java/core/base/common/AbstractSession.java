@@ -1,9 +1,7 @@
 package core.base.common;
 
-import core.base.concurrent.IDriver;
-import core.base.concurrent.IQueueDriverAction;
-import core.base.concurrent.queue.MessageDriver;
-import core.base.concurrent.queue.MessageExecutor;
+import core.base.sequence.MessageDriver;
+import core.network.IResponseHandlerManager;
 import io.netty.channel.Channel;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -31,15 +29,20 @@ public abstract class AbstractSession {
 
     private ISessionTag tag;
 
-    private final MessageDriver messageDriver;
-    private final MessageExecutor messageExecutor;
+    private MessageDriver messageDriver;
+
+    private IResponseHandlerManager responseMng;
+
 
     public AbstractSession(Channel channel) {
         this.channel = channel;
         isRegistered = false;
-
         messageDriver = new MessageDriver(1024);
-        messageExecutor = new MessageExecutor(1024);
+    }
+
+    public void setResponseMng(IResponseHandlerManager responseMng){
+        this.responseMng = responseMng;
+        this.messageDriver.setResponseMng(responseMng);
     }
 
     public void OnConnected()
@@ -57,15 +60,6 @@ public abstract class AbstractSession {
             log.error("[没有找到会话注册信息]");
         }
     }
-
-//
-//    public Channel getChannel() {
-//        return channel;
-//    }
-//
-//    public void setChannel(Channel channel) {
-//        this.channel = channel;
-//    }
 
     public String getIP() {
         if (channel == null) {
@@ -99,24 +93,8 @@ public abstract class AbstractSession {
         }
     }
 
-//    public void closeByHttp() {
-//        if (channel == null) {
-//            return;
-//        }
-//        try {
-//            channel.close().sync();
-//        } catch (InterruptedException e) {
-//            log.error("", e);
-//        }
-//    }
     public void update(){
-        synchronized (messageDriver.getActions()) {
-           while (messageDriver.getActions().size()>0){
-               IQueueDriverAction action = messageDriver.getActions().poll();
-               messageExecutor.addAction(action);
-           }
-        }
-        messageExecutor.execute();
+        messageDriver.update(this);
     }
 
     public void sendMessage(Object msg) {

@@ -2,6 +2,7 @@ package core.base.concurrent;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import core.base.concurrent.queue.IMessageQueue;
+import core.base.concurrent.queue.IQueueDriverAction;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,6 +1,6 @@
-package core.base.concurrent;
+package core.base.concurrent.queue;
 
-import core.base.concurrent.queue.IMessageQueue;
+import core.base.concurrent.IAction;
 
 /**
  * Created with IntelliJ IDEA.

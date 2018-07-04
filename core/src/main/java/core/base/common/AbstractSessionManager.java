@@ -1,10 +1,12 @@
 package core.base.common;
 
 import io.netty.channel.Channel;
+import io.netty.util.internal.ConcurrentSet;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Currency;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -17,8 +19,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Slf4j
 public abstract class AbstractSessionManager {
-    List<AbstractSession>  allSession = Collections.synchronizedList(new ArrayList<AbstractSession>());
-    private List <AbstractSession> removeSession = new ArrayList<AbstractSession>() ;
+    ConcurrentSet<AbstractSession> allSession = new ConcurrentSet<AbstractSession>();
+    private ArrayList<AbstractSession> removeSession = new ArrayList<AbstractSession>() ;
 
     ConcurrentHashMap<String, AbstractSession> registerSessions = new ConcurrentHashMap<>(10);
 
@@ -105,7 +107,7 @@ public abstract class AbstractSessionManager {
         } else {
             allSession.add(session);
         }
-        log.info("add success: {} ", session.getKey());
+        log.info("add session {} success! ", session.getIP());
         return true;
     }
 

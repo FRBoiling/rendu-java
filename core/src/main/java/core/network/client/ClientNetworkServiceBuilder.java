@@ -28,10 +28,6 @@ public class ClientNetworkServiceBuilder implements INetworkServiceBuilder,ISock
      * 事件监听器
      */
     private INetworkEventListener listener;
-    /**
-     * 响应管理器
-     */
-    private IResponseHandlerManager responseHandlerManager;
 
     /**
      * 连接端口

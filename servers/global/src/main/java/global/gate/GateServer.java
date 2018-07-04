@@ -1,8 +1,6 @@
 package global.gate;
 
 import constant.SystemConst;
-import core.base.concurrent.QueueDriver;
-import core.base.concurrent.QueueExecutor;
 import core.base.serviceframe.IService;
 import core.network.NetworkListener;
 import core.network.ServiceState;
@@ -27,15 +25,13 @@ public class GateServer implements IService {
 
         GateServerResponseMng responseMng = new GateServerResponseMng();
         responseMng.register();
-        GateServerMsgRouter msgRouter = new GateServerMsgRouter(responseMng);
-
+        GateServerMsgRouter msgRouter = new GateServerMsgRouter();
         ServerNetworkServiceBuilder builder = new ServerNetworkServiceBuilder();
-        builder.setResponseHandlerManager(responseMng);
         builder.setConsumer(msgRouter);
         builder.setAcceptorGroupCount(acceptorGroupCount);
         builder.setIOGroupCount(IOGroupCount);
         builder.setPort(9002);
-        builder.setListener(new NetworkListener(GateServerSessionMng.getInstance()));
+        builder.setListener(new NetworkListener(GateServerSessionMng.getInstance(), responseMng));
 
         // 创建网络服务
         netWork = (ServerNetworkService) builder.createService();
@@ -45,15 +41,17 @@ public class GateServer implements IService {
     public void init(String[] args) {
 
     }
+
     @Override
     public void update() {
         GateServerSessionMng.getInstance().update();
     }
+
     @Override
     public void start() {
         netWork.start();
         if (netWork.isOpened()) {
-            state =ServiceState.RUNNING;
+            state = ServiceState.RUNNING;
         }
     }
 

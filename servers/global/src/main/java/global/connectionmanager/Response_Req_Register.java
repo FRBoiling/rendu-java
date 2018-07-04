@@ -6,6 +6,7 @@ import core.base.common.AbstractSession;
 import core.base.concurrent.AbstractHandler;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
+import core.base.sequence.IResponseHandler;
 import global.GlobalServiceContext;
 import global.gate.GateServerSessionMng;
 import lombok.extern.slf4j.Slf4j;
@@ -20,23 +21,14 @@ import protocol.server.register.ServerRegister;
  */
 
 @Slf4j
-public class Response_Req_Register extends AbstractHandler<byte[]> {
+public class Response_Req_Register implements IResponseHandler<byte[]> {
     @Override
-    public void doAction() throws InvalidProtocolBufferException {
-        AbstractSession session = (AbstractSession) this.session;
-
-        ServerRegister.MSG_REQ_Server_Register msg = ServerRegister.MSG_REQ_Server_Register.parseFrom(this.message);
-        ServerTag tag = new ServerTag();
-
+    public void onResponse(byte[] message, AbstractSession session) throws InvalidProtocolBufferException {
+        ServerRegister.MSG_REQ_Server_Register msg = ServerRegister.MSG_REQ_Server_Register.parseFrom(message);
         ServerType serverType = ServerType.values()[msg.getServerType()];
         //基本信息注册 MSG_REQ_Server_Register
-        Object[] params = new Object[]{
-                serverType,
-                msg.getGroupId(),
-                msg.getSubId()
-        };
-        tag.initTag(params);
-
+        ServerTag tag = new ServerTag();
+        tag.setTag(serverType,msg.getGroupId(),msg.getSubId());
         session.setTag(tag);
 
         //注册反馈 MSG_RES_Server_Register

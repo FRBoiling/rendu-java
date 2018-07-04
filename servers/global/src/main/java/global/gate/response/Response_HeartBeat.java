@@ -1,6 +1,8 @@
 package global.gate.response;
 
-import core.base.concurrent.AbstractHandler;
+import com.google.protobuf.InvalidProtocolBufferException;
+import core.base.common.AbstractSession;
+import core.base.sequence.IResponseHandler;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -11,10 +13,10 @@ import lombok.extern.slf4j.Slf4j;
  * Time: 15:56
  */
 @Slf4j
-public class Response_HeartBeat  extends AbstractHandler<byte[]> {
+public class Response_HeartBeat implements IResponseHandler<byte[]> {
     @Override
-    public void doAction() {
-//        Session session = (Session) this.session;
+    public void onResponse(byte[] msg, AbstractSession session) throws InvalidProtocolBufferException {
+        //        Session session = (Session) this.session;
         log.info("Response_HeartBeat");
 //        UserManager.getInstance().login(session, message.getLoginName());
     }
