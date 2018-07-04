@@ -3,23 +3,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ServerCluster</artifactId>
-        <groupId>ServerCluster</groupId>
+        <artifactId>common</artifactId>
+        <groupId>common</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>common</groupId>
-    <artifactId>common</artifactId>
-    <packaging>pom</packaging>
+    <groupId>uitl</groupId>
+    <artifactId>uitl</artifactId>
 
-    <name>common</name>
+    <name>uitl</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
-    <modules>
-        <module>configuration</module>
-        <module>uitl</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

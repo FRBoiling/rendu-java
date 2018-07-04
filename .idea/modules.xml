@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/servers/realm/realm.iml" filepath="$PROJECT_DIR$/servers/realm/realm.iml" />
       <module fileurl="file://$PROJECT_DIR$/servers/relation/relation.iml" filepath="$PROJECT_DIR$/servers/relation/relation.iml" />
       <module fileurl="file://$PROJECT_DIR$/servers/servers.iml" filepath="$PROJECT_DIR$/servers/servers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/uitl/uitl.iml" filepath="$PROJECT_DIR$/common/uitl/uitl.iml" />
       <module fileurl="file://$PROJECT_DIR$/servers/world/world.iml" filepath="$PROJECT_DIR$/servers/world/world.iml" />
       <module fileurl="file://$PROJECT_DIR$/servers/worldmanager/worldmanager.iml" filepath="$PROJECT_DIR$/servers/worldmanager/worldmanager.iml" />
     </modules>
