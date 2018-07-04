@@ -29,6 +29,7 @@ public abstract class AbstractSessionManager {
             log.error("register session fail: session = null");
             return false;
         }
+
         if (!allSession.contains(session)){
             log.error("register session fail: session not exist");
             return false;
@@ -51,6 +52,8 @@ public abstract class AbstractSessionManager {
             session.setOffline(false);
             registerSessions.put(session.getKey(), session);
         }
+
+
         log.info("register success: {} ", session.getKey());
         return true;
     }

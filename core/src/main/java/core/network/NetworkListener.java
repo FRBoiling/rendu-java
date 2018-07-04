@@ -33,11 +33,10 @@ public class NetworkListener implements INetworkEventListener {
             try {
                 session = sessionMng.createSession(channel);
                 session.setResponseMng(responseMng);
-
-                AttributeUtil.set(channel, SessionKey.SESSION, session);
-                sessionMng.addSession(session);
-                log.info("建立新的连接：" + channel.toString());
                 session.OnConnected();
+                sessionMng.addSession(session);
+                AttributeUtil.set(channel, SessionKey.SESSION, session);
+                log.info("建立新的连接：" + channel.toString());
             }catch (Exception e){
                 log.error(e.toString());
             }

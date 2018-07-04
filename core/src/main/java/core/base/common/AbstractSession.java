@@ -33,6 +33,21 @@ public abstract class AbstractSession {
 
     private IResponseHandlerManager responseMng;
 
+    @Override
+    public int hashCode() {
+        return channel.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof AbstractSession) {
+            AbstractSession p = (AbstractSession) obj;
+            return this.tag.equals(p.tag);
+        } else {
+            return false;
+        }
+    }
+
 
     public AbstractSession(Channel channel) {
         this.channel = channel;

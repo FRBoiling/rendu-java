@@ -1,5 +1,6 @@
 package core.base.model;
 
+import core.base.common.AbstractSession;
 import core.base.common.ISessionTag;
 import lombok.Getter;
 
@@ -22,6 +23,21 @@ public class ServerTag implements ISessionTag {
         subId = 0;
         type = ServerType.Default;
         return;
+    }
+
+    @Override
+    public int hashCode(){
+        return getKey().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof ServerTag) {
+            ServerTag p = (ServerTag) obj;
+            return this.type.equals(p.type)&&this.groupId==p.groupId&&this.subId==p.subId;
+        } else {
+            return false;
+        }
     }
 
     @Override
