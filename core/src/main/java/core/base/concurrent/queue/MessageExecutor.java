@@ -12,15 +12,26 @@ import core.base.concurrent.IQueueDriverAction;
 
 public class MessageExecutor {
     private final IMessageQueue<IQueueDriverAction> queue;
+    private String name;
     /**
      * 队列最大数量
      */
     private int maxQueueSize;
 
-    public MessageExecutor(String name, int maxQueueSize) {
+    public MessageExecutor(int maxQueueSize,String name) {
+        this.name = name;
         this.queue = new MessageQueue<IQueueDriverAction>();
-        this.queue.setName(name);
         this.maxQueueSize = maxQueueSize;
+    }
+
+    public MessageExecutor(int maxQueueSize) {
+        this.queue = new MessageQueue<IQueueDriverAction>();
+        this.maxQueueSize = maxQueueSize;
+    }
+
+    public void register(String name){
+        this.name = name;
+        this.queue.setName(name);
     }
 
     public void execute(){

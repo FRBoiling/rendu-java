@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  * Time: 20:40
  */
 @Slf4j
-public class MessageDriver implements IDriver {
+public class MessageDriver {
 
     /**
      * 队列最大数量
@@ -28,19 +28,25 @@ public class MessageDriver implements IDriver {
      */
     private final IMessageQueue<IQueueDriverAction> queue;
 
-    public MessageDriver(String name, int maxQueueSize) {
+    public MessageDriver(int maxQueueSize,String name) {
         this.name = name;
         this.maxQueueSize = maxQueueSize;
         this.queue = new MessageQueue<IQueueDriverAction>();
-        this.queue.setName(name);
+    }
+    public MessageDriver(int maxQueueSize) {
+        this.maxQueueSize = maxQueueSize;
+        this.queue = new MessageQueue<IQueueDriverAction>();
     }
 
+    public void register(String name){
+        this.name = name;
+        this.queue.setName(name);
+    }
     /**
      * 添加一个行为到队列中
      *
      * @param action action
      */
-    @Override
     public boolean addAction(IQueueDriverAction action) {
         boolean result;
         synchronized (queue) {
@@ -55,7 +61,6 @@ public class MessageDriver implements IDriver {
         return result;
     }
 
-    @Override
     public IMessageQueue<IQueueDriverAction> getActions() {
         return queue;
     }

@@ -27,10 +27,15 @@ public class NetworkListener implements INetworkEventListener {
         Channel channel = ctx.channel();
         AbstractSession session = AttributeUtil.get(channel, SessionKey.SESSION);
         if (session == null) {
-            session = sessionMng.createSession(channel);
-            AttributeUtil.set(channel, SessionKey.SESSION, session);
-            log.info("建立新的连接：" + channel.toString());
-            session.OnConnected();
+            try {
+                session = sessionMng.createSession(channel);
+                AttributeUtil.set(channel, SessionKey.SESSION, session);
+                sessionMng.addSession(session);
+                log.info("建立新的连接：" + channel.toString());
+                session.OnConnected();
+            }catch (Exception e){
+                log.error(e.toString());
+            }
         } else {
             log.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
         }
@@ -48,6 +53,7 @@ public class NetworkListener implements INetworkEventListener {
             log.error("[没有找到有效会话]");
         }else {
             session.OnDisConnected();
+            sessionMng.unregister(session);
         }
     }
 

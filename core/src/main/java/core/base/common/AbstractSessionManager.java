@@ -3,6 +3,9 @@ package core.base.common;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -14,27 +17,37 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Slf4j
 public abstract class AbstractSessionManager {
-    ConcurrentHashMap<String, AbstractSession> sessions = new ConcurrentHashMap<>(10);
+    List<AbstractSession>  allSession = Collections.synchronizedList(new ArrayList<AbstractSession>());
+    private List <AbstractSession> removeSession = new ArrayList<AbstractSession>() ;
+
+    ConcurrentHashMap<String, AbstractSession> registerSessions = new ConcurrentHashMap<>(10);
 
     public boolean register(AbstractSession session) {
         if (session == null) {
             log.error("register session fail: session = null");
             return false;
         }
-        AbstractSession temSession = sessions.get(session.getKey());
+        if (!allSession.contains(session)){
+            log.error("register session fail: session not exist");
+            return false;
+        }
+
+        AbstractSession temSession = registerSessions.get(session.getKey());
         if (temSession != null) {
             if (temSession.isOffline()) {
+                //TODO:Boil 离线
                 session.setRegistered(true);
                 session.setOffline(false);
-                sessions.put(session.getKey(), session);
+                registerSessions.put(session.getKey(), session);
             } else {
+                //TODO:Boil 重复注册
                 log.error("register session fail: repeated session {}", session.getKey());
                 return false;
             }
         } else {
             session.setRegistered(true);
             session.setOffline(false);
-            sessions.put(session.getKey(), session);
+            registerSessions.put(session.getKey(), session);
         }
         log.info("register success: {} ", session.getKey());
         return true;
@@ -45,10 +58,17 @@ public abstract class AbstractSessionManager {
             log.error("unregister session fail: session = null");
             return false;
         }
-        if (sessions.containsKey(session.getKey())) {
+        if (!allSession.contains(session)){
+            log.error("unregister session fail: session not exist");
+            return false;
+        }else {
+            allSession.remove(session);
+        }
+
+        if (registerSessions.containsKey(session.getKey())) {
             session.setRegistered(false);
             session.setOffline(true);
-            sessions.remove(session.getKey());
+            registerSessions.remove(session.getKey());
         } else {
             log.error("unregister session fail: count found session {}", session.getKey());
             return false;
@@ -57,14 +77,36 @@ public abstract class AbstractSessionManager {
     }
     
     public void update(){
-        for (AbstractSession session: sessions.values()) {
+        for (AbstractSession session: allSession) {
             try {
                 session.update();
             }catch (Exception e){
                 log.error(e.toString());
             }
         }
+        if (removeSession.size()>0){
+            for (AbstractSession session:removeSession) {
+                allSession.remove(session);
+            }
+            removeSession.clear();
+        }
     }
 
     public abstract AbstractSession createSession(Channel channel);
+
+    public boolean addSession(AbstractSession session) {
+        if (session == null) {
+            log.error("add session fail: session = null");
+            return false;
+        }
+        if (allSession.contains(session)) {
+          //  log.error("add session fail: repeated session {}", session.getKey());
+            return false;
+        } else {
+            allSession.add(session);
+        }
+        log.info("add success: {} ", session.getKey());
+        return true;
+    }
+
 }

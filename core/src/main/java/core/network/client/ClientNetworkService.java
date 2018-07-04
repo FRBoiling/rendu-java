@@ -142,7 +142,7 @@ public class ClientNetworkService implements IService ,ISocketClient {
         } catch (Exception e) {
 //            throw new RuntimeException(e);
 //            throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails", e);
-            //throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails:"+e.getMessage());
+            throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails:"+e.getMessage());
         }
     }
 

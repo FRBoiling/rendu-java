@@ -37,8 +37,9 @@ public abstract class AbstractSession {
     public AbstractSession(Channel channel) {
         this.channel = channel;
         isRegistered = false;
-        messageDriver = new MessageDriver("MsgDri_"+tag.getKey(),1024);
-        messageExecutor = new MessageExecutor("MsgExec_"+tag.getKey(),1024);
+
+        messageDriver = new MessageDriver(1024);
+        messageExecutor = new MessageExecutor(1024);
     }
 
     public void OnConnected()
