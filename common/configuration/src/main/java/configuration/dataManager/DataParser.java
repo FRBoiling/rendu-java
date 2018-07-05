@@ -1,4 +1,4 @@
-package configuration.datamanager;
+package configuration.dataManager;
 
 import lombok.extern.slf4j.Slf4j;
 import org.dom4j.Attribute;

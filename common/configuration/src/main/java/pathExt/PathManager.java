@@ -1,6 +1,6 @@
 package pathExt;
 
-import configuration.datamanager.DataListManager;
+import configuration.dataManager.DataListManager;
 
 import java.io.File;
 import java.nio.file.Path;
