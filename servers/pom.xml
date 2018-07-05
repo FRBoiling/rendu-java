@@ -20,7 +20,7 @@
         <module>global</module>
         <module>gate</module>
         <module>world</module>
-        <module>worldmanager</module>
+        <module>manager</module>
         <module>relation</module>
         <module>realm</module>
     </modules>

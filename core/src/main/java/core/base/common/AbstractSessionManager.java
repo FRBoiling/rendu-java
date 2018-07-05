@@ -50,7 +50,6 @@ public abstract class AbstractSessionManager {
             registerSessions.put(session.getKey(), session);
         }
 
-
         log.info("register success: {} ", session.getKey());
         return true;
     }

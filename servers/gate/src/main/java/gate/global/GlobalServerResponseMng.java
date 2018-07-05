@@ -1,9 +1,8 @@
 package gate.global;
 
 import core.network.IResponseHandlerManager;
-import gate.connectionmanager.Response_Res_Register;
+import gate.connectionManager.Response_Res_Register;
 import protocol.gate.global.G2GMIdGenerater;
-import protocol.global.gate.GM2G;
 import protocol.global.gate.GM2GIdGenerater;
 import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;

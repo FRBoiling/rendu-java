@@ -11,12 +11,12 @@
         <module name="core" />
         <module name="gate" />
         <module name="global" />
+        <module name="manager" />
         <module name="protocol" />
         <module name="realm" />
         <module name="relation" />
         <module name="uitl" />
         <module name="world" />
-        <module name="worldmanager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -26,6 +26,7 @@
       <module name="core" target="1.8" />
       <module name="gate" target="1.8" />
       <module name="global" target="1.8" />
+      <module name="manager" target="1.8" />
       <module name="protocol" target="1.8" />
       <module name="realm" target="1.8" />
       <module name="relation" target="1.8" />
@@ -33,7 +34,6 @@
       <module name="servers" target="1.8" />
       <module name="uitl" target="1.8" />
       <module name="world" target="1.8" />
-      <module name="worldmanager" target="1.8" />
       <module name="xmlparser" target="1.8" />
     </bytecodeTargetLevel>
   </component>

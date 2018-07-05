@@ -1,9 +1,8 @@
-package gate.connectionmanager;
+package gate.connectionManager;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import constant.Errorcode;
 import core.base.common.AbstractSession;
-import core.base.concurrent.AbstractHandler;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.sequence.IResponseHandler;

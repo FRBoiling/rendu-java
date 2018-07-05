@@ -1,7 +1,7 @@
 package global.gate;
 
 import core.network.IResponseHandlerManager;
-import global.connectionmanager.Response_Req_Register;
+import global.connectionManager.Response_Req_Register;
 import global.gate.response.Response_HeartBeat;
 import lombok.extern.slf4j.Slf4j;
 import protocol.gate.global.G2GM;
