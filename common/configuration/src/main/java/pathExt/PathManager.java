@@ -32,8 +32,8 @@ public class PathManager {
     private String serverPath;
 
     public void initPath(String path){
-        bashPath = path;
         dataPath = pathCombine(bashPath,"Data");
+        serverPath = pathCombine(bashPath,"Server");
     }
 
     private String pathCombine(String path,String folder){
@@ -47,4 +47,15 @@ public class PathManager {
         }
         return newPath.toString();
     }
+
+    private String getBashPath(){
+        // get current dir
+        File file = new File(System.getProperty("user.dir"));
+        // get parent dir
+        String parentPath = file.getParent();
+        System.out.println(parentPath);
+        bashPath = parentPath;
+        return bashPath;
+    }
+
 }

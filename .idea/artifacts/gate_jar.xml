@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact name="gate:jar">
-    <output-path>$PROJECT_DIR$/../Bin/out/artifacts/gate_jar</output-path>
+    <output-path>$PROJECT_DIR$/../Bin/Server/</output-path>
     <root id="root">
       <element id="archive" name="gate.jar">
         <element id="directory" name="META-INF">

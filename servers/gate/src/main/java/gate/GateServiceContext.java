@@ -7,6 +7,8 @@ import core.base.serviceframe.IService;
 import core.network.ServiceState;
 import gate.global.GlobalServer;
 
+import java.io.File;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -20,6 +22,15 @@ public class GateServiceContext implements IService {
     DriverThread mainThread;
 
     private GlobalServer globalServer;
+
+    public void initPath(){
+       // PathManager
+    }
+
+    public void  initData(){
+
+
+    }
 
     public void initServers(){
         globalServer = createGlobalServer();
@@ -44,6 +55,7 @@ public class GateServiceContext implements IService {
             Integer subId = Integer.parseInt(args[1]);
             tag.setTag(serverType,groupId,subId);
         }
+        initData();
         initServers();
     }
 
