@@ -18,7 +18,7 @@ import protocol.server.register.ServerRegister;
  * Time: 16:42
  */
 @Slf4j
-public class Response_Res_Register implements IResponseHandler<byte[]> {
+public class ResponseResRegister implements IResponseHandler<byte[]> {
     @Override
     public void onResponse(byte[] message, AbstractSession session) throws InvalidProtocolBufferException {
         ServerRegister.MSG_RES_Server_Register msg = ServerRegister.MSG_RES_Server_Register.parseFrom(message);

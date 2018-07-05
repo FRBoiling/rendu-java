@@ -1,7 +1,7 @@
 package global.gate;
 
 import core.network.IResponseHandlerManager;
-import global.connectionManager.Response_Req_Register;
+import global.connectionManager.ResponseReqRegister;
 import global.gate.response.Response_HeartBeat;
 import lombok.extern.slf4j.Slf4j;
 import protocol.gate.global.G2GM;
@@ -30,7 +30,7 @@ public class GateServerResponseMng implements IResponseHandlerManager {
 
     @Override
     public void register() {
-        register(Id.getInst().getMessageId(ServerRegister.MSG_REQ_Server_Register.class), Response_Req_Register.class);
+        register(Id.getInst().getMessageId(ServerRegister.MSG_REQ_Server_Register.class), ResponseReqRegister.class);
         register(Id.getInst().getMessageId(G2GM.MSG_G2GM_HEARTBEAT.class), Response_HeartBeat.class);
     }
 }

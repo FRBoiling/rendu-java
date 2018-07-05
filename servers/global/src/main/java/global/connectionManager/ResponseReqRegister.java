@@ -20,7 +20,7 @@ import protocol.server.register.ServerRegister;
  */
 
 @Slf4j
-public class Response_Req_Register implements IResponseHandler<byte[]> {
+public class ResponseReqRegister implements IResponseHandler<byte[]> {
     @Override
     public void onResponse(byte[] message, AbstractSession session) throws InvalidProtocolBufferException {
         ServerRegister.MSG_REQ_Server_Register msg = ServerRegister.MSG_REQ_Server_Register.parseFrom(message);
