@@ -19,7 +19,7 @@
         <module name="world" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
+    <bytecodeTargetLevel>
       <module name="common" target="1.8" />
       <module name="configuration" target="1.8" />
       <module name="constant" target="1.7" />
@@ -34,7 +34,6 @@
       <module name="servers" target="1.8" />
       <module name="uitl" target="1.8" />
       <module name="world" target="1.8" />
-      <module name="xmlparser" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
