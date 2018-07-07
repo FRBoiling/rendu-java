@@ -48,7 +48,6 @@ public abstract class AbstractSession {
         }
     }
 
-
     public AbstractSession(Channel channel) {
         this.channel = channel;
         isRegistered = false;

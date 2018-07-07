@@ -15,7 +15,7 @@ import java.util.*;
  */
 @Getter
 @Slf4j
-public class DataList extends AbstractMap {
+public class DataList extends AbstractMap<Integer,Data>{
     private HashMap<Integer , Data> dataListById;
     private HashMap<String , Data> dataListByName;
     /**

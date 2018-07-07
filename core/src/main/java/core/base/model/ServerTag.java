@@ -55,14 +55,26 @@ public class ServerTag implements ISessionTag {
         this.type = (ServerType) params[0];
         this.groupId = (int) params[1];
         this.subId = (int) params[2];
-        strTag = type.name() + "_" + groupId + "_" + subId;
+        strTag = type.name();
+        if (groupId != 0){
+            strTag = strTag+ "_" + groupId;
+        }
+        if (subId!=0){
+            strTag = strTag+ "_" + subId;
+        }
     }
 
     public void setTag(ServerType type, int groupId, int subId) {
         this.type = type;
         this.groupId = groupId;
         this.subId = subId;
-        strTag = type.name() + "_" + groupId + "_" + subId;
+        strTag = type.name();
+        if (this.groupId != 0){
+            strTag = strTag+ "_" + this.groupId;
+        }
+        if (this.subId!=0){
+            strTag = strTag+ "_" + this.subId;
+        }
     }
 
 

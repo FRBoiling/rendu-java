@@ -1,7 +1,7 @@
 package constant;
 
 /**
- * Hello world!
+ * Hello zone!
  *
  */
 public class App 

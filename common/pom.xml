@@ -18,7 +18,8 @@
     <url>http://www.example.com</url>
     <modules>
         <module>configuration</module>
-        <module>uitl</module>
+        <module>util</module>
+        <module>util</module>
     </modules>
 
     <properties>

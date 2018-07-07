@@ -39,6 +39,7 @@ public abstract class AbstractSessionManager {
                 session.setRegistered(true);
                 session.setOffline(false);
                 registerSessions.put(session.getKey(), session);
+                log.info("register session {} offline ", session.getKey());
             } else {
                 //TODO:Boil 重复注册
                 log.error("register session fail: repeated session {}", session.getKey());
@@ -48,9 +49,9 @@ public abstract class AbstractSessionManager {
             session.setRegistered(true);
             session.setOffline(false);
             registerSessions.put(session.getKey(), session);
+            log.info("register success: {} ", session.getKey());
         }
 
-        log.info("register success: {} ", session.getKey());
         return true;
     }
 
@@ -71,7 +72,7 @@ public abstract class AbstractSessionManager {
             session.setOffline(true);
             registerSessions.remove(session.getKey());
         } else {
-            log.error("unregister session fail: count found session {}", session.getKey());
+            log.error("unregister session fail: can't found session {}", session.getKey());
             return false;
         }
         return true;

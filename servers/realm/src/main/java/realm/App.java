@@ -1,7 +1,7 @@
 package realm;
 
 /**
- * Hello world!
+ * Hello zone!
  *
  */
 public class App 

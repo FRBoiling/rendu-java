@@ -1,7 +1,11 @@
 package gate.global;
 
+import configuration.dataManager.Data;
+import configuration.dataManager.DataList;
+import configuration.dataManager.DataListManager;
 import constant.SystemConst;
 import core.base.serviceframe.IService;
+import core.network.MsgRouter;
 import core.network.NetworkListener;
 import core.network.ServiceState;
 import core.network.client.ClientNetworkService;
@@ -20,20 +24,24 @@ public class GlobalServer implements IService {
     private final ClientNetworkService netWork;
     private ServiceState state;
 
+    private Data globalData;
+
+    private String globalIp;
+    private int globalPort;
+
     public GlobalServer() throws Exception {
-//        int IOGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
-//                : Runtime.getRuntime().availableProcessors();
+        init(null);
+
         int IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
 
         GlobalServerResponseMng responseMng = new GlobalServerResponseMng();
         responseMng.register();
 
-        GlobalServerMsgRouter msgRouter = new GlobalServerMsgRouter();
         ClientNetworkServiceBuilder builder = new ClientNetworkServiceBuilder();
-        builder.setConsumer(msgRouter);
         builder.setWorkerLoopGroupCount(IOGroupCount);
-        builder.setIp("127.0.0.1");
-        builder.setPort(9002);
+        builder.setIp(globalIp);
+        builder.setPort(globalPort);
+        builder.setConsumer(new MsgRouter());
         builder.setListener(new NetworkListener(GlobalServerSessionMng.getInstance(),responseMng));
 
         // 创建网络服务
@@ -42,7 +50,10 @@ public class GlobalServer implements IService {
 
     @Override
     public void init(String[] args) {
-
+        DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
+        globalData =dateList.getData("GlobalServer");
+        globalIp = globalData.getString("ip");
+        globalPort = globalData.getInteger("gatePort");
     }
 
     @Override

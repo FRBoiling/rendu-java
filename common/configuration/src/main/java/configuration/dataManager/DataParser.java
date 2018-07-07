@@ -39,11 +39,10 @@ public class DataParser{
             dataList = new DataList();
             dataList.init(rootId);
         }
-
-        List<Element> elements = getClassElements(xmlDoc.getRootElement());
-        for (Element e : elements) {
+        List elements = getClassElements(xmlDoc.getRootElement());
+        for (Object obj : elements) {
+            Element e = (Element)obj;
             Data data = new Data();
-
             Attribute idAttr = e.attribute("id");
             if ( idAttr!=null) {
                 String idString =idAttr.getValue();
@@ -62,8 +61,9 @@ public class DataParser{
                 e.attributes().remove(nameAttr);
             }
 
-            List<Attribute> attributeList = e.attributes();
-            for ( Attribute attr:attributeList){
+            List attributeList = e.attributes();
+            for ( Object o:attributeList){
+                Attribute attr =(Attribute) o;
                 Attr a = new Attr(attr.getName(),attr.getData());
                 data.addAttr(a);
             }
@@ -79,7 +79,6 @@ public class DataParser{
         // 解析xml文档内容
         try {
             SAXReader reader = new SAXReader();
-            //in = XMLUtil.class.getClassLoader().getResourceAsStream(filePath);// 获取到xml文件
             in = new FileInputStream(new File(filePath));
             doc = reader.read(in);
         } catch (Exception e) {
@@ -95,13 +94,12 @@ public class DataParser{
         return doc;
     }
 
-    private List<Element> readXml(String filePath){
+    private List readXml(String filePath){
         InputStream in = null;
-        List<Element> elementList = null;
+        List elementList = null;
         // 解析xml文档内容
         try {
             SAXReader reader = new SAXReader();
-            //in = XMLUtil.class.getClassLoader().getResourceAsStream(filePath);// 获取到xml文件
             in = new FileInputStream(new File(filePath));
             Document doc = reader.read(in);
 
@@ -125,13 +123,14 @@ public class DataParser{
         Element rootEle = doc.getRootElement();
         Attribute rootAttr = rootEle.attribute("id");
         String rootName = rootAttr.getParent().getName();
-        if (!rootName.equals("idspace") ){
+
+         if (!rootName.equals("idspace") ){
             return null;
         }
         return rootAttr;
     }
 
-    public List<Element>  getClassElements(Element root){
+    public List getClassElements(Element root){
         List elementList = root.elements("class");
         return elementList;
     }

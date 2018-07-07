@@ -4,7 +4,7 @@ import global.gate.GateServer;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Hello world!
+ * Hello zone!
  *
  */
 
@@ -18,7 +18,7 @@ public class GlobalService
         try {
             context.init(args);
             context.start();
-            log.warn("GlobalService启动成功...");
+            log.info("GlobalService启动成功...");
         }catch (Exception e){
             context.stop();
         }

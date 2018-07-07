@@ -32,30 +32,44 @@ public class PathManager {
     private String serverPath;
 
     public void initPath(String path){
-        dataPath = pathCombine(bashPath,"Data");
-        serverPath = pathCombine(bashPath,"Server");
+        bashPath = path;
+        dataPath = pathCombine(bashPath,"Bin","Data");
+        serverPath = pathCombine(bashPath,"Bin","Server");
     }
 
-    private String pathCombine(String path,String folder){
+    public void initPath(){
+        bashPath = getBashPath();
+        dataPath = pathCombine(bashPath,"Bin","Data");
+        serverPath = pathCombine(bashPath,"Bin","Server");
+    }
+
+    /**
+     *
+     * @param path
+     * @param folder
+     * @return
+     */
+    private static String pathCombine(String path,String... folder){
         Path newPath = Paths.get(path,folder);
         File file = newPath.toFile();
         if (!file.exists() && !file.isDirectory()) {
             file.mkdirs();
             System.out.println("创建文件夹");
-        } else {
-            System.out.println("文件夹已存在");
         }
         return newPath.toString();
     }
 
-    private String getBashPath(){
-        // get current dir
+
+    private String getBashPath()
+    {
         File file = new File(System.getProperty("user.dir"));
-        // get parent dir
-        String parentPath = file.getParent();
-        System.out.println(parentPath);
-        bashPath = parentPath;
+        bashPath = file.getParent();
+//        System.out.println("bashPath:"+bashPath);
         return bashPath;
     }
 
+    public String getXmlPath()
+    {
+        return pathCombine(dataPath,"Xml");
+    }
 }

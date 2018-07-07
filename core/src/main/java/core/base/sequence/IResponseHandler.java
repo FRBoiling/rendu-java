@@ -11,6 +11,6 @@ import core.base.common.AbstractSession;
  * Time: 15:33
  */
 
-public interface IResponseHandler<T>{
-       void onResponse(T msg,AbstractSession session) throws InvalidProtocolBufferException;
+public interface IResponseHandler{
+       void onResponse(byte[] msg,AbstractSession session) throws InvalidProtocolBufferException;
 }

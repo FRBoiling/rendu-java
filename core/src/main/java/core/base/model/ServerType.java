@@ -10,6 +10,9 @@ package core.base.model;
 
 public enum ServerType {
     Default,
+    Global,
     Gate,
-    Global
+    Zone,
+    Manager,
+    Relation
 }

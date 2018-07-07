@@ -1,11 +1,31 @@
 package global;
 
+import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.serviceframe.DriverThread;
 import core.base.serviceframe.IService;
+import core.base.serviceframe.ISystemFrame;
 import core.network.ServiceState;
 import global.gate.GateServer;
+import global.manager.ManagerServer;
+import global.relation.RelationServer;
+import global.zone.ZoneServer;
+import pathExt.PathManager;
+import protocol.gate.global.G2GMIdGenerater;
+import protocol.global.gate.GM2GIdGenerater;
+import protocol.global.manager.GM2MIdGenerater;
+import protocol.global.relation.GM2RIdGenerater;
+import protocol.global.zone.GM2ZIdGenerater;
+import protocol.manager.global.M2GMIdGenerater;
+import protocol.relation.global.R2GMIdGenerater;
+import protocol.server.register.ServerRegisterIdGenerater;
+import protocol.zone.global.Z2GMIdGenerater;
+import util.FileUtil;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,11 +35,69 @@ import global.gate.GateServer;
  * Time: 11:04
  */
 
-public class GlobalServiceContext implements IService {
+public class GlobalServiceContext implements IService,ISystemFrame {
+    public ServiceState state = ServiceState.STOPPED;
     public static ServerTag tag;
     DriverThread mainThread;
 
     private GateServer gateServer;
+    private ManagerServer managerServer;
+    private ZoneServer zoneServer;
+    private RelationServer relationServer;
+
+    @Override
+    public void init(String[] args){
+        ServerType serverType = ServerType.Global;
+        tag = new ServerTag();
+        tag.setTag(serverType,0,0);
+
+        mainThread = new DriverThread( "GlobalDriverThread",this);
+        initPath();
+        initLogger();
+        initXmlData();
+        initLibData();
+        initOpenServerTime();
+        initDB();
+        initRedis();
+        intiProtocol();
+        initServers();
+    }
+
+    @Override
+    public void start() {
+        state = ServiceState.RUNNING;
+        mainThread.start();
+        zoneServer.start();
+        relationServer.start();
+        gateServer.start();
+        managerServer.start();
+    }
+
+    @Override
+    public void stop() {
+       state = ServiceState.STOPPED;
+    }
+
+    @Override
+    public void update() {
+        while (isOpened()){
+            try {
+                Thread.sleep(25);
+                zoneServer.update();
+                relationServer.update();
+                gateServer.update();
+                managerServer.update();
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public ServiceState getState() {
+        return state;
+    }
 
     public GateServer createGateServer() {
         try {
@@ -30,49 +108,98 @@ public class GlobalServiceContext implements IService {
         }
     }
 
+    public ManagerServer createManagerServer() {
+        try {
+            managerServer = new ManagerServer();
+            return managerServer;
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ZoneServer createZoneServer() {
+        try {
+            zoneServer = new ZoneServer();
+            return zoneServer;
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public RelationServer createRelationServer() {
+        try {
+            relationServer = new RelationServer();
+            return relationServer;
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public void initServers(){
         gateServer = createGateServer();
-        gateServer.start();
+        managerServer = createManagerServer();
+        zoneServer = createZoneServer();
+        relationServer = createRelationServer();
     }
 
     @Override
-    public void init(String[] args){
-        ServerType serverType = ServerType.Global;
-        tag = new ServerTag();
-        if (args.length>=2){
-            Integer groupId = Integer.parseInt(args[0]);
-            Integer subId = Integer.parseInt(args[1]);
-            tag.setTag(serverType,groupId,subId);
+    public void intiProtocol() {
+        ServerRegisterIdGenerater.GenerateId();
+        G2GMIdGenerater.GenerateId();
+        GM2GIdGenerater.GenerateId();
+        Z2GMIdGenerater.GenerateId();
+        GM2ZIdGenerater.GenerateId();
+        R2GMIdGenerater.GenerateId();
+        GM2RIdGenerater.GenerateId();
+        M2GMIdGenerater.GenerateId();
+        GM2MIdGenerater.GenerateId();
+    }
+
+    @Override
+    public void initPath() {
+        PathManager.getInstance().initPath();
+    }
+
+    @Override
+    public void initLibData() {
+
+    }
+
+    @Override
+    public void initXmlData() {
+        List<File> fileList = new ArrayList<File>();
+        FileUtil.findFiles(PathManager.getInstance().getXmlPath(),"*xml",fileList);
+        for (Object obj :fileList){
+            File f = (File) obj;
+//            System.out.println("-----"+f.toString());
+            DataListManager.getInstance().Parse(f.toString());
         }
-        initServers();
     }
 
     @Override
-    public void start() {
-        mainThread = new DriverThread( "MainThread_Global",this);
-        mainThread.start();
-    }
-
-    @Override
-    public void stop() {
+    public void initLogger() {
 
     }
 
     @Override
-    public void update() {
-        while (true){
-            try {
-                Thread.sleep(100);
-                gateServer.update();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+    public void initDB() {
+
     }
 
     @Override
-    public ServiceState getState() {
-        return null;
+    public void initRedis() {
+
+    }
+
+    @Override
+    public void initOpenServerTime() {
+
+    }
+
+    @Override
+    public void updateXml() {
+
     }
 
 }

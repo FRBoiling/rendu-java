@@ -1,12 +1,9 @@
 package gate.global;
 
 import core.network.IResponseHandlerManager;
-import gate.connectionManager.ResponseResRegister;
-import protocol.gate.global.G2GMIdGenerater;
-import protocol.global.gate.GM2GIdGenerater;
+import gate.connectionManager.ResponseRegisterReturn;
 import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;
-import protocol.server.register.ServerRegisterIdGenerater;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,14 +15,11 @@ import protocol.server.register.ServerRegisterIdGenerater;
 
 public class GlobalServerResponseMng implements IResponseHandlerManager {
     public GlobalServerResponseMng() {
-        ServerRegisterIdGenerater.GenerateId();
-        GM2GIdGenerater.GenerateId();
-        G2GMIdGenerater.GenerateId();
         register();
     }
 
     @Override
     public void register() {
-       register(Id.getInst().getMessageId(ServerRegister.MSG_RES_Server_Register.class), ResponseResRegister.class);
+       register(Id.getInst().getMessageId(ServerRegister.MSG_RES_Server_Register.class), ResponseRegisterReturn.class);
     }
 }

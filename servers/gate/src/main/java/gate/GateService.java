@@ -12,6 +12,6 @@ public class GateService
         context = new GateServiceContext();
         context.init(args);
         context.start();
-        log.warn("GateService启动成功...");
+        log.info("GateService启动成功...");
     }
 }

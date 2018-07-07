@@ -19,7 +19,7 @@
     <modules>
         <module>global</module>
         <module>gate</module>
-        <module>world</module>
+        <module>zone</module>
         <module>manager</module>
         <module>relation</module>
         <module>realm</module>
@@ -86,11 +86,20 @@
         </dependency>
 
         <dependency>
-            <groupId>common</groupId>
-            <artifactId>common</artifactId>
+            <groupId>configuration</groupId>
+            <artifactId>configuration</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
-     </dependencies>
+
+        <dependency>
+            <groupId>util</groupId>
+            <artifactId>util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>

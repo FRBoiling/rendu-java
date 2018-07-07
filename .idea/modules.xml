@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DBUtil/DBUtil.iml" filepath="$PROJECT_DIR$/DBUtil/DBUtil.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServerCluster.iml" filepath="$PROJECT_DIR$/ServerCluster.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/configuration/configuration.iml" filepath="$PROJECT_DIR$/common/configuration/configuration.iml" />
@@ -14,8 +15,8 @@
       <module fileurl="file://$PROJECT_DIR$/servers/realm/realm.iml" filepath="$PROJECT_DIR$/servers/realm/realm.iml" />
       <module fileurl="file://$PROJECT_DIR$/servers/relation/relation.iml" filepath="$PROJECT_DIR$/servers/relation/relation.iml" />
       <module fileurl="file://$PROJECT_DIR$/servers/servers.iml" filepath="$PROJECT_DIR$/servers/servers.iml" />
-      <module fileurl="file://$PROJECT_DIR$/common/uitl/uitl.iml" filepath="$PROJECT_DIR$/common/uitl/uitl.iml" />
-      <module fileurl="file://$PROJECT_DIR$/servers/world/world.iml" filepath="$PROJECT_DIR$/servers/world/world.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/util/util.iml" filepath="$PROJECT_DIR$/common/util/util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servers/zone/zone.iml" filepath="$PROJECT_DIR$/servers/zone/zone.iml" />
     </modules>
   </component>
 </project>
