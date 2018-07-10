@@ -1,6 +1,7 @@
 package pathExt;
 
 import configuration.dataManager.DataListManager;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -13,7 +14,7 @@ import java.nio.file.Paths;
  * Date: 2018-07-04
  * Time: 21:26
  */
-
+@Slf4j
 public class PathManager {
     private static volatile PathManager INSTANCE;
     public static PathManager getInstance() {
@@ -58,7 +59,7 @@ public class PathManager {
         File file = newPath.toFile();
         if (!file.exists() && !file.isDirectory()) {
             file.mkdirs();
-            System.out.println("创建文件夹");
+            log.info("创建文件夹");
         }
         return newPath.toString();
     }
@@ -68,7 +69,7 @@ public class PathManager {
     {
         File file = new File(System.getProperty("user.dir"));
         bashPath = file.getParent();
-        System.out.println("bashPath:"+bashPath);
+        log.info("bashPath:"+bashPath);
         return bashPath;
     }
 
