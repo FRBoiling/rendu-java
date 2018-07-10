@@ -1,12 +1,14 @@
 package realm;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 /**
  * Hello zone!
  *
  */
+@Slf4j
 public class App 
 {
     private static Logger logger = Logger.getLogger(App.class);

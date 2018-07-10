@@ -1,0 +1,6 @@
+2018-07-10 21:52:47  [ main:0 ] - [ DEBUG ]  This is debug message.
+2018-07-10 21:52:47  [ main:10 ] - [ INFO ]  This is info message.
+2018-07-10 21:52:47  [ main:10 ] - [ ERROR ]  This is error message.
+2018-07-10 21:53:34  [ main:0 ] - [ DEBUG ]  This is debug message.
+2018-07-10 21:53:34  [ main:5 ] - [ INFO ]  This is info message.
+2018-07-10 21:53:34  [ main:6 ] - [ ERROR ]  This is error message.
