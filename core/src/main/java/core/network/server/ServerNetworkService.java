@@ -202,6 +202,6 @@ public class ServerNetworkService implements IService, ISocketServer {
         } catch (Exception e) {
             log.info("Netty服务器关闭失败", e);
         }
-        log.info("Netty Server on port:{} is closed", port);
+        log.info("Netty Server on listenPort:{} is closed", port);
     }
 }

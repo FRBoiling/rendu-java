@@ -26,7 +26,7 @@ public class GlobalServerSession extends AbstractSession {
     }
     public void OnConnected() {
         super.OnConnected();
-        sendRegister();
+        sendRegister(ZoneServiceContext.tag);
     }
     public void OnDisConnected(){
         super.OnDisConnected();
@@ -38,13 +38,5 @@ public class GlobalServerSession extends AbstractSession {
         sendMessage(builder.build());
     }
 
-    public void sendRegister()
-    {
-        ServerRegister.MSG_REQ_Server_Register.Builder builder = ServerRegister.MSG_REQ_Server_Register.newBuilder();
-        builder.setGroupId(ZoneServiceContext.tag.getGroupId());
-        builder.setSubId(ZoneServiceContext.tag.getSubId());
-        builder.setServerType(ZoneServiceContext.tag.getType().ordinal());
 
-        sendMessage(builder.build());
-    }
 }

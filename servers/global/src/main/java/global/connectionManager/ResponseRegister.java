@@ -1,7 +1,7 @@
 package global.connectionManager;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import constant.Errorcode;
+import constant.ErrorCode;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -26,18 +26,25 @@ import protocol.server.register.ServerRegister;
 public class ResponseRegister implements IResponseHandler {
     @Override
     public void onResponse(byte[] message, AbstractSession session) throws InvalidProtocolBufferException {
-        ServerRegister.MSG_REQ_Server_Register msg = ServerRegister.MSG_REQ_Server_Register.parseFrom(message);
-        ServerType serverType = ServerType.values()[msg.getServerType()];
-        //基本信息注册 MSG_REQ_Server_Register
+        ServerRegister.MSG_Server_Register msg = ServerRegister.MSG_Server_Register.parseFrom(message);
+
+        //基本信息注册 MSG_Server_Register
+        ServerType serverType = ServerType.values()[msg.getTag().getServerType()];
+        int groupId = msg.getTag().getGroupId();
+        int subId = msg.getTag().getSubId();
+
         ServerTag tag = new ServerTag();
-        tag.setTag(serverType,msg.getGroupId(),msg.getSubId());
+        tag.setTag(serverType,groupId,subId);
         session.setTag(tag);
 
-        //注册反馈 MSG_RES_Server_Register
-        ServerRegister.MSG_RES_Server_Register.Builder response = ServerRegister.MSG_RES_Server_Register.newBuilder();
-        response.setServerType(GlobalServiceContext.tag.getType().ordinal());
-        response.setGroupId(GlobalServiceContext.tag.getGroupId());
-        response.setSubId(GlobalServiceContext.tag.getSubId());
+        //注册反馈 MSG_Server_Register_Return
+        ServerRegister.Server_Tag.Builder serverTag = ServerRegister.Server_Tag.newBuilder();
+        serverTag.setServerType(GlobalServiceContext.tag.getType().ordinal());
+        serverTag.setGroupId(GlobalServiceContext.tag.getGroupId());
+        serverTag.setSubId(GlobalServiceContext.tag.getSubId());
+
+        ServerRegister.MSG_Server_Register_Return.Builder response = ServerRegister.MSG_Server_Register_Return.newBuilder();
+        response.setTag(serverTag);
 
         boolean isRegisterSuccess =false;
         switch (serverType) {
@@ -58,10 +65,10 @@ public class ResponseRegister implements IResponseHandler {
         }
 
         if (isRegisterSuccess) {
-            //TODO:这里添加具体注册逻辑
-            response.setResult(Errorcode.Success.ordinal());
+            GlobalServiceContext.connectMng.sendConnectionCommand(tag);
+            response.setResult(ErrorCode.Success.ordinal());
         } else {
-            response.setResult(Errorcode.Fail.ordinal());
+            response.setResult(ErrorCode.Fail.ordinal());
         }
         //发送反馈信息
         session.sendMessage(response.build());

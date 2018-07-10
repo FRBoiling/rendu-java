@@ -28,10 +28,10 @@ public class ClientConnectionListener implements ChannelFutureListener {
     public void operationComplete(ChannelFuture future) throws Exception {
         if (future.isSuccess()) {
             service.setState(ServiceState.RUNNING);
-            log.info("Connect to ip:{} port:{} successfully", service.getBuilder().getIp(), service.getBuilder().getPort());
+            log.info("Connect to ip:{} listenPort:{} successfully", service.getBuilder().getIp(), service.getBuilder().getPort());
         } else {
 //          future.cause().printStackTrace();
-            log.info("Failed to connect to ip:{} port:{}, try connect after 5s ", service.getBuilder().getIp(), service.getBuilder().getPort());
+            log.info("Failed to connect to ip:{} listenPort:{}, try connect after 5s ", service.getBuilder().getIp(), service.getBuilder().getPort());
             future.channel().eventLoop().schedule(new Runnable() {
                 @Override
                 public void run() {

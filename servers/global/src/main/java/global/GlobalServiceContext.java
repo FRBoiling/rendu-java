@@ -3,10 +3,12 @@ package global;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
+import core.base.serviceframe.AbstractSystemFrame;
 import core.base.serviceframe.DriverThread;
 import core.base.serviceframe.IService;
 import core.base.serviceframe.ISystemFrame;
 import core.network.ServiceState;
+import global.connectionManager.ConnectManager;
 import global.gate.GateServer;
 import global.manager.ManagerServer;
 import global.relation.RelationServer;
@@ -35,112 +37,19 @@ import java.util.List;
  * Time: 11:04
  */
 
-public class GlobalServiceContext implements IService,ISystemFrame {
-    public ServiceState state = ServiceState.STOPPED;
-    public static ServerTag tag;
-    DriverThread mainThread;
-
-    private GateServer gateServer;
-    private ManagerServer managerServer;
-    private ZoneServer zoneServer;
-    private RelationServer relationServer;
-
+public class GlobalServiceContext extends AbstractSystemFrame {
+    public static  ConnectManager  connectMng;
     @Override
     public void init(String[] args){
+        super.init(args);
+
         ServerType serverType = ServerType.Global;
         tag = new ServerTag();
         tag.setTag(serverType,0,0);
 
-        mainThread = new DriverThread( "GlobalDriverThread",this);
-        initPath();
-        initLogger();
-        initXmlData();
-        initLibData();
-        initOpenServerTime();
-        initDB();
-        initRedis();
-        intiProtocol();
-        initServers();
-    }
-
-    @Override
-    public void start() {
-        state = ServiceState.RUNNING;
-        mainThread.start();
-        zoneServer.start();
-        relationServer.start();
-        gateServer.start();
-        managerServer.start();
-    }
-
-    @Override
-    public void stop() {
-       state = ServiceState.STOPPED;
-    }
-
-    @Override
-    public void update() {
-        while (isOpened()){
-            try {
-                Thread.sleep(25);
-                zoneServer.update();
-                relationServer.update();
-                gateServer.update();
-                managerServer.update();
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Override
-    public ServiceState getState() {
-        return state;
-    }
-
-    public GateServer createGateServer() {
-        try {
-            gateServer = new GateServer();
-            return gateServer;
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public ManagerServer createManagerServer() {
-        try {
-            managerServer = new ManagerServer();
-            return managerServer;
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public ZoneServer createZoneServer() {
-        try {
-            zoneServer = new ZoneServer();
-            return zoneServer;
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public RelationServer createRelationServer() {
-        try {
-            relationServer = new RelationServer();
-            return relationServer;
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Override
-    public void initServers(){
-        gateServer = createGateServer();
-        managerServer = createManagerServer();
-        zoneServer = createZoneServer();
-        relationServer = createRelationServer();
+        connectMng = new ConnectManager();
+        initConnectManager(connectMng);
+        initMainThread("GlobalDriverThread");
     }
 
     @Override

@@ -13,18 +13,26 @@ public class Packet {
     short msgLength;
     public byte[] msg;
 
-    public void setMsg(ByteBuf buff) {
-        final byte[] array;
-        final int offset;
-        final int length = buff.readableBytes();
-        if (buff.hasArray()) {
-            offset = buff.arrayOffset() + buff.readerIndex();
-        } else {
-            offset = 0;
-        }
-        array = new byte[length];
-        buff.getBytes(buff.readerIndex(), array, offset, length);
-        this.msg = array;
-        msgLength = (short) msg.length;
+    public Packet(){
     }
+
+    public Packet(short msgLength){
+        this.msgLength = msgLength;
+        this.msg = new byte[msgLength];
+    }
+
+//    public void setMsg(ByteBuf buff) {
+//        final byte[] array;
+//        final int offset;
+//        final int length = buff.readableBytes();
+//        if (buff.hasArray()) {
+//            offset = buff.arrayOffset() + buff.readerIndex();
+//        } else {
+//            offset = 0;
+//        }
+//        array = new byte[length];
+//        buff.getBytes(buff.readerIndex(), array, offset, length);
+//        this.msg = array;
+//        msgLength = (short) msg.length;
+//    }
 }

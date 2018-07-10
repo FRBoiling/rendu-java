@@ -17,12 +17,11 @@ public class PacketDecoder extends ByteToMessageDecoder {
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> out) throws Exception {
         int length = in.readableBytes();
         int msg_id = in.readIntLE();
-
-        ByteBuf msg = in.readBytes(length - in.readerIndex());
-
-        Packet packet = new Packet();
+//        ByteBuf msg = in.readBytes(length - in.readerIndex());
+        int msg_length = length - in.readerIndex();
+        Packet packet = new Packet((short) msg_length);
         packet.setMsgId(msg_id);
-        packet.setMsg(msg);
+        in.readBytes(packet.msg,0,msg_length);
         out.add(packet);
     }
 }

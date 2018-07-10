@@ -1,8 +1,11 @@
 package core.base.common;
 
+import core.base.model.ServerTag;
+import core.base.model.ServerType;
 import io.netty.channel.Channel;
 import io.netty.util.internal.ConcurrentSet;
 import lombok.extern.slf4j.Slf4j;
+import protocol.server.register.ServerRegister;
 
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
@@ -67,7 +70,7 @@ public abstract class AbstractSessionManager {
             allSession.remove(session);
         }
 
-        if (registerSessions.containsKey(session.getKey())) {
+        if (registerSessions.containsKey(session.getKey()) && session.isRegistered()) {
             session.setRegistered(false);
             session.setOffline(true);
             registerSessions.remove(session.getKey());
@@ -109,6 +112,14 @@ public abstract class AbstractSessionManager {
         }
         log.info("add session {} success! ", session.getIP());
         return true;
+    }
+
+    public ConcurrentHashMap<String, AbstractSession>  getRegisterSessions() {
+        return registerSessions;
+    }
+
+    public AbstractSession getRegisterSession(String key){
+        return registerSessions.get(key);
     }
 
 }

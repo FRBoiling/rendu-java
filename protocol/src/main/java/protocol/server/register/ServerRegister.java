@@ -14,8 +14,8 @@ public final class ServerRegister {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface MSG_REQ_Server_RegisterOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_REQ_Server_Register)
+  public interface Server_TagOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.Server_Tag)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -46,18 +46,18 @@ public final class ServerRegister {
     int getSubId();
   }
   /**
-   * Protobuf type {@code protocol.server.register.MSG_REQ_Server_Register}
+   * Protobuf type {@code protocol.server.register.Server_Tag}
    */
-  public  static final class MSG_REQ_Server_Register extends
+  public  static final class Server_Tag extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_REQ_Server_Register)
-      MSG_REQ_Server_RegisterOrBuilder {
+      // @@protoc_insertion_point(message_implements:protocol.server.register.Server_Tag)
+      Server_TagOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MSG_REQ_Server_Register.newBuilder() to construct.
-    private MSG_REQ_Server_Register(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Server_Tag.newBuilder() to construct.
+    private Server_Tag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MSG_REQ_Server_Register() {
+    private Server_Tag() {
       serverType_ = 0;
       groupId_ = 0;
       subId_ = 0;
@@ -68,7 +68,7 @@ public final class ServerRegister {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MSG_REQ_Server_Register(
+    private Server_Tag(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -123,14 +123,14 @@ public final class ServerRegister {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ServerRegister.internal_static_protocol_server_register_MSG_REQ_Server_Register_descriptor;
+      return ServerRegister.internal_static_protocol_server_register_Server_Tag_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ServerRegister.internal_static_protocol_server_register_MSG_REQ_Server_Register_fieldAccessorTable
+      return ServerRegister.internal_static_protocol_server_register_Server_Tag_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_REQ_Server_Register.class, Builder.class);
+              Server_Tag.class, Builder.class);
     }
 
     private int bitField0_;
@@ -234,10 +234,10 @@ public final class ServerRegister {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_REQ_Server_Register)) {
+      if (!(obj instanceof Server_Tag)) {
         return super.equals(obj);
       }
-      MSG_REQ_Server_Register other = (MSG_REQ_Server_Register) obj;
+      Server_Tag other = (Server_Tag) obj;
 
       boolean result = true;
       result = result && (hasServerType() == other.hasServerType());
@@ -283,69 +283,69 @@ public final class ServerRegister {
       return hash;
     }
 
-    public static MSG_REQ_Server_Register parseFrom(
+    public static Server_Tag parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_REQ_Server_Register parseFrom(
+    public static Server_Tag parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_REQ_Server_Register parseFrom(
+    public static Server_Tag parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_REQ_Server_Register parseFrom(
+    public static Server_Tag parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_REQ_Server_Register parseFrom(byte[] data)
+    public static Server_Tag parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_REQ_Server_Register parseFrom(
+    public static Server_Tag parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_REQ_Server_Register parseFrom(java.io.InputStream input)
+    public static Server_Tag parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_REQ_Server_Register parseFrom(
+    public static Server_Tag parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_REQ_Server_Register parseDelimitedFrom(java.io.InputStream input)
+    public static Server_Tag parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_REQ_Server_Register parseDelimitedFrom(
+    public static Server_Tag parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_REQ_Server_Register parseFrom(
+    public static Server_Tag parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_REQ_Server_Register parseFrom(
+    public static Server_Tag parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -357,7 +357,7 @@ public final class ServerRegister {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_REQ_Server_Register prototype) {
+    public static Builder newBuilder(Server_Tag prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -372,25 +372,25 @@ public final class ServerRegister {
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.server.register.MSG_REQ_Server_Register}
+     * Protobuf type {@code protocol.server.register.Server_Tag}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_REQ_Server_Register)
-        MSG_REQ_Server_RegisterOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.Server_Tag)
+        Server_TagOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ServerRegister.internal_static_protocol_server_register_MSG_REQ_Server_Register_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_Server_Tag_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ServerRegister.internal_static_protocol_server_register_MSG_REQ_Server_Register_fieldAccessorTable
+        return ServerRegister.internal_static_protocol_server_register_Server_Tag_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_REQ_Server_Register.class, Builder.class);
+                Server_Tag.class, Builder.class);
       }
 
-      // Construct using protocol.server.register.ServerRegister.MSG_REQ_Server_Register.newBuilder()
+      // Construct using protocol.server.register.ServerRegister.Server_Tag.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -418,23 +418,23 @@ public final class ServerRegister {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ServerRegister.internal_static_protocol_server_register_MSG_REQ_Server_Register_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_Server_Tag_descriptor;
       }
 
-      public MSG_REQ_Server_Register getDefaultInstanceForType() {
-        return MSG_REQ_Server_Register.getDefaultInstance();
+      public Server_Tag getDefaultInstanceForType() {
+        return Server_Tag.getDefaultInstance();
       }
 
-      public MSG_REQ_Server_Register build() {
-        MSG_REQ_Server_Register result = buildPartial();
+      public Server_Tag build() {
+        Server_Tag result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_REQ_Server_Register buildPartial() {
-        MSG_REQ_Server_Register result = new MSG_REQ_Server_Register(this);
+      public Server_Tag buildPartial() {
+        Server_Tag result = new Server_Tag(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -481,16 +481,16 @@ public final class ServerRegister {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_REQ_Server_Register) {
-          return mergeFrom((MSG_REQ_Server_Register)other);
+        if (other instanceof Server_Tag) {
+          return mergeFrom((Server_Tag)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_REQ_Server_Register other) {
-        if (other == MSG_REQ_Server_Register.getDefaultInstance()) return this;
+      public Builder mergeFrom(Server_Tag other) {
+        if (other == Server_Tag.getDefaultInstance()) return this;
         if (other.hasServerType()) {
           setServerType(other.getServerType());
         }
@@ -516,11 +516,11 @@ public final class ServerRegister {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_REQ_Server_Register parsedMessage = null;
+        Server_Tag parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_REQ_Server_Register) e.getUnfinishedMessage();
+          parsedMessage = (Server_Tag) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -637,100 +637,689 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_REQ_Server_Register)
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.Server_Tag)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_REQ_Server_Register)
-    private static final MSG_REQ_Server_Register DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protocol.server.register.Server_Tag)
+    private static final Server_Tag DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_REQ_Server_Register();
+      DEFAULT_INSTANCE = new Server_Tag();
     }
 
-    public static MSG_REQ_Server_Register getDefaultInstance() {
+    public static Server_Tag getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_REQ_Server_Register>
-        PARSER = new com.google.protobuf.AbstractParser<MSG_REQ_Server_Register>() {
-      public MSG_REQ_Server_Register parsePartialFrom(
+    @Deprecated public static final com.google.protobuf.Parser<Server_Tag>
+        PARSER = new com.google.protobuf.AbstractParser<Server_Tag>() {
+      public Server_Tag parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MSG_REQ_Server_Register(input, extensionRegistry);
+        return new Server_Tag(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MSG_REQ_Server_Register> parser() {
+    public static com.google.protobuf.Parser<Server_Tag> parser() {
       return PARSER;
     }
 
     @Override
-    public com.google.protobuf.Parser<MSG_REQ_Server_Register> getParserForType() {
+    public com.google.protobuf.Parser<Server_Tag> getParserForType() {
       return PARSER;
     }
 
-    public MSG_REQ_Server_Register getDefaultInstanceForType() {
+    public Server_Tag getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface MSG_RES_Server_RegisterOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_RES_Server_Register)
+  public interface MSG_Server_RegisterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_Server_Register)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 serverType = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    boolean hasServerType();
+    boolean hasTag();
     /**
-     * <code>required int32 serverType = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    int getServerType();
+    Server_Tag getTag();
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    Server_TagOrBuilder getTagOrBuilder();
+  }
+  /**
+   * Protobuf type {@code protocol.server.register.MSG_Server_Register}
+   */
+  public  static final class MSG_Server_Register extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_Server_Register)
+      MSG_Server_RegisterOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MSG_Server_Register.newBuilder() to construct.
+    private MSG_Server_Register(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MSG_Server_Register() {
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MSG_Server_Register(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              Server_Tag.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = tag_.toBuilder();
+              }
+              tag_ = input.readMessage(Server_Tag.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tag_);
+                tag_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_descriptor;
+    }
+
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              MSG_Server_Register.class, Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TAG_FIELD_NUMBER = 1;
+    private Server_Tag tag_;
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    public Server_Tag getTag() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
+    }
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    public Server_TagOrBuilder getTagOrBuilder() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasTag()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getTag().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, getTag());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getTag());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof MSG_Server_Register)) {
+        return super.equals(obj);
+      }
+      MSG_Server_Register other = (MSG_Server_Register) obj;
+
+      boolean result = true;
+      result = result && (hasTag() == other.hasTag());
+      if (hasTag()) {
+        result = result && getTag()
+            .equals(other.getTag());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTag()) {
+        hash = (37 * hash) + TAG_FIELD_NUMBER;
+        hash = (53 * hash) + getTag().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static MSG_Server_Register parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_Server_Register parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_Server_Register parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_Server_Register parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_Server_Register parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_Server_Register parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_Server_Register parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static MSG_Server_Register parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MSG_Server_Register parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static MSG_Server_Register parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MSG_Server_Register parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static MSG_Server_Register parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(MSG_Server_Register prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocol.server.register.MSG_Server_Register}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_Server_Register)
+        MSG_Server_RegisterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_descriptor;
+      }
+
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                MSG_Server_Register.class, Builder.class);
+      }
+
+      // Construct using protocol.server.register.ServerRegister.MSG_Server_Register.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTagFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (tagBuilder_ == null) {
+          tag_ = null;
+        } else {
+          tagBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_descriptor;
+      }
+
+      public MSG_Server_Register getDefaultInstanceForType() {
+        return MSG_Server_Register.getDefaultInstance();
+      }
+
+      public MSG_Server_Register build() {
+        MSG_Server_Register result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public MSG_Server_Register buildPartial() {
+        MSG_Server_Register result = new MSG_Server_Register(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (tagBuilder_ == null) {
+          result.tag_ = tag_;
+        } else {
+          result.tag_ = tagBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof MSG_Server_Register) {
+          return mergeFrom((MSG_Server_Register)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(MSG_Server_Register other) {
+        if (other == MSG_Server_Register.getDefaultInstance()) return this;
+        if (other.hasTag()) {
+          mergeTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasTag()) {
+          return false;
+        }
+        if (!getTag().isInitialized()) {
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        MSG_Server_Register parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (MSG_Server_Register) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private Server_Tag tag_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder> tagBuilder_;
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Server_Tag getTag() {
+        if (tagBuilder_ == null) {
+          return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
+        } else {
+          return tagBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Builder setTag(Server_Tag value) {
+        if (tagBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tag_ = value;
+          onChanged();
+        } else {
+          tagBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Builder setTag(
+          Server_Tag.Builder builderForValue) {
+        if (tagBuilder_ == null) {
+          tag_ = builderForValue.build();
+          onChanged();
+        } else {
+          tagBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Builder mergeTag(Server_Tag value) {
+        if (tagBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              tag_ != null &&
+              tag_ != Server_Tag.getDefaultInstance()) {
+            tag_ =
+              Server_Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
+          } else {
+            tag_ = value;
+          }
+          onChanged();
+        } else {
+          tagBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Builder clearTag() {
+        if (tagBuilder_ == null) {
+          tag_ = null;
+          onChanged();
+        } else {
+          tagBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Server_Tag.Builder getTagBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getTagFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Server_TagOrBuilder getTagOrBuilder() {
+        if (tagBuilder_ != null) {
+          return tagBuilder_.getMessageOrBuilder();
+        } else {
+          return tag_ == null ?
+              Server_Tag.getDefaultInstance() : tag_;
+        }
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>
+          getTagFieldBuilder() {
+        if (tagBuilder_ == null) {
+          tagBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>(
+                  getTag(),
+                  getParentForChildren(),
+                  isClean());
+          tag_ = null;
+        }
+        return tagBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_Server_Register)
+    }
+
+    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_Server_Register)
+    private static final MSG_Server_Register DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new MSG_Server_Register();
+    }
+
+    public static MSG_Server_Register getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @Deprecated public static final com.google.protobuf.Parser<MSG_Server_Register>
+        PARSER = new com.google.protobuf.AbstractParser<MSG_Server_Register>() {
+      public MSG_Server_Register parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MSG_Server_Register(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MSG_Server_Register> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<MSG_Server_Register> getParserForType() {
+      return PARSER;
+    }
+
+    public MSG_Server_Register getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MSG_Server_Register_ReturnOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_Server_Register_Return)
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 groupId = 2;</code>
-     */
-    boolean hasGroupId();
-    /**
-     * <code>optional int32 groupId = 2;</code>
-     */
-    int getGroupId();
-
-    /**
-     * <code>optional int32 subId = 3;</code>
-     */
-    boolean hasSubId();
-    /**
-     * <code>optional int32 subId = 3;</code>
-     */
-    int getSubId();
-
-    /**
-     * <code>required uint32 result = 4;</code>
+     * <code>required uint32 result = 1;</code>
      */
     boolean hasResult();
     /**
-     * <code>required uint32 result = 4;</code>
+     * <code>required uint32 result = 1;</code>
      */
     int getResult();
+
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     */
+    boolean hasTag();
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     */
+    Server_Tag getTag();
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     */
+    Server_TagOrBuilder getTagOrBuilder();
   }
   /**
-   * Protobuf type {@code protocol.server.register.MSG_RES_Server_Register}
+   * Protobuf type {@code protocol.server.register.MSG_Server_Register_Return}
    */
-  public  static final class MSG_RES_Server_Register extends
+  public  static final class MSG_Server_Register_Return extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_RES_Server_Register)
-      MSG_RES_Server_RegisterOrBuilder {
+      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_Server_Register_Return)
+      MSG_Server_Register_ReturnOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MSG_RES_Server_Register.newBuilder() to construct.
-    private MSG_RES_Server_Register(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MSG_Server_Register_Return.newBuilder() to construct.
+    private MSG_Server_Register_Return(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MSG_RES_Server_Register() {
-      serverType_ = 0;
-      groupId_ = 0;
-      subId_ = 0;
+    private MSG_Server_Register_Return() {
       result_ = 0;
     }
 
@@ -739,7 +1328,7 @@ public final class ServerRegister {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MSG_RES_Server_Register(
+    private MSG_Server_Register_Return(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -767,22 +1356,20 @@ public final class ServerRegister {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              serverType_ = input.readInt32();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              groupId_ = input.readInt32();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              subId_ = input.readInt32();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
               result_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              Server_Tag.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = tag_.toBuilder();
+              }
+              tag_ = input.readMessage(Server_Tag.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tag_);
+                tag_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
               break;
             }
           }
@@ -799,75 +1386,51 @@ public final class ServerRegister {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ServerRegister.internal_static_protocol_server_register_MSG_RES_Server_Register_descriptor;
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ServerRegister.internal_static_protocol_server_register_MSG_RES_Server_Register_fieldAccessorTable
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_RES_Server_Register.class, Builder.class);
+              MSG_Server_Register_Return.class, Builder.class);
     }
 
     private int bitField0_;
-    public static final int SERVERTYPE_FIELD_NUMBER = 1;
-    private int serverType_;
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private int result_;
     /**
-     * <code>required int32 serverType = 1;</code>
+     * <code>required uint32 result = 1;</code>
      */
-    public boolean hasServerType() {
+    public boolean hasResult() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 serverType = 1;</code>
-     */
-    public int getServerType() {
-      return serverType_;
-    }
-
-    public static final int GROUPID_FIELD_NUMBER = 2;
-    private int groupId_;
-    /**
-     * <code>optional int32 groupId = 2;</code>
-     */
-    public boolean hasGroupId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional int32 groupId = 2;</code>
-     */
-    public int getGroupId() {
-      return groupId_;
-    }
-
-    public static final int SUBID_FIELD_NUMBER = 3;
-    private int subId_;
-    /**
-     * <code>optional int32 subId = 3;</code>
-     */
-    public boolean hasSubId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional int32 subId = 3;</code>
-     */
-    public int getSubId() {
-      return subId_;
-    }
-
-    public static final int RESULT_FIELD_NUMBER = 4;
-    private int result_;
-    /**
-     * <code>required uint32 result = 4;</code>
-     */
-    public boolean hasResult() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>required uint32 result = 4;</code>
+     * <code>required uint32 result = 1;</code>
      */
     public int getResult() {
       return result_;
+    }
+
+    public static final int TAG_FIELD_NUMBER = 2;
+    private Server_Tag tag_;
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     */
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     */
+    public Server_Tag getTag() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
+    }
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     */
+    public Server_TagOrBuilder getTagOrBuilder() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -876,11 +1439,15 @@ public final class ServerRegister {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasServerType()) {
+      if (!hasResult()) {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasResult()) {
+      if (!hasTag()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getTag().isInitialized()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -891,16 +1458,10 @@ public final class ServerRegister {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, serverType_);
+        output.writeUInt32(1, result_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, groupId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, subId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeUInt32(4, result_);
+        output.writeMessage(2, getTag());
       }
       unknownFields.writeTo(output);
     }
@@ -912,19 +1473,11 @@ public final class ServerRegister {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, serverType_);
+          .computeUInt32Size(1, result_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, groupId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, subId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, result_);
+          .computeMessageSize(2, getTag());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -936,31 +1489,21 @@ public final class ServerRegister {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_RES_Server_Register)) {
+      if (!(obj instanceof MSG_Server_Register_Return)) {
         return super.equals(obj);
       }
-      MSG_RES_Server_Register other = (MSG_RES_Server_Register) obj;
+      MSG_Server_Register_Return other = (MSG_Server_Register_Return) obj;
 
       boolean result = true;
-      result = result && (hasServerType() == other.hasServerType());
-      if (hasServerType()) {
-        result = result && (getServerType()
-            == other.getServerType());
-      }
-      result = result && (hasGroupId() == other.hasGroupId());
-      if (hasGroupId()) {
-        result = result && (getGroupId()
-            == other.getGroupId());
-      }
-      result = result && (hasSubId() == other.hasSubId());
-      if (hasSubId()) {
-        result = result && (getSubId()
-            == other.getSubId());
-      }
       result = result && (hasResult() == other.hasResult());
       if (hasResult()) {
         result = result && (getResult()
             == other.getResult());
+      }
+      result = result && (hasTag() == other.hasTag());
+      if (hasTag()) {
+        result = result && getTag()
+            .equals(other.getTag());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -973,90 +1516,82 @@ public final class ServerRegister {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasServerType()) {
-        hash = (37 * hash) + SERVERTYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getServerType();
-      }
-      if (hasGroupId()) {
-        hash = (37 * hash) + GROUPID_FIELD_NUMBER;
-        hash = (53 * hash) + getGroupId();
-      }
-      if (hasSubId()) {
-        hash = (37 * hash) + SUBID_FIELD_NUMBER;
-        hash = (53 * hash) + getSubId();
-      }
       if (hasResult()) {
         hash = (37 * hash) + RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getResult();
+      }
+      if (hasTag()) {
+        hash = (37 * hash) + TAG_FIELD_NUMBER;
+        hash = (53 * hash) + getTag().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static MSG_RES_Server_Register parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_RES_Server_Register parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_RES_Server_Register parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_RES_Server_Register parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_RES_Server_Register parseFrom(byte[] data)
+    public static MSG_Server_Register_Return parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_RES_Server_Register parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_RES_Server_Register parseFrom(java.io.InputStream input)
+    public static MSG_Server_Register_Return parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_RES_Server_Register parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_RES_Server_Register parseDelimitedFrom(java.io.InputStream input)
+    public static MSG_Server_Register_Return parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_RES_Server_Register parseDelimitedFrom(
+    public static MSG_Server_Register_Return parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_RES_Server_Register parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_RES_Server_Register parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1068,7 +1603,7 @@ public final class ServerRegister {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_RES_Server_Register prototype) {
+    public static Builder newBuilder(MSG_Server_Register_Return prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1083,25 +1618,25 @@ public final class ServerRegister {
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.server.register.MSG_RES_Server_Register}
+     * Protobuf type {@code protocol.server.register.MSG_Server_Register_Return}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_RES_Server_Register)
-        MSG_RES_Server_RegisterOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_Server_Register_Return)
+        MSG_Server_Register_ReturnOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ServerRegister.internal_static_protocol_server_register_MSG_RES_Server_Register_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ServerRegister.internal_static_protocol_server_register_MSG_RES_Server_Register_fieldAccessorTable
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_RES_Server_Register.class, Builder.class);
+                MSG_Server_Register_Return.class, Builder.class);
       }
 
-      // Construct using protocol.server.register.ServerRegister.MSG_RES_Server_Register.newBuilder()
+      // Construct using protocol.server.register.ServerRegister.MSG_Server_Register_Return.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1114,58 +1649,55 @@ public final class ServerRegister {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getTagFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        serverType_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        groupId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        subId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
         result_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (tagBuilder_ == null) {
+          tag_ = null;
+        } else {
+          tagBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ServerRegister.internal_static_protocol_server_register_MSG_RES_Server_Register_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
       }
 
-      public MSG_RES_Server_Register getDefaultInstanceForType() {
-        return MSG_RES_Server_Register.getDefaultInstance();
+      public MSG_Server_Register_Return getDefaultInstanceForType() {
+        return MSG_Server_Register_Return.getDefaultInstance();
       }
 
-      public MSG_RES_Server_Register build() {
-        MSG_RES_Server_Register result = buildPartial();
+      public MSG_Server_Register_Return build() {
+        MSG_Server_Register_Return result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_RES_Server_Register buildPartial() {
-        MSG_RES_Server_Register result = new MSG_RES_Server_Register(this);
+      public MSG_Server_Register_Return buildPartial() {
+        MSG_Server_Register_Return result = new MSG_Server_Register_Return(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.serverType_ = serverType_;
+        result.result_ = result_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.groupId_ = groupId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
+        if (tagBuilder_ == null) {
+          result.tag_ = tag_;
+        } else {
+          result.tag_ = tagBuilder_.build();
         }
-        result.subId_ = subId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.result_ = result_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1198,27 +1730,21 @@ public final class ServerRegister {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_RES_Server_Register) {
-          return mergeFrom((MSG_RES_Server_Register)other);
+        if (other instanceof MSG_Server_Register_Return) {
+          return mergeFrom((MSG_Server_Register_Return)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_RES_Server_Register other) {
-        if (other == MSG_RES_Server_Register.getDefaultInstance()) return this;
-        if (other.hasServerType()) {
-          setServerType(other.getServerType());
-        }
-        if (other.hasGroupId()) {
-          setGroupId(other.getGroupId());
-        }
-        if (other.hasSubId()) {
-          setSubId(other.getSubId());
-        }
+      public Builder mergeFrom(MSG_Server_Register_Return other) {
+        if (other == MSG_Server_Register_Return.getDefaultInstance()) return this;
         if (other.hasResult()) {
           setResult(other.getResult());
+        }
+        if (other.hasTag()) {
+          mergeTag(other.getTag());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1226,10 +1752,13 @@ public final class ServerRegister {
       }
 
       public final boolean isInitialized() {
-        if (!hasServerType()) {
+        if (!hasResult()) {
           return false;
         }
-        if (!hasResult()) {
+        if (!hasTag()) {
+          return false;
+        }
+        if (!getTag().isInitialized()) {
           return false;
         }
         return true;
@@ -1239,11 +1768,11 @@ public final class ServerRegister {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_RES_Server_Register parsedMessage = null;
+        MSG_Server_Register_Return parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_RES_Server_Register) e.getUnfinishedMessage();
+          parsedMessage = (MSG_Server_Register_Return) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1254,132 +1783,154 @@ public final class ServerRegister {
       }
       private int bitField0_;
 
-      private int serverType_ ;
+      private int result_ ;
       /**
-       * <code>required int32 serverType = 1;</code>
+       * <code>required uint32 result = 1;</code>
        */
-      public boolean hasServerType() {
+      public boolean hasResult() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 serverType = 1;</code>
-       */
-      public int getServerType() {
-        return serverType_;
-      }
-      /**
-       * <code>required int32 serverType = 1;</code>
-       */
-      public Builder setServerType(int value) {
-        bitField0_ |= 0x00000001;
-        serverType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 serverType = 1;</code>
-       */
-      public Builder clearServerType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        serverType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int groupId_ ;
-      /**
-       * <code>optional int32 groupId = 2;</code>
-       */
-      public boolean hasGroupId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional int32 groupId = 2;</code>
-       */
-      public int getGroupId() {
-        return groupId_;
-      }
-      /**
-       * <code>optional int32 groupId = 2;</code>
-       */
-      public Builder setGroupId(int value) {
-        bitField0_ |= 0x00000002;
-        groupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 groupId = 2;</code>
-       */
-      public Builder clearGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        groupId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int subId_ ;
-      /**
-       * <code>optional int32 subId = 3;</code>
-       */
-      public boolean hasSubId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int32 subId = 3;</code>
-       */
-      public int getSubId() {
-        return subId_;
-      }
-      /**
-       * <code>optional int32 subId = 3;</code>
-       */
-      public Builder setSubId(int value) {
-        bitField0_ |= 0x00000004;
-        subId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 subId = 3;</code>
-       */
-      public Builder clearSubId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        subId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int result_ ;
-      /**
-       * <code>required uint32 result = 4;</code>
-       */
-      public boolean hasResult() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>required uint32 result = 4;</code>
+       * <code>required uint32 result = 1;</code>
        */
       public int getResult() {
         return result_;
       }
       /**
-       * <code>required uint32 result = 4;</code>
+       * <code>required uint32 result = 1;</code>
        */
       public Builder setResult(int value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
         result_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 result = 4;</code>
+       * <code>required uint32 result = 1;</code>
        */
       public Builder clearResult() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         result_ = 0;
         onChanged();
         return this;
+      }
+
+      private Server_Tag tag_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder> tagBuilder_;
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       */
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       */
+      public Server_Tag getTag() {
+        if (tagBuilder_ == null) {
+          return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
+        } else {
+          return tagBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       */
+      public Builder setTag(Server_Tag value) {
+        if (tagBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tag_ = value;
+          onChanged();
+        } else {
+          tagBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       */
+      public Builder setTag(
+          Server_Tag.Builder builderForValue) {
+        if (tagBuilder_ == null) {
+          tag_ = builderForValue.build();
+          onChanged();
+        } else {
+          tagBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       */
+      public Builder mergeTag(Server_Tag value) {
+        if (tagBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              tag_ != null &&
+              tag_ != Server_Tag.getDefaultInstance()) {
+            tag_ =
+              Server_Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
+          } else {
+            tag_ = value;
+          }
+          onChanged();
+        } else {
+          tagBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       */
+      public Builder clearTag() {
+        if (tagBuilder_ == null) {
+          tag_ = null;
+          onChanged();
+        } else {
+          tagBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       */
+      public Server_Tag.Builder getTagBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getTagFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       */
+      public Server_TagOrBuilder getTagOrBuilder() {
+        if (tagBuilder_ != null) {
+          return tagBuilder_.getMessageOrBuilder();
+        } else {
+          return tag_ == null ?
+              Server_Tag.getDefaultInstance() : tag_;
+        }
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>
+          getTagFieldBuilder() {
+        if (tagBuilder_ == null) {
+          tagBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>(
+                  getTag(),
+                  getParentForChildren(),
+                  isClean());
+          tag_ = null;
+        }
+        return tagBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1392,46 +1943,46 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_RES_Server_Register)
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_Server_Register_Return)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_RES_Server_Register)
-    private static final MSG_RES_Server_Register DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_Server_Register_Return)
+    private static final MSG_Server_Register_Return DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_RES_Server_Register();
+      DEFAULT_INSTANCE = new MSG_Server_Register_Return();
     }
 
-    public static MSG_RES_Server_Register getDefaultInstance() {
+    public static MSG_Server_Register_Return getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_RES_Server_Register>
-        PARSER = new com.google.protobuf.AbstractParser<MSG_RES_Server_Register>() {
-      public MSG_RES_Server_Register parsePartialFrom(
+    @Deprecated public static final com.google.protobuf.Parser<MSG_Server_Register_Return>
+        PARSER = new com.google.protobuf.AbstractParser<MSG_Server_Register_Return>() {
+      public MSG_Server_Register_Return parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MSG_RES_Server_Register(input, extensionRegistry);
+        return new MSG_Server_Register_Return(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MSG_RES_Server_Register> parser() {
+    public static com.google.protobuf.Parser<MSG_Server_Register_Return> parser() {
       return PARSER;
     }
 
     @Override
-    public com.google.protobuf.Parser<MSG_RES_Server_Register> getParserForType() {
+    public com.google.protobuf.Parser<MSG_Server_Register_Return> getParserForType() {
       return PARSER;
     }
 
-    public MSG_RES_Server_Register getDefaultInstanceForType() {
+    public MSG_Server_Register_Return getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ConnectInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.server.register.ConnectInfo)
+  public interface Connect_InfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.Connect_Info)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1458,18 +2009,18 @@ public final class ServerRegister {
         getIpBytes();
   }
   /**
-   * Protobuf type {@code protocol.server.register.ConnectInfo}
+   * Protobuf type {@code protocol.server.register.Connect_Info}
    */
-  public  static final class ConnectInfo extends
+  public  static final class Connect_Info extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.server.register.ConnectInfo)
-      ConnectInfoOrBuilder {
+      // @@protoc_insertion_point(message_implements:protocol.server.register.Connect_Info)
+      Connect_InfoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ConnectInfo.newBuilder() to construct.
-    private ConnectInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Connect_Info.newBuilder() to construct.
+    private Connect_Info(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ConnectInfo() {
+    private Connect_Info() {
       port_ = 0;
       ip_ = "";
     }
@@ -1479,7 +2030,7 @@ public final class ServerRegister {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ConnectInfo(
+    private Connect_Info(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1530,14 +2081,14 @@ public final class ServerRegister {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ServerRegister.internal_static_protocol_server_register_ConnectInfo_descriptor;
+      return ServerRegister.internal_static_protocol_server_register_Connect_Info_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ServerRegister.internal_static_protocol_server_register_ConnectInfo_fieldAccessorTable
+      return ServerRegister.internal_static_protocol_server_register_Connect_Info_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ConnectInfo.class, Builder.class);
+              Connect_Info.class, Builder.class);
     }
 
     private int bitField0_;
@@ -1649,10 +2200,10 @@ public final class ServerRegister {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ConnectInfo)) {
+      if (!(obj instanceof Connect_Info)) {
         return super.equals(obj);
       }
-      ConnectInfo other = (ConnectInfo) obj;
+      Connect_Info other = (Connect_Info) obj;
 
       boolean result = true;
       result = result && (hasPort() == other.hasPort());
@@ -1689,69 +2240,69 @@ public final class ServerRegister {
       return hash;
     }
 
-    public static ConnectInfo parseFrom(
+    public static Connect_Info parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ConnectInfo parseFrom(
+    public static Connect_Info parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ConnectInfo parseFrom(
+    public static Connect_Info parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ConnectInfo parseFrom(
+    public static Connect_Info parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ConnectInfo parseFrom(byte[] data)
+    public static Connect_Info parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ConnectInfo parseFrom(
+    public static Connect_Info parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ConnectInfo parseFrom(java.io.InputStream input)
+    public static Connect_Info parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ConnectInfo parseFrom(
+    public static Connect_Info parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ConnectInfo parseDelimitedFrom(java.io.InputStream input)
+    public static Connect_Info parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ConnectInfo parseDelimitedFrom(
+    public static Connect_Info parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ConnectInfo parseFrom(
+    public static Connect_Info parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ConnectInfo parseFrom(
+    public static Connect_Info parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1763,7 +2314,7 @@ public final class ServerRegister {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ConnectInfo prototype) {
+    public static Builder newBuilder(Connect_Info prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1778,25 +2329,25 @@ public final class ServerRegister {
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.server.register.ConnectInfo}
+     * Protobuf type {@code protocol.server.register.Connect_Info}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.server.register.ConnectInfo)
-        ConnectInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.Connect_Info)
+        Connect_InfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ServerRegister.internal_static_protocol_server_register_ConnectInfo_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_Connect_Info_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ServerRegister.internal_static_protocol_server_register_ConnectInfo_fieldAccessorTable
+        return ServerRegister.internal_static_protocol_server_register_Connect_Info_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ConnectInfo.class, Builder.class);
+                Connect_Info.class, Builder.class);
       }
 
-      // Construct using protocol.server.register.ServerRegister.ConnectInfo.newBuilder()
+      // Construct using protocol.server.register.ServerRegister.Connect_Info.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1822,23 +2373,23 @@ public final class ServerRegister {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ServerRegister.internal_static_protocol_server_register_ConnectInfo_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_Connect_Info_descriptor;
       }
 
-      public ConnectInfo getDefaultInstanceForType() {
-        return ConnectInfo.getDefaultInstance();
+      public Connect_Info getDefaultInstanceForType() {
+        return Connect_Info.getDefaultInstance();
       }
 
-      public ConnectInfo build() {
-        ConnectInfo result = buildPartial();
+      public Connect_Info build() {
+        Connect_Info result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public ConnectInfo buildPartial() {
-        ConnectInfo result = new ConnectInfo(this);
+      public Connect_Info buildPartial() {
+        Connect_Info result = new Connect_Info(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1881,16 +2432,16 @@ public final class ServerRegister {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ConnectInfo) {
-          return mergeFrom((ConnectInfo)other);
+        if (other instanceof Connect_Info) {
+          return mergeFrom((Connect_Info)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ConnectInfo other) {
-        if (other == ConnectInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(Connect_Info other) {
+        if (other == Connect_Info.getDefaultInstance()) return this;
         if (other.hasPort()) {
           setPort(other.getPort());
         }
@@ -1918,11 +2469,11 @@ public final class ServerRegister {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ConnectInfo parsedMessage = null;
+        Connect_Info parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ConnectInfo) e.getUnfinishedMessage();
+          parsedMessage = (Connect_Info) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2051,59 +2602,975 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.server.register.ConnectInfo)
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.Connect_Info)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.server.register.ConnectInfo)
-    private static final ConnectInfo DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protocol.server.register.Connect_Info)
+    private static final Connect_Info DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ConnectInfo();
+      DEFAULT_INSTANCE = new Connect_Info();
     }
 
-    public static ConnectInfo getDefaultInstance() {
+    public static Connect_Info getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<ConnectInfo>
-        PARSER = new com.google.protobuf.AbstractParser<ConnectInfo>() {
-      public ConnectInfo parsePartialFrom(
+    @Deprecated public static final com.google.protobuf.Parser<Connect_Info>
+        PARSER = new com.google.protobuf.AbstractParser<Connect_Info>() {
+      public Connect_Info parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ConnectInfo(input, extensionRegistry);
+        return new Connect_Info(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ConnectInfo> parser() {
+    public static com.google.protobuf.Parser<Connect_Info> parser() {
       return PARSER;
     }
 
     @Override
-    public com.google.protobuf.Parser<ConnectInfo> getParserForType() {
+    public com.google.protobuf.Parser<Connect_Info> getParserForType() {
       return PARSER;
     }
 
-    public ConnectInfo getDefaultInstanceForType() {
+    public Connect_Info getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MSG_Server_Connect_CommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_Server_Connect_Command)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    boolean hasTag();
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    Server_Tag getTag();
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    Server_TagOrBuilder getTagOrBuilder();
+
+    /**
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     */
+    boolean hasInfo();
+    /**
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     */
+    Connect_Info getInfo();
+    /**
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     */
+    Connect_InfoOrBuilder getInfoOrBuilder();
+
+    /**
+     * <code>optional int32 connectType = 4;</code>
+     */
+    boolean hasConnectType();
+    /**
+     * <code>optional int32 connectType = 4;</code>
+     */
+    int getConnectType();
+  }
+  /**
+   * Protobuf type {@code protocol.server.register.MSG_Server_Connect_Command}
+   */
+  public  static final class MSG_Server_Connect_Command extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_Server_Connect_Command)
+      MSG_Server_Connect_CommandOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MSG_Server_Connect_Command.newBuilder() to construct.
+    private MSG_Server_Connect_Command(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MSG_Server_Connect_Command() {
+      connectType_ = 0;
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MSG_Server_Connect_Command(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              Server_Tag.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = tag_.toBuilder();
+              }
+              tag_ = input.readMessage(Server_Tag.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tag_);
+                tag_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              Connect_Info.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = info_.toBuilder();
+              }
+              info_ = input.readMessage(Connect_Info.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(info_);
+                info_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000004;
+              connectType_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
+    }
+
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              MSG_Server_Connect_Command.class, Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TAG_FIELD_NUMBER = 1;
+    private Server_Tag tag_;
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    public Server_Tag getTag() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
+    }
+    /**
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     */
+    public Server_TagOrBuilder getTagOrBuilder() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
+    }
+
+    public static final int INFO_FIELD_NUMBER = 2;
+    private Connect_Info info_;
+    /**
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     */
+    public boolean hasInfo() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     */
+    public Connect_Info getInfo() {
+      return info_ == null ? Connect_Info.getDefaultInstance() : info_;
+    }
+    /**
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     */
+    public Connect_InfoOrBuilder getInfoOrBuilder() {
+      return info_ == null ? Connect_Info.getDefaultInstance() : info_;
+    }
+
+    public static final int CONNECTTYPE_FIELD_NUMBER = 4;
+    private int connectType_;
+    /**
+     * <code>optional int32 connectType = 4;</code>
+     */
+    public boolean hasConnectType() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 connectType = 4;</code>
+     */
+    public int getConnectType() {
+      return connectType_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasTag()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasInfo()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getTag().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getInfo().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, getTag());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, getInfo());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(4, connectType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getTag());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getInfo());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, connectType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof MSG_Server_Connect_Command)) {
+        return super.equals(obj);
+      }
+      MSG_Server_Connect_Command other = (MSG_Server_Connect_Command) obj;
+
+      boolean result = true;
+      result = result && (hasTag() == other.hasTag());
+      if (hasTag()) {
+        result = result && getTag()
+            .equals(other.getTag());
+      }
+      result = result && (hasInfo() == other.hasInfo());
+      if (hasInfo()) {
+        result = result && getInfo()
+            .equals(other.getInfo());
+      }
+      result = result && (hasConnectType() == other.hasConnectType());
+      if (hasConnectType()) {
+        result = result && (getConnectType()
+            == other.getConnectType());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTag()) {
+        hash = (37 * hash) + TAG_FIELD_NUMBER;
+        hash = (53 * hash) + getTag().hashCode();
+      }
+      if (hasInfo()) {
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getInfo().hashCode();
+      }
+      if (hasConnectType()) {
+        hash = (37 * hash) + CONNECTTYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getConnectType();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static MSG_Server_Connect_Command parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_Server_Connect_Command parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_Server_Connect_Command parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_Server_Connect_Command parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_Server_Connect_Command parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_Server_Connect_Command parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_Server_Connect_Command parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static MSG_Server_Connect_Command parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MSG_Server_Connect_Command parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static MSG_Server_Connect_Command parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MSG_Server_Connect_Command parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static MSG_Server_Connect_Command parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(MSG_Server_Connect_Command prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocol.server.register.MSG_Server_Connect_Command}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_Server_Connect_Command)
+        MSG_Server_Connect_CommandOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
+      }
+
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                MSG_Server_Connect_Command.class, Builder.class);
+      }
+
+      // Construct using protocol.server.register.ServerRegister.MSG_Server_Connect_Command.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTagFieldBuilder();
+          getInfoFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (tagBuilder_ == null) {
+          tag_ = null;
+        } else {
+          tagBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (infoBuilder_ == null) {
+          info_ = null;
+        } else {
+          infoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        connectType_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
+      }
+
+      public MSG_Server_Connect_Command getDefaultInstanceForType() {
+        return MSG_Server_Connect_Command.getDefaultInstance();
+      }
+
+      public MSG_Server_Connect_Command build() {
+        MSG_Server_Connect_Command result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public MSG_Server_Connect_Command buildPartial() {
+        MSG_Server_Connect_Command result = new MSG_Server_Connect_Command(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (tagBuilder_ == null) {
+          result.tag_ = tag_;
+        } else {
+          result.tag_ = tagBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (infoBuilder_ == null) {
+          result.info_ = info_;
+        } else {
+          result.info_ = infoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.connectType_ = connectType_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof MSG_Server_Connect_Command) {
+          return mergeFrom((MSG_Server_Connect_Command)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(MSG_Server_Connect_Command other) {
+        if (other == MSG_Server_Connect_Command.getDefaultInstance()) return this;
+        if (other.hasTag()) {
+          mergeTag(other.getTag());
+        }
+        if (other.hasInfo()) {
+          mergeInfo(other.getInfo());
+        }
+        if (other.hasConnectType()) {
+          setConnectType(other.getConnectType());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasTag()) {
+          return false;
+        }
+        if (!hasInfo()) {
+          return false;
+        }
+        if (!getTag().isInitialized()) {
+          return false;
+        }
+        if (!getInfo().isInitialized()) {
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        MSG_Server_Connect_Command parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (MSG_Server_Connect_Command) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private Server_Tag tag_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder> tagBuilder_;
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Server_Tag getTag() {
+        if (tagBuilder_ == null) {
+          return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
+        } else {
+          return tagBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Builder setTag(Server_Tag value) {
+        if (tagBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tag_ = value;
+          onChanged();
+        } else {
+          tagBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Builder setTag(
+          Server_Tag.Builder builderForValue) {
+        if (tagBuilder_ == null) {
+          tag_ = builderForValue.build();
+          onChanged();
+        } else {
+          tagBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Builder mergeTag(Server_Tag value) {
+        if (tagBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              tag_ != null &&
+              tag_ != Server_Tag.getDefaultInstance()) {
+            tag_ =
+              Server_Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
+          } else {
+            tag_ = value;
+          }
+          onChanged();
+        } else {
+          tagBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Builder clearTag() {
+        if (tagBuilder_ == null) {
+          tag_ = null;
+          onChanged();
+        } else {
+          tagBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Server_Tag.Builder getTagBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getTagFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      public Server_TagOrBuilder getTagOrBuilder() {
+        if (tagBuilder_ != null) {
+          return tagBuilder_.getMessageOrBuilder();
+        } else {
+          return tag_ == null ?
+              Server_Tag.getDefaultInstance() : tag_;
+        }
+      }
+      /**
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>
+          getTagFieldBuilder() {
+        if (tagBuilder_ == null) {
+          tagBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>(
+                  getTag(),
+                  getParentForChildren(),
+                  isClean());
+          tag_ = null;
+        }
+        return tagBuilder_;
+      }
+
+      private Connect_Info info_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Connect_Info, Connect_Info.Builder, Connect_InfoOrBuilder> infoBuilder_;
+      /**
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       */
+      public boolean hasInfo() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       */
+      public Connect_Info getInfo() {
+        if (infoBuilder_ == null) {
+          return info_ == null ? Connect_Info.getDefaultInstance() : info_;
+        } else {
+          return infoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       */
+      public Builder setInfo(Connect_Info value) {
+        if (infoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          info_ = value;
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       */
+      public Builder setInfo(
+          Connect_Info.Builder builderForValue) {
+        if (infoBuilder_ == null) {
+          info_ = builderForValue.build();
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       */
+      public Builder mergeInfo(Connect_Info value) {
+        if (infoBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              info_ != null &&
+              info_ != Connect_Info.getDefaultInstance()) {
+            info_ =
+              Connect_Info.newBuilder(info_).mergeFrom(value).buildPartial();
+          } else {
+            info_ = value;
+          }
+          onChanged();
+        } else {
+          infoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       */
+      public Builder clearInfo() {
+        if (infoBuilder_ == null) {
+          info_ = null;
+          onChanged();
+        } else {
+          infoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       */
+      public Connect_Info.Builder getInfoBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       */
+      public Connect_InfoOrBuilder getInfoOrBuilder() {
+        if (infoBuilder_ != null) {
+          return infoBuilder_.getMessageOrBuilder();
+        } else {
+          return info_ == null ?
+              Connect_Info.getDefaultInstance() : info_;
+        }
+      }
+      /**
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Connect_Info, Connect_Info.Builder, Connect_InfoOrBuilder>
+          getInfoFieldBuilder() {
+        if (infoBuilder_ == null) {
+          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Connect_Info, Connect_Info.Builder, Connect_InfoOrBuilder>(
+                  getInfo(),
+                  getParentForChildren(),
+                  isClean());
+          info_ = null;
+        }
+        return infoBuilder_;
+      }
+
+      private int connectType_ ;
+      /**
+       * <code>optional int32 connectType = 4;</code>
+       */
+      public boolean hasConnectType() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 connectType = 4;</code>
+       */
+      public int getConnectType() {
+        return connectType_;
+      }
+      /**
+       * <code>optional int32 connectType = 4;</code>
+       */
+      public Builder setConnectType(int value) {
+        bitField0_ |= 0x00000004;
+        connectType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 connectType = 4;</code>
+       */
+      public Builder clearConnectType() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        connectType_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_Server_Connect_Command)
+    }
+
+    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_Server_Connect_Command)
+    private static final MSG_Server_Connect_Command DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new MSG_Server_Connect_Command();
+    }
+
+    public static MSG_Server_Connect_Command getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @Deprecated public static final com.google.protobuf.Parser<MSG_Server_Connect_Command>
+        PARSER = new com.google.protobuf.AbstractParser<MSG_Server_Connect_Command>() {
+      public MSG_Server_Connect_Command parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MSG_Server_Connect_Command(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MSG_Server_Connect_Command> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<MSG_Server_Connect_Command> getParserForType() {
+      return PARSER;
+    }
+
+    public MSG_Server_Connect_Command getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_server_register_MSG_REQ_Server_Register_descriptor;
+    internal_static_protocol_server_register_Server_Tag_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protocol_server_register_MSG_REQ_Server_Register_fieldAccessorTable;
+      internal_static_protocol_server_register_Server_Tag_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_server_register_MSG_RES_Server_Register_descriptor;
+    internal_static_protocol_server_register_MSG_Server_Register_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protocol_server_register_MSG_RES_Server_Register_fieldAccessorTable;
+      internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_server_register_ConnectInfo_descriptor;
+    internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protocol_server_register_ConnectInfo_fieldAccessorTable;
+      internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocol_server_register_Connect_Info_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protocol_server_register_Connect_Info_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2114,12 +3581,18 @@ public final class ServerRegister {
   static {
     String[] descriptorData = {
       "\n\024ServerRegister.proto\022\030protocol.server." +
-      "register\"M\n\027MSG_REQ_Server_Register\022\022\n\ns" +
-      "erverType\030\001 \002(\005\022\017\n\007groupId\030\002 \001(\005\022\r\n\005subI" +
-      "d\030\003 \001(\005\"]\n\027MSG_RES_Server_Register\022\022\n\nse" +
-      "rverType\030\001 \002(\005\022\017\n\007groupId\030\002 \001(\005\022\r\n\005subId" +
-      "\030\003 \001(\005\022\016\n\006result\030\004 \002(\r\"\'\n\013ConnectInfo\022\014\n" +
-      "\004port\030\001 \002(\005\022\n\n\002ip\030\002 \002(\t"
+      "register\"@\n\nServer_Tag\022\022\n\nserverType\030\001 \002" +
+      "(\005\022\017\n\007groupId\030\002 \001(\005\022\r\n\005subId\030\003 \001(\005\"H\n\023MS" +
+      "G_Server_Register\0221\n\003tag\030\001 \002(\0132$.protoco" +
+      "l.server.register.Server_Tag\"_\n\032MSG_Serv" +
+      "er_Register_Return\022\016\n\006result\030\001 \002(\r\0221\n\003ta" +
+      "g\030\002 \002(\0132$.protocol.server.register.Serve" +
+      "r_Tag\"(\n\014Connect_Info\022\014\n\004port\030\001 \002(\005\022\n\n\002i" +
+      "p\030\002 \002(\t\"\232\001\n\032MSG_Server_Connect_Command\0221" +
+      "\n\003tag\030\001 \002(\0132$.protocol.server.register.S" +
+      "erver_Tag\0224\n\004info\030\002 \002(\0132&.protocol.serve" +
+      "r.register.Connect_Info\022\023\n\013connectType\030\004" +
+      " \001(\005"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2133,24 +3606,36 @@ public final class ServerRegister {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_protocol_server_register_MSG_REQ_Server_Register_descriptor =
+    internal_static_protocol_server_register_Server_Tag_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_protocol_server_register_MSG_REQ_Server_Register_fieldAccessorTable = new
+    internal_static_protocol_server_register_Server_Tag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protocol_server_register_MSG_REQ_Server_Register_descriptor,
+        internal_static_protocol_server_register_Server_Tag_descriptor,
         new String[] { "ServerType", "GroupId", "SubId", });
-    internal_static_protocol_server_register_MSG_RES_Server_Register_descriptor =
+    internal_static_protocol_server_register_MSG_Server_Register_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_protocol_server_register_MSG_RES_Server_Register_fieldAccessorTable = new
+    internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protocol_server_register_MSG_RES_Server_Register_descriptor,
-        new String[] { "ServerType", "GroupId", "SubId", "Result", });
-    internal_static_protocol_server_register_ConnectInfo_descriptor =
+        internal_static_protocol_server_register_MSG_Server_Register_descriptor,
+        new String[] { "Tag", });
+    internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_protocol_server_register_ConnectInfo_fieldAccessorTable = new
+    internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protocol_server_register_ConnectInfo_descriptor,
+        internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor,
+        new String[] { "Result", "Tag", });
+    internal_static_protocol_server_register_Connect_Info_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_protocol_server_register_Connect_Info_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protocol_server_register_Connect_Info_descriptor,
         new String[] { "Port", "Ip", });
+    internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor,
+        new String[] { "Tag", "Info", "ConnectType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

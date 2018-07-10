@@ -31,7 +31,7 @@ public class ServerMessageExecutor extends SimpleChannelInboundHandler<Packet> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Packet msg) throws Exception {
-        log.info("channelRead0 recv");
+//        log.info("channelRead0 recv");
         consumer.consume(msg, ctx.channel());
     }
 

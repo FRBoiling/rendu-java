@@ -15,6 +15,7 @@
         <module name="manager" />
         <module name="protocol" />
         <module name="realm" />
+        <module name="RedisUtil" />
         <module name="relation" />
         <module name="util" />
         <module name="world" />
@@ -32,6 +33,7 @@
       <module name="manager" target="1.8" />
       <module name="protocol" target="1.8" />
       <module name="realm" target="1.8" />
+      <module name="RedisUtil" target="1.8" />
       <module name="relation" target="1.8" />
       <module name="ServerCluster" target="1.8" />
       <module name="servers" target="1.8" />

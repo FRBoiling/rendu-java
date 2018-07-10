@@ -3,11 +3,8 @@ package gate;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
-import core.base.serviceframe.DriverThread;
-import core.base.serviceframe.IService;
-import core.base.serviceframe.ISystemFrame;
-import core.network.ServiceState;
-import gate.global.GlobalServer;
+import core.base.serviceframe.AbstractSystemFrame;
+import gate.connectionManager.ConnectManager;
 import pathExt.PathManager;
 import protocol.gate.global.G2GMIdGenerater;
 import protocol.global.gate.GM2GIdGenerater;
@@ -26,71 +23,22 @@ import java.util.List;
  * Time: 14:59
  */
 
-public class GateServiceContext implements IService,ISystemFrame {
-    public ServiceState state = ServiceState.STOPPED;
-    public static ServerTag tag;
-    DriverThread mainThread;
-    private GlobalServer globalServer;
+public class GateServiceContext extends AbstractSystemFrame {
 
+    public static  ConnectManager  connectManager;
     @Override
     public void init(String[] args) {
+        super.init(args);
+
         ServerType serverType = ServerType.Gate;
         tag = new ServerTag();
         if (args.length>=1){
             Integer subId = Integer.parseInt(args[0]);
             tag.setTag(serverType,0,subId);
         }
-        mainThread= new DriverThread( "GateDriverThread",this);
-        initPath();
-        initLogger();
-        initXmlData();
-        initLibData();
-        initOpenServerTime();
-        initDB();
-        initRedis();
-        intiProtocol();
-        initServers();
-    }
-
-    @Override
-    public void start() {
-        state = ServiceState.RUNNING;
-        mainThread.start();
-        globalServer.start();
-    }
-
-    @Override
-    public void stop() {
-        state = ServiceState.STOPPED;
-    }
-
-    @Override
-    public void update() {
-        while (isOpened()){
-            try {
-                globalServer.update();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Override
-    public ServiceState getState() {
-        return state;
-    }
-
-    private GlobalServer createGlobalServer() {
-        try {
-            return new GlobalServer();
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Override
-    public void initServers(){
-        globalServer = createGlobalServer();
+        connectManager =  new ConnectManager();
+        initConnectManager(connectManager);
+        initMainThread("GateDriverThread");
     }
 
     @Override

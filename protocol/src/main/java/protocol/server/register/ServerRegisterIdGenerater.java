@@ -8,8 +8,10 @@ package protocol.server.register;
 import protocol.msgId.Id;
 public class ServerRegisterIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(ServerRegister.MSG_REQ_Server_Register.class, 0xFF0001);
-          Id.getInst().SetMessage(ServerRegister.MSG_RES_Server_Register.class, 0xFF0002);
-          Id.getInst().SetMessage(ServerRegister.ConnectInfo.class, 0xFF0003);
+          Id.getInst().SetMessage(ServerRegister.Server_Tag.class, 0xff0000);
+          Id.getInst().SetMessage(ServerRegister.MSG_Server_Register.class, 0xff0001);
+          Id.getInst().SetMessage(ServerRegister.MSG_Server_Register_Return.class, 0xff0002);
+          Id.getInst().SetMessage(ServerRegister.Connect_Info.class, 0xff0003);
+          Id.getInst().SetMessage(ServerRegister.MSG_Server_Connect_Command.class, 0xff0004);
      }
 }

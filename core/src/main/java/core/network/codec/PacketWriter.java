@@ -4,6 +4,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
+import lombok.extern.slf4j.Slf4j;
 
 import static io.netty.buffer.Unpooled.wrappedBuffer;
 
@@ -11,10 +12,10 @@ import static io.netty.buffer.Unpooled.wrappedBuffer;
  * **************************************************************************************************
  * Protocol
  * ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐
- * │     4       │      2      │
+ * │      2      │      4      │
  * ├ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┤
  * │             │             │
- * │  Invoke Id     Body Length             Body Content               │
+ * │ Body Length     Invoke Id              Body Content               │
  * │             │             │
  * └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┘
  * <p>
@@ -27,6 +28,7 @@ import static io.netty.buffer.Unpooled.wrappedBuffer;
  * @author boiling
  */
 @ChannelHandler.Sharable
+@Slf4j
 public class PacketWriter extends MessageToByteEncoder<Packet> {
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, Packet packet, ByteBuf out) throws Exception {
@@ -38,5 +40,6 @@ public class PacketWriter extends MessageToByteEncoder<Packet> {
         out.writeShortLE(msgLength);
         out.writeIntLE(msgId);
         out.writeBytes(msg,msg.readerIndex(),msgLength);
+//        log.info("packet writer msgId {} msgLength {}",msgId,msgLength);
     }
 }

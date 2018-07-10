@@ -33,14 +33,18 @@ public class PathManager {
 
     public void initPath(String path){
         bashPath = path;
-        dataPath = pathCombine(bashPath,"Bin","Data");
-        serverPath = pathCombine(bashPath,"Bin","Server");
+        if (bashPath.contains("Bin")){
+            dataPath = pathCombine(bashPath,"Data");
+            serverPath = pathCombine(bashPath,"Server");
+        }else {
+            dataPath = pathCombine(bashPath,"Bin","Data");
+            serverPath = pathCombine(bashPath,"Bin","Server");
+        }
     }
 
     public void initPath(){
         bashPath = getBashPath();
-        dataPath = pathCombine(bashPath,"Bin","Data");
-        serverPath = pathCombine(bashPath,"Bin","Server");
+        initPath(bashPath);
     }
 
     /**
@@ -64,7 +68,7 @@ public class PathManager {
     {
         File file = new File(System.getProperty("user.dir"));
         bashPath = file.getParent();
-//        System.out.println("bashPath:"+bashPath);
+        System.out.println("bashPath:"+bashPath);
         return bashPath;
     }
 

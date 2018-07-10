@@ -1,13 +1,14 @@
 package relation.connectionManager;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import constant.Errorcode;
+import constant.ErrorCode;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.sequence.IResponseHandler;
 import lombok.extern.slf4j.Slf4j;
 import protocol.server.register.ServerRegister;
+import relation.RelationService;
 import relation.global.GlobalServerSessionMng;
 
 /**
@@ -21,13 +22,19 @@ import relation.global.GlobalServerSessionMng;
 public class ResponseRegisterReturn implements IResponseHandler{
     @Override
     public void onResponse(byte[] message, AbstractSession session) throws InvalidProtocolBufferException {
-        ServerRegister.MSG_RES_Server_Register msg = ServerRegister.MSG_RES_Server_Register.parseFrom(message);
-        ServerType serverType = ServerType.values()[msg.getServerType()];
-        //基本信息注册 MSG_REQ_Server_Register
+        ServerRegister.MSG_Server_Register_Return msg = ServerRegister.MSG_Server_Register_Return.parseFrom(message);
+
+        //注册反馈 MSG_Server_Register_Return
+        ServerType serverType = ServerType.values()[msg.getTag().getServerType()];
+        int groupId = msg.getTag().getGroupId();
+        int subId = msg.getTag().getSubId();
+
         ServerTag tag = new ServerTag();
-        tag.setTag(serverType,msg.getGroupId(),msg.getSubId());
+        tag.setTag(serverType,groupId,subId);
         session.setTag(tag);
-        if ( msg.getResult() == Errorcode.Success.ordinal())
+
+
+        if ( msg.getResult() == ErrorCode.Success.ordinal())
         {
             boolean isRegisterSuccess =false;
             switch (serverType) {
@@ -39,13 +46,20 @@ public class ResponseRegisterReturn implements IResponseHandler{
                 default:
                     break;
             }
-            log.info("register to {} {}",tag.getStrTag(),Errorcode.values()[msg.getResult()]);
+            log.info("register to {} {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
             if (isRegisterSuccess) {
                 //TODO:这里添加具体注册逻辑
             } else {
+                if ( serverType == ServerType.Global){
+                    RelationService.context.stop();
+                }
+                log.error("register to {} fail: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
             }
         }else {
-            log.error("register to {} fail: {}",tag.getStrTag(),Errorcode.values()[msg.getResult()]);
+            if ( serverType == ServerType.Global){
+                RelationService.context.stop();
+            }
+            log.error("register to {} fail: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
         }
     }
 }

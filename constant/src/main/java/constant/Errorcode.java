@@ -8,7 +8,8 @@ package constant;
  * Time: 14:24
  */
 
-public enum Errorcode {
+public enum ErrorCode {
     Success,
-    Fail
+    Fail,
+    RepeatedRegister,
 }

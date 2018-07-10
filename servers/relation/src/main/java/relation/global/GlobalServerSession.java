@@ -26,7 +26,7 @@ public class GlobalServerSession extends AbstractSession {
     }
     public void OnConnected() {
         super.OnConnected();
-        sendRegister();
+        sendRegister(RelationServiceContext.tag);
     }
     public void OnDisConnected(){
         super.OnDisConnected();
@@ -35,16 +35,6 @@ public class GlobalServerSession extends AbstractSession {
     @Override
     public void sendHeartBeat() {
         R2GM.MSG_R2GM_HEARTBEAT.Builder builder = R2GM.MSG_R2GM_HEARTBEAT.newBuilder();
-        sendMessage(builder.build());
-    }
-
-    public void sendRegister()
-    {
-        ServerRegister.MSG_REQ_Server_Register.Builder builder = ServerRegister.MSG_REQ_Server_Register.newBuilder();
-        builder.setGroupId(RelationServiceContext.tag.getGroupId());
-        builder.setSubId(RelationServiceContext.tag.getSubId());
-        builder.setServerType(RelationServiceContext.tag.getType().ordinal());
-
         sendMessage(builder.build());
     }
 }

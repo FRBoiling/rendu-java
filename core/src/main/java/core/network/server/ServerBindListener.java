@@ -24,9 +24,9 @@ public class ServerBindListener implements ChannelFutureListener {
     public void operationComplete(ChannelFuture future) throws Exception {
         if (future.isSuccess()) {
             service.setState(ServiceState.RUNNING);
-            log.info("Server on port:{} is start", service.getBuilder().getPort());
+            log.info("Server on listenPort:{} is start", service.getBuilder().getPort());
         } else {
-            log.error("Failed to bind on port:{}", service.getBuilder().getPort());
+            log.error("Failed to bind on listenPort:{}", service.getBuilder().getPort());
             future.cause().printStackTrace();
         }
     }

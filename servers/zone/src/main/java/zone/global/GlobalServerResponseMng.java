@@ -3,6 +3,7 @@ package zone.global;
 import core.network.IResponseHandlerManager;
 import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;
+import zone.connectionManager.ResponseConnectCommand;
 import zone.connectionManager.ResponseRegisterReturn;
 
 /**
@@ -20,6 +21,7 @@ public class GlobalServerResponseMng implements IResponseHandlerManager {
 
     @Override
     public void register() {
-       register(Id.getInst().getMessageId(ServerRegister.MSG_RES_Server_Register.class), ResponseRegisterReturn.class);
+        register(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register_Return.class), ResponseRegisterReturn.class);
+        register(Id.getInst().getMessageId(ServerRegister.MSG_Server_Connect_Command.class), ResponseConnectCommand.class);
     }
 }

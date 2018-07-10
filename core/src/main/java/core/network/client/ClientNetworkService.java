@@ -46,6 +46,7 @@ public class ClientNetworkService implements IService ,ISocketClient {
     private final ClientSocketChannelInitializer channelInitializer;
     protected volatile ByteBufAllocator allocator;
 
+
     ClientNetworkService(final INetworkServiceBuilder serviceBuilder) {
         builder = (ClientNetworkServiceBuilder) serviceBuilder;
         int IOLoopGroupCount = builder.getWorkerLoopGroupCount();
@@ -60,7 +61,7 @@ public class ClientNetworkService implements IService ,ISocketClient {
         bootstrap = new Bootstrap();
         bootstrap.group(IOGroup);
         bootstrap.channel(NioSocketChannel.class);
-        InitOption2();
+        InitOption1();
 
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
     }
@@ -138,11 +139,11 @@ public class ClientNetworkService implements IService ,ISocketClient {
                 f = bootstrap.connect(host, port);
                 f.addListener(new ClientConnectionListener(this));
             }
-            f.sync();
+//           f.sync();
         } catch (Exception e) {
 //            throw new RuntimeException(e);
 //            throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails", e);
-            throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails:"+e.getMessage());
+//            throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails:"+e.getMessage());
         }
     }
 

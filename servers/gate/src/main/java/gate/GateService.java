@@ -6,12 +6,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GateService
 {
-    static GateServiceContext context;
+    public static GateServiceContext context;
     public static void main( String[] args )
     {
         context = new GateServiceContext();
-        context.init(args);
-        context.start();
-        log.info("GateService启动成功...");
+        try {
+            context.init(args);
+            context.start();
+            log.info("GateService启动成功...");
+        }catch (Exception e){
+            context.stop();
+        }
     }
 }

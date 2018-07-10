@@ -24,7 +24,7 @@ public class ManagerServerResponseMng implements IResponseHandlerManager {
 
     @Override
     public void register() {
-        register(Id.getInst().getMessageId(ServerRegister.MSG_REQ_Server_Register.class), ResponseRegister.class);
+        register(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register.class), ResponseRegister.class);
         register(Id.getInst().getMessageId(M2GM.MSG_M2GM_HEARTBEAT.class), ResponseHeartBeat.class);
     }
 }

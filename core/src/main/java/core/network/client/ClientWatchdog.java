@@ -55,7 +55,7 @@ public abstract class ClientWatchdog extends ChannelInboundHandlerAdapter implem
                 attempts++;
                 long timeout = 2 << attempts;
                 timer.newTimeout(this, timeout, MILLISECONDS);
-                log.warn("Disconnect on {}, host {}, port: {}, reconnect: {} attempts:{}.", ctx.channel(), port, host, reconnect, attempts);
+                log.warn("Disconnect on {}, host {}, listenPort: {}, reconnect: {} attempts:{}.", ctx.channel(), port, host, reconnect, attempts);
             }
         }
         ctx.fireChannelInactive();
@@ -86,7 +86,7 @@ public abstract class ClientWatchdog extends ChannelInboundHandlerAdapter implem
         future.addListener(new ChannelFutureListener() {
             public void operationComplete(ChannelFuture f) throws Exception {
                 boolean succeed = f.isSuccess();
-//                log.warn("Reconnect with {}:{}, {}.", host, port, succeed ? "succeed" : "failed");
+//                log.warn("Reconnect with {}:{}, {}.", host, listenPort, succeed ? "succeed" : "failed");
                 if (!succeed) {
                     f.channel().pipeline().fireChannelInactive();
                 }else{

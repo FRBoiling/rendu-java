@@ -1,6 +1,7 @@
 package gamedb;
 
-import Util.Time;
+import basicCallBack.ObjectBeCalled;
+import util.Time;
 import gamedb.dao.AbstractDBOperator;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -17,12 +18,13 @@ public class DBManager {
 
     public boolean Opened=false;
 
-    public void Init(){
+    public boolean init(){
         saveQueue=new ConcurrentLinkedQueue<>();
         executionQue=new ConcurrentLinkedQueue<>();
         postUpdateQue=new ConcurrentLinkedQueue<>();
         exceptionLogQueue=new ConcurrentLinkedQueue<>();
         Opened=true;
+        return true;
     }
 
     public boolean Exit(){
@@ -35,6 +37,12 @@ public class DBManager {
     }
 
     public void Call(AbstractDBOperator query){
+        Add(query);
+    }
+
+    public void Call(AbstractDBOperator query, ObjectBeCalled callee){
+        query.Init(this);
+        query.RegistCallBack(callee);
         Add(query);
     }
 

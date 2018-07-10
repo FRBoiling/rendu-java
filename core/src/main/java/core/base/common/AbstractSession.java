@@ -1,10 +1,13 @@
 package core.base.common;
 
+import core.base.model.ServerTag;
 import core.base.sequence.MessageDriver;
 import core.network.IResponseHandlerManager;
 import io.netty.channel.Channel;
+import lombok.Builder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import protocol.server.register.ServerRegister;
 
 import java.net.InetSocketAddress;
 
@@ -90,7 +93,7 @@ public abstract class AbstractSession {
         if (channel == null) {
             return;
         }
-//      AttributeUtil.set(channel, ISessionAttributeKey.UID, null);
+        AttributeUtil.set(channel, SessionKey.SESSION, null);
     }
 
     public void close() {
@@ -122,5 +125,19 @@ public abstract class AbstractSession {
             return "";
         }
         return tag.getKey();
+    }
+
+
+    public void sendRegister(ServerTag tag)
+    {
+        ServerRegister.Server_Tag.Builder serverTag = ServerRegister.Server_Tag.newBuilder();
+        serverTag.setServerType(tag.getType().ordinal());
+        serverTag.setGroupId(tag.getGroupId());
+        serverTag.setSubId(tag.getSubId());
+
+        ServerRegister.MSG_Server_Register.Builder builder = ServerRegister.MSG_Server_Register.newBuilder();
+        builder.setTag(serverTag);
+
+        sendMessage(builder.build());
     }
 }

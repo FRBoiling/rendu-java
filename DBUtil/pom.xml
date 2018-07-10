@@ -13,7 +13,7 @@
     <artifactId>DBUtil</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>core</name>
+    <name>dbutil</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -67,21 +67,7 @@
             <artifactId>javassist</artifactId>
             <version>3.22.0-CR2</version>
         </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.3</version>
-        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -101,6 +87,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>util</groupId>
+            <artifactId>util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

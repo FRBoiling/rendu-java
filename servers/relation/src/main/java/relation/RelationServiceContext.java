@@ -3,6 +3,7 @@ package relation;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
+import core.base.serviceframe.AbstractSystemFrame;
 import core.base.serviceframe.DriverThread;
 import core.base.serviceframe.IService;
 import core.base.serviceframe.ISystemFrame;
@@ -11,6 +12,7 @@ import pathExt.PathManager;
 import protocol.global.relation.GM2RIdGenerater;
 import protocol.relation.global.R2GMIdGenerater;
 import protocol.server.register.ServerRegisterIdGenerater;
+import relation.connectionManager.ConnectManager;
 import relation.global.GlobalServer;
 import util.FileUtil;
 
@@ -26,11 +28,8 @@ import java.util.List;
  * Time: 14:59
  */
 
-public class RelationServiceContext implements IService,ISystemFrame {
-    public ServiceState state = ServiceState.STOPPED;
-    public static ServerTag tag;
-    DriverThread mainThread;
-    private GlobalServer globalServer;
+public class RelationServiceContext extends AbstractSystemFrame {
+    public static ConnectManager connectMng;
 
     @Override
     public void init(String[] args) {
@@ -40,58 +39,9 @@ public class RelationServiceContext implements IService,ISystemFrame {
             Integer groupId = Integer.parseInt(args[0]);
             tag.setTag(serverType,groupId,0);
         }
-        mainThread= new DriverThread( "RelationDriverThread",this);
-        initPath();
-        initLogger();
-        initXmlData();
-        initLibData();
-        initOpenServerTime();
-        initDB();
-        initRedis();
-        intiProtocol();
-        initServers();
-    }
-
-    @Override
-    public void start() {
-        state = ServiceState.RUNNING;
-        mainThread.start();
-        globalServer.start();
-    }
-
-    @Override
-    public void stop() {
-        state = ServiceState.STOPPED;
-    }
-
-    @Override
-    public void update() {
-        while (isOpened()){
-            try {
-                Thread.sleep(25);
-                globalServer.update();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Override
-    public ServiceState getState() {
-        return state;
-    }
-
-    private GlobalServer createGlobalServer() {
-        try {
-            return new GlobalServer();
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Override
-    public void initServers(){
-        globalServer = createGlobalServer();
+        connectMng= new ConnectManager();
+        initConnectManager(connectMng);
+        initMainThread("RelationDriverThread");
     }
 
     @Override

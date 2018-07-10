@@ -3,6 +3,7 @@ package zone;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
+import core.base.serviceframe.AbstractSystemFrame;
 import core.base.serviceframe.DriverThread;
 import core.base.serviceframe.IService;
 import core.base.serviceframe.ISystemFrame;
@@ -12,11 +13,14 @@ import protocol.global.zone.GM2ZIdGenerater;
 import protocol.server.register.ServerRegisterIdGenerater;
 import protocol.zone.global.Z2GMIdGenerater;
 import util.FileUtil;
+import zone.connectionManager.ConnectManager;
 import zone.global.GlobalServer;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import gamedb.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,14 +30,13 @@ import java.util.List;
  * Time: 14:59
  */
 
-public class ZoneServiceContext implements IService,ISystemFrame {
-    public ServiceState state = ServiceState.STOPPED;
-    public static ServerTag tag;
-    DriverThread mainThread;
-    private GlobalServer globalServer;
+public class ZoneServiceContext extends AbstractSystemFrame {
+    public static ConnectManager connectMng;
 
     @Override
     public void init(String[] args) {
+        super.init(args);
+
         ServerType serverType = ServerType.Zone;
         tag = new ServerTag();
         if (args.length>=2){
@@ -41,58 +44,9 @@ public class ZoneServiceContext implements IService,ISystemFrame {
             Integer subId = Integer.parseInt(args[1]);
             tag.setTag(serverType,groupId,subId);
         }
-        mainThread= new DriverThread( "ZoneDriverThread",this);
-        initPath();
-        initLogger();
-        initXmlData();
-        initLibData();
-        initOpenServerTime();
-        initDB();
-        initRedis();
-        intiProtocol();
-        initServers();
-    }
-
-    @Override
-    public void start() {
-        state = ServiceState.RUNNING;
-        mainThread.start();
-        globalServer.start();
-    }
-
-    @Override
-    public void stop() {
-        state = ServiceState.STOPPED;
-    }
-
-    @Override
-    public void update() {
-        while (isOpened()){
-            try {
-                Thread.sleep(25);
-                globalServer.update();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Override
-    public ServiceState getState() {
-        return state;
-    }
-
-    private GlobalServer createGlobalServer() {
-        try {
-            return new GlobalServer();
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Override
-    public void initServers(){
-        globalServer = createGlobalServer();
+        connectMng = new ConnectManager();
+        initConnectManager(connectMng);
+        initMainThread("ZoneDriverThread");
     }
 
     @Override
@@ -128,9 +82,27 @@ public class ZoneServiceContext implements IService,ISystemFrame {
 
     }
 
+//    DBMngPoolManager db;
+
     @Override
     public void initDB() {
-
+//        db = new DBMngPoolManager();
+//        DataList dbList = DataListManager.inst.GetDataList("DBConfig");
+//        foreach (var item : dbList)
+//        {
+//            string nickName = item.Value.Name;
+//            string dbIp = item.Value.GetString("ip");
+//            string dbName = item.Value.GetString("db");
+//            string dbAccount = item.Value.GetString("account");
+//            string dbPassword = item.Value.GetString("password");
+//            string dbPort = item.Value.GetString("port");
+//            string type = item.Value.GetString("type");
+//            int poolCount = item.Value.GetInt("threads");
+//
+//            DBManagerPool dbPool = new DBManagerPool(poolCount);
+//            db.AddNameDb(nickName, dbPool);
+//            dbPool.Init(dbIp, dbName, dbAccount, dbPassword, dbPort);
+//        }
     }
 
     @Override
