@@ -14,13 +14,11 @@ import protocol.server.register.ServerRegisterIdGenerater;
 import protocol.zone.global.Z2GMIdGenerater;
 import util.FileUtil;
 import zone.connectionManager.ConnectManager;
-import zone.global.GlobalServer;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import gamedb.*;
 
 /**
  * Created with IntelliJ IDEA.
