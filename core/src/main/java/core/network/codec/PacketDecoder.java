@@ -16,12 +16,14 @@ import java.util.List;
 public class PacketDecoder extends ByteToMessageDecoder {
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> out) throws Exception {
         int length = in.readableBytes();
+        int player_id = in.readIntLE();
         int msg_id = in.readIntLE();
-//        ByteBuf msg = in.readBytes(length - in.readerIndex());
+
         int msg_length = length - in.readerIndex();
         Packet packet = new Packet((short) msg_length);
-        packet.setMsgId(msg_id);
-        in.readBytes(packet.msg,0,msg_length);
+
+        packet.setMsgId(msg_id).setPlayerId(player_id);
+        in.readBytes(packet.getMsg(),0,msg_length);
         out.add(packet);
     }
 }

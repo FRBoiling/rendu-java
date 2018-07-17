@@ -2,6 +2,7 @@ package core.base.sequence;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import core.base.common.AbstractSession;
+import core.network.codec.Packet;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,5 +13,5 @@ import core.base.common.AbstractSession;
  */
 
 public interface IResponseHandler{
-       void onResponse(byte[] msg,AbstractSession session) throws InvalidProtocolBufferException;
+       void onResponse(Packet packet, AbstractSession session) throws InvalidProtocolBufferException;
 }

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="barrack" />
         <module name="configuration" />
         <module name="constant" />
         <module name="core" />
@@ -18,28 +19,8 @@
         <module name="RedisUtil" />
         <module name="relation" />
         <module name="util" />
-        <module name="world" />
         <module name="zone" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="common" target="1.8" />
-      <module name="configuration" target="1.8" />
-      <module name="constant" target="1.7" />
-      <module name="core" target="1.8" />
-      <module name="DBUtil" target="1.8" />
-      <module name="gate" target="1.8" />
-      <module name="global" target="1.8" />
-      <module name="manager" target="1.8" />
-      <module name="protocol" target="1.8" />
-      <module name="realm" target="1.8" />
-      <module name="RedisUtil" target="1.8" />
-      <module name="relation" target="1.8" />
-      <module name="ServerCluster" target="1.8" />
-      <module name="servers" target="1.8" />
-      <module name="util" target="1.8" />
-      <module name="world" target="1.8" />
-      <module name="zone" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

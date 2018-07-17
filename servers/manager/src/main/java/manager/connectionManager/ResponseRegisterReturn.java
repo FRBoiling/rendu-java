@@ -6,6 +6,7 @@ import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.sequence.IResponseHandler;
+import core.network.codec.Packet;
 import lombok.extern.slf4j.Slf4j;
 import manager.ManagerService;
 import manager.global.GlobalServerSessionMng;
@@ -21,8 +22,8 @@ import protocol.server.register.ServerRegister;
 @Slf4j
 public class ResponseRegisterReturn implements IResponseHandler{
     @Override
-    public void onResponse(byte[] message, AbstractSession session) throws InvalidProtocolBufferException {
-        ServerRegister.MSG_Server_Register_Return msg = ServerRegister.MSG_Server_Register_Return.parseFrom(message);
+    public void onResponse(Packet packet, AbstractSession session) throws InvalidProtocolBufferException {
+        ServerRegister.MSG_Server_Register_Return msg = ServerRegister.MSG_Server_Register_Return.parseFrom(packet.getMsg());
 
         //注册反馈 MSG_Server_Register_Return
         ServerType serverType = ServerType.values()[msg.getTag().getServerType()];

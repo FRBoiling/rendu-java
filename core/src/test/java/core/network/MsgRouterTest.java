@@ -23,7 +23,7 @@ public void after() throws Exception {
 
 /** 
 * 
-* Method: consume(Packet packet, Channel channel) 
+* Method: consume(Packet1 packet, Channel channel)
 * 
 */ 
 @Test

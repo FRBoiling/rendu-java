@@ -3,11 +3,12 @@ package util;
 /**
  * Created with Intellij IDEA
  * Description:
- * User: Administrator
+ * User: Boiling
  * Date: 2018-07-06
  * Time: 10:32
  **/
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -86,6 +87,19 @@ public class FileUtil {
         // 如果p匹配完了，说明匹配成功
         return idxp == p.length();
     }
+
+    public String getCanonicalPath(String path){
+//        String aa = System.getProperty("logback.configurationFile");
+        File file= new File(path);
+        String strCanonicalPath="";
+        try {
+          return strCanonicalPath = file.getCanonicalPath();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
 
 
 }

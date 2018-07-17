@@ -75,6 +75,11 @@ public class PathManager {
 
     public String getXmlPath()
     {
-        return pathCombine(dataPath,"Xml");
+        return pathCombine(dataPath,"XML");
+    }
+
+    public String getLogPath()
+    {
+        return pathCombine(dataPath,"LOG");
     }
 }

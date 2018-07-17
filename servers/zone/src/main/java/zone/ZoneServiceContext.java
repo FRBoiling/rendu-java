@@ -4,10 +4,10 @@ import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.serviceframe.AbstractSystemFrame;
-import core.base.serviceframe.DriverThread;
-import core.base.serviceframe.IService;
-import core.base.serviceframe.ISystemFrame;
-import core.network.ServiceState;
+import gamedb.DBManagerPool;
+import gamedb.DBMngPoolManager;
+import gamedb.DBOperateType;
+import gamedb.Util.MybatisConfigUtil;
 import pathExt.PathManager;
 import protocol.global.zone.GM2ZIdGenerater;
 import protocol.server.register.ServerRegisterIdGenerater;
@@ -18,6 +18,9 @@ import zone.connectionManager.ConnectManager;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import configuration.dataManager.*;
 
 
 /**
@@ -80,27 +83,61 @@ public class ZoneServiceContext extends AbstractSystemFrame {
 
     }
 
-//    DBMngPoolManager db;
+    DBMngPoolManager db;
 
     @Override
     public void initDB() {
-//        db = new DBMngPoolManager();
-//        DataList dbList = DataListManager.inst.GetDataList("DBConfig");
-//        foreach (var item : dbList)
-//        {
-//            string nickName = item.Value.Name;
-//            string dbIp = item.Value.GetString("ip");
-//            string dbName = item.Value.GetString("db");
-//            string dbAccount = item.Value.GetString("account");
-//            string dbPassword = item.Value.GetString("password");
-//            string dbPort = item.Value.GetString("port");
-//            string type = item.Value.GetString("type");
-//            int poolCount = item.Value.GetInt("threads");
-//
-//            DBManagerPool dbPool = new DBManagerPool(poolCount);
-//            db.AddNameDb(nickName, dbPool);
-//            dbPool.Init(dbIp, dbName, dbAccount, dbPassword, dbPort);
-//        }
+
+        //初始化Mybatis配置
+        List<File> fileList = new ArrayList<File>();
+        FileUtil.findFiles(PathManager.getInstance().getXmlPath(),"mybatis_config.xml",fileList);
+        if(fileList.size()==0){
+            fileList.clear();
+            FileUtil.findFiles(System.getProperty("user.dir"),"mybatis_config.xml",fileList);
+        }
+        if(fileList.size()>0){
+            for (File file:fileList) {
+                MybatisConfigUtil.InitWithFile(file);
+                System.out.println("-------------- Mybatis Config Done---------------");
+                break;
+            }
+        }else {
+            System.out.println("--------------no mybatis_config.xml---------------");
+        }
+
+
+        //-----------------------------init DBMngPoolManager---------
+        db=new DBMngPoolManager();
+        DataList dbconfigs=DataListManager.getInstance().getDataList("DBConfig");
+        for (Map.Entry<Integer, Data> item  :dbconfigs.entrySet())
+        {
+            String nickName = item.getValue().getName();
+            int poolCount = item.getValue().getInteger("threads");
+
+            DBManagerPool dbPool = new DBManagerPool(poolCount);
+            db.AddNameDb(nickName, dbPool);
+            dbPool.Init();
+        }
+
+        DataList tableList = DataListManager.getInstance().getDataList("DBTables");
+        for (Map.Entry<Integer, Data> item  :tableList.entrySet())
+        {
+            String tableName = item.getValue().getName();
+            String writeDbName = item.getValue().getString("write");
+            String readDbName = item.getValue().getString("read");
+            DBManagerPool writeDb = db.GetDbByName(writeDbName);
+            if (writeDbName == null)
+            {
+                System.out.println(String.format("can not get table %s write db", tableName));
+            }
+            db.AddTableDb(tableName, writeDb,DBOperateType.Write);
+            DBManagerPool readDb = db.GetDbByName(readDbName);
+            if (readDbName == null)
+            {
+                System.out.println(String.format("can not get table %s read db", tableName));
+            }
+            db.AddTableDb(tableName, readDb, DBOperateType.Read);
+        }
     }
 
     @Override

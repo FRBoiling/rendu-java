@@ -45,6 +45,11 @@ public class DBManagerPool {
 //        dbAccount = id;
 //        password = pw;
 //        this.port = port;
+        return Init();
+    }
+
+    public boolean Init()
+    {
         for(DBManager db:dbManagerList)
         {
             if (db.init() == false)

@@ -1,12 +1,15 @@
 package core.base.common;
 
+import com.google.protobuf.MessageLite;
 import core.base.model.ServerTag;
 import core.base.sequence.MessageDriver;
 import core.network.IResponseHandlerManager;
+import core.network.codec.Packet;
 import io.netty.channel.Channel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;
 
 import java.net.InetSocketAddress;
@@ -14,7 +17,7 @@ import java.net.InetSocketAddress;
 /**
  * Created with IntelliJ IDEA.
  * Description:
- * User: FReedom
+ * User: Boiling
  * Date: 2018-04-23
  * Time: 14:30
  */
@@ -114,8 +117,16 @@ public abstract class AbstractSession {
         messageDriver.update(this);
     }
 
-    public void sendMessage(Object msg) {
-        channel.writeAndFlush(msg);
+    public void sendMessage(MessageLite msg) {
+        Packet packet = new Packet();
+        packet.setPlayerId(0).setMsgId(Id.getInst().getMessageId(msg.getClass())).setMsg(msg.toByteArray());
+        channel.writeAndFlush(packet);
+    }
+
+    public void sendMessage(MessageLite msg,int playerId) {
+        Packet packet = new Packet();
+        packet.setPlayerId(playerId).setMsgId(Id.getInst().getMessageId(msg.getClass())).setMsg(msg.toByteArray());
+        channel.writeAndFlush(packet);
     }
 
     public abstract void sendHeartBeat();
@@ -126,7 +137,6 @@ public abstract class AbstractSession {
         }
         return tag.getKey();
     }
-
 
     public void sendRegister(ServerTag tag)
     {

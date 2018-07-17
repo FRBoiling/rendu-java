@@ -7,7 +7,7 @@ import relation.global.GlobalServer;
 /**
  * Created with Intellij IDEA
  * Description:
- * User: Administrator
+ * User: Boiling
  * Date: 2018-07-07
  * Time: 15:48
  **/
@@ -18,11 +18,11 @@ public class ConnectManager implements IConnectManager {
 //    private ZoneServer zoneServer;
 
     public GlobalServer createGlobalServer() {
-        try {
+//        try {
             return new GlobalServer();
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+//        } catch (Throwable e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
 //    public ZoneServer createZoneServer() {

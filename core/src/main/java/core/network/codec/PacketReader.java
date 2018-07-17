@@ -11,14 +11,15 @@ import java.util.List;
  * **************************************************************************************************
  * Protocol
  * ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐
- * │     2       │      4      │
+ * │     2       │      4      │     4      │
  * ├ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┤
- * │             │             │
- * │ Body Length     Invoke Id                  Body Content           │
- * │             │             │
+ * │             │             │            │
+ * │ Body Length     player Id      Invoke Id      Body Content        │
+ * │             │             │            │
  * └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┘
  * <p>
- * 消息头6 个字节定长
+ * 消息头10个字节定长
+ *  = 4 // player id int 类型
  * = 4 // 消息 id int 类型
  * + 2 // 消息体body长度, short类型
  */
@@ -59,7 +60,7 @@ public class PacketReader  extends ByteToMessageDecoder {
                 buffer.resetReaderIndex();
                 return 0;
             }
-            return tmp + Integer.BYTES;//数据（protobuf）和 消息ID（int） 的长度和
+            return tmp + Integer.BYTES+ Integer.BYTES;//数据（protobuf）和 消息ID（int） 的长度和 一个Uid（int）
         } else {
             buffer.resetReaderIndex();
             return 0;

@@ -20,7 +20,7 @@ import protocol.server.register.ServerRegister;
 /**
  * Created with Intellij IDEA
  * Description:
- * User: Administrator
+ * User: Boiling
  * Date: 2018-07-07
  * Time: 15:48
  **/

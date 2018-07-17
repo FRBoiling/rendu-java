@@ -8,6 +8,6 @@ package protocol.relation.global;
 import protocol.msgId.Id;
 public class R2GMIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(R2GM.MSG_R2GM_HEARTBEAT.class, 0x410001);
+          Id.getInst().SetMessage(R2GM.MSG_R2GM_HEARTBEAT.class, 0x520001);
      }
 }

@@ -32,7 +32,7 @@ public class ServerSocketChannelInitializer extends ChannelInitializer<SocketCha
     //封包
     private final PacketWriter writer = new PacketWriter();
     //message的编码器
-    private final PacketEncoder encoder = new PacketEncoder();
+//    private final PacketEncoder encoder = new PacketEncoder();
     //
     private ServerMessageExecutor messageExecutor;
     //
@@ -58,7 +58,7 @@ public class ServerSocketChannelInitializer extends ChannelInitializer<SocketCha
                 new IdleStateHandler(60, 0, 0, TimeUnit.SECONDS),
                 idleStateTrigger,
                 writer,
-                encoder,
+//                encoder,
                 //拆包
                 new PacketReader(),
                 //message的解码器

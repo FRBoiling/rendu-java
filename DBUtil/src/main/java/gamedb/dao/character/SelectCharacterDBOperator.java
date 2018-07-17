@@ -24,7 +24,7 @@ public class SelectCharacterDBOperator extends AbstractDBOperator {
         try{
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             RoleMapper roleMapper=sqlSession.getMapper(RoleMapper.class);
-            HashMap<String,String> map=new HashMap<>();
+            //HashMap<String,String> map=new HashMap<>();
             role=roleMapper.getRole(1,"t_role");
             System.err.println("SelectCharacterDBOperator execute");
         }catch (Exception ex){

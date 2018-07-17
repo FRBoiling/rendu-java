@@ -18,7 +18,7 @@
         <module>RedisUtil</module>
     </modules>
 
-    <name>servers</name>
+    <name>ServerCluster</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

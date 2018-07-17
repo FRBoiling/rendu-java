@@ -1,10 +1,10 @@
 package relation.global;
 
 import core.network.IResponseHandlerManager;
-
 import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;
 import relation.connectionManager.ResponseRegisterReturn;
+
 
 /**
  * Created with IntelliJ IDEA.

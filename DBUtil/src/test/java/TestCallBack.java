@@ -2,8 +2,10 @@ import basicCallBack.ArgObject;
 import basicCallBack.ObjectBeCalled;
 import gamedb.dao.character.*;
 import gamedb.pojo.Role;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+@Slf4j
 public class TestCallBack {
 
     @Test
@@ -32,7 +34,8 @@ public class TestCallBack {
         operator.execute();
         operator.PostUpdate();
 
-        System.out.println(object.argCount+" "+object.argName);
+        System.out.println("111111111");
+        log.info("{} {}",1,20000000000000L);
     }
 
     @Test

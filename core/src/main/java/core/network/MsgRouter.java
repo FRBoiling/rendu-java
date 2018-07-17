@@ -22,6 +22,6 @@ public class MsgRouter implements INetworkConsumer {
         if (session == null) {
             return;
         }
-        session.getMessageDriver().addMessage(packet.getMsgId(),packet.getMsg());
+        session.getMessageDriver().addMessage(packet);
     }
 }

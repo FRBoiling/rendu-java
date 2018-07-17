@@ -10,14 +10,12 @@
     debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <!-- 定义日志文件 输入位置 -->
-    <property name="log_dir" value="/logs/ev_cmdb" />
+     <!--如：java -Dlog.dir="gate_1" -Dlog.level="info" -jar gate.jar 1-->
+    <property name="log_dir" value="/logs/${log.dir}" />
     <!-- 日志最大的历史 30天 -->
     <property name="maxHistory" value="30"/>
 
 
-
-
-    <!-- ConsoleAppender 控制台输出日志 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <!-- 对日志进行格式化 -->
         <encoder>
@@ -151,18 +149,17 @@
         </encoder>
     </appender>
 
-    <logger name="java.sql.PreparedStatement" value="DEBUG" />
-    <logger name="java.sql.Connection" value="DEBUG" />
-    <logger name="java.sql.Statement" value="DEBUG" />
-    <logger name="com.ibatis" value="DEBUG" />
-    <logger name="com.ibatis.common.jdbc.SimpleDataSource" value="DEBUG" />
-    <logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/>
-    <logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" value="DEBUG" />
-
+    <logger name="java.sql.PreparedStatement" value="${log.level}" />
+    <logger name="java.sql.Connection" value="${log.level}" />
+    <logger name="java.sql.Statement" value="${log.level}" />
+    <logger name="com.ibatis" value="${log.level}" />
+    <logger name="com.ibatis.common.jdbc.SimpleDataSource" value="${log.level}" />
+    <logger name="com.ibatis.common.jdbc.ScriptRunner" level="${log.level}"/>
+    <logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" value="${log.level}" />
 
 
     <!-- root级别   DEBUG -->
-    <root level="info">
+    <root level="${log.level}">
         <!-- 控制台输出 -->
         <appender-ref ref="STDOUT" />
         <!-- 文件输出 -->

@@ -3,6 +3,7 @@ package core.base.sequence;
 import com.google.protobuf.InvalidProtocolBufferException;
 import core.base.common.AbstractSession;
 import core.network.IResponseHandlerManager;
+import core.network.codec.Packet;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayDeque;
@@ -31,32 +32,22 @@ public class MessageDriver {
     /**
      * 消息队列
      */
-    private final ConcurrentLinkedQueue<Command> tmpMsgQueue;
-    private final Queue<Command> dealMsgQueue;
+    private final ConcurrentLinkedQueue<Packet> tmpMsgQueue;
+    private final Queue<Packet> dealMsgQueue;
 
     IResponseHandlerManager responseMng;
-
-    class Command {
-        int msgId;
-        byte[] msg;
-
-        public Command(int msgId, byte[] msg) {
-            this.msgId = msgId;
-            this.msg = msg;
-        }
-    }
 
     public MessageDriver(int maxQueueSize, String name) {
         this.name = name;
         this.maxQueueSize = maxQueueSize;
-        this.tmpMsgQueue = new ConcurrentLinkedQueue<Command>();
-        this.dealMsgQueue = new ArrayDeque<Command>();
+        this.tmpMsgQueue = new ConcurrentLinkedQueue<Packet>();
+        this.dealMsgQueue = new ArrayDeque<Packet>();
     }
 
     public MessageDriver(int maxQueueSize) {
         this.maxQueueSize = maxQueueSize;
-        this.tmpMsgQueue = new ConcurrentLinkedQueue<Command>();
-        this.dealMsgQueue = new ArrayDeque<Command>();
+        this.tmpMsgQueue = new ConcurrentLinkedQueue<Packet>();
+        this.dealMsgQueue = new ArrayDeque<Packet>();
     }
 
     public void register(String name) {
@@ -74,10 +65,9 @@ public class MessageDriver {
 //     * @param msg
 //     * @return
 //     */
-    public boolean addMessage(int msgId, byte[] msg) {
+    public boolean addMessage(Packet packet) {
         boolean result = false;
-        Command cmd = new Command(msgId, msg);
-        result = tmpMsgQueue.offer(cmd);
+        result = tmpMsgQueue.offer(packet);
         if (!result) {
             log.error("{}队列添加任务失败", name);
         }
@@ -87,18 +77,18 @@ public class MessageDriver {
     //
     public void update(AbstractSession session) {
         while (tmpMsgQueue.size() > 0) {
-            Command msg = tmpMsgQueue.poll();
+            Packet msg = tmpMsgQueue.poll();
             dealMsgQueue.offer(msg);
         }
         while (dealMsgQueue.size() > 0) {
-            Command msg = dealMsgQueue.poll();
-            IResponseHandler handler = responseMng.getHandler(msg.msgId);
+            Packet msg = dealMsgQueue.poll();
+            IResponseHandler handler = responseMng.getHandler(msg.getMsgId());
             if (handler == null) {
-                log.info("got an no registered msg:" + msg.msgId);
+                log.info("got an no registered msg:" + msg.getMsgId());
                 return;
             }
             try {
-                handler.onResponse(msg.msg,session);
+                handler.onResponse(msg,session);
             } catch (InvalidProtocolBufferException e) {
                 e.printStackTrace();
             }

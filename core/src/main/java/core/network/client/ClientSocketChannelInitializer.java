@@ -30,8 +30,8 @@ public class ClientSocketChannelInitializer extends ChannelInitializer implement
     private final ClientIdleStateTrigger idleStateTrigger = new ClientIdleStateTrigger();
     //封包
     private final PacketWriter writer = new PacketWriter();
-    //message的编码器
-    private final PacketEncoder encoder = new PacketEncoder();
+//    //message的编码器
+//    private final PacketEncoder encoder = new PacketEncoder();
     //
     private ClientMessageExecutor messageExecutor;
 
@@ -56,7 +56,7 @@ public class ClientSocketChannelInitializer extends ChannelInitializer implement
                         new IdleStateHandler(0, 50, 0, TimeUnit.SECONDS),
                         idleStateTrigger,
                         writer,
-                        encoder,
+//                        encoder,
                         //拆包
                         new PacketReader(),
                         //message的解码器

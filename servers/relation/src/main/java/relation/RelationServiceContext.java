@@ -33,6 +33,8 @@ public class RelationServiceContext extends AbstractSystemFrame {
 
     @Override
     public void init(String[] args) {
+        super.init(args);
+
         ServerType serverType = ServerType.Relation;
         tag = new ServerTag();
         if (args.length>=1){

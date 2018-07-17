@@ -32,8 +32,8 @@ public class PacketEncoder extends MessageToMessageEncoder<MessageLite> {
 //            packet.setMsgLength((short) packet.msg.length);
 //            out.add(packet);
 //        }
-        packet.msg =  msg.toByteArray();
-        packet.setMsgLength((short) packet.msg.length);
+        packet.setMsg(msg.toByteArray());
+        packet.setMsgLength((short) packet.getMsgLength());
         out.add(packet);
     }
 }
