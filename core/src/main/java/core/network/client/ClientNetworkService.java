@@ -1,6 +1,5 @@
 package core.network.client;
 
-import core.base.exception.ConnectFailedException;
 import core.network.INetworkServiceBuilder;
 import core.base.serviceframe.IService;
 import core.network.NativeSupport;
@@ -10,6 +9,7 @@ import io.netty.buffer.ByteBufAllocator;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
 import io.netty.channel.epoll.EpollEventLoopGroup;
+import io.netty.channel.epoll.EpollSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.DefaultThreadFactory;
@@ -60,7 +60,11 @@ public class ClientNetworkService implements IService ,ISocketClient {
         bootstrapLock =new Object();
         bootstrap = new Bootstrap();
         bootstrap.group(IOGroup);
-        bootstrap.channel(NioSocketChannel.class);
+        if (NativeSupport.isSupportNativeET()) {
+            bootstrap.channel(EpollSocketChannel.class);
+        } else {
+            bootstrap.channel(NioSocketChannel.class);
+        }
         InitOption1();
 
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
