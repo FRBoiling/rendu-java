@@ -6,17 +6,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/common/math/pom.xml" />
-        <option value="$PROJECT_DIR$/log/pom.xml" />
-        <option value="$PROJECT_DIR$/logUtil/pom.xml" />
-        <option value="$PROJECT_DIR$/model/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/../Bin/Bin" />
+    <output url="file://$PROJECT_DIR$/../Bin" />
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">

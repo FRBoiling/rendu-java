@@ -27,16 +27,13 @@
       <module name="barrack" target="1.8" />
       <module name="common" target="1.8" />
       <module name="configuration" target="1.8" />
-      <module name="constant" target="1.7" />
+      <module name="constant" target="1.8" />
       <module name="core" target="1.8" />
       <module name="dataObject" target="1.8" />
       <module name="DBUtil" target="1.8" />
-      <module name="gameObject" target="1.8" />
       <module name="gate" target="1.8" />
       <module name="global" target="1.8" />
-      <module name="logUtil" target="1.7" />
       <module name="manager" target="1.8" />
-      <module name="math" target="1.8" />
       <module name="protocol" target="1.8" />
       <module name="realm" target="1.8" />
       <module name="RedisUtil" target="1.8" />
