@@ -59,7 +59,7 @@ public class PathManager {
         File file = newPath.toFile();
         if (!file.exists() && !file.isDirectory()) {
             file.mkdirs();
-            log.info("创建文件夹");
+            log.info("创建文件夹{}",file.toString());
         }
         return newPath.toString();
     }

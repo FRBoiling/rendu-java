@@ -27,7 +27,7 @@
       <module name="barrack" target="1.8" />
       <module name="common" target="1.8" />
       <module name="configuration" target="1.8" />
-      <module name="constant" target="1.8" />
+      <module name="constant" target="1.7" />
       <module name="core" target="1.8" />
       <module name="dataObject" target="1.8" />
       <module name="DBUtil" target="1.8" />
