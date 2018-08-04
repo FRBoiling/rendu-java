@@ -1,5 +1,7 @@
 package constant;
 
+import lombok.Getter;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -7,9 +9,13 @@ package constant;
  * Date: 2018-06-09
  * Time: 14:24
  */
-
+@Getter
 public enum ErrorCode {
-    Success,
-    Fail,
-    RepeatedRegister,
+    SUCCESS(0),
+    FAIL(1);
+    private int value;
+    private ErrorCode(int value){
+        this.value=value;
+    }
 }
+

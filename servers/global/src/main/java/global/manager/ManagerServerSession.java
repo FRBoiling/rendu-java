@@ -14,10 +14,10 @@ import io.netty.channel.Channel;
  */
 
 public class ManagerServerSession extends AbstractSession {
-    public ManagerServerSession(Channel channel) {
+    ManagerServerSession(Channel channel) {
         super(channel);
-        ServerTag tag =new ServerTag();
-        tag.setTag(ServerType.Manager,0,0);
+        ServerTag tag = new ServerTag();
+        tag.setTag(ServerType.Manager, 0, 0);
         setTag(tag);
     }
 

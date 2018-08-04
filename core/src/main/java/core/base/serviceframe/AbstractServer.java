@@ -68,7 +68,6 @@ public abstract class AbstractServer implements IService{
     }
 
     @Override
-    public void update() {
-        sessionMng.update();
+    public void update(long dt) {
     }
 }

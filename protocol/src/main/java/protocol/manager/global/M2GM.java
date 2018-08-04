@@ -33,7 +33,7 @@ public final class M2GM {
     private MSG_M2GM_HEARTBEAT() {
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -44,7 +44,7 @@ public final class M2GM {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -77,14 +77,14 @@ public final class M2GM {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_descriptor;
+      return protocol.manager.global.M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_fieldAccessorTable
+      return protocol.manager.global.M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_M2GM_HEARTBEAT.class, Builder.class);
+              protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT.class, protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -112,22 +112,22 @@ public final class M2GM {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_M2GM_HEARTBEAT)) {
+      if (!(obj instanceof protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT)) {
         return super.equals(obj);
       }
-      MSG_M2GM_HEARTBEAT other = (MSG_M2GM_HEARTBEAT) obj;
+      protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT other = (protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -139,69 +139,69 @@ public final class M2GM {
       return hash;
     }
 
-    public static MSG_M2GM_HEARTBEAT parseFrom(
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_M2GM_HEARTBEAT parseFrom(
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_M2GM_HEARTBEAT parseFrom(
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_M2GM_HEARTBEAT parseFrom(
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_M2GM_HEARTBEAT parseFrom(byte[] data)
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_M2GM_HEARTBEAT parseFrom(
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_M2GM_HEARTBEAT parseFrom(java.io.InputStream input)
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_M2GM_HEARTBEAT parseFrom(
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_M2GM_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_M2GM_HEARTBEAT parseDelimitedFrom(
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_M2GM_HEARTBEAT parseFrom(
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_M2GM_HEARTBEAT parseFrom(
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -213,7 +213,7 @@ public final class M2GM {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_M2GM_HEARTBEAT prototype) {
+    public static Builder newBuilder(protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -221,9 +221,9 @@ public final class M2GM {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -233,17 +233,17 @@ public final class M2GM {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.manager.global.MSG_M2GM_HEARTBEAT)
-        MSG_M2GM_HEARTBEATOrBuilder {
+        protocol.manager.global.M2GM.MSG_M2GM_HEARTBEATOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_descriptor;
+        return protocol.manager.global.M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_fieldAccessorTable
+        return protocol.manager.global.M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_M2GM_HEARTBEAT.class, Builder.class);
+                protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT.class, protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT.Builder.class);
       }
 
       // Construct using protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT.newBuilder()
@@ -252,7 +252,7 @@ public final class M2GM {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -268,23 +268,23 @@ public final class M2GM {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_descriptor;
+        return protocol.manager.global.M2GM.internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_descriptor;
       }
 
-      public MSG_M2GM_HEARTBEAT getDefaultInstanceForType() {
-        return MSG_M2GM_HEARTBEAT.getDefaultInstance();
+      public protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT getDefaultInstanceForType() {
+        return protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT.getDefaultInstance();
       }
 
-      public MSG_M2GM_HEARTBEAT build() {
-        MSG_M2GM_HEARTBEAT result = buildPartial();
+      public protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT build() {
+        protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_M2GM_HEARTBEAT buildPartial() {
-        MSG_M2GM_HEARTBEAT result = new MSG_M2GM_HEARTBEAT(this);
+      public protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT buildPartial() {
+        protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT result = new protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT(this);
         onBuilt();
         return result;
       }
@@ -294,7 +294,7 @@ public final class M2GM {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -307,25 +307,25 @@ public final class M2GM {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_M2GM_HEARTBEAT) {
-          return mergeFrom((MSG_M2GM_HEARTBEAT)other);
+        if (other instanceof protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT) {
+          return mergeFrom((protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_M2GM_HEARTBEAT other) {
-        if (other == MSG_M2GM_HEARTBEAT.getDefaultInstance()) return this;
+      public Builder mergeFrom(protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT other) {
+        if (other == protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -339,11 +339,11 @@ public final class M2GM {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_M2GM_HEARTBEAT parsedMessage = null;
+        protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_M2GM_HEARTBEAT) e.getUnfinishedMessage();
+          parsedMessage = (protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -367,16 +367,16 @@ public final class M2GM {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.manager.global.MSG_M2GM_HEARTBEAT)
-    private static final MSG_M2GM_HEARTBEAT DEFAULT_INSTANCE;
+    private static final protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_M2GM_HEARTBEAT();
+      DEFAULT_INSTANCE = new protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT();
     }
 
-    public static MSG_M2GM_HEARTBEAT getDefaultInstance() {
+    public static protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_M2GM_HEARTBEAT>
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_M2GM_HEARTBEAT>
         PARSER = new com.google.protobuf.AbstractParser<MSG_M2GM_HEARTBEAT>() {
       public MSG_M2GM_HEARTBEAT parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -390,12 +390,12 @@ public final class M2GM {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MSG_M2GM_HEARTBEAT> getParserForType() {
       return PARSER;
     }
 
-    public MSG_M2GM_HEARTBEAT getDefaultInstanceForType() {
+    public protocol.manager.global.M2GM.MSG_M2GM_HEARTBEAT getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -414,7 +414,7 @@ public final class M2GM {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\nM2GM.proto\022\027protocol.manager.global\"\024\n" +
       "\022MSG_M2GM_HEARTBEAT"
     };
@@ -435,7 +435,7 @@ public final class M2GM {
     internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_manager_global_MSG_M2GM_HEARTBEAT_descriptor,
-        new String[] { });
+        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

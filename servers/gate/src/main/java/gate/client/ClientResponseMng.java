@@ -1,7 +1,10 @@
 package gate.client;
 
 import core.network.IResponseHandlerManager;
+import gate.client.response.ResponseUserLogin;
 import lombok.extern.slf4j.Slf4j;
+import protocol.client.c2g.C2G;
+import protocol.msgId.Id;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,13 +16,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ClientResponseMng implements IResponseHandlerManager {
 
-    public ClientResponseMng() {
+    ClientResponseMng() {
         register();
     }
 
     @Override
     public void register() {
-//        register(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register.class), ResponseRegister.class);
-//        register(Id.getInst().getMessageId(G2GM.MSG_G2GM_HEARTBEAT.class), ResponseHeartBeat.class);
+        register(Id.getInst().getMessageId(C2G.MSG_CG_USER_LOGIN.class), ResponseUserLogin.class);
     }
 }

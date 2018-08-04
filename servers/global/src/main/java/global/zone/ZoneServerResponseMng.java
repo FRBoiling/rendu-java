@@ -18,7 +18,7 @@ import protocol.zone.global.Z2GM;
 @Slf4j
 public class ZoneServerResponseMng implements IResponseHandlerManager {
 
-    public ZoneServerResponseMng() {
+    ZoneServerResponseMng() {
         register();
     }
 

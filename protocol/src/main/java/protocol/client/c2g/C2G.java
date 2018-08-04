@@ -33,18 +33,13 @@ public final class C2G {
         getAccountNameBytes();
 
     /**
-     * <code>required string deviceId = 2;</code>
+     * <code>required int32 token = 2;</code>
      */
-    boolean hasDeviceId();
+    boolean hasToken();
     /**
-     * <code>required string deviceId = 2;</code>
+     * <code>required int32 token = 2;</code>
      */
-    String getDeviceId();
-    /**
-     * <code>required string deviceId = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getDeviceIdBytes();
+    int getToken();
 
     /**
      * <code>required string version = 3;</code>
@@ -61,18 +56,18 @@ public final class C2G {
         getVersionBytes();
 
     /**
-     * <code>required string password = 4;</code>
+     * <code>required string deviceId = 4;</code>
      */
-    boolean hasPassword();
+    boolean hasDeviceId();
     /**
-     * <code>required string password = 4;</code>
+     * <code>required string deviceId = 4;</code>
      */
-    String getPassword();
+    String getDeviceId();
     /**
-     * <code>required string password = 4;</code>
+     * <code>required string deviceId = 4;</code>
      */
     com.google.protobuf.ByteString
-        getPasswordBytes();
+        getDeviceIdBytes();
 
     /**
      * <code>required int32 mainId = 5;</code>
@@ -82,15 +77,6 @@ public final class C2G {
      * <code>required int32 mainId = 5;</code>
      */
     int getMainId();
-
-    /**
-     * <code>required int32 token = 6;</code>
-     */
-    boolean hasToken();
-    /**
-     * <code>required int32 token = 6;</code>
-     */
-    int getToken();
 
     /**
      * <code>required string registerId = 7;</code>
@@ -134,11 +120,10 @@ public final class C2G {
     }
     private MSG_CG_USER_LOGIN() {
       accountName_ = "";
-      deviceId_ = "";
-      version_ = "";
-      password_ = "";
-      mainId_ = 0;
       token_ = 0;
+      version_ = "";
+      deviceId_ = "";
+      mainId_ = 0;
       registerId_ = "";
       channelName_ = "";
     }
@@ -180,10 +165,9 @@ public final class C2G {
               accountName_ = bs;
               break;
             }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 16: {
               bitField0_ |= 0x00000002;
-              deviceId_ = bs;
+              token_ = input.readInt32();
               break;
             }
             case 26: {
@@ -195,7 +179,7 @@ public final class C2G {
             case 34: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              password_ = bs;
+              deviceId_ = bs;
               break;
             }
             case 40: {
@@ -203,20 +187,15 @@ public final class C2G {
               mainId_ = input.readInt32();
               break;
             }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              token_ = input.readInt32();
-              break;
-            }
             case 58: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               registerId_ = bs;
               break;
             }
             case 66: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000040;
               channelName_ = bs;
               break;
             }
@@ -287,46 +266,19 @@ public final class C2G {
       }
     }
 
-    public static final int DEVICEID_FIELD_NUMBER = 2;
-    private volatile Object deviceId_;
+    public static final int TOKEN_FIELD_NUMBER = 2;
+    private int token_;
     /**
-     * <code>required string deviceId = 2;</code>
+     * <code>required int32 token = 2;</code>
      */
-    public boolean hasDeviceId() {
+    public boolean hasToken() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string deviceId = 2;</code>
+     * <code>required int32 token = 2;</code>
      */
-    public String getDeviceId() {
-      Object ref = deviceId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          deviceId_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string deviceId = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDeviceIdBytes() {
-      Object ref = deviceId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        deviceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getToken() {
+      return token_;
     }
 
     public static final int VERSION_FIELD_NUMBER = 3;
@@ -371,19 +323,19 @@ public final class C2G {
       }
     }
 
-    public static final int PASSWORD_FIELD_NUMBER = 4;
-    private volatile Object password_;
+    public static final int DEVICEID_FIELD_NUMBER = 4;
+    private volatile Object deviceId_;
     /**
-     * <code>required string password = 4;</code>
+     * <code>required string deviceId = 4;</code>
      */
-    public boolean hasPassword() {
+    public boolean hasDeviceId() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required string password = 4;</code>
+     * <code>required string deviceId = 4;</code>
      */
-    public String getPassword() {
-      Object ref = password_;
+    public String getDeviceId() {
+      Object ref = deviceId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -391,22 +343,22 @@ public final class C2G {
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          password_ = s;
+          deviceId_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string password = 4;</code>
+     * <code>required string deviceId = 4;</code>
      */
     public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      Object ref = password_;
+        getDeviceIdBytes() {
+      Object ref = deviceId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        password_ = b;
+        deviceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -428,28 +380,13 @@ public final class C2G {
       return mainId_;
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 6;
-    private int token_;
-    /**
-     * <code>required int32 token = 6;</code>
-     */
-    public boolean hasToken() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>required int32 token = 6;</code>
-     */
-    public int getToken() {
-      return token_;
-    }
-
     public static final int REGISTERID_FIELD_NUMBER = 7;
     private volatile Object registerId_;
     /**
      * <code>required string registerId = 7;</code>
      */
     public boolean hasRegisterId() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required string registerId = 7;</code>
@@ -491,7 +428,7 @@ public final class C2G {
      * <code>required string channelName = 8;</code>
      */
     public boolean hasChannelName() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>required string channelName = 8;</code>
@@ -537,7 +474,7 @@ public final class C2G {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasDeviceId()) {
+      if (!hasToken()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -545,15 +482,11 @@ public final class C2G {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasPassword()) {
+      if (!hasDeviceId()) {
         memoizedIsInitialized = 0;
         return false;
       }
       if (!hasMainId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasToken()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -575,24 +508,21 @@ public final class C2G {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accountName_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId_);
+        output.writeInt32(2, token_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, version_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deviceId_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeInt32(5, mainId_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt32(6, token_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, registerId_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, channelName_);
       }
       unknownFields.writeTo(output);
@@ -607,26 +537,23 @@ public final class C2G {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accountName_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, token_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, version_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deviceId_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, mainId_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, token_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, registerId_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, channelName_);
       }
       size += unknownFields.getSerializedSize();
@@ -650,30 +577,25 @@ public final class C2G {
         result = result && getAccountName()
             .equals(other.getAccountName());
       }
-      result = result && (hasDeviceId() == other.hasDeviceId());
-      if (hasDeviceId()) {
-        result = result && getDeviceId()
-            .equals(other.getDeviceId());
+      result = result && (hasToken() == other.hasToken());
+      if (hasToken()) {
+        result = result && (getToken()
+            == other.getToken());
       }
       result = result && (hasVersion() == other.hasVersion());
       if (hasVersion()) {
         result = result && getVersion()
             .equals(other.getVersion());
       }
-      result = result && (hasPassword() == other.hasPassword());
-      if (hasPassword()) {
-        result = result && getPassword()
-            .equals(other.getPassword());
+      result = result && (hasDeviceId() == other.hasDeviceId());
+      if (hasDeviceId()) {
+        result = result && getDeviceId()
+            .equals(other.getDeviceId());
       }
       result = result && (hasMainId() == other.hasMainId());
       if (hasMainId()) {
         result = result && (getMainId()
             == other.getMainId());
-      }
-      result = result && (hasToken() == other.hasToken());
-      if (hasToken()) {
-        result = result && (getToken()
-            == other.getToken());
       }
       result = result && (hasRegisterId() == other.hasRegisterId());
       if (hasRegisterId()) {
@@ -700,25 +622,21 @@ public final class C2G {
         hash = (37 * hash) + ACCOUNTNAME_FIELD_NUMBER;
         hash = (53 * hash) + getAccountName().hashCode();
       }
-      if (hasDeviceId()) {
-        hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
-        hash = (53 * hash) + getDeviceId().hashCode();
+      if (hasToken()) {
+        hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getToken();
       }
       if (hasVersion()) {
         hash = (37 * hash) + VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getVersion().hashCode();
       }
-      if (hasPassword()) {
-        hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-        hash = (53 * hash) + getPassword().hashCode();
+      if (hasDeviceId()) {
+        hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceId().hashCode();
       }
       if (hasMainId()) {
         hash = (37 * hash) + MAINID_FIELD_NUMBER;
         hash = (53 * hash) + getMainId();
-      }
-      if (hasToken()) {
-        hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-        hash = (53 * hash) + getToken();
       }
       if (hasRegisterId()) {
         hash = (37 * hash) + REGISTERID_FIELD_NUMBER;
@@ -859,20 +777,18 @@ public final class C2G {
         super.clear();
         accountName_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        deviceId_ = "";
+        token_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
         version_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        password_ = "";
+        deviceId_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
         mainId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
-        token_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000020);
         registerId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         channelName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -904,7 +820,7 @@ public final class C2G {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.deviceId_ = deviceId_;
+        result.token_ = token_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -912,7 +828,7 @@ public final class C2G {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.password_ = password_;
+        result.deviceId_ = deviceId_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
@@ -920,13 +836,9 @@ public final class C2G {
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.token_ = token_;
+        result.registerId_ = registerId_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
-        }
-        result.registerId_ = registerId_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
         }
         result.channelName_ = channelName_;
         result.bitField0_ = to_bitField0_;
@@ -976,34 +888,29 @@ public final class C2G {
           accountName_ = other.accountName_;
           onChanged();
         }
-        if (other.hasDeviceId()) {
-          bitField0_ |= 0x00000002;
-          deviceId_ = other.deviceId_;
-          onChanged();
+        if (other.hasToken()) {
+          setToken(other.getToken());
         }
         if (other.hasVersion()) {
           bitField0_ |= 0x00000004;
           version_ = other.version_;
           onChanged();
         }
-        if (other.hasPassword()) {
+        if (other.hasDeviceId()) {
           bitField0_ |= 0x00000008;
-          password_ = other.password_;
+          deviceId_ = other.deviceId_;
           onChanged();
         }
         if (other.hasMainId()) {
           setMainId(other.getMainId());
         }
-        if (other.hasToken()) {
-          setToken(other.getToken());
-        }
         if (other.hasRegisterId()) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000020;
           registerId_ = other.registerId_;
           onChanged();
         }
         if (other.hasChannelName()) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000040;
           channelName_ = other.channelName_;
           onChanged();
         }
@@ -1016,19 +923,16 @@ public final class C2G {
         if (!hasAccountName()) {
           return false;
         }
-        if (!hasDeviceId()) {
+        if (!hasToken()) {
           return false;
         }
         if (!hasVersion()) {
           return false;
         }
-        if (!hasPassword()) {
+        if (!hasDeviceId()) {
           return false;
         }
         if (!hasMainId()) {
-          return false;
-        }
-        if (!hasToken()) {
           return false;
         }
         if (!hasRegisterId()) {
@@ -1135,78 +1039,34 @@ public final class C2G {
         return this;
       }
 
-      private Object deviceId_ = "";
+      private int token_ ;
       /**
-       * <code>required string deviceId = 2;</code>
+       * <code>required int32 token = 2;</code>
        */
-      public boolean hasDeviceId() {
+      public boolean hasToken() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string deviceId = 2;</code>
+       * <code>required int32 token = 2;</code>
        */
-      public String getDeviceId() {
-        Object ref = deviceId_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            deviceId_ = s;
-          }
-          return s;
-        } else {
-          return (String) ref;
-        }
+      public int getToken() {
+        return token_;
       }
       /**
-       * <code>required string deviceId = 2;</code>
+       * <code>required int32 token = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getDeviceIdBytes() {
-        Object ref = deviceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          deviceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string deviceId = 2;</code>
-       */
-      public Builder setDeviceId(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        deviceId_ = value;
+      public Builder setToken(int value) {
+        bitField0_ |= 0x00000002;
+        token_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string deviceId = 2;</code>
+       * <code>required int32 token = 2;</code>
        */
-      public Builder clearDeviceId() {
+      public Builder clearToken() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        deviceId_ = getDefaultInstance().getDeviceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string deviceId = 2;</code>
-       */
-      public Builder setDeviceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        deviceId_ = value;
+        token_ = 0;
         onChanged();
         return this;
       }
@@ -1287,24 +1147,24 @@ public final class C2G {
         return this;
       }
 
-      private Object password_ = "";
+      private Object deviceId_ = "";
       /**
-       * <code>required string password = 4;</code>
+       * <code>required string deviceId = 4;</code>
        */
-      public boolean hasPassword() {
+      public boolean hasDeviceId() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required string password = 4;</code>
+       * <code>required string deviceId = 4;</code>
        */
-      public String getPassword() {
-        Object ref = password_;
+      public String getDeviceId() {
+        Object ref = deviceId_;
         if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            password_ = s;
+            deviceId_ = s;
           }
           return s;
         } else {
@@ -1312,53 +1172,53 @@ public final class C2G {
         }
       }
       /**
-       * <code>required string password = 4;</code>
+       * <code>required string deviceId = 4;</code>
        */
       public com.google.protobuf.ByteString
-          getPasswordBytes() {
-        Object ref = password_;
+          getDeviceIdBytes() {
+        Object ref = deviceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
-          password_ = b;
+          deviceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string password = 4;</code>
+       * <code>required string deviceId = 4;</code>
        */
-      public Builder setPassword(
+      public Builder setDeviceId(
           String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        password_ = value;
+        deviceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string password = 4;</code>
+       * <code>required string deviceId = 4;</code>
        */
-      public Builder clearPassword() {
+      public Builder clearDeviceId() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        password_ = getDefaultInstance().getPassword();
+        deviceId_ = getDefaultInstance().getDeviceId();
         onChanged();
         return this;
       }
       /**
-       * <code>required string password = 4;</code>
+       * <code>required string deviceId = 4;</code>
        */
-      public Builder setPasswordBytes(
+      public Builder setDeviceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        password_ = value;
+        deviceId_ = value;
         onChanged();
         return this;
       }
@@ -1395,44 +1255,12 @@ public final class C2G {
         return this;
       }
 
-      private int token_ ;
-      /**
-       * <code>required int32 token = 6;</code>
-       */
-      public boolean hasToken() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>required int32 token = 6;</code>
-       */
-      public int getToken() {
-        return token_;
-      }
-      /**
-       * <code>required int32 token = 6;</code>
-       */
-      public Builder setToken(int value) {
-        bitField0_ |= 0x00000020;
-        token_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 token = 6;</code>
-       */
-      public Builder clearToken() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        token_ = 0;
-        onChanged();
-        return this;
-      }
-
       private Object registerId_ = "";
       /**
        * <code>required string registerId = 7;</code>
        */
       public boolean hasRegisterId() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required string registerId = 7;</code>
@@ -1475,7 +1303,7 @@ public final class C2G {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  bitField0_ |= 0x00000020;
         registerId_ = value;
         onChanged();
         return this;
@@ -1484,7 +1312,7 @@ public final class C2G {
        * <code>required string registerId = 7;</code>
        */
       public Builder clearRegisterId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         registerId_ = getDefaultInstance().getRegisterId();
         onChanged();
         return this;
@@ -1497,7 +1325,7 @@ public final class C2G {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  bitField0_ |= 0x00000020;
         registerId_ = value;
         onChanged();
         return this;
@@ -1508,7 +1336,7 @@ public final class C2G {
        * <code>required string channelName = 8;</code>
        */
       public boolean hasChannelName() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>required string channelName = 8;</code>
@@ -1551,7 +1379,7 @@ public final class C2G {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000040;
         channelName_ = value;
         onChanged();
         return this;
@@ -1560,7 +1388,7 @@ public final class C2G {
        * <code>required string channelName = 8;</code>
        */
       public Builder clearChannelName() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         channelName_ = getDefaultInstance().getChannelName();
         onChanged();
         return this;
@@ -1573,7 +1401,7 @@ public final class C2G {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000040;
         channelName_ = value;
         onChanged();
         return this;
@@ -1627,11 +1455,957 @@ public final class C2G {
 
   }
 
+  public interface MSG_CG_CREATE_CHARACTEROrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.client.c2g.MSG_CG_CREATE_CHARACTER)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string name = 1;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>required string name = 1;</code>
+     */
+    String getName();
+    /**
+     * <code>required string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>required int32 mainId = 2;</code>
+     */
+    boolean hasMainId();
+    /**
+     * <code>required int32 mainId = 2;</code>
+     */
+    int getMainId();
+
+    /**
+     * <code>required int32 sex = 3;</code>
+     */
+    boolean hasSex();
+    /**
+     * <code>required int32 sex = 3;</code>
+     */
+    int getSex();
+
+    /**
+     * <code>required int32 head = 4;</code>
+     */
+    boolean hasHead();
+    /**
+     * <code>required int32 head = 4;</code>
+     */
+    int getHead();
+
+    /**
+     * <code>required int32 systemFashionId = 5;</code>
+     */
+    boolean hasSystemFashionId();
+    /**
+     * <code>required int32 systemFashionId = 5;</code>
+     */
+    int getSystemFashionId();
+  }
+  /**
+   * Protobuf type {@code protocol.client.c2g.MSG_CG_CREATE_CHARACTER}
+   */
+  public  static final class MSG_CG_CREATE_CHARACTER extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protocol.client.c2g.MSG_CG_CREATE_CHARACTER)
+      MSG_CG_CREATE_CHARACTEROrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MSG_CG_CREATE_CHARACTER.newBuilder() to construct.
+    private MSG_CG_CREATE_CHARACTER(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MSG_CG_CREATE_CHARACTER() {
+      name_ = "";
+      mainId_ = 0;
+      sex_ = 0;
+      head_ = 0;
+      systemFashionId_ = 0;
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MSG_CG_CREATE_CHARACTER(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              mainId_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              sex_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              head_ = input.readInt32();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              systemFashionId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return C2G.internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_descriptor;
+    }
+
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return C2G.internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              MSG_CG_CREATE_CHARACTER.class, Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile Object name_;
+    /**
+     * <code>required string name = 1;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string name = 1;</code>
+     */
+    public String getName() {
+      Object ref = name_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAINID_FIELD_NUMBER = 2;
+    private int mainId_;
+    /**
+     * <code>required int32 mainId = 2;</code>
+     */
+    public boolean hasMainId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 mainId = 2;</code>
+     */
+    public int getMainId() {
+      return mainId_;
+    }
+
+    public static final int SEX_FIELD_NUMBER = 3;
+    private int sex_;
+    /**
+     * <code>required int32 sex = 3;</code>
+     */
+    public boolean hasSex() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int32 sex = 3;</code>
+     */
+    public int getSex() {
+      return sex_;
+    }
+
+    public static final int HEAD_FIELD_NUMBER = 4;
+    private int head_;
+    /**
+     * <code>required int32 head = 4;</code>
+     */
+    public boolean hasHead() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required int32 head = 4;</code>
+     */
+    public int getHead() {
+      return head_;
+    }
+
+    public static final int SYSTEMFASHIONID_FIELD_NUMBER = 5;
+    private int systemFashionId_;
+    /**
+     * <code>required int32 systemFashionId = 5;</code>
+     */
+    public boolean hasSystemFashionId() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required int32 systemFashionId = 5;</code>
+     */
+    public int getSystemFashionId() {
+      return systemFashionId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMainId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSex()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasHead()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSystemFashionId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, mainId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, sex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, head_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(5, systemFashionId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, mainId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, sex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, head_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, systemFashionId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof MSG_CG_CREATE_CHARACTER)) {
+        return super.equals(obj);
+      }
+      MSG_CG_CREATE_CHARACTER other = (MSG_CG_CREATE_CHARACTER) obj;
+
+      boolean result = true;
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && (hasMainId() == other.hasMainId());
+      if (hasMainId()) {
+        result = result && (getMainId()
+            == other.getMainId());
+      }
+      result = result && (hasSex() == other.hasSex());
+      if (hasSex()) {
+        result = result && (getSex()
+            == other.getSex());
+      }
+      result = result && (hasHead() == other.hasHead());
+      if (hasHead()) {
+        result = result && (getHead()
+            == other.getHead());
+      }
+      result = result && (hasSystemFashionId() == other.hasSystemFashionId());
+      if (hasSystemFashionId()) {
+        result = result && (getSystemFashionId()
+            == other.getSystemFashionId());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasMainId()) {
+        hash = (37 * hash) + MAINID_FIELD_NUMBER;
+        hash = (53 * hash) + getMainId();
+      }
+      if (hasSex()) {
+        hash = (37 * hash) + SEX_FIELD_NUMBER;
+        hash = (53 * hash) + getSex();
+      }
+      if (hasHead()) {
+        hash = (37 * hash) + HEAD_FIELD_NUMBER;
+        hash = (53 * hash) + getHead();
+      }
+      if (hasSystemFashionId()) {
+        hash = (37 * hash) + SYSTEMFASHIONID_FIELD_NUMBER;
+        hash = (53 * hash) + getSystemFashionId();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static MSG_CG_CREATE_CHARACTER parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static MSG_CG_CREATE_CHARACTER parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(MSG_CG_CREATE_CHARACTER prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocol.client.c2g.MSG_CG_CREATE_CHARACTER}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protocol.client.c2g.MSG_CG_CREATE_CHARACTER)
+        MSG_CG_CREATE_CHARACTEROrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return C2G.internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_descriptor;
+      }
+
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return C2G.internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                MSG_CG_CREATE_CHARACTER.class, Builder.class);
+      }
+
+      // Construct using protocol.client.c2g.C2G.MSG_CG_CREATE_CHARACTER.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        mainId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        head_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        systemFashionId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return C2G.internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_descriptor;
+      }
+
+      public MSG_CG_CREATE_CHARACTER getDefaultInstanceForType() {
+        return MSG_CG_CREATE_CHARACTER.getDefaultInstance();
+      }
+
+      public MSG_CG_CREATE_CHARACTER build() {
+        MSG_CG_CREATE_CHARACTER result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public MSG_CG_CREATE_CHARACTER buildPartial() {
+        MSG_CG_CREATE_CHARACTER result = new MSG_CG_CREATE_CHARACTER(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.mainId_ = mainId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.sex_ = sex_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.head_ = head_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.systemFashionId_ = systemFashionId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof MSG_CG_CREATE_CHARACTER) {
+          return mergeFrom((MSG_CG_CREATE_CHARACTER)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(MSG_CG_CREATE_CHARACTER other) {
+        if (other == MSG_CG_CREATE_CHARACTER.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          bitField0_ |= 0x00000001;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasMainId()) {
+          setMainId(other.getMainId());
+        }
+        if (other.hasSex()) {
+          setSex(other.getSex());
+        }
+        if (other.hasHead()) {
+          setHead(other.getHead());
+        }
+        if (other.hasSystemFashionId()) {
+          setSystemFashionId(other.getSystemFashionId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasName()) {
+          return false;
+        }
+        if (!hasMainId()) {
+          return false;
+        }
+        if (!hasSex()) {
+          return false;
+        }
+        if (!hasHead()) {
+          return false;
+        }
+        if (!hasSystemFashionId()) {
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        MSG_CG_CREATE_CHARACTER parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (MSG_CG_CREATE_CHARACTER) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private Object name_ = "";
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public String getName() {
+        Object ref = name_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public Builder setName(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int mainId_ ;
+      /**
+       * <code>required int32 mainId = 2;</code>
+       */
+      public boolean hasMainId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 mainId = 2;</code>
+       */
+      public int getMainId() {
+        return mainId_;
+      }
+      /**
+       * <code>required int32 mainId = 2;</code>
+       */
+      public Builder setMainId(int value) {
+        bitField0_ |= 0x00000002;
+        mainId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 mainId = 2;</code>
+       */
+      public Builder clearMainId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        mainId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int sex_ ;
+      /**
+       * <code>required int32 sex = 3;</code>
+       */
+      public boolean hasSex() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int32 sex = 3;</code>
+       */
+      public int getSex() {
+        return sex_;
+      }
+      /**
+       * <code>required int32 sex = 3;</code>
+       */
+      public Builder setSex(int value) {
+        bitField0_ |= 0x00000004;
+        sex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 sex = 3;</code>
+       */
+      public Builder clearSex() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int head_ ;
+      /**
+       * <code>required int32 head = 4;</code>
+       */
+      public boolean hasHead() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required int32 head = 4;</code>
+       */
+      public int getHead() {
+        return head_;
+      }
+      /**
+       * <code>required int32 head = 4;</code>
+       */
+      public Builder setHead(int value) {
+        bitField0_ |= 0x00000008;
+        head_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 head = 4;</code>
+       */
+      public Builder clearHead() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        head_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int systemFashionId_ ;
+      /**
+       * <code>required int32 systemFashionId = 5;</code>
+       */
+      public boolean hasSystemFashionId() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required int32 systemFashionId = 5;</code>
+       */
+      public int getSystemFashionId() {
+        return systemFashionId_;
+      }
+      /**
+       * <code>required int32 systemFashionId = 5;</code>
+       */
+      public Builder setSystemFashionId(int value) {
+        bitField0_ |= 0x00000010;
+        systemFashionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 systemFashionId = 5;</code>
+       */
+      public Builder clearSystemFashionId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        systemFashionId_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protocol.client.c2g.MSG_CG_CREATE_CHARACTER)
+    }
+
+    // @@protoc_insertion_point(class_scope:protocol.client.c2g.MSG_CG_CREATE_CHARACTER)
+    private static final MSG_CG_CREATE_CHARACTER DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new MSG_CG_CREATE_CHARACTER();
+    }
+
+    public static MSG_CG_CREATE_CHARACTER getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @Deprecated public static final com.google.protobuf.Parser<MSG_CG_CREATE_CHARACTER>
+        PARSER = new com.google.protobuf.AbstractParser<MSG_CG_CREATE_CHARACTER>() {
+      public MSG_CG_CREATE_CHARACTER parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MSG_CG_CREATE_CHARACTER(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MSG_CG_CREATE_CHARACTER> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<MSG_CG_CREATE_CHARACTER> getParserForType() {
+      return PARSER;
+    }
+
+    public MSG_CG_CREATE_CHARACTER getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protocol_client_c2g_MSG_CG_USER_LOGIN_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protocol_client_c2g_MSG_CG_USER_LOGIN_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1641,11 +2415,14 @@ public final class C2G {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\tC2G.proto\022\023protocol.client.c2g\"\245\001\n\021MSG" +
-      "_CG_USER_LOGIN\022\023\n\013accountName\030\001 \002(\t\022\020\n\010d" +
-      "eviceId\030\002 \002(\t\022\017\n\007version\030\003 \002(\t\022\020\n\010passwo" +
-      "rd\030\004 \002(\t\022\016\n\006mainId\030\005 \002(\005\022\r\n\005token\030\006 \002(\005\022" +
-      "\022\n\nregisterId\030\007 \002(\t\022\023\n\013channelName\030\010 \002(\t"
+      "\n\tC2G.proto\022\023protocol.client.c2g\"\223\001\n\021MSG" +
+      "_CG_USER_LOGIN\022\023\n\013accountName\030\001 \002(\t\022\r\n\005t" +
+      "oken\030\002 \002(\005\022\017\n\007version\030\003 \002(\t\022\020\n\010deviceId\030" +
+      "\004 \002(\t\022\016\n\006mainId\030\005 \002(\005\022\022\n\nregisterId\030\007 \002(" +
+      "\t\022\023\n\013channelName\030\010 \002(\t\"k\n\027MSG_CG_CREATE_" +
+      "CHARACTER\022\014\n\004name\030\001 \002(\t\022\016\n\006mainId\030\002 \002(\005\022" +
+      "\013\n\003sex\030\003 \002(\005\022\014\n\004head\030\004 \002(\005\022\027\n\017systemFash" +
+      "ionId\030\005 \002(\005"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1664,7 +2441,13 @@ public final class C2G {
     internal_static_protocol_client_c2g_MSG_CG_USER_LOGIN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_client_c2g_MSG_CG_USER_LOGIN_descriptor,
-        new String[] { "AccountName", "DeviceId", "Version", "Password", "MainId", "Token", "RegisterId", "ChannelName", });
+        new String[] { "AccountName", "Token", "Version", "DeviceId", "MainId", "RegisterId", "ChannelName", });
+    internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protocol_client_c2g_MSG_CG_CREATE_CHARACTER_descriptor,
+        new String[] { "Name", "MainId", "Sex", "Head", "SystemFashionId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

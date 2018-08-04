@@ -13,7 +13,6 @@ public class DeleteCharacterDBOperator extends AbstractDBOperator {
 
     public DeleteCharacterDBOperator(Object arg, Role role) {
         this.role=role;
-        this.arg=arg;
     }
 
     public boolean execute() {

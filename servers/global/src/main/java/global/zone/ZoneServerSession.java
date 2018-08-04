@@ -14,7 +14,7 @@ import io.netty.channel.Channel;
  */
 
 public class ZoneServerSession extends AbstractSession {
-    public ZoneServerSession(Channel channel) {
+     ZoneServerSession(Channel channel) {
         super(channel);
         ServerTag tag =new ServerTag();
         tag.setTag(ServerType.Zone,0,0);

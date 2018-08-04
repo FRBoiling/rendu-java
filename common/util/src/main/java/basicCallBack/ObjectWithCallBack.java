@@ -3,7 +3,6 @@ package basicCallBack;
 import java.util.HashSet;
 
 public class ObjectWithCallBack {
-    protected Object arg;
     protected HashSet<ObjectBeCalled> callbacks=new HashSet<>();
 
     public void RegistCallBack(ObjectBeCalled callBack) {
@@ -16,7 +15,7 @@ public class ObjectWithCallBack {
 
     public void OnCall() {
         for (ObjectBeCalled obj:callbacks) {
-            obj.call(this,arg);
+            obj.call(this);
         }
     }
 }

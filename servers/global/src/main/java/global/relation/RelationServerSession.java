@@ -14,7 +14,7 @@ import io.netty.channel.Channel;
  */
 
 public class RelationServerSession extends AbstractSession {
-    public RelationServerSession(Channel channel) {
+    RelationServerSession(Channel channel) {
         super(channel);
         ServerTag tag =new ServerTag();
         tag.setTag(ServerType.Relation,0,0);

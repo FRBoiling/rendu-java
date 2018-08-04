@@ -18,7 +18,7 @@ import protocol.server.register.ServerRegister;
 @Slf4j
 public class GateServerResponseMng implements IResponseHandlerManager {
 
-    public GateServerResponseMng() {
+    GateServerResponseMng() {
         register();
     }
 

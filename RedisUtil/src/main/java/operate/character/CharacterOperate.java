@@ -15,7 +15,7 @@ public class CharacterOperate extends AbstractRedisOperate {
         try{
             Init();
             int dbNum=manager.jedisConfig.getDbNum();
-            jedis=manager.getPool().getResource();
+            jedis=manager.getCluster();
 
             String key=makeKey(HashKeyConst.CharacterInfo,pcUid);
             jedis.hset(key,"name","李四");

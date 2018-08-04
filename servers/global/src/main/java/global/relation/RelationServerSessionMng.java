@@ -1,7 +1,9 @@
 package global.relation;
 
+import com.google.protobuf.MessageLite;
 import core.base.common.AbstractSession;
 import core.base.common.AbstractSessionManager;
+import core.base.model.ServerTag;
 import io.netty.channel.Channel;
 
 /**
@@ -31,5 +33,13 @@ public class RelationServerSessionMng extends AbstractSessionManager {
     @Override
     public AbstractSession createSession(Channel channel) {
         return new RelationServerSession(channel);
+    }
+
+    public void broadcastByGroup(MessageLite msg, int groupId) {
+        for (AbstractSession session: getRegisterSessions().values()) {
+            if ( groupId == ((ServerTag)session.getTag()).getGroupId()){
+                session.sendMessage(msg);
+            }
+        }
     }
 }

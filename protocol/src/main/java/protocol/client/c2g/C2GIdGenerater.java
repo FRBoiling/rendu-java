@@ -8,6 +8,7 @@ package protocol.client.c2g;
 import protocol.msgId.Id;
 public class C2GIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(C2G.MSG_CG_USER_LOGIN.class, 0x120001);
+          Id.getInst().SetMessage(C2G.MSG_CG_USER_LOGIN.class, 0x110001);
+          Id.getInst().SetMessage(C2G.MSG_CG_CREATE_CHARACTER.class, 0x110002);
      }
 }

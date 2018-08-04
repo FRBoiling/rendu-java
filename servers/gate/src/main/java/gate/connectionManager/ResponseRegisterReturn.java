@@ -1,7 +1,7 @@
 package gate.connectionManager;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import constant.ErrorCode;
+import constant.RegisterResult;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -9,6 +9,8 @@ import core.base.sequence.IResponseHandler;
 import core.network.codec.Packet;
 import gate.GateService;
 import gate.global.GlobalServerSessionMng;
+import gate.manager.ManagerServerSessionMng;
+import gate.zone.ZoneServerSessionMng;
 import lombok.extern.slf4j.Slf4j;
 import protocol.server.register.ServerRegister;
 
@@ -20,7 +22,7 @@ import protocol.server.register.ServerRegister;
  * Time: 16:42
  */
 @Slf4j
-public class ResponseRegisterReturn implements IResponseHandler{
+public class ResponseRegisterReturn implements IResponseHandler {
     @Override
     public void onResponse(Packet packet, AbstractSession session) throws InvalidProtocolBufferException {
         ServerRegister.MSG_Server_Register_Return msg = ServerRegister.MSG_Server_Register_Return.parseFrom(packet.getMsg());
@@ -31,36 +33,47 @@ public class ResponseRegisterReturn implements IResponseHandler{
         int subId = msg.getTag().getSubId();
 
         ServerTag tag = new ServerTag();
-        tag.setTag(serverType,groupId,subId);
+        tag.setTag(serverType, groupId, subId);
         session.setTag(tag);
 
-        if ( msg.getResult() == ErrorCode.Success.ordinal())
-        {
-            boolean isRegisterSuccess =false;
+        if (msg.getResult() == RegisterResult.SUCCESS.ordinal()) {
+            RegisterResult registerResult = RegisterResult.FAIL;
             switch (serverType) {
                 case Global:
-                    isRegisterSuccess = GlobalServerSessionMng.getInstance().register(session);
+                    registerResult = GlobalServerSessionMng.getInstance().register(session);
                     break;
                 case Zone:
-//                    isRegisterSuccess = ClientSessionMng.getInstance().register(session);
+                    registerResult = ZoneServerSessionMng.getInstance().register(session);
+                    break;
+                case Manager:
+                    registerResult = ManagerServerSessionMng.getInstance().register(session);
                     break;
                 default:
                     break;
             }
-            if (isRegisterSuccess) {
-                log.info("register to {} success: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
-                //TODO:这里添加具体注册逻辑
-            } else {
-                if (serverType ==ServerType.Global){
+
+            switch (registerResult) {
+                case SUCCESS:
+                    //TODO:这里添加具体注册逻辑
+                    break;
+                case REPEATED_REGISTER:
+                case FAIL:
+                default:
+                    log.error("SERIOUS ERROR: get register result from {} success ,but register here fail :{} ", tag.getStrTag(),registerResult.toString() );
                     GateService.context.stop();
-                }
-                log.error("register to {} fail :{}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
+                    break;
             }
-        }else {
-            if (serverType ==ServerType.Global){
-                GateService.context.stop();
+        } else {
+            log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+            switch (serverType) {
+                case Global:
+                case Zone:
+                case Manager:
+                    GateService.context.stop();
+                    break;
+                default:
+                    break;
             }
-            log.error("register to {} fail :{}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
         }
     }
 }

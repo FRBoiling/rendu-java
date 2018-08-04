@@ -2,9 +2,13 @@ package gate.client;
 
 import core.base.common.AbstractSession;
 import core.base.model.ClientTag;
-import core.base.model.ServerTag;
-import core.base.model.ServerType;
+import dataObject.AccountObject;
 import io.netty.channel.Channel;
+import lombok.Getter;
+import lombok.Setter;
+import protocol.client.c2g.C2G;
+
+import java.net.PortUnreachableException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,12 +17,13 @@ import io.netty.channel.Channel;
  * Date: 2018-05-31
  * Time: 16:19
  */
-
+@Getter
+@Setter
 public class ClientSession extends AbstractSession {
-    public ClientSession(Channel channel) {
+
+    ClientSession(Channel channel) {
         super(channel);
-        ClientTag tag =new ClientTag();
-//        tag.setTag(ServerType.Gate,0,0);
+        ClientTag tag = new ClientTag();
         setTag(tag);
     }
 
@@ -31,4 +36,13 @@ public class ClientSession extends AbstractSession {
     public void sendHeartBeat() {
 
     }
+
+    public C2G.MSG_CG_CREATE_CHARACTER reqCreateMsg = null;
+
+    AccountObject accountObject = null;
+
+    void login() {
+        ClientLoginMng.getInstance().loadAccount(this);
+    }
+
 }

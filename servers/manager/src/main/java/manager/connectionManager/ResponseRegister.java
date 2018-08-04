@@ -1,14 +1,17 @@
 package manager.connectionManager;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import constant.ErrorCode;
+import constant.RegisterResult;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.sequence.IResponseHandler;
 import core.network.codec.Packet;
 import lombok.extern.slf4j.Slf4j;
-import manager.ManagerServiceContext;
+import manager.Context;
+import manager.gate.GateServerSessionMng;
+import manager.manager.ManagerServerSessionMng;
+import manager.relation.RelationServerSessionMng;
 import manager.zone.ZoneServerSessionMng;
 import protocol.server.register.ServerRegister;
 
@@ -37,36 +40,54 @@ public class ResponseRegister implements IResponseHandler {
 
         //注册反馈 MSG_Server_Register_Return
         ServerRegister.Server_Tag.Builder serverTag = ServerRegister.Server_Tag.newBuilder();
-        serverTag.setServerType(ManagerServiceContext.tag.getType().ordinal());
-        serverTag.setGroupId(ManagerServiceContext.tag.getGroupId());
-        serverTag.setSubId(ManagerServiceContext.tag.getSubId());
+        serverTag.setServerType(Context.tag.getType().ordinal());
+        serverTag.setGroupId(Context.tag.getGroupId());
+        serverTag.setSubId(Context.tag.getSubId());
 
         ServerRegister.MSG_Server_Register_Return.Builder response = ServerRegister.MSG_Server_Register_Return.newBuilder();
         response.setTag(serverTag);
 
-        boolean isRegisterSuccess =false;
+        RegisterResult registerResult =RegisterResult.FAIL;
         switch (serverType) {
-//            case Gate:
-//                isRegisterSuccess = GateServerSessionMng.getInstance().register(session);
-//                break;
-//            case Manager:
-//                isRegisterSuccess = ManagerServerSessionMng.getInstance().register(session);
-//                break;
-            case Zone:
-                isRegisterSuccess = ZoneServerSessionMng.getInstance().register(session);
+            case Gate:
+                registerResult = GateServerSessionMng.getInstance().register(session);
                 break;
-//            case Relation:
-//                isRegisterSuccess = RelationServerSessionMng.getInstance().register(session);
-//                break;
+            case Manager:
+                if (Context.tag.getGroupId() < groupId )
+                {
+                    registerResult = ManagerServerSessionMng.getInstance().register(session);
+                }
+                else {
+                }
+                break;
+            case Zone:
+                if (Context.tag.getGroupId() == groupId ){
+                    registerResult = ZoneServerSessionMng.getInstance().register(session);
+                }
+                else {
+                }
+                break;
+            case Relation:
+                if (Context.tag.getGroupId() == groupId ) {
+                    registerResult = RelationServerSessionMng.getInstance().register(session);
+                }
+                else {
+                }
+                break;
             default:
                 break;
         }
 
-        if (isRegisterSuccess) {
-            response.setResult(ErrorCode.Success.ordinal());
-        } else {
-            response.setResult(ErrorCode.Fail.ordinal());
-        }
+//        switch (registerResult) {
+//            case SUCCESS:
+//                break;
+//            case REPEATED_REGISTER:
+//            case FAIL:
+//            default:
+//                break;
+//        }
+
+        response.setResult(registerResult.ordinal());
         //发送反馈信息
         session.sendMessage(response.build());
     }

@@ -6,8 +6,8 @@ import core.base.sequence.MessageDriver;
 import core.network.IResponseHandlerManager;
 import core.network.codec.Packet;
 import io.netty.channel.Channel;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;
@@ -22,7 +22,8 @@ import java.net.InetSocketAddress;
  * Time: 14:30
  */
 @Slf4j
-@Data
+@Getter
+@Setter
 public abstract class AbstractSession {
 
     private Channel channel;
@@ -74,14 +75,14 @@ public abstract class AbstractSession {
     {
         offline = true;
         if (isRegistered) {
-            log.info("{} disconnect ",getKey());
+            log.info("{} disconnect ",getTag().toString());
         } else {
             //下线
             log.error("[没有找到会话注册信息]");
         }
     }
 
-    public String getIP() {
+     String getIP() {
         if (channel == null) {
             return "";
         }
@@ -92,7 +93,7 @@ public abstract class AbstractSession {
         return address.getAddress().getHostAddress();
     }
 
-    public void clearAttribute() {
+    private void clearAttribute() {
         if (channel == null) {
             return;
         }
@@ -130,13 +131,6 @@ public abstract class AbstractSession {
     }
 
     public abstract void sendHeartBeat();
-
-    public String getKey() {
-        if ( tag == null){
-            return "";
-        }
-        return tag.getKey();
-    }
 
     public void sendRegister(ServerTag tag)
     {

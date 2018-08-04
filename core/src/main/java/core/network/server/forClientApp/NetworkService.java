@@ -52,7 +52,7 @@ public class NetworkService implements IService, ISocketServer {
 //        acceptorGroup = new NioEventLoopGroup(acceptorGroupCount);
 //        IOGroup = new NioEventLoopGroup(ioGroupCount);
 
-        ThreadFactory accepterFactory = new DefaultThreadFactory("netty.acceptor.accepter");
+        ThreadFactory accepterFactory = new DefaultThreadFactory("netty.acceptor.acceptor");
         ThreadFactory IOFactory = new DefaultThreadFactory("netty.acceptor.io");
         acceptorGroup = initEventLoopGroup(acceptorGroupCount,accepterFactory);
         IOGroup = initEventLoopGroup(IOGroupCount,IOFactory);
@@ -121,7 +121,7 @@ public class NetworkService implements IService, ISocketServer {
     }
 
     @Override
-    public void update() {
+    public void update(long dt) {
     }
 
     @Override

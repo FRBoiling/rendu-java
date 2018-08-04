@@ -3,19 +3,22 @@ package gamedb.dao;
 import basicCallBack.ObjectBeCalled;
 import basicCallBack.ObjectWithCallBack;
 import gamedb.DBManager;
+import org.apache.ibatis.session.SqlSession;
 
 abstract public class AbstractDBOperator extends ObjectWithCallBack {
 
     protected DBManager dbManager;
 
-    protected Object m_result;
+    protected int m_result;
 
     public String ErrorText;
+
+    protected SqlSession sqlSession=null;
 
     public void PostUpdate(){
         if (!callbacks.isEmpty()){
             for (ObjectBeCalled call:callbacks) {
-                call.call(this,arg);
+                call.call(this);
             }
         }
     }
@@ -25,4 +28,8 @@ abstract public class AbstractDBOperator extends ObjectWithCallBack {
     }
 
     abstract public boolean execute();
+
+    public int getResult() {
+        return m_result;
+    }
 }

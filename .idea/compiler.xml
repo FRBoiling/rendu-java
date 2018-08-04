@@ -10,6 +10,7 @@
         <module name="configuration" />
         <module name="constant" />
         <module name="core" />
+        <module name="dataObject" />
         <module name="DBUtil" />
         <module name="gate" />
         <module name="global" />
@@ -22,5 +23,28 @@
         <module name="zone" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="barrack" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="configuration" target="1.8" />
+      <module name="constant" target="1.7" />
+      <module name="core" target="1.8" />
+      <module name="dataObject" target="1.8" />
+      <module name="DBUtil" target="1.8" />
+      <module name="gameObject" target="1.8" />
+      <module name="gate" target="1.8" />
+      <module name="global" target="1.8" />
+      <module name="logUtil" target="1.7" />
+      <module name="manager" target="1.8" />
+      <module name="math" target="1.8" />
+      <module name="protocol" target="1.8" />
+      <module name="realm" target="1.8" />
+      <module name="RedisUtil" target="1.8" />
+      <module name="relation" target="1.8" />
+      <module name="ServerCluster" target="1.8" />
+      <module name="servers" target="1.8" />
+      <module name="util" target="1.8" />
+      <module name="zone" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

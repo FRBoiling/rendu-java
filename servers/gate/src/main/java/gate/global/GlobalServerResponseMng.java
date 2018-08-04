@@ -15,7 +15,7 @@ import protocol.server.register.ServerRegister;
  */
 
 public class GlobalServerResponseMng implements IResponseHandlerManager {
-    public GlobalServerResponseMng() {
+    GlobalServerResponseMng() {
         register();
     }
 

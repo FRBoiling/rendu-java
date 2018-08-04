@@ -13,18 +13,12 @@ import io.netty.channel.Channel;
  */
 
 public class ClientSessionMng extends AbstractSessionManager {
+
     private static volatile ClientSessionMng INSTANCE = new ClientSessionMng();
     private ClientSessionMng(){
     }
 
     public static ClientSessionMng getInstance() {
-        if (INSTANCE == null) {
-            synchronized (ClientSessionMng.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new ClientSessionMng();
-                }
-            }
-        }
         return INSTANCE;
     }
 
@@ -32,4 +26,13 @@ public class ClientSessionMng extends AbstractSessionManager {
     public AbstractSession createSession(Channel channel) {
         return new ClientSession(channel);
     }
+
+    @Override
+    public void update(long dt){
+        super.update(dt);
+        ClientLoginMng.getInstance().update(dt);
+    }
+
+
+
 }

@@ -1,5 +1,7 @@
 package core.base.serviceframe;
 
+import core.base.common.ISessionTag;
+import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import protocol.server.register.ServerRegister;
 
@@ -14,22 +16,41 @@ public interface IConnectManager {
     /**
      * init
      */
-    public abstract void init();
+    void init();
 
     /**
      * start
      */
-    public abstract void start();
+    void start();
 
     /**
      * stop
      */
-    public abstract void stop();
+    void stop();
 
     /**
      * update
      */
-    public abstract void update();
+    void update(long dt);
+
+    /*
+     * 连接
+     */
+    void connect(ServerTag tag,String ip,int port);
+
+    default void executeConnectCommand(ServerRegister.MSG_Server_Connect_Command command) {
+        ServerType serverType =  ServerType.values()[command.getTag().getServerType()];
+        int groupId = command.getTag().getGroupId();
+        int subId = command.getTag().getSubId();
+
+        String ip = command.getInfo().getIp();
+        int port = command.getInfo().getPort();
+
+        ServerTag tag = new ServerTag();
+        tag.setTag(serverType,groupId,subId);
+
+        connect(tag,ip,port);
+    }
 
 
     default ServerRegister.MSG_Server_Connect_Command.Builder getConnectionCommand(ServerRegister.Server_Tag.Builder tag, ServerRegister.Connect_Info.Builder info) {

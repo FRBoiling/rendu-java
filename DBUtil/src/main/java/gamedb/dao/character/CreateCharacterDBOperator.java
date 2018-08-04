@@ -2,36 +2,47 @@ package gamedb.dao.character;
 
 import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
-import gamedb.interfaces.RoleMapper;
-import gamedb.pojo.Role;
+import gamedb.interfaces.CharMapper;
+import gamedb.pojo.CharPOJO;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 
-public class CreateCharacterDBOperator extends AbstractDBOperator {
+/**
+ * WANART COMPANY
+ * CreatedTime : 2018/8/1 9:41
+ * CTEATED BY : JIANGYUNHUI
+ */
 
-    private Role role=null;
+@Slf4j
+public class CreateCharacterDBOperator extends AbstractDBOperator {
+    private CharPOJO role=null;
     public int id;
     public int count;
 
-    public CreateCharacterDBOperator(Object arg, Role role) {
+    public CreateCharacterDBOperator(CharPOJO role) {
         this.role=role;
-        this.arg=arg;
     }
 
     public boolean execute() {
         SqlSession sqlSession=null;
         try{
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
-            RoleMapper roleMapper=sqlSession.getMapper(RoleMapper.class);
+            CharMapper charMapper=sqlSession.getMapper(CharMapper.class);
 
-            count=roleMapper.insertRole(role);
+            count=charMapper.insertCharacter(role);
             sqlSession.commit();
-            System.err.println("CreateCharacterDBOperator execute count "+count);
+
+            if(count>0) {
+                m_result = 1;
+            }else{
+                m_result = 0;
+            }
         }catch (Exception ex){
-            System.err.println(ex.getMessage());
+            log.error(ex.getMessage());
+            m_result=-1;
         }finally {
             sqlSession.close();
             return true;
         }
-
     }
 }

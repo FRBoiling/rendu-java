@@ -3,7 +3,6 @@ package zone.manager;
 import core.network.IResponseHandlerManager;
 import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;
-import zone.connectionManager.ResponseConnectCommand;
 import zone.connectionManager.ResponseRegisterReturn;
 
 /**
@@ -15,7 +14,7 @@ import zone.connectionManager.ResponseRegisterReturn;
  */
 
 public class ManagerServerResponseMng implements IResponseHandlerManager {
-    public ManagerServerResponseMng() {
+    ManagerServerResponseMng() {
         register();
     }
 

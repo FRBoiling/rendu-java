@@ -13,7 +13,6 @@ public class UpdateCharacterDBOperator extends AbstractDBOperator {
 
     public UpdateCharacterDBOperator(Object arg, Role role) {
         this.role=role;
-        this.arg=arg;
     }
 
     public boolean execute() {

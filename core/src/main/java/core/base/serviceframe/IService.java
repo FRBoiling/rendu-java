@@ -22,7 +22,7 @@ public interface IService {
     /**
      * update
      */
-    void update();
+    void update(long dt);
 
     /**
      * 获取当前服务的状态

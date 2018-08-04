@@ -1,6 +1,6 @@
 package barrack.global;
 
-import barrack.BarrackServiceContext;
+import barrack.Context;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -26,7 +26,7 @@ public class GlobalServerSession extends AbstractSession {
 
     public void OnConnected() {
         super.OnConnected();
-        sendRegister(BarrackServiceContext.tag);
+        sendRegister(Context.tag);
     }
     public void OnDisConnected(){
         super.OnDisConnected();

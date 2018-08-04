@@ -12,12 +12,12 @@ public abstract class AbstractRedisOperate extends ObjectWithCallBack {
     public String ErrorText;
 
     protected RedisManager manager=null;
-    public Jedis jedis=null;
+    public JedisCluster jedis=null;
 
     public void PostUpdate(){
         if (!callbacks.isEmpty()){
             for (ObjectBeCalled call:callbacks) {
-                call.call(this,arg);
+                call.call(this);
             }
         }
     }

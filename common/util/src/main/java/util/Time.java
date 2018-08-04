@@ -4,14 +4,15 @@ package util;
 public class Time {
     private long prev;
 
-    public void Init(){
-        prev=System.currentTimeMillis();
+    public long init() {
+        prev = System.currentTimeMillis();
+        return prev;
     }
 
-    public long Update(){
-        long now=System.currentTimeMillis();
-        long time=now-prev;
-        prev=now;
+    public long update() {
+        long now = System.currentTimeMillis();
+        long time = now - prev;
+        prev = now;
         return time;
     }
 }

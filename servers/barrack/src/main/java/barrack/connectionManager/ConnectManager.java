@@ -1,6 +1,7 @@
 package barrack.connectionManager;
 
 import barrack.global.GlobalServer;
+import core.base.model.ServerTag;
 import core.base.serviceframe.IConnectManager;
 import lombok.extern.slf4j.Slf4j;
 
@@ -52,9 +53,14 @@ public class ConnectManager implements IConnectManager {
 }
 
     @Override
-    public void update() {
-        globalServer.update();
+    public void update(long dt) {
+        globalServer.update(dt);
 //        zoneServer.update();
+    }
+
+    @Override
+    public void connect(ServerTag tag, String ip, int port) {
+
     }
 
 }

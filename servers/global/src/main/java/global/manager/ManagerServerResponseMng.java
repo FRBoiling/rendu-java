@@ -18,7 +18,7 @@ import protocol.server.register.ServerRegister;
 @Slf4j
 public class ManagerServerResponseMng implements IResponseHandlerManager {
 
-    public ManagerServerResponseMng() {
+    ManagerServerResponseMng() {
         register();
     }
 

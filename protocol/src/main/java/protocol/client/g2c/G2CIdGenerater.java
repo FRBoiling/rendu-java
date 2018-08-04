@@ -8,6 +8,6 @@ package protocol.client.g2c;
 import protocol.msgId.Id;
 public class G2CIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(G2C.MSG_GC_USER_LOGIN.class, 0x210001);
+          Id.getInst().SetMessage(G2C.MSG_GC_USER_LOGIN.class, 0x110001);
      }
 }

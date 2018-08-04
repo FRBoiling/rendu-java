@@ -4,6 +4,7 @@ import barrack.BarrackService;
 import barrack.global.GlobalServerSessionMng;
 import com.google.protobuf.InvalidProtocolBufferException;
 import constant.ErrorCode;
+import constant.RegisterResult;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -34,33 +35,39 @@ public class ResponseRegisterReturn implements IResponseHandler{
         tag.setTag(serverType,groupId,subId);
         session.setTag(tag);
 
-        if ( msg.getResult() == ErrorCode.Success.ordinal())
+        if ( msg.getResult() == RegisterResult.SUCCESS.ordinal())
         {
-            boolean isRegisterSuccess =false;
+            RegisterResult registerResult =RegisterResult.SUCCESS ;
             switch (serverType) {
                 case Global:
-                    isRegisterSuccess = GlobalServerSessionMng.getInstance().register(session);
+                    registerResult = GlobalServerSessionMng.getInstance().register(session);
                     break;
                 case Zone:
-//                    isRegisterSuccess = ClientServerSessionMng.getInstance().register(session);
+//                    registerResult = ClientServerSessionMng.getInstance().register(session);
                     break;
                 default:
                     break;
             }
-            if (isRegisterSuccess) {
-                log.info("register to {} success: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
-                //TODO:这里添加具体注册逻辑
-            } else {
-                if (serverType ==ServerType.Global){
+            switch (registerResult) {
+                case SUCCESS:
+                    //TODO:这里添加具体注册逻辑
+                    break;
+                case REPEATED_REGISTER:
+                case FAIL:
+                default:
+                    log.error("SERIOUS ERROR: get register result from {} success ,but register here fail :{} ", tag.getStrTag(),registerResult.toString() );
                     BarrackService.context.stop();
-                }
-                log.error("register to {} fail :{}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
+                    break;
             }
         }else {
-            if (serverType ==ServerType.Global){
-                BarrackService.context.stop();
+            log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+            switch (serverType) {
+                case Global:
+                    BarrackService.context.stop();
+                    break;
+                default:
+                    break;
             }
-            log.error("register to {} fail :{}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
         }
     }
 }

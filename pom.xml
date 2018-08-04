@@ -16,6 +16,7 @@
         <module>constant</module>
         <module>DBUtil</module>
         <module>RedisUtil</module>
+        <module>dataObject</module>
     </modules>
 
     <name>ServerCluster</name>

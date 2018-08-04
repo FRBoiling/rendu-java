@@ -1,7 +1,20 @@
 package core.base.serviceframe;
 
+import configuration.dataManager.*;
 import core.base.model.ServerTag;
 import core.network.ServiceState;
+import gamedb.DBManagerPool;
+import gamedb.DBMngPoolManager;
+import gamedb.DBOperateType;
+import gamedb.Util.MybatisConfigUtil;
+import pathExt.PathManager;
+import util.FileUtil;
+import util.Time;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created with Intellij IDEA
@@ -10,21 +23,23 @@ import core.network.ServiceState;
  * Date: 2018-07-09
  * Time: 13:52
  **/
-public abstract class AbstractSystemFrame implements IService,ISystemFrame{
+public abstract class AbstractSystemFrame implements IService, ISystemFrame {
     public ServiceState state = ServiceState.STOPPED;
     public static ServerTag tag;
+    public static long now;
 
     private DriverThread driverThread;
     IConnectManager connectManager;
 
-    public void initConnectManager(IConnectManager connectManager)
-    {
+    long lastTime=0;
+
+    public void initConnectManager(IConnectManager connectManager) {
         this.connectManager = connectManager;
         initServers();
     }
 
-    public void initMainThread(String name){
-        driverThread= new DriverThread( name,this);
+    public void initMainThread(String name) {
+        driverThread = new DriverThread(name, this);
     }
 
     @Override
@@ -53,10 +68,14 @@ public abstract class AbstractSystemFrame implements IService,ISystemFrame{
     }
 
     @Override
-    public void update() {
-        while (isOpened()){
+    public void update(long dt) {
+        Time time = new Time();
+        time.init();
+        while (isOpened()) {
             try {
-                connectManager.update();
+                now = time.init();
+                lastTime = time.update();
+                connectManager.update(lastTime);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -87,9 +106,56 @@ public abstract class AbstractSystemFrame implements IService,ISystemFrame{
 
     }
 
+    public DBMngPoolManager db;
+
     @Override
     public void initDB() {
+        //初始化Mybatis配置
+        List<File> fileList = new ArrayList<File>();
+        FileUtil.findFiles(PathManager.getInstance().getXmlPath(), "mybatis_config.xml", fileList);
+        if (fileList.size() == 0) {
+            fileList.clear();
+            FileUtil.findFiles(System.getProperty("user.dir"), "mybatis_config.xml", fileList);
+        }
+        if (fileList.size() > 0) {
+            for (File file : fileList) {
+                MybatisConfigUtil.InitWithFile(file);
+                System.out.println("-------------- Mybatis Config Done---------------");
+                break;
+            }
+        } else {
+            System.out.println("--------------no mybatis_config.xml---------------");
+        }
 
+
+        //-----------------------------init DBMngPoolManager---------
+        db = new DBMngPoolManager();
+        DataList dbconfigs = DataListManager.getInstance().getDataList("DBConfig");
+        for (Map.Entry<Integer, Data> item : dbconfigs.entrySet()) {
+            String nickName = item.getValue().getName();
+            int poolCount = item.getValue().getInteger("threads");
+
+            DBManagerPool dbPool = new DBManagerPool(poolCount);
+            db.AddNameDb(nickName, dbPool);
+            dbPool.Init();
+        }
+
+        DataList tableList = DataListManager.getInstance().getDataList("DBTables");
+        for (Map.Entry<Integer, Data> item : tableList.entrySet()) {
+            String tableName = item.getValue().getName();
+            String writeDbName = item.getValue().getString("write");
+            String readDbName = item.getValue().getString("read");
+            DBManagerPool writeDb = db.GetDbByName(writeDbName);
+            if (writeDbName == null) {
+                System.out.println(String.format("can not get table %s write db", tableName));
+            }
+            db.AddTableDb(tableName, writeDb, DBOperateType.Write);
+            DBManagerPool readDb = db.GetDbByName(readDbName);
+            if (readDbName == null) {
+                System.out.println(String.format("can not get table %s read db", tableName));
+            }
+            db.AddTableDb(tableName, readDb, DBOperateType.Read);
+        }
     }
 
     @Override

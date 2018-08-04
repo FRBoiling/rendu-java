@@ -1,7 +1,9 @@
 import basicCallBack.ArgObject;
 import basicCallBack.ObjectBeCalled;
+import gamedb.dao.account.SelectAccountDBOperator;
 import gamedb.dao.character.*;
 import gamedb.pojo.Role;
+import gamedb.pojo.account.AccountPOJO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -17,16 +19,15 @@ public class TestCallBack {
         object.argCount=1;
 
 
-        SelectCharacterDBOperator operator=new SelectCharacterDBOperator(object,1);
+        SelectCharacterDBOperator operator=new SelectCharacterDBOperator(1);
 
 
         operator.RegistCallBack(new ObjectBeCalled(){
             @Override
-            public void call(Object operator,Object arg) {
+            public void call(Object operator) {
                 SelectCharacterDBOperator op=(SelectCharacterDBOperator)operator;
-                ArgObject obj=(ArgObject)arg;
-                obj.argCount=2;
-                obj.argName="test";
+                object.argCount=2;
+                object.argName="test";
                 String roleName=op.getRole().getRoleName();
                 System.out.println(roleName+" in example Called");
             }
@@ -39,6 +40,31 @@ public class TestCallBack {
     }
 
     @Test
+    public void testQueryAccount() {
+        AccountPOJO pojo=new AccountPOJO();
+        pojo.setAccountName("root");
+        pojo.setChannelName("default");
+        SelectAccountDBOperator operator=new SelectAccountDBOperator(pojo);
+
+
+        operator.RegistCallBack(new ObjectBeCalled(){
+            @Override
+            public void call(Object operator) {
+                SelectAccountDBOperator op=(SelectAccountDBOperator)operator;
+                AccountPOJO temppojo=op.account;
+                log.info("result {}",op.getResult());
+                log.info("pojo root default createTime {} {} {} {} {}",
+                        temppojo.getTimeCreated(),temppojo.getAccountName(),temppojo.getRegisterId(),
+                        temppojo.getChannelName(),temppojo.getPassword());
+            }
+        });
+        operator.execute();
+        operator.PostUpdate();
+
+        System.out.println("111111111");
+        log.info("{} {}",1,20000000000000L);
+    }
+    @Test
     public void testCreate(){
 
         Role role=new Role();
@@ -47,15 +73,12 @@ public class TestCallBack {
         role.setRoleName("test3");
         role.setNote("asfdsaf");
 
-        CreateCharacterDBOperator operator=new CreateCharacterDBOperator(null, role);
+        CreateRoleDBOperator operator=new CreateRoleDBOperator(null, role);
 
-        operator.RegistCallBack(new ObjectBeCalled(){
-            @Override
-            public void call(Object operator,Object arg) {
+        operator.RegistCallBack((tempoperator)->{
 
-                CreateCharacterDBOperator op=(CreateCharacterDBOperator)operator;
+                CreateRoleDBOperator op=(CreateRoleDBOperator)tempoperator;
                 System.out.println(" create in example Called");
-            }
         });
         operator.execute();
         operator.PostUpdate();
@@ -74,7 +97,7 @@ public class TestCallBack {
 
         operator.RegistCallBack(new ObjectBeCalled(){
             @Override
-            public void call(Object operator,Object arg) {
+            public void call(Object operator) {
 
                 DeleteCharacterDBOperator op=(DeleteCharacterDBOperator)operator;
                 System.out.println(" delete in example Called");
@@ -96,7 +119,7 @@ public class TestCallBack {
 
         operator.RegistCallBack(new ObjectBeCalled(){
             @Override
-            public void call(Object operator,Object arg) {
+            public void call(Object operator) {
 
                 UpdateCharacterDBOperator op=(UpdateCharacterDBOperator)operator;
                 System.out.println(" update in example Called");

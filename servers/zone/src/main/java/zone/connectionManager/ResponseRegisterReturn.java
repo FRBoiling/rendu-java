@@ -1,7 +1,7 @@
 package zone.connectionManager;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import constant.ErrorCode;
+import constant.RegisterResult;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import protocol.server.register.ServerRegister;
 import zone.ZoneService;
 import zone.global.GlobalServerSessionMng;
+import zone.manager.ManagerServerSessionMng;
+import zone.relation.RelationServerSessionMng;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +22,7 @@ import zone.global.GlobalServerSessionMng;
  * Time: 16:42
  */
 @Slf4j
-public class ResponseRegisterReturn implements IResponseHandler{
+public class ResponseRegisterReturn implements IResponseHandler {
     @Override
     public void onResponse(Packet packet, AbstractSession session) throws InvalidProtocolBufferException {
         ServerRegister.MSG_Server_Register_Return msg = ServerRegister.MSG_Server_Register_Return.parseFrom(packet.getMsg());
@@ -31,36 +33,46 @@ public class ResponseRegisterReturn implements IResponseHandler{
         int subId = msg.getTag().getSubId();
 
         ServerTag tag = new ServerTag();
-        tag.setTag(serverType,groupId,subId);
+        tag.setTag(serverType, groupId, subId);
         session.setTag(tag);
 
-        if (msg.getResult() == ErrorCode.Success.ordinal())
-        {
-            boolean isRegisterSuccess =false;
+        if (msg.getResult() == RegisterResult.SUCCESS.ordinal()) {
+            RegisterResult registerResult =RegisterResult.SUCCESS ;
             switch (serverType) {
                 case Global:
-                    isRegisterSuccess = GlobalServerSessionMng.getInstance().register(session);
+                    registerResult = GlobalServerSessionMng.getInstance().register(session);
                     break;
                 case Manager:
-//                    isRegisterSuccess = ManagerServerSessionMng.getInstance().register(session);
+                    registerResult = ManagerServerSessionMng.getInstance().register(session);
+                    break;
+                case Relation:
+                    registerResult = RelationServerSessionMng.getInstance().register(session);
                     break;
                 default:
                     break;
             }
-            log.info("register to {} {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
-            if (isRegisterSuccess) {
-                //TODO:这里添加具体注册逻辑
-            } else {
-                if ( serverType == ServerType.Global){
+            switch (registerResult) {
+                case SUCCESS:
+                    //TODO:这里添加具体注册逻辑
+                    break;
+                case REPEATED_REGISTER:
+                case FAIL:
+                default:
+                    log.error("SERIOUS ERROR: get register result from {} success ,but register here fail :{} ", tag.getStrTag(),registerResult.toString() );
                     ZoneService.context.stop();
-                }
-                log.error("register to {} fail: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
+                    break;
             }
         }else {
-            if ( serverType == ServerType.Global){
-                ZoneService.context.stop();
+            log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+            switch (serverType) {
+                case Global:
+                case Manager:
+                case Relation:
+                    ZoneService.context.stop();
+                    break;
+                default:
+                    break;
             }
-            log.error("register to {} fail: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
         }
     }
 }

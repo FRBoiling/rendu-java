@@ -14,11 +14,11 @@ public class SelectCharacterDBOperator extends AbstractDBOperator {
     private Role role=null;
     public int id;
 
-    public SelectCharacterDBOperator(Object arg, int id) {
+    public SelectCharacterDBOperator(int id) {
         this.id=id;
-        this.arg=arg;
     }
 
+    @Override
     public boolean execute() {
         SqlSession sqlSession=null;
         try{

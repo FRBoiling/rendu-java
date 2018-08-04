@@ -1,7 +1,7 @@
 package relation.connectionManager;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import constant.ErrorCode;
+import constant.RegisterResult;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -10,7 +10,10 @@ import core.network.codec.Packet;
 import lombok.extern.slf4j.Slf4j;
 import protocol.server.register.ServerRegister;
 import relation.RelationService;
+import relation.Context;
 import relation.global.GlobalServerSessionMng;
+import relation.manager.ManagerServerSessionMng;
+import relation.relation.RelationServerSessionMng;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,33 +37,59 @@ public class ResponseRegisterReturn implements IResponseHandler{
         tag.setTag(serverType,groupId,subId);
         session.setTag(tag);
 
-
-        if ( msg.getResult() == ErrorCode.Success.ordinal())
+        if (msg.getResult() == RegisterResult.SUCCESS.ordinal())
         {
-            boolean isRegisterSuccess =false;
+            RegisterResult registerResult =RegisterResult.FAIL;
             switch (serverType) {
                 case Global:
-                    isRegisterSuccess = GlobalServerSessionMng.getInstance().register(session);
+                    registerResult = GlobalServerSessionMng.getInstance().register(session);
                     break;
-                case Gate:
-//                  isRegisterSuccess = GateServerSessionMng.getInstance().register(session);
+                case Manager:
+                    if (Context.tag.getGroupId() > tag.getGroupId() ) {
+                        registerResult = ManagerServerSessionMng.getInstance().register(session);
+                    }
+                    else {
+                        log.error("SERIOUS ERROR:  register result error from {} fail : groupId {} wrong",tag.getStrTag(),tag.getGroupId());
+                        RelationService.context.stop();
+                        return;
+                    }
+                   break;
+                case Relation:
+                    if (Context.tag.getGroupId() > tag.getGroupId() ){
+                        registerResult = RelationServerSessionMng.getInstance().register(session);
+                    }
+                    else {
+                        log.error("SERIOUS ERROR:  register result error from {} fail : getSubId {} wrong",tag.getStrTag(),tag.getSubId());
+                        RelationService.context.stop();
+                        return;
+                    }
+                    break;
                 default:
                     break;
             }
-            log.info("register to {} {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
-            if (isRegisterSuccess) {
-                //TODO:这里添加具体注册逻辑
-            } else {
-                if ( serverType == ServerType.Global){
+
+            switch (registerResult) {
+                case SUCCESS:
+                    //TODO:这里添加具体注册逻辑
+                    break;
+                case REPEATED_REGISTER:
+                case FAIL:
+                default:
+                    log.error("SERIOUS ERROR: get register result from {} success ,but register here fail :{} ", tag.getStrTag(),registerResult.toString() );
                     RelationService.context.stop();
-                }
-                log.error("register to {} fail: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
+                    break;
             }
         }else {
-            if ( serverType == ServerType.Global){
-                RelationService.context.stop();
+            log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+            switch (serverType) {
+                case Global:
+                case Manager:
+                case Relation:
+                    RelationService.context.stop();
+                    break;
+                default:
+                    break;
             }
-            log.error("register to {} fail: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
         }
     }
 }

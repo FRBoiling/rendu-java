@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gamedb.interfaces.CharMapper">
+    <!--<select id="getRole" resultType="gamedb.pojo.CharPOJO">-->
+        <!--select id,role_name as roleName,note from ${tableName} where id=#{id}-->
+    <!--</select>-->
+    <!--<insert id="insertRole" parameterType="gamedb.pojo.CharPOJO">-->
+        <!--insert into ${tableName}(id,role_name,note) values (#{id},#{roleName},#{note})-->
+    <!--</insert>-->
+    <!--<update id="updateRole" parameterType="gamedb.pojo.CharPOJO">-->
+        <!--update ${tableName} set role_name=#{roleName},note=#{note} where id=#{id}-->
+    <!--</update>-->
+    <!--<delete id="deleteRole" parameterType="gamedb.pojo.CharPOJO">-->
+        <!--delete from ${tableName} where id=#{id}-->
+    <!--</delete>-->
+    <select id="getMaxUid">
+        SELECT Max(uid) FROM ${tableName}
+    </select>
+    <insert id="insertCharacter" parameterType="gamedb.pojo.CharPOJO">
+        insert into ${tableName}() values ()
+    </insert>
+    <insert id="insertCharacterName" parameterType="gamedb.pojo.CharPOJO">
+        insert into ${tableName}() values ()
+    </insert>
+</mapper>

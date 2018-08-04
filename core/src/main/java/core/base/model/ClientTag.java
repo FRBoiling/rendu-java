@@ -4,6 +4,8 @@ import core.base.common.ISessionTag;
 import lombok.Getter;
 import org.omg.CORBA.PRIVATE_MEMBER;
 
+import java.util.Objects;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -13,65 +15,57 @@ import org.omg.CORBA.PRIVATE_MEMBER;
  */
 @Getter
 public class ClientTag implements ISessionTag {
-    private int playerId;
-    private String playerName;
+    private String accountName;
+    private int token;
+
     private String strTag;
 
     public ClientTag() {
-        playerId = 0;
+        accountName = "";
+        token =0;
+        strTag="";
         return;
     }
 
     @Override
     public int hashCode(){
-        return getKey().hashCode();
+        return this.accountName.hashCode();
     }
 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof ClientTag) {
-            ClientTag p = (ClientTag) obj;
-            return this.playerName.equals(p.playerName)&&this.playerId==p.playerId;
-//            return this.type.equals(p.type)&&this.groupId==p.groupId&&this.subId==p.subId;
+            ClientTag t = (ClientTag) obj;
+            return t.accountName.equals( this.accountName) &&
+                    t.token == this.token;
         } else {
             return false;
         }
     }
 
     @Override
-    public String getKey() {
+    public String toString(){
         return strTag;
     }
-
     //    Object [] tagParam = new Object[]{
-//            serverType,
-//            0,
-//            0
+//            id,
+//            name,
 //    };
     @Override
     public void initTag(Object[] params) {
-        this.playerId = (int)params[0];
-        this.playerName = (String) params[0];
-//        strTag = type.name();
-//        if (groupId != 0){
-//            strTag = strTag+ "_" + groupId;
-//        }
-//        if (subId!=0){
-//            strTag = strTag+ "_" + subId;
-//        }
+        this.accountName = (String) params[0];
+        this.token = (int) params[1];
+
+        this.strTag = this.strTag+ "_" + this.accountName;
+        this.strTag = this.strTag+ "_" + this.token;
     }
 
-    public void setTag(int playerId) {
-//        this.type = type;
-//        this.groupId = groupId;
-//        this.subId = subId;
-//        strTag = type.name();
-//        if (this.groupId != 0){
-//            strTag = strTag+ "_" + this.groupId;
-//        }
-//        if (this.subId!=0){
-//            strTag = strTag+ "_" + this.subId;
-//        }
+    public void setTag(String accountName,int token) {
+        this.accountName = accountName;
+        this.token = token;
+
+        this.strTag = this.strTag+ "_" + this.accountName;
+        this.strTag = this.strTag+ "_" + this.token;
     }
 
 

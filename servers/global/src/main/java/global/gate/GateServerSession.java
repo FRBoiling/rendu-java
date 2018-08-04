@@ -14,10 +14,10 @@ import io.netty.channel.Channel;
  */
 
 public class GateServerSession extends AbstractSession {
-    public GateServerSession(Channel channel) {
+    GateServerSession(Channel channel) {
         super(channel);
-        ServerTag tag =new ServerTag();
-        tag.setTag(ServerType.Gate,0,0);
+        ServerTag tag = new ServerTag();
+        tag.setTag(ServerType.Gate, 0, 0);
         setTag(tag);
     }
 

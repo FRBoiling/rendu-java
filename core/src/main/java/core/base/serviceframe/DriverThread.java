@@ -25,6 +25,6 @@ public class DriverThread extends Thread {
 
     @Override
     public void run() {
-        service.update();
+        service.update(1);
     }
 }

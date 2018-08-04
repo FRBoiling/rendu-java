@@ -1,16 +1,45 @@
 import org.junit.Test;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.*;
+
+import java.io.IOException;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class JedisTest {
+
+    @Test
+    public void testCluster(){
+        JedisPoolConfig poolConfig=new JedisPoolConfig();
+        poolConfig.setMaxIdle(1);
+        poolConfig.setMaxTotal(1);
+        poolConfig.setMaxWaitMillis(1000);
+
+        Set<HostAndPort> nodes=new LinkedHashSet<>();
+        nodes.add(new HostAndPort("192.168.30.245", 6380));
+        JedisCluster cluster=new JedisCluster(nodes,poolConfig);
+
+        for(int i=0;i<1000;i++){
+            //cluster.set("jiangTest","test"+i);
+            cluster.hset("jiangTest"+i, "test",""+i);
+        }
+
+
+        try {
+            cluster.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //System.out.println(cluster.get("name")+"test from jedis test");
+        System.out.println("cluster nodes"+nodes.size());
+    }
     @Test
     public void demo1() {
 
-        Jedis jedis=new Jedis("127.0.0.1",6379);
+        Jedis jedis=new Jedis("192.168.30.245",6380);
 
         //切换数据库
-        jedis.select(0);
+        //jedis.select(0);
 
         //HashSet举例
         //jedis.hset("P:10:H:1000:SD", "Fight7Day_4","13");
@@ -27,7 +56,7 @@ public class JedisTest {
         //jedis.lpush( "P:10:GiR","{0}:{1}:{2}:{3}");
 
         //string
-        //jedis.set("ahaaas","adfasdsa");
+        jedis.set("jiangTest","test1");
 
         jedis.close();
 

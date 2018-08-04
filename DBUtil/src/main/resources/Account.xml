@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gamedb.interfaces.AccountMapper">
+    <insert id="insertAccount" parameterType="gamedb.pojo.account.AccountPOJO">
+        insert into `account`(id,channel_name,device_id,password,register_id) values (#{accountName},#{channelName},#{deviceId},#{password},#{registerId})
+    </insert>
+    <select id="getAccount" resultType="gamedb.pojo.account.AccountPOJO">
+        SELECT id as accountName,password,time_created ,char_uids ,register_id FROM `account` WHERE id=#{accountName} and channel_name=#{channelName}
+    </select>
+</mapper>

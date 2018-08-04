@@ -9,10 +9,11 @@ package core.base.model;
  */
 
 public enum ServerType {
-    Default,
-    Global,
     Gate,
-    Zone,
+    Global,
     Manager,
-    Relation
+    Zone,
+    Relation,
+    Barrack,
+    Default
 }

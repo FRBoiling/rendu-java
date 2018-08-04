@@ -1,11 +1,11 @@
 package core.base.common;
 
+import com.google.protobuf.MessageLite;
+import constant.RegisterResult;
 import core.base.model.ServerTag;
-import core.base.model.ServerType;
 import io.netty.channel.Channel;
 import io.netty.util.internal.ConcurrentSet;
 import lombok.extern.slf4j.Slf4j;
-import protocol.server.register.ServerRegister;
 
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
@@ -19,43 +19,45 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Slf4j
 public abstract class AbstractSessionManager {
-    ConcurrentSet<AbstractSession> allSession = new ConcurrentSet<AbstractSession>();
-    private ArrayList<AbstractSession> removeSession = new ArrayList<AbstractSession>() ;
+    ConcurrentSet<AbstractSession> allSession = new ConcurrentSet<>();
+    private ArrayList<AbstractSession> removeSession = new ArrayList<>() ;
 
-    ConcurrentHashMap<String, AbstractSession> registerSessions = new ConcurrentHashMap<>(10);
+    ConcurrentHashMap<ISessionTag, AbstractSession> registerSessions = new ConcurrentHashMap<>(10);
 
-    public boolean register(AbstractSession session) {
+    public RegisterResult register(AbstractSession session) {
         if (session == null) {
             log.error("register session fail: session = null");
-            return false;
+            return RegisterResult.FAIL;
         }
 
         if (!allSession.contains(session)){
             log.error("register session fail: session not exist");
-            return false;
+            return RegisterResult.FAIL;
         }
 
-        AbstractSession temSession = registerSessions.get(session.getKey());
+        AbstractSession temSession = registerSessions.get(session.getTag());
         if (temSession != null) {
             if (temSession.isOffline()) {
-                //TODO:Boil 离线
+                //离线
+                //正常连接注册（登入）
                 session.setRegistered(true);
                 session.setOffline(false);
-                registerSessions.put(session.getKey(), session);
-                log.info("register session {} offline ", session.getKey());
+                registerSessions.put(session.getTag(), session);
+                log.info("register session {} offline ", session.getTag());
             } else {
-                //TODO:Boil 重复注册
-                log.error("register session fail: repeated session {}", session.getKey());
-                return false;
+                //在线
+                // TODO:Boil 重复注册（重复登入，如，客户端登入 俗称顶号）
+                log.warn("register session fail: repeated session {}", session.getTag());
+                return RegisterResult.REPEATED_REGISTER;
             }
         } else {
             session.setRegistered(true);
             session.setOffline(false);
-            registerSessions.put(session.getKey(), session);
-            log.info("register success: {} ", session.getKey());
+            registerSessions.put(session.getTag(), session);
+            log.info("register success: {} ", session.getTag());
         }
 
-        return true;
+        return RegisterResult.SUCCESS;
     }
 
     public boolean unregister(AbstractSession session) {
@@ -70,18 +72,18 @@ public abstract class AbstractSessionManager {
             allSession.remove(session);
         }
 
-        if (registerSessions.containsKey(session.getKey()) && session.isRegistered()) {
+        if (registerSessions.containsKey(session.getTag()) && session.isRegistered()) {
             session.setRegistered(false);
             session.setOffline(true);
-            registerSessions.remove(session.getKey());
+            registerSessions.remove(session.getTag());
         } else {
-            log.error("unregister session fail: can't found session {}", session.getKey());
+            log.error("unregister session fail: can't found session {}", session.getTag());
             return false;
         }
         return true;
     }
     
-    public void update(){
+    public void update(long dt){
         for (AbstractSession session: allSession) {
             try {
                 session.update();
@@ -114,12 +116,52 @@ public abstract class AbstractSessionManager {
         return true;
     }
 
-    public ConcurrentHashMap<String, AbstractSession>  getRegisterSessions() {
+    public ConcurrentHashMap<ISessionTag, AbstractSession>  getRegisterSessions() {
         return registerSessions;
     }
 
-    public AbstractSession getRegisterSession(String key){
-        return registerSessions.get(key);
+    public AbstractSession getRegisterSession(ISessionTag tag){
+        return registerSessions.get(tag);
     }
 
+    public void broadcastAll(MessageLite msg){
+        for (AbstractSession session: registerSessions.values()) {
+            session.sendMessage(msg);
+        }
+    }
+
+    public void broadcastAllExceptServer(MessageLite msg,ServerTag tag){
+        for (AbstractSession session: registerSessions.values()) {
+            if (!session.getTag().equals(tag)){
+                session.sendMessage(msg);
+            }
+        }
+    }
+
+    public void broadcastByGroup(MessageLite msg, int groupId) {
+        for (AbstractSession session: getRegisterSessions().values()) {
+            if ( groupId == ((ServerTag)session.getTag()).getGroupId()){
+                session.sendMessage(msg);
+            }
+        }
+    }
+
+    public void broadcastByGroupExceptServer(MessageLite msg, int groupId,ServerTag tag) {
+        for (AbstractSession session: getRegisterSessions().values()) {
+            if ( groupId == ((ServerTag)session.getTag()).getGroupId()){
+                if (!session.getTag().equals(tag)) {
+                    session.sendMessage(msg);
+                }
+            }
+        }
+    }
+
+
+    public void send2Session(ISessionTag sessionTag,MessageLite msg){
+        AbstractSession session = getRegisterSession(sessionTag);
+        if (session!=null )
+        {
+            session.sendMessage(msg);
+        }
+    }
 }

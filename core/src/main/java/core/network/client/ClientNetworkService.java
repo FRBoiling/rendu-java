@@ -98,7 +98,7 @@ public class ClientNetworkService implements IService ,ISocketClient {
     }
 
     @Override
-    public void update() {
+    public void update(long dt) {
 
     }
 

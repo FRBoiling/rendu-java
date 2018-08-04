@@ -9,8 +9,8 @@ package core.base.common;
  */
 
 public interface ISessionTag {
-    String getKey();
     int hashCode();
     boolean equals(Object obj);
+    String toString();
     void initTag(Object [] params);
 }

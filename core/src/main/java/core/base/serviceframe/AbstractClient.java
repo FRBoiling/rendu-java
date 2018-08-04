@@ -33,7 +33,6 @@ public abstract class AbstractClient implements IService {
         builder= new ClientNetworkServiceBuilder();
         IOGroupCount =1;
         state = ServiceState.STOPPED;
-        init(null);
     }
 
     public void connect(String ip,int port){
@@ -68,7 +67,6 @@ public abstract class AbstractClient implements IService {
     }
 
     @Override
-    public void update() {
-        sessionMng.update();
+    public void update(long dt){
     }
 }

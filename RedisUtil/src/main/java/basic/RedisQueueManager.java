@@ -50,10 +50,10 @@ public class RedisQueueManager {
 
     public void Run() {
         Time time=new Time();
-        time.Init();
+        time.init();
         ConcurrentLinkedQueue<AbstractRedisOperate> tempPostUpdateQueue=new ConcurrentLinkedQueue<>();
         while(true){
-            long timeSpan=time.Update();
+            long timeSpan=time.init();
             lasttime=timeSpan;
             if(lasttime<=1){
                 Wait(1L);

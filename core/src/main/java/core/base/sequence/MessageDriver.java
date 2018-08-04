@@ -5,6 +5,7 @@ import core.base.common.AbstractSession;
 import core.network.IResponseHandlerManager;
 import core.network.codec.Packet;
 import lombok.extern.slf4j.Slf4j;
+import util.StringUtil;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -84,7 +85,7 @@ public class MessageDriver {
             Packet msg = dealMsgQueue.poll();
             IResponseHandler handler = responseMng.getHandler(msg.getMsgId());
             if (handler == null) {
-                log.info("got an no registered msg:" + msg.getMsgId());
+                log.error("got an no registered msg:" + StringUtil.toHexString(msg.getMsgId()));
                 return;
             }
             try {

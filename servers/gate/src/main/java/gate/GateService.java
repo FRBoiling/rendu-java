@@ -1,15 +1,15 @@
 package gate;
 
-import gate.global.GlobalServer;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class GateService
 {
-    public static GateServiceContext context;
+    public static Context context;
+
     public static void main( String[] args )
     {
-        context = new GateServiceContext();
+        context = new Context();
         try {
             context.init(args);
             context.start();

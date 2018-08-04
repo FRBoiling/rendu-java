@@ -5,9 +5,8 @@ import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
-import manager.ManagerServiceContext;
+import manager.Context;
 import protocol.manager.global.M2GM;
-import protocol.server.register.ServerRegister;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,17 +17,19 @@ import protocol.server.register.ServerRegister;
  */
 @Slf4j
 public class GlobalServerSession extends AbstractSession {
-    public GlobalServerSession(Channel channel) {
+    GlobalServerSession(Channel channel) {
         super(channel);
-        ServerTag tag =new ServerTag();
-        tag.setTag(ServerType.Global,0,0);
+        ServerTag tag = new ServerTag();
+        tag.setTag(ServerType.Global, 0, 0);
         setTag(tag);
     }
+
     public void OnConnected() {
         super.OnConnected();
-        sendRegister(ManagerServiceContext.tag);
+        sendRegister(Context.tag);
     }
-    public void OnDisConnected(){
+
+    public void OnDisConnected() {
         super.OnDisConnected();
     }
 

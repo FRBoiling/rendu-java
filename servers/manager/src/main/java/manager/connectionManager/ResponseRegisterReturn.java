@@ -1,7 +1,7 @@
 package manager.connectionManager;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import constant.ErrorCode;
+import constant.RegisterResult;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -9,7 +9,9 @@ import core.base.sequence.IResponseHandler;
 import core.network.codec.Packet;
 import lombok.extern.slf4j.Slf4j;
 import manager.ManagerService;
+import manager.Context;
 import manager.global.GlobalServerSessionMng;
+import manager.manager.ManagerServerSessionMng;
 import protocol.server.register.ServerRegister;
 
 /**
@@ -34,33 +36,46 @@ public class ResponseRegisterReturn implements IResponseHandler{
         tag.setTag(serverType,groupId,subId);
         session.setTag(tag);
 
-
-        if ( msg.getResult() == ErrorCode.Success.ordinal())
-        {
-            boolean isRegisterSuccess =false;
+        if (msg.getResult() == RegisterResult.SUCCESS.ordinal()) {
+            RegisterResult registerResult = RegisterResult.FAIL;
             switch (serverType) {
                 case Global:
-                    isRegisterSuccess = GlobalServerSessionMng.getInstance().register(session);
+                    registerResult = GlobalServerSessionMng.getInstance().register(session);
                     break;
-//                case Gate:
-//                  isRegisterSuccess = GateServerSessionMng.getInstance().register(session);
+                case Manager:
+                    if (Context.tag.getSubId() > tag.getSubId() ){
+                        registerResult = ManagerServerSessionMng.getInstance().register(session);
+                    }
+                    else {
+                        log.error("SERIOUS ERROR:  register result error from {} fail : subId {} wrong",tag.getStrTag(),tag.getSubId());
+                        ManagerService.context.stop();
+                        return;
+                    }
                 default:
                     break;
             }
-            log.info("register to {} {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
-            if (isRegisterSuccess) {
-                //TODO:这里添加具体注册逻辑
-            } else {
-                if ( serverType == ServerType.Global){
+
+            switch (registerResult) {
+                case SUCCESS:
+                    //TODO:这里添加具体注册逻辑
+                    break;
+                case REPEATED_REGISTER:
+                case FAIL:
+                default:
+                    log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
                     ManagerService.context.stop();
-                }
-                log.error("register to {} fail: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
+                    break;
             }
         }else {
-            if ( serverType == ServerType.Global){
-                ManagerService.context.stop();
+            log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+            switch (serverType) {
+                case Global:
+                case Manager:
+                    ManagerService.context.stop();
+                    break;
+                default:
+                    break;
             }
-            log.error("register to {} fail: {}",tag.getStrTag(),ErrorCode.values()[msg.getResult()]);
         }
     }
 }

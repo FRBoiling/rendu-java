@@ -1,5 +1,6 @@
 package basic;
 
+import lombok.Getter;
 import redis.clients.jedis.JedisPoolConfig;
 
 public class JedisConfig {
@@ -30,6 +31,15 @@ public class JedisConfig {
     }
 
     private int dbNum;
+
+    @Getter
+    private int connectionTimeout=2000;
+
+    @Getter
+    private int soTimeout=2000;
+
+    @Getter
+    private int attempts=10;
 
     public boolean init(String ip,String pw,int port,int dbNum){
         this.ip=ip;

@@ -3,7 +3,7 @@ package gate.global;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
-import gate.GateServiceContext;
+import gate.Context;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
 import protocol.gate.global.G2GM;
@@ -17,18 +17,19 @@ import protocol.gate.global.G2GM;
  */
 @Slf4j
 public class GlobalServerSession extends AbstractSession {
-    public GlobalServerSession(Channel channel) {
+    GlobalServerSession(Channel channel) {
         super(channel);
-        ServerTag tag =new ServerTag();
-        tag.setTag(ServerType.Global,0,0);
+        ServerTag tag = new ServerTag();
+        tag.setTag(ServerType.Global, 0, 0);
         setTag(tag);
     }
 
     public void OnConnected() {
         super.OnConnected();
-        sendRegister(GateServiceContext.tag);
+        sendRegister(Context.tag);
     }
-    public void OnDisConnected(){
+
+    public void OnDisConnected() {
         super.OnDisConnected();
     }
 
