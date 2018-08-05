@@ -6,50 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f6fefc0-f06f-4c72-9459-fc5815b54bcd" name="Default" comment="项目文件">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_16_20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_16_20.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+    <list default="true" id="7f6fefc0-f06f-4c72-9459-fc5815b54bcd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constant/src/main/java/constant/RegisterResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/constant/src/main/java/constant/RegisterResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/model/ClientTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/model/ClientTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/model/RoleTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/model/RoleTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/model/ServerTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/model/ServerTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/sequence/MessageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/sequence/MessageDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/AbstractSystemFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/AbstractSystemFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/DriverThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/DriverThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/IService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/INetworkConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/INetworkConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/INetworkEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/INetworkEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/INetworkServiceBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/INetworkServiceBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/IResponseHandlerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/IResponseHandlerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/MsgRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/MsgRouter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/NativeSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/NativeSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/NetworkListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/NetworkListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientConnectionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientConnectionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientIdleStateTrigger.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientIdleStateTrigger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientMessageExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientMessageExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientNetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientNetworkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientNetworkServiceBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientNetworkServiceBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientWatchdog.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientWatchdog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/client/ISocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/client/ISocketClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/codec/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/codec/Packet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/codec/PacketDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/codec/PacketDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/codec/PacketEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/codec/PacketEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/codec/forClientApp/ReaderHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/codec/forClientApp/ReaderHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/ServerIdleStateTrigger.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/ServerIdleStateTrigger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/ServerNetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/ServerNetworkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/ServerNetworkServiceBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/ServerNetworkServiceBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/ServerSocketChannelInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/ServerSocketChannelInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/BindListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/BindListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/HandlerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/HandlerInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/MessageExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/MessageExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/NetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/NetworkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/NetworkServiceBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/forClientApp/NetworkServiceBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/server/http/HttpHandlerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/server/http/HttpHandlerInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataObject/src/main/java/dataObject/AccountObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataObject/src/main/java/dataObject/AccountObject.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/common/target/" />
@@ -142,102 +103,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ServerSocketChannelInitializer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/server/ServerSocketChannelInitializer.java">
+      <file leaf-file-name="ResponseUserLogin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/response/ResponseUserLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+            <state relative-caret-position="133">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="INetworkEventListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/INetworkEventListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IResponseHandlerManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/IResponseHandlerManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgRouter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/MsgRouter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NativeSupport.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/NativeSupport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="e#577#578#0" expanded="true" />
-                <element signature="e#617#618#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/ServiceState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientNetworkService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/client/ClientNetworkService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="138" column="57" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientWatchdog.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/client/ClientWatchdog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="67" column="42" lean-forward="true" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
-              <folding>
-                <element signature="e#1907#1908#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IChannelHandlerHolder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/IChannelHandlerHolder.java">
+      <file leaf-file-name="AccountObject.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dataObject/src/main/java/dataObject/AccountObject.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="INetworkConsumer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/INetworkConsumer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -249,6 +128,7 @@
       <find>创建文件夹</find>
       <find>id</find>
       <find>idle</find>
+      <find>offline</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -265,7 +145,6 @@
         <option value="$PROJECT_DIR$/core/src/main/java/core/network/server/ServerIdleStateTrigger.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/network/NetworkListener.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/network/INetworkServiceBuilder.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/base/model/ClientTag.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/base/model/RoleTag.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/base/model/ServerTag.java" />
@@ -300,6 +179,10 @@
         <option value="$PROJECT_DIR$/core/src/main/java/core/network/MsgRouter.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/network/NativeSupport.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/network/client/ClientWatchdog.java" />
+        <option value="$PROJECT_DIR$/constant/src/main/java/constant/RegisterResult.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java" />
+        <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/client/response/ResponseUserLogin.java" />
+        <option value="$PROJECT_DIR$/dataObject/src/main/java/dataObject/AccountObject.java" />
       </list>
     </option>
   </component>
@@ -352,7 +235,149 @@
             <path>
               <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="dataObject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="dataObject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="dataObject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="dataObject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="dataObject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dataObject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
               <item name="servers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="response" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="connectionManager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gate" type="462c0819:PsiDirectoryNode" />
+              <item name="zone" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -478,7 +503,7 @@
       <workItem from="1533400497197" duration="386000" />
       <workItem from="1533401430224" duration="764000" />
       <workItem from="1533402827335" duration="104000" />
-      <workItem from="1533403221511" duration="7737000" />
+      <workItem from="1533403221511" duration="9035000" />
     </task>
     <task id="LOCAL-00001" summary="清理项目文件">
       <created>1533389310056</created>
@@ -494,11 +519,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533390915378</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="优化代码">
+      <created>1533469498668</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1533469498668</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15905000" />
+    <option name="totallyTimeSpent" value="17203000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -527,7 +559,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4997233" weight="0.32972974" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25523704" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25523704" />
       <window_info anchor="right" id="Database" order="4" weight="0.32960895" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -535,7 +567,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39916405" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39916405" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.46288908" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -553,81 +585,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="清理项目文件" />
     <MESSAGE value="项目文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目文件" />
+    <MESSAGE value="优化代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化代码" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/model/ServerType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/model/ServerTag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/model/RoleTag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/model/ClientTag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="36" column="42" lean-forward="true" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/model/AbstractServiceContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/sequence/IResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/sequence/MessageDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1347#1348#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/AbstractServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/AbstractClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/util/src/main/java/util/Time.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -904,13 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/server/ServerSocketChannelInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/IChannelHandlerHolder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -925,27 +883,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/INetworkEventListener.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/client/ClientWatchdog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/IResponseHandlerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/MsgRouter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        <state relative-caret-position="133">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1865#1866#0" expanded="true" />
+            <element signature="e#1907#1908#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/client/ClientNetworkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="138" column="57" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/ServiceState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -960,27 +919,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/ServiceState.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/MsgRouter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/client/ClientNetworkService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="138" column="57" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/client/ClientWatchdog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="67" column="42" lean-forward="true" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+        <state relative-caret-position="207">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding>
-            <element signature="e#1907#1908#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/IResponseHandlerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/INetworkEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/server/ServerSocketChannelInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/constant/src/main/java/constant/RegisterResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/response/ResponseCreateCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientResponseMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/response/ResponseUserLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataObject/src/main/java/dataObject/AccountObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
         </state>
       </provider>
     </entry>

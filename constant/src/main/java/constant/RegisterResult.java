@@ -10,5 +10,6 @@ package constant;
 public enum RegisterResult {
     SUCCESS ,
     FAIL,
-    REPEATED_REGISTER;
+    REPEATED_REGISTER,
+    ALREADY_REGISTER,
 }

@@ -37,6 +37,11 @@ public abstract class AbstractSessionManager {
 
         AbstractSession temSession = registerSessions.get(session.getTag());
         if (temSession != null) {
+            if (temSession.getChannel() == session.getChannel()){
+                session.setRegistered(true);
+                session.setOffline(false);
+                return RegisterResult.ALREADY_REGISTER;
+            }
             if (temSession.isOffline()) {
                 //离线
                 //正常连接注册（登入）

@@ -22,4 +22,6 @@ public class AccountObject {
     String deviceId="";
     String registerId="";
     String channelName="default";
+
+    boolean isOffline =true;
 }
