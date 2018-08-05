@@ -18,7 +18,6 @@ public class RoleTag {
         id = 0;
         name ="";
         strTag ="";
-        return;
     }
 
     @Override

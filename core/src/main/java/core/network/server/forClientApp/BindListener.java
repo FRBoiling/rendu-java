@@ -1,7 +1,6 @@
 package core.network.server.forClientApp;
 
 import core.network.ServiceState;
-import core.network.server.ServerNetworkService;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 public class BindListener implements ChannelFutureListener {
     private NetworkService service;
 
-    public BindListener(NetworkService service) {
+    BindListener(NetworkService service) {
         this.service = service;
     }
 

@@ -24,21 +24,19 @@ import java.util.Map;
  * Time: 13:52
  **/
 public abstract class AbstractSystemFrame implements IService, ISystemFrame {
-    public ServiceState state = ServiceState.STOPPED;
+    private ServiceState state = ServiceState.STOPPED;
     public static ServerTag tag;
     public static long now;
 
     private DriverThread driverThread;
-    IConnectManager connectManager;
+    private IConnectManager connectManager;
 
-    long lastTime=0;
-
-    public void initConnectManager(IConnectManager connectManager) {
+    protected void initConnectManager(IConnectManager connectManager) {
         this.connectManager = connectManager;
         initServers();
     }
 
-    public void initMainThread(String name) {
+    protected void initMainThread(String name) {
         driverThread = new DriverThread(name, this);
     }
 
@@ -74,7 +72,7 @@ public abstract class AbstractSystemFrame implements IService, ISystemFrame {
         while (isOpened()) {
             try {
                 now = time.init();
-                lastTime = time.update();
+                long lastTime=time.update();
                 connectManager.update(lastTime);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -111,7 +109,7 @@ public abstract class AbstractSystemFrame implements IService, ISystemFrame {
     @Override
     public void initDB() {
         //初始化Mybatis配置
-        List<File> fileList = new ArrayList<File>();
+        List<File> fileList = new ArrayList<>();
         FileUtil.findFiles(PathManager.getInstance().getXmlPath(), "mybatis_config.xml", fileList);
         if (fileList.size() == 0) {
             fileList.clear();
@@ -130,8 +128,8 @@ public abstract class AbstractSystemFrame implements IService, ISystemFrame {
 
         //-----------------------------init DBMngPoolManager---------
         db = new DBMngPoolManager();
-        DataList dbconfigs = DataListManager.getInstance().getDataList("DBConfig");
-        for (Map.Entry<Integer, Data> item : dbconfigs.entrySet()) {
+        DataList dbConfigs = DataListManager.getInstance().getDataList("DBConfig");
+        for (Map.Entry<Integer, Data> item : dbConfigs.entrySet()) {
             String nickName = item.getValue().getName();
             int poolCount = item.getValue().getInteger("threads");
 

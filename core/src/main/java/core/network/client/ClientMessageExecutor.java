@@ -22,7 +22,7 @@ public class ClientMessageExecutor extends SimpleChannelInboundHandler<Packet> {
     private INetworkConsumer consumer;
     private INetworkEventListener listener;
 
-    public ClientMessageExecutor(INetworkConsumer consumer,INetworkEventListener listener) {
+    ClientMessageExecutor(INetworkConsumer consumer,INetworkEventListener listener) {
         this.consumer = consumer;
         this.listener = listener;
     }

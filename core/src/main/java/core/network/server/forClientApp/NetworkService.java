@@ -5,7 +5,6 @@ import core.network.INetworkServiceBuilder;
 import core.network.NativeSupport;
 import core.network.ServiceState;
 import core.network.server.ISocketServer;
-import core.network.server.ServerNetworkServiceBuilder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.channel.ChannelFuture;
@@ -40,7 +39,7 @@ public class NetworkService implements IService, ISocketServer {
     private final NetworkServiceBuilder builder;
     protected volatile ByteBufAllocator allocator;
 
-    int port = 8203;
+    int port;
 
     NetworkService(final INetworkServiceBuilder serviceBuilder) {
         builder = (NetworkServiceBuilder) serviceBuilder;
@@ -65,12 +64,12 @@ public class NetworkService implements IService, ISocketServer {
     }
 
 
-    protected EventLoopGroup initEventLoopGroup(int threadCount, ThreadFactory bossFactory) {
+    private EventLoopGroup initEventLoopGroup(int threadCount, ThreadFactory bossFactory) {
         return NativeSupport.isSupportNativeET() ? new EpollEventLoopGroup(threadCount, bossFactory) : new NioEventLoopGroup(threadCount, bossFactory);
     }
 
 
-    public void InitOption() {
+    private void InitOption() {
         bootstrap.option(ChannelOption.SO_BACKLOG, 1024);
         bootstrap.childOption(ChannelOption.TCP_NODELAY, true);
         bootstrap.childOption(ChannelOption.SO_RCVBUF, 32 * 1024);

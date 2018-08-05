@@ -19,10 +19,10 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Slf4j
 public abstract class AbstractSessionManager {
-    ConcurrentSet<AbstractSession> allSession = new ConcurrentSet<>();
+    private ConcurrentSet<AbstractSession> allSession = new ConcurrentSet<>();
     private ArrayList<AbstractSession> removeSession = new ArrayList<>() ;
 
-    ConcurrentHashMap<ISessionTag, AbstractSession> registerSessions = new ConcurrentHashMap<>(10);
+    private ConcurrentHashMap<ISessionTag, AbstractSession> registerSessions = new ConcurrentHashMap<>(10);
 
     public RegisterResult register(AbstractSession session) {
         if (session == null) {

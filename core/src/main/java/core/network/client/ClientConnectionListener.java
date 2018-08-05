@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class ClientConnectionListener implements ChannelFutureListener {
     private ClientNetworkService service;
 
-    public ClientConnectionListener(ClientNetworkService service) {
+    ClientConnectionListener(ClientNetworkService service) {
         this.service = service;
     }
 

@@ -6,19 +6,18 @@ import core.network.INetworkEventListener;
 import core.network.INetworkServiceBuilder;
 import core.network.IResponseHandlerManager;
 import core.network.server.ISocketServer;
-import core.network.server.ServerNetworkService;
 import lombok.Data;
 
 /**
  * Copyright © 2018 四月
  * Boil blood. All rights reserved.
  *
- * @Prject: ServerCluster-Java
- * @Package: core.network
- * @Description: ${todo}
- * @author: Boiling
- * @date: 2018/4/22 0022 13:05
- * @version: V1.0
+ * Project: ServerCluster-Java
+ * Package: core.network
+ * Description: ${todo}
+ * author: Boiling
+ * date: 2018/4/22 0022 13:05
+ * version: V1.0
  */
 @Data
 public class NetworkServiceBuilder implements INetworkServiceBuilder,ISocketServer {

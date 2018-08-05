@@ -36,7 +36,7 @@ public class MessageDriver {
     private final ConcurrentLinkedQueue<Packet> tmpMsgQueue;
     private final Queue<Packet> dealMsgQueue;
 
-    IResponseHandlerManager responseMng;
+    private IResponseHandlerManager responseMng;
 
     public MessageDriver(int maxQueueSize, String name) {
         this.name = name;
@@ -83,6 +83,10 @@ public class MessageDriver {
         }
         while (dealMsgQueue.size() > 0) {
             Packet msg = dealMsgQueue.poll();
+            if (msg==null){
+                log.error("got an null msg packet");
+                return;
+            }
             IResponseHandler handler = responseMng.getHandler(msg.getMsgId());
             if (handler == null) {
                 log.error("got an no registered msg:" + StringUtil.toHexString(msg.getMsgId()));

@@ -5,7 +5,7 @@ import core.network.ServiceState;
 public interface IService {
     /**
      * init
-     * @param args
+     * @param args 输入参数
      */
     void init(String[] args);
 

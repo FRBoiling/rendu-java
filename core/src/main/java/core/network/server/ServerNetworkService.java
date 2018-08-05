@@ -41,7 +41,7 @@ public class ServerNetworkService implements IService, ISocketServer {
     private final ServerNetworkServiceBuilder builder;
     protected volatile ByteBufAllocator allocator;
 
-    int port = 8203;
+    int port;
 
     ServerNetworkService(final INetworkServiceBuilder serviceBuilder) {
         builder = (ServerNetworkServiceBuilder) serviceBuilder;
@@ -71,12 +71,12 @@ public class ServerNetworkService implements IService, ISocketServer {
     }
 
 
-    protected EventLoopGroup initEventLoopGroup(int threadCount, ThreadFactory bossFactory) {
+    private EventLoopGroup initEventLoopGroup(int threadCount, ThreadFactory bossFactory) {
         return NativeSupport.isSupportNativeET() ? new EpollEventLoopGroup(threadCount, bossFactory) : new NioEventLoopGroup(threadCount, bossFactory);
     }
 
 
-    public void InitOption1() {
+    private void InitOption1() {
         bootstrap.option(ChannelOption.SO_BACKLOG, 1024);
         bootstrap.childOption(ChannelOption.TCP_NODELAY, true);
         bootstrap.childOption(ChannelOption.SO_RCVBUF, 64 * 1024);
@@ -84,7 +84,7 @@ public class ServerNetworkService implements IService, ISocketServer {
         bootstrap.childOption(ChannelOption.WRITE_BUFFER_WATER_MARK, new WriteBufferWaterMark(32 * 1024, 256 * 1024));
     }
 
-    public void InitOption2() {
+    private void InitOption2() {
         /**
          * backlog参数的含义:
          * 一个未完成连接的队列，此队列维护着那些已收到了客户端SYN分节信息，等待完成三路握手的连接，socket的状态是SYN_RCVD

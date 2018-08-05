@@ -16,8 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DriverThread extends Thread {
     private String threadName;
-    IService service;
-    public DriverThread(String name, IService service) {
+    private IService service;
+    DriverThread(String name, IService service) {
         this.service =service;
         threadName = name;
         log.info("Creating " +  threadName );

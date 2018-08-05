@@ -30,7 +30,7 @@ public abstract class ClientWatchdog extends ChannelInboundHandlerAdapter implem
     private volatile boolean reconnect = true;
     private int attempts;
 
-    public ClientWatchdog(Timer timer) {
+    ClientWatchdog(Timer timer) {
         this.timer = timer;
     }
 
@@ -61,17 +61,19 @@ public abstract class ClientWatchdog extends ChannelInboundHandlerAdapter implem
         ctx.fireChannelInactive();
     }
 
-    public boolean isReconnect() {
+    private boolean isReconnect() {
         return reconnect;
     }
 
-    public void setReconnect(boolean reconnect) {
+    void setReconnect(boolean reconnect) {
         this.reconnect = reconnect;
     }
 
     @Override
     public void run(Timeout timeout) throws Exception {
         ChannelFuture future;
+
+        //TODO:Boiling 这里这个 synchronized是否必要？
         synchronized (bootstrap) {
             bootstrap.handler(new ChannelInitializer<Channel>() {
 

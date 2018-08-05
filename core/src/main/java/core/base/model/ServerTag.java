@@ -24,7 +24,6 @@ public class ServerTag implements ISessionTag {
         subId = 0;
         type = ServerType.Default;
         strTag="";
-        return;
     }
 
     @Override

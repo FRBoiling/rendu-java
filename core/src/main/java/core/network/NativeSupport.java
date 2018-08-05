@@ -12,14 +12,14 @@ public class NativeSupport {
     private static final boolean SUPPORT_NATIVE_ET;
 
     static {
-        boolean epoll;
+        boolean hasEpoll;
         try {
             Class.forName("io.netty.channel.epoll.Native");
-            epoll = true;
+            hasEpoll = true;
         } catch (Throwable e) {
-            epoll = false;
+            hasEpoll = false;
         }
-        SUPPORT_NATIVE_ET = epoll;
+        SUPPORT_NATIVE_ET = hasEpoll;
     }
 
     /**

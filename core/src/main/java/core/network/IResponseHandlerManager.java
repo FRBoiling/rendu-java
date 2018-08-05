@@ -15,8 +15,8 @@ public interface IResponseHandlerManager {
     HashMap<Integer, Class<? extends IResponseHandler>> handlers = new HashMap<>(10);
     /**
      * 获取handler
-     * @param messageId
-     * @return
+     * @param messageId 消息id
+     * @return 返回处理类
      */
     default IResponseHandler getHandler(int messageId) {
         Class<? extends IResponseHandler> clazz = handlers.get(messageId);
@@ -32,8 +32,8 @@ public interface IResponseHandlerManager {
 
     /**
      * 注册
-     * @param messageId
-     * @param handler
+     * @param messageId 消息id
+     * @param handler  消息响应类
      */
     default boolean register(int messageId, Class<? extends IResponseHandler> handler)
     {

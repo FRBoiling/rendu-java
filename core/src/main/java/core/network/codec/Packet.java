@@ -1,6 +1,5 @@
 package core.network.codec;
 
-import io.netty.buffer.ByteBuf;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;

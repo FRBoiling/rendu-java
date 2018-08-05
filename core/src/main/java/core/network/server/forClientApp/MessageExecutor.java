@@ -4,7 +4,6 @@ import core.base.serviceframe.IService;
 import core.network.INetworkConsumer;
 import core.network.INetworkEventListener;
 import core.network.codec.Packet;
-import core.network.server.ServerNetworkService;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -24,8 +23,8 @@ public class MessageExecutor extends SimpleChannelInboundHandler<Packet> {
     private INetworkEventListener listener;
     private NetworkService service;
 
-    public MessageExecutor(IService service) {
-        this.service = (NetworkService)service;
+    MessageExecutor(IService service) {
+        this.service = (NetworkService) service;
         this.consumer = this.service.getBuilder().getConsumer();
         this.listener = this.service.getBuilder().getListener();
     }

@@ -3,14 +3,12 @@ package core.network.client;
 import core.base.common.AbstractSession;
 import core.base.common.AttributeUtil;
 import core.base.common.SessionKey;
-import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import lombok.extern.slf4j.Slf4j;
-import protocol.gate.global.G2GM;
 
 /**
  * Created with IntelliJ IDEA.

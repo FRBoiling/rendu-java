@@ -36,12 +36,12 @@ public class NetworkListener implements INetworkEventListener {
                 session.OnConnected();
                 sessionMng.addSession(session);
                 AttributeUtil.set(channel, SessionKey.SESSION, session);
-                log.info("建立新的连接：" + channel.toString());
+                log.info("建立新的连接：{}" ,channel.toString());
             }catch (Exception e){
-                log.error(e.toString());
+                log.error(" onConnected error ：{} ",e.toString());
             }
         } else {
-            log.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
+            log.error("新连接建立时已存在Session，注意排查原因 {}" , channel.toString());
         }
     }
 

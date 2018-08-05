@@ -22,7 +22,23 @@ public class ServerIdleStateTrigger extends ChannelInboundHandlerAdapter {
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
         if (evt instanceof IdleStateEvent) {
             IdleState state = ((IdleStateEvent) evt).state();
-            if (state == IdleState.READER_IDLE) {
+            String eventType = null;
+            switch (state) {
+                case READER_IDLE:
+                    eventType = "读空闲";
+                    break;
+                case WRITER_IDLE:
+                    eventType = "写空闲";
+                    break;
+                case ALL_IDLE:
+                    eventType = "读写空闲";
+                    break;
+            }
+
+            log.warn(ctx.channel().remoteAddress() + "超时事件:" + eventType);
+//            ctx.channel().close();
+           if (state == IdleState.READER_IDLE) {
+               //TODO:Boiling 读空闲操作
                 log.error("occor exception");
                 throw new Exception("NO SIGNAL");
             }

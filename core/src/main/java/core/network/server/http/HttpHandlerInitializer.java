@@ -19,12 +19,12 @@ import java.util.concurrent.TimeUnit;
  * Copyright © 2018 四月
  * Boil blood. All rights reserved.
  *
- * @Prject: ServerCluster-Java
- * @Package: core.network.server
- * @Description: ${todo}
- * @author: Boiling
- * @date: 2018/4/22 0022 15:28
- * @version: V1.0
+ * Project: ServerCluster-Java
+ * Package: core.network.server
+ * Description: ${todo}
+ * author: Boiling
+ * date: 2018/4/22 0022 15:28
+ * version: V1.0
  */
 
 @Slf4j

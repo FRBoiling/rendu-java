@@ -16,12 +16,12 @@ import java.util.concurrent.TimeUnit;
  * Copyright © 2018 四月
  * Boil blood. All rights reserved.
  *
- * @Prject: ServerCluster-Java
- * @Package: core.network.server
- * @Description: ${todo}
- * @author: Boiling
- * @date: 2018/4/22 0022 15:28
- * @version: V1.0
+ * Project: ServerCluster-Java
+ * Package: core.network.server
+ * Description: ${todo}
+ * author: Boiling
+ * date: 2018/4/22 0022 15:28
+ * version: V1.0
  */
 
 @Slf4j
@@ -36,7 +36,7 @@ public class ServerSocketChannelInitializer extends ChannelInitializer<SocketCha
     //
     private ServerMessageExecutor messageExecutor;
     //
-    ChannelHandler[] handlers;
+    private ChannelHandler[] handlers;
 
 //    //Ack的编码器
 //    private final AcknowledgeEncoder ackEncoder = new AcknowledgeEncoder();

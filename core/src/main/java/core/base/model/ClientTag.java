@@ -24,7 +24,6 @@ public class ClientTag implements ISessionTag {
         accountName = "";
         token =0;
         strTag="";
-        return;
     }
 
     @Override

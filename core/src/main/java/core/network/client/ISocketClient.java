@@ -1,7 +1,5 @@
 package core.network.client;
 
-import io.netty.channel.Channel;
-
 /**
  * Created with IntelliJ IDEA.
  * Description:

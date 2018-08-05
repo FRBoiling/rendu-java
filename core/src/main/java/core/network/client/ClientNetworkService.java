@@ -27,12 +27,12 @@ import static java.util.concurrent.TimeUnit.SECONDS;
  * Copyright © 2018 四月
  * Boil blood. All rights reserved.
  *
- * @Prject: ServerCluster-Java
- * @Package: core.network.client
- * @Description: ${todo}
- * @author: Boiling
- * @date: 2018/4/22 0022 13:00
- * @version: V1.0
+ * Project: ServerCluster-Java
+ * Package: core.network.client
+ * Description: ${todo}
+ * author: Boiling
+ * date: 2018/4/22 0022 13:00
+ * version: V1.0
  */
 
 @Slf4j
@@ -70,11 +70,11 @@ public class ClientNetworkService implements IService ,ISocketClient {
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
     }
 
-    protected EventLoopGroup initEventLoopGroup(int threadCount, ThreadFactory workerFactory) {
+    private EventLoopGroup initEventLoopGroup(int threadCount, ThreadFactory workerFactory) {
         return NativeSupport.isSupportNativeET() ? new EpollEventLoopGroup(threadCount, workerFactory) : new NioEventLoopGroup(threadCount, workerFactory);
     }
 
-    public void InitOption1() {
+    private void InitOption1() {
         bootstrap.option(ChannelOption.TCP_NODELAY, true);
         bootstrap.option(ChannelOption.SO_RCVBUF, 128 * 1024);
         bootstrap.option(ChannelOption.SO_SNDBUF, 128 * 1024);
