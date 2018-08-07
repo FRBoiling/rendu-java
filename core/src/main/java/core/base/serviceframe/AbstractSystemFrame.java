@@ -79,7 +79,6 @@ public abstract class AbstractSystemFrame implements IService, ISystemFrame {
             }
         }
     }
-
     @Override
     public ServiceState getState() {
         return state;

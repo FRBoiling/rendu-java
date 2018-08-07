@@ -22,6 +22,8 @@ public class GlobalConnector extends AbstractClient {
         responseMng = new GlobalServerResponseMng();
         sessionMng = GlobalServerSessionMng.getInstance();
 
+        setName(getClass().getSimpleName());
+
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
         Data  globalData =dateList.getData("Global");
         ip = globalData.getString("ip");

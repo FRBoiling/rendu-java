@@ -1,6 +1,7 @@
 package gate.client;
 
 import core.network.IResponseHandlerManager;
+import gate.client.response.ResponseReconnectLogin;
 import gate.client.response.ResponseUserLogin;
 import lombok.extern.slf4j.Slf4j;
 import protocol.client.c2g.C2G;
@@ -23,5 +24,6 @@ public class ClientResponseMng implements IResponseHandlerManager {
     @Override
     public void register() {
         register(Id.getInst().getMessageId(C2G.MSG_CG_USER_LOGIN.class), ResponseUserLogin.class);
+        register(Id.getInst().getMessageId(C2G.MSG_CG_RECONNECT_LOGIN.class), ResponseReconnectLogin.class);
     }
 }

@@ -136,6 +136,7 @@ public class ConnectManager implements IConnectManager {
         ManagerConnector managerConnector = managerConnectorHashMap.get(tag);
         if (managerConnector == null) {
             managerConnector = createManagerConnector();
+            managerConnector.init(null);
             managerConnectorHashMap.put(tag, managerConnector);
         }
         if (managerConnector.isOpened()) {
@@ -150,6 +151,7 @@ public class ConnectManager implements IConnectManager {
         ZoneConnector zoneConnector = zoneConnectorHashMap.get(tag);
         if (zoneConnector == null) {
             zoneConnector = createZoneConnector();
+            zoneConnector.init(null);
             zoneConnectorHashMap.put(tag, zoneConnector);
         }
         if (zoneConnector.isOpened()) {

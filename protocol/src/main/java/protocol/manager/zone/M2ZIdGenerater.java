@@ -8,6 +8,7 @@ package protocol.manager.zone;
 import protocol.msgId.Id;
 public class M2ZIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT.class, 0x340001);
+          Id.getInst().SetMessage(M2Z.MSG_M2Z_HEARTBEAT.class, 0x340001);
+          Id.getInst().SetMessage(M2Z.MSG_M2Z_REPEAT_LOGIN.class, 0x340002);
      }
 }

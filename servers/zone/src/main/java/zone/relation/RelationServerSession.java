@@ -6,6 +6,7 @@ import core.base.model.ServerType;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
 import protocol.zone.global.Z2GM;
+import protocol.zone.relation.Z2R;
 import zone.Context;
 
 /**
@@ -35,7 +36,7 @@ public class RelationServerSession extends AbstractSession {
 
     @Override
     public void sendHeartBeat() {
-        Z2GM.MSG_Z2GM_HEARTBEAT.Builder builder = Z2GM.MSG_Z2GM_HEARTBEAT.newBuilder();
+        Z2R.MSG_Z2R_HEARTBEAT.Builder builder = Z2R.MSG_Z2R_HEARTBEAT.newBuilder();
         sendMessage(builder.build());
     }
 }

@@ -3,7 +3,8 @@ package core.network.client;
 import core.base.serviceframe.IService;
 import core.network.*;
 import core.network.INetworkEventListener;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,8 +13,11 @@ import lombok.Data;
  * Date: 2018-04-24
  * Time: 10:03
  */
-@Data
+@Getter
+@Setter
 public class ClientNetworkServiceBuilder implements INetworkServiceBuilder,ISocketClient {
+
+    private String name;
     /**
      * 工作线程池线程数量
      */

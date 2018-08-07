@@ -18,5 +18,6 @@ public class ZoneConnector extends AbstractClient {
         IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
         responseMng = new ZoneServerResponseMng();
         sessionMng = ZoneServerSessionMng.getInstance();
+        setName(getClass().getSimpleName());
     }
 }

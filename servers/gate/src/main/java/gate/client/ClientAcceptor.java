@@ -13,6 +13,7 @@ import core.network.ServiceState;
 import core.network.server.forClientApp.NetworkService;
 import core.network.server.forClientApp.NetworkServiceBuilder;
 import gate.Context;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,7 +22,7 @@ import gate.Context;
  * Date: 2018-05-30
  * Time: 9:47
  */
-
+@Slf4j
 public class ClientAcceptor implements IService {
     private final NetworkServiceBuilder builder;
 
@@ -51,6 +52,7 @@ public class ClientAcceptor implements IService {
         Data serviceData =dateList.getData(Context.tag.toString());
         int listenPort = serviceData.getInteger("port");
 
+        builder.setName(getClass().getSimpleName());
         builder.setPort(listenPort);
         builder.setAcceptorGroupCount(acceptorGroupCount);
         builder.setIOGroupCount(IOGroupCount);

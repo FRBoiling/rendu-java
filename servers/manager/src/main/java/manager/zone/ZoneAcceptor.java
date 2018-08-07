@@ -23,6 +23,8 @@ public class ZoneAcceptor extends AbstractServer {
         responseMng = new ZoneServerResponseMng();
         sessionMng = ZoneServerSessionMng.getInstance();
 
+        setName(getClass().getSimpleName());
+
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
         Data serviceData =dateList.getData(Context.tag.toString());
         listenPort = serviceData.getInteger("zonePort");

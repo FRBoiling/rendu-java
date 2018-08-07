@@ -23,6 +23,8 @@ public class GateAcceptor extends AbstractServer {
         responseMng = new GateServerResponseMng();
         sessionMng = GateServerSessionMng.getInstance();
 
+        setName(getClass().getSimpleName());
+
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
         Data serviceData =dateList.getData("Global");
         listenPort = serviceData.getInteger("gatePort");

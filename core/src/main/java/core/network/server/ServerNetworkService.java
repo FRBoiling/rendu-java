@@ -50,11 +50,9 @@ public class ServerNetworkService implements IService, ISocketServer {
 
         port = builder.getPort();
 
-//        acceptorGroup = new NioEventLoopGroup(acceptorGroupCount);
-//        IOGroup = new NioEventLoopGroup(ioGroupCount);
+        ThreadFactory accepterFactory = new DefaultThreadFactory(builder.getName()+".acceptor");
+        ThreadFactory IOFactory = new DefaultThreadFactory(builder.getName()+".io");
 
-        ThreadFactory accepterFactory = new DefaultThreadFactory("netty.acceptor.acceptor");
-        ThreadFactory IOFactory = new DefaultThreadFactory("netty.acceptor.io");
         acceptorGroup = initEventLoopGroup(acceptorGroupCount, accepterFactory);
         IOGroup = initEventLoopGroup(IOGroupCount, IOFactory);
 

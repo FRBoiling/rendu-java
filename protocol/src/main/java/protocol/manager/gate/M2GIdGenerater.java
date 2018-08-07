@@ -8,7 +8,7 @@ package protocol.manager.gate;
 import protocol.msgId.Id;
 public class M2GIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT.class, 0x310001);
-          Id.getInst().SetMessage(protocol.manager.gate.M2G.MSG_M2G_MAX_UID.class, 0x310002);
+          Id.getInst().SetMessage(M2G.MSG_M2G_HEARTBEAT.class, 0x310001);
+          Id.getInst().SetMessage(M2G.MSG_M2G_MAX_UID.class, 0x310002);
      }
 }

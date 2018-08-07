@@ -16,19 +16,19 @@ import java.util.Objects;
 @Getter
 public class ClientTag implements ISessionTag {
     private String accountName;
-    private int token;
+    private String channelName;
 
     private String strTag;
 
     public ClientTag() {
         accountName = "";
-        token =0;
+        channelName ="";
         strTag="";
     }
 
     @Override
     public int hashCode(){
-        return this.accountName.hashCode();
+        return Objects.hash(this.accountName,this.channelName);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ClientTag implements ISessionTag {
         if (obj instanceof ClientTag) {
             ClientTag t = (ClientTag) obj;
             return t.accountName.equals( this.accountName) &&
-                    t.token == this.token;
+                    t.channelName.equals(this.channelName);
         } else {
             return false;
         }
@@ -53,18 +53,18 @@ public class ClientTag implements ISessionTag {
     @Override
     public void initTag(Object[] params) {
         this.accountName = (String) params[0];
-        this.token = (int) params[1];
+        this.channelName = (String) params[1];
 
         this.strTag = this.strTag+ "_" + this.accountName;
-        this.strTag = this.strTag+ "_" + this.token;
+        this.strTag = this.strTag+ "_" + this.channelName;
     }
 
-    public void setTag(String accountName,int token) {
+    public void setTag(String accountName,String token) {
         this.accountName = accountName;
-        this.token = token;
+        this.channelName = token;
 
         this.strTag = this.strTag+ "_" + this.accountName;
-        this.strTag = this.strTag+ "_" + this.token;
+        this.strTag = this.strTag+ "_" + this.channelName;
     }
 
 

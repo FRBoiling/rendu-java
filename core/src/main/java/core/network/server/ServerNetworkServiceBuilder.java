@@ -17,6 +17,9 @@ import lombok.Data;
  */
 @Data
 public class ServerNetworkServiceBuilder implements INetworkServiceBuilder,ISocketServer {
+
+    private String name;
+
     /**
      * 网络线程池线程数量
      */

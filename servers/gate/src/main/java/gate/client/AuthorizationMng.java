@@ -22,9 +22,9 @@ public class AuthorizationMng {
         return INSTANCE;
     }
 
-    boolean checkToken = true;
-    boolean checkVersion = true;
-    boolean whiteOnly = false;
+    private boolean checkToken = true;
+    private boolean checkVersion = true;
+    private boolean whiteOnly = false;
 
     /**
      * 加载配置数据
@@ -41,9 +41,9 @@ public class AuthorizationMng {
     /**
      * 授权列表
      */
-    HashMap<String ,Integer> authorizedList = new HashMap<>();
+    HashMap<String ,String> authorizedList = new HashMap<>();
 
-    public void authorize(String accountName, int token){
+    public void authorize(String accountName, String token){
         authorizedList.put(accountName,token);
     }
 
@@ -52,13 +52,13 @@ public class AuthorizationMng {
      * @param accountName
      * @return
      */
-    private Integer getToken(String accountName){
+    private String getToken(String accountName){
         return authorizedList.get(accountName);
     }
 
-    public boolean checkToken(String accountName,int token) {
+    public boolean checkToken(String accountName,String token) {
         if (checkToken){
-            if (token == getToken(accountName)){
+            if (token.equals( getToken(accountName))){
                 return true;
             }
             else {

@@ -33,6 +33,11 @@ public class ZoneServerSessionMng extends AbstractSessionManager {
     }
 
     @Override
+    public void updateLogic(long dt) {
+
+    }
+
+    @Override
     public AbstractSession createSession(Channel channel) {
         return new ZoneServerSession(channel);
     }

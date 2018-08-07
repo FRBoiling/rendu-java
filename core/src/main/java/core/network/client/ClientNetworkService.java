@@ -53,7 +53,7 @@ public class ClientNetworkService implements IService ,ISocketClient {
 
 //      IOGroup = new NioEventLoopGroup(IOLoopGroupCount);
 
-        ThreadFactory IOFactory = new DefaultThreadFactory("client.connector.io");
+        ThreadFactory IOFactory = new DefaultThreadFactory(builder.getName()+".io");
         IOGroup = initEventLoopGroup(IOLoopGroupCount,IOFactory);
         channelInitializer = new ClientSocketChannelInitializer(builder.getConsumer(),builder.getListener());
 

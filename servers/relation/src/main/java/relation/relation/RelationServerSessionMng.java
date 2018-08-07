@@ -30,6 +30,11 @@ public class RelationServerSessionMng extends AbstractSessionManager {
     }
 
     @Override
+    public void updateLogic(long dt) {
+
+    }
+
+    @Override
     public AbstractSession createSession(Channel channel) {
         return new RelationServerSession(channel);
     }

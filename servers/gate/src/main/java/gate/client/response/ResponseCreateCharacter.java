@@ -24,12 +24,12 @@ public class ResponseCreateCharacter implements IResponseHandler {
         MSG_CG_CREATE_CHARACTER msg = MSG_CG_CREATE_CHARACTER.parseFrom(packet.getMsg());
         name = msg.getName().trim();
         if (clientSession.reqCreateMsg != null) {
-            log.warn("account {} request create char {} sex {} head {} systemFashion {} fail:repeat to create",
-                    clientSession.getTag().toString(), msg.getName(), msg.getSex(), msg.getSystemFashionId());
+            log.warn("account {} request create char {} sex {} head {} fail:repeat to create",
+                    clientSession.getTag().toString(), msg.getName(), msg.getSex());
         }
 
-        log.info("account {} request create char {} sex {} head {} systemFashion {}",
-                clientSession.toString(), msg.getName(), msg.getSex(), msg.getSystemFashionId());
+        log.info("account {} request create char {} sex {} head {} ",
+                clientSession.toString(), msg.getName(), msg.getSex());
 
         //获取最大uid
         G2M.MSG_G2M_MAX_UID.Builder request = G2M.MSG_G2M_MAX_UID.newBuilder();

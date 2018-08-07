@@ -12,7 +12,10 @@ import lombok.Getter;
 @Getter
 public enum ErrorCode {
     SUCCESS(0),
-    FAIL(1);
+    FAIL(1),
+    ServerNotOpen(2),
+    BadToken(3);
+
     private int value;
     private ErrorCode(int value){
         this.value=value;

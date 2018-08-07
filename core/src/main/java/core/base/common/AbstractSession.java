@@ -49,7 +49,7 @@ public abstract class AbstractSession {
     public boolean equals(Object obj) {
         if (obj instanceof AbstractSession) {
             AbstractSession p = (AbstractSession) obj;
-            return this.tag.equals(p.tag);
+            return p.tag.equals(this.tag)&&p.getChannel().equals(this.channel) ;
         } else {
             return false;
         }
@@ -68,6 +68,7 @@ public abstract class AbstractSession {
 
     public void OnConnected()
     {
+        log.info("建立新的连接：{}" ,channel.toString());
 //        log.info("{}",channel.remoteAddress());
     }
 
@@ -75,10 +76,10 @@ public abstract class AbstractSession {
     {
         offline = true;
         if (isRegistered) {
-            log.info("{} disconnect ",getTag().toString());
+            log.info("{} disconnect :{}",getTag().toString(),channel.toString());
         } else {
             //下线
-            log.error("[没有找到会话注册信息]");
+            log.error("[没有找到会话注册信息]:{} disconnect",channel.toString());
         }
     }
 

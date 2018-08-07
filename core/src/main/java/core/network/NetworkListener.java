@@ -34,9 +34,8 @@ public class NetworkListener implements INetworkEventListener {
                 session = sessionMng.createSession(channel);
                 session.setResponseMng(responseMng);
                 session.OnConnected();
-                sessionMng.addSession(session);
+                sessionMng.putSession(session);
                 AttributeUtil.set(channel, SessionKey.SESSION, session);
-                log.info("建立新的连接：{}" ,channel.toString());
             }catch (Exception e){
                 log.error(" onConnected error ：{} ",e.toString());
             }
@@ -56,8 +55,7 @@ public class NetworkListener implements INetworkEventListener {
             //下线
             log.error("[没有找到有效会话]");
         }else {
-            session.OnDisConnected();
-            sessionMng.unregister(session);
+            sessionMng.removeSession(session);
         }
     }
 

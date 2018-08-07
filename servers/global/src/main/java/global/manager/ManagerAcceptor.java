@@ -23,6 +23,8 @@ public class ManagerAcceptor extends AbstractServer {
         responseMng = new ManagerServerResponseMng();
         sessionMng = ManagerServerSessionMng.getInstance();
 
+        setName(getClass().getSimpleName());
+
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
         Data serviceData =dateList.getData("Global");
         listenPort = serviceData.getInteger("managerPort");

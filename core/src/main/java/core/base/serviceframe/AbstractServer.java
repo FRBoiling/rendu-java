@@ -37,6 +37,10 @@ public abstract class AbstractServer implements IService{
         init(null);
     }
 
+    public void setName(String name){
+        builder.setName(name);
+    }
+
     public void bind(int port){
         this.listenPort = port;
         builder.setPort(port);

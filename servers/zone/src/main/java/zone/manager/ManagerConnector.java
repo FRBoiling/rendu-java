@@ -18,5 +18,8 @@ public class ManagerConnector extends AbstractClient {
         IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
         responseMng = new ManagerServerResponseMng();
         sessionMng = ManagerServerSessionMng.getInstance();
+
+        setName(getClass().getSimpleName());
+
     }
 }

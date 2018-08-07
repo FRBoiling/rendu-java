@@ -21,6 +21,7 @@ public class GlobalConnector extends AbstractClient {
         IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
         responseMng = new GlobalServerResponseMng();
         sessionMng = GlobalServerSessionMng.getInstance();
+        setName(getClass().getSimpleName());
 
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
         Data  globalData =dateList.getData("Global");

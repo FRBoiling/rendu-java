@@ -18,5 +18,8 @@ public class RelationConnector extends AbstractClient {
         IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
         responseMng = new RelationServerResponseMng();
         sessionMng = RelationServerSessionMng.getInstance();
+
+        setName(getClass().getSimpleName());
+
     }
 }

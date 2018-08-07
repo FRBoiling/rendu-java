@@ -23,6 +23,8 @@ public class RelationAcceptor extends AbstractServer {
         responseMng = new RelationServerResponseMng();
         sessionMng = RelationServerSessionMng.getInstance();
 
+        setName(getClass().getSimpleName());
+
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
         Data serviceData =dateList.getData(Context.tag.toString());
         listenPort = serviceData.getInteger("relationPort");

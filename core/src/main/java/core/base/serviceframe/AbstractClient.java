@@ -35,6 +35,10 @@ public abstract class AbstractClient implements IService {
         state = ServiceState.STOPPED;
     }
 
+    public void setName(String name){
+        builder.setName(name);
+    }
+
     public void connect(String ip,int port){
         this.ip = ip;
         this.port = port;
