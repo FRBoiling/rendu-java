@@ -6,7 +6,31 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f6fefc0-f06f-4c72-9459-fc5815b54bcd" name="Default" comment="" />
+    <list default="true" id="7f6fefc0-f06f-4c72-9459-fc5815b54bcd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/NetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/NetworkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/gate/src/main/java/gate/global/GlobalServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/gate/src/main/java/gate/global/GlobalServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/ManagerServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/ManagerServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/gate/src/main/java/gate/zone/ZoneServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/gate/src/main/java/gate/zone/ZoneServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/global/src/main/java/global/gate/GateServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/global/src/main/java/global/gate/GateServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/global/src/main/java/global/manager/ManagerServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/global/src/main/java/global/manager/ManagerServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/global/src/main/java/global/relation/RelationServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/global/src/main/java/global/relation/RelationServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/global/src/main/java/global/zone/ZoneServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/global/src/main/java/global/zone/ZoneServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/manager/src/main/java/manager/gate/GateServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/manager/src/main/java/manager/gate/GateServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/manager/src/main/java/manager/global/GlobalServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/manager/src/main/java/manager/global/GlobalServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/manager/src/main/java/manager/manager/ManagerServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/manager/src/main/java/manager/manager/ManagerServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/manager/src/main/java/manager/relation/RelationServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/manager/src/main/java/manager/relation/RelationServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/manager/src/main/java/manager/zone/ZoneServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/manager/src/main/java/manager/zone/ZoneServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/relation/src/main/java/relation/global/GlobalServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/relation/src/main/java/relation/global/GlobalServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/relation/src/main/java/relation/manager/ManagerServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/relation/src/main/java/relation/manager/ManagerServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/relation/src/main/java/relation/relation/RelationServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/relation/src/main/java/relation/relation/RelationServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/relation/src/main/java/relation/zone/ZoneServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/relation/src/main/java/relation/zone/ZoneServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/zone/src/main/java/zone/gate/GateServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/zone/src/main/java/zone/gate/GateServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/zone/src/main/java/zone/global/GlobalServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/zone/src/main/java/zone/global/GlobalServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/zone/src/main/java/zone/manager/ManagerServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/zone/src/main/java/zone/manager/ManagerServerSessionMng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/zone/src/main/java/zone/relation/RelationServerSessionMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/zone/src/main/java/zone/relation/RelationServerSessionMng.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/common/target/" />
     <ignored path="$PROJECT_DIR$/RedisUtil/target/" />
@@ -26,18 +50,17 @@
     <ignored path="$PROJECT_DIR$/common/util/target/" />
     <ignored path="$PROJECT_DIR$/servers/realm/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ServerCluster_Java$GlobalService.ic" NAME="GlobalService Coverage Results" MODIFIED="1533401451804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>global.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/ServerCluster_Java$BarrackService.ic" NAME="BarrackService Coverage Results" MODIFIED="1533399765831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>barrack.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ServerCluster_Java$GlobalService.ic" NAME="GlobalService Coverage Results" MODIFIED="1533401451804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>global.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ServerCluster_Java$GateService.ic" NAME="GateService Coverage Results" MODIFIED="1533555750139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>gate.*</FILTER>
@@ -61,38 +84,39 @@
     <session id="1303216949">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="6" />
+          <entry key="class" value="2" />
+          <entry key="java" value="31" />
           <entry key="xml" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="6" />
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="31" />
           <entry key="XML" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="20" />
+          <entry key="java" value="30" />
           <entry key="txt" value="13" />
           <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="20" />
+          <entry key="JAVA" value="30" />
           <entry key="PLAIN_TEXT" value="13" />
           <entry key="XML" value="9" />
         </counts>
@@ -100,7 +124,35 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final.jar!/io/netty/channel/AbstractChannel.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="256" selection-start-line="256" selection-end-line="256" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/NetworkService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="62" column="16" lean-forward="true" selection-start-line="60" selection-start-column="7" selection-end-line="64" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -153,33 +205,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/ManagerServerResponseMng.java" />
         <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/global/GlobalServerResponseMng.java" />
         <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientResponseMng.java" />
-        <option value="$PROJECT_DIR$/servers/zone/src/main/java/zone/relation/RelationServerSessionMng.java" />
         <option value="$PROJECT_DIR$/servers/zone/src/main/java/zone/relation/RelationServerSession.java" />
-        <option value="$PROJECT_DIR$/servers/zone/src/main/java/zone/manager/ManagerServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/zone/src/main/java/zone/global/GlobalServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/zone/src/main/java/zone/gate/GateServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/relation/src/main/java/relation/zone/ZoneServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/relation/src/main/java/relation/relation/RelationServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/relation/src/main/java/relation/manager/ManagerServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/relation/src/main/java/relation/global/GlobalServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/zone/ZoneServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/relation/RelationServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/manager/ManagerServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/global/GlobalServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/gate/GateServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/global/src/main/java/global/zone/ZoneServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/global/src/main/java/global/relation/RelationServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/global/src/main/java/global/manager/ManagerServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/global/src/main/java/global/gate/GateServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/zone/ZoneServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/ManagerServerSessionMng.java" />
-        <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/global/GlobalServerSessionMng.java" />
         <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientSessionMng.java" />
         <option value="$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalServerResponseMng.java" />
-        <option value="$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalServerSessionMng.java" />
         <option value="$PROJECT_DIR$/servers/global/src/main/java/global/zone/ZoneAcceptor.java" />
         <option value="$PROJECT_DIR$/servers/global/src/main/java/global/relation/RelationAcceptor.java" />
         <option value="$PROJECT_DIR$/servers/global/src/main/java/global/gate/GateAcceptor.java" />
@@ -204,6 +234,28 @@
         <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/zone/ZoneConnector.java" />
         <option value="$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalServer.java" />
         <option value="$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalConnector.java" />
+        <option value="$PROJECT_DIR$/servers/global/src/main/java/global/relation/RelationServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/global/src/main/java/global/manager/ManagerServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/global/src/main/java/global/gate/GateServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/global/src/main/java/global/zone/ZoneServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/zone/src/main/java/zone/relation/RelationServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/zone/src/main/java/zone/gate/GateServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/zone/src/main/java/zone/global/GlobalServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/zone/src/main/java/zone/manager/ManagerServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/relation/src/main/java/relation/global/GlobalServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/relation/src/main/java/relation/relation/RelationServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/relation/src/main/java/relation/manager/ManagerServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/relation/src/main/java/relation/zone/ZoneServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/global/GlobalServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/gate/GateServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/relation/RelationServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/manager/ManagerServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/zone/ZoneServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/ManagerServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/zone/ZoneServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/global/GlobalServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalServerSessionMng.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/NetworkService.java" />
       </list>
     </option>
   </component>
@@ -246,6 +298,79 @@
               <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+              <item name="acceptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+              <item name="acceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="forClientApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
+              <item name="servers" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -273,116 +398,6 @@
       <recent name="D:\ProjectA\ServerCluster-Java\protocol\src\main\java\protocol" />
     </key>
   </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="svn" revision="23626">D:\ProjectA\ServerCluster-Java\servers\manager\src\main\java\manager\gate\response\ResponseMaxUid.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
-  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -395,7 +410,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GateService">
+  <component name="RunManager" selected="Application.GlobalService">
     <configuration name="BarrackService" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="barrack.BarrackService" />
       <module name="barrack" />
@@ -406,6 +421,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="GateService" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gate.GateService" />
@@ -418,6 +436,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="GlobalService" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="global.GlobalService" />
@@ -429,6 +450,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ManagerService" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="manager.ManagerService" />
@@ -441,6 +465,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="RelationService" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="relation.RelationService" />
@@ -453,6 +480,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ZoneService" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zone.ZoneService" />
@@ -465,6 +495,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="AppTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="constant" />
@@ -474,20 +507,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="common" />
       <option name="MAIN_CLASS_NAME" value="common.AppTest" />
       <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ErrorCodeTest.testGetValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="constant" />
@@ -497,20 +525,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="constant" />
       <option name="MAIN_CLASS_NAME" value="constant.ErrorCodeTest" />
       <option name="METHOD_NAME" value="testGetValue" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="GlobalServiceTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gate" />
@@ -520,20 +543,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="gate" />
       <option name="MAIN_CLASS_NAME" value="gate.GlobalServiceTest" />
       <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Application.BarrackService" />
@@ -664,6 +682,7 @@
       <workItem from="1533518843277" duration="670000" />
       <workItem from="1533525174094" duration="41000" />
       <workItem from="1533525244092" duration="43524000" />
+      <workItem from="1533826949068" duration="1059000" />
     </task>
     <task id="LOCAL-00001" summary="清理项目文件">
       <created>1533389310056</created>
@@ -806,7 +825,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109304000" />
+    <option name="totallyTimeSpent" value="111010000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -818,74 +837,70 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-8" width="1873" height="1096" extended-state="6" />
+    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <layout>
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5002767" side_tool="true" weight="0.32972974" />
-      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32960895" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="SVN Properties" weight="0.32953367" />
-      <window_info id="Capture Tool" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49827588" visible="true" weight="0.32322428" />
       <window_info id="Designer" order="1" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32960895" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.23316061" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3284974" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5611746" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49880287" weight="0.32952693" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4997233" weight="0.32953367" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5011971" side_tool="true" weight="0.32952693" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32626426" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32626426" />
+      <window_info anchor="bottom" id="SVN Properties" order="12" weight="0.32953367" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Structure" order="1" sideWeight="0.49948186" weight="0.13458356" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24980047" />
-      <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.26321244" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32953367" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3284974" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32746115" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3284974" />
-      <window_info anchor="right" id="Coverage" order="10" sideWeight="0.50051814" side_tool="true" weight="0.13458356" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4997233" weight="0.32953367" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49827588" visible="true" weight="0.24103695" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.23316061" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5002767" side_tool="true" weight="0.32972974" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32960895" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32960895" />
+      <window_info anchor="right" id="Coverage" order="10" sideWeight="0.50051814" side_tool="true" weight="0.13458356" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.24980047" />
-      <window_info id="Designer" order="1" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.3284974" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="10" sideWeight="0.50051814" side_tool="true" weight="0.13458356" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4997233" weight="0.32972974" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="SVN Properties" order="0" weight="0.32953367" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.32972974" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3284974" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32810867" />
-      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32960895" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49827588" visible="true" weight="0.24103695" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32960895" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="SVN Properties" order="0" weight="0.32953367" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Structure" order="1" sideWeight="0.49948186" visible="true" weight="0.13458356" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3284974" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.3284974" />
       <window_info active="true" anchor="bottom" id="Debug" order="4" visible="true" weight="0.39896372" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4997233" weight="0.32972974" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32810867" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3284974" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Structure" order="1" sideWeight="0.49948186" visible="true" weight="0.13458356" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24980047" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32960895" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32960895" />
+      <window_info anchor="right" id="Coverage" order="10" sideWeight="0.50051814" side_tool="true" weight="0.13458356" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -934,7 +949,6 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="72" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -942,230 +956,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientResponseMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
-          <folding>
-            <element signature="e#1437#1438#0" expanded="true" />
-            <element signature="e#1499#1500#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/relation/RelationServerSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/relation/RelationServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="32" column="65" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/manager/ManagerServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/global/GlobalServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/gate/GateServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/relation/src/main/java/relation/zone/ZoneServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/relation/src/main/java/relation/relation/RelationServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="27" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/relation/src/main/java/relation/manager/ManagerServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/relation/src/main/java/relation/global/GlobalServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/zone/ZoneServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/relation/RelationServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/manager/ManagerServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/global/GlobalServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/gate/GateServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/zone/ZoneServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/relation/RelationServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/manager/ManagerServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/gate/GateServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/zone/ZoneServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/ManagerServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/global/GlobalServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="20" selection-start-line="20" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalServerResponseMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalServerSessionMng.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/barrack/src/main/java/barrack/connectionManager/ConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/relation/RelationAcceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -1219,9 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="19" column="60" lean-forward="true" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1229,9 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1239,9 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1284,9 +1065,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="23" column="22" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1336,9 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1346,6 +1121,207 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="21" selection-start-line="21" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/relation/RelationServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5223#5224#0" expanded="true" />
+            <element signature="e#5289#5290#0" expanded="true" />
+            <element signature="e#5337#5338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/manager/ManagerServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/gate/GateServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/zone/ZoneServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/connectionManager/ResponseRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/relation/RelationServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/gate/GateServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/global/GlobalServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/manager/ManagerServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/zone/src/main/java/zone/connectionManager/ResponseConnectCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/relation/src/main/java/relation/global/GlobalServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/relation/src/main/java/relation/relation/RelationServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/relation/src/main/java/relation/manager/ManagerServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/relation/src/main/java/relation/zone/ZoneServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/global/GlobalServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/gate/GateServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/relation/RelationServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/manager/ManagerServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/manager/src/main/java/manager/zone/ZoneServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/ManagerServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/zone/ZoneServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/barrack/src/main/java/barrack/global/GlobalServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/global/GlobalServerSessionMng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final.jar!/io/netty/channel/AbstractChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="256" selection-start-line="256" selection-end-line="256" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="62" column="16" lean-forward="true" selection-start-line="60" selection-start-column="7" selection-end-line="64" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/NetworkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>

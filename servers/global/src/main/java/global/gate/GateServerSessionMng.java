@@ -29,11 +29,6 @@ public class GateServerSessionMng extends AbstractSessionManager {
     }
 
     @Override
-    public void updateLogic(long dt) {
-
-    }
-
-    @Override
     public AbstractSession createSession(Channel channel) {
         GateServerSession session = new GateServerSession(channel);
         session.setResponseMng(GateServerResponseMng.getInstance());

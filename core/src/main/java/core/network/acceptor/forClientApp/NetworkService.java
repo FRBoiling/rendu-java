@@ -12,6 +12,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.WriteBufferWaterMark;
 import io.netty.channel.epoll.EpollEventLoopGroup;
+import io.netty.channel.epoll.EpollServerSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.util.concurrent.DefaultThreadFactory;
@@ -58,7 +59,11 @@ public class NetworkService implements IService, ISocketAcceptor {
 
         bootstrap = new ServerBootstrap();
         bootstrap.group(acceptorGroup, IOGroup);
-        bootstrap.channel(NioServerSocketChannel.class);
+        if (NativeSupport.isSupportNativeET()) {
+            bootstrap.channel(EpollServerSocketChannel.class);
+        } else {
+            bootstrap.channel(NioServerSocketChannel.class);
+        }
         InitOption();
         bootstrap.childHandler(new HandlerInitializer(this));
     }

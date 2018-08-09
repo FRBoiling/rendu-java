@@ -29,11 +29,6 @@ public class ManagerServerSessionMng extends AbstractSessionManager {
     }
 
     @Override
-    public void updateLogic(long dt) {
-        //TODO:BOIL some service logic
-    }
-
-    @Override
     public AbstractSession createSession(Channel channel) {
         ManagerServerSession session = new ManagerServerSession(channel);
         session.setResponseMng(ManagerServerResponseMng.getInstance());
