@@ -1,7 +1,7 @@
 package gate.zone;
 
 import constant.SystemConst;
-import core.base.serviceframe.AbstractClient;
+import core.base.serviceframe.AbstractConnector;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -12,11 +12,13 @@ import lombok.extern.slf4j.Slf4j;
  * Time: 14:36
  */
 @Slf4j
-public class ZoneConnector extends AbstractClient {
+public class ZoneConnector extends AbstractConnector {
     @Override
     public void init(String[] args) {
         IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
-        responseMng = new ZoneServerResponseMng();
+
         sessionMng = ZoneServerSessionMng.getInstance();
+
+        setName(getClass().getSimpleName());
     }
 }

@@ -3,7 +3,6 @@ package barrack.connectionManager;
 import barrack.BarrackService;
 import barrack.global.GlobalServerSessionMng;
 import com.google.protobuf.InvalidProtocolBufferException;
-import constant.ErrorCode;
 import constant.RegisterResult;
 import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
@@ -43,7 +42,7 @@ public class ResponseRegisterReturn implements IResponseHandler{
                     registerResult = GlobalServerSessionMng.getInstance().register(session);
                     break;
                 case Zone:
-//                    registerResult = ClientServerSessionMng.getInstance().register(session);
+//                    registerResult = ClientServerSessionMng.getInstance().registerHandler(session);
                     break;
                 default:
                     break;
@@ -55,12 +54,12 @@ public class ResponseRegisterReturn implements IResponseHandler{
                 case REPEATED_REGISTER:
                 case FAIL:
                 default:
-                    log.error("SERIOUS ERROR: get register result from {} success ,but register here fail :{} ", tag.getStrTag(),registerResult.toString() );
+                    log.error("SERIOUS ERROR: get registerHandler result from {} success ,but registerHandler here fail :{} ", tag.getStrTag(),registerResult.toString() );
                     BarrackService.context.stop();
                     break;
             }
         }else {
-            log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+            log.error("SERIOUS ERROR: registerHandler result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
             switch (serverType) {
                 case Global:
                     BarrackService.context.stop();

@@ -39,9 +39,9 @@ public class PacketWriter extends MessageToByteEncoder<Packet> {
 //        ByteBuf msg = wrappedBuffer(packet.getMsg());
 
         out.ensureWritable(Short.BYTES +Integer.BYTES+Integer.BYTES+ msgLength);
-        out.writeShortLE(msgLength);
-        out.writeIntLE(playerId);
-        out.writeIntLE(msgId);
+        out.writeShort(msgLength);
+        out.writeInt(playerId);
+        out.writeInt(msgId);
         out.writeBytes(packet.getMsg());
 //        log.info("packet writer msgId {} msgLength {}",msgId,msgLength);
     }

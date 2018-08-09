@@ -14,23 +14,39 @@ import io.netty.channel.Channel;
 
 public class GlobalServerSessionMng extends AbstractSessionManager {
 
-    private static volatile GlobalServerSessionMng INSTANCE = new GlobalServerSessionMng();
-    private GlobalServerSessionMng(){
-    }
+//    private static volatile GlobalServerSessionMng INSTANCE = new GlobalServerSessionMng();
+//    private GlobalServerSessionMng(){
+//    }
+//
+//    public static GlobalServerSessionMng getInstance() {
+//        if (INSTANCE == null) {
+//            synchronized (GlobalServerSessionMng.class) {
+//                if (INSTANCE == null) {
+//                    INSTANCE = new GlobalServerSessionMng();
+//                }
+//            }
+//        }
+//        return INSTANCE;
+//    }
+
+    private static GlobalServerSessionMng INSTANCE = new GlobalServerSessionMng();
 
     public static GlobalServerSessionMng getInstance() {
-        if (INSTANCE == null) {
-            synchronized (GlobalServerSessionMng.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new GlobalServerSessionMng();
-                }
-            }
-        }
         return INSTANCE;
+    }
+
+    private GlobalServerSessionMng() {
     }
 
     @Override
     public AbstractSession createSession(Channel channel) {
-        return new GlobalServerSession(channel);
+        GlobalServerSession session = new GlobalServerSession(channel);
+        session.setResponseMng(GlobalServerResponseMng.getInstance());
+        return session;
     }
+
+    @Override
+    public void updateLogic(long dt) {
+    }
+
 }

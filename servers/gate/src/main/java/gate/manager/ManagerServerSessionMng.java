@@ -14,24 +14,25 @@ import io.netty.channel.Channel;
 
 public class ManagerServerSessionMng extends AbstractSessionManager {
 
-    private static volatile ManagerServerSessionMng INSTANCE = new ManagerServerSessionMng();
-    private ManagerServerSessionMng(){
-    }
+    private static ManagerServerSessionMng INSTANCE = new ManagerServerSessionMng();
 
     public static ManagerServerSessionMng getInstance() {
-        if (INSTANCE == null) {
-            synchronized (ManagerServerSessionMng.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new ManagerServerSessionMng();
-                }
-            }
-        }
         return INSTANCE;
+    }
+
+    private ManagerServerSessionMng() {
+    }
+
+    @Override
+    public void updateLogic(long dt) {
+
     }
 
     @Override
     public AbstractSession createSession(Channel channel) {
-        return new ManagerServerSession(channel);
+        ManagerServerSession session = new ManagerServerSession(channel);
+        session.setResponseMng(ManagerServerResponseMng.getInstance());
+        return session;
     }
 
 }

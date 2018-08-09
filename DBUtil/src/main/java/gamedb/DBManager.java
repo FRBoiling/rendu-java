@@ -49,9 +49,9 @@ public class DBManager {
     public long lasttime;
     long totaltime;
 
-    public void Wait(long timeSpan){
+    public void Wait(long millis){
         try {
-            Thread.sleep(timeSpan);
+            Thread.sleep(millis);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -62,15 +62,14 @@ public class DBManager {
         time.init();
         ConcurrentLinkedQueue<AbstractDBOperator> tempPostUpdateQueue=new ConcurrentLinkedQueue<>();
         while(true){
-            long timeSpan=time.update();
-            lasttime=timeSpan;
-            if(lasttime<=1){
+            lasttime =time.update();
+            if(lasttime <=1){
                 Wait(1L);
             }
             if(totaltime>10000L){
                 totaltime=0;
             }else{
-                totaltime+=lasttime;
+                totaltime+= lasttime;
             }
 
             try{
@@ -85,7 +84,7 @@ public class DBManager {
                 while(!executionQue.isEmpty()){
                     AbstractDBOperator query=executionQue.poll();
                     boolean success=query.execute();
-                    if(success==false){
+                    if(!success){
                         if(query.ErrorText!=null){
                             AddExceptionLog(query.ErrorText);
                         }

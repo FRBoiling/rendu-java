@@ -3,8 +3,8 @@ package global;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
-import core.base.serviceframe.AbstractSystemFrame;
-import global.connectionManager.ConnectManager;
+import core.base.serviceframe.AbstractServiceFrame;
+import global.connectionManager.ConnectionManager;
 import pathExt.PathManager;
 import protocol.gate.global.G2GMIdGenerater;
 import protocol.global.gate.GM2GIdGenerater;
@@ -29,8 +29,8 @@ import java.util.List;
  * Time: 11:04
  */
 
-public class Context extends AbstractSystemFrame {
-    public static  ConnectManager connectMng;
+public class Context extends AbstractServiceFrame {
+    public static ConnectionManager connectMng;
     @Override
     public void init(String[] args){
         super.init(args);
@@ -39,7 +39,7 @@ public class Context extends AbstractSystemFrame {
         tag = new ServerTag();
         tag.setTag(serverType,0,0);
 
-        connectMng = new ConnectManager();
+        connectMng = new ConnectionManager();
         initConnectManager(connectMng);
         initMainThread("GlobalDriverThread");
     }

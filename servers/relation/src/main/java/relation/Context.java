@@ -3,7 +3,7 @@ package relation;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
-import core.base.serviceframe.AbstractSystemFrame;
+import core.base.serviceframe.AbstractServiceFrame;
 import pathExt.PathManager;
 import protocol.global.relation.GM2RIdGenerater;
 import protocol.manager.relation.M2RIdGenerater;
@@ -13,7 +13,7 @@ import protocol.relation.relation.R2RIdGenerater;
 import protocol.relation.zone.R2ZIdGenerater;
 import protocol.server.register.ServerRegisterIdGenerater;
 import protocol.zone.relation.Z2RIdGenerater;
-import relation.connectionManager.ConnectManager;
+import relation.connectionManager.ConnectionManager;
 import util.FileUtil;
 
 import java.io.File;
@@ -28,8 +28,8 @@ import java.util.List;
  * Time: 14:59
  */
 
-public class Context extends AbstractSystemFrame {
-    public static ConnectManager connectManager;
+public class Context extends AbstractServiceFrame {
+    public static ConnectionManager connectManager;
 
     @Override
     public void init(String[] args) {
@@ -41,7 +41,7 @@ public class Context extends AbstractSystemFrame {
             Integer groupId = Integer.parseInt(args[0]);
             tag.setTag(serverType, groupId, 0);
         }
-        connectManager = new ConnectManager();
+        connectManager = new ConnectionManager();
         initConnectManager(connectManager);
         initMainThread("RelationDriverThread");
     }

@@ -24,13 +24,13 @@ public class ZoneServerSession extends AbstractSession {
         setTag(tag);
     }
 
-    public void OnConnected() {
-        super.OnConnected();
+    public void onConnected() {
+        super.onConnected();
         sendRegister(Context.tag);
     }
 
-    public void OnDisConnected() {
-        super.OnDisConnected();
+    public void onDisConnected() {
+        super.onDisConnected();
     }
 
     @Override

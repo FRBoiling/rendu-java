@@ -25,10 +25,10 @@ public class MessageDriver {
      * 队列最大数量
      */
     private int maxQueueSize;
-    /**
-     * 驱动名称
-     */
-    private String name;
+//    /**
+//     * 驱动名称
+//     */
+//    private String name="Default Driver";
 
     /**
      * 消息队列
@@ -38,39 +38,32 @@ public class MessageDriver {
 
     private IResponseHandlerManager responseMng;
 
-    public MessageDriver(int maxQueueSize, String name) {
-        this.name = name;
-        this.maxQueueSize = maxQueueSize;
-        this.tmpMsgQueue = new ConcurrentLinkedQueue<Packet>();
-        this.dealMsgQueue = new ArrayDeque<Packet>();
-    }
-
     public MessageDriver(int maxQueueSize) {
         this.maxQueueSize = maxQueueSize;
         this.tmpMsgQueue = new ConcurrentLinkedQueue<Packet>();
         this.dealMsgQueue = new ArrayDeque<Packet>();
     }
-
-    public void register(String name) {
-        this.name = name;
-    }
+//
+//    public void register(String name) {
+//        this.name = name;
+//    }
 
     public void setResponseMng(IResponseHandlerManager responseMng) {
         this.responseMng = responseMng;
     }
 
-    //    /**
-//     *  * 添加一个消息到队列中
-//     *
-//     * @param msgId
-//     * @param msg
-//     * @return
-//     */
+    /**
+     * 添加一个消息到队列中
+     *
+     * @param packet 消息包
+     * @return
+     */
     public boolean addMessage(Packet packet) {
-        boolean result = false;
-        result = tmpMsgQueue.offer(packet);
+//        log.debug("addMessage 0x{}",StringUtil.toHexString(packet.getMsgId()));
+        boolean result = tmpMsgQueue.offer(packet);
         if (!result) {
-            log.error("{}队列添加任务失败", name);
+//            log.error("{}队列添加任务失败", name);
+            log.error("msg {} 添加失败", packet.getMsgId());
         }
         return result;
     }
@@ -79,21 +72,23 @@ public class MessageDriver {
     public void update(AbstractSession session) {
         while (tmpMsgQueue.size() > 0) {
             Packet msg = tmpMsgQueue.poll();
+//            log.debug("update tmpMsgQueue 0x{}",StringUtil.toHexString(msg.getMsgId()));
             dealMsgQueue.offer(msg);
         }
         while (dealMsgQueue.size() > 0) {
             Packet msg = dealMsgQueue.poll();
-            if (msg==null){
+            if (msg == null) {
                 log.error("got an null msg packet");
                 return;
             }
+//            log.debug("update dealMsgQueue 0x{}",StringUtil.toHexString(msg.getMsgId()));
             IResponseHandler handler = responseMng.getHandler(msg.getMsgId());
             if (handler == null) {
                 log.error("got an no registered msg:" + StringUtil.toHexString(msg.getMsgId()));
                 return;
             }
             try {
-                handler.onResponse(msg,session);
+                handler.onResponse(msg, session);
             } catch (InvalidProtocolBufferException e) {
                 e.printStackTrace();
             }
@@ -104,5 +99,4 @@ public class MessageDriver {
 //    public IMessageQueue<IQueueDriverAction> getActions() {
 //        return queue;
 //    }
-
 }

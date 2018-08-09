@@ -10,9 +10,10 @@ import core.network.IResponseHandlerManager;
 import core.network.MsgRouter;
 import core.network.NetworkListener;
 import core.network.ServiceState;
-import core.network.server.forClientApp.NetworkService;
-import core.network.server.forClientApp.NetworkServiceBuilder;
+import core.network.acceptor.forClientApp.NetworkService;
+import core.network.acceptor.forClientApp.NetworkServiceBuilder;
 import gate.Context;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,7 +22,7 @@ import gate.Context;
  * Date: 2018-05-30
  * Time: 9:47
  */
-
+@Slf4j
 public class ClientAcceptor implements IService {
     private final NetworkServiceBuilder builder;
 
@@ -44,18 +45,18 @@ public class ClientAcceptor implements IService {
         acceptorGroupCount=1;
         IOGroupCount =SystemConst.AVAILABLE_PROCESSORS;
 
-        IResponseHandlerManager responseMng = new ClientResponseMng();
         AbstractSessionManager sessionMng = ClientSessionMng.getInstance();
 
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
         Data serviceData =dateList.getData(Context.tag.toString());
         int listenPort = serviceData.getInteger("port");
 
+        builder.setName(getClass().getSimpleName());
         builder.setPort(listenPort);
         builder.setAcceptorGroupCount(acceptorGroupCount);
         builder.setIOGroupCount(IOGroupCount);
         builder.setConsumer(new MsgRouter());
-        builder.setListener(new NetworkListener(sessionMng,responseMng));
+        builder.setListener(new NetworkListener(sessionMng));
         // 创建网络服务
         netWork = (NetworkService) builder.createService();
     }

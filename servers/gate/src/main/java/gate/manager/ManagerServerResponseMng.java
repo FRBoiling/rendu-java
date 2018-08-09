@@ -16,15 +16,21 @@ import protocol.server.register.ServerRegister;
  */
 
 public class ManagerServerResponseMng implements IResponseHandlerManager {
-    ManagerServerResponseMng() {
-        register();
+    private static ManagerServerResponseMng INSTANCE = new ManagerServerResponseMng();
+
+    public static ManagerServerResponseMng getInstance() {
+        return INSTANCE;
+    }
+
+    private ManagerServerResponseMng() {
+        registerHandlers();
     }
 
     @Override
-    public void register() {
-        register(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register_Return.class), ResponseRegisterReturn.class);
+    public void registerHandlers() {
+        registerHandler(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register_Return.class), ResponseRegisterReturn.class);
 
         //创建角色
-        register(Id.getInst().getMessageId(M2G.MSG_M2G_MAX_UID.class), ResponseMaxCharUid.class);
+        registerHandler(Id.getInst().getMessageId(M2G.MSG_M2G_MAX_UID.class), ResponseMaxCharUid.class);
     }
 }

@@ -8,10 +8,8 @@ import gamedb.DBManagerPool;
 import gamedb.DBProxyDefault;
 import gamedb.DBTableParamType;
 import gamedb.dao.character.MaxCharUidDBOperator;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import manager.connectionManager.ConnectManager;
+import manager.connectionManager.ConnectionManager;
 import pathExt.PathManager;
 import protocol.gate.manager.G2MIdGenerater;
 import protocol.global.manager.GM2MIdGenerater;
@@ -37,9 +35,9 @@ import java.util.List;
  * Time: 14:59
  */
 @Slf4j
-public class Context extends AbstractSystemFrame {
+public class Context extends AbstractServiceFrame {
 
-    public static ConnectManager connectManager;
+    public static ConnectionManager connectManager;
 
     private boolean watchDog = false;
 
@@ -57,7 +55,7 @@ public class Context extends AbstractSystemFrame {
             groupId = Integer.parseInt(args[0]);
             tag.setTag(serverType, groupId, 0);
         }
-        connectManager = new ConnectManager();
+        connectManager = new ConnectionManager();
         initConnectManager(connectManager);
         initMainThread("ManagerDriverThread");
     }

@@ -14,12 +14,19 @@ import relation.connectionManager.ResponseRegisterReturn;
  */
 
 public class ZoneServerResponseMng implements IResponseHandlerManager {
-    ZoneServerResponseMng() {
-        register();
+
+    private static ZoneServerResponseMng INSTANCE = new ZoneServerResponseMng();
+
+    public static ZoneServerResponseMng getInstance() {
+        return INSTANCE;
+    }
+
+    private ZoneServerResponseMng() {
+        registerHandlers();
     }
 
     @Override
-    public void register() {
-        register(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register_Return.class), ResponseRegisterReturn.class);
+    public void registerHandlers() {
+        registerHandler(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register_Return.class), ResponseRegisterReturn.class);
     }
 }

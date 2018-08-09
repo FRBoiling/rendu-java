@@ -47,7 +47,7 @@ public class ResponseRegisterReturn implements IResponseHandler{
                         registerResult = ManagerServerSessionMng.getInstance().register(session);
                     }
                     else {
-                        log.error("SERIOUS ERROR:  register result error from {} fail : subId {} wrong",tag.getStrTag(),tag.getSubId());
+                        log.error("SERIOUS ERROR:  registerHandler result error from {} fail : subId {} wrong",tag.getStrTag(),tag.getSubId());
                         ManagerService.context.stop();
                         return;
                     }
@@ -62,12 +62,12 @@ public class ResponseRegisterReturn implements IResponseHandler{
                 case REPEATED_REGISTER:
                 case FAIL:
                 default:
-                    log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+                    log.error("SERIOUS ERROR: registerHandler result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
                     ManagerService.context.stop();
                     break;
             }
         }else {
-            log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+            log.error("SERIOUS ERROR: registerHandler result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
             switch (serverType) {
                 case Global:
                 case Manager:

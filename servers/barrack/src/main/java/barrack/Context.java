@@ -1,10 +1,10 @@
 package barrack;
 
-import barrack.connectionManager.ConnectManager;
+import barrack.connectionManager.ConnectionManager;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
-import core.base.serviceframe.AbstractSystemFrame;
+import core.base.serviceframe.AbstractServiceFrame;
 import pathExt.PathManager;
 import protocol.gate.global.G2GMIdGenerater;
 import protocol.global.gate.GM2GIdGenerater;
@@ -23,9 +23,9 @@ import java.util.List;
  * Time: 09:59
  */
 
-public class Context extends AbstractSystemFrame {
+public class Context extends AbstractServiceFrame {
 
-    public static ConnectManager connectManager;
+    public static ConnectionManager connectManager;
     @Override
     public void init(String[] args) {
         super.init(args);
@@ -36,7 +36,7 @@ public class Context extends AbstractSystemFrame {
             Integer subId = Integer.parseInt(args[0]);
             tag.setTag(serverType,0,subId);
         }
-        connectManager =  new ConnectManager();
+        connectManager =  new ConnectionManager();
         initConnectManager(connectManager);
         initMainThread("BarrackDriverThread");
     }

@@ -20,6 +20,6 @@
         insert into ${tableName}() values ()
     </insert>
     <insert id="insertCharacterName" parameterType="gamedb.pojo.CharPOJO">
-        insert into ${tableName}() values ()
+        insert into ${tableName}(charName,uid) values (#{charName},#{uid})
     </insert>
 </mapper>

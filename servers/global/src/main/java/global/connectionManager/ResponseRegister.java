@@ -44,6 +44,8 @@ public class ResponseRegister implements IResponseHandler {
         serverTag.setGroupId(Context.tag.getGroupId());
         serverTag.setSubId(Context.tag.getSubId());
 
+        log.debug("{} got register info from {}",Context.tag.toString(),tag.toString());
+
         ServerRegister.MSG_Server_Register_Return.Builder response = ServerRegister.MSG_Server_Register_Return.newBuilder();
         response.setTag(serverTag);
 

@@ -15,8 +15,8 @@ import java.util.List;
 public class PacketDecoder extends ByteToMessageDecoder {
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> out) throws Exception {
         int length = in.readableBytes();
-        int player_id = in.readIntLE();
-        int msg_id = in.readIntLE();
+        int player_id = in.readInt();
+        int msg_id = in.readInt();
 
         int msg_length = length - in.readerIndex();
         Packet packet = new Packet((short) msg_length);

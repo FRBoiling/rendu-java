@@ -2,8 +2,6 @@ package zone.gate;
 
 import core.network.IResponseHandlerManager;
 import lombok.extern.slf4j.Slf4j;
-import protocol.msgId.Id;
-import protocol.server.register.ServerRegister;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,12 +13,18 @@ import protocol.server.register.ServerRegister;
 @Slf4j
 public class GateServerResponseMng implements IResponseHandlerManager {
 
-    GateServerResponseMng() {
-        register();
+    private static GateServerResponseMng INSTANCE = new GateServerResponseMng();
+
+    public static GateServerResponseMng getInstance() {
+        return INSTANCE;
+    }
+
+    private GateServerResponseMng() {
+        registerHandlers();
     }
 
     @Override
-    public void register() {
-//        register(Id.getInst().getMessageId(G2GM.MSG_G2GM_HEARTBEAT.class), ResponseHeartBeat.class);
+    public void registerHandlers() {
+//        registerHandler(Id.getInst().getMessageId(G2GM.MSG_G2GM_HEARTBEAT.class), ResponseHeartBeat.class);
     }
 }

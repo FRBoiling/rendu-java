@@ -9,6 +9,7 @@ import protocol.msgId.Id;
 public class G2MIdGenerater{
      public static void GenerateId(){
           Id.getInst().SetMessage(protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT.class, 0x130001);
-          Id.getInst().SetMessage(protocol.gate.manager.G2M.MSG_G2M_MAX_UID.class, 0x130002);
+          Id.getInst().SetMessage(protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN.class, 0x130002);
+          Id.getInst().SetMessage(protocol.gate.manager.G2M.MSG_G2M_MAX_UID.class, 0x130003);
      }
 }

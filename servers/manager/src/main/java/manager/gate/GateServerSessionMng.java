@@ -13,23 +13,25 @@ import io.netty.channel.Channel;
  */
 
 public class GateServerSessionMng extends AbstractSessionManager {
-    private static volatile GateServerSessionMng INSTANCE = new GateServerSessionMng();
-    private GateServerSessionMng(){
-    }
+
+    private static GateServerSessionMng INSTANCE = new GateServerSessionMng();
 
     public static GateServerSessionMng getInstance() {
-        if (INSTANCE == null) {
-            synchronized (GateServerSessionMng.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new GateServerSessionMng();
-                }
-            }
-        }
         return INSTANCE;
+    }
+
+    private GateServerSessionMng() {
+    }
+
+    @Override
+    public void updateLogic(long dt) {
+
     }
 
     @Override
     public AbstractSession createSession(Channel channel) {
-        return new GateServerSession(channel);
+        GateServerSession session = new GateServerSession(channel);
+        session.setResponseMng(GateServerResponseMng.getInstance());
+        return session;
     }
 }

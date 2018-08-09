@@ -14,12 +14,19 @@ import protocol.server.register.ServerRegister;
  */
 
 public class GlobalServerResponseMng implements IResponseHandlerManager {
-    GlobalServerResponseMng() {
-        register();
+
+    private static GlobalServerResponseMng INSTANCE = new GlobalServerResponseMng();
+
+    public static GlobalServerResponseMng getInstance() {
+        return INSTANCE;
+    }
+
+    private GlobalServerResponseMng() {
+        registerHandlers();
     }
 
     @Override
-    public void register() {
-        register(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register_Return.class), ResponseRegisterReturn.class);
+    public void registerHandlers() {
+        registerHandler(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register_Return.class), ResponseRegisterReturn.class);
     }
 }

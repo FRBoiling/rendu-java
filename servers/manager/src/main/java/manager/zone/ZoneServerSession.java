@@ -5,8 +5,6 @@ import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
-import manager.Context;
-import protocol.manager.global.M2GM;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,12 +22,12 @@ public class ZoneServerSession extends AbstractSession {
         setTag(tag);
     }
 
-    public void OnConnected() {
-        super.OnConnected();
+    public void onConnected() {
+        super.onConnected();
     }
 
-    public void OnDisConnected() {
-        super.OnDisConnected();
+    public void onDisConnected() {
+        super.onDisConnected();
     }
 
     @Override

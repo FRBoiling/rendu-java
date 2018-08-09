@@ -8,8 +8,8 @@ package constant;
  * Time: 10:24
  **/
 public enum RegisterResult {
-    SUCCESS ,
     FAIL,
+    SUCCESS ,
     REPEATED_REGISTER,
     ALREADY_REGISTER,
 }

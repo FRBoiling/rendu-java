@@ -38,8 +38,6 @@ public abstract class AbstractSession {
 
     private MessageDriver messageDriver;
 
-    private IResponseHandlerManager responseMng;
-
     @Override
     public int hashCode() {
         return channel.hashCode();
@@ -49,7 +47,7 @@ public abstract class AbstractSession {
     public boolean equals(Object obj) {
         if (obj instanceof AbstractSession) {
             AbstractSession p = (AbstractSession) obj;
-            return this.tag.equals(p.tag);
+            return p.tag.equals(this.tag)&&p.getChannel().equals(this.channel) ;
         } else {
             return false;
         }
@@ -62,23 +60,24 @@ public abstract class AbstractSession {
     }
 
     public void setResponseMng(IResponseHandlerManager responseMng){
-        this.responseMng = responseMng;
         this.messageDriver.setResponseMng(responseMng);
     }
 
-    public void OnConnected()
+    public void onConnected()
     {
+        //TODO:会话层连接处理
 //        log.info("{}",channel.remoteAddress());
     }
 
-    public void OnDisConnected()
+    public void onDisConnected()
     {
         offline = true;
+        clearAttribute();
         if (isRegistered) {
-            log.info("{} disconnect ",getTag().toString());
+            log.info("{} disconnect :{}",getTag().toString(),channel.toString());
         } else {
             //下线
-            log.error("[没有找到会话注册信息]");
+            log.error("[没有找到会话注册信息]:{} disconnect",channel.toString());
         }
     }
 
@@ -100,11 +99,13 @@ public abstract class AbstractSession {
         AttributeUtil.set(channel, SessionKey.SESSION, null);
     }
 
-    public void close() {
+    /**
+     * 关闭连接
+     */
+    public void closeConnection() {
         if (channel == null) {
             return;
         }
-        clearAttribute();
         try {
             if (channel.isActive() || channel.isOpen()) {
                 channel.close().sync();
@@ -134,6 +135,7 @@ public abstract class AbstractSession {
 
     public void sendRegister(ServerTag tag)
     {
+        log.debug("send register msg : {} register to {}",tag.toString(),getTag().toString());
         ServerRegister.Server_Tag.Builder serverTag = ServerRegister.Server_Tag.newBuilder();
         serverTag.setServerType(tag.getType().ordinal());
         serverTag.setGroupId(tag.getGroupId());

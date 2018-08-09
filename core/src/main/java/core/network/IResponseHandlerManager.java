@@ -1,6 +1,7 @@
 package core.network;
 
 import core.base.sequence.IResponseHandler;
+
 import java.util.HashMap;
 
 /**
@@ -12,40 +13,50 @@ import java.util.HashMap;
  */
 public interface IResponseHandlerManager {
 
-    HashMap<Integer, Class<? extends IResponseHandler>> handlers = new HashMap<>(10);
+    //    HashMap<Integer, Class<? extends IResponseHandler>> handlers = new HashMap<>(10);
+    HashMap<Integer, IResponseHandler> handlers = new HashMap<>(10);
+
+//    /**
+//     * 获取handler
+//     * @param messageId 消息id
+//     * @return 返回处理类
+//     */
+//    default IResponseHandler getHandler(int messageId) {
+//        Class<? extends IResponseHandler> clazz = handlers.get(messageId);
+//        if (clazz != null) {
+//            try {
+//                return clazz.newInstance();
+//            } catch (Exception e) {
+//                return null;
+//            }
+//        }
+//        return null;
+//    }
+
     /**
      * 获取handler
+     *
      * @param messageId 消息id
      * @return 返回处理类
      */
     default IResponseHandler getHandler(int messageId) {
-        Class<? extends IResponseHandler> clazz = handlers.get(messageId);
-        if (clazz != null) {
-            try {
-                return clazz.newInstance();
-            } catch (Exception e) {
-                return null;
-            }
-        }
-        return null;
+        return handlers.get(messageId);
     }
 
     /**
      * 注册
+     *
      * @param messageId 消息id
-     * @param handler  消息响应类
+     * @param handler   消息响应类
      */
-    default boolean register(int messageId, Class<? extends IResponseHandler> handler)
-    {
-        Class<? extends IResponseHandler> clazz = handlers.get(messageId);
-        if (clazz != null) {
-            return false;
-        }
-        else{
-            handlers.put(messageId, handler);
+    default boolean registerHandler(int messageId, Class<? extends IResponseHandler> handler) {
+        try {
+            handlers.put(messageId, handler.newInstance());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return true;
     }
 
-    void register();
+    void registerHandlers();
 }

@@ -50,11 +50,9 @@ public class PacketReader  extends ByteToMessageDecoder {
         if (!buffer.isReadable()) {
             return 0;
         }
-
         buffer.markReaderIndex();
 
-       short tmp = buffer.readShortLE(); //客户端是c#的，用LE的函数
-//        short tmp = buffer.readShort();
+        short tmp = buffer.readShort();
         if (tmp >= 0) {
             if (!buffer.isReadable()) {
                 buffer.resetReaderIndex();

@@ -22,7 +22,7 @@ public class RelationServerSession extends AbstractSession {
     }
 
     @Override
-    public void OnConnected() {
+    public void onConnected() {
 
     }
 

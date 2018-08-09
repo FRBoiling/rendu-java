@@ -17,29 +17,31 @@ import org.omg.CORBA.PUBLIC_MEMBER;
  */
 
 public class ZoneServerSessionMng extends AbstractSessionManager {
-    private static volatile ZoneServerSessionMng INSTANCE = new ZoneServerSessionMng();
-    private ZoneServerSessionMng(){
-    }
+
+    private static ZoneServerSessionMng INSTANCE = new ZoneServerSessionMng();
 
     public static ZoneServerSessionMng getInstance() {
-        if (INSTANCE == null) {
-            synchronized (ZoneServerSessionMng.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new ZoneServerSessionMng();
-                }
-            }
-        }
         return INSTANCE;
+    }
+
+    private ZoneServerSessionMng() {
+    }
+
+    @Override
+    public void updateLogic(long dt) {
+
     }
 
     @Override
     public AbstractSession createSession(Channel channel) {
-        return new ZoneServerSession(channel);
+        ZoneServerSession session = new ZoneServerSession(channel);
+        session.setResponseMng(ZoneServerResponseMng.getInstance());
+        return session;
     }
 
-    public void broadcastByGroup(MessageLite msg,int groupId) {
-        for (AbstractSession session: getRegisterSessions().values()) {
-            if (groupId == ((ServerTag)session.getTag()).getGroupId()){
+    public void broadcastByGroup(MessageLite msg, int groupId) {
+        for (AbstractSession session : getRegisterSessions().values()) {
+            if (groupId == ((ServerTag) session.getTag()).getGroupId()) {
                 session.sendMessage(msg);
             }
         }

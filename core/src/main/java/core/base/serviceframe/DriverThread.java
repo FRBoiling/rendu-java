@@ -15,12 +15,11 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class DriverThread extends Thread {
-    private String threadName;
     private IService service;
     DriverThread(String name, IService service) {
         this.service =service;
-        threadName = name;
-        log.info("Creating " +  threadName );
+        this.setName(name+"-"+getId());;
+        log.info("Creating " +  getName() );
     }
 
     @Override

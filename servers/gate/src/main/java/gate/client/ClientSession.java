@@ -6,9 +6,7 @@ import dataObject.AccountObject;
 import io.netty.channel.Channel;
 import lombok.Getter;
 import lombok.Setter;
-import protocol.client.c2g.C2G;
-
-import java.net.PortUnreachableException;
+import protocol.client.Client.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,8 +26,8 @@ public class ClientSession extends AbstractSession {
     }
 
     @Override
-    public void OnConnected() {
-
+    public void onConnected() {
+        super.onConnected();
     }
 
     @Override
@@ -37,7 +35,7 @@ public class ClientSession extends AbstractSession {
 
     }
 
-    public C2G.MSG_CG_CREATE_CHARACTER reqCreateMsg = null;
+    public MSG_CG_CREATE_CHARACTER reqCreateMsg = null;
 
     AccountObject accountObject = null;
 

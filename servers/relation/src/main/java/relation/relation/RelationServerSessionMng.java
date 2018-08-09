@@ -3,6 +3,8 @@ package relation.relation;
 import core.base.common.AbstractSession;
 import core.base.common.AbstractSessionManager;
 import io.netty.channel.Channel;
+import relation.manager.ManagerServerResponseMng;
+import relation.manager.ManagerServerSession;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,23 +16,24 @@ import io.netty.channel.Channel;
 
 public class RelationServerSessionMng extends AbstractSessionManager {
 
-    private static volatile RelationServerSessionMng INSTANCE = new RelationServerSessionMng();
-    private RelationServerSessionMng(){
-    }
+    private static RelationServerSessionMng INSTANCE = new RelationServerSessionMng();
 
     public static RelationServerSessionMng getInstance() {
-        if (INSTANCE == null) {
-            synchronized (RelationServerSessionMng.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new RelationServerSessionMng();
-                }
-            }
-        }
         return INSTANCE;
+    }
+
+    private RelationServerSessionMng() {
+    }
+
+    @Override
+    public void updateLogic(long dt) {
+
     }
 
     @Override
     public AbstractSession createSession(Channel channel) {
-        return new RelationServerSession(channel);
+        RelationServerSession session = new RelationServerSession(channel);
+        session.setResponseMng(RelationServerResponseMng.getInstance());
+        return session;
     }
 }

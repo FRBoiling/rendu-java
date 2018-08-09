@@ -4,7 +4,7 @@ import configuration.dataManager.Data;
 import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import constant.SystemConst;
-import core.base.serviceframe.AbstractServer;
+import core.base.serviceframe.AbstractAcceptor;
 import manager.Context;
 
 /**
@@ -15,16 +15,18 @@ import manager.Context;
  * Time: 9:47
  */
 
-public class RelationAcceptor extends AbstractServer {
+public class RelationAcceptor extends AbstractAcceptor {
     @Override
     public void init(String[] args) {
-        acceptorGroupCount=1;
-        IOGroupCount =SystemConst.AVAILABLE_PROCESSORS;
-        responseMng = new RelationServerResponseMng();
+        acceptorGroupCount = 1;
+        IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
+
         sessionMng = RelationServerSessionMng.getInstance();
 
+        setName(getClass().getSimpleName());
+
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
-        Data serviceData =dateList.getData(Context.tag.toString());
+        Data serviceData = dateList.getData(Context.tag.toString());
         listenPort = serviceData.getInteger("relationPort");
         bind(listenPort);
     }

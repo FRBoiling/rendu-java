@@ -9,10 +9,12 @@ import gamedb.dao.account.SelectAccountDBOperator;
 import gamedb.pojo.account.AccountPOJO;
 import gate.Context;
 import gate.GateService;
-import protocol.client.g2c.G2C;
+import lombok.extern.slf4j.Slf4j;
+import protocol.client.Client.*;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.UUID;
 
 /**
  * Created with Intellij IDEA
@@ -21,7 +23,7 @@ import java.util.Queue;
  * Date: 2018-08-03
  * Time: 19:38
  **/
-
+@Slf4j
 public class ClientLoginMng {
     private static volatile ClientLoginMng INSTANCE = new ClientLoginMng();
 
@@ -32,7 +34,7 @@ public class ClientLoginMng {
         return INSTANCE;
     }
 
-    private Queue<ClientSession> loginWaitQueue = new ArrayDeque<ClientSession>();
+    private Queue<ClientSession> loginWaitQueue = new ArrayDeque<>();
 
     private OnlineLoadState onlineLoadState = OnlineLoadState.NORMAL;
 
@@ -96,7 +98,7 @@ public class ClientLoginMng {
             loginWaitQueue = tmpQueue;
             int index = 0;
             for (ClientSession session : tmpQueue) {
-//                sendWaitingTime((++index) * server.BarrackServer.GateCount);
+//                sendWaitingTime((++index) * acceptor.BarrackServer.GateCount);
                 sendWaitingTime(session, 1111);
             }
             // 通知排队情况
@@ -117,11 +119,11 @@ public class ClientLoginMng {
         pojo.setAccountName(clientSession.getAccountObject().getAccountName());
         pojo.setChannelName(clientSession.getAccountObject().getChannelName());
 
-        G2C.MSG_GC_USER_LOGIN.Builder response;
-        response = G2C.MSG_GC_USER_LOGIN.newBuilder();
+        MSG_GC_USER_LOGIN.Builder response;
+        response = MSG_GC_USER_LOGIN.newBuilder();
         response.setAccountName(pojo.getAccountName());
-        response.setResult(0);
-        response.setToken(0);
+        response.setResult(ErrorCode.SUCCESS.ordinal());
+        response.setToken("");
 
         SelectAccountDBOperator queryLogin = new SelectAccountDBOperator(pojo);
         GateService.context.db.Call(queryLogin, "account", DBOperateType.Read, (tempOperator) -> {
@@ -137,6 +139,8 @@ public class ClientLoginMng {
                     response.setResult(ErrorCode.SUCCESS.getValue());
                     clientSession.sendMessage(response.build());
                 }
+                //TODO 去数据库取角色数据
+
             } else if (op.getResult() == 0) {
                 AccountPOJO accountPOJO = new AccountPOJO();
                 accountPOJO.setAccountName(clientSession.getAccountObject().getAccountName());
@@ -150,5 +154,17 @@ public class ClientLoginMng {
                 });
             }
         });
+    }
+
+    public void sendLoginResponse(ClientSession session,MSG_GC_USER_LOGIN.Builder response){
+        log.debug("account {} login response error code {}",response.getAccountName(),response.getResult());
+        if ( response.getResult() != ErrorCode.SUCCESS.ordinal()){
+            if (response.getResult()!=ErrorCode.BadToken.ordinal()){
+                //生成新的token
+                String strToken = UUID.randomUUID().toString().replace("-","");
+                response.setToken(strToken);
+                session.sendMessage(response.build());
+            }
+        }
     }
 }

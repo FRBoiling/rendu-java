@@ -4,7 +4,7 @@ import configuration.dataManager.Data;
 import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import constant.SystemConst;
-import core.base.serviceframe.AbstractServer;
+import core.base.serviceframe.AbstractAcceptor;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,14 +14,15 @@ import core.base.serviceframe.AbstractServer;
  * Time: 9:47
  */
 
-public class ManagerAcceptor extends AbstractServer {
+public class ManagerAcceptor extends AbstractAcceptor {
     @Override
     public void init(String[] args) {
         acceptorGroupCount=1;
         IOGroupCount =SystemConst.AVAILABLE_PROCESSORS;
 
-        responseMng = new ManagerServerResponseMng();
         sessionMng = ManagerServerSessionMng.getInstance();
+
+        setName(getClass().getSimpleName());
 
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
         Data serviceData =dateList.getData("Global");

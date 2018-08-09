@@ -4,7 +4,6 @@ import core.base.common.AbstractSession;
 import core.base.common.AbstractSessionManager;
 import core.base.common.AttributeUtil;
 import core.base.common.SessionKey;
-import core.base.sequence.IResponseHandler;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import lombok.extern.slf4j.Slf4j;
@@ -19,11 +18,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class NetworkListener implements INetworkEventListener {
     AbstractSessionManager sessionMng;
-    IResponseHandlerManager responseMng;
-     public NetworkListener(AbstractSessionManager sessionMng, IResponseHandlerManager responseMng)
+     public NetworkListener(AbstractSessionManager sessionMng)
      {
          this.sessionMng = sessionMng;
-         this.responseMng = responseMng;
      }
     @Override
     public void onConnected(ChannelHandlerContext ctx) {
@@ -32,13 +29,12 @@ public class NetworkListener implements INetworkEventListener {
         if (session == null) {
             try {
                 session = sessionMng.createSession(channel);
-                session.setResponseMng(responseMng);
-                session.OnConnected();
-                sessionMng.addSession(session);
+                session.onConnected();
+                log.debug("建立新的连接：{}" ,channel.toString());
+                sessionMng.putSession(session);
                 AttributeUtil.set(channel, SessionKey.SESSION, session);
-                log.info("建立新的连接：{}" ,channel.toString());
             }catch (Exception e){
-                log.error(" onConnected error ：{} ",e.toString());
+                log.error("onConnected error ：{} ",e.toString());
             }
         } else {
             log.error("新连接建立时已存在Session，注意排查原因 {}" , channel.toString());
@@ -48,16 +44,15 @@ public class NetworkListener implements INetworkEventListener {
     @Override
     public void onDisconnected(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
-        log.info("断开连接：" + channel.toString());
-
+        log.debug("断开连接：" + channel.toString());
         AbstractSession session = AttributeUtil.get(channel, SessionKey.SESSION);
-        if ( session == null)
+        if (session == null)
         {
             //下线
             log.error("[没有找到有效会话]");
         }else {
-            session.OnDisConnected();
-            sessionMng.unregister(session);
+            log.debug("remove session {}",session.getTag().toString());
+            sessionMng.removeSession(session);
         }
     }
 

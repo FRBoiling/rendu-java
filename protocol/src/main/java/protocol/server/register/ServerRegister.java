@@ -15,7 +15,7 @@ public final class ServerRegister {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface Server_TagOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.server.register.Server_Tag)
+      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.Server_Tag)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -46,11 +46,11 @@ public final class ServerRegister {
     int getSubId();
   }
   /**
-   * Protobuf type {@code protocol.server.register.Server_Tag}
+   * Protobuf type {@code protocol.acceptor.register.Server_Tag}
    */
   public  static final class Server_Tag extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.server.register.Server_Tag)
+      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.Server_Tag)
       Server_TagOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Server_Tag.newBuilder() to construct.
@@ -372,11 +372,11 @@ public final class ServerRegister {
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.server.register.Server_Tag}
+     * Protobuf type {@code protocol.acceptor.register.Server_Tag}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.server.register.Server_Tag)
+        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.Server_Tag)
         protocol.server.register.ServerRegister.Server_TagOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -390,7 +390,7 @@ public final class ServerRegister {
                 protocol.server.register.ServerRegister.Server_Tag.class, protocol.server.register.ServerRegister.Server_Tag.Builder.class);
       }
 
-      // Construct using protocol.server.register.ServerRegister.Server_Tag.newBuilder()
+      // Construct using protocol.acceptor.register.ServerRegister.Server_Tag.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -637,10 +637,10 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.server.register.Server_Tag)
+      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.Server_Tag)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.server.register.Server_Tag)
+    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.Server_Tag)
     private static final protocol.server.register.ServerRegister.Server_Tag DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.Server_Tag();
@@ -676,28 +676,28 @@ public final class ServerRegister {
   }
 
   public interface MSG_Server_RegisterOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_Server_Register)
+      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.MSG_Server_Register)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     boolean hasTag();
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     protocol.server.register.ServerRegister.Server_Tag getTag();
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder();
   }
   /**
-   * Protobuf type {@code protocol.server.register.MSG_Server_Register}
+   * Protobuf type {@code protocol.acceptor.register.MSG_Server_Register}
    */
   public  static final class MSG_Server_Register extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_Server_Register)
+      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.MSG_Server_Register)
       MSG_Server_RegisterOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MSG_Server_Register.newBuilder() to construct.
@@ -779,19 +779,19 @@ public final class ServerRegister {
     public static final int TAG_FIELD_NUMBER = 1;
     private protocol.server.register.ServerRegister.Server_Tag tag_;
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     public boolean hasTag() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     public protocol.server.register.ServerRegister.Server_Tag getTag() {
       return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
     }
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
       return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
@@ -962,11 +962,11 @@ public final class ServerRegister {
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.server.register.MSG_Server_Register}
+     * Protobuf type {@code protocol.acceptor.register.MSG_Server_Register}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_Server_Register)
+        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.MSG_Server_Register)
         protocol.server.register.ServerRegister.MSG_Server_RegisterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -980,7 +980,7 @@ public final class ServerRegister {
                 protocol.server.register.ServerRegister.MSG_Server_Register.class, protocol.server.register.ServerRegister.MSG_Server_Register.Builder.class);
       }
 
-      // Construct using protocol.server.register.ServerRegister.MSG_Server_Register.newBuilder()
+      // Construct using protocol.acceptor.register.ServerRegister.MSG_Server_Register.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1119,13 +1119,13 @@ public final class ServerRegister {
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> tagBuilder_;
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public boolean hasTag() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public protocol.server.register.ServerRegister.Server_Tag getTag() {
         if (tagBuilder_ == null) {
@@ -1135,7 +1135,7 @@ public final class ServerRegister {
         }
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public Builder setTag(protocol.server.register.ServerRegister.Server_Tag value) {
         if (tagBuilder_ == null) {
@@ -1151,7 +1151,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public Builder setTag(
           protocol.server.register.ServerRegister.Server_Tag.Builder builderForValue) {
@@ -1165,7 +1165,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public Builder mergeTag(protocol.server.register.ServerRegister.Server_Tag value) {
         if (tagBuilder_ == null) {
@@ -1185,7 +1185,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public Builder clearTag() {
         if (tagBuilder_ == null) {
@@ -1198,7 +1198,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public protocol.server.register.ServerRegister.Server_Tag.Builder getTagBuilder() {
         bitField0_ |= 0x00000001;
@@ -1206,7 +1206,7 @@ public final class ServerRegister {
         return getTagFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
         if (tagBuilder_ != null) {
@@ -1217,7 +1217,7 @@ public final class ServerRegister {
         }
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> 
@@ -1243,10 +1243,10 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_Server_Register)
+      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.MSG_Server_Register)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_Server_Register)
+    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.MSG_Server_Register)
     private static final protocol.server.register.ServerRegister.MSG_Server_Register DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.MSG_Server_Register();
@@ -1282,7 +1282,7 @@ public final class ServerRegister {
   }
 
   public interface MSG_Server_Register_ReturnOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_Server_Register_Return)
+      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.MSG_Server_Register_Return)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1295,24 +1295,24 @@ public final class ServerRegister {
     int getResult();
 
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
      */
     boolean hasTag();
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
      */
     protocol.server.register.ServerRegister.Server_Tag getTag();
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
      */
     protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder();
   }
   /**
-   * Protobuf type {@code protocol.server.register.MSG_Server_Register_Return}
+   * Protobuf type {@code protocol.acceptor.register.MSG_Server_Register_Return}
    */
   public  static final class MSG_Server_Register_Return extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_Server_Register_Return)
+      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.MSG_Server_Register_Return)
       MSG_Server_Register_ReturnOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MSG_Server_Register_Return.newBuilder() to construct.
@@ -1415,19 +1415,19 @@ public final class ServerRegister {
     public static final int TAG_FIELD_NUMBER = 2;
     private protocol.server.register.ServerRegister.Server_Tag tag_;
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
      */
     public boolean hasTag() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
      */
     public protocol.server.register.ServerRegister.Server_Tag getTag() {
       return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
     }
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
      */
     public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
       return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
@@ -1618,11 +1618,11 @@ public final class ServerRegister {
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.server.register.MSG_Server_Register_Return}
+     * Protobuf type {@code protocol.acceptor.register.MSG_Server_Register_Return}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_Server_Register_Return)
+        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.MSG_Server_Register_Return)
         protocol.server.register.ServerRegister.MSG_Server_Register_ReturnOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -1636,7 +1636,7 @@ public final class ServerRegister {
                 protocol.server.register.ServerRegister.MSG_Server_Register_Return.class, protocol.server.register.ServerRegister.MSG_Server_Register_Return.Builder.class);
       }
 
-      // Construct using protocol.server.register.ServerRegister.MSG_Server_Register_Return.newBuilder()
+      // Construct using protocol.acceptor.register.ServerRegister.MSG_Server_Register_Return.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1819,13 +1819,13 @@ public final class ServerRegister {
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> tagBuilder_;
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
        */
       public boolean hasTag() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
        */
       public protocol.server.register.ServerRegister.Server_Tag getTag() {
         if (tagBuilder_ == null) {
@@ -1835,7 +1835,7 @@ public final class ServerRegister {
         }
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
        */
       public Builder setTag(protocol.server.register.ServerRegister.Server_Tag value) {
         if (tagBuilder_ == null) {
@@ -1851,7 +1851,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
        */
       public Builder setTag(
           protocol.server.register.ServerRegister.Server_Tag.Builder builderForValue) {
@@ -1865,7 +1865,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
        */
       public Builder mergeTag(protocol.server.register.ServerRegister.Server_Tag value) {
         if (tagBuilder_ == null) {
@@ -1885,7 +1885,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
        */
       public Builder clearTag() {
         if (tagBuilder_ == null) {
@@ -1898,7 +1898,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
        */
       public protocol.server.register.ServerRegister.Server_Tag.Builder getTagBuilder() {
         bitField0_ |= 0x00000002;
@@ -1906,7 +1906,7 @@ public final class ServerRegister {
         return getTagFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
        */
       public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
         if (tagBuilder_ != null) {
@@ -1917,7 +1917,7 @@ public final class ServerRegister {
         }
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> 
@@ -1943,10 +1943,10 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_Server_Register_Return)
+      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.MSG_Server_Register_Return)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_Server_Register_Return)
+    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.MSG_Server_Register_Return)
     private static final protocol.server.register.ServerRegister.MSG_Server_Register_Return DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.MSG_Server_Register_Return();
@@ -1982,7 +1982,7 @@ public final class ServerRegister {
   }
 
   public interface Connect_InfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.server.register.Connect_Info)
+      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.Connect_Info)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2009,11 +2009,11 @@ public final class ServerRegister {
         getIpBytes();
   }
   /**
-   * Protobuf type {@code protocol.server.register.Connect_Info}
+   * Protobuf type {@code protocol.acceptor.register.Connect_Info}
    */
   public  static final class Connect_Info extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.server.register.Connect_Info)
+      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.Connect_Info)
       Connect_InfoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Connect_Info.newBuilder() to construct.
@@ -2329,11 +2329,11 @@ public final class ServerRegister {
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.server.register.Connect_Info}
+     * Protobuf type {@code protocol.acceptor.register.Connect_Info}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.server.register.Connect_Info)
+        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.Connect_Info)
         protocol.server.register.ServerRegister.Connect_InfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -2347,7 +2347,7 @@ public final class ServerRegister {
                 protocol.server.register.ServerRegister.Connect_Info.class, protocol.server.register.ServerRegister.Connect_Info.Builder.class);
       }
 
-      // Construct using protocol.server.register.ServerRegister.Connect_Info.newBuilder()
+      // Construct using protocol.acceptor.register.ServerRegister.Connect_Info.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2602,10 +2602,10 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.server.register.Connect_Info)
+      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.Connect_Info)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.server.register.Connect_Info)
+    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.Connect_Info)
     private static final protocol.server.register.ServerRegister.Connect_Info DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.Connect_Info();
@@ -2641,32 +2641,32 @@ public final class ServerRegister {
   }
 
   public interface MSG_Server_Connect_CommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_Server_Connect_Command)
+      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.MSG_Server_Connect_Command)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     boolean hasTag();
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     protocol.server.register.ServerRegister.Server_Tag getTag();
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder();
 
     /**
-     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
      */
     boolean hasInfo();
     /**
-     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
      */
     protocol.server.register.ServerRegister.Connect_Info getInfo();
     /**
-     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
      */
     protocol.server.register.ServerRegister.Connect_InfoOrBuilder getInfoOrBuilder();
 
@@ -2680,11 +2680,11 @@ public final class ServerRegister {
     int getConnectType();
   }
   /**
-   * Protobuf type {@code protocol.server.register.MSG_Server_Connect_Command}
+   * Protobuf type {@code protocol.acceptor.register.MSG_Server_Connect_Command}
    */
   public  static final class MSG_Server_Connect_Command extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_Server_Connect_Command)
+      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.MSG_Server_Connect_Command)
       MSG_Server_Connect_CommandOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MSG_Server_Connect_Command.newBuilder() to construct.
@@ -2785,19 +2785,19 @@ public final class ServerRegister {
     public static final int TAG_FIELD_NUMBER = 1;
     private protocol.server.register.ServerRegister.Server_Tag tag_;
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     public boolean hasTag() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     public protocol.server.register.ServerRegister.Server_Tag getTag() {
       return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
     }
     /**
-     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
      */
     public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
       return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
@@ -2806,19 +2806,19 @@ public final class ServerRegister {
     public static final int INFO_FIELD_NUMBER = 2;
     private protocol.server.register.ServerRegister.Connect_Info info_;
     /**
-     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
      */
     public boolean hasInfo() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
      */
     public protocol.server.register.ServerRegister.Connect_Info getInfo() {
       return info_ == null ? protocol.server.register.ServerRegister.Connect_Info.getDefaultInstance() : info_;
     }
     /**
-     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
      */
     public protocol.server.register.ServerRegister.Connect_InfoOrBuilder getInfoOrBuilder() {
       return info_ == null ? protocol.server.register.ServerRegister.Connect_Info.getDefaultInstance() : info_;
@@ -3044,11 +3044,11 @@ public final class ServerRegister {
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.server.register.MSG_Server_Connect_Command}
+     * Protobuf type {@code protocol.acceptor.register.MSG_Server_Connect_Command}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_Server_Connect_Command)
+        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.MSG_Server_Connect_Command)
         protocol.server.register.ServerRegister.MSG_Server_Connect_CommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -3062,7 +3062,7 @@ public final class ServerRegister {
                 protocol.server.register.ServerRegister.MSG_Server_Connect_Command.class, protocol.server.register.ServerRegister.MSG_Server_Connect_Command.Builder.class);
       }
 
-      // Construct using protocol.server.register.ServerRegister.MSG_Server_Connect_Command.newBuilder()
+      // Construct using protocol.acceptor.register.ServerRegister.MSG_Server_Connect_Command.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3234,13 +3234,13 @@ public final class ServerRegister {
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> tagBuilder_;
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public boolean hasTag() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public protocol.server.register.ServerRegister.Server_Tag getTag() {
         if (tagBuilder_ == null) {
@@ -3250,7 +3250,7 @@ public final class ServerRegister {
         }
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public Builder setTag(protocol.server.register.ServerRegister.Server_Tag value) {
         if (tagBuilder_ == null) {
@@ -3266,7 +3266,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public Builder setTag(
           protocol.server.register.ServerRegister.Server_Tag.Builder builderForValue) {
@@ -3280,7 +3280,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public Builder mergeTag(protocol.server.register.ServerRegister.Server_Tag value) {
         if (tagBuilder_ == null) {
@@ -3300,7 +3300,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public Builder clearTag() {
         if (tagBuilder_ == null) {
@@ -3313,7 +3313,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public protocol.server.register.ServerRegister.Server_Tag.Builder getTagBuilder() {
         bitField0_ |= 0x00000001;
@@ -3321,7 +3321,7 @@ public final class ServerRegister {
         return getTagFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
         if (tagBuilder_ != null) {
@@ -3332,7 +3332,7 @@ public final class ServerRegister {
         }
       }
       /**
-       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> 
@@ -3352,13 +3352,13 @@ public final class ServerRegister {
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.server.register.ServerRegister.Connect_Info, protocol.server.register.ServerRegister.Connect_Info.Builder, protocol.server.register.ServerRegister.Connect_InfoOrBuilder> infoBuilder_;
       /**
-       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
        */
       public boolean hasInfo() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
        */
       public protocol.server.register.ServerRegister.Connect_Info getInfo() {
         if (infoBuilder_ == null) {
@@ -3368,7 +3368,7 @@ public final class ServerRegister {
         }
       }
       /**
-       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
        */
       public Builder setInfo(protocol.server.register.ServerRegister.Connect_Info value) {
         if (infoBuilder_ == null) {
@@ -3384,7 +3384,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
        */
       public Builder setInfo(
           protocol.server.register.ServerRegister.Connect_Info.Builder builderForValue) {
@@ -3398,7 +3398,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
        */
       public Builder mergeInfo(protocol.server.register.ServerRegister.Connect_Info value) {
         if (infoBuilder_ == null) {
@@ -3418,7 +3418,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -3431,7 +3431,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
        */
       public protocol.server.register.ServerRegister.Connect_Info.Builder getInfoBuilder() {
         bitField0_ |= 0x00000002;
@@ -3439,7 +3439,7 @@ public final class ServerRegister {
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
        */
       public protocol.server.register.ServerRegister.Connect_InfoOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
@@ -3450,7 +3450,7 @@ public final class ServerRegister {
         }
       }
       /**
-       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.server.register.ServerRegister.Connect_Info, protocol.server.register.ServerRegister.Connect_Info.Builder, protocol.server.register.ServerRegister.Connect_InfoOrBuilder> 
@@ -3508,10 +3508,10 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_Server_Connect_Command)
+      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.MSG_Server_Connect_Command)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_Server_Connect_Command)
+    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.MSG_Server_Connect_Command)
     private static final protocol.server.register.ServerRegister.MSG_Server_Connect_Command DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.MSG_Server_Connect_Command();
@@ -3580,16 +3580,16 @@ public final class ServerRegister {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ServerRegister.proto\022\030protocol.server." +
+      "\n\024ServerRegister.proto\022\030protocol.acceptor." +
       "register\"@\n\nServer_Tag\022\022\n\nserverType\030\001 \002" +
       "(\005\022\017\n\007groupId\030\002 \001(\005\022\r\n\005subId\030\003 \001(\005\"H\n\023MS" +
       "G_Server_Register\0221\n\003tag\030\001 \002(\0132$.protoco" +
-      "l.server.register.Server_Tag\"_\n\032MSG_Serv" +
+      "l.acceptor.register.Server_Tag\"_\n\032MSG_Serv" +
       "er_Register_Return\022\016\n\006result\030\001 \002(\r\0221\n\003ta" +
-      "g\030\002 \002(\0132$.protocol.server.register.Serve" +
+      "g\030\002 \002(\0132$.protocol.acceptor.register.Serve" +
       "r_Tag\"(\n\014Connect_Info\022\014\n\004port\030\001 \002(\005\022\n\n\002i" +
       "p\030\002 \002(\t\"\232\001\n\032MSG_Server_Connect_Command\0221" +
-      "\n\003tag\030\001 \002(\0132$.protocol.server.register.S" +
+      "\n\003tag\030\001 \002(\0132$.protocol.acceptor.register.S" +
       "erver_Tag\0224\n\004info\030\002 \002(\0132&.protocol.serve" +
       "r.register.Connect_Info\022\023\n\013connectType\030\004" +
       " \001(\005"

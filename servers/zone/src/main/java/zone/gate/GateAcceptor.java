@@ -4,7 +4,7 @@ import configuration.dataManager.Data;
 import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import constant.SystemConst;
-import core.base.serviceframe.AbstractServer;
+import core.base.serviceframe.AbstractAcceptor;
 import zone.Context;
 
 /**
@@ -15,17 +15,18 @@ import zone.Context;
  * Time: 9:47
  */
 
-public class GateAcceptor extends AbstractServer {
+public class GateAcceptor extends AbstractAcceptor {
     @Override
     public void init(String[] args) {
-        acceptorGroupCount=1;
-        IOGroupCount =SystemConst.AVAILABLE_PROCESSORS;
+        acceptorGroupCount = 1;
+        IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
 
-        responseMng = new GateServerResponseMng();
         sessionMng = GateServerSessionMng.getInstance();
 
+        setName(getClass().getSimpleName());
+
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
-        Data serviceData =dateList.getData(Context.tag.toString());
+        Data serviceData = dateList.getData(Context.tag.toString());
         listenPort = serviceData.getInteger("gatePort");
         bind(listenPort);
     }

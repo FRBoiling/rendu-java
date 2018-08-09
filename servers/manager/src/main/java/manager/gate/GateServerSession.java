@@ -22,7 +22,7 @@ public class GateServerSession extends AbstractSession {
     }
 
     @Override
-    public void OnConnected() {
+    public void onConnected() {
 
     }
 

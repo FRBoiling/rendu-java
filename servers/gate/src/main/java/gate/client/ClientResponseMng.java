@@ -1,9 +1,11 @@
 package gate.client;
 
 import core.network.IResponseHandlerManager;
+import gate.client.response.ResponseCreateCharacter;
+import gate.client.response.ResponseReconnectLogin;
 import gate.client.response.ResponseUserLogin;
 import lombok.extern.slf4j.Slf4j;
-import protocol.client.c2g.C2G;
+import protocol.client.Client.*;
 import protocol.msgId.Id;
 
 /**
@@ -16,12 +18,20 @@ import protocol.msgId.Id;
 @Slf4j
 public class ClientResponseMng implements IResponseHandlerManager {
 
-    ClientResponseMng() {
-        register();
+    private static ClientResponseMng INSTANCE = new ClientResponseMng();
+
+    public static ClientResponseMng getInstance() {
+        return INSTANCE;
+    }
+
+    private ClientResponseMng() {
+        registerHandlers();
     }
 
     @Override
-    public void register() {
-        register(Id.getInst().getMessageId(C2G.MSG_CG_USER_LOGIN.class), ResponseUserLogin.class);
+    public void registerHandlers() {
+        registerHandler(Id.getInst().getMessageId(MSG_CG_USER_LOGIN.class), ResponseUserLogin.class);
+        registerHandler(Id.getInst().getMessageId(MSG_CG_RECONNECT_LOGIN.class), ResponseReconnectLogin.class);
+        registerHandler(Id.getInst().getMessageId(MSG_CG_CREATE_CHARACTER.class), ResponseCreateCharacter.class);
     }
 }

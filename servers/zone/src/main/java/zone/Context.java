@@ -3,7 +3,7 @@ package zone;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
-import core.base.serviceframe.AbstractSystemFrame;
+import core.base.serviceframe.AbstractServiceFrame;
 import pathExt.PathManager;
 import protocol.gate.zone.G2ZIdGenerater;
 import protocol.global.zone.GM2ZIdGenerater;
@@ -14,14 +14,11 @@ import protocol.zone.gate.Z2GIdGenerater;
 import protocol.zone.global.Z2GMIdGenerater;
 import protocol.zone.relation.Z2RIdGenerater;
 import util.FileUtil;
-import zone.connectionManager.ConnectManager;
+import zone.connectionManager.ConnectionManager;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import configuration.dataManager.*;
 
 
 /**
@@ -32,8 +29,8 @@ import configuration.dataManager.*;
  * Time: 14:59
  */
 
-public class Context extends AbstractSystemFrame {
-    public static ConnectManager connectManager;
+public class Context extends AbstractServiceFrame {
+    public static ConnectionManager connectManager;
 
     @Override
     public void init(String[] args) {
@@ -46,7 +43,7 @@ public class Context extends AbstractSystemFrame {
             Integer subId = Integer.parseInt(args[1]);
             tag.setTag(serverType,groupId,subId);
         }
-        connectManager = new ConnectManager();
+        connectManager = new ConnectionManager();
         initConnectManager(connectManager);
         initMainThread("ZoneDriverThread");
     }

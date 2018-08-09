@@ -22,8 +22,8 @@ public class ZoneServerSession extends AbstractSession {
     }
 
     @Override
-    public void OnConnected() {
-
+    public void onConnected() {
+        super.onConnected();
     }
 
     @Override

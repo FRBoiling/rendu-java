@@ -4,7 +4,7 @@ import configuration.dataManager.Data;
 import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import constant.SystemConst;
-import core.base.serviceframe.AbstractClient;
+import core.base.serviceframe.AbstractConnector;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,17 +13,19 @@ import core.base.serviceframe.AbstractClient;
  * Date: 2018-05-30
  * Time: 14:36
  */
-public class GlobalConnector extends AbstractClient {
+public class GlobalConnector extends AbstractConnector {
     @Override
     public void init(String[] args) {
         IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
-        responseMng = new GlobalServerResponseMng();
+
         sessionMng = GlobalServerSessionMng.getInstance();
 
+        setName(getClass().getSimpleName());
+
         DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
-        Data  globalData =dateList.getData("Global");
+        Data globalData = dateList.getData("Global");
         ip = globalData.getString("ip");
         port = globalData.getInteger("managerPort");
-        connect(ip,port);
+        connect(ip, port);
     }
 }

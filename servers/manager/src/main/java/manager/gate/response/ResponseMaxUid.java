@@ -25,7 +25,7 @@ public class ResponseMaxUid implements IResponseHandler {
         MSG_G2M_MAX_UID msg=MSG_G2M_MAX_UID.parseFrom(packet.getMsg());
         String accountName=msg.getAccountName();
         String channelName=msg.getChannelName();
-        int maxUid= ManagerService.context.maxCharUid++;
+        int maxUid= ++ ManagerService.context.maxCharUid;
         M2G.MSG_M2G_MAX_UID.Builder response=M2G.MSG_M2G_MAX_UID.newBuilder();
         response.setAccountName(accountName);
         response.setChannelName(channelName);

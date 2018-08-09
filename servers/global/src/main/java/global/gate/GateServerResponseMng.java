@@ -18,13 +18,19 @@ import protocol.server.register.ServerRegister;
 @Slf4j
 public class GateServerResponseMng implements IResponseHandlerManager {
 
-    GateServerResponseMng() {
-        register();
+    private static GateServerResponseMng INSTANCE = new GateServerResponseMng();
+
+    public static GateServerResponseMng getInstance() {
+        return INSTANCE;
+    }
+
+    private GateServerResponseMng() {
+        registerHandlers();
     }
 
     @Override
-    public void register() {
-        register(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register.class), ResponseRegister.class);
-        register(Id.getInst().getMessageId(G2GM.MSG_G2GM_HEARTBEAT.class), ResponseHeartBeat.class);
+    public void registerHandlers() {
+        registerHandler(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register.class), ResponseRegister.class);
+        registerHandler(Id.getInst().getMessageId(G2GM.MSG_G2GM_HEARTBEAT.class), ResponseHeartBeat.class);
     }
 }

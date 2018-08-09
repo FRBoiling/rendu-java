@@ -59,12 +59,12 @@ public class ResponseRegisterReturn implements IResponseHandler {
                 case REPEATED_REGISTER:
                 case FAIL:
                 default:
-                    log.error("SERIOUS ERROR: get register result from {} success ,but register here fail :{} ", tag.getStrTag(),registerResult.toString() );
+                    log.error("SERIOUS ERROR: get registerHandler result from {} success ,but registerHandler here fail :{} ", tag.getStrTag(),registerResult.toString() );
                     GateService.context.stop();
                     break;
             }
         } else {
-            log.error("SERIOUS ERROR: register result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+            log.error("SERIOUS ERROR: registerHandler result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
             switch (serverType) {
                 case Global:
                 case Zone:
