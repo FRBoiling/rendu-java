@@ -8,6 +8,6 @@ package protocol.gate.global;
 import protocol.msgId.Id;
 public class G2GMIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(protocol.gate.global.G2GM.MSG_G2GM_HEARTBEAT.class, 0x1f0001);
+          Id.getInst().SetMessage(G2GM.MSG_G2GM_HEARTBEAT.class, 0x1f0001);
      }
 }

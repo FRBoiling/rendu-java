@@ -33,7 +33,7 @@ public final class M2R {
     private MSG_M2R_HEARTBEAT() {
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -44,7 +44,7 @@ public final class M2R {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -77,14 +77,14 @@ public final class M2R {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protocol.manager.relation.M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_descriptor;
+      return M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protocol.manager.relation.M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_fieldAccessorTable
+      return M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT.class, protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT.Builder.class);
+              MSG_M2R_HEARTBEAT.class, Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -112,22 +112,22 @@ public final class M2R {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT)) {
+      if (!(obj instanceof MSG_M2R_HEARTBEAT)) {
         return super.equals(obj);
       }
-      protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT other = (protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT) obj;
+      MSG_M2R_HEARTBEAT other = (MSG_M2R_HEARTBEAT) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -139,69 +139,69 @@ public final class M2R {
       return hash;
     }
 
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(
+    public static MSG_M2R_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(
+    public static MSG_M2R_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(
+    public static MSG_M2R_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(
+    public static MSG_M2R_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(byte[] data)
+    public static MSG_M2R_HEARTBEAT parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(
+    public static MSG_M2R_HEARTBEAT parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(java.io.InputStream input)
+    public static MSG_M2R_HEARTBEAT parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(
+    public static MSG_M2R_HEARTBEAT parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
+    public static MSG_M2R_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseDelimitedFrom(
+    public static MSG_M2R_HEARTBEAT parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(
+    public static MSG_M2R_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parseFrom(
+    public static MSG_M2R_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -213,7 +213,7 @@ public final class M2R {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT prototype) {
+    public static Builder newBuilder(MSG_M2R_HEARTBEAT prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -221,9 +221,9 @@ public final class M2R {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -233,17 +233,17 @@ public final class M2R {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.manager.relation.MSG_M2R_HEARTBEAT)
-        protocol.manager.relation.M2R.MSG_M2R_HEARTBEATOrBuilder {
+        MSG_M2R_HEARTBEATOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protocol.manager.relation.M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_descriptor;
+        return M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protocol.manager.relation.M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_fieldAccessorTable
+        return M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT.class, protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT.Builder.class);
+                MSG_M2R_HEARTBEAT.class, Builder.class);
       }
 
       // Construct using protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT.newBuilder()
@@ -252,7 +252,7 @@ public final class M2R {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -268,23 +268,23 @@ public final class M2R {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protocol.manager.relation.M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_descriptor;
+        return M2R.internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_descriptor;
       }
 
-      public protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT getDefaultInstanceForType() {
-        return protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT.getDefaultInstance();
+      public MSG_M2R_HEARTBEAT getDefaultInstanceForType() {
+        return MSG_M2R_HEARTBEAT.getDefaultInstance();
       }
 
-      public protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT build() {
-        protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT result = buildPartial();
+      public MSG_M2R_HEARTBEAT build() {
+        MSG_M2R_HEARTBEAT result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT buildPartial() {
-        protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT result = new protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT(this);
+      public MSG_M2R_HEARTBEAT buildPartial() {
+        MSG_M2R_HEARTBEAT result = new MSG_M2R_HEARTBEAT(this);
         onBuilt();
         return result;
       }
@@ -294,7 +294,7 @@ public final class M2R {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -307,25 +307,25 @@ public final class M2R {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT) {
-          return mergeFrom((protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT)other);
+        if (other instanceof MSG_M2R_HEARTBEAT) {
+          return mergeFrom((MSG_M2R_HEARTBEAT)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT other) {
-        if (other == protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT.getDefaultInstance()) return this;
+      public Builder mergeFrom(MSG_M2R_HEARTBEAT other) {
+        if (other == MSG_M2R_HEARTBEAT.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -339,11 +339,11 @@ public final class M2R {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT parsedMessage = null;
+        MSG_M2R_HEARTBEAT parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT) e.getUnfinishedMessage();
+          parsedMessage = (MSG_M2R_HEARTBEAT) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -367,16 +367,16 @@ public final class M2R {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.manager.relation.MSG_M2R_HEARTBEAT)
-    private static final protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT DEFAULT_INSTANCE;
+    private static final MSG_M2R_HEARTBEAT DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT();
+      DEFAULT_INSTANCE = new MSG_M2R_HEARTBEAT();
     }
 
-    public static protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT getDefaultInstance() {
+    public static MSG_M2R_HEARTBEAT getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_M2R_HEARTBEAT>
+    @Deprecated public static final com.google.protobuf.Parser<MSG_M2R_HEARTBEAT>
         PARSER = new com.google.protobuf.AbstractParser<MSG_M2R_HEARTBEAT>() {
       public MSG_M2R_HEARTBEAT parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -390,12 +390,12 @@ public final class M2R {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<MSG_M2R_HEARTBEAT> getParserForType() {
       return PARSER;
     }
 
-    public protocol.manager.relation.M2R.MSG_M2R_HEARTBEAT getDefaultInstanceForType() {
+    public MSG_M2R_HEARTBEAT getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -414,7 +414,7 @@ public final class M2R {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\tM2R.proto\022\031protocol.manager.relation\"\023" +
       "\n\021MSG_M2R_HEARTBEAT"
     };
@@ -435,7 +435,7 @@ public final class M2R {
     internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_manager_relation_MSG_M2R_HEARTBEAT_descriptor,
-        new java.lang.String[] { });
+        new String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

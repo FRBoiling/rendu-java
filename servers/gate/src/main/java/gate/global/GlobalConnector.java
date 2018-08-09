@@ -21,6 +21,7 @@ public class GlobalConnector extends AbstractConnector {
         IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
 
         sessionMng = GlobalServerSessionMng.getInstance();
+        setName(getClass().getSimpleName());
 
         setName(getClass().getSimpleName());
 

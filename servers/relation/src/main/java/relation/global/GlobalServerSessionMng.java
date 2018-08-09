@@ -29,6 +29,11 @@ public class GlobalServerSessionMng extends AbstractSessionManager {
     }
 
     @Override
+    public void updateLogic(long dt) {
+
+    }
+
+    @Override
     public AbstractSession createSession(Channel channel) {
         GlobalServerSession session = new GlobalServerSession(channel);
         session.setResponseMng(GlobalServerResponseMng.getInstance());

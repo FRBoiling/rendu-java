@@ -31,6 +31,11 @@ public class RelationServerSessionMng extends AbstractSessionManager {
     }
 
     @Override
+    public void updateLogic(long dt) {
+
+    }
+
+    @Override
     public AbstractSession createSession(Channel channel) {
         RelationServerSession session = new RelationServerSession(channel);
         session.setResponseMng(RelationServerResponseMng.getInstance());
