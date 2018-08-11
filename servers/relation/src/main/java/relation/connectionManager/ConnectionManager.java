@@ -100,27 +100,30 @@ public class ConnectionManager implements IConnectionManager {
 
     @Override
     public void connect(ServerTag tag, String ip, int port) {
-        switch (tag.getType()) {
-            case Manager:
-                AbstractSession managerSession = ManagerServerSessionMng.getInstance().getRegisterSession(tag);
-                if (managerSession == null) {
-                    connectManagerServer(ip, port, tag);
-                } else {
-                    log.error("already connected an manager session {}!", managerSession.getTag().toString());
-                }
-                break;
-            case Relation:
-                if (Context.tag.getSubId() > tag.getSubId()) { //约定规则：subId大的连接subId小的。
-                    AbstractSession relationSession = RelationServerSessionMng.getInstance().getRegisterSession(tag);
-                    if (relationSession == null) {
-                        connectRelationServer(ip, port, tag);
+        if (tag.getGroupId() == Context.tag.getGroupId()) {
+
+            switch (tag.getType()) {
+                case Manager:
+                    AbstractSession managerSession = ManagerServerSessionMng.getInstance().getRegisterSession(tag);
+                    if (managerSession == null) {
+                        connectManagerServer(ip, port, tag);
                     } else {
-                        log.error("already connected an relation session {}!", relationSession.getTag().toString());
+                        log.error("already connected an manager session {}!", managerSession.getTag().toString());
                     }
-                }
-                break;
-            case Default:
-                break;
+                    break;
+                case Relation:
+                    if (Context.tag.getSubId() > tag.getSubId()) { //约定规则：subId大的连接subId小的。
+                        AbstractSession relationSession = RelationServerSessionMng.getInstance().getRegisterSession(tag);
+                        if (relationSession == null) {
+                            connectRelationServer(ip, port, tag);
+                        } else {
+                            log.error("already connected an relation session {}!", relationSession.getTag().toString());
+                        }
+                    }
+                    break;
+                case Default:
+                    break;
+            }
         }
     }
 

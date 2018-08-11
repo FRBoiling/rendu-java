@@ -122,21 +122,21 @@ public class ConnectionManager implements IConnectionManager {
 
     @Override
     public void connect(ServerTag tag, String ip, int port) {
-        switch (tag.getType()) {
-            case Manager:
-                if (Context.tag.getSubId() > tag.getSubId())  //约定规则：subId大的连接subId小的。
-                {
-                    AbstractSession managerSession = ManagerServerSessionMng.getInstance().getRegisterSession(tag);
-                    if (managerSession == null) {
-                        connectManagerServer(ip, port, tag);
-                    } else {
-                        log.error("already connected an manager session {}!", managerSession.getTag().toString());
-                    }
-                }
-                break;
-            case Default:
-                break;
-        }
+//        switch (tag.getType()) {
+//            case Manager:
+//                if (Context.tag.getSubId() > tag.getSubId())  //约定规则：subId大的连接subId小的。
+//                {
+//                    AbstractSession managerSession = ManagerServerSessionMng.getInstance().getRegisterSession(tag);
+//                    if (managerSession == null) {
+//                        connectManagerServer(ip, port, tag);
+//                    } else {
+//                        log.error("already connected an manager session {}!", managerSession.getTag().toString());
+//                    }
+//                }
+//                break;
+//            case Default:
+//                break;
+//        }
     }
 
     private void connectManagerServer(String ip, int port, ServerTag tag) {

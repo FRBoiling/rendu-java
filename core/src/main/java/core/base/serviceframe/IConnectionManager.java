@@ -1,6 +1,5 @@
 package core.base.serviceframe;
 
-import core.base.common.ISessionTag;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import protocol.server.register.ServerRegister;

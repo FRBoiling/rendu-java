@@ -15,6 +15,7 @@ public class GateService
             context.start();
             log.info("GateService启动成功...");
         }catch (Exception e){
+            log.error(e.getMessage());
             context.stop();
         }
     }

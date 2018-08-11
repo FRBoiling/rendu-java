@@ -5,13 +5,12 @@ import core.network.INetworkConsumer;
 import core.network.INetworkEventListener;
 import core.network.INetworkServiceBuilder;
 import core.network.IResponseHandlerManager;
-import core.network.acceptor.ISocketAcceptor;
 import lombok.Data;
 
 /**
  * Copyright © 2018 四月
  * Boil blood. All rights reserved.
- *
+ * <p>
  * Project: ServerCluster-Java
  * Package: core.network
  * Description: ${todo}
@@ -20,10 +19,9 @@ import lombok.Data;
  * version: V1.0
  */
 @Data
-public class NetworkServiceBuilder implements INetworkServiceBuilder,ISocketAcceptor {
+public class AcceptorNetworkServiceBuilder_client implements INetworkServiceBuilder {
 
     private String name;
-
     /**
      * 网络线程池线程数量
      */
@@ -32,21 +30,29 @@ public class NetworkServiceBuilder implements INetworkServiceBuilder,ISocketAcce
      * 工作线程池线程数量
      */
     private int IOGroupCount;
-
     /**
      * 监听端口
      */
     private int port;
-
     /**
      * 网络消费者
      */
     private INetworkConsumer consumer;
 
+    @Override
+    public INetworkConsumer getConsumer() {
+        return consumer;
+    }
+
     /**
      * 事件监听器
      */
     private INetworkEventListener listener;
+
+    @Override
+    public INetworkEventListener getListener() {
+        return listener;
+    }
 
     /**
      * 消息池
@@ -55,16 +61,6 @@ public class NetworkServiceBuilder implements INetworkServiceBuilder,ISocketAcce
 
     @Override
     public IService createService() {
-        return new NetworkService(this);
-    }
-
-    @Override
-    public void bind(int port) {
-        this.port =port;
-    }
-
-    @Override
-    public void shutdownGracefully() {
-
+        return new AcceptorNetworkService_client(this);
     }
 }

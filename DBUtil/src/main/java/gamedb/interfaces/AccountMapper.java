@@ -4,6 +4,6 @@ import gamedb.pojo.account.AccountPOJO;
 import org.apache.ibatis.annotations.Param;
 
 public interface AccountMapper {
-    public int insertAccount(AccountPOJO accountPOJO);
-    public AccountPOJO getAccount(@Param("accountName") String accountName,@Param("channelName") String channelName);
+    int insertAccount(AccountPOJO accountPOJO);
+    AccountPOJO getAccount(@Param("username") String accountName,@Param("channelName") String channelName);
 }

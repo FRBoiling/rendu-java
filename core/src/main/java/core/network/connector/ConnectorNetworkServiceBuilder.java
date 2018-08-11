@@ -15,23 +15,33 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class ConnectorNetworkServiceBuilder implements INetworkServiceBuilder,ISocketConnector {
+public class ConnectorNetworkServiceBuilder implements INetworkServiceBuilder{
 
     private String name;
     /**
      * 工作线程池线程数量
      */
     private int workerLoopGroupCount;
+
     /**
      * 网络消费者
      */
     private INetworkConsumer consumer;
+
+    @Override
+    public INetworkConsumer getConsumer() {
+        return consumer;
+    }
 
     /**
      * 事件监听器
      */
     private INetworkEventListener listener;
 
+    @Override
+    public INetworkEventListener getListener() {
+        return listener;
+    }
     /**
      * 连接端口
      */
@@ -45,16 +55,5 @@ public class ConnectorNetworkServiceBuilder implements INetworkServiceBuilder,IS
     @Override
     public IService createService() {
         return new ConnectorNetworkService(this);
-    }
-
-    @Override
-    public void connect(String host,int port) {
-        this.port = port;
-        this.ip = host;
-    }
-
-    @Override
-    public void shutdownGracefully() {
-
     }
 }

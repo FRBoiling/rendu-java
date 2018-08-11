@@ -88,22 +88,22 @@ public class Context extends AbstractServiceFrame {
     }
 
     @Override
-    public void initDB() {
-
-    }
-
-    @Override
-    public void initRedis() {
-
-    }
-
-    @Override
     public void initOpenServerTime() {
 
     }
 
     @Override
     public void updateXml() {
+
+    }
+
+    @Override
+    public void initService() {
+
+    }
+
+    @Override
+    public void updateService() {
 
     }
 }

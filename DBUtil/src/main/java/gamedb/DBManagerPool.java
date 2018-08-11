@@ -56,7 +56,7 @@ public class DBManagerPool {
             {
                 return false;
             }
-            Thread dbThread = new Thread(()->db.Run());
+            Thread dbThread = new Thread(()->db.run());
             dbThreadList.add(dbThread);
             dbThread.start();
         }

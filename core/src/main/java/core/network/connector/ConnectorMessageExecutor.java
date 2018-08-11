@@ -3,6 +3,7 @@ package core.network.connector;
 
 import core.network.INetworkConsumer;
 import core.network.INetworkEventListener;
+import core.network.INetworkServiceBuilder;
 import core.network.codec.Packet;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -22,9 +23,9 @@ public class ConnectorMessageExecutor extends SimpleChannelInboundHandler<Packet
     private INetworkConsumer consumer;
     private INetworkEventListener listener;
 
-    ConnectorMessageExecutor(INetworkConsumer consumer, INetworkEventListener listener) {
-        this.consumer = consumer;
-        this.listener = listener;
+    ConnectorMessageExecutor(INetworkServiceBuilder builder) {
+        this.consumer = builder.getConsumer();
+        this.listener = builder.getListener();
     }
 
     @Override

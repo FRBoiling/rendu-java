@@ -1,32 +1,28 @@
-package gamedb.dao.character;
+package gamedb.dao.role;
 
 import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.RoleMapper;
-import gamedb.pojo.Role;
+import gamedb.pojo.RolePOJO;
 import org.apache.ibatis.session.SqlSession;
 
-import java.util.HashMap;
+public class UpdateRoleDBOperator extends AbstractDBOperator {
 
-public class SelectCharacterDBOperator extends AbstractDBOperator {
+    private RolePOJO role=null;
 
-    //需要的POJOs
-    private Role role=null;
-    public int id;
-
-    public SelectCharacterDBOperator(int id) {
-        this.id=id;
+    public UpdateRoleDBOperator(RolePOJO role) {
+        this.role=role;
     }
 
-    @Override
     public boolean execute() {
         SqlSession sqlSession=null;
         try{
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             RoleMapper roleMapper=sqlSession.getMapper(RoleMapper.class);
-            //HashMap<String,String> map=new HashMap<>();
-            role=roleMapper.getRole(1,"t_role");
-            System.err.println("SelectCharacterDBOperator execute");
+
+            int count=roleMapper.updateRole(role);
+            sqlSession.commit();
+            System.err.println("UpdateRoleDBOperator execute count "+count);
         }catch (Exception ex){
             System.err.println(ex.getMessage());
         }finally {
@@ -34,10 +30,6 @@ public class SelectCharacterDBOperator extends AbstractDBOperator {
             return true;
         }
 
-    }
-
-    public Role getRole() {
-        return role;
     }
 
 }

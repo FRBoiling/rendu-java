@@ -3,15 +3,16 @@ package gate.manager.response;
 import com.google.protobuf.InvalidProtocolBufferException;
 import constant.ErrorCode;
 import core.base.common.AbstractSession;
+import core.base.model.ClientTag;
+import core.base.model.ServerTag;
 import core.base.sequence.IResponseHandler;
 import core.network.codec.Packet;
-import gamedb.DBOperateType;
-import gamedb.DBTableParamType;
-import gamedb.dao.character.CreateCharacterDBOperator;
-import gamedb.dao.character.InsertCharacterNameDBOperator;
-import gamedb.pojo.CharPOJO;
+import gamedb.dao.role.CreateRoleDBOperator;
+import gamedb.dao.role.InsertRoleNameDBOperator;
+import gamedb.pojo.RolePOJO;
 import gate.GateService;
 import gate.client.ClientSession;
+import gate.client.ClientSessionMng;
 import lombok.extern.slf4j.Slf4j;
 import protocol.client.Client.*;
 import protocol.manager.gate.M2G;
@@ -19,66 +20,67 @@ import protocol.manager.gate.M2G;
 @Slf4j
 public class ResponseMaxCharUid implements IResponseHandler {
 
-    private MSG_GC_CREATE_CHARACTER_RESULT.Builder response= MSG_GC_CREATE_CHARACTER_RESULT.newBuilder();
     @Override
     public void onResponse(Packet packet, AbstractSession session) throws InvalidProtocolBufferException {
         M2G.MSG_M2G_MAX_UID msg=M2G.MSG_M2G_MAX_UID.parseFrom(packet.getMsg());
-        String account=msg.getAccountName();
+        String account=msg.getUsername();
         String channel=msg.getChannelName();
         int result =msg.getResult();
         int maxUid=msg.getMaxUid();
 
-        //正式开始创建角色
-        createCharacter(msg,(ClientSession) session);
+        ClientTag clientTag = new ClientTag().setChannelName(account).setChannelName(channel);
+        AbstractSession  clientSession = ClientSessionMng.getInstance().getRegisterSession(clientTag);
+
+        //TODO:BOIL 正式开始创建角色
+        createRole(maxUid,(ClientSession) clientSession);
     }
 
-    private void createCharacter(M2G.MSG_M2G_MAX_UID msg, ClientSession session) {
-
+    private void createRole(int uid, ClientSession session) {
+        MSG_GC_CREATE_ROLE.Builder response= MSG_GC_CREATE_ROLE.newBuilder();
         if (session.reqCreateMsg == null)
         {
-            log.warn("account {0} create character failed: ReqCreateMsg is null", msg.getAccountName());
-            response.setResultCode(ErrorCode.NotCreating.getValue());
+            log.warn("account {0} create role failed: ReqCreateMsg is null", session.getAccountPOJO().getUsername());
+            response.setResult(ErrorCode.NotCreating.getValue());
             session.sendMessage(response.build());
             return;
         }
-        if (msg.getResult() !=ErrorCode.SUCCESS.getValue())
-        {
-            log.warn("account {} create character failed: no watch dog manager", msg.getAccountName());
-            response.setResultCode(ErrorCode.ServerNotOpen.getValue());
-            session.sendMessage(response.build());
-            return;
-        }
+//        if (msg.getResult() !=ErrorCode.SUCCESS.getValue())
+//        {
+//            log.warn("account {} create role failed: no watch dog manager", session.getAccountPOJO().getUsername());
+//            response.setResult(ErrorCode.ServerNotOpen.getValue());
+//            session.sendMessage(response.build());
+//            return;
+//        }
 
-        CHARACTER_INFO.Builder character_info = CHARACTER_INFO.newBuilder();
+        ROLE_INFO.Builder role_info = ROLE_INFO.newBuilder();
+        role_info.setUid(uid);
+        response.setRoleInfo(role_info);
 
-        character_info.setUid(msg.getMaxUid());
-        response.setCharacterInfo(character_info);
-
-       // try to insert character name
-        InsertCharacterNameDBOperator operator=new InsertCharacterNameDBOperator(msg.getAccountName(), msg.getMaxUid());
-        GateService.context.db.Call(operator, "character_name", DBOperateType.Write,operator1 -> {
-            InsertCharacterNameDBOperator op=(InsertCharacterNameDBOperator)operator1;
+       // try to insert role name
+        InsertRoleNameDBOperator operator=new InsertRoleNameDBOperator(session.getAccountPOJO().getUsername(), uid);
+        GateService.context.db.Call(operator,operator1 -> {
+            InsertRoleNameDBOperator op=(InsertRoleNameDBOperator)operator1;
             if(op.getResult()!=1){
                 //DuplicatedName
-                response.setResultCode(ErrorCode.DuplicatedName.getValue());
+                response.setResult(ErrorCode.DuplicatedName.getValue());
                 session.sendMessage(response.build());
             }
             else {
-                //Create character
-                createCharacterWithTransaction(session,response.build());
+                //Create role
+                createRoleWithTransaction(session,response.build());
             }
         });
     }
 
-    private void createCharacterWithTransaction(ClientSession session,MSG_GC_CREATE_CHARACTER_RESULT response) {
-        CharPOJO pojo=new CharPOJO();
-        String tableName=GateService.context.db.GetTableName("character",response.getCharacterInfo().getUid() ,DBTableParamType.Character);
-        pojo.setTableName(tableName);
+    private void createRoleWithTransaction(ClientSession session, MSG_GC_CREATE_ROLE response) {
+        RolePOJO pojo=new RolePOJO();
+        //String tableName=GateService.context.db.GetTableName("role",response.getCharacterInfo().getUid() ,DBTableParamType.Character);
+        pojo.setTableName("role");
 
         //TODO:设置各种数据到pojo
 
-        CreateCharacterDBOperator operator=new CreateCharacterDBOperator(pojo);
-        GateService.context.db.Call(operator, tableName, DBOperateType.Write ,(op)-> {
+        CreateRoleDBOperator operator=new CreateRoleDBOperator(pojo);
+        GateService.context.db.Call(operator,(op)-> {
             //回调内容
             //TODO 所有的需要的默认角色信息，插入到DB
         });

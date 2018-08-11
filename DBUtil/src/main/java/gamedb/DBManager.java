@@ -1,46 +1,74 @@
 package gamedb;
 
 import basicCallBack.ObjectBeCalled;
+import gamedb.Util.MybatisConfigUtil;
+import lombok.extern.slf4j.Slf4j;
+import util.FileUtil;
 import util.Time;
 import gamedb.dao.AbstractDBOperator;
 
+import java.io.File;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-
+@Slf4j
 public class DBManager {
 
     private ConcurrentLinkedQueue<AbstractDBOperator> saveQueue = new ConcurrentLinkedQueue<AbstractDBOperator>();
 
-    private ConcurrentLinkedQueue<AbstractDBOperator> executionQue;
+    private Queue<AbstractDBOperator> executionQue;
     private ConcurrentLinkedQueue<AbstractDBOperator> postUpdateQue;
 
     private ConcurrentLinkedQueue<String> exceptionLogQueue;
 
-    public boolean Opened=false;
+    public boolean Opened = false;
 
-    public boolean init(){
-        saveQueue=new ConcurrentLinkedQueue<>();
-        executionQue=new ConcurrentLinkedQueue<>();
-        postUpdateQue=new ConcurrentLinkedQueue<>();
-        exceptionLogQueue=new ConcurrentLinkedQueue<>();
-        Opened=true;
+    public boolean init() {
+        saveQueue = new ConcurrentLinkedQueue<>();
+        executionQue = new ArrayDeque<>();
+        postUpdateQue = new ConcurrentLinkedQueue<>();
+        exceptionLogQueue = new ConcurrentLinkedQueue<>();
+        Opened = true;
         return true;
     }
 
-    public boolean Exit(){
-        Opened=false;
+    public void initConfig(String configPath){
+        //初始化Mybatis配置
+        List<File> fileList = new ArrayList<>();
+        FileUtil.findFiles(configPath, "mybatis_config.xml", fileList);
+        if (fileList.size() == 0) {
+            FileUtil.findFiles(System.getProperty("user.dir"), "mybatis_config.xml", fileList);
+        }
+        if (fileList.size() > 0) {
+            for (File file : fileList) {
+                MybatisConfigUtil.InitWithFile(file);
+                log.info("-------------- Mybatis Config Done---------------");
+                break;
+            }
+        } else {
+            log.error("--------------no mybatis_config.xml---------------");
+        }
+    }
+
+
+    public boolean Exit() {
+        Opened = false;
         return true;
     }
-    public void Add(AbstractDBOperator query){
+
+    public void Add(AbstractDBOperator query) {
         query.Init(this);
         saveQueue.offer(query);
     }
 
-    public void Call(AbstractDBOperator query){
+    public void Call(AbstractDBOperator query) {
         Add(query);
     }
 
-    public void Call(AbstractDBOperator query, ObjectBeCalled callee){
+    public void Call(AbstractDBOperator query, ObjectBeCalled callee) {
         query.Init(this);
         query.RegistCallBack(callee);
         Add(query);
@@ -49,7 +77,7 @@ public class DBManager {
     public long lasttime;
     long totaltime;
 
-    public void Wait(long millis){
+    public void Wait(long millis) {
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
@@ -57,74 +85,74 @@ public class DBManager {
         }
     }
 
-    public void Run() {
-        Time time=new Time();
+    public void run() {
+        Time time = new Time();
         time.init();
-        ConcurrentLinkedQueue<AbstractDBOperator> tempPostUpdateQueue=new ConcurrentLinkedQueue<>();
-        while(true){
-            lasttime =time.update();
-            if(lasttime <=1){
+        Queue<AbstractDBOperator> tempPostUpdateQueue = new ArrayDeque<>();
+        while (true) {
+            lasttime = time.update();
+            if (lasttime <= 1) {
                 Wait(1L);
             }
-            if(totaltime>10000L){
-                totaltime=0;
-            }else{
-                totaltime+= lasttime;
+            if (totaltime > 10000L) {
+                totaltime = 0;
+            } else {
+                totaltime += lasttime;
             }
 
-            try{
-                if(saveQueue.isEmpty()){
+            try {
+                if (saveQueue.isEmpty()) {
                     continue;
                 }
-                while (!saveQueue.isEmpty()){
-                    AbstractDBOperator query= saveQueue.poll();
+                while (!saveQueue.isEmpty()) {
+                    AbstractDBOperator query = saveQueue.poll();
                     executionQue.offer(query);
                 }
 
-                while(!executionQue.isEmpty()){
-                    AbstractDBOperator query=executionQue.poll();
-                    boolean success=query.execute();
-                    if(!success){
-                        if(query.ErrorText!=null){
+                while (!executionQue.isEmpty()) {
+                    AbstractDBOperator query = executionQue.poll();
+                    boolean success = query.execute();
+                    if (!success) {
+                        if (query.ErrorText != null) {
                             AddExceptionLog(query.ErrorText);
                         }
                     }
                     tempPostUpdateQueue.offer(query);
                 }
 
-                while (!tempPostUpdateQueue.isEmpty()){
+                while (!tempPostUpdateQueue.isEmpty()) {
                     postUpdateQue.offer(tempPostUpdateQueue.poll());
                 }
 
                 tempPostUpdateQueue.clear();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public ConcurrentLinkedQueue<AbstractDBOperator> GetPostUpdateQueue(){
-        ConcurrentLinkedQueue<AbstractDBOperator> ret=new ConcurrentLinkedQueue<>();
-        while(!postUpdateQue.isEmpty()){
-            AbstractDBOperator query=postUpdateQue.poll();
+    public Queue<AbstractDBOperator> GetPostUpdateQueue() {
+        Queue<AbstractDBOperator> ret = new ArrayDeque<>();
+        while (!postUpdateQue.isEmpty()) {
+            AbstractDBOperator query = postUpdateQue.poll();
             ret.offer(query);
         }
         return ret;
     }
 
-    public ConcurrentLinkedQueue<String> GetExceptionLogQueue(){
-        ConcurrentLinkedQueue<String> ret;
-        if(!exceptionLogQueue.isEmpty()){
-            ret=exceptionLogQueue;
-            exceptionLogQueue=new ConcurrentLinkedQueue<>();
-        }else{
+    public Queue<String> GetExceptionLogQueue() {
+        Queue<String> ret; ;
+        if (!exceptionLogQueue.isEmpty()) {
+            ret= new ArrayDeque<>(exceptionLogQueue);
+            exceptionLogQueue.clear();
+        } else {
             return null;
         }
         return ret;
     }
 
-    public void AddExceptionLog(String log){
+    public void AddExceptionLog(String log) {
         exceptionLogQueue.offer(log);
     }
 

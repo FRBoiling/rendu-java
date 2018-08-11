@@ -15,4 +15,6 @@ import core.base.serviceframe.IService;
  */
 public interface INetworkServiceBuilder {
     IService createService();
+    INetworkConsumer getConsumer();
+    INetworkEventListener getListener();
 }

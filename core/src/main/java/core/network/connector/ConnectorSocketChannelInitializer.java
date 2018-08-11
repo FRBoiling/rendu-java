@@ -3,6 +3,7 @@ package core.network.connector;
 import core.network.IChannelHandlerHolder;
 import core.network.INetworkConsumer;
 import core.network.INetworkEventListener;
+import core.network.INetworkServiceBuilder;
 import core.network.codec.*;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
@@ -44,8 +45,8 @@ public class ConnectorSocketChannelInitializer extends ChannelInitializer implem
     });
     private ConnectorWatchdog watchdog;
 
-    ConnectorSocketChannelInitializer(INetworkConsumer consumer, INetworkEventListener listener) {
-        messageExecutor = new ConnectorMessageExecutor(consumer, listener);
+    ConnectorSocketChannelInitializer(INetworkServiceBuilder builder) {
+        messageExecutor = new ConnectorMessageExecutor(builder);
         this.watchdog = new ConnectorWatchdog(timer){
             @Override
             public ChannelHandler[] handlers() {

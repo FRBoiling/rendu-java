@@ -26,17 +26,18 @@ import java.util.List;
 public class Context extends AbstractServiceFrame {
 
     public static ConnectionManager connectManager;
+
     @Override
     public void init(String[] args) {
         super.init(args);
 
         ServerType serverType = ServerType.Gate;
         tag = new ServerTag();
-        if (args.length>=1){
+        if (args.length >= 1) {
             Integer subId = Integer.parseInt(args[0]);
-            tag.setTag(serverType,0,subId);
+            tag.setTag(serverType, 0, subId);
         }
-        connectManager =  new ConnectionManager();
+        connectManager = new ConnectionManager();
         initConnectManager(connectManager);
         initMainThread("BarrackDriverThread");
     }
@@ -62,8 +63,8 @@ public class Context extends AbstractServiceFrame {
     @Override
     public void initXmlData() {
         List<File> fileList = new ArrayList<File>();
-        FileUtil.findFiles(PathManager.getInstance().getXmlPath(),"*xml",fileList);
-        for (Object obj :fileList){
+        FileUtil.findFiles(PathManager.getInstance().getXmlPath(), "*xml", fileList);
+        for (Object obj : fileList) {
             File f = (File) obj;
 //            System.out.println("-----"+f.toString());
             DataListManager.getInstance().Parse(f.toString());
@@ -76,22 +77,22 @@ public class Context extends AbstractServiceFrame {
     }
 
     @Override
-    public void initDB() {
-
-    }
-
-    @Override
-    public void initRedis() {
-
-    }
-
-    @Override
     public void initOpenServerTime() {
 
     }
 
     @Override
     public void updateXml() {
+
+    }
+
+    @Override
+    public void initService() {
+
+    }
+
+    @Override
+    public void updateService() {
 
     }
 }

@@ -9,9 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SelectAccountDBOperator extends AbstractDBOperator {
     public AccountPOJO account=null;
-    public int id;
-    public int count;
-
     public SelectAccountDBOperator(AccountPOJO account){
         this.account=account;
     }
@@ -22,7 +19,7 @@ public class SelectAccountDBOperator extends AbstractDBOperator {
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             AccountMapper accountMapper=sqlSession.getMapper(AccountMapper.class);
 
-            account=accountMapper.getAccount(account.getAccountName(),account.getChannelName());
+            account=accountMapper.getAccount(account.getUsername(),account.getChannelName());
 
             sqlSession.commit();
             if(account==null) {

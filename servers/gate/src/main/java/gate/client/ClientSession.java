@@ -2,7 +2,8 @@ package gate.client;
 
 import core.base.common.AbstractSession;
 import core.base.model.ClientTag;
-import dataObject.AccountObject;
+import gamedb.pojo.RolePOJO;
+import gamedb.pojo.account.AccountPOJO;
 import io.netty.channel.Channel;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,12 +36,11 @@ public class ClientSession extends AbstractSession {
 
     }
 
-    public MSG_CG_CREATE_CHARACTER reqCreateMsg = null;
+    public MSG_CG_CREATE_ROLE reqCreateMsg = null;
 
-    AccountObject accountObject = null;
+    AccountPOJO accountPOJO = null;
 
     void login() {
         ClientLoginMng.getInstance().loadAccount(this);
     }
-
 }

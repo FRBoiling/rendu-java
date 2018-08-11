@@ -23,12 +23,10 @@ public class ResponseMaxUid implements IResponseHandler {
         
         GateServerSession gateSession=(GateServerSession)session;
         MSG_G2M_MAX_UID msg=MSG_G2M_MAX_UID.parseFrom(packet.getMsg());
-        String accountName=msg.getAccountName();
-        String channelName=msg.getChannelName();
-        int maxUid= ++ ManagerService.context.maxCharUid;
+        int maxUid= ++ ManagerService.context.maxRoleUid;
         M2G.MSG_M2G_MAX_UID.Builder response=M2G.MSG_M2G_MAX_UID.newBuilder();
-        response.setAccountName(accountName);
-        response.setChannelName(channelName);
+        response.setUsername(msg.getUsername());
+        response.setChannelName(msg.getChannelName());
         response.setMaxUid(maxUid);
         response.setResult(ErrorCode.SUCCESS.getValue());
         gateSession.sendMessage(response.build());

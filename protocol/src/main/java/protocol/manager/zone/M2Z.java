@@ -33,7 +33,7 @@ public final class M2Z {
     private MSG_M2Z_HEARTBEAT() {
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -44,7 +44,7 @@ public final class M2Z {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -77,14 +77,14 @@ public final class M2Z {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_descriptor;
+      return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_fieldAccessorTable
+      return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT.class, protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT.Builder.class);
+              MSG_M2Z_HEARTBEAT.class, Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -112,22 +112,22 @@ public final class M2Z {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT)) {
+      if (!(obj instanceof MSG_M2Z_HEARTBEAT)) {
         return super.equals(obj);
       }
-      protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT other = (protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT) obj;
+      MSG_M2Z_HEARTBEAT other = (MSG_M2Z_HEARTBEAT) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -139,69 +139,69 @@ public final class M2Z {
       return hash;
     }
 
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(
+    public static MSG_M2Z_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(
+    public static MSG_M2Z_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(
+    public static MSG_M2Z_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(
+    public static MSG_M2Z_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(byte[] data)
+    public static MSG_M2Z_HEARTBEAT parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(
+    public static MSG_M2Z_HEARTBEAT parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(java.io.InputStream input)
+    public static MSG_M2Z_HEARTBEAT parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(
+    public static MSG_M2Z_HEARTBEAT parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
+    public static MSG_M2Z_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseDelimitedFrom(
+    public static MSG_M2Z_HEARTBEAT parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(
+    public static MSG_M2Z_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parseFrom(
+    public static MSG_M2Z_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -213,7 +213,7 @@ public final class M2Z {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT prototype) {
+    public static Builder newBuilder(MSG_M2Z_HEARTBEAT prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -221,9 +221,9 @@ public final class M2Z {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -233,17 +233,17 @@ public final class M2Z {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.manager.zone.MSG_M2Z_HEARTBEAT)
-        protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEATOrBuilder {
+        MSG_M2Z_HEARTBEATOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_descriptor;
+        return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_fieldAccessorTable
+        return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT.class, protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT.Builder.class);
+                MSG_M2Z_HEARTBEAT.class, Builder.class);
       }
 
       // Construct using protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT.newBuilder()
@@ -252,7 +252,7 @@ public final class M2Z {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -268,23 +268,23 @@ public final class M2Z {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_descriptor;
+        return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_descriptor;
       }
 
-      public protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT getDefaultInstanceForType() {
-        return protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT.getDefaultInstance();
+      public MSG_M2Z_HEARTBEAT getDefaultInstanceForType() {
+        return MSG_M2Z_HEARTBEAT.getDefaultInstance();
       }
 
-      public protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT build() {
-        protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT result = buildPartial();
+      public MSG_M2Z_HEARTBEAT build() {
+        MSG_M2Z_HEARTBEAT result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT buildPartial() {
-        protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT result = new protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT(this);
+      public MSG_M2Z_HEARTBEAT buildPartial() {
+        MSG_M2Z_HEARTBEAT result = new MSG_M2Z_HEARTBEAT(this);
         onBuilt();
         return result;
       }
@@ -294,7 +294,7 @@ public final class M2Z {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -307,25 +307,25 @@ public final class M2Z {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT) {
-          return mergeFrom((protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT)other);
+        if (other instanceof MSG_M2Z_HEARTBEAT) {
+          return mergeFrom((MSG_M2Z_HEARTBEAT)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT other) {
-        if (other == protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT.getDefaultInstance()) return this;
+      public Builder mergeFrom(MSG_M2Z_HEARTBEAT other) {
+        if (other == MSG_M2Z_HEARTBEAT.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -339,11 +339,11 @@ public final class M2Z {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT parsedMessage = null;
+        MSG_M2Z_HEARTBEAT parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT) e.getUnfinishedMessage();
+          parsedMessage = (MSG_M2Z_HEARTBEAT) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -367,16 +367,16 @@ public final class M2Z {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.manager.zone.MSG_M2Z_HEARTBEAT)
-    private static final protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT DEFAULT_INSTANCE;
+    private static final MSG_M2Z_HEARTBEAT DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT();
+      DEFAULT_INSTANCE = new MSG_M2Z_HEARTBEAT();
     }
 
-    public static protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT getDefaultInstance() {
+    public static MSG_M2Z_HEARTBEAT getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_M2Z_HEARTBEAT>
+    @Deprecated public static final com.google.protobuf.Parser<MSG_M2Z_HEARTBEAT>
         PARSER = new com.google.protobuf.AbstractParser<MSG_M2Z_HEARTBEAT>() {
       public MSG_M2Z_HEARTBEAT parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -390,12 +390,12 @@ public final class M2Z {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<MSG_M2Z_HEARTBEAT> getParserForType() {
       return PARSER;
     }
 
-    public protocol.manager.zone.M2Z.MSG_M2Z_HEARTBEAT getDefaultInstanceForType() {
+    public MSG_M2Z_HEARTBEAT getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -406,13 +406,13 @@ public final class M2Z {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 characterUid = 1;</code>
+     * <code>required int32 Uid = 1;</code>
      */
-    boolean hasCharacterUid();
+    boolean hasUid();
     /**
-     * <code>required int32 characterUid = 1;</code>
+     * <code>required int32 Uid = 1;</code>
      */
-    int getCharacterUid();
+    int getUid();
   }
   /**
    * Protobuf type {@code protocol.manager.zone.MSG_M2Z_REPEAT_LOGIN}
@@ -427,10 +427,10 @@ public final class M2Z {
       super(builder);
     }
     private MSG_M2Z_REPEAT_LOGIN() {
-      characterUid_ = 0;
+      uid_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -441,7 +441,7 @@ public final class M2Z {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -463,7 +463,7 @@ public final class M2Z {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              characterUid_ = input.readInt32();
+              uid_ = input.readInt32();
               break;
             }
           }
@@ -480,30 +480,30 @@ public final class M2Z {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_descriptor;
+      return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_fieldAccessorTable
+      return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN.class, protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN.Builder.class);
+              MSG_M2Z_REPEAT_LOGIN.class, Builder.class);
     }
 
     private int bitField0_;
-    public static final int CHARACTERUID_FIELD_NUMBER = 1;
-    private int characterUid_;
+    public static final int UID_FIELD_NUMBER = 1;
+    private int uid_;
     /**
-     * <code>required int32 characterUid = 1;</code>
+     * <code>required int32 Uid = 1;</code>
      */
-    public boolean hasCharacterUid() {
+    public boolean hasUid() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 characterUid = 1;</code>
+     * <code>required int32 Uid = 1;</code>
      */
-    public int getCharacterUid() {
-      return characterUid_;
+    public int getUid() {
+      return uid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -512,7 +512,7 @@ public final class M2Z {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasCharacterUid()) {
+      if (!hasUid()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -523,7 +523,7 @@ public final class M2Z {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, characterUid_);
+        output.writeInt32(1, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -535,112 +535,112 @@ public final class M2Z {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, characterUid_);
+          .computeInt32Size(1, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN)) {
+      if (!(obj instanceof MSG_M2Z_REPEAT_LOGIN)) {
         return super.equals(obj);
       }
-      protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN other = (protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN) obj;
+      MSG_M2Z_REPEAT_LOGIN other = (MSG_M2Z_REPEAT_LOGIN) obj;
 
       boolean result = true;
-      result = result && (hasCharacterUid() == other.hasCharacterUid());
-      if (hasCharacterUid()) {
-        result = result && (getCharacterUid()
-            == other.getCharacterUid());
+      result = result && (hasUid() == other.hasUid());
+      if (hasUid()) {
+        result = result && (getUid()
+            == other.getUid());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasCharacterUid()) {
-        hash = (37 * hash) + CHARACTERUID_FIELD_NUMBER;
-        hash = (53 * hash) + getCharacterUid();
+      if (hasUid()) {
+        hash = (37 * hash) + UID_FIELD_NUMBER;
+        hash = (53 * hash) + getUid();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(byte[] data)
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(java.io.InputStream input)
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseDelimitedFrom(java.io.InputStream input)
+    public static MSG_M2Z_REPEAT_LOGIN parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseDelimitedFrom(
+    public static MSG_M2Z_REPEAT_LOGIN parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parseFrom(
+    public static MSG_M2Z_REPEAT_LOGIN parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -652,7 +652,7 @@ public final class M2Z {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN prototype) {
+    public static Builder newBuilder(MSG_M2Z_REPEAT_LOGIN prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -660,9 +660,9 @@ public final class M2Z {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -672,17 +672,17 @@ public final class M2Z {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.manager.zone.MSG_M2Z_REPEAT_LOGIN)
-        protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGINOrBuilder {
+        MSG_M2Z_REPEAT_LOGINOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_descriptor;
+        return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_fieldAccessorTable
+        return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN.class, protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN.Builder.class);
+                MSG_M2Z_REPEAT_LOGIN.class, Builder.class);
       }
 
       // Construct using protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN.newBuilder()
@@ -691,7 +691,7 @@ public final class M2Z {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -702,36 +702,36 @@ public final class M2Z {
       }
       public Builder clear() {
         super.clear();
-        characterUid_ = 0;
+        uid_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protocol.manager.zone.M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_descriptor;
+        return M2Z.internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_descriptor;
       }
 
-      public protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN getDefaultInstanceForType() {
-        return protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN.getDefaultInstance();
+      public MSG_M2Z_REPEAT_LOGIN getDefaultInstanceForType() {
+        return MSG_M2Z_REPEAT_LOGIN.getDefaultInstance();
       }
 
-      public protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN build() {
-        protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN result = buildPartial();
+      public MSG_M2Z_REPEAT_LOGIN build() {
+        MSG_M2Z_REPEAT_LOGIN result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN buildPartial() {
-        protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN result = new protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN(this);
+      public MSG_M2Z_REPEAT_LOGIN buildPartial() {
+        MSG_M2Z_REPEAT_LOGIN result = new MSG_M2Z_REPEAT_LOGIN(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.characterUid_ = characterUid_;
+        result.uid_ = uid_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -742,7 +742,7 @@ public final class M2Z {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -755,27 +755,27 @@ public final class M2Z {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN) {
-          return mergeFrom((protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN)other);
+        if (other instanceof MSG_M2Z_REPEAT_LOGIN) {
+          return mergeFrom((MSG_M2Z_REPEAT_LOGIN)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN other) {
-        if (other == protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN.getDefaultInstance()) return this;
-        if (other.hasCharacterUid()) {
-          setCharacterUid(other.getCharacterUid());
+      public Builder mergeFrom(MSG_M2Z_REPEAT_LOGIN other) {
+        if (other == MSG_M2Z_REPEAT_LOGIN.getDefaultInstance()) return this;
+        if (other.hasUid()) {
+          setUid(other.getUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -783,7 +783,7 @@ public final class M2Z {
       }
 
       public final boolean isInitialized() {
-        if (!hasCharacterUid()) {
+        if (!hasUid()) {
           return false;
         }
         return true;
@@ -793,11 +793,11 @@ public final class M2Z {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN parsedMessage = null;
+        MSG_M2Z_REPEAT_LOGIN parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN) e.getUnfinishedMessage();
+          parsedMessage = (MSG_M2Z_REPEAT_LOGIN) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -808,34 +808,34 @@ public final class M2Z {
       }
       private int bitField0_;
 
-      private int characterUid_ ;
+      private int uid_ ;
       /**
-       * <code>required int32 characterUid = 1;</code>
+       * <code>required int32 Uid = 1;</code>
        */
-      public boolean hasCharacterUid() {
+      public boolean hasUid() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 characterUid = 1;</code>
+       * <code>required int32 Uid = 1;</code>
        */
-      public int getCharacterUid() {
-        return characterUid_;
+      public int getUid() {
+        return uid_;
       }
       /**
-       * <code>required int32 characterUid = 1;</code>
+       * <code>required int32 Uid = 1;</code>
        */
-      public Builder setCharacterUid(int value) {
+      public Builder setUid(int value) {
         bitField0_ |= 0x00000001;
-        characterUid_ = value;
+        uid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 characterUid = 1;</code>
+       * <code>required int32 Uid = 1;</code>
        */
-      public Builder clearCharacterUid() {
+      public Builder clearUid() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        characterUid_ = 0;
+        uid_ = 0;
         onChanged();
         return this;
       }
@@ -854,16 +854,16 @@ public final class M2Z {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.manager.zone.MSG_M2Z_REPEAT_LOGIN)
-    private static final protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN DEFAULT_INSTANCE;
+    private static final MSG_M2Z_REPEAT_LOGIN DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN();
+      DEFAULT_INSTANCE = new MSG_M2Z_REPEAT_LOGIN();
     }
 
-    public static protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN getDefaultInstance() {
+    public static MSG_M2Z_REPEAT_LOGIN getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_M2Z_REPEAT_LOGIN>
+    @Deprecated public static final com.google.protobuf.Parser<MSG_M2Z_REPEAT_LOGIN>
         PARSER = new com.google.protobuf.AbstractParser<MSG_M2Z_REPEAT_LOGIN>() {
       public MSG_M2Z_REPEAT_LOGIN parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -877,12 +877,12 @@ public final class M2Z {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<MSG_M2Z_REPEAT_LOGIN> getParserForType() {
       return PARSER;
     }
 
-    public protocol.manager.zone.M2Z.MSG_M2Z_REPEAT_LOGIN getDefaultInstanceForType() {
+    public MSG_M2Z_REPEAT_LOGIN getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -906,10 +906,10 @@ public final class M2Z {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\tM2Z.proto\022\025protocol.manager.zone\"\023\n\021MS" +
-      "G_M2Z_HEARTBEAT\",\n\024MSG_M2Z_REPEAT_LOGIN\022" +
-      "\024\n\014characterUid\030\001 \002(\005"
+      "G_M2Z_HEARTBEAT\"#\n\024MSG_M2Z_REPEAT_LOGIN\022" +
+      "\013\n\003Uid\030\001 \002(\005"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -928,13 +928,13 @@ public final class M2Z {
     internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_manager_zone_MSG_M2Z_HEARTBEAT_descriptor,
-        new java.lang.String[] { });
+        new String[] { });
     internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_manager_zone_MSG_M2Z_REPEAT_LOGIN_descriptor,
-        new java.lang.String[] { "CharacterUid", });
+        new String[] { "Uid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

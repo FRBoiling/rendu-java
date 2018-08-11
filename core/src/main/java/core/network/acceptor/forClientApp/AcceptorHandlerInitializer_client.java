@@ -1,7 +1,7 @@
 package core.network.acceptor.forClientApp;
 
-import core.base.serviceframe.IService;
 import core.network.IChannelHandlerHolder;
+import core.network.acceptor.AcceptorMessageExecutor;
 import core.network.codec.forClientApp.DecoderHandler;
 import core.network.codec.forClientApp.ReaderHandler;
 import core.network.codec.forClientApp.WriterHandler;
@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Copyright © 2018 四月
  * Boil blood. All rights reserved.
- *
+ * <p>
  * Project: ServerCluster-Java
  * Package: core.network.acceptor
  * Description: ${todo}
@@ -28,20 +28,18 @@ import java.util.concurrent.TimeUnit;
  */
 
 @Slf4j
-public class HandlerInitializer extends ChannelInitializer<SocketChannel> implements IChannelHandlerHolder {
-    private IService service;
+public class AcceptorHandlerInitializer_client extends ChannelInitializer<SocketChannel> implements IChannelHandlerHolder {
     //acceptor的trigger     //因为我们在client端设置了每隔30s会发送一个心跳包过来，如果60s都没有收到心跳，则说明链路发生了问题
     private final AcceptorIdleStateTrigger idleStateTrigger = new AcceptorIdleStateTrigger();
     //封包
     private final WriterHandler writer = new WriterHandler();
     //
-    private MessageExecutor messageExecutor;
+    private AcceptorMessageExecutor messageExecutor;
     //
     ChannelHandler[] handlers;
 
-    HandlerInitializer(IService service) {
-        this.service = service;
-        messageExecutor = new MessageExecutor(service);
+    AcceptorHandlerInitializer_client(AcceptorNetworkServiceBuilder_client builder) {
+        messageExecutor = new AcceptorMessageExecutor(builder);
     }
 
     @Override

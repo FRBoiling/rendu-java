@@ -2,7 +2,7 @@ package core.network.acceptor;
 
 import core.network.INetworkConsumer;
 import core.network.INetworkEventListener;
-import core.base.serviceframe.IService;
+import core.network.INetworkServiceBuilder;
 import core.network.codec.Packet;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -21,12 +21,10 @@ import lombok.extern.slf4j.Slf4j;
 public class AcceptorMessageExecutor extends SimpleChannelInboundHandler<Packet> {
     private INetworkConsumer consumer;
     private INetworkEventListener listener;
-    private AcceptorNetworkService service;
 
-    public AcceptorMessageExecutor(IService service) {
-        this.service = (AcceptorNetworkService)service;
-        this.consumer = this.service.getBuilder().getConsumer();
-        this.listener = this.service.getBuilder().getListener();
+    public AcceptorMessageExecutor(INetworkServiceBuilder builder) {
+        this.consumer = builder.getConsumer();
+        this.listener = builder.getListener();
     }
 
     @Override

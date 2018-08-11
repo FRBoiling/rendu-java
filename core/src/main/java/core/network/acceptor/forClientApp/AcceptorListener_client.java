@@ -13,10 +13,10 @@ import lombok.extern.slf4j.Slf4j;
  * Time: 16:49
  */
 @Slf4j
-public class BindListener implements ChannelFutureListener {
-    private NetworkService service;
+public class AcceptorListener_client implements ChannelFutureListener {
+    private AcceptorNetworkService_client service;
 
-    BindListener(NetworkService service) {
+    AcceptorListener_client(AcceptorNetworkService_client service) {
         this.service = service;
     }
 

@@ -32,18 +32,18 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Data
-public class NetworkService implements IService, ISocketAcceptor {
+public class AcceptorNetworkService_client implements IService, ISocketAcceptor {
     private ServiceState state;
     private final EventLoopGroup acceptorGroup;
     private final EventLoopGroup IOGroup;
     private final ServerBootstrap bootstrap;
-    private final NetworkServiceBuilder builder;
+    private final AcceptorNetworkServiceBuilder_client builder;
     protected volatile ByteBufAllocator allocator;
 
     int port;
 
-    NetworkService(final INetworkServiceBuilder serviceBuilder) {
-        builder = (NetworkServiceBuilder) serviceBuilder;
+    AcceptorNetworkService_client(final INetworkServiceBuilder serviceBuilder) {
+        builder = (AcceptorNetworkServiceBuilder_client) serviceBuilder;
         int acceptorGroupCount = builder.getAcceptorGroupCount();
         int IOGroupCount = builder.getIOGroupCount();
 
@@ -52,10 +52,10 @@ public class NetworkService implements IService, ISocketAcceptor {
 //        acceptorGroup = new NioEventLoopGroup(acceptorGroupCount);
 //        IOGroup = new NioEventLoopGroup(ioGroupCount);
 
-        ThreadFactory accepterFactory = new DefaultThreadFactory(builder.getName()+".acceptor");
-        ThreadFactory IOFactory = new DefaultThreadFactory(builder.getName()+".io");
-        acceptorGroup = initEventLoopGroup(acceptorGroupCount,accepterFactory);
-        IOGroup = initEventLoopGroup(IOGroupCount,IOFactory);
+        ThreadFactory accepterFactory = new DefaultThreadFactory(builder.getName() + ".acceptor");
+        ThreadFactory IOFactory = new DefaultThreadFactory(builder.getName() + ".io");
+        acceptorGroup = initEventLoopGroup(acceptorGroupCount, accepterFactory);
+        IOGroup = initEventLoopGroup(IOGroupCount, IOFactory);
 
         bootstrap = new ServerBootstrap();
         bootstrap.group(acceptorGroup, IOGroup);
@@ -65,7 +65,7 @@ public class NetworkService implements IService, ISocketAcceptor {
             bootstrap.channel(NioServerSocketChannel.class);
         }
         InitOption();
-        bootstrap.childHandler(new HandlerInitializer(this));
+        bootstrap.childHandler(new AcceptorHandlerInitializer_client(builder));
     }
 
 
@@ -112,7 +112,7 @@ public class NetworkService implements IService, ISocketAcceptor {
     public void bind(int port) {
         try {
             ChannelFuture f = bootstrap.bind(port);
-            f.addListener(new BindListener(this));
+            f.addListener(new AcceptorListener_client(this));
             f.sync();
         } catch (Exception e) {
             throw new RuntimeException(e);

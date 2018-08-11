@@ -1,11 +1,12 @@
 package gate;
 
-import configuration.dataManager.Data;
-import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.serviceframe.AbstractServiceFrame;
+import core.base.serviceframe.DBDriverThread;
+import gamedb.DBManager;
+import gamedb.dao.AbstractDBOperator;
 import gate.client.AuthorizationMng;
 import gate.connectionManager.ConnectionManager;
 import pathExt.PathManager;
@@ -22,7 +23,7 @@ import util.FileUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.Queue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,6 +35,8 @@ import java.util.Map;
 
 public class Context extends AbstractServiceFrame {
     public static ConnectionManager connectManager;
+    public DBManager db;
+    private DBDriverThread dbThread;
 
     @Override
     public void init(String[] args) {
@@ -41,13 +44,23 @@ public class Context extends AbstractServiceFrame {
 
         ServerType serverType = ServerType.Gate;
         tag = new ServerTag();
-        if (args.length >= 1) {
-            Integer subId = Integer.parseInt(args[0]);
-            tag.setTag(serverType, 0, subId);
+        if (args.length >= 2) {
+            Integer groupId = Integer.parseInt(args[0]);
+            Integer subId = Integer.parseInt(args[1]);
+            tag.setTag(serverType, groupId, subId);
         }
+
+        initDB();
+
         connectManager = new ConnectionManager();
         initConnectManager(connectManager);
         initMainThread("GateDriverThread");
+    }
+
+    @Override
+    public void start() {
+        dbThread.start();
+        super.start();
     }
 
     @Override
@@ -65,12 +78,10 @@ public class Context extends AbstractServiceFrame {
     @Override
     public void initPath() {
         PathManager.getInstance().initPath();
-
     }
 
     @Override
     public void initLibData() {
-        initWatchDog();
         AuthorizationMng.getInstance().loadLibData();
     }
 
@@ -85,25 +96,15 @@ public class Context extends AbstractServiceFrame {
         }
     }
 
-    @lombok.Getter
-    private int managerWatchDogGroupId;
-
-    @lombok.Getter
-    private int managerWatchDogSubId;
-
-    private void initWatchDog() {
-        DataList serverList = DataListManager.getInstance().getDataList("ServerConfig");
-
-        for (Map.Entry<Integer, Data> item : serverList.entrySet()) {
-            //String nickName = item.getValue().getName();
-            boolean watchdog = item.getValue().getBoolean("watchdog");
-            String type = item.getValue().getString("type");
-            if (watchdog && type.equals("Manager")) {
-                managerWatchDogGroupId = item.getValue().getInteger("groupId");
-                managerWatchDogSubId = item.getValue().getInteger("subId");
-            }
-        }
-
+//    @lombok.Getter
+//    private int managerWatchDogGroupId;
+//
+//    @lombok.Getter
+//    private int managerWatchDogSubId;
+//
+//    private void initWatchDog() {
+//        DataList serverList = DataListManager.getInstance().getDataList("ServerConfig");
+//
 //       for (Data date : serverList.values()) {
 //            boolean watchdog = date.getBoolean("watchdog");
 //            String type = date.getString("type");
@@ -112,21 +113,18 @@ public class Context extends AbstractServiceFrame {
 //                managerWatchDogSubId = date.getInteger("subId");
 //            }
 //        }
-    }
+//    }
 
     @Override
     public void initLogger() {
 
     }
 
-    @Override
     public void initDB() {
-        super.initDB();
-    }
-
-    @Override
-    public void initRedis() {
-
+        db = new DBManager();
+        db.initConfig(PathManager.getInstance().getDBPath());
+        db.init();
+        dbThread = new DBDriverThread("GateDBThread", db);
     }
 
     @Override
@@ -137,5 +135,24 @@ public class Context extends AbstractServiceFrame {
     @Override
     public void updateXml() {
 
+    }
+
+    @Override
+    public void initService() {
+
+    }
+
+    @Override
+    public void updateService() {
+        updateDB();
+    }
+
+    private void updateDB() {
+        Queue<AbstractDBOperator> queue = db.GetPostUpdateQueue();
+        while (!queue.isEmpty())
+        {
+            AbstractDBOperator query = queue.poll();
+            query.PostUpdate();
+        }
     }
 }

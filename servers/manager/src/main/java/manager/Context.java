@@ -4,10 +4,9 @@ import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.serviceframe.*;
-import gamedb.DBManagerPool;
-import gamedb.DBProxyDefault;
-import gamedb.DBTableParamType;
-import gamedb.dao.character.MaxCharUidDBOperator;
+import gamedb.DBManager;
+import gamedb.dao.AbstractDBOperator;
+import gamedb.dao.role.MaxRoleUidDBOperator;
 import lombok.extern.slf4j.Slf4j;
 import manager.connectionManager.ConnectionManager;
 import pathExt.PathManager;
@@ -26,6 +25,7 @@ import util.FileUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -39,9 +39,11 @@ public class Context extends AbstractServiceFrame {
 
     public static ConnectionManager connectManager;
 
-    private boolean watchDog = false;
+    public DBManager db;
+    private DBDriverThread dbThread;
 
-    public int maxCharUid;
+    //    private boolean watchDog = false;
+    public int maxRoleUid;
 
     @Override
     public void init(String[] args) {
@@ -55,6 +57,9 @@ public class Context extends AbstractServiceFrame {
             groupId = Integer.parseInt(args[0]);
             tag.setTag(serverType, groupId, 0);
         }
+
+        initDB();
+
         connectManager = new ConnectionManager();
         initConnectManager(connectManager);
         initMainThread("ManagerDriverThread");
@@ -100,29 +105,31 @@ public class Context extends AbstractServiceFrame {
 
     }
 
-    @Override
     public void initDB() {
-        super.initDB();
-        if (watchDog) {
-            for (int i = 0; i < DBProxyDefault.TableBaseCount; i++) {
-                String charTableName = db.GetTableName("character", i, DBTableParamType.Character);
-                DBManagerPool charDBPool = db.GetWriteDbByName(charTableName);
-                if (charDBPool != null) {
-                    charDBPool.Call(new MaxCharUidDBOperator(charTableName), (temp) ->
-                    {
-                        MaxCharUidDBOperator op = (MaxCharUidDBOperator) temp;
-                        int max = op.maxUid;
-                        maxCharUid = maxCharUid > max ? maxCharUid : max;
-                        log.info("table {0} max char uid {1}", charTableName, maxCharUid);
-                    });
-                }
+        db = new DBManager();
+        db.initConfig(PathManager.getInstance().getDBPath());
+        db.init();
+        dbThread = new DBDriverThread("ManagerDBThread", db);
+
+//        for (int i = 0; i < DBProxyDefault.TableBaseCount; i++) {
+        //String charTableName = db.GetTableName("role", i, DBTableParamType.Character);
+        //DBManagerPool charDBPool = db.GetWriteDbByName(charTableName);
+        MaxRoleUidDBOperator operator = new MaxRoleUidDBOperator();
+        db.Call(operator, (result) ->
+        {
+            if( operator.getResult()==1){
+                int max = operator.maxUid;
+                maxRoleUid = maxRoleUid > max ? maxRoleUid : max;
+                log.info("table {} max char uid {}", "role", maxRoleUid);
             }
-        }
+        });
+//        }
     }
 
     @Override
-    public void initRedis() {
-
+    public void start() {
+        dbThread.start();
+        super.start();
     }
 
     @Override
@@ -133,5 +140,24 @@ public class Context extends AbstractServiceFrame {
     @Override
     public void updateXml() {
 
+    }
+
+    @Override
+    public void initService() {
+
+    }
+
+    @Override
+    public void updateService() {
+        updateDB();
+    }
+
+    private void updateDB() {
+        Queue<AbstractDBOperator> queue = db.GetPostUpdateQueue();
+        while (!queue.isEmpty())
+        {
+            AbstractDBOperator query = queue.poll();
+            query.PostUpdate();
+        }
     }
 }

@@ -15,7 +15,7 @@ public final class ServerRegister {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface Server_TagOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.Server_Tag)
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.Server_Tag)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -46,11 +46,11 @@ public final class ServerRegister {
     int getSubId();
   }
   /**
-   * Protobuf type {@code protocol.acceptor.register.Server_Tag}
+   * Protobuf type {@code protocol.server.register.Server_Tag}
    */
   public  static final class Server_Tag extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.Server_Tag)
+      // @@protoc_insertion_point(message_implements:protocol.server.register.Server_Tag)
       Server_TagOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Server_Tag.newBuilder() to construct.
@@ -63,7 +63,7 @@ public final class ServerRegister {
       subId_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -74,7 +74,7 @@ public final class ServerRegister {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -123,14 +123,14 @@ public final class ServerRegister {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Server_Tag_descriptor;
+      return ServerRegister.internal_static_protocol_server_register_Server_Tag_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Server_Tag_fieldAccessorTable
+      return ServerRegister.internal_static_protocol_server_register_Server_Tag_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protocol.server.register.ServerRegister.Server_Tag.class, protocol.server.register.ServerRegister.Server_Tag.Builder.class);
+              Server_Tag.class, Builder.class);
     }
 
     private int bitField0_;
@@ -229,15 +229,15 @@ public final class ServerRegister {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protocol.server.register.ServerRegister.Server_Tag)) {
+      if (!(obj instanceof Server_Tag)) {
         return super.equals(obj);
       }
-      protocol.server.register.ServerRegister.Server_Tag other = (protocol.server.register.ServerRegister.Server_Tag) obj;
+      Server_Tag other = (Server_Tag) obj;
 
       boolean result = true;
       result = result && (hasServerType() == other.hasServerType());
@@ -259,7 +259,7 @@ public final class ServerRegister {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -283,69 +283,69 @@ public final class ServerRegister {
       return hash;
     }
 
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(
+    public static Server_Tag parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(
+    public static Server_Tag parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(
+    public static Server_Tag parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(
+    public static Server_Tag parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(byte[] data)
+    public static Server_Tag parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(
+    public static Server_Tag parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(java.io.InputStream input)
+    public static Server_Tag parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(
+    public static Server_Tag parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseDelimitedFrom(java.io.InputStream input)
+    public static Server_Tag parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseDelimitedFrom(
+    public static Server_Tag parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(
+    public static Server_Tag parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.Server_Tag parseFrom(
+    public static Server_Tag parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -357,7 +357,7 @@ public final class ServerRegister {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protocol.server.register.ServerRegister.Server_Tag prototype) {
+    public static Builder newBuilder(Server_Tag prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -365,38 +365,38 @@ public final class ServerRegister {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.acceptor.register.Server_Tag}
+     * Protobuf type {@code protocol.server.register.Server_Tag}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.Server_Tag)
-        protocol.server.register.ServerRegister.Server_TagOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.Server_Tag)
+        Server_TagOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Server_Tag_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_Server_Tag_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Server_Tag_fieldAccessorTable
+        return ServerRegister.internal_static_protocol_server_register_Server_Tag_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protocol.server.register.ServerRegister.Server_Tag.class, protocol.server.register.ServerRegister.Server_Tag.Builder.class);
+                Server_Tag.class, Builder.class);
       }
 
-      // Construct using protocol.acceptor.register.ServerRegister.Server_Tag.newBuilder()
+      // Construct using protocol.server.register.ServerRegister.Server_Tag.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -418,23 +418,23 @@ public final class ServerRegister {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Server_Tag_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_Server_Tag_descriptor;
       }
 
-      public protocol.server.register.ServerRegister.Server_Tag getDefaultInstanceForType() {
-        return protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance();
+      public Server_Tag getDefaultInstanceForType() {
+        return Server_Tag.getDefaultInstance();
       }
 
-      public protocol.server.register.ServerRegister.Server_Tag build() {
-        protocol.server.register.ServerRegister.Server_Tag result = buildPartial();
+      public Server_Tag build() {
+        Server_Tag result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public protocol.server.register.ServerRegister.Server_Tag buildPartial() {
-        protocol.server.register.ServerRegister.Server_Tag result = new protocol.server.register.ServerRegister.Server_Tag(this);
+      public Server_Tag buildPartial() {
+        Server_Tag result = new Server_Tag(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -459,7 +459,7 @@ public final class ServerRegister {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -472,25 +472,25 @@ public final class ServerRegister {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protocol.server.register.ServerRegister.Server_Tag) {
-          return mergeFrom((protocol.server.register.ServerRegister.Server_Tag)other);
+        if (other instanceof Server_Tag) {
+          return mergeFrom((Server_Tag)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protocol.server.register.ServerRegister.Server_Tag other) {
-        if (other == protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance()) return this;
+      public Builder mergeFrom(Server_Tag other) {
+        if (other == Server_Tag.getDefaultInstance()) return this;
         if (other.hasServerType()) {
           setServerType(other.getServerType());
         }
@@ -516,11 +516,11 @@ public final class ServerRegister {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protocol.server.register.ServerRegister.Server_Tag parsedMessage = null;
+        Server_Tag parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protocol.server.register.ServerRegister.Server_Tag) e.getUnfinishedMessage();
+          parsedMessage = (Server_Tag) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -637,20 +637,20 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.Server_Tag)
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.Server_Tag)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.Server_Tag)
-    private static final protocol.server.register.ServerRegister.Server_Tag DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protocol.server.register.Server_Tag)
+    private static final Server_Tag DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.Server_Tag();
+      DEFAULT_INSTANCE = new Server_Tag();
     }
 
-    public static protocol.server.register.ServerRegister.Server_Tag getDefaultInstance() {
+    public static Server_Tag getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Server_Tag>
+    @Deprecated public static final com.google.protobuf.Parser<Server_Tag>
         PARSER = new com.google.protobuf.AbstractParser<Server_Tag>() {
       public Server_Tag parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -664,40 +664,40 @@ public final class ServerRegister {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Server_Tag> getParserForType() {
       return PARSER;
     }
 
-    public protocol.server.register.ServerRegister.Server_Tag getDefaultInstanceForType() {
+    public Server_Tag getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface MSG_Server_RegisterOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.MSG_Server_Register)
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_Server_Register)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
     boolean hasTag();
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    protocol.server.register.ServerRegister.Server_Tag getTag();
+    Server_Tag getTag();
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder();
+    Server_TagOrBuilder getTagOrBuilder();
   }
   /**
-   * Protobuf type {@code protocol.acceptor.register.MSG_Server_Register}
+   * Protobuf type {@code protocol.server.register.MSG_Server_Register}
    */
   public  static final class MSG_Server_Register extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.MSG_Server_Register)
+      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_Server_Register)
       MSG_Server_RegisterOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MSG_Server_Register.newBuilder() to construct.
@@ -707,7 +707,7 @@ public final class ServerRegister {
     private MSG_Server_Register() {
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -718,7 +718,7 @@ public final class ServerRegister {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -739,11 +739,11 @@ public final class ServerRegister {
               break;
             }
             case 10: {
-              protocol.server.register.ServerRegister.Server_Tag.Builder subBuilder = null;
+              Server_Tag.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 subBuilder = tag_.toBuilder();
               }
-              tag_ = input.readMessage(protocol.server.register.ServerRegister.Server_Tag.PARSER, extensionRegistry);
+              tag_ = input.readMessage(Server_Tag.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(tag_);
                 tag_ = subBuilder.buildPartial();
@@ -765,36 +765,36 @@ public final class ServerRegister {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_descriptor;
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protocol.server.register.ServerRegister.MSG_Server_Register.class, protocol.server.register.ServerRegister.MSG_Server_Register.Builder.class);
+              MSG_Server_Register.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int TAG_FIELD_NUMBER = 1;
-    private protocol.server.register.ServerRegister.Server_Tag tag_;
+    private Server_Tag tag_;
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
     public boolean hasTag() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    public protocol.server.register.ServerRegister.Server_Tag getTag() {
-      return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+    public Server_Tag getTag() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
     }
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
-      return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+    public Server_TagOrBuilder getTagOrBuilder() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -837,15 +837,15 @@ public final class ServerRegister {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protocol.server.register.ServerRegister.MSG_Server_Register)) {
+      if (!(obj instanceof MSG_Server_Register)) {
         return super.equals(obj);
       }
-      protocol.server.register.ServerRegister.MSG_Server_Register other = (protocol.server.register.ServerRegister.MSG_Server_Register) obj;
+      MSG_Server_Register other = (MSG_Server_Register) obj;
 
       boolean result = true;
       result = result && (hasTag() == other.hasTag());
@@ -857,7 +857,7 @@ public final class ServerRegister {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -873,69 +873,69 @@ public final class ServerRegister {
       return hash;
     }
 
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(
+    public static MSG_Server_Register parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(
+    public static MSG_Server_Register parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(
+    public static MSG_Server_Register parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(
+    public static MSG_Server_Register parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(byte[] data)
+    public static MSG_Server_Register parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(
+    public static MSG_Server_Register parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(java.io.InputStream input)
+    public static MSG_Server_Register parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(
+    public static MSG_Server_Register parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseDelimitedFrom(java.io.InputStream input)
+    public static MSG_Server_Register parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseDelimitedFrom(
+    public static MSG_Server_Register parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(
+    public static MSG_Server_Register parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register parseFrom(
+    public static MSG_Server_Register parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -947,7 +947,7 @@ public final class ServerRegister {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protocol.server.register.ServerRegister.MSG_Server_Register prototype) {
+    public static Builder newBuilder(MSG_Server_Register prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -955,38 +955,38 @@ public final class ServerRegister {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.acceptor.register.MSG_Server_Register}
+     * Protobuf type {@code protocol.server.register.MSG_Server_Register}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.MSG_Server_Register)
-        protocol.server.register.ServerRegister.MSG_Server_RegisterOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_Server_Register)
+        MSG_Server_RegisterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protocol.server.register.ServerRegister.MSG_Server_Register.class, protocol.server.register.ServerRegister.MSG_Server_Register.Builder.class);
+                MSG_Server_Register.class, Builder.class);
       }
 
-      // Construct using protocol.acceptor.register.ServerRegister.MSG_Server_Register.newBuilder()
+      // Construct using protocol.server.register.ServerRegister.MSG_Server_Register.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1009,23 +1009,23 @@ public final class ServerRegister {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_descriptor;
       }
 
-      public protocol.server.register.ServerRegister.MSG_Server_Register getDefaultInstanceForType() {
-        return protocol.server.register.ServerRegister.MSG_Server_Register.getDefaultInstance();
+      public MSG_Server_Register getDefaultInstanceForType() {
+        return MSG_Server_Register.getDefaultInstance();
       }
 
-      public protocol.server.register.ServerRegister.MSG_Server_Register build() {
-        protocol.server.register.ServerRegister.MSG_Server_Register result = buildPartial();
+      public MSG_Server_Register build() {
+        MSG_Server_Register result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public protocol.server.register.ServerRegister.MSG_Server_Register buildPartial() {
-        protocol.server.register.ServerRegister.MSG_Server_Register result = new protocol.server.register.ServerRegister.MSG_Server_Register(this);
+      public MSG_Server_Register buildPartial() {
+        MSG_Server_Register result = new MSG_Server_Register(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1046,7 +1046,7 @@ public final class ServerRegister {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1059,25 +1059,25 @@ public final class ServerRegister {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protocol.server.register.ServerRegister.MSG_Server_Register) {
-          return mergeFrom((protocol.server.register.ServerRegister.MSG_Server_Register)other);
+        if (other instanceof MSG_Server_Register) {
+          return mergeFrom((MSG_Server_Register)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protocol.server.register.ServerRegister.MSG_Server_Register other) {
-        if (other == protocol.server.register.ServerRegister.MSG_Server_Register.getDefaultInstance()) return this;
+      public Builder mergeFrom(MSG_Server_Register other) {
+        if (other == MSG_Server_Register.getDefaultInstance()) return this;
         if (other.hasTag()) {
           mergeTag(other.getTag());
         }
@@ -1100,11 +1100,11 @@ public final class ServerRegister {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protocol.server.register.ServerRegister.MSG_Server_Register parsedMessage = null;
+        MSG_Server_Register parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protocol.server.register.ServerRegister.MSG_Server_Register) e.getUnfinishedMessage();
+          parsedMessage = (MSG_Server_Register) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1115,29 +1115,29 @@ public final class ServerRegister {
       }
       private int bitField0_;
 
-      private protocol.server.register.ServerRegister.Server_Tag tag_ = null;
+      private Server_Tag tag_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> tagBuilder_;
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder> tagBuilder_;
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
       public boolean hasTag() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public protocol.server.register.ServerRegister.Server_Tag getTag() {
+      public Server_Tag getTag() {
         if (tagBuilder_ == null) {
-          return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+          return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
         } else {
           return tagBuilder_.getMessage();
         }
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public Builder setTag(protocol.server.register.ServerRegister.Server_Tag value) {
+      public Builder setTag(Server_Tag value) {
         if (tagBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1151,10 +1151,10 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
       public Builder setTag(
-          protocol.server.register.ServerRegister.Server_Tag.Builder builderForValue) {
+          Server_Tag.Builder builderForValue) {
         if (tagBuilder_ == null) {
           tag_ = builderForValue.build();
           onChanged();
@@ -1165,15 +1165,15 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public Builder mergeTag(protocol.server.register.ServerRegister.Server_Tag value) {
+      public Builder mergeTag(Server_Tag value) {
         if (tagBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
               tag_ != null &&
-              tag_ != protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance()) {
+              tag_ != Server_Tag.getDefaultInstance()) {
             tag_ =
-              protocol.server.register.ServerRegister.Server_Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
+              Server_Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
           } else {
             tag_ = value;
           }
@@ -1185,7 +1185,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
       public Builder clearTag() {
         if (tagBuilder_ == null) {
@@ -1198,33 +1198,33 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public protocol.server.register.ServerRegister.Server_Tag.Builder getTagBuilder() {
+      public Server_Tag.Builder getTagBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getTagFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
+      public Server_TagOrBuilder getTagOrBuilder() {
         if (tagBuilder_ != null) {
           return tagBuilder_.getMessageOrBuilder();
         } else {
           return tag_ == null ?
-              protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+              Server_Tag.getDefaultInstance() : tag_;
         }
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> 
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>
           getTagFieldBuilder() {
         if (tagBuilder_ == null) {
           tagBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder>(
+              Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>(
                   getTag(),
                   getParentForChildren(),
                   isClean());
@@ -1243,20 +1243,20 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.MSG_Server_Register)
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_Server_Register)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.MSG_Server_Register)
-    private static final protocol.server.register.ServerRegister.MSG_Server_Register DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_Server_Register)
+    private static final MSG_Server_Register DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.MSG_Server_Register();
+      DEFAULT_INSTANCE = new MSG_Server_Register();
     }
 
-    public static protocol.server.register.ServerRegister.MSG_Server_Register getDefaultInstance() {
+    public static MSG_Server_Register getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_Server_Register>
+    @Deprecated public static final com.google.protobuf.Parser<MSG_Server_Register>
         PARSER = new com.google.protobuf.AbstractParser<MSG_Server_Register>() {
       public MSG_Server_Register parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -1270,19 +1270,19 @@ public final class ServerRegister {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<MSG_Server_Register> getParserForType() {
       return PARSER;
     }
 
-    public protocol.server.register.ServerRegister.MSG_Server_Register getDefaultInstanceForType() {
+    public MSG_Server_Register getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface MSG_Server_Register_ReturnOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.MSG_Server_Register_Return)
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_Server_Register_Return)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1295,24 +1295,24 @@ public final class ServerRegister {
     int getResult();
 
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
      */
     boolean hasTag();
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
      */
-    protocol.server.register.ServerRegister.Server_Tag getTag();
+    Server_Tag getTag();
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
      */
-    protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder();
+    Server_TagOrBuilder getTagOrBuilder();
   }
   /**
-   * Protobuf type {@code protocol.acceptor.register.MSG_Server_Register_Return}
+   * Protobuf type {@code protocol.server.register.MSG_Server_Register_Return}
    */
   public  static final class MSG_Server_Register_Return extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.MSG_Server_Register_Return)
+      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_Server_Register_Return)
       MSG_Server_Register_ReturnOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MSG_Server_Register_Return.newBuilder() to construct.
@@ -1323,7 +1323,7 @@ public final class ServerRegister {
       result_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1334,7 +1334,7 @@ public final class ServerRegister {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -1360,11 +1360,11 @@ public final class ServerRegister {
               break;
             }
             case 18: {
-              protocol.server.register.ServerRegister.Server_Tag.Builder subBuilder = null;
+              Server_Tag.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = tag_.toBuilder();
               }
-              tag_ = input.readMessage(protocol.server.register.ServerRegister.Server_Tag.PARSER, extensionRegistry);
+              tag_ = input.readMessage(Server_Tag.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(tag_);
                 tag_ = subBuilder.buildPartial();
@@ -1386,14 +1386,14 @@ public final class ServerRegister {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protocol.server.register.ServerRegister.MSG_Server_Register_Return.class, protocol.server.register.ServerRegister.MSG_Server_Register_Return.Builder.class);
+              MSG_Server_Register_Return.class, Builder.class);
     }
 
     private int bitField0_;
@@ -1413,24 +1413,24 @@ public final class ServerRegister {
     }
 
     public static final int TAG_FIELD_NUMBER = 2;
-    private protocol.server.register.ServerRegister.Server_Tag tag_;
+    private Server_Tag tag_;
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
      */
     public boolean hasTag() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
      */
-    public protocol.server.register.ServerRegister.Server_Tag getTag() {
-      return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+    public Server_Tag getTag() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
     }
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
      */
-    public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
-      return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+    public Server_TagOrBuilder getTagOrBuilder() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1484,15 +1484,15 @@ public final class ServerRegister {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protocol.server.register.ServerRegister.MSG_Server_Register_Return)) {
+      if (!(obj instanceof MSG_Server_Register_Return)) {
         return super.equals(obj);
       }
-      protocol.server.register.ServerRegister.MSG_Server_Register_Return other = (protocol.server.register.ServerRegister.MSG_Server_Register_Return) obj;
+      MSG_Server_Register_Return other = (MSG_Server_Register_Return) obj;
 
       boolean result = true;
       result = result && (hasResult() == other.hasResult());
@@ -1509,7 +1509,7 @@ public final class ServerRegister {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1529,69 +1529,69 @@ public final class ServerRegister {
       return hash;
     }
 
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(byte[] data)
+    public static MSG_Server_Register_Return parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(java.io.InputStream input)
+    public static MSG_Server_Register_Return parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseDelimitedFrom(java.io.InputStream input)
+    public static MSG_Server_Register_Return parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseDelimitedFrom(
+    public static MSG_Server_Register_Return parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return parseFrom(
+    public static MSG_Server_Register_Return parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1603,7 +1603,7 @@ public final class ServerRegister {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protocol.server.register.ServerRegister.MSG_Server_Register_Return prototype) {
+    public static Builder newBuilder(MSG_Server_Register_Return prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1611,38 +1611,38 @@ public final class ServerRegister {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.acceptor.register.MSG_Server_Register_Return}
+     * Protobuf type {@code protocol.server.register.MSG_Server_Register_Return}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.MSG_Server_Register_Return)
-        protocol.server.register.ServerRegister.MSG_Server_Register_ReturnOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_Server_Register_Return)
+        MSG_Server_Register_ReturnOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protocol.server.register.ServerRegister.MSG_Server_Register_Return.class, protocol.server.register.ServerRegister.MSG_Server_Register_Return.Builder.class);
+                MSG_Server_Register_Return.class, Builder.class);
       }
 
-      // Construct using protocol.acceptor.register.ServerRegister.MSG_Server_Register_Return.newBuilder()
+      // Construct using protocol.server.register.ServerRegister.MSG_Server_Register_Return.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1667,23 +1667,23 @@ public final class ServerRegister {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor;
       }
 
-      public protocol.server.register.ServerRegister.MSG_Server_Register_Return getDefaultInstanceForType() {
-        return protocol.server.register.ServerRegister.MSG_Server_Register_Return.getDefaultInstance();
+      public MSG_Server_Register_Return getDefaultInstanceForType() {
+        return MSG_Server_Register_Return.getDefaultInstance();
       }
 
-      public protocol.server.register.ServerRegister.MSG_Server_Register_Return build() {
-        protocol.server.register.ServerRegister.MSG_Server_Register_Return result = buildPartial();
+      public MSG_Server_Register_Return build() {
+        MSG_Server_Register_Return result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public protocol.server.register.ServerRegister.MSG_Server_Register_Return buildPartial() {
-        protocol.server.register.ServerRegister.MSG_Server_Register_Return result = new protocol.server.register.ServerRegister.MSG_Server_Register_Return(this);
+      public MSG_Server_Register_Return buildPartial() {
+        MSG_Server_Register_Return result = new MSG_Server_Register_Return(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1708,7 +1708,7 @@ public final class ServerRegister {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1721,25 +1721,25 @@ public final class ServerRegister {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protocol.server.register.ServerRegister.MSG_Server_Register_Return) {
-          return mergeFrom((protocol.server.register.ServerRegister.MSG_Server_Register_Return)other);
+        if (other instanceof MSG_Server_Register_Return) {
+          return mergeFrom((MSG_Server_Register_Return)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protocol.server.register.ServerRegister.MSG_Server_Register_Return other) {
-        if (other == protocol.server.register.ServerRegister.MSG_Server_Register_Return.getDefaultInstance()) return this;
+      public Builder mergeFrom(MSG_Server_Register_Return other) {
+        if (other == MSG_Server_Register_Return.getDefaultInstance()) return this;
         if (other.hasResult()) {
           setResult(other.getResult());
         }
@@ -1768,11 +1768,11 @@ public final class ServerRegister {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protocol.server.register.ServerRegister.MSG_Server_Register_Return parsedMessage = null;
+        MSG_Server_Register_Return parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protocol.server.register.ServerRegister.MSG_Server_Register_Return) e.getUnfinishedMessage();
+          parsedMessage = (MSG_Server_Register_Return) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1815,29 +1815,29 @@ public final class ServerRegister {
         return this;
       }
 
-      private protocol.server.register.ServerRegister.Server_Tag tag_ = null;
+      private Server_Tag tag_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> tagBuilder_;
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder> tagBuilder_;
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
        */
       public boolean hasTag() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
        */
-      public protocol.server.register.ServerRegister.Server_Tag getTag() {
+      public Server_Tag getTag() {
         if (tagBuilder_ == null) {
-          return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+          return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
         } else {
           return tagBuilder_.getMessage();
         }
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
        */
-      public Builder setTag(protocol.server.register.ServerRegister.Server_Tag value) {
+      public Builder setTag(Server_Tag value) {
         if (tagBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1851,10 +1851,10 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
        */
       public Builder setTag(
-          protocol.server.register.ServerRegister.Server_Tag.Builder builderForValue) {
+          Server_Tag.Builder builderForValue) {
         if (tagBuilder_ == null) {
           tag_ = builderForValue.build();
           onChanged();
@@ -1865,15 +1865,15 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
        */
-      public Builder mergeTag(protocol.server.register.ServerRegister.Server_Tag value) {
+      public Builder mergeTag(Server_Tag value) {
         if (tagBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
               tag_ != null &&
-              tag_ != protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance()) {
+              tag_ != Server_Tag.getDefaultInstance()) {
             tag_ =
-              protocol.server.register.ServerRegister.Server_Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
+              Server_Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
           } else {
             tag_ = value;
           }
@@ -1885,7 +1885,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
        */
       public Builder clearTag() {
         if (tagBuilder_ == null) {
@@ -1898,33 +1898,33 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
        */
-      public protocol.server.register.ServerRegister.Server_Tag.Builder getTagBuilder() {
+      public Server_Tag.Builder getTagBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getTagFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
        */
-      public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
+      public Server_TagOrBuilder getTagOrBuilder() {
         if (tagBuilder_ != null) {
           return tagBuilder_.getMessageOrBuilder();
         } else {
           return tag_ == null ?
-              protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+              Server_Tag.getDefaultInstance() : tag_;
         }
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 2;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> 
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>
           getTagFieldBuilder() {
         if (tagBuilder_ == null) {
           tagBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder>(
+              Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>(
                   getTag(),
                   getParentForChildren(),
                   isClean());
@@ -1943,20 +1943,20 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.MSG_Server_Register_Return)
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_Server_Register_Return)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.MSG_Server_Register_Return)
-    private static final protocol.server.register.ServerRegister.MSG_Server_Register_Return DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_Server_Register_Return)
+    private static final MSG_Server_Register_Return DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.MSG_Server_Register_Return();
+      DEFAULT_INSTANCE = new MSG_Server_Register_Return();
     }
 
-    public static protocol.server.register.ServerRegister.MSG_Server_Register_Return getDefaultInstance() {
+    public static MSG_Server_Register_Return getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_Server_Register_Return>
+    @Deprecated public static final com.google.protobuf.Parser<MSG_Server_Register_Return>
         PARSER = new com.google.protobuf.AbstractParser<MSG_Server_Register_Return>() {
       public MSG_Server_Register_Return parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -1970,19 +1970,19 @@ public final class ServerRegister {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<MSG_Server_Register_Return> getParserForType() {
       return PARSER;
     }
 
-    public protocol.server.register.ServerRegister.MSG_Server_Register_Return getDefaultInstanceForType() {
+    public MSG_Server_Register_Return getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface Connect_InfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.Connect_Info)
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.Connect_Info)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2001,7 +2001,7 @@ public final class ServerRegister {
     /**
      * <code>required string ip = 2;</code>
      */
-    java.lang.String getIp();
+    String getIp();
     /**
      * <code>required string ip = 2;</code>
      */
@@ -2009,11 +2009,11 @@ public final class ServerRegister {
         getIpBytes();
   }
   /**
-   * Protobuf type {@code protocol.acceptor.register.Connect_Info}
+   * Protobuf type {@code protocol.server.register.Connect_Info}
    */
   public  static final class Connect_Info extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.Connect_Info)
+      // @@protoc_insertion_point(message_implements:protocol.server.register.Connect_Info)
       Connect_InfoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Connect_Info.newBuilder() to construct.
@@ -2025,7 +2025,7 @@ public final class ServerRegister {
       ip_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2036,7 +2036,7 @@ public final class ServerRegister {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -2081,14 +2081,14 @@ public final class ServerRegister {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Connect_Info_descriptor;
+      return ServerRegister.internal_static_protocol_server_register_Connect_Info_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Connect_Info_fieldAccessorTable
+      return ServerRegister.internal_static_protocol_server_register_Connect_Info_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protocol.server.register.ServerRegister.Connect_Info.class, protocol.server.register.ServerRegister.Connect_Info.Builder.class);
+              Connect_Info.class, Builder.class);
     }
 
     private int bitField0_;
@@ -2108,7 +2108,7 @@ public final class ServerRegister {
     }
 
     public static final int IP_FIELD_NUMBER = 2;
-    private volatile java.lang.Object ip_;
+    private volatile Object ip_;
     /**
      * <code>required string ip = 2;</code>
      */
@@ -2118,14 +2118,14 @@ public final class ServerRegister {
     /**
      * <code>required string ip = 2;</code>
      */
-    public java.lang.String getIp() {
-      java.lang.Object ref = ip_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getIp() {
+      Object ref = ip_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           ip_ = s;
         }
@@ -2137,11 +2137,11 @@ public final class ServerRegister {
      */
     public com.google.protobuf.ByteString
         getIpBytes() {
-      java.lang.Object ref = ip_;
-      if (ref instanceof java.lang.String) {
+      Object ref = ip_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         ip_ = b;
         return b;
       } else {
@@ -2195,15 +2195,15 @@ public final class ServerRegister {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protocol.server.register.ServerRegister.Connect_Info)) {
+      if (!(obj instanceof Connect_Info)) {
         return super.equals(obj);
       }
-      protocol.server.register.ServerRegister.Connect_Info other = (protocol.server.register.ServerRegister.Connect_Info) obj;
+      Connect_Info other = (Connect_Info) obj;
 
       boolean result = true;
       result = result && (hasPort() == other.hasPort());
@@ -2220,7 +2220,7 @@ public final class ServerRegister {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2240,69 +2240,69 @@ public final class ServerRegister {
       return hash;
     }
 
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(
+    public static Connect_Info parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(
+    public static Connect_Info parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(
+    public static Connect_Info parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(
+    public static Connect_Info parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(byte[] data)
+    public static Connect_Info parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(
+    public static Connect_Info parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(java.io.InputStream input)
+    public static Connect_Info parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(
+    public static Connect_Info parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseDelimitedFrom(java.io.InputStream input)
+    public static Connect_Info parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseDelimitedFrom(
+    public static Connect_Info parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(
+    public static Connect_Info parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.Connect_Info parseFrom(
+    public static Connect_Info parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2314,7 +2314,7 @@ public final class ServerRegister {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protocol.server.register.ServerRegister.Connect_Info prototype) {
+    public static Builder newBuilder(Connect_Info prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2322,38 +2322,38 @@ public final class ServerRegister {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.acceptor.register.Connect_Info}
+     * Protobuf type {@code protocol.server.register.Connect_Info}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.Connect_Info)
-        protocol.server.register.ServerRegister.Connect_InfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.Connect_Info)
+        Connect_InfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Connect_Info_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_Connect_Info_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Connect_Info_fieldAccessorTable
+        return ServerRegister.internal_static_protocol_server_register_Connect_Info_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protocol.server.register.ServerRegister.Connect_Info.class, protocol.server.register.ServerRegister.Connect_Info.Builder.class);
+                Connect_Info.class, Builder.class);
       }
 
-      // Construct using protocol.acceptor.register.ServerRegister.Connect_Info.newBuilder()
+      // Construct using protocol.server.register.ServerRegister.Connect_Info.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2373,23 +2373,23 @@ public final class ServerRegister {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_Connect_Info_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_Connect_Info_descriptor;
       }
 
-      public protocol.server.register.ServerRegister.Connect_Info getDefaultInstanceForType() {
-        return protocol.server.register.ServerRegister.Connect_Info.getDefaultInstance();
+      public Connect_Info getDefaultInstanceForType() {
+        return Connect_Info.getDefaultInstance();
       }
 
-      public protocol.server.register.ServerRegister.Connect_Info build() {
-        protocol.server.register.ServerRegister.Connect_Info result = buildPartial();
+      public Connect_Info build() {
+        Connect_Info result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public protocol.server.register.ServerRegister.Connect_Info buildPartial() {
-        protocol.server.register.ServerRegister.Connect_Info result = new protocol.server.register.ServerRegister.Connect_Info(this);
+      public Connect_Info buildPartial() {
+        Connect_Info result = new Connect_Info(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2410,7 +2410,7 @@ public final class ServerRegister {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -2423,25 +2423,25 @@ public final class ServerRegister {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protocol.server.register.ServerRegister.Connect_Info) {
-          return mergeFrom((protocol.server.register.ServerRegister.Connect_Info)other);
+        if (other instanceof Connect_Info) {
+          return mergeFrom((Connect_Info)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protocol.server.register.ServerRegister.Connect_Info other) {
-        if (other == protocol.server.register.ServerRegister.Connect_Info.getDefaultInstance()) return this;
+      public Builder mergeFrom(Connect_Info other) {
+        if (other == Connect_Info.getDefaultInstance()) return this;
         if (other.hasPort()) {
           setPort(other.getPort());
         }
@@ -2469,11 +2469,11 @@ public final class ServerRegister {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protocol.server.register.ServerRegister.Connect_Info parsedMessage = null;
+        Connect_Info parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protocol.server.register.ServerRegister.Connect_Info) e.getUnfinishedMessage();
+          parsedMessage = (Connect_Info) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2516,7 +2516,7 @@ public final class ServerRegister {
         return this;
       }
 
-      private java.lang.Object ip_ = "";
+      private Object ip_ = "";
       /**
        * <code>required string ip = 2;</code>
        */
@@ -2526,18 +2526,18 @@ public final class ServerRegister {
       /**
        * <code>required string ip = 2;</code>
        */
-      public java.lang.String getIp() {
-        java.lang.Object ref = ip_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getIp() {
+        Object ref = ip_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             ip_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -2545,11 +2545,11 @@ public final class ServerRegister {
        */
       public com.google.protobuf.ByteString
           getIpBytes() {
-        java.lang.Object ref = ip_;
+        Object ref = ip_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           ip_ = b;
           return b;
         } else {
@@ -2560,7 +2560,7 @@ public final class ServerRegister {
        * <code>required string ip = 2;</code>
        */
       public Builder setIp(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2602,20 +2602,20 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.Connect_Info)
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.Connect_Info)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.Connect_Info)
-    private static final protocol.server.register.ServerRegister.Connect_Info DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protocol.server.register.Connect_Info)
+    private static final Connect_Info DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.Connect_Info();
+      DEFAULT_INSTANCE = new Connect_Info();
     }
 
-    public static protocol.server.register.ServerRegister.Connect_Info getDefaultInstance() {
+    public static Connect_Info getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Connect_Info>
+    @Deprecated public static final com.google.protobuf.Parser<Connect_Info>
         PARSER = new com.google.protobuf.AbstractParser<Connect_Info>() {
       public Connect_Info parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -2629,46 +2629,46 @@ public final class ServerRegister {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Connect_Info> getParserForType() {
       return PARSER;
     }
 
-    public protocol.server.register.ServerRegister.Connect_Info getDefaultInstanceForType() {
+    public Connect_Info getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface MSG_Server_Connect_CommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.acceptor.register.MSG_Server_Connect_Command)
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.MSG_Server_Connect_Command)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
     boolean hasTag();
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    protocol.server.register.ServerRegister.Server_Tag getTag();
+    Server_Tag getTag();
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder();
+    Server_TagOrBuilder getTagOrBuilder();
 
     /**
-     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
      */
     boolean hasInfo();
     /**
-     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
      */
-    protocol.server.register.ServerRegister.Connect_Info getInfo();
+    Connect_Info getInfo();
     /**
-     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
      */
-    protocol.server.register.ServerRegister.Connect_InfoOrBuilder getInfoOrBuilder();
+    Connect_InfoOrBuilder getInfoOrBuilder();
 
     /**
      * <code>optional int32 connectType = 4;</code>
@@ -2680,11 +2680,11 @@ public final class ServerRegister {
     int getConnectType();
   }
   /**
-   * Protobuf type {@code protocol.acceptor.register.MSG_Server_Connect_Command}
+   * Protobuf type {@code protocol.server.register.MSG_Server_Connect_Command}
    */
   public  static final class MSG_Server_Connect_Command extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.acceptor.register.MSG_Server_Connect_Command)
+      // @@protoc_insertion_point(message_implements:protocol.server.register.MSG_Server_Connect_Command)
       MSG_Server_Connect_CommandOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MSG_Server_Connect_Command.newBuilder() to construct.
@@ -2695,7 +2695,7 @@ public final class ServerRegister {
       connectType_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2706,7 +2706,7 @@ public final class ServerRegister {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -2727,11 +2727,11 @@ public final class ServerRegister {
               break;
             }
             case 10: {
-              protocol.server.register.ServerRegister.Server_Tag.Builder subBuilder = null;
+              Server_Tag.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 subBuilder = tag_.toBuilder();
               }
-              tag_ = input.readMessage(protocol.server.register.ServerRegister.Server_Tag.PARSER, extensionRegistry);
+              tag_ = input.readMessage(Server_Tag.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(tag_);
                 tag_ = subBuilder.buildPartial();
@@ -2740,11 +2740,11 @@ public final class ServerRegister {
               break;
             }
             case 18: {
-              protocol.server.register.ServerRegister.Connect_Info.Builder subBuilder = null;
+              Connect_Info.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = info_.toBuilder();
               }
-              info_ = input.readMessage(protocol.server.register.ServerRegister.Connect_Info.PARSER, extensionRegistry);
+              info_ = input.readMessage(Connect_Info.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(info_);
                 info_ = subBuilder.buildPartial();
@@ -2771,57 +2771,57 @@ public final class ServerRegister {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable
+      return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protocol.server.register.ServerRegister.MSG_Server_Connect_Command.class, protocol.server.register.ServerRegister.MSG_Server_Connect_Command.Builder.class);
+              MSG_Server_Connect_Command.class, Builder.class);
     }
 
     private int bitField0_;
     public static final int TAG_FIELD_NUMBER = 1;
-    private protocol.server.register.ServerRegister.Server_Tag tag_;
+    private Server_Tag tag_;
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
     public boolean hasTag() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    public protocol.server.register.ServerRegister.Server_Tag getTag() {
-      return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+    public Server_Tag getTag() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
     }
     /**
-     * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+     * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
-    public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
-      return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+    public Server_TagOrBuilder getTagOrBuilder() {
+      return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
     }
 
     public static final int INFO_FIELD_NUMBER = 2;
-    private protocol.server.register.ServerRegister.Connect_Info info_;
+    private Connect_Info info_;
     /**
-     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
      */
     public boolean hasInfo() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
      */
-    public protocol.server.register.ServerRegister.Connect_Info getInfo() {
-      return info_ == null ? protocol.server.register.ServerRegister.Connect_Info.getDefaultInstance() : info_;
+    public Connect_Info getInfo() {
+      return info_ == null ? Connect_Info.getDefaultInstance() : info_;
     }
     /**
-     * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+     * <code>required .protocol.server.register.Connect_Info info = 2;</code>
      */
-    public protocol.server.register.ServerRegister.Connect_InfoOrBuilder getInfoOrBuilder() {
-      return info_ == null ? protocol.server.register.ServerRegister.Connect_Info.getDefaultInstance() : info_;
+    public Connect_InfoOrBuilder getInfoOrBuilder() {
+      return info_ == null ? Connect_Info.getDefaultInstance() : info_;
     }
 
     public static final int CONNECTTYPE_FIELD_NUMBER = 4;
@@ -2901,15 +2901,15 @@ public final class ServerRegister {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protocol.server.register.ServerRegister.MSG_Server_Connect_Command)) {
+      if (!(obj instanceof MSG_Server_Connect_Command)) {
         return super.equals(obj);
       }
-      protocol.server.register.ServerRegister.MSG_Server_Connect_Command other = (protocol.server.register.ServerRegister.MSG_Server_Connect_Command) obj;
+      MSG_Server_Connect_Command other = (MSG_Server_Connect_Command) obj;
 
       boolean result = true;
       result = result && (hasTag() == other.hasTag());
@@ -2931,7 +2931,7 @@ public final class ServerRegister {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2955,69 +2955,69 @@ public final class ServerRegister {
       return hash;
     }
 
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(
+    public static MSG_Server_Connect_Command parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(
+    public static MSG_Server_Connect_Command parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(
+    public static MSG_Server_Connect_Command parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(
+    public static MSG_Server_Connect_Command parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(byte[] data)
+    public static MSG_Server_Connect_Command parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(
+    public static MSG_Server_Connect_Command parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(java.io.InputStream input)
+    public static MSG_Server_Connect_Command parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(
+    public static MSG_Server_Connect_Command parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseDelimitedFrom(java.io.InputStream input)
+    public static MSG_Server_Connect_Command parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseDelimitedFrom(
+    public static MSG_Server_Connect_Command parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(
+    public static MSG_Server_Connect_Command parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command parseFrom(
+    public static MSG_Server_Connect_Command parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3029,7 +3029,7 @@ public final class ServerRegister {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protocol.server.register.ServerRegister.MSG_Server_Connect_Command prototype) {
+    public static Builder newBuilder(MSG_Server_Connect_Command prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3037,38 +3037,38 @@ public final class ServerRegister {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code protocol.acceptor.register.MSG_Server_Connect_Command}
+     * Protobuf type {@code protocol.server.register.MSG_Server_Connect_Command}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.acceptor.register.MSG_Server_Connect_Command)
-        protocol.server.register.ServerRegister.MSG_Server_Connect_CommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.MSG_Server_Connect_Command)
+        MSG_Server_Connect_CommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protocol.server.register.ServerRegister.MSG_Server_Connect_Command.class, protocol.server.register.ServerRegister.MSG_Server_Connect_Command.Builder.class);
+                MSG_Server_Connect_Command.class, Builder.class);
       }
 
-      // Construct using protocol.acceptor.register.ServerRegister.MSG_Server_Connect_Command.newBuilder()
+      // Construct using protocol.server.register.ServerRegister.MSG_Server_Connect_Command.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3100,23 +3100,23 @@ public final class ServerRegister {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
+        return ServerRegister.internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor;
       }
 
-      public protocol.server.register.ServerRegister.MSG_Server_Connect_Command getDefaultInstanceForType() {
-        return protocol.server.register.ServerRegister.MSG_Server_Connect_Command.getDefaultInstance();
+      public MSG_Server_Connect_Command getDefaultInstanceForType() {
+        return MSG_Server_Connect_Command.getDefaultInstance();
       }
 
-      public protocol.server.register.ServerRegister.MSG_Server_Connect_Command build() {
-        protocol.server.register.ServerRegister.MSG_Server_Connect_Command result = buildPartial();
+      public MSG_Server_Connect_Command build() {
+        MSG_Server_Connect_Command result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public protocol.server.register.ServerRegister.MSG_Server_Connect_Command buildPartial() {
-        protocol.server.register.ServerRegister.MSG_Server_Connect_Command result = new protocol.server.register.ServerRegister.MSG_Server_Connect_Command(this);
+      public MSG_Server_Connect_Command buildPartial() {
+        MSG_Server_Connect_Command result = new MSG_Server_Connect_Command(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3149,7 +3149,7 @@ public final class ServerRegister {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -3162,25 +3162,25 @@ public final class ServerRegister {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protocol.server.register.ServerRegister.MSG_Server_Connect_Command) {
-          return mergeFrom((protocol.server.register.ServerRegister.MSG_Server_Connect_Command)other);
+        if (other instanceof MSG_Server_Connect_Command) {
+          return mergeFrom((MSG_Server_Connect_Command)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protocol.server.register.ServerRegister.MSG_Server_Connect_Command other) {
-        if (other == protocol.server.register.ServerRegister.MSG_Server_Connect_Command.getDefaultInstance()) return this;
+      public Builder mergeFrom(MSG_Server_Connect_Command other) {
+        if (other == MSG_Server_Connect_Command.getDefaultInstance()) return this;
         if (other.hasTag()) {
           mergeTag(other.getTag());
         }
@@ -3215,11 +3215,11 @@ public final class ServerRegister {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protocol.server.register.ServerRegister.MSG_Server_Connect_Command parsedMessage = null;
+        MSG_Server_Connect_Command parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protocol.server.register.ServerRegister.MSG_Server_Connect_Command) e.getUnfinishedMessage();
+          parsedMessage = (MSG_Server_Connect_Command) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3230,29 +3230,29 @@ public final class ServerRegister {
       }
       private int bitField0_;
 
-      private protocol.server.register.ServerRegister.Server_Tag tag_ = null;
+      private Server_Tag tag_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> tagBuilder_;
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder> tagBuilder_;
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
       public boolean hasTag() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public protocol.server.register.ServerRegister.Server_Tag getTag() {
+      public Server_Tag getTag() {
         if (tagBuilder_ == null) {
-          return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+          return tag_ == null ? Server_Tag.getDefaultInstance() : tag_;
         } else {
           return tagBuilder_.getMessage();
         }
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public Builder setTag(protocol.server.register.ServerRegister.Server_Tag value) {
+      public Builder setTag(Server_Tag value) {
         if (tagBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3266,10 +3266,10 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
       public Builder setTag(
-          protocol.server.register.ServerRegister.Server_Tag.Builder builderForValue) {
+          Server_Tag.Builder builderForValue) {
         if (tagBuilder_ == null) {
           tag_ = builderForValue.build();
           onChanged();
@@ -3280,15 +3280,15 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public Builder mergeTag(protocol.server.register.ServerRegister.Server_Tag value) {
+      public Builder mergeTag(Server_Tag value) {
         if (tagBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
               tag_ != null &&
-              tag_ != protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance()) {
+              tag_ != Server_Tag.getDefaultInstance()) {
             tag_ =
-              protocol.server.register.ServerRegister.Server_Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
+              Server_Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
           } else {
             tag_ = value;
           }
@@ -3300,7 +3300,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
       public Builder clearTag() {
         if (tagBuilder_ == null) {
@@ -3313,33 +3313,33 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public protocol.server.register.ServerRegister.Server_Tag.Builder getTagBuilder() {
+      public Server_Tag.Builder getTagBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getTagFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
-      public protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder() {
+      public Server_TagOrBuilder getTagOrBuilder() {
         if (tagBuilder_ != null) {
           return tagBuilder_.getMessageOrBuilder();
         } else {
           return tag_ == null ?
-              protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
+              Server_Tag.getDefaultInstance() : tag_;
         }
       }
       /**
-       * <code>required .protocol.acceptor.register.Server_Tag tag = 1;</code>
+       * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder> 
+          Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>
           getTagFieldBuilder() {
         if (tagBuilder_ == null) {
           tagBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              protocol.server.register.ServerRegister.Server_Tag, protocol.server.register.ServerRegister.Server_Tag.Builder, protocol.server.register.ServerRegister.Server_TagOrBuilder>(
+              Server_Tag, Server_Tag.Builder, Server_TagOrBuilder>(
                   getTag(),
                   getParentForChildren(),
                   isClean());
@@ -3348,29 +3348,29 @@ public final class ServerRegister {
         return tagBuilder_;
       }
 
-      private protocol.server.register.ServerRegister.Connect_Info info_ = null;
+      private Connect_Info info_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.server.register.ServerRegister.Connect_Info, protocol.server.register.ServerRegister.Connect_Info.Builder, protocol.server.register.ServerRegister.Connect_InfoOrBuilder> infoBuilder_;
+          Connect_Info, Connect_Info.Builder, Connect_InfoOrBuilder> infoBuilder_;
       /**
-       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
        */
       public boolean hasInfo() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
        */
-      public protocol.server.register.ServerRegister.Connect_Info getInfo() {
+      public Connect_Info getInfo() {
         if (infoBuilder_ == null) {
-          return info_ == null ? protocol.server.register.ServerRegister.Connect_Info.getDefaultInstance() : info_;
+          return info_ == null ? Connect_Info.getDefaultInstance() : info_;
         } else {
           return infoBuilder_.getMessage();
         }
       }
       /**
-       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
        */
-      public Builder setInfo(protocol.server.register.ServerRegister.Connect_Info value) {
+      public Builder setInfo(Connect_Info value) {
         if (infoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3384,10 +3384,10 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
        */
       public Builder setInfo(
-          protocol.server.register.ServerRegister.Connect_Info.Builder builderForValue) {
+          Connect_Info.Builder builderForValue) {
         if (infoBuilder_ == null) {
           info_ = builderForValue.build();
           onChanged();
@@ -3398,15 +3398,15 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
        */
-      public Builder mergeInfo(protocol.server.register.ServerRegister.Connect_Info value) {
+      public Builder mergeInfo(Connect_Info value) {
         if (infoBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
               info_ != null &&
-              info_ != protocol.server.register.ServerRegister.Connect_Info.getDefaultInstance()) {
+              info_ != Connect_Info.getDefaultInstance()) {
             info_ =
-              protocol.server.register.ServerRegister.Connect_Info.newBuilder(info_).mergeFrom(value).buildPartial();
+              Connect_Info.newBuilder(info_).mergeFrom(value).buildPartial();
           } else {
             info_ = value;
           }
@@ -3418,7 +3418,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -3431,33 +3431,33 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
        */
-      public protocol.server.register.ServerRegister.Connect_Info.Builder getInfoBuilder() {
+      public Connect_Info.Builder getInfoBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
        */
-      public protocol.server.register.ServerRegister.Connect_InfoOrBuilder getInfoOrBuilder() {
+      public Connect_InfoOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
           return infoBuilder_.getMessageOrBuilder();
         } else {
           return info_ == null ?
-              protocol.server.register.ServerRegister.Connect_Info.getDefaultInstance() : info_;
+              Connect_Info.getDefaultInstance() : info_;
         }
       }
       /**
-       * <code>required .protocol.acceptor.register.Connect_Info info = 2;</code>
+       * <code>required .protocol.server.register.Connect_Info info = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.server.register.ServerRegister.Connect_Info, protocol.server.register.ServerRegister.Connect_Info.Builder, protocol.server.register.ServerRegister.Connect_InfoOrBuilder> 
+          Connect_Info, Connect_Info.Builder, Connect_InfoOrBuilder>
           getInfoFieldBuilder() {
         if (infoBuilder_ == null) {
           infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              protocol.server.register.ServerRegister.Connect_Info, protocol.server.register.ServerRegister.Connect_Info.Builder, protocol.server.register.ServerRegister.Connect_InfoOrBuilder>(
+              Connect_Info, Connect_Info.Builder, Connect_InfoOrBuilder>(
                   getInfo(),
                   getParentForChildren(),
                   isClean());
@@ -3508,20 +3508,20 @@ public final class ServerRegister {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protocol.acceptor.register.MSG_Server_Connect_Command)
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.MSG_Server_Connect_Command)
     }
 
-    // @@protoc_insertion_point(class_scope:protocol.acceptor.register.MSG_Server_Connect_Command)
-    private static final protocol.server.register.ServerRegister.MSG_Server_Connect_Command DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protocol.server.register.MSG_Server_Connect_Command)
+    private static final MSG_Server_Connect_Command DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.MSG_Server_Connect_Command();
+      DEFAULT_INSTANCE = new MSG_Server_Connect_Command();
     }
 
-    public static protocol.server.register.ServerRegister.MSG_Server_Connect_Command getDefaultInstance() {
+    public static MSG_Server_Connect_Command getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_Server_Connect_Command>
+    @Deprecated public static final com.google.protobuf.Parser<MSG_Server_Connect_Command>
         PARSER = new com.google.protobuf.AbstractParser<MSG_Server_Connect_Command>() {
       public MSG_Server_Connect_Command parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -3535,12 +3535,12 @@ public final class ServerRegister {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<MSG_Server_Connect_Command> getParserForType() {
       return PARSER;
     }
 
-    public protocol.server.register.ServerRegister.MSG_Server_Connect_Command getDefaultInstanceForType() {
+    public MSG_Server_Connect_Command getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3579,17 +3579,17 @@ public final class ServerRegister {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\024ServerRegister.proto\022\030protocol.acceptor." +
+    String[] descriptorData = {
+      "\n\024ServerRegister.proto\022\030protocol.server." +
       "register\"@\n\nServer_Tag\022\022\n\nserverType\030\001 \002" +
       "(\005\022\017\n\007groupId\030\002 \001(\005\022\r\n\005subId\030\003 \001(\005\"H\n\023MS" +
       "G_Server_Register\0221\n\003tag\030\001 \002(\0132$.protoco" +
-      "l.acceptor.register.Server_Tag\"_\n\032MSG_Serv" +
+      "l.server.register.Server_Tag\"_\n\032MSG_Serv" +
       "er_Register_Return\022\016\n\006result\030\001 \002(\r\0221\n\003ta" +
-      "g\030\002 \002(\0132$.protocol.acceptor.register.Serve" +
+      "g\030\002 \002(\0132$.protocol.server.register.Serve" +
       "r_Tag\"(\n\014Connect_Info\022\014\n\004port\030\001 \002(\005\022\n\n\002i" +
       "p\030\002 \002(\t\"\232\001\n\032MSG_Server_Connect_Command\0221" +
-      "\n\003tag\030\001 \002(\0132$.protocol.acceptor.register.S" +
+      "\n\003tag\030\001 \002(\0132$.protocol.server.register.S" +
       "erver_Tag\0224\n\004info\030\002 \002(\0132&.protocol.serve" +
       "r.register.Connect_Info\022\023\n\013connectType\030\004" +
       " \001(\005"
@@ -3611,31 +3611,31 @@ public final class ServerRegister {
     internal_static_protocol_server_register_Server_Tag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_server_register_Server_Tag_descriptor,
-        new java.lang.String[] { "ServerType", "GroupId", "SubId", });
+        new String[] { "ServerType", "GroupId", "SubId", });
     internal_static_protocol_server_register_MSG_Server_Register_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_server_register_MSG_Server_Register_descriptor,
-        new java.lang.String[] { "Tag", });
+        new String[] { "Tag", });
     internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor,
-        new java.lang.String[] { "Result", "Tag", });
+        new String[] { "Result", "Tag", });
     internal_static_protocol_server_register_Connect_Info_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_protocol_server_register_Connect_Info_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_server_register_Connect_Info_descriptor,
-        new java.lang.String[] { "Port", "Ip", });
+        new String[] { "Port", "Ip", });
     internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor,
-        new java.lang.String[] { "Tag", "Info", "ConnectType", });
+        new String[] { "Tag", "Info", "ConnectType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

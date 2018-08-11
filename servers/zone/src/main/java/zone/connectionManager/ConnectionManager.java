@@ -104,25 +104,27 @@ public class ConnectionManager implements IConnectionManager {
 
     @Override
     public void connect(ServerTag tag, String ip, int port) {
-        switch (tag.getType()) {
-            case Manager:
-                AbstractSession session = ManagerServerSessionMng.getInstance().getRegisterSession(tag);
-                if (session == null) {
-                    connectManagerServer(ip, port, tag);
-                } else {
-                    log.error("already connected an manager session {}!", session.getTag().toString());
-                }
-                break;
-            case Relation:
-                AbstractSession relationSession = RelationServerSessionMng.getInstance().getRegisterSession(tag);
-                if (relationSession == null) {
-                    connectRelationServer(ip, port, tag);
-                } else {
-                    log.error("already connected an relation session {}!", relationSession.getTag().toString());
-                }
-                break;
-            case Default:
-                break;
+        if (tag.getGroupId() == Context.tag.getGroupId()) {
+            switch (tag.getType()) {
+                case Manager:
+                    AbstractSession session = ManagerServerSessionMng.getInstance().getRegisterSession(tag);
+                    if (session == null) {
+                        connectManagerServer(ip, port, tag);
+                    } else {
+                        log.error("already connected an manager session {}!", session.getTag().toString());
+                    }
+                    break;
+                case Relation:
+                    AbstractSession relationSession = RelationServerSessionMng.getInstance().getRegisterSession(tag);
+                    if (relationSession == null) {
+                        connectRelationServer(ip, port, tag);
+                    } else {
+                        log.error("already connected an relation session {}!", relationSession.getTag().toString());
+                    }
+                    break;
+                case Default:
+                    break;
+            }
         }
     }
 

@@ -7,7 +7,7 @@ import core.base.common.AbstractSession;
 import core.base.model.ClientTag;
 import core.base.sequence.IResponseHandler;
 import core.network.codec.Packet;
-import dataObject.AccountObject;
+import gamedb.pojo.account.AccountPOJO;
 import gate.GateService;
 import gate.client.AuthorizationMng;
 import gate.client.ClientLoginMng;
@@ -23,11 +23,11 @@ public class ResponseUserLogin implements IResponseHandler {
         ClientSession clientSession = (ClientSession) session;
 
         MSG_CG_USER_LOGIN msg = MSG_CG_USER_LOGIN.parseFrom(packet.getMsg());
-        String accountName = msg.getAccountName();
+        String username = msg.getUsername();
         String token = msg.getToken();
 
         MSG_GC_USER_LOGIN.Builder response = MSG_GC_USER_LOGIN.newBuilder();
-        response.setAccountName(accountName);
+        response.setUsername(username);
 
         if (!GateService.context.isOpened()) {
             response.setResult(ErrorCode.ServerNotOpen.ordinal());
@@ -35,15 +35,15 @@ public class ResponseUserLogin implements IResponseHandler {
             return;
         }
 
-        log.info("account {} request to login ", accountName);
+        log.info("account {} request to login ", username);
         //到这里的账号应该是合法的,不去验证账号
         //token检查
-        if (!AuthorizationMng.getInstance().checkToken(accountName, token)) {
-            log.warn("account {} got en authorize fail:wrong token {}", accountName, token);
+        if (!AuthorizationMng.getInstance().checkToken(username, token)) {
+            log.warn("account {} got en authorize fail:wrong token {}", username, token);
             return;
         }
 
-        ((ClientTag) clientSession.getTag()).setTag(accountName, token);
+        ((ClientTag) clientSession.getTag()).setTag(username, token);
         //TODO:BOIL token 什么时候失效？？
 
         //TODO:BOIL 白名单，版本等判断
@@ -64,7 +64,7 @@ public class ResponseUserLogin implements IResponseHandler {
                 response.setResult(ErrorCode.FAIL.ordinal());
                 //TODO:BOIL 通知当前已经登入的账号
                 log.info("account {} repeated login :repeat channel {} (cur channel {})",
-                        accountName, ClientSessionMng.getInstance().getRegisterSession(clientSession.getTag()).getChannel().toString(), clientSession.getChannel().toString());
+                        username, ClientSessionMng.getInstance().getRegisterSession(clientSession.getTag()).getChannel().toString(), clientSession.getChannel().toString());
 
                 AbstractSession oldSession = ClientSessionMng.getInstance().getRegisterSession(session.getTag());
                 oldSession.sendMessage(response.build());
@@ -72,22 +72,16 @@ public class ResponseUserLogin implements IResponseHandler {
                 return;
             case SUCCESS:
                 response.setResult(ErrorCode.SUCCESS.ordinal());
-
                 //正常登陆流程
-                AccountObject accountObject = new AccountObject(accountName);
+                AccountPOJO accountPOJO = new AccountPOJO();
+                accountPOJO.setUsername(msg.getUsername());
+                accountPOJO.setPassword(msg.getPassword());
+                accountPOJO.setDeviceId(msg.getDeviceId());
 
-                accountObject.setDeviceId(msg.getDeviceId());
+//                accountPOJO.setRegisterId(msg.getRegisterId());
+//                accountPOJO.setChannelName(msg.getChannelName());
 
-                if (msg.getRegisterId() != null) {
-                    accountObject.setRegisterId(msg.getRegisterId());
-                }
-
-                if (msg.getChannelName() != null && !msg.getChannelName().isEmpty()) {
-                    accountObject.setChannelName(msg.getChannelName());
-                }
-
-                clientSession.setAccountObject(accountObject);
-
+                clientSession.setAccountPOJO(accountPOJO);
                 //所有验证通过，登录到游戏流程
                 ClientLoginMng.getInstance().login(clientSession);
                 break;

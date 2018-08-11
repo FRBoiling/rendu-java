@@ -1,5 +1,5 @@
 package basicCallBack;
 
 public interface ObjectBeCalled {
-    public void call(Object operator);
+    void call(Object operator);
 }

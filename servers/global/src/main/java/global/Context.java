@@ -4,6 +4,8 @@ import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.serviceframe.AbstractServiceFrame;
+import gamedb.DBManager;
+import gamedb.Util.MybatisConfigUtil;
 import global.connectionManager.ConnectionManager;
 import pathExt.PathManager;
 import protocol.gate.global.G2GMIdGenerater;
@@ -84,22 +86,22 @@ public class Context extends AbstractServiceFrame {
     }
 
     @Override
-    public void initDB() {
-
-    }
-
-    @Override
-    public void initRedis() {
-
-    }
-
-    @Override
     public void initOpenServerTime() {
 
     }
 
     @Override
     public void updateXml() {
+
+    }
+
+    @Override
+    public void initService() {
+
+    }
+
+    @Override
+    public void updateService() {
 
     }
 

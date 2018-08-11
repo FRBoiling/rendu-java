@@ -1,7 +1,7 @@
 package gate.client;
 
 import core.network.IResponseHandlerManager;
-import gate.client.response.ResponseCreateCharacter;
+import gate.client.response.ResponseCreateRole;
 import gate.client.response.ResponseReconnectLogin;
 import gate.client.response.ResponseUserLogin;
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +31,7 @@ public class ClientResponseMng implements IResponseHandlerManager {
     @Override
     public void registerHandlers() {
         registerHandler(Id.getInst().getMessageId(MSG_CG_USER_LOGIN.class), ResponseUserLogin.class);
+        registerHandler(Id.getInst().getMessageId(MSG_CG_CREATE_ROLE.class), ResponseCreateRole.class);
         registerHandler(Id.getInst().getMessageId(MSG_CG_RECONNECT_LOGIN.class), ResponseReconnectLogin.class);
-        registerHandler(Id.getInst().getMessageId(MSG_CG_CREATE_CHARACTER.class), ResponseCreateCharacter.class);
     }
 }

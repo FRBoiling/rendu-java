@@ -8,10 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CreateAccountDBOperator extends AbstractDBOperator {
-
     private AccountPOJO account=null;
-    public int id;
-    public int count;
 
     public CreateAccountDBOperator(AccountPOJO account){
             this.account=account;
@@ -23,7 +20,7 @@ public class CreateAccountDBOperator extends AbstractDBOperator {
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             AccountMapper accountMapper=sqlSession.getMapper(AccountMapper.class);
 
-            count=accountMapper.insertAccount(account);
+            int count=accountMapper.insertAccount(account);
             sqlSession.commit();
             System.err.println("CreateAccountDBOperator execute count "+count);
             if(count>0){

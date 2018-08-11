@@ -1,9 +1,9 @@
-package gamedb.dao.character;
+package gamedb.dao.role;
 
 import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
-import gamedb.interfaces.CharMapper;
-import gamedb.pojo.CharPOJO;
+import gamedb.interfaces.RoleMapper;
+import gamedb.pojo.RolePOJO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 
@@ -13,26 +13,24 @@ import org.apache.ibatis.session.SqlSession;
  * CTEATED BY : JIANGYUNHUI
  */
 @Slf4j
-public class InsertCharacterNameDBOperator extends AbstractDBOperator {
-    String charName;
-    int uid;
-    int count;
-
-    public InsertCharacterNameDBOperator(String char_name,int uid){
-        this.charName=char_name;
-        this.uid=uid;
+public class InsertRoleNameDBOperator extends AbstractDBOperator {
+    String roleName;
+    int UId;
+    public InsertRoleNameDBOperator(String roleName, int uid){
+        this.roleName=roleName;
+        this.UId=uid;
     }
     @Override
     public boolean execute() {
         SqlSession sqlSession=null;
-        CharPOJO pojo=new CharPOJO();
-        pojo.setTableName("character_name");
-        pojo.setCharName(charName);
-        pojo.setUid(uid);
+        RolePOJO pojo=new RolePOJO();
+        pojo.setTableName("role");
+        pojo.setRoleName(roleName);
+        pojo.setUid(UId);
         try{
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
-            CharMapper charMapper=sqlSession.getMapper(CharMapper.class);
-            count=charMapper.insertCharacterName(pojo);
+            RoleMapper charMapper=sqlSession.getMapper(RoleMapper.class);
+            int count=charMapper.insertRole(pojo);
             sqlSession.commit();
             if(count>0) {
                 m_result = 1;

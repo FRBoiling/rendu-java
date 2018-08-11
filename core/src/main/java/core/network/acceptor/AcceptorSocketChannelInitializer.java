@@ -1,7 +1,6 @@
 package core.network.acceptor;
 
 import core.network.IChannelHandlerHolder;
-import core.base.serviceframe.IService;
 import core.network.codec.*;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
@@ -26,7 +25,6 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 public class AcceptorSocketChannelInitializer extends ChannelInitializer<SocketChannel> implements IChannelHandlerHolder {
-    private IService service;
     //acceptor的trigger     //因为我们在client端设置了每隔30s会发送一个心跳包过来，如果60s都没有收到心跳，则说明链路发生了问题
     private final AcceptorIdleStateTrigger idleStateTrigger = new AcceptorIdleStateTrigger();
     //封包
@@ -45,9 +43,8 @@ public class AcceptorSocketChannelInitializer extends ChannelInitializer<SocketC
 //    //SimpleChannelInboundHandler类型的handler只处理@{link Message}类型的数据
 //    private final AcceptorMessageHandler messageHandler = new AcceptorMessageHandler();
 
-    AcceptorSocketChannelInitializer(IService service) {
-        this.service = service;
-        messageExecutor = new AcceptorMessageExecutor(service);
+    AcceptorSocketChannelInitializer( AcceptorNetworkServiceBuilder builder) {
+        messageExecutor = new AcceptorMessageExecutor(builder);
     }
 
     @Override

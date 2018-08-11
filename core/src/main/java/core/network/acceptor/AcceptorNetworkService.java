@@ -65,7 +65,7 @@ public class AcceptorNetworkService implements IService, ISocketAcceptor {
         }
         InitOption1();
 //        bootstrap.handler(new LoggingHandler(LogLevel.DEBUG));
-        bootstrap.childHandler(new AcceptorSocketChannelInitializer(this));
+        bootstrap.childHandler(new AcceptorSocketChannelInitializer(builder));
     }
 
 

@@ -415,18 +415,18 @@ public final class M2G {
     int getResult();
 
     /**
-     * <code>required string accountName = 2;</code>
+     * <code>required string username = 2;</code>
      */
-    boolean hasAccountName();
+    boolean hasUsername();
     /**
-     * <code>required string accountName = 2;</code>
+     * <code>required string username = 2;</code>
      */
-    String getAccountName();
+    String getUsername();
     /**
-     * <code>required string accountName = 2;</code>
+     * <code>required string username = 2;</code>
      */
     com.google.protobuf.ByteString
-        getAccountNameBytes();
+        getUsernameBytes();
 
     /**
      * <code>required int32 maxUid = 3;</code>
@@ -465,7 +465,7 @@ public final class M2G {
     }
     private MSG_M2G_MAX_UID() {
       result_ = 0;
-      accountName_ = "";
+      username_ = "";
       maxUid_ = 0;
       channelName_ = "";
     }
@@ -509,7 +509,7 @@ public final class M2G {
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              accountName_ = bs;
+              username_ = bs;
               break;
             }
             case 24: {
@@ -563,19 +563,19 @@ public final class M2G {
       return result_;
     }
 
-    public static final int ACCOUNTNAME_FIELD_NUMBER = 2;
-    private volatile Object accountName_;
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    private volatile Object username_;
     /**
-     * <code>required string accountName = 2;</code>
+     * <code>required string username = 2;</code>
      */
-    public boolean hasAccountName() {
+    public boolean hasUsername() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string accountName = 2;</code>
+     * <code>required string username = 2;</code>
      */
-    public String getAccountName() {
-      Object ref = accountName_;
+    public String getUsername() {
+      Object ref = username_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -583,22 +583,22 @@ public final class M2G {
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          accountName_ = s;
+          username_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string accountName = 2;</code>
+     * <code>required string username = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getAccountNameBytes() {
-      Object ref = accountName_;
+        getUsernameBytes() {
+      Object ref = username_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        accountName_ = b;
+        username_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -672,7 +672,7 @@ public final class M2G {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasAccountName()) {
+      if (!hasUsername()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -694,7 +694,7 @@ public final class M2G {
         output.writeInt32(1, result_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accountName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, maxUid_);
@@ -715,7 +715,7 @@ public final class M2G {
           .computeInt32Size(1, result_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accountName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -745,10 +745,10 @@ public final class M2G {
         result = result && (getResult()
             == other.getResult());
       }
-      result = result && (hasAccountName() == other.hasAccountName());
-      if (hasAccountName()) {
-        result = result && getAccountName()
-            .equals(other.getAccountName());
+      result = result && (hasUsername() == other.hasUsername());
+      if (hasUsername()) {
+        result = result && getUsername()
+            .equals(other.getUsername());
       }
       result = result && (hasMaxUid() == other.hasMaxUid());
       if (hasMaxUid()) {
@@ -775,9 +775,9 @@ public final class M2G {
         hash = (37 * hash) + RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getResult();
       }
-      if (hasAccountName()) {
-        hash = (37 * hash) + ACCOUNTNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getAccountName().hashCode();
+      if (hasUsername()) {
+        hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getUsername().hashCode();
       }
       if (hasMaxUid()) {
         hash = (37 * hash) + MAXUID_FIELD_NUMBER;
@@ -918,7 +918,7 @@ public final class M2G {
         super.clear();
         result_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        accountName_ = "";
+        username_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         maxUid_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -955,7 +955,7 @@ public final class M2G {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.accountName_ = accountName_;
+        result.username_ = username_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -1009,9 +1009,9 @@ public final class M2G {
         if (other.hasResult()) {
           setResult(other.getResult());
         }
-        if (other.hasAccountName()) {
+        if (other.hasUsername()) {
           bitField0_ |= 0x00000002;
-          accountName_ = other.accountName_;
+          username_ = other.username_;
           onChanged();
         }
         if (other.hasMaxUid()) {
@@ -1031,7 +1031,7 @@ public final class M2G {
         if (!hasResult()) {
           return false;
         }
-        if (!hasAccountName()) {
+        if (!hasUsername()) {
           return false;
         }
         if (!hasMaxUid()) {
@@ -1094,24 +1094,24 @@ public final class M2G {
         return this;
       }
 
-      private Object accountName_ = "";
+      private Object username_ = "";
       /**
-       * <code>required string accountName = 2;</code>
+       * <code>required string username = 2;</code>
        */
-      public boolean hasAccountName() {
+      public boolean hasUsername() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string accountName = 2;</code>
+       * <code>required string username = 2;</code>
        */
-      public String getAccountName() {
-        Object ref = accountName_;
+      public String getUsername() {
+        Object ref = username_;
         if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            accountName_ = s;
+            username_ = s;
           }
           return s;
         } else {
@@ -1119,53 +1119,53 @@ public final class M2G {
         }
       }
       /**
-       * <code>required string accountName = 2;</code>
+       * <code>required string username = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getAccountNameBytes() {
-        Object ref = accountName_;
+          getUsernameBytes() {
+        Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
-          accountName_ = b;
+          username_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string accountName = 2;</code>
+       * <code>required string username = 2;</code>
        */
-      public Builder setAccountName(
+      public Builder setUsername(
           String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        accountName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string accountName = 2;</code>
+       * <code>required string username = 2;</code>
        */
-      public Builder clearAccountName() {
+      public Builder clearUsername() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        accountName_ = getDefaultInstance().getAccountName();
+        username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
       /**
-       * <code>required string accountName = 2;</code>
+       * <code>required string username = 2;</code>
        */
-      public Builder setAccountNameBytes(
+      public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        accountName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
@@ -1346,9 +1346,9 @@ public final class M2G {
   static {
     String[] descriptorData = {
       "\n\tM2G.proto\022\025protocol.manager.gate\"\023\n\021MS" +
-      "G_M2G_HEARTBEAT\"[\n\017MSG_M2G_MAX_UID\022\016\n\006re" +
-      "sult\030\001 \002(\005\022\023\n\013accountName\030\002 \002(\t\022\016\n\006maxUi" +
-      "d\030\003 \002(\005\022\023\n\013channelName\030\004 \002(\t"
+      "G_M2G_HEARTBEAT\"X\n\017MSG_M2G_MAX_UID\022\016\n\006re" +
+      "sult\030\001 \002(\005\022\020\n\010username\030\002 \002(\t\022\016\n\006maxUid\030\003" +
+      " \002(\005\022\023\n\013channelName\030\004 \002(\t"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1373,7 +1373,7 @@ public final class M2G {
     internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor,
-        new String[] { "Result", "AccountName", "MaxUid", "ChannelName", });
+        new String[] { "Result", "Username", "MaxUid", "ChannelName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

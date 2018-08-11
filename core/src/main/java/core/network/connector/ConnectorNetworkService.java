@@ -8,6 +8,7 @@ import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
+import io.netty.channel.epoll.EpollDomainSocketChannel;
 import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.epoll.EpollSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -55,7 +56,7 @@ public class ConnectorNetworkService implements IService ,ISocketConnector {
 
         ThreadFactory IOFactory = new DefaultThreadFactory(builder.getName()+".io");
         IOGroup = initEventLoopGroup(IOLoopGroupCount,IOFactory);
-        channelInitializer = new ConnectorSocketChannelInitializer(builder.getConsumer(),builder.getListener());
+        channelInitializer = new ConnectorSocketChannelInitializer(builder);
 
         bootstrapLock =new Object();
         bootstrap = new Bootstrap();

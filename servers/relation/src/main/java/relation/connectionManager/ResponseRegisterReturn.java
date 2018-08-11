@@ -49,7 +49,7 @@ public class ResponseRegisterReturn implements IResponseHandler{
                         registerResult = ManagerServerSessionMng.getInstance().register(session);
                     }
                     else {
-                        log.error("SERIOUS ERROR:  registerHandler result error from {} fail : groupId {} wrong",tag.getStrTag(),tag.getGroupId());
+                        log.error("SERIOUS ERROR:  registerHandler result error from {} fail : groupId {} wrong",tag.toString(),tag.getGroupId());
                         RelationService.context.stop();
                         return;
                     }
@@ -59,7 +59,7 @@ public class ResponseRegisterReturn implements IResponseHandler{
                         registerResult = RelationServerSessionMng.getInstance().register(session);
                     }
                     else {
-                        log.error("SERIOUS ERROR:  registerHandler result error from {} fail : getSubId {} wrong",tag.getStrTag(),tag.getSubId());
+                        log.error("SERIOUS ERROR:  registerHandler result error from {} fail : getSubId {} wrong",tag.toString(),tag.getSubId());
                         RelationService.context.stop();
                         return;
                     }
@@ -75,12 +75,12 @@ public class ResponseRegisterReturn implements IResponseHandler{
                 case REPEATED_REGISTER:
                 case FAIL:
                 default:
-                    log.error("SERIOUS ERROR: get registerHandler result from {} success ,but registerHandler here fail :{} ", tag.getStrTag(),registerResult.toString() );
+                    log.error("SERIOUS ERROR: get registerHandler result from {} success ,but registerHandler here fail :{} ", tag.toString(),registerResult.toString() );
                     RelationService.context.stop();
                     break;
             }
         }else {
-            log.error("SERIOUS ERROR: registerHandler result from {} fail :{}", tag.getStrTag(), RegisterResult.values()[msg.getResult()]);
+            log.error("SERIOUS ERROR: registerHandler result from {} fail :{}", tag.toString(), RegisterResult.values()[msg.getResult()]);
             switch (serverType) {
                 case Global:
                 case Manager:

@@ -2,7 +2,8 @@ package core.base.model;
 
 import core.base.common.ISessionTag;
 import lombok.Getter;
-import org.omg.CORBA.PRIVATE_MEMBER;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import java.util.Objects;
 
@@ -14,28 +15,30 @@ import java.util.Objects;
  * Time: 10:44
  */
 @Getter
+@Setter
+@Accessors(chain=true)
 public class ClientTag implements ISessionTag {
-    private String accountName;
+    private String username;
     private String channelName;
 
     private String strTag;
 
     public ClientTag() {
-        accountName = "";
+        username = "";
         channelName ="";
         strTag="";
     }
 
     @Override
     public int hashCode(){
-        return Objects.hash(this.accountName,this.channelName);
+        return Objects.hash(this.username,this.channelName);
     }
 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof ClientTag) {
             ClientTag t = (ClientTag) obj;
-            return t.accountName.equals( this.accountName) &&
+            return t.username.equals( this.username) &&
                     t.channelName.equals(this.channelName);
         } else {
             return false;
@@ -52,19 +55,17 @@ public class ClientTag implements ISessionTag {
 //    };
     @Override
     public void initTag(Object[] params) {
-        this.accountName = (String) params[0];
+        this.username = (String) params[0];
         this.channelName = (String) params[1];
 
-        this.strTag = this.strTag+ "_" + this.accountName;
-        this.strTag = this.strTag+ "_" + this.channelName;
+        this.strTag = this.username+ "_" + this.channelName;
     }
 
-    public void setTag(String accountName,String token) {
-        this.accountName = accountName;
-        this.channelName = token;
+    public void setTag(String accountName,String channelName) {
+        this.username = accountName;
+        this.channelName = channelName;
 
-        this.strTag = this.strTag+ "_" + this.accountName;
-        this.strTag = this.strTag+ "_" + this.channelName;
+        this.strTag = this.username+ "_" + this.channelName;
     }
 
 

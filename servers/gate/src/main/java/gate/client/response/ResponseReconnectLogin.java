@@ -16,7 +16,7 @@ public class ResponseReconnectLogin implements IResponseHandler {
         return;
 //        //TODO: BOIL 断线重连逻辑
 //        Client.MSG_CG_RECONNECT_LOGIN msg = Client.MSG_CG_RECONNECT_LOGIN.parseFrom(packet.getMsg());
-//        String accountName = msg.getAccountName();
+//        String accountName = msg.getUsername();
 //        String token = msg.getToken();
 //
 //        Client.MSG_GC_RECONNECT_LOGIN.Builder response = Client.MSG_GC_RECONNECT_LOGIN.newBuilder();

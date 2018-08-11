@@ -1,17 +1,16 @@
-package gamedb.dao.character;
+package gamedb.dao.role;
 
 import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.RoleMapper;
-import gamedb.pojo.Role;
+import gamedb.pojo.RolePOJO;
 import org.apache.ibatis.session.SqlSession;
 
-public class DeleteCharacterDBOperator extends AbstractDBOperator {
-    private Role role=null;
-    public int id;
-    public int count;
+public class CreateRoleDBOperator extends AbstractDBOperator {
 
-    public DeleteCharacterDBOperator(Object arg, Role role) {
+    private RolePOJO role=null;
+
+    public CreateRoleDBOperator(RolePOJO role) {
         this.role=role;
     }
 
@@ -21,9 +20,10 @@ public class DeleteCharacterDBOperator extends AbstractDBOperator {
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             RoleMapper roleMapper=sqlSession.getMapper(RoleMapper.class);
 
-            count=roleMapper.deleteRole(role);
+            int count=roleMapper.insertRole(role);
             sqlSession.commit();
-            System.err.println("DeleteCharacterDBOperator execute count "+count);
+
+            System.err.println("CreateRoleDBOperator execute count "+count);
         }catch (Exception ex){
             System.err.println(ex.getMessage());
         }finally {

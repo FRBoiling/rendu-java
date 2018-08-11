@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * Copyright © 2018 四月
  * Boil blood. All rights reserved.
- *
+ * <p>
  * Project: ServerCluster-Java
  * Package: core.network
  * Description: ${todo}
@@ -16,7 +16,7 @@ import lombok.Data;
  * version: V1.0
  */
 @Data
-public class AcceptorNetworkServiceBuilder implements INetworkServiceBuilder,ISocketAcceptor {
+public class AcceptorNetworkServiceBuilder implements INetworkServiceBuilder {
 
     private String name;
 
@@ -39,10 +39,20 @@ public class AcceptorNetworkServiceBuilder implements INetworkServiceBuilder,ISo
      */
     private INetworkConsumer consumer;
 
+    @Override
+    public INetworkConsumer getConsumer() {
+        return consumer;
+    }
+
     /**
      * 事件监听器
      */
     private INetworkEventListener listener;
+
+    @Override
+    public INetworkEventListener getListener() {
+        return listener;
+    }
 
     /**
      * 消息池
@@ -54,13 +64,4 @@ public class AcceptorNetworkServiceBuilder implements INetworkServiceBuilder,ISo
         return new AcceptorNetworkService(this);
     }
 
-    @Override
-    public void bind(int port) {
-        this.port =port;
-    }
-
-    @Override
-    public void shutdownGracefully() {
-
-    }
 }

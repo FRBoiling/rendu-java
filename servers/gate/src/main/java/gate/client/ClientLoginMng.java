@@ -3,7 +3,6 @@ package gate.client;
 import constant.CONSTANT;
 import constant.ErrorCode;
 import constant.OnlineLoadState;
-import gamedb.DBOperateType;
 import gamedb.dao.account.CreateAccountDBOperator;
 import gamedb.dao.account.SelectAccountDBOperator;
 import gamedb.pojo.account.AccountPOJO;
@@ -115,39 +114,31 @@ public class ClientLoginMng {
     }
 
     void loadAccount(ClientSession clientSession) {
-        AccountPOJO pojo = new AccountPOJO();
-        pojo.setAccountName(clientSession.getAccountObject().getAccountName());
-        pojo.setChannelName(clientSession.getAccountObject().getChannelName());
 
         MSG_GC_USER_LOGIN.Builder response;
         response = MSG_GC_USER_LOGIN.newBuilder();
-        response.setAccountName(pojo.getAccountName());
+        response.setUsername(clientSession.getAccountPOJO().getUsername());
         response.setResult(ErrorCode.SUCCESS.ordinal());
         response.setToken("");
 
-        SelectAccountDBOperator queryLogin = new SelectAccountDBOperator(pojo);
-        GateService.context.db.Call(queryLogin, "account", DBOperateType.Read, (tempOperator) -> {
+        SelectAccountDBOperator queryLogin = new SelectAccountDBOperator(clientSession.getAccountPOJO());
+        GateService.context.db.Call(queryLogin, (tempOperator) -> {
 
             SelectAccountDBOperator op = (SelectAccountDBOperator) tempOperator;
             if (op.getResult() == 1) {
                 //// 账号存在
                 //如果registerId更改就去修改一下表
-                if (clientSession.getAccountObject().getRegisterId().equals(op.account.getRegisterId())) {
+                if (clientSession.getAccountPOJO().getRegisterId().equals(op.account.getRegisterId())) {
                     AccountPOJO temp = op.account;
                     //更新registerId
-                    //GateService.context.db.Call(new QueryUpdateAccountRegisterId(AccountName, ChannelName, RegisterId), "account", DBOperateType.Write);
+//                    GateService.context.db.Call(new QueryUpdateAccountRegisterId(AccountName, ChannelName, RegisterId), "account", DBOperateType.Write);
                     response.setResult(ErrorCode.SUCCESS.getValue());
                     clientSession.sendMessage(response.build());
                 }
                 //TODO 去数据库取角色数据
 
             } else if (op.getResult() == 0) {
-                AccountPOJO accountPOJO = new AccountPOJO();
-                accountPOJO.setAccountName(clientSession.getAccountObject().getAccountName());
-                accountPOJO.setChannelName(clientSession.getAccountObject().getChannelName());
-                accountPOJO.setDeviceId(clientSession.getAccountObject().getDeviceId());
-                accountPOJO.setRegisterId(clientSession.getAccountObject().getRegisterId());
-                GateService.context.db.Call(new CreateAccountDBOperator(accountPOJO), "account", DBOperateType.Write, (tempOperator2) -> {
+                GateService.context.db.Call(new CreateAccountDBOperator(clientSession.getAccountPOJO()), (tempOperator2) -> {
                     //埋点
                     response.setResult(ErrorCode.SUCCESS.getValue());
                     clientSession.sendMessage(response.build());
@@ -157,7 +148,7 @@ public class ClientLoginMng {
     }
 
     public void sendLoginResponse(ClientSession session,MSG_GC_USER_LOGIN.Builder response){
-        log.debug("account {} login response error code {}",response.getAccountName(),response.getResult());
+        log.debug("account {} login response error code {}",response.getUsername(),response.getResult());
         if ( response.getResult() != ErrorCode.SUCCESS.ordinal()){
             if (response.getResult()!=ErrorCode.BadToken.ordinal()){
                 //生成新的token

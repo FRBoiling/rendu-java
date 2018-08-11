@@ -4,6 +4,7 @@ import configuration.dataManager.Data;
 import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import core.base.common.AbstractSession;
+import core.base.common.ISessionTag;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import core.base.serviceframe.IConnectionManager;
@@ -17,6 +18,8 @@ import global.zone.ZoneAcceptor;
 import global.zone.ZoneServerSessionMng;
 import lombok.extern.slf4j.Slf4j;
 import protocol.server.register.ServerRegister;
+
+import java.util.Map;
 
 /**
  * Created with Intellij IDEA
@@ -145,15 +148,15 @@ public class ConnectionManager implements IConnectionManager {
         //send this manager connection info to relations
         broadcastAcceptorInfo2Connectors(managerTag, ServerType.Relation);
 
-        //send this manager connection info to other managers
-        broadcastAcceptorInfo2Connectors(managerTag, ServerType.Manager);
-        //send other managers connection info to this manager
-        for (AbstractSession manager : ManagerServerSessionMng.getInstance().getRegisterSessions().values()) {
-            ServerTag tag = (ServerTag) manager.getTag();
-            if (tag.getGroupId() < managerTag.getGroupId()) {  //约定 groupId 大的为连接方 小的为监听方
-                sendAcceptorInfo2Connector(tag, managerTag);
-            }
-        }
+//        //send this manager connection info to other managers
+//        broadcastAcceptorInfo2Connectors(managerTag, ServerType.Manager);
+//        //send other managers connection info to this manager
+//        for (AbstractSession manager : ManagerServerSessionMng.getInstance().getRegisterSessions().values()) {
+//            ServerTag tag = (ServerTag) manager.getTag();
+//            if (tag.getGroupId() < managerTag.getGroupId()) {  //约定 groupId 大的为连接方 小的为监听方
+//                sendAcceptorInfo2Connector(tag, managerTag);
+//            }
+//        }
     }
 
     /***
@@ -163,15 +166,19 @@ public class ConnectionManager implements IConnectionManager {
     private void doZoneRegister(ServerTag zoneTag) {
 
         //send managers connection info to this zone
-        for (AbstractSession manager : ManagerServerSessionMng.getInstance().getRegisterSessions().values()) {
-            ServerTag tag = (ServerTag) manager.getTag();
-            sendAcceptorInfo2Connector(tag, zoneTag);
+        for (Map.Entry<ISessionTag,AbstractSession> entry  : ManagerServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
+            ServerTag tag = (ServerTag) entry.getKey();
+            if (zoneTag.getGroupId() == tag.getGroupId()){
+                sendAcceptorInfo2Connector(tag, zoneTag);
+            }
         }
 
         //send relation connection info to this zone
-        for (AbstractSession relation : RelationServerSessionMng.getInstance().getRegisterSessions().values()) {
-            ServerTag tag = (ServerTag) relation.getTag();
-            sendAcceptorInfo2Connector(tag, zoneTag);
+        for (Map.Entry<ISessionTag,AbstractSession> entry : RelationServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
+            ServerTag tag = (ServerTag) entry.getKey();
+            if (zoneTag.getGroupId() == tag.getGroupId()) {
+                sendAcceptorInfo2Connector(tag, zoneTag);
+            }
         }
 
         //send this zone connection info to gates
@@ -192,15 +199,19 @@ public class ConnectionManager implements IConnectionManager {
 //        }
 
         //send managers connection info to this gate
-        for (AbstractSession manager : ManagerServerSessionMng.getInstance().getRegisterSessions().values()) {
-            ServerTag tag = (ServerTag) manager.getTag();
-            sendAcceptorInfo2Connector(tag, gateTag);
+        for (Map.Entry<ISessionTag,AbstractSession> entry : ManagerServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
+            ServerTag tag = (ServerTag) entry.getKey();
+            if (tag.getGroupId()== gateTag.getGroupId()){
+                sendAcceptorInfo2Connector(tag, gateTag);
+            }
         }
 
         //send zones connection info to this gate
-        for (AbstractSession zone : ZoneServerSessionMng.getInstance().getRegisterSessions().values()) {
-            ServerTag tag = (ServerTag) zone.getTag();
-            sendAcceptorInfo2Connector(tag, gateTag);
+        for (Map.Entry<ISessionTag,AbstractSession> entry : ZoneServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
+            ServerTag tag = (ServerTag) entry.getKey();
+            if (tag.getGroupId()== gateTag.getGroupId()) {
+                sendAcceptorInfo2Connector(tag, gateTag);
+            }
         }
     }
 
@@ -211,9 +222,11 @@ public class ConnectionManager implements IConnectionManager {
      */
     private void doRelationRegister(ServerTag relationTag) {
         //send other manager's connection info to this relation
-        for (AbstractSession manager : ManagerServerSessionMng.getInstance().getRegisterSessions().values()) {
-            ServerTag tag = (ServerTag) manager.getTag();
-            sendAcceptorInfo2Connector(tag, relationTag);
+        for (Map.Entry<ISessionTag,AbstractSession> entry : ManagerServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
+            ServerTag tag = (ServerTag) entry.getKey();
+            if (relationTag.getGroupId()==tag.getGroupId()){
+                sendAcceptorInfo2Connector(tag, relationTag);
+            }
         }
 
         //send this relation connection info to zones
@@ -222,8 +235,8 @@ public class ConnectionManager implements IConnectionManager {
         //send this relation connection info to other relations
         broadcastAcceptorInfo2Connectors(relationTag, ServerType.Relation);
         //send other relation's connection info to this relation
-        for (AbstractSession relation : RelationServerSessionMng.getInstance().getRegisterSessions().values()) {
-            ServerTag tag = (ServerTag) relation.getTag();
+        for (Map.Entry<ISessionTag,AbstractSession> entry : RelationServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
+            ServerTag tag = (ServerTag) entry.getKey();
             if (tag.getGroupId() < relationTag.getGroupId()) {  //约定 groupId 大的为连接方 小的为监听方
                 sendAcceptorInfo2Connector(tag, relationTag);
             }
@@ -231,7 +244,7 @@ public class ConnectionManager implements IConnectionManager {
     }
 
     /**
-     * 发送serviceData连接信息到server
+     * 发送acceptorTag连接信息到connector
      *
      * @param acceptorTag  连接监听方
      * @param connectorTag 连接发起方
@@ -260,13 +273,13 @@ public class ConnectionManager implements IConnectionManager {
                 GateServerSessionMng.getInstance().send2Session(connectorTag, commandBuilder.build());
                 break;
             case Default:
-                log.error("send connection info to connector {} got an error !", connectorTag.getStrTag());
+                log.error("send connection info to connector {} got an error !", connectorTag.toString());
                 break;
         }
     }
 
     /**
-     * 广播链接信息到servers
+     * 广播acceptorTag信息到connectors
      *
      * @param acceptorTag   监听方
      * @param connectorType 连接方
@@ -311,7 +324,7 @@ public class ConnectionManager implements IConnectionManager {
                 }
                 break;
             case Default:
-                log.error("broadcast connection info to {} got an error !", acceptorTag.getStrTag());
+                log.error("broadcast connection info to {} got an error !", acceptorTag.toString());
                 break;
         }
     }

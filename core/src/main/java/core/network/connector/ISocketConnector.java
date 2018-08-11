@@ -9,6 +9,8 @@ package core.network.connector;
  */
 
 public interface ISocketConnector {
-    void connect(String host,int port);
+
+    void connect(String host, int port);
+
     void shutdownGracefully();
 }

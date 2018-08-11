@@ -9,6 +9,8 @@ package core.network.acceptor;
  */
 
 public interface ISocketAcceptor {
+
     void bind(int port);
+
     void shutdownGracefully();
 }

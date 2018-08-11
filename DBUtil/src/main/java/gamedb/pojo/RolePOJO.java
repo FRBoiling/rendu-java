@@ -3,27 +3,26 @@ package gamedb.pojo;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Timestamp;
+
 @Getter
 @Setter
-public class CharPOJO {
+public class RolePOJO {
     String tableName;
 
     int uid;
-    String accountName;
-    String channelName;
-    String charName;
-    int main;
-    int channel = 1;
+    String roleName;
+    int groupId;
 
-    int mapId;
-    float posX;
-    float posY;
+    String username;
+    String channelName;
+
+    Timestamp createTime;
 
     int level;
     int ladderLevel;
 
     int faceIconId;
-
     int fashionHead =0;
     int sex;
 
@@ -31,5 +30,4 @@ public class CharPOJO {
     int fashionFace = 0;
     int fashionClothes = 0;
     int fashionBack = 0;
-
 }

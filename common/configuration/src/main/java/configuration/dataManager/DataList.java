@@ -15,9 +15,9 @@ import java.util.*;
  */
 @Getter
 @Slf4j
-public class DataList extends AbstractMap<Integer,Data>{
-    private HashMap<Integer , Data> dataListById;
-    private HashMap<String , Data> dataListByName;
+public class DataList extends AbstractMap<Integer, Data> {
+    private HashMap<Integer, Data> dataListById;
+    private HashMap<String, Data> dataListByName;
     /**
      * 数据标识Key
      */
@@ -37,30 +37,28 @@ public class DataList extends AbstractMap<Integer,Data>{
         return dataListById.entrySet();
     }
 
-
     public boolean addData(Data data) {
-        if (dataListById.containsKey(data.getId()))
-        {
-            log.error("IdSpace {} has duplicated id {}",getKey(),data.getId());
+        if (dataListById.containsKey(data.getId())) {
+            log.error("IdSpace {} has duplicated id {}", getKey(), data.getId());
             return false;
-        }else if (data.getName()!=null && dataListByName.containsKey(data.getName())){
-            log.error("IdSpace {} has duplicated name {}",getKey(),data.getName());
+        } else if (data.getName() != null && dataListByName.containsKey(data.getName())) {
+            log.error("IdSpace {} has duplicated name {}", getKey(), data.getName());
             return false;
         }
 
         data.setRootElement(this);
-        dataListById.put(data.getId(),data);
-        if(data.getName()!=null){
-            dataListByName.put(data.getName(),data);
+        dataListById.put(data.getId(), data);
+        if (data.getName() != null) {
+            dataListByName.put(data.getName(), data);
         }
         return true;
     }
 
-    public Data getData(String name){
+    public Data getData(String name) {
         return dataListByName.get(name);
     }
 
-    public Data getData(int id){
+    public Data getData(int id) {
         return dataListById.get(id);
     }
 }

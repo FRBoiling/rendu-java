@@ -6,10 +6,7 @@ import core.base.model.ServerTag;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -160,32 +157,44 @@ public abstract class AbstractSessionManager {
     }
 
     public void broadcastAll(MessageLite msg) {
-        for (AbstractSession session : registerSessions.values()) {
-            session.sendMessage(msg);
+        for (Map.Entry<ISessionTag, AbstractSession> entry : registerSessions.entrySet()) {
+            entry.getValue().sendMessage(msg);
         }
     }
 
+    /**
+     * 除tag以外
+     * @param msg 消息
+     * @param tag 排除的tag
+     */
     public void broadcastAllExceptServer(MessageLite msg, ServerTag tag) {
-        for (AbstractSession session : registerSessions.values()) {
-            if (!session.getTag().equals(tag)) {
-                session.sendMessage(msg);
+        for (Map.Entry<ISessionTag, AbstractSession> entry : registerSessions.entrySet()) {
+            if (!entry.getKey().equals(tag)) {
+                entry.getValue().sendMessage(msg);
             }
         }
     }
 
+    /**
+     * 按组发
+     * @param msg 消息
+     * @param groupId 服务端组号
+     */
     public void broadcastByGroup(MessageLite msg, int groupId) {
-        for (AbstractSession session : getRegisterSessions().values()) {
-            if (groupId == ((ServerTag) session.getTag()).getGroupId()) {
-                session.sendMessage(msg);
+        for (Map.Entry<ISessionTag, AbstractSession> entry : registerSessions.entrySet()) {
+            if (((ServerTag)entry.getKey()).getGroupId() == groupId) {
+                entry.getValue().sendMessage(msg);
             }
         }
     }
 
     public void broadcastByGroupExceptServer(MessageLite msg, int groupId, ServerTag tag) {
-        for (AbstractSession session : getRegisterSessions().values()) {
-            if (groupId == ((ServerTag) session.getTag()).getGroupId()) {
-                if (!session.getTag().equals(tag)) {
-                    session.sendMessage(msg);
+
+        for (Map.Entry<ISessionTag, AbstractSession> entry : registerSessions.entrySet()) {
+            ServerTag sessionTag = (ServerTag)entry.getKey();
+            if (sessionTag.getGroupId() == groupId) {
+                if (!sessionTag.equals(tag)){
+                    entry.getValue().sendMessage(msg);
                 }
             }
         }

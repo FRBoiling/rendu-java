@@ -106,25 +106,27 @@ public class ConnectionManager implements IConnectionManager {
 
     @Override
     public void connect(ServerTag tag, String ip, int port) {
-        switch (tag.getType()) {
-            case Manager:
-                AbstractSession managerSession = ManagerServerSessionMng.getInstance().getRegisterSession(tag);
-                if (managerSession == null) {
-                    connectManagerServer(ip, port, tag);
-                } else {
-                    log.error("already connected an manager session {}!", managerSession.toString());
-                }
-                break;
-            case Zone:
-                AbstractSession zoneSession = ZoneServerSessionMng.getInstance().getRegisterSession(tag);
-                if (zoneSession == null) {
-                    connectZoneServer(ip, port, tag);
-                } else {
-                    log.error("already connected an zone session {}!", zoneSession.toString());
-                }
-                break;
-            case Default:
-                break;
+        if (tag.getGroupId() == Context.tag.getGroupId()){
+            switch (tag.getType()) {
+                case Manager:
+                    AbstractSession managerSession = ManagerServerSessionMng.getInstance().getRegisterSession(tag);
+                    if (managerSession == null) {
+                        connectManagerServer(ip, port, tag);
+                    } else {
+                        log.error("already connected an manager session {}!", managerSession.toString());
+                    }
+                    break;
+                case Zone:
+                    AbstractSession zoneSession = ZoneServerSessionMng.getInstance().getRegisterSession(tag);
+                    if (zoneSession == null) {
+                        connectZoneServer(ip, port, tag);
+                    } else {
+                        log.error("already connected an zone session {}!", zoneSession.toString());
+                    }
+                    break;
+                case Default:
+                    break;
+            }
         }
     }
 

@@ -17,7 +17,7 @@
                 <!--<property name="driver" value="com.mysql.jdbc.Driver"/>-->
                 <property name="url" value="jdbc:mysql://localhost:3306/million_arthur_x?autoReconnect=true"/>
                 <property name="username" value="root"/>
-                <property name="password" value="123456"/>
+                <property name="password" value="111112lst"/>
 
                 <!-- 配置Druid相关 -->
                 <property name="initialSize" value="10"/>
@@ -37,6 +37,5 @@
     <mappers>
         <mapper resource="Role.xml"/>
         <mapper resource="Account.xml"/>
-        <mapper resource="Character.xml"/>
     </mappers>
 </configuration>

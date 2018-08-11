@@ -2,6 +2,8 @@ package core.base.model;
 
 import core.base.common.ISessionTag;
 import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import java.util.Objects;
 
@@ -13,17 +15,17 @@ import java.util.Objects;
  * Time: 10:44
  */
 @Getter
+@Setter
+@Accessors(chain=true)
 public class ServerTag implements ISessionTag {
     private int groupId;
     private int subId;
     private ServerType type;
-    private String strTag;
 
     public ServerTag() {
         groupId = 0;
         subId = 0;
         type = ServerType.Default;
-        strTag="";
     }
 
     @Override
@@ -45,6 +47,13 @@ public class ServerTag implements ISessionTag {
 
     @Override
     public String toString(){
+        String strTag = type.name();
+        if (groupId != 0){
+            strTag = strTag+ "_" + groupId;
+        }
+        if (subId!=0){
+            strTag = strTag+ "_" + subId;
+        };
         return strTag;
     }
 
@@ -58,26 +67,12 @@ public class ServerTag implements ISessionTag {
         this.type = (ServerType) params[0];
         this.groupId = (int) params[1];
         this.subId = (int) params[2];
-        strTag = type.name();
-        if (groupId != 0){
-            strTag = strTag+ "_" + groupId;
-        }
-        if (subId!=0){
-            strTag = strTag+ "_" + subId;
-        }
     }
 
     public void setTag(ServerType type, int groupId, int subId) {
         this.type = type;
         this.groupId = groupId;
         this.subId = subId;
-        strTag = type.name();
-        if (this.groupId != 0){
-            strTag = strTag+ "_" + this.groupId;
-        }
-        if (this.subId!=0){
-            strTag = strTag+ "_" + this.subId;
-        }
     }
 
 }

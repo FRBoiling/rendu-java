@@ -82,4 +82,9 @@ public class PathManager {
     {
         return pathCombine(dataPath,"LOG");
     }
+
+    public String getDBPath()
+    {
+        return pathCombine(dataPath,"DB");
+    }
 }
