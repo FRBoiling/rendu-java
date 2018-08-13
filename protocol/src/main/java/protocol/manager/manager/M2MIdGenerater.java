@@ -8,6 +8,6 @@ package protocol.manager.manager;
 import protocol.msgId.Id;
 public class M2MIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(M2M.MSG_M2M_HEARTBEAT.class, 0x330001);
+          Id.getInst().SetMessage(protocol.manager.manager.M2M.MSG_M2M_HEARTBEAT.class, 0x330001);
      }
 }

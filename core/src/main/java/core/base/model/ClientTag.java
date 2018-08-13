@@ -21,12 +21,9 @@ public class ClientTag implements ISessionTag {
     private String username;
     private String channelName;
 
-    private String strTag;
-
     public ClientTag() {
         username = "";
         channelName ="";
-        strTag="";
     }
 
     @Override
@@ -47,6 +44,7 @@ public class ClientTag implements ISessionTag {
 
     @Override
     public String toString(){
+        String strTag = username+ "_" + channelName;
         return strTag;
     }
     //    Object [] tagParam = new Object[]{
@@ -57,15 +55,11 @@ public class ClientTag implements ISessionTag {
     public void initTag(Object[] params) {
         this.username = (String) params[0];
         this.channelName = (String) params[1];
-
-        this.strTag = this.username+ "_" + this.channelName;
     }
 
     public void setTag(String accountName,String channelName) {
         this.username = accountName;
         this.channelName = channelName;
-
-        this.strTag = this.username+ "_" + this.channelName;
     }
 
 

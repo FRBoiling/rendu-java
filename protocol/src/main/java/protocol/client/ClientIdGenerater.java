@@ -8,12 +8,12 @@ package protocol.client;
 import protocol.msgId.Id;
 public class ClientIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(Client.MSG_CG_USER_LOGIN.class, 0x100001);
-          Id.getInst().SetMessage(Client.MSG_GC_USER_LOGIN.class, 0x100002);
-          Id.getInst().SetMessage(Client.MSG_CG_RECONNECT_LOGIN.class, 0x100003);
-          Id.getInst().SetMessage(Client.MSG_GC_RECONNECT_LOGIN.class, 0x100004);
-          Id.getInst().SetMessage(Client.ROLE_INFO.class, 0x100005);
-          Id.getInst().SetMessage(Client.MSG_CG_CREATE_ROLE.class, 0x100006);
-          Id.getInst().SetMessage(Client.MSG_GC_CREATE_ROLE.class, 0x100007);
+          Id.getInst().SetMessage(protocol.client.Client.MSG_CG_USER_LOGIN.class, 0x100001);
+          Id.getInst().SetMessage(protocol.client.Client.MSG_GC_USER_LOGIN.class, 0x100002);
+          Id.getInst().SetMessage(protocol.client.Client.MSG_CG_RECONNECT_LOGIN.class, 0x100003);
+          Id.getInst().SetMessage(protocol.client.Client.MSG_GC_RECONNECT_LOGIN.class, 0x100004);
+          Id.getInst().SetMessage(protocol.client.Client.ROLE_INFO.class, 0x100005);
+          Id.getInst().SetMessage(protocol.client.Client.MSG_CG_CREATE_ROLE.class, 0x100006);
+          Id.getInst().SetMessage(protocol.client.Client.MSG_GC_CREATE_ROLE.class, 0x100007);
      }
 }

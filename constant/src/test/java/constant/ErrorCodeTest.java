@@ -2,7 +2,9 @@ package constant;
 
 import org.junit.Test; 
 import org.junit.Before; 
-import org.junit.After; 
+import org.junit.After;
+
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 /** 
 * ErrorCode Tester. 
@@ -31,6 +33,8 @@ public void testGetValue() throws Exception {
 //TODO: Test goes here...
     int i = ErrorCode.SUCCESS.ordinal();
     int value = ErrorCode.SUCCESS.getValue();
+
+    System.out.println(ErrorCode.SUCCESS);
 } 
 
 

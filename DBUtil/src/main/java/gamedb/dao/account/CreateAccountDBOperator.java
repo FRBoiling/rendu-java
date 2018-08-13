@@ -1,10 +1,17 @@
 package gamedb.dao.account;
 
+import com.mysql.jdbc.exceptions.MySQLNonTransientConnectionException;
+import com.mysql.jdbc.exceptions.MySQLTransientConnectionException;
+import gamedb.Util.MybatisConfigUtil;
 import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.AccountMapper;
 import gamedb.pojo.account.AccountPOJO;
 import lombok.extern.slf4j.Slf4j;
+
+import java.sql.SQLException;
+
+import static com.mysql.jdbc.SQLError.SQL_STATE_UNABLE_TO_CONNECT_TO_DATASOURCE;
 
 @Slf4j
 public class CreateAccountDBOperator extends AbstractDBOperator {
@@ -17,7 +24,7 @@ public class CreateAccountDBOperator extends AbstractDBOperator {
     @Override
     public boolean execute() {
         try{
-            sqlSession = SqlSessionFactoryUtil.openSqlSession();
+            sqlSession = MybatisConfigUtil.openSqlSession();
             AccountMapper accountMapper=sqlSession.getMapper(AccountMapper.class);
 
             int count=accountMapper.insertAccount(account);
@@ -26,8 +33,10 @@ public class CreateAccountDBOperator extends AbstractDBOperator {
             if(count>0){
                 m_result=1;
             }
+
         }catch (Exception ex){
             log.info(ex.getMessage());
+            checkExCause(ex);
             m_result=-1;
             return false;
         }finally {

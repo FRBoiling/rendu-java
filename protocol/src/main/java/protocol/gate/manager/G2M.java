@@ -33,7 +33,7 @@ public final class G2M {
     private MSG_G2M_HEARTBEAT() {
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -44,7 +44,7 @@ public final class G2M {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -77,14 +77,14 @@ public final class G2M {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_descriptor;
+      return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_fieldAccessorTable
+      return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_G2M_HEARTBEAT.class, Builder.class);
+              protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT.class, protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -112,22 +112,22 @@ public final class G2M {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_G2M_HEARTBEAT)) {
+      if (!(obj instanceof protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT)) {
         return super.equals(obj);
       }
-      MSG_G2M_HEARTBEAT other = (MSG_G2M_HEARTBEAT) obj;
+      protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT other = (protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -139,69 +139,69 @@ public final class G2M {
       return hash;
     }
 
-    public static MSG_G2M_HEARTBEAT parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_G2M_HEARTBEAT parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_G2M_HEARTBEAT parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_G2M_HEARTBEAT parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_G2M_HEARTBEAT parseFrom(byte[] data)
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_G2M_HEARTBEAT parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_G2M_HEARTBEAT parseFrom(java.io.InputStream input)
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_G2M_HEARTBEAT parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_G2M_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_G2M_HEARTBEAT parseDelimitedFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_G2M_HEARTBEAT parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_G2M_HEARTBEAT parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -213,7 +213,7 @@ public final class G2M {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_G2M_HEARTBEAT prototype) {
+    public static Builder newBuilder(protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -221,9 +221,9 @@ public final class G2M {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -233,17 +233,17 @@ public final class G2M {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.gate.manager.MSG_G2M_HEARTBEAT)
-        MSG_G2M_HEARTBEATOrBuilder {
+        protocol.gate.manager.G2M.MSG_G2M_HEARTBEATOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_descriptor;
+        return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_fieldAccessorTable
+        return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_G2M_HEARTBEAT.class, Builder.class);
+                protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT.class, protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT.Builder.class);
       }
 
       // Construct using protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT.newBuilder()
@@ -252,7 +252,7 @@ public final class G2M {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -268,23 +268,23 @@ public final class G2M {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_descriptor;
+        return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_descriptor;
       }
 
-      public MSG_G2M_HEARTBEAT getDefaultInstanceForType() {
-        return MSG_G2M_HEARTBEAT.getDefaultInstance();
+      public protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT getDefaultInstanceForType() {
+        return protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT.getDefaultInstance();
       }
 
-      public MSG_G2M_HEARTBEAT build() {
-        MSG_G2M_HEARTBEAT result = buildPartial();
+      public protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT build() {
+        protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_G2M_HEARTBEAT buildPartial() {
-        MSG_G2M_HEARTBEAT result = new MSG_G2M_HEARTBEAT(this);
+      public protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT buildPartial() {
+        protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT result = new protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT(this);
         onBuilt();
         return result;
       }
@@ -294,7 +294,7 @@ public final class G2M {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -307,25 +307,25 @@ public final class G2M {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_G2M_HEARTBEAT) {
-          return mergeFrom((MSG_G2M_HEARTBEAT)other);
+        if (other instanceof protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT) {
+          return mergeFrom((protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_G2M_HEARTBEAT other) {
-        if (other == MSG_G2M_HEARTBEAT.getDefaultInstance()) return this;
+      public Builder mergeFrom(protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT other) {
+        if (other == protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -339,11 +339,11 @@ public final class G2M {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_G2M_HEARTBEAT parsedMessage = null;
+        protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_G2M_HEARTBEAT) e.getUnfinishedMessage();
+          parsedMessage = (protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -367,16 +367,16 @@ public final class G2M {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.gate.manager.MSG_G2M_HEARTBEAT)
-    private static final MSG_G2M_HEARTBEAT DEFAULT_INSTANCE;
+    private static final protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_G2M_HEARTBEAT();
+      DEFAULT_INSTANCE = new protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT();
     }
 
-    public static MSG_G2M_HEARTBEAT getDefaultInstance() {
+    public static protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_G2M_HEARTBEAT>
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_G2M_HEARTBEAT>
         PARSER = new com.google.protobuf.AbstractParser<MSG_G2M_HEARTBEAT>() {
       public MSG_G2M_HEARTBEAT parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -390,12 +390,12 @@ public final class G2M {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MSG_G2M_HEARTBEAT> getParserForType() {
       return PARSER;
     }
 
-    public MSG_G2M_HEARTBEAT getDefaultInstanceForType() {
+    public protocol.gate.manager.G2M.MSG_G2M_HEARTBEAT getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -430,7 +430,7 @@ public final class G2M {
       uid_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -441,7 +441,7 @@ public final class G2M {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -480,14 +480,14 @@ public final class G2M {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_descriptor;
+      return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_fieldAccessorTable
+      return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_G2M_REPEAT_LOGIN.class, Builder.class);
+              protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN.class, protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN.Builder.class);
     }
 
     private int bitField0_;
@@ -542,15 +542,15 @@ public final class G2M {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_G2M_REPEAT_LOGIN)) {
+      if (!(obj instanceof protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN)) {
         return super.equals(obj);
       }
-      MSG_G2M_REPEAT_LOGIN other = (MSG_G2M_REPEAT_LOGIN) obj;
+      protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN other = (protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN) obj;
 
       boolean result = true;
       result = result && (hasUid() == other.hasUid());
@@ -562,7 +562,7 @@ public final class G2M {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -578,69 +578,69 @@ public final class G2M {
       return hash;
     }
 
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(byte[] data)
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(java.io.InputStream input)
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseDelimitedFrom(java.io.InputStream input)
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseDelimitedFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_G2M_REPEAT_LOGIN parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -652,7 +652,7 @@ public final class G2M {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_G2M_REPEAT_LOGIN prototype) {
+    public static Builder newBuilder(protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -660,9 +660,9 @@ public final class G2M {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -672,17 +672,17 @@ public final class G2M {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.gate.manager.MSG_G2M_REPEAT_LOGIN)
-        MSG_G2M_REPEAT_LOGINOrBuilder {
+        protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGINOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_descriptor;
+        return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_fieldAccessorTable
+        return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_G2M_REPEAT_LOGIN.class, Builder.class);
+                protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN.class, protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN.Builder.class);
       }
 
       // Construct using protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN.newBuilder()
@@ -691,7 +691,7 @@ public final class G2M {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -709,23 +709,23 @@ public final class G2M {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_descriptor;
+        return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_descriptor;
       }
 
-      public MSG_G2M_REPEAT_LOGIN getDefaultInstanceForType() {
-        return MSG_G2M_REPEAT_LOGIN.getDefaultInstance();
+      public protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN getDefaultInstanceForType() {
+        return protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN.getDefaultInstance();
       }
 
-      public MSG_G2M_REPEAT_LOGIN build() {
-        MSG_G2M_REPEAT_LOGIN result = buildPartial();
+      public protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN build() {
+        protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_G2M_REPEAT_LOGIN buildPartial() {
-        MSG_G2M_REPEAT_LOGIN result = new MSG_G2M_REPEAT_LOGIN(this);
+      public protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN buildPartial() {
+        protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN result = new protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -742,7 +742,7 @@ public final class G2M {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -755,25 +755,25 @@ public final class G2M {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_G2M_REPEAT_LOGIN) {
-          return mergeFrom((MSG_G2M_REPEAT_LOGIN)other);
+        if (other instanceof protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN) {
+          return mergeFrom((protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_G2M_REPEAT_LOGIN other) {
-        if (other == MSG_G2M_REPEAT_LOGIN.getDefaultInstance()) return this;
+      public Builder mergeFrom(protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN other) {
+        if (other == protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN.getDefaultInstance()) return this;
         if (other.hasUid()) {
           setUid(other.getUid());
         }
@@ -793,11 +793,11 @@ public final class G2M {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_G2M_REPEAT_LOGIN parsedMessage = null;
+        protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_G2M_REPEAT_LOGIN) e.getUnfinishedMessage();
+          parsedMessage = (protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -854,16 +854,16 @@ public final class G2M {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.gate.manager.MSG_G2M_REPEAT_LOGIN)
-    private static final MSG_G2M_REPEAT_LOGIN DEFAULT_INSTANCE;
+    private static final protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_G2M_REPEAT_LOGIN();
+      DEFAULT_INSTANCE = new protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN();
     }
 
-    public static MSG_G2M_REPEAT_LOGIN getDefaultInstance() {
+    public static protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_G2M_REPEAT_LOGIN>
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_G2M_REPEAT_LOGIN>
         PARSER = new com.google.protobuf.AbstractParser<MSG_G2M_REPEAT_LOGIN>() {
       public MSG_G2M_REPEAT_LOGIN parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -877,12 +877,12 @@ public final class G2M {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MSG_G2M_REPEAT_LOGIN> getParserForType() {
       return PARSER;
     }
 
-    public MSG_G2M_REPEAT_LOGIN getDefaultInstanceForType() {
+    public protocol.gate.manager.G2M.MSG_G2M_REPEAT_LOGIN getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -899,7 +899,7 @@ public final class G2M {
     /**
      * <code>required string username = 1;</code>
      */
-    String getUsername();
+    java.lang.String getUsername();
     /**
      * <code>required string username = 1;</code>
      */
@@ -913,7 +913,7 @@ public final class G2M {
     /**
      * <code>required string channelName = 2;</code>
      */
-    String getChannelName();
+    java.lang.String getChannelName();
     /**
      * <code>required string channelName = 2;</code>
      */
@@ -937,7 +937,7 @@ public final class G2M {
       channelName_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -948,7 +948,7 @@ public final class G2M {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -994,19 +994,19 @@ public final class G2M {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_descriptor;
+      return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_fieldAccessorTable
+      return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_G2M_MAX_UID.class, Builder.class);
+              protocol.gate.manager.G2M.MSG_G2M_MAX_UID.class, protocol.gate.manager.G2M.MSG_G2M_MAX_UID.Builder.class);
     }
 
     private int bitField0_;
     public static final int USERNAME_FIELD_NUMBER = 1;
-    private volatile Object username_;
+    private volatile java.lang.Object username_;
     /**
      * <code>required string username = 1;</code>
      */
@@ -1016,14 +1016,14 @@ public final class G2M {
     /**
      * <code>required string username = 1;</code>
      */
-    public String getUsername() {
-      Object ref = username_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           username_ = s;
         }
@@ -1035,11 +1035,11 @@ public final class G2M {
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
-      Object ref = username_;
-      if (ref instanceof String) {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         username_ = b;
         return b;
       } else {
@@ -1048,7 +1048,7 @@ public final class G2M {
     }
 
     public static final int CHANNELNAME_FIELD_NUMBER = 2;
-    private volatile Object channelName_;
+    private volatile java.lang.Object channelName_;
     /**
      * <code>required string channelName = 2;</code>
      */
@@ -1058,14 +1058,14 @@ public final class G2M {
     /**
      * <code>required string channelName = 2;</code>
      */
-    public String getChannelName() {
-      Object ref = channelName_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getChannelName() {
+      java.lang.Object ref = channelName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           channelName_ = s;
         }
@@ -1077,11 +1077,11 @@ public final class G2M {
      */
     public com.google.protobuf.ByteString
         getChannelNameBytes() {
-      Object ref = channelName_;
-      if (ref instanceof String) {
+      java.lang.Object ref = channelName_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         channelName_ = b;
         return b;
       } else {
@@ -1134,15 +1134,15 @@ public final class G2M {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_G2M_MAX_UID)) {
+      if (!(obj instanceof protocol.gate.manager.G2M.MSG_G2M_MAX_UID)) {
         return super.equals(obj);
       }
-      MSG_G2M_MAX_UID other = (MSG_G2M_MAX_UID) obj;
+      protocol.gate.manager.G2M.MSG_G2M_MAX_UID other = (protocol.gate.manager.G2M.MSG_G2M_MAX_UID) obj;
 
       boolean result = true;
       result = result && (hasUsername() == other.hasUsername());
@@ -1159,7 +1159,7 @@ public final class G2M {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1179,69 +1179,69 @@ public final class G2M {
       return hash;
     }
 
-    public static MSG_G2M_MAX_UID parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_G2M_MAX_UID parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_G2M_MAX_UID parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_G2M_MAX_UID parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_G2M_MAX_UID parseFrom(byte[] data)
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_G2M_MAX_UID parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_G2M_MAX_UID parseFrom(java.io.InputStream input)
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_G2M_MAX_UID parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_G2M_MAX_UID parseDelimitedFrom(java.io.InputStream input)
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_G2M_MAX_UID parseDelimitedFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_G2M_MAX_UID parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_G2M_MAX_UID parseFrom(
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1253,7 +1253,7 @@ public final class G2M {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_G2M_MAX_UID prototype) {
+    public static Builder newBuilder(protocol.gate.manager.G2M.MSG_G2M_MAX_UID prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1261,9 +1261,9 @@ public final class G2M {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1273,17 +1273,17 @@ public final class G2M {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.gate.manager.MSG_G2M_MAX_UID)
-        MSG_G2M_MAX_UIDOrBuilder {
+        protocol.gate.manager.G2M.MSG_G2M_MAX_UIDOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_descriptor;
+        return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_fieldAccessorTable
+        return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_G2M_MAX_UID.class, Builder.class);
+                protocol.gate.manager.G2M.MSG_G2M_MAX_UID.class, protocol.gate.manager.G2M.MSG_G2M_MAX_UID.Builder.class);
       }
 
       // Construct using protocol.gate.manager.G2M.MSG_G2M_MAX_UID.newBuilder()
@@ -1292,7 +1292,7 @@ public final class G2M {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1312,23 +1312,23 @@ public final class G2M {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_descriptor;
+        return protocol.gate.manager.G2M.internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_descriptor;
       }
 
-      public MSG_G2M_MAX_UID getDefaultInstanceForType() {
-        return MSG_G2M_MAX_UID.getDefaultInstance();
+      public protocol.gate.manager.G2M.MSG_G2M_MAX_UID getDefaultInstanceForType() {
+        return protocol.gate.manager.G2M.MSG_G2M_MAX_UID.getDefaultInstance();
       }
 
-      public MSG_G2M_MAX_UID build() {
-        MSG_G2M_MAX_UID result = buildPartial();
+      public protocol.gate.manager.G2M.MSG_G2M_MAX_UID build() {
+        protocol.gate.manager.G2M.MSG_G2M_MAX_UID result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_G2M_MAX_UID buildPartial() {
-        MSG_G2M_MAX_UID result = new MSG_G2M_MAX_UID(this);
+      public protocol.gate.manager.G2M.MSG_G2M_MAX_UID buildPartial() {
+        protocol.gate.manager.G2M.MSG_G2M_MAX_UID result = new protocol.gate.manager.G2M.MSG_G2M_MAX_UID(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1349,7 +1349,7 @@ public final class G2M {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1362,25 +1362,25 @@ public final class G2M {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_G2M_MAX_UID) {
-          return mergeFrom((MSG_G2M_MAX_UID)other);
+        if (other instanceof protocol.gate.manager.G2M.MSG_G2M_MAX_UID) {
+          return mergeFrom((protocol.gate.manager.G2M.MSG_G2M_MAX_UID)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_G2M_MAX_UID other) {
-        if (other == MSG_G2M_MAX_UID.getDefaultInstance()) return this;
+      public Builder mergeFrom(protocol.gate.manager.G2M.MSG_G2M_MAX_UID other) {
+        if (other == protocol.gate.manager.G2M.MSG_G2M_MAX_UID.getDefaultInstance()) return this;
         if (other.hasUsername()) {
           bitField0_ |= 0x00000001;
           username_ = other.username_;
@@ -1410,11 +1410,11 @@ public final class G2M {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_G2M_MAX_UID parsedMessage = null;
+        protocol.gate.manager.G2M.MSG_G2M_MAX_UID parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_G2M_MAX_UID) e.getUnfinishedMessage();
+          parsedMessage = (protocol.gate.manager.G2M.MSG_G2M_MAX_UID) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1425,7 +1425,7 @@ public final class G2M {
       }
       private int bitField0_;
 
-      private Object username_ = "";
+      private java.lang.Object username_ = "";
       /**
        * <code>required string username = 1;</code>
        */
@@ -1435,18 +1435,18 @@ public final class G2M {
       /**
        * <code>required string username = 1;</code>
        */
-      public String getUsername() {
-        Object ref = username_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             username_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1454,11 +1454,11 @@ public final class G2M {
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
-        Object ref = username_;
+        java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           username_ = b;
           return b;
         } else {
@@ -1469,7 +1469,7 @@ public final class G2M {
        * <code>required string username = 1;</code>
        */
       public Builder setUsername(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1501,7 +1501,7 @@ public final class G2M {
         return this;
       }
 
-      private Object channelName_ = "";
+      private java.lang.Object channelName_ = "";
       /**
        * <code>required string channelName = 2;</code>
        */
@@ -1511,18 +1511,18 @@ public final class G2M {
       /**
        * <code>required string channelName = 2;</code>
        */
-      public String getChannelName() {
-        Object ref = channelName_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getChannelName() {
+        java.lang.Object ref = channelName_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             channelName_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1530,11 +1530,11 @@ public final class G2M {
        */
       public com.google.protobuf.ByteString
           getChannelNameBytes() {
-        Object ref = channelName_;
+        java.lang.Object ref = channelName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           channelName_ = b;
           return b;
         } else {
@@ -1545,7 +1545,7 @@ public final class G2M {
        * <code>required string channelName = 2;</code>
        */
       public Builder setChannelName(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1591,16 +1591,16 @@ public final class G2M {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.gate.manager.MSG_G2M_MAX_UID)
-    private static final MSG_G2M_MAX_UID DEFAULT_INSTANCE;
+    private static final protocol.gate.manager.G2M.MSG_G2M_MAX_UID DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_G2M_MAX_UID();
+      DEFAULT_INSTANCE = new protocol.gate.manager.G2M.MSG_G2M_MAX_UID();
     }
 
-    public static MSG_G2M_MAX_UID getDefaultInstance() {
+    public static protocol.gate.manager.G2M.MSG_G2M_MAX_UID getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_G2M_MAX_UID>
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_G2M_MAX_UID>
         PARSER = new com.google.protobuf.AbstractParser<MSG_G2M_MAX_UID>() {
       public MSG_G2M_MAX_UID parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -1614,12 +1614,12 @@ public final class G2M {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MSG_G2M_MAX_UID> getParserForType() {
       return PARSER;
     }
 
-    public MSG_G2M_MAX_UID getDefaultInstanceForType() {
+    public protocol.gate.manager.G2M.MSG_G2M_MAX_UID getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1648,7 +1648,7 @@ public final class G2M {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\tG2M.proto\022\025protocol.gate.manager\"\023\n\021MS" +
       "G_G2M_HEARTBEAT\"#\n\024MSG_G2M_REPEAT_LOGIN\022" +
       "\013\n\003uid\030\001 \002(\005\"8\n\017MSG_G2M_MAX_UID\022\020\n\010usern" +
@@ -1671,19 +1671,19 @@ public final class G2M {
     internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_gate_manager_MSG_G2M_HEARTBEAT_descriptor,
-        new String[] { });
+        new java.lang.String[] { });
     internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_gate_manager_MSG_G2M_REPEAT_LOGIN_descriptor,
-        new String[] { "Uid", });
+        new java.lang.String[] { "Uid", });
     internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_descriptor,
-        new String[] { "Username", "ChannelName", });
+        new java.lang.String[] { "Username", "ChannelName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

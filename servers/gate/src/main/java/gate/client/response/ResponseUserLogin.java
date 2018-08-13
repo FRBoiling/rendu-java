@@ -24,7 +24,8 @@ public class ResponseUserLogin implements IResponseHandler {
 
         MSG_CG_USER_LOGIN msg = MSG_CG_USER_LOGIN.parseFrom(packet.getMsg());
         String username = msg.getUsername();
-        String token = msg.getToken();
+//        String channelName = msg.getChannelName();
+        String channelName ="default_channel";
 
         MSG_GC_USER_LOGIN.Builder response = MSG_GC_USER_LOGIN.newBuilder();
         response.setUsername(username);
@@ -38,12 +39,12 @@ public class ResponseUserLogin implements IResponseHandler {
         log.info("account {} request to login ", username);
         //到这里的账号应该是合法的,不去验证账号
         //token检查
-        if (!AuthorizationMng.getInstance().checkToken(username, token)) {
-            log.warn("account {} got en authorize fail:wrong token {}", username, token);
+        if (!AuthorizationMng.getInstance().checkToken(username, channelName)) {
+            log.warn("account {} got en authorize fail:wrong token {}", username, channelName);
             return;
         }
 
-        ((ClientTag) clientSession.getTag()).setTag(username, token);
+        ((ClientTag) clientSession.getTag()).setTag(username, channelName);
         //TODO:BOIL token 什么时候失效？？
 
         //TODO:BOIL 白名单，版本等判断
@@ -75,6 +76,7 @@ public class ResponseUserLogin implements IResponseHandler {
                 //正常登陆流程
                 AccountPOJO accountPOJO = new AccountPOJO();
                 accountPOJO.setUsername(msg.getUsername());
+                accountPOJO.setChannelName(msg.getChannelName());
                 accountPOJO.setPassword(msg.getPassword());
                 accountPOJO.setDeviceId(msg.getDeviceId());
 

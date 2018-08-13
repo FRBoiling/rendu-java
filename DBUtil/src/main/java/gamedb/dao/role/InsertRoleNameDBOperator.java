@@ -1,5 +1,6 @@
 package gamedb.dao.role;
 
+import gamedb.Util.MybatisConfigUtil;
 import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.RoleMapper;
@@ -28,7 +29,7 @@ public class InsertRoleNameDBOperator extends AbstractDBOperator {
         pojo.setRoleName(roleName);
         pojo.setUid(UId);
         try{
-            sqlSession = SqlSessionFactoryUtil.openSqlSession();
+            sqlSession = MybatisConfigUtil.openSqlSession();
             RoleMapper charMapper=sqlSession.getMapper(RoleMapper.class);
             int count=charMapper.insertRole(pojo);
             sqlSession.commit();
@@ -40,6 +41,7 @@ public class InsertRoleNameDBOperator extends AbstractDBOperator {
             return true;
         }catch (Exception ex){
             log.error(ex.getMessage());
+            checkExCause(ex);
             m_result=-1;
             return false;
         }finally {

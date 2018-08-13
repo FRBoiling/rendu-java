@@ -2,6 +2,9 @@ package gamedb;
 
 import basicCallBack.ObjectBeCalled;
 import gamedb.Util.MybatisConfigUtil;
+import gamedb.dao.CheckDBOperator;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import util.FileUtil;
 import util.Time;
@@ -26,6 +29,12 @@ public class DBManager {
 
     public boolean Opened = false;
 
+    @Getter
+    @Setter
+    private static volatile boolean haveConnection = true;
+
+
+
     public boolean init() {
         saveQueue = new ConcurrentLinkedQueue<>();
         executionQue = new ArrayDeque<>();
@@ -45,12 +54,21 @@ public class DBManager {
         if (fileList.size() > 0) {
             for (File file : fileList) {
                 MybatisConfigUtil.InitWithFile(file);
+                checkConn();
                 log.info("-------------- Mybatis Config Done---------------");
                 break;
             }
         } else {
             log.error("--------------no mybatis_config.xml---------------");
         }
+    }
+
+    public void checkConn(){
+        CheckDBOperator operator=new CheckDBOperator();
+        operator.Init(this);
+        operator.execute();
+        operator.PostUpdate();
+        log.info("checking connection with CheckDBOperator");
     }
 
 

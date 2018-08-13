@@ -2,7 +2,7 @@ package gate.manager;
 
 import core.network.IResponseHandlerManager;
 import gate.connectionManager.ResponseRegisterReturn;
-import gate.manager.response.ResponseMaxCharUid;
+import gate.manager.response.ResponseMaxUid;
 import protocol.manager.gate.M2G;
 import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;
@@ -31,6 +31,6 @@ public class ManagerServerResponseMng implements IResponseHandlerManager {
         registerHandler(Id.getInst().getMessageId(ServerRegister.MSG_Server_Register_Return.class), ResponseRegisterReturn.class);
 
         //创建角色
-        registerHandler(Id.getInst().getMessageId(M2G.MSG_M2G_MAX_UID.class), ResponseMaxCharUid.class);
+        registerHandler(Id.getInst().getMessageId(M2G.MSG_M2G_MAX_UID.class), ResponseMaxUid.class);
     }
 }

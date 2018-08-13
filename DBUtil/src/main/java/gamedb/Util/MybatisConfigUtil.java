@@ -25,6 +25,7 @@ public class MybatisConfigUtil {
             }
 
             sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream);
+            checkConnection();
         }
         return sqlSessionFactory;
     }
@@ -35,5 +36,9 @@ public class MybatisConfigUtil {
             return null;
         }
         return sqlSessionFactory.openSession();
+    }
+
+    private static void checkConnection() {
+
     }
 }

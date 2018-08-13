@@ -1,5 +1,6 @@
 package gamedb.dao.account;
 
+import gamedb.Util.MybatisConfigUtil;
 import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.AccountMapper;
@@ -16,7 +17,7 @@ public class SelectAccountDBOperator extends AbstractDBOperator {
     @Override
     public boolean execute() {
         try{
-            sqlSession = SqlSessionFactoryUtil.openSqlSession();
+            sqlSession = MybatisConfigUtil.openSqlSession();
             AccountMapper accountMapper=sqlSession.getMapper(AccountMapper.class);
 
             account=accountMapper.getAccount(account.getUsername(),account.getChannelName());
@@ -29,6 +30,7 @@ public class SelectAccountDBOperator extends AbstractDBOperator {
             }
         }catch (Exception ex){
             log.info(ex.getMessage());
+            checkExCause(ex);
             m_result = -1;
             return false;
         }finally {

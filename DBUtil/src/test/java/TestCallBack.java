@@ -1,5 +1,7 @@
 import basicCallBack.ArgObject;
 import basicCallBack.ObjectBeCalled;
+import com.mysql.jdbc.exceptions.MySQLNonTransientConnectionException;
+import gamedb.dao.CheckDBOperator;
 import gamedb.dao.account.SelectAccountDBOperator;
 import gamedb.dao.role.*;
 import gamedb.pojo.RolePOJO;
@@ -37,6 +39,14 @@ public class TestCallBack {
 
         System.out.println("111111111");
         log.info("{} {}",1,20000000000000L);
+    }
+
+    @Test
+    public void checkConn(){
+        CheckDBOperator operator=new CheckDBOperator();
+        operator.execute();
+        operator.PostUpdate();
+        System.out.println("checking");
     }
 
     @Test
@@ -123,6 +133,10 @@ public class TestCallBack {
         });
         operator.execute();
         operator.PostUpdate();
+
+
+        //MySQLNonTransientConnectionException
+        //com.mysql.jdbc.SQLError.createSQLException()
     }
 
 }

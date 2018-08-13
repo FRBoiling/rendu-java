@@ -22,5 +22,15 @@ public enum ErrorCode {
     ErrorCode(int value){
         this.value=value;
     }
+
+    public static ErrorCode getEnum(int value){
+        for (ErrorCode e:ErrorCode.values()){
+            if (e.getValue() == value){
+                return e;
+            }
+        }
+        return null;
+    }
+
 }
 

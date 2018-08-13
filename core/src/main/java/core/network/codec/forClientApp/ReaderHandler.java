@@ -1,6 +1,7 @@
 package core.network.codec.forClientApp;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import io.netty.handler.codec.CorruptedFrameException;
@@ -26,6 +27,7 @@ import java.util.List;
  * 数据包接收器
  * @author boiling
  */
+
 public class ReaderHandler extends ByteToMessageDecoder {
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> out)throws Exception {
         in.markReaderIndex();

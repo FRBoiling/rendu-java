@@ -1,5 +1,6 @@
 package gamedb.dao.role;
 
+import gamedb.Util.MybatisConfigUtil;
 import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.RoleMapper;
@@ -17,7 +18,7 @@ public class UpdateRoleDBOperator extends AbstractDBOperator {
     public boolean execute() {
         SqlSession sqlSession=null;
         try{
-            sqlSession = SqlSessionFactoryUtil.openSqlSession();
+            sqlSession = MybatisConfigUtil.openSqlSession();
             RoleMapper roleMapper=sqlSession.getMapper(RoleMapper.class);
 
             int count=roleMapper.updateRole(role);
@@ -25,6 +26,7 @@ public class UpdateRoleDBOperator extends AbstractDBOperator {
             System.err.println("UpdateRoleDBOperator execute count "+count);
         }catch (Exception ex){
             System.err.println(ex.getMessage());
+            checkExCause(ex);
         }finally {
             sqlSession.close();
             return true;

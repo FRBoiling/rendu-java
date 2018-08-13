@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 public class RolePOJO {
-    String tableName;
+    String tableName="role";
 
     int uid;
     String roleName;

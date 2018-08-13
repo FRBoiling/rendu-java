@@ -8,6 +8,6 @@ package protocol.barrack.manager;
 import protocol.msgId.Id;
 public class BRK2MIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(BRK2M.MSG_BRK2M_HEARTBEAT.class, 0x630001);
+          Id.getInst().SetMessage(protocol.barrack.manager.BRK2M.MSG_BRK2M_HEARTBEAT.class, 0x630001);
      }
 }

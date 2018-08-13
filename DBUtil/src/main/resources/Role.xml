@@ -4,11 +4,14 @@
     <select id="getMaxUid" resultType="int">
         select Max(uid) from  ${tableName}
     </select>
+    <select id="getUIdByName" resultType="Integer">
+        select uid from ${tableName} where role_name=#{roleName}
+    </select>
     <select id="getRole" resultType="gamedb.pojo.RolePOJO">
         select uid,role_name,group_id,create_time,username,channel_name from ${tableName} where uid=#{uid}
     </select>
     <insert id="insertRole" parameterType="gamedb.pojo.RolePOJO">
-        insert into ${tableName}(uid,role_name,group_id,username,channel_name) values (#{uid},#{roleName},#(groupId),#(username),#(channelName))
+        insert into ${tableName}(uid,role_name,group_id,username,channel_name)values(#{uid},#{roleName},#{groupId},#{username},#{channelName})
     </insert>
     <update id="updateRole" parameterType="gamedb.pojo.RolePOJO">
         update ${tableName} set role_name=#{roleName} where uid=#{uid}

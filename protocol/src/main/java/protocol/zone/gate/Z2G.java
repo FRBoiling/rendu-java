@@ -33,7 +33,7 @@ public final class Z2G {
     private MSG_Z2G_HEARTBEAT() {
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -44,7 +44,7 @@ public final class Z2G {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -77,14 +77,14 @@ public final class Z2G {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_descriptor;
+      return protocol.zone.gate.Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_fieldAccessorTable
+      return protocol.zone.gate.Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_Z2G_HEARTBEAT.class, Builder.class);
+              protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT.class, protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -112,22 +112,22 @@ public final class Z2G {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_Z2G_HEARTBEAT)) {
+      if (!(obj instanceof protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT)) {
         return super.equals(obj);
       }
-      MSG_Z2G_HEARTBEAT other = (MSG_Z2G_HEARTBEAT) obj;
+      protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT other = (protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -139,69 +139,69 @@ public final class Z2G {
       return hash;
     }
 
-    public static MSG_Z2G_HEARTBEAT parseFrom(
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_Z2G_HEARTBEAT parseFrom(
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_Z2G_HEARTBEAT parseFrom(
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_Z2G_HEARTBEAT parseFrom(
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_Z2G_HEARTBEAT parseFrom(byte[] data)
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_Z2G_HEARTBEAT parseFrom(
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_Z2G_HEARTBEAT parseFrom(java.io.InputStream input)
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_Z2G_HEARTBEAT parseFrom(
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_Z2G_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_Z2G_HEARTBEAT parseDelimitedFrom(
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_Z2G_HEARTBEAT parseFrom(
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_Z2G_HEARTBEAT parseFrom(
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -213,7 +213,7 @@ public final class Z2G {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_Z2G_HEARTBEAT prototype) {
+    public static Builder newBuilder(protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -221,9 +221,9 @@ public final class Z2G {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -233,17 +233,17 @@ public final class Z2G {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.zone.gate.MSG_Z2G_HEARTBEAT)
-        MSG_Z2G_HEARTBEATOrBuilder {
+        protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEATOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_descriptor;
+        return protocol.zone.gate.Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_fieldAccessorTable
+        return protocol.zone.gate.Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_Z2G_HEARTBEAT.class, Builder.class);
+                protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT.class, protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT.Builder.class);
       }
 
       // Construct using protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT.newBuilder()
@@ -252,7 +252,7 @@ public final class Z2G {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -268,23 +268,23 @@ public final class Z2G {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_descriptor;
+        return protocol.zone.gate.Z2G.internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_descriptor;
       }
 
-      public MSG_Z2G_HEARTBEAT getDefaultInstanceForType() {
-        return MSG_Z2G_HEARTBEAT.getDefaultInstance();
+      public protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT getDefaultInstanceForType() {
+        return protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT.getDefaultInstance();
       }
 
-      public MSG_Z2G_HEARTBEAT build() {
-        MSG_Z2G_HEARTBEAT result = buildPartial();
+      public protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT build() {
+        protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_Z2G_HEARTBEAT buildPartial() {
-        MSG_Z2G_HEARTBEAT result = new MSG_Z2G_HEARTBEAT(this);
+      public protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT buildPartial() {
+        protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT result = new protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT(this);
         onBuilt();
         return result;
       }
@@ -294,7 +294,7 @@ public final class Z2G {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -307,25 +307,25 @@ public final class Z2G {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_Z2G_HEARTBEAT) {
-          return mergeFrom((MSG_Z2G_HEARTBEAT)other);
+        if (other instanceof protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT) {
+          return mergeFrom((protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_Z2G_HEARTBEAT other) {
-        if (other == MSG_Z2G_HEARTBEAT.getDefaultInstance()) return this;
+      public Builder mergeFrom(protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT other) {
+        if (other == protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -339,11 +339,11 @@ public final class Z2G {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_Z2G_HEARTBEAT parsedMessage = null;
+        protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_Z2G_HEARTBEAT) e.getUnfinishedMessage();
+          parsedMessage = (protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -367,16 +367,16 @@ public final class Z2G {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.zone.gate.MSG_Z2G_HEARTBEAT)
-    private static final MSG_Z2G_HEARTBEAT DEFAULT_INSTANCE;
+    private static final protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_Z2G_HEARTBEAT();
+      DEFAULT_INSTANCE = new protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT();
     }
 
-    public static MSG_Z2G_HEARTBEAT getDefaultInstance() {
+    public static protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_Z2G_HEARTBEAT>
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_Z2G_HEARTBEAT>
         PARSER = new com.google.protobuf.AbstractParser<MSG_Z2G_HEARTBEAT>() {
       public MSG_Z2G_HEARTBEAT parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -390,12 +390,12 @@ public final class Z2G {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MSG_Z2G_HEARTBEAT> getParserForType() {
       return PARSER;
     }
 
-    public MSG_Z2G_HEARTBEAT getDefaultInstanceForType() {
+    public protocol.zone.gate.Z2G.MSG_Z2G_HEARTBEAT getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -414,7 +414,7 @@ public final class Z2G {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\tZ2G.proto\022\022protocol.zone.gate\"\023\n\021MSG_Z" +
       "2G_HEARTBEAT"
     };
@@ -435,7 +435,7 @@ public final class Z2G {
     internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_zone_gate_MSG_Z2G_HEARTBEAT_descriptor,
-        new String[] { });
+        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

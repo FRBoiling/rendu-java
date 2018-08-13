@@ -33,7 +33,7 @@ public final class M2G {
     private MSG_M2G_HEARTBEAT() {
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -44,7 +44,7 @@ public final class M2G {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -77,14 +77,14 @@ public final class M2G {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_descriptor;
+      return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_fieldAccessorTable
+      return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_M2G_HEARTBEAT.class, Builder.class);
+              protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT.class, protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -112,22 +112,22 @@ public final class M2G {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_M2G_HEARTBEAT)) {
+      if (!(obj instanceof protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT)) {
         return super.equals(obj);
       }
-      MSG_M2G_HEARTBEAT other = (MSG_M2G_HEARTBEAT) obj;
+      protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT other = (protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -139,69 +139,69 @@ public final class M2G {
       return hash;
     }
 
-    public static MSG_M2G_HEARTBEAT parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_M2G_HEARTBEAT parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_M2G_HEARTBEAT parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_M2G_HEARTBEAT parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_M2G_HEARTBEAT parseFrom(byte[] data)
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_M2G_HEARTBEAT parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_M2G_HEARTBEAT parseFrom(java.io.InputStream input)
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_M2G_HEARTBEAT parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_M2G_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_M2G_HEARTBEAT parseDelimitedFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_M2G_HEARTBEAT parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_M2G_HEARTBEAT parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -213,7 +213,7 @@ public final class M2G {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_M2G_HEARTBEAT prototype) {
+    public static Builder newBuilder(protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -221,9 +221,9 @@ public final class M2G {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -233,17 +233,17 @@ public final class M2G {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.manager.gate.MSG_M2G_HEARTBEAT)
-        MSG_M2G_HEARTBEATOrBuilder {
+        protocol.manager.gate.M2G.MSG_M2G_HEARTBEATOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_descriptor;
+        return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_fieldAccessorTable
+        return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_M2G_HEARTBEAT.class, Builder.class);
+                protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT.class, protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT.Builder.class);
       }
 
       // Construct using protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT.newBuilder()
@@ -252,7 +252,7 @@ public final class M2G {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -268,23 +268,23 @@ public final class M2G {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_descriptor;
+        return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_descriptor;
       }
 
-      public MSG_M2G_HEARTBEAT getDefaultInstanceForType() {
-        return MSG_M2G_HEARTBEAT.getDefaultInstance();
+      public protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT getDefaultInstanceForType() {
+        return protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT.getDefaultInstance();
       }
 
-      public MSG_M2G_HEARTBEAT build() {
-        MSG_M2G_HEARTBEAT result = buildPartial();
+      public protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT build() {
+        protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_M2G_HEARTBEAT buildPartial() {
-        MSG_M2G_HEARTBEAT result = new MSG_M2G_HEARTBEAT(this);
+      public protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT buildPartial() {
+        protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT result = new protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT(this);
         onBuilt();
         return result;
       }
@@ -294,7 +294,7 @@ public final class M2G {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -307,25 +307,25 @@ public final class M2G {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_M2G_HEARTBEAT) {
-          return mergeFrom((MSG_M2G_HEARTBEAT)other);
+        if (other instanceof protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT) {
+          return mergeFrom((protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_M2G_HEARTBEAT other) {
-        if (other == MSG_M2G_HEARTBEAT.getDefaultInstance()) return this;
+      public Builder mergeFrom(protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT other) {
+        if (other == protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -339,11 +339,11 @@ public final class M2G {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_M2G_HEARTBEAT parsedMessage = null;
+        protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_M2G_HEARTBEAT) e.getUnfinishedMessage();
+          parsedMessage = (protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -367,16 +367,16 @@ public final class M2G {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.manager.gate.MSG_M2G_HEARTBEAT)
-    private static final MSG_M2G_HEARTBEAT DEFAULT_INSTANCE;
+    private static final protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_M2G_HEARTBEAT();
+      DEFAULT_INSTANCE = new protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT();
     }
 
-    public static MSG_M2G_HEARTBEAT getDefaultInstance() {
+    public static protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_M2G_HEARTBEAT>
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_M2G_HEARTBEAT>
         PARSER = new com.google.protobuf.AbstractParser<MSG_M2G_HEARTBEAT>() {
       public MSG_M2G_HEARTBEAT parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -390,12 +390,12 @@ public final class M2G {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MSG_M2G_HEARTBEAT> getParserForType() {
       return PARSER;
     }
 
-    public MSG_M2G_HEARTBEAT getDefaultInstanceForType() {
+    public protocol.manager.gate.M2G.MSG_M2G_HEARTBEAT getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -421,7 +421,7 @@ public final class M2G {
     /**
      * <code>required string username = 2;</code>
      */
-    String getUsername();
+    java.lang.String getUsername();
     /**
      * <code>required string username = 2;</code>
      */
@@ -444,7 +444,7 @@ public final class M2G {
     /**
      * <code>required string channelName = 4;</code>
      */
-    String getChannelName();
+    java.lang.String getChannelName();
     /**
      * <code>required string channelName = 4;</code>
      */
@@ -470,7 +470,7 @@ public final class M2G {
       channelName_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -481,7 +481,7 @@ public final class M2G {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -537,14 +537,14 @@ public final class M2G {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor;
+      return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_fieldAccessorTable
+      return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MSG_M2G_MAX_UID.class, Builder.class);
+              protocol.manager.gate.M2G.MSG_M2G_MAX_UID.class, protocol.manager.gate.M2G.MSG_M2G_MAX_UID.Builder.class);
     }
 
     private int bitField0_;
@@ -564,7 +564,7 @@ public final class M2G {
     }
 
     public static final int USERNAME_FIELD_NUMBER = 2;
-    private volatile Object username_;
+    private volatile java.lang.Object username_;
     /**
      * <code>required string username = 2;</code>
      */
@@ -574,14 +574,14 @@ public final class M2G {
     /**
      * <code>required string username = 2;</code>
      */
-    public String getUsername() {
-      Object ref = username_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           username_ = s;
         }
@@ -593,11 +593,11 @@ public final class M2G {
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
-      Object ref = username_;
-      if (ref instanceof String) {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         username_ = b;
         return b;
       } else {
@@ -621,7 +621,7 @@ public final class M2G {
     }
 
     public static final int CHANNELNAME_FIELD_NUMBER = 4;
-    private volatile Object channelName_;
+    private volatile java.lang.Object channelName_;
     /**
      * <code>required string channelName = 4;</code>
      */
@@ -631,14 +631,14 @@ public final class M2G {
     /**
      * <code>required string channelName = 4;</code>
      */
-    public String getChannelName() {
-      Object ref = channelName_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getChannelName() {
+      java.lang.Object ref = channelName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           channelName_ = s;
         }
@@ -650,11 +650,11 @@ public final class M2G {
      */
     public com.google.protobuf.ByteString
         getChannelNameBytes() {
-      Object ref = channelName_;
-      if (ref instanceof String) {
+      java.lang.Object ref = channelName_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         channelName_ = b;
         return b;
       } else {
@@ -729,15 +729,15 @@ public final class M2G {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof MSG_M2G_MAX_UID)) {
+      if (!(obj instanceof protocol.manager.gate.M2G.MSG_M2G_MAX_UID)) {
         return super.equals(obj);
       }
-      MSG_M2G_MAX_UID other = (MSG_M2G_MAX_UID) obj;
+      protocol.manager.gate.M2G.MSG_M2G_MAX_UID other = (protocol.manager.gate.M2G.MSG_M2G_MAX_UID) obj;
 
       boolean result = true;
       result = result && (hasResult() == other.hasResult());
@@ -764,7 +764,7 @@ public final class M2G {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -792,69 +792,69 @@ public final class M2G {
       return hash;
     }
 
-    public static MSG_M2G_MAX_UID parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_M2G_MAX_UID parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_M2G_MAX_UID parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_M2G_MAX_UID parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_M2G_MAX_UID parseFrom(byte[] data)
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MSG_M2G_MAX_UID parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MSG_M2G_MAX_UID parseFrom(java.io.InputStream input)
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_M2G_MAX_UID parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_M2G_MAX_UID parseDelimitedFrom(java.io.InputStream input)
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static MSG_M2G_MAX_UID parseDelimitedFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static MSG_M2G_MAX_UID parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static MSG_M2G_MAX_UID parseFrom(
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -866,7 +866,7 @@ public final class M2G {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MSG_M2G_MAX_UID prototype) {
+    public static Builder newBuilder(protocol.manager.gate.M2G.MSG_M2G_MAX_UID prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -874,9 +874,9 @@ public final class M2G {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -886,17 +886,17 @@ public final class M2G {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.manager.gate.MSG_M2G_MAX_UID)
-        MSG_M2G_MAX_UIDOrBuilder {
+        protocol.manager.gate.M2G.MSG_M2G_MAX_UIDOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor;
+        return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_fieldAccessorTable
+        return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                MSG_M2G_MAX_UID.class, Builder.class);
+                protocol.manager.gate.M2G.MSG_M2G_MAX_UID.class, protocol.manager.gate.M2G.MSG_M2G_MAX_UID.Builder.class);
       }
 
       // Construct using protocol.manager.gate.M2G.MSG_M2G_MAX_UID.newBuilder()
@@ -905,7 +905,7 @@ public final class M2G {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -929,23 +929,23 @@ public final class M2G {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor;
+        return protocol.manager.gate.M2G.internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor;
       }
 
-      public MSG_M2G_MAX_UID getDefaultInstanceForType() {
-        return MSG_M2G_MAX_UID.getDefaultInstance();
+      public protocol.manager.gate.M2G.MSG_M2G_MAX_UID getDefaultInstanceForType() {
+        return protocol.manager.gate.M2G.MSG_M2G_MAX_UID.getDefaultInstance();
       }
 
-      public MSG_M2G_MAX_UID build() {
-        MSG_M2G_MAX_UID result = buildPartial();
+      public protocol.manager.gate.M2G.MSG_M2G_MAX_UID build() {
+        protocol.manager.gate.M2G.MSG_M2G_MAX_UID result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public MSG_M2G_MAX_UID buildPartial() {
-        MSG_M2G_MAX_UID result = new MSG_M2G_MAX_UID(this);
+      public protocol.manager.gate.M2G.MSG_M2G_MAX_UID buildPartial() {
+        protocol.manager.gate.M2G.MSG_M2G_MAX_UID result = new protocol.manager.gate.M2G.MSG_M2G_MAX_UID(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -974,7 +974,7 @@ public final class M2G {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -987,25 +987,25 @@ public final class M2G {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MSG_M2G_MAX_UID) {
-          return mergeFrom((MSG_M2G_MAX_UID)other);
+        if (other instanceof protocol.manager.gate.M2G.MSG_M2G_MAX_UID) {
+          return mergeFrom((protocol.manager.gate.M2G.MSG_M2G_MAX_UID)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MSG_M2G_MAX_UID other) {
-        if (other == MSG_M2G_MAX_UID.getDefaultInstance()) return this;
+      public Builder mergeFrom(protocol.manager.gate.M2G.MSG_M2G_MAX_UID other) {
+        if (other == protocol.manager.gate.M2G.MSG_M2G_MAX_UID.getDefaultInstance()) return this;
         if (other.hasResult()) {
           setResult(other.getResult());
         }
@@ -1047,11 +1047,11 @@ public final class M2G {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        MSG_M2G_MAX_UID parsedMessage = null;
+        protocol.manager.gate.M2G.MSG_M2G_MAX_UID parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MSG_M2G_MAX_UID) e.getUnfinishedMessage();
+          parsedMessage = (protocol.manager.gate.M2G.MSG_M2G_MAX_UID) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1094,7 +1094,7 @@ public final class M2G {
         return this;
       }
 
-      private Object username_ = "";
+      private java.lang.Object username_ = "";
       /**
        * <code>required string username = 2;</code>
        */
@@ -1104,18 +1104,18 @@ public final class M2G {
       /**
        * <code>required string username = 2;</code>
        */
-      public String getUsername() {
-        Object ref = username_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             username_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1123,11 +1123,11 @@ public final class M2G {
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
-        Object ref = username_;
+        java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           username_ = b;
           return b;
         } else {
@@ -1138,7 +1138,7 @@ public final class M2G {
        * <code>required string username = 2;</code>
        */
       public Builder setUsername(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1202,7 +1202,7 @@ public final class M2G {
         return this;
       }
 
-      private Object channelName_ = "";
+      private java.lang.Object channelName_ = "";
       /**
        * <code>required string channelName = 4;</code>
        */
@@ -1212,18 +1212,18 @@ public final class M2G {
       /**
        * <code>required string channelName = 4;</code>
        */
-      public String getChannelName() {
-        Object ref = channelName_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getChannelName() {
+        java.lang.Object ref = channelName_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             channelName_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1231,11 +1231,11 @@ public final class M2G {
        */
       public com.google.protobuf.ByteString
           getChannelNameBytes() {
-        Object ref = channelName_;
+        java.lang.Object ref = channelName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           channelName_ = b;
           return b;
         } else {
@@ -1246,7 +1246,7 @@ public final class M2G {
        * <code>required string channelName = 4;</code>
        */
       public Builder setChannelName(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1292,16 +1292,16 @@ public final class M2G {
     }
 
     // @@protoc_insertion_point(class_scope:protocol.manager.gate.MSG_M2G_MAX_UID)
-    private static final MSG_M2G_MAX_UID DEFAULT_INSTANCE;
+    private static final protocol.manager.gate.M2G.MSG_M2G_MAX_UID DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MSG_M2G_MAX_UID();
+      DEFAULT_INSTANCE = new protocol.manager.gate.M2G.MSG_M2G_MAX_UID();
     }
 
-    public static MSG_M2G_MAX_UID getDefaultInstance() {
+    public static protocol.manager.gate.M2G.MSG_M2G_MAX_UID getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<MSG_M2G_MAX_UID>
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_M2G_MAX_UID>
         PARSER = new com.google.protobuf.AbstractParser<MSG_M2G_MAX_UID>() {
       public MSG_M2G_MAX_UID parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -1315,12 +1315,12 @@ public final class M2G {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MSG_M2G_MAX_UID> getParserForType() {
       return PARSER;
     }
 
-    public MSG_M2G_MAX_UID getDefaultInstanceForType() {
+    public protocol.manager.gate.M2G.MSG_M2G_MAX_UID getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1344,7 +1344,7 @@ public final class M2G {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\tM2G.proto\022\025protocol.manager.gate\"\023\n\021MS" +
       "G_M2G_HEARTBEAT\"X\n\017MSG_M2G_MAX_UID\022\016\n\006re" +
       "sult\030\001 \002(\005\022\020\n\010username\030\002 \002(\t\022\016\n\006maxUid\030\003" +
@@ -1367,13 +1367,13 @@ public final class M2G {
     internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_manager_gate_MSG_M2G_HEARTBEAT_descriptor,
-        new String[] { });
+        new java.lang.String[] { });
     internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor,
-        new String[] { "Result", "Username", "MaxUid", "ChannelName", });
+        new java.lang.String[] { "Result", "Username", "MaxUid", "ChannelName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

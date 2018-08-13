@@ -8,6 +8,6 @@ package protocol.relation.relation;
 import protocol.msgId.Id;
 public class R2RIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(R2R.MSG_R2R_HEARTBEAT.class, 0x550001);
+          Id.getInst().SetMessage(protocol.relation.relation.R2R.MSG_R2R_HEARTBEAT.class, 0x550001);
      }
 }

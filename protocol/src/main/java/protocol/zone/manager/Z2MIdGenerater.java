@@ -8,6 +8,6 @@ package protocol.zone.manager;
 import protocol.msgId.Id;
 public class Z2MIdGenerater{
      public static void GenerateId(){
-          Id.getInst().SetMessage(Z2M.MSG_Z2M_HEARTBEAT.class, 0x430001);
+          Id.getInst().SetMessage(protocol.zone.manager.Z2M.MSG_Z2M_HEARTBEAT.class, 0x430001);
      }
 }
