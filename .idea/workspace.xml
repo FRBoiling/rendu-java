@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="7f6fefc0-f06f-4c72-9459-fc5815b54bcd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/role/CreateRoleDBOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/role/CreateRoleDBOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/response/ResponseMaxUid.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/response/ResponseMaxUid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/common/target/" />
@@ -103,86 +102,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ResponseMaxUid.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/response/ResponseMaxUid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateRoleDBOperator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/role/CreateRoleDBOperator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetRoleUIdByNameDBOperator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/role/GetRoleUIdByNameDBOperator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="34" selection-start-line="34" selection-end-line="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseUserLogin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/response/ResponseUserLogin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoleMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/interfaces/RoleMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RolePOJO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/pojo/RolePOJO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="12" selection-start-line="12" selection-end-line="17" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectAccountDBOperator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/account/SelectAccountDBOperator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateAccountDBOperator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/account/CreateAccountDBOperator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -668,7 +588,7 @@
       <workItem from="1533991695363" duration="6712000" />
       <workItem from="1534126397427" duration="11084000" />
       <workItem from="1534142481530" duration="10176000" />
-      <workItem from="1534154897260" duration="110000" />
+      <workItem from="1534154897260" duration="1381000" />
     </task>
     <task id="LOCAL-00001" summary="清理项目文件">
       <created>1533389310056</created>
@@ -845,7 +765,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534152234448</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="创角简单流程，创角成功">
+      <created>1534155186223</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1534155186225</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -881,7 +808,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174912000" />
+    <option name="totallyTimeSpent" value="176183000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -893,10 +820,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32953367" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48869276" weight="0.3284974" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
@@ -908,7 +836,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4997233" weight="0.32953367" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49827588" visible="true" weight="0.26318622" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49827588" visible="true" weight="0.19483316" />
       <window_info anchor="right" id="Database" order="5" sideWeight="0.49922958" weight="0.19911748" />
       <window_info anchor="right" id="Structure" order="1" sideWeight="0.5007704" side_tool="true" visible="true" weight="0.17868675" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24931054" />
@@ -916,7 +844,6 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7793712" weight="0.32746115" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48869276" weight="0.3284974" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1031,6 +958,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="35" column="49" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2038#2039#0" expanded="true" />
+            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2197#2198#0" expanded="true" />
+            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#3758#3759#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,6 +1086,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="54" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="54" />
+          <folding>
+            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#246#247#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1304,6 +1244,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="33" column="48" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1373,20 +1316,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/role/CreateRoleDBOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/response/ResponseMaxUid.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/role/CreateRoleDBOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1456,7 +1399,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: cglib:cglib:3.2.5</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
