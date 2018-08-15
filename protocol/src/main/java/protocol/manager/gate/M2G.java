@@ -429,27 +429,22 @@ public final class M2G {
         getUsernameBytes();
 
     /**
-     * <code>required int32 maxUid = 3;</code>
+     * <code>required int32 areaId = 3;</code>
+     */
+    boolean hasAreaId();
+    /**
+     * <code>required int32 areaId = 3;</code>
+     */
+    int getAreaId();
+
+    /**
+     * <code>required int32 maxUid = 4;</code>
      */
     boolean hasMaxUid();
     /**
-     * <code>required int32 maxUid = 3;</code>
+     * <code>required int32 maxUid = 4;</code>
      */
     int getMaxUid();
-
-    /**
-     * <code>required string channelName = 4;</code>
-     */
-    boolean hasChannelName();
-    /**
-     * <code>required string channelName = 4;</code>
-     */
-    java.lang.String getChannelName();
-    /**
-     * <code>required string channelName = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getChannelNameBytes();
   }
   /**
    * Protobuf type {@code protocol.manager.gate.MSG_M2G_MAX_UID}
@@ -466,8 +461,8 @@ public final class M2G {
     private MSG_M2G_MAX_UID() {
       result_ = 0;
       username_ = "";
+      areaId_ = 0;
       maxUid_ = 0;
-      channelName_ = "";
     }
 
     @java.lang.Override
@@ -514,13 +509,12 @@ public final class M2G {
             }
             case 24: {
               bitField0_ |= 0x00000004;
-              maxUid_ = input.readInt32();
+              areaId_ = input.readInt32();
               break;
             }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 32: {
               bitField0_ |= 0x00000008;
-              channelName_ = bs;
+              maxUid_ = input.readInt32();
               break;
             }
           }
@@ -605,61 +599,34 @@ public final class M2G {
       }
     }
 
-    public static final int MAXUID_FIELD_NUMBER = 3;
-    private int maxUid_;
+    public static final int AREAID_FIELD_NUMBER = 3;
+    private int areaId_;
     /**
-     * <code>required int32 maxUid = 3;</code>
+     * <code>required int32 areaId = 3;</code>
      */
-    public boolean hasMaxUid() {
+    public boolean hasAreaId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required int32 maxUid = 3;</code>
+     * <code>required int32 areaId = 3;</code>
      */
-    public int getMaxUid() {
-      return maxUid_;
+    public int getAreaId() {
+      return areaId_;
     }
 
-    public static final int CHANNELNAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object channelName_;
+    public static final int MAXUID_FIELD_NUMBER = 4;
+    private int maxUid_;
     /**
-     * <code>required string channelName = 4;</code>
+     * <code>required int32 maxUid = 4;</code>
      */
-    public boolean hasChannelName() {
+    public boolean hasMaxUid() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required string channelName = 4;</code>
+     * <code>required int32 maxUid = 4;</code>
      */
-    public java.lang.String getChannelName() {
-      java.lang.Object ref = channelName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          channelName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string channelName = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getChannelNameBytes() {
-      java.lang.Object ref = channelName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        channelName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getMaxUid() {
+      return maxUid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -676,11 +643,11 @@ public final class M2G {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasMaxUid()) {
+      if (!hasAreaId()) {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasChannelName()) {
+      if (!hasMaxUid()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -697,10 +664,10 @@ public final class M2G {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, maxUid_);
+        output.writeInt32(3, areaId_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, channelName_);
+        output.writeInt32(4, maxUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -719,10 +686,11 @@ public final class M2G {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, maxUid_);
+          .computeInt32Size(3, areaId_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, channelName_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, maxUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -750,15 +718,15 @@ public final class M2G {
         result = result && getUsername()
             .equals(other.getUsername());
       }
+      result = result && (hasAreaId() == other.hasAreaId());
+      if (hasAreaId()) {
+        result = result && (getAreaId()
+            == other.getAreaId());
+      }
       result = result && (hasMaxUid() == other.hasMaxUid());
       if (hasMaxUid()) {
         result = result && (getMaxUid()
             == other.getMaxUid());
-      }
-      result = result && (hasChannelName() == other.hasChannelName());
-      if (hasChannelName()) {
-        result = result && getChannelName()
-            .equals(other.getChannelName());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -779,13 +747,13 @@ public final class M2G {
         hash = (37 * hash) + USERNAME_FIELD_NUMBER;
         hash = (53 * hash) + getUsername().hashCode();
       }
+      if (hasAreaId()) {
+        hash = (37 * hash) + AREAID_FIELD_NUMBER;
+        hash = (53 * hash) + getAreaId();
+      }
       if (hasMaxUid()) {
         hash = (37 * hash) + MAXUID_FIELD_NUMBER;
         hash = (53 * hash) + getMaxUid();
-      }
-      if (hasChannelName()) {
-        hash = (37 * hash) + CHANNELNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getChannelName().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -920,9 +888,9 @@ public final class M2G {
         bitField0_ = (bitField0_ & ~0x00000001);
         username_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        maxUid_ = 0;
+        areaId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
-        channelName_ = "";
+        maxUid_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
@@ -959,11 +927,11 @@ public final class M2G {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.maxUid_ = maxUid_;
+        result.areaId_ = areaId_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.channelName_ = channelName_;
+        result.maxUid_ = maxUid_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1014,13 +982,11 @@ public final class M2G {
           username_ = other.username_;
           onChanged();
         }
+        if (other.hasAreaId()) {
+          setAreaId(other.getAreaId());
+        }
         if (other.hasMaxUid()) {
           setMaxUid(other.getMaxUid());
-        }
-        if (other.hasChannelName()) {
-          bitField0_ |= 0x00000008;
-          channelName_ = other.channelName_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1034,10 +1000,10 @@ public final class M2G {
         if (!hasUsername()) {
           return false;
         }
-        if (!hasMaxUid()) {
+        if (!hasAreaId()) {
           return false;
         }
-        if (!hasChannelName()) {
+        if (!hasMaxUid()) {
           return false;
         }
         return true;
@@ -1170,110 +1136,66 @@ public final class M2G {
         return this;
       }
 
-      private int maxUid_ ;
+      private int areaId_ ;
       /**
-       * <code>required int32 maxUid = 3;</code>
+       * <code>required int32 areaId = 3;</code>
        */
-      public boolean hasMaxUid() {
+      public boolean hasAreaId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required int32 maxUid = 3;</code>
+       * <code>required int32 areaId = 3;</code>
+       */
+      public int getAreaId() {
+        return areaId_;
+      }
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public Builder setAreaId(int value) {
+        bitField0_ |= 0x00000004;
+        areaId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public Builder clearAreaId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        areaId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxUid_ ;
+      /**
+       * <code>required int32 maxUid = 4;</code>
+       */
+      public boolean hasMaxUid() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required int32 maxUid = 4;</code>
        */
       public int getMaxUid() {
         return maxUid_;
       }
       /**
-       * <code>required int32 maxUid = 3;</code>
+       * <code>required int32 maxUid = 4;</code>
        */
       public Builder setMaxUid(int value) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         maxUid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 maxUid = 3;</code>
+       * <code>required int32 maxUid = 4;</code>
        */
       public Builder clearMaxUid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        maxUid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object channelName_ = "";
-      /**
-       * <code>required string channelName = 4;</code>
-       */
-      public boolean hasChannelName() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>required string channelName = 4;</code>
-       */
-      public java.lang.String getChannelName() {
-        java.lang.Object ref = channelName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            channelName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string channelName = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getChannelNameBytes() {
-        java.lang.Object ref = channelName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          channelName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string channelName = 4;</code>
-       */
-      public Builder setChannelName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        channelName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string channelName = 4;</code>
-       */
-      public Builder clearChannelName() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        channelName_ = getDefaultInstance().getChannelName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string channelName = 4;</code>
-       */
-      public Builder setChannelNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        channelName_ = value;
+        maxUid_ = 0;
         onChanged();
         return this;
       }
@@ -1346,9 +1268,9 @@ public final class M2G {
   static {
     java.lang.String[] descriptorData = {
       "\n\tM2G.proto\022\025protocol.manager.gate\"\023\n\021MS" +
-      "G_M2G_HEARTBEAT\"X\n\017MSG_M2G_MAX_UID\022\016\n\006re" +
-      "sult\030\001 \002(\005\022\020\n\010username\030\002 \002(\t\022\016\n\006maxUid\030\003" +
-      " \002(\005\022\023\n\013channelName\030\004 \002(\t"
+      "G_M2G_HEARTBEAT\"S\n\017MSG_M2G_MAX_UID\022\016\n\006re" +
+      "sult\030\001 \002(\005\022\020\n\010username\030\002 \002(\t\022\016\n\006areaId\030\003" +
+      " \002(\005\022\016\n\006maxUid\030\004 \002(\005"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1373,7 +1295,7 @@ public final class M2G {
     internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_manager_gate_MSG_M2G_MAX_UID_descriptor,
-        new java.lang.String[] { "Result", "Username", "MaxUid", "ChannelName", });
+        new java.lang.String[] { "Result", "Username", "AreaId", "MaxUid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

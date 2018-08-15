@@ -14,5 +14,5 @@ public interface IServiceFrame {
     void updateXml();
 
     void initService();
-    void updateService();
+    void updateService(long dt);
 }

@@ -19,16 +19,16 @@ import java.util.Objects;
 @Accessors(chain=true)
 public class ClientTag implements ISessionTag {
     private String username;
-    private String channelName;
+    private Integer areaId;
 
     public ClientTag() {
         username = "";
-        channelName ="";
+        areaId =0;
     }
 
     @Override
     public int hashCode(){
-        return Objects.hash(this.username,this.channelName);
+        return Objects.hash(this.username,this.areaId);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ClientTag implements ISessionTag {
         if (obj instanceof ClientTag) {
             ClientTag t = (ClientTag) obj;
             return t.username.equals( this.username) &&
-                    t.channelName.equals(this.channelName);
+                    t.areaId.equals(this.areaId) ;
         } else {
             return false;
         }
@@ -44,7 +44,7 @@ public class ClientTag implements ISessionTag {
 
     @Override
     public String toString(){
-        String strTag = username+ "_" + channelName;
+        String strTag = username+ "_" + areaId;
         return strTag;
     }
     //    Object [] tagParam = new Object[]{
@@ -54,12 +54,12 @@ public class ClientTag implements ISessionTag {
     @Override
     public void initTag(Object[] params) {
         this.username = (String) params[0];
-        this.channelName = (String) params[1];
+        this.areaId = (Integer) params[1];
     }
 
-    public void setTag(String accountName,String channelName) {
+    public void setTag(String accountName,Integer areaId) {
         this.username = accountName;
-        this.channelName = channelName;
+        this.areaId = areaId;
     }
 
 

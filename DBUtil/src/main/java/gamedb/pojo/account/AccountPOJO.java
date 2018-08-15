@@ -9,16 +9,11 @@ import java.sql.Timestamp;
 @Setter
 public class AccountPOJO {
     String tableName;
-
     int uid=0;
-
     String username="default_user";
     String password="";
+    Timestamp createTime;
 
-    String channelName="default_channel";
     String deviceId="default_device";
     String registerId="";
-    String roleUIds="";
-
-    Timestamp createTime;
 }

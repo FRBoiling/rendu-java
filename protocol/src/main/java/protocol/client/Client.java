@@ -47,80 +47,80 @@ public final class Client {
         getPasswordBytes();
 
     /**
-     * <code>required string version = 3;</code>
+     * <code>required int32 areaId = 3;</code>
+     */
+    boolean hasAreaId();
+    /**
+     * <code>required int32 areaId = 3;</code>
+     */
+    int getAreaId();
+
+    /**
+     * <code>required string version = 5;</code>
      */
     boolean hasVersion();
     /**
-     * <code>required string version = 3;</code>
+     * <code>required string version = 5;</code>
      */
     java.lang.String getVersion();
     /**
-     * <code>required string version = 3;</code>
+     * <code>required string version = 5;</code>
      */
     com.google.protobuf.ByteString
         getVersionBytes();
 
     /**
-     * <code>required string deviceId = 4;</code>
+     * <code>required string deviceId = 6;</code>
      */
     boolean hasDeviceId();
     /**
-     * <code>required string deviceId = 4;</code>
+     * <code>required string deviceId = 6;</code>
      */
     java.lang.String getDeviceId();
     /**
-     * <code>required string deviceId = 4;</code>
+     * <code>required string deviceId = 6;</code>
      */
     com.google.protobuf.ByteString
         getDeviceIdBytes();
 
     /**
-     * <code>required string registerId = 5;</code>
+     * <code>required string registerId = 7;</code>
      */
     boolean hasRegisterId();
     /**
-     * <code>required string registerId = 5;</code>
+     * <code>required string registerId = 7;</code>
      */
     java.lang.String getRegisterId();
     /**
-     * <code>required string registerId = 5;</code>
+     * <code>required string registerId = 7;</code>
      */
     com.google.protobuf.ByteString
         getRegisterIdBytes();
 
     /**
-     * <code>required string channelName = 6;</code>
+     * <code>required string channelName = 8;</code>
      */
     boolean hasChannelName();
     /**
-     * <code>required string channelName = 6;</code>
+     * <code>required string channelName = 8;</code>
      */
     java.lang.String getChannelName();
     /**
-     * <code>required string channelName = 6;</code>
+     * <code>required string channelName = 8;</code>
      */
     com.google.protobuf.ByteString
         getChannelNameBytes();
 
     /**
-     * <code>required int32 groupId = 7;</code>
-     */
-    boolean hasGroupId();
-    /**
-     * <code>required int32 groupId = 7;</code>
-     */
-    int getGroupId();
-
-    /**
-     * <code>required string token = 8;</code>
+     * <code>required string token = 9;</code>
      */
     boolean hasToken();
     /**
-     * <code>required string token = 8;</code>
+     * <code>required string token = 9;</code>
      */
     java.lang.String getToken();
     /**
-     * <code>required string token = 8;</code>
+     * <code>required string token = 9;</code>
      */
     com.google.protobuf.ByteString
         getTokenBytes();
@@ -140,11 +140,11 @@ public final class Client {
     private MSG_CG_USER_LOGIN() {
       username_ = "";
       password_ = "";
+      areaId_ = 0;
       version_ = "";
       deviceId_ = "";
       registerId_ = "";
       channelName_ = "";
-      groupId_ = 0;
       token_ = "";
     }
 
@@ -191,36 +191,36 @@ public final class Client {
               password_ = bs;
               break;
             }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 24: {
               bitField0_ |= 0x00000004;
-              version_ = bs;
-              break;
-            }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
-              deviceId_ = bs;
+              areaId_ = input.readInt32();
               break;
             }
             case 42: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000010;
-              registerId_ = bs;
+              bitField0_ |= 0x00000008;
+              version_ = bs;
               break;
             }
             case 50: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000020;
-              channelName_ = bs;
+              bitField0_ |= 0x00000010;
+              deviceId_ = bs;
               break;
             }
-            case 56: {
-              bitField0_ |= 0x00000040;
-              groupId_ = input.readInt32();
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              registerId_ = bs;
               break;
             }
             case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              channelName_ = bs;
+              break;
+            }
+            case 74: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000080;
               token_ = bs;
@@ -335,16 +335,31 @@ public final class Client {
       }
     }
 
-    public static final int VERSION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object version_;
+    public static final int AREAID_FIELD_NUMBER = 3;
+    private int areaId_;
     /**
-     * <code>required string version = 3;</code>
+     * <code>required int32 areaId = 3;</code>
      */
-    public boolean hasVersion() {
+    public boolean hasAreaId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string version = 3;</code>
+     * <code>required int32 areaId = 3;</code>
+     */
+    public int getAreaId() {
+      return areaId_;
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object version_;
+    /**
+     * <code>required string version = 5;</code>
+     */
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string version = 5;</code>
      */
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
@@ -361,7 +376,7 @@ public final class Client {
       }
     }
     /**
-     * <code>required string version = 3;</code>
+     * <code>required string version = 5;</code>
      */
     public com.google.protobuf.ByteString
         getVersionBytes() {
@@ -377,16 +392,16 @@ public final class Client {
       }
     }
 
-    public static final int DEVICEID_FIELD_NUMBER = 4;
+    public static final int DEVICEID_FIELD_NUMBER = 6;
     private volatile java.lang.Object deviceId_;
     /**
-     * <code>required string deviceId = 4;</code>
+     * <code>required string deviceId = 6;</code>
      */
     public boolean hasDeviceId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required string deviceId = 4;</code>
+     * <code>required string deviceId = 6;</code>
      */
     public java.lang.String getDeviceId() {
       java.lang.Object ref = deviceId_;
@@ -403,7 +418,7 @@ public final class Client {
       }
     }
     /**
-     * <code>required string deviceId = 4;</code>
+     * <code>required string deviceId = 6;</code>
      */
     public com.google.protobuf.ByteString
         getDeviceIdBytes() {
@@ -419,16 +434,16 @@ public final class Client {
       }
     }
 
-    public static final int REGISTERID_FIELD_NUMBER = 5;
+    public static final int REGISTERID_FIELD_NUMBER = 7;
     private volatile java.lang.Object registerId_;
     /**
-     * <code>required string registerId = 5;</code>
+     * <code>required string registerId = 7;</code>
      */
     public boolean hasRegisterId() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required string registerId = 5;</code>
+     * <code>required string registerId = 7;</code>
      */
     public java.lang.String getRegisterId() {
       java.lang.Object ref = registerId_;
@@ -445,7 +460,7 @@ public final class Client {
       }
     }
     /**
-     * <code>required string registerId = 5;</code>
+     * <code>required string registerId = 7;</code>
      */
     public com.google.protobuf.ByteString
         getRegisterIdBytes() {
@@ -461,16 +476,16 @@ public final class Client {
       }
     }
 
-    public static final int CHANNELNAME_FIELD_NUMBER = 6;
+    public static final int CHANNELNAME_FIELD_NUMBER = 8;
     private volatile java.lang.Object channelName_;
     /**
-     * <code>required string channelName = 6;</code>
+     * <code>required string channelName = 8;</code>
      */
     public boolean hasChannelName() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required string channelName = 6;</code>
+     * <code>required string channelName = 8;</code>
      */
     public java.lang.String getChannelName() {
       java.lang.Object ref = channelName_;
@@ -487,7 +502,7 @@ public final class Client {
       }
     }
     /**
-     * <code>required string channelName = 6;</code>
+     * <code>required string channelName = 8;</code>
      */
     public com.google.protobuf.ByteString
         getChannelNameBytes() {
@@ -503,31 +518,16 @@ public final class Client {
       }
     }
 
-    public static final int GROUPID_FIELD_NUMBER = 7;
-    private int groupId_;
-    /**
-     * <code>required int32 groupId = 7;</code>
-     */
-    public boolean hasGroupId() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>required int32 groupId = 7;</code>
-     */
-    public int getGroupId() {
-      return groupId_;
-    }
-
-    public static final int TOKEN_FIELD_NUMBER = 8;
+    public static final int TOKEN_FIELD_NUMBER = 9;
     private volatile java.lang.Object token_;
     /**
-     * <code>required string token = 8;</code>
+     * <code>required string token = 9;</code>
      */
     public boolean hasToken() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>required string token = 8;</code>
+     * <code>required string token = 9;</code>
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -544,7 +544,7 @@ public final class Client {
       }
     }
     /**
-     * <code>required string token = 8;</code>
+     * <code>required string token = 9;</code>
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
@@ -574,6 +574,10 @@ public final class Client {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasAreaId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasVersion()) {
         memoizedIsInitialized = 0;
         return false;
@@ -587,10 +591,6 @@ public final class Client {
         return false;
       }
       if (!hasChannelName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasGroupId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -611,22 +611,22 @@ public final class Client {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, version_);
+        output.writeInt32(3, areaId_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deviceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, registerId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, deviceId_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, channelName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, registerId_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeInt32(7, groupId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, channelName_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, token_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, token_);
       }
       unknownFields.writeTo(output);
     }
@@ -643,23 +643,23 @@ public final class Client {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, version_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, areaId_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deviceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, registerId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, deviceId_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, channelName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, registerId_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, groupId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, channelName_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, token_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, token_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -687,6 +687,11 @@ public final class Client {
         result = result && getPassword()
             .equals(other.getPassword());
       }
+      result = result && (hasAreaId() == other.hasAreaId());
+      if (hasAreaId()) {
+        result = result && (getAreaId()
+            == other.getAreaId());
+      }
       result = result && (hasVersion() == other.hasVersion());
       if (hasVersion()) {
         result = result && getVersion()
@@ -706,11 +711,6 @@ public final class Client {
       if (hasChannelName()) {
         result = result && getChannelName()
             .equals(other.getChannelName());
-      }
-      result = result && (hasGroupId() == other.hasGroupId());
-      if (hasGroupId()) {
-        result = result && (getGroupId()
-            == other.getGroupId());
       }
       result = result && (hasToken() == other.hasToken());
       if (hasToken()) {
@@ -736,6 +736,10 @@ public final class Client {
         hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
         hash = (53 * hash) + getPassword().hashCode();
       }
+      if (hasAreaId()) {
+        hash = (37 * hash) + AREAID_FIELD_NUMBER;
+        hash = (53 * hash) + getAreaId();
+      }
       if (hasVersion()) {
         hash = (37 * hash) + VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getVersion().hashCode();
@@ -751,10 +755,6 @@ public final class Client {
       if (hasChannelName()) {
         hash = (37 * hash) + CHANNELNAME_FIELD_NUMBER;
         hash = (53 * hash) + getChannelName().hashCode();
-      }
-      if (hasGroupId()) {
-        hash = (37 * hash) + GROUPID_FIELD_NUMBER;
-        hash = (53 * hash) + getGroupId();
       }
       if (hasToken()) {
         hash = (37 * hash) + TOKEN_FIELD_NUMBER;
@@ -893,15 +893,15 @@ public final class Client {
         bitField0_ = (bitField0_ & ~0x00000001);
         password_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        version_ = "";
+        areaId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
-        deviceId_ = "";
+        version_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        registerId_ = "";
+        deviceId_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
-        channelName_ = "";
+        registerId_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
-        groupId_ = 0;
+        channelName_ = "";
         bitField0_ = (bitField0_ & ~0x00000040);
         token_ = "";
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -940,23 +940,23 @@ public final class Client {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.version_ = version_;
+        result.areaId_ = areaId_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.deviceId_ = deviceId_;
+        result.version_ = version_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.registerId_ = registerId_;
+        result.deviceId_ = deviceId_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.channelName_ = channelName_;
+        result.registerId_ = registerId_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.groupId_ = groupId_;
+        result.channelName_ = channelName_;
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
@@ -1013,28 +1013,28 @@ public final class Client {
           password_ = other.password_;
           onChanged();
         }
+        if (other.hasAreaId()) {
+          setAreaId(other.getAreaId());
+        }
         if (other.hasVersion()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           version_ = other.version_;
           onChanged();
         }
         if (other.hasDeviceId()) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           deviceId_ = other.deviceId_;
           onChanged();
         }
         if (other.hasRegisterId()) {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           registerId_ = other.registerId_;
           onChanged();
         }
         if (other.hasChannelName()) {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           channelName_ = other.channelName_;
           onChanged();
-        }
-        if (other.hasGroupId()) {
-          setGroupId(other.getGroupId());
         }
         if (other.hasToken()) {
           bitField0_ |= 0x00000080;
@@ -1053,6 +1053,9 @@ public final class Client {
         if (!hasPassword()) {
           return false;
         }
+        if (!hasAreaId()) {
+          return false;
+        }
         if (!hasVersion()) {
           return false;
         }
@@ -1063,9 +1066,6 @@ public final class Client {
           return false;
         }
         if (!hasChannelName()) {
-          return false;
-        }
-        if (!hasGroupId()) {
           return false;
         }
         if (!hasToken()) {
@@ -1245,15 +1245,47 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object version_ = "";
+      private int areaId_ ;
       /**
-       * <code>required string version = 3;</code>
+       * <code>required int32 areaId = 3;</code>
        */
-      public boolean hasVersion() {
+      public boolean hasAreaId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string version = 3;</code>
+       * <code>required int32 areaId = 3;</code>
+       */
+      public int getAreaId() {
+        return areaId_;
+      }
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public Builder setAreaId(int value) {
+        bitField0_ |= 0x00000004;
+        areaId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public Builder clearAreaId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        areaId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <code>required string version = 5;</code>
+       */
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string version = 5;</code>
        */
       public java.lang.String getVersion() {
         java.lang.Object ref = version_;
@@ -1270,7 +1302,7 @@ public final class Client {
         }
       }
       /**
-       * <code>required string version = 3;</code>
+       * <code>required string version = 5;</code>
        */
       public com.google.protobuf.ByteString
           getVersionBytes() {
@@ -1286,36 +1318,36 @@ public final class Client {
         }
       }
       /**
-       * <code>required string version = 3;</code>
+       * <code>required string version = 5;</code>
        */
       public Builder setVersion(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         version_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string version = 3;</code>
+       * <code>required string version = 5;</code>
        */
       public Builder clearVersion() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         version_ = getDefaultInstance().getVersion();
         onChanged();
         return this;
       }
       /**
-       * <code>required string version = 3;</code>
+       * <code>required string version = 5;</code>
        */
       public Builder setVersionBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         version_ = value;
         onChanged();
         return this;
@@ -1323,13 +1355,13 @@ public final class Client {
 
       private java.lang.Object deviceId_ = "";
       /**
-       * <code>required string deviceId = 4;</code>
+       * <code>required string deviceId = 6;</code>
        */
       public boolean hasDeviceId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required string deviceId = 4;</code>
+       * <code>required string deviceId = 6;</code>
        */
       public java.lang.String getDeviceId() {
         java.lang.Object ref = deviceId_;
@@ -1346,7 +1378,7 @@ public final class Client {
         }
       }
       /**
-       * <code>required string deviceId = 4;</code>
+       * <code>required string deviceId = 6;</code>
        */
       public com.google.protobuf.ByteString
           getDeviceIdBytes() {
@@ -1362,36 +1394,36 @@ public final class Client {
         }
       }
       /**
-       * <code>required string deviceId = 4;</code>
+       * <code>required string deviceId = 6;</code>
        */
       public Builder setDeviceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000010;
         deviceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string deviceId = 4;</code>
+       * <code>required string deviceId = 6;</code>
        */
       public Builder clearDeviceId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         deviceId_ = getDefaultInstance().getDeviceId();
         onChanged();
         return this;
       }
       /**
-       * <code>required string deviceId = 4;</code>
+       * <code>required string deviceId = 6;</code>
        */
       public Builder setDeviceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000010;
         deviceId_ = value;
         onChanged();
         return this;
@@ -1399,13 +1431,13 @@ public final class Client {
 
       private java.lang.Object registerId_ = "";
       /**
-       * <code>required string registerId = 5;</code>
+       * <code>required string registerId = 7;</code>
        */
       public boolean hasRegisterId() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required string registerId = 5;</code>
+       * <code>required string registerId = 7;</code>
        */
       public java.lang.String getRegisterId() {
         java.lang.Object ref = registerId_;
@@ -1422,7 +1454,7 @@ public final class Client {
         }
       }
       /**
-       * <code>required string registerId = 5;</code>
+       * <code>required string registerId = 7;</code>
        */
       public com.google.protobuf.ByteString
           getRegisterIdBytes() {
@@ -1438,36 +1470,36 @@ public final class Client {
         }
       }
       /**
-       * <code>required string registerId = 5;</code>
+       * <code>required string registerId = 7;</code>
        */
       public Builder setRegisterId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  bitField0_ |= 0x00000020;
         registerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string registerId = 5;</code>
+       * <code>required string registerId = 7;</code>
        */
       public Builder clearRegisterId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         registerId_ = getDefaultInstance().getRegisterId();
         onChanged();
         return this;
       }
       /**
-       * <code>required string registerId = 5;</code>
+       * <code>required string registerId = 7;</code>
        */
       public Builder setRegisterIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  bitField0_ |= 0x00000020;
         registerId_ = value;
         onChanged();
         return this;
@@ -1475,13 +1507,13 @@ public final class Client {
 
       private java.lang.Object channelName_ = "";
       /**
-       * <code>required string channelName = 6;</code>
+       * <code>required string channelName = 8;</code>
        */
       public boolean hasChannelName() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required string channelName = 6;</code>
+       * <code>required string channelName = 8;</code>
        */
       public java.lang.String getChannelName() {
         java.lang.Object ref = channelName_;
@@ -1498,7 +1530,7 @@ public final class Client {
         }
       }
       /**
-       * <code>required string channelName = 6;</code>
+       * <code>required string channelName = 8;</code>
        */
       public com.google.protobuf.ByteString
           getChannelNameBytes() {
@@ -1514,82 +1546,50 @@ public final class Client {
         }
       }
       /**
-       * <code>required string channelName = 6;</code>
+       * <code>required string channelName = 8;</code>
        */
       public Builder setChannelName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  bitField0_ |= 0x00000040;
         channelName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string channelName = 6;</code>
+       * <code>required string channelName = 8;</code>
        */
       public Builder clearChannelName() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         channelName_ = getDefaultInstance().getChannelName();
         onChanged();
         return this;
       }
       /**
-       * <code>required string channelName = 6;</code>
+       * <code>required string channelName = 8;</code>
        */
       public Builder setChannelNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  bitField0_ |= 0x00000040;
         channelName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int groupId_ ;
-      /**
-       * <code>required int32 groupId = 7;</code>
-       */
-      public boolean hasGroupId() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <code>required int32 groupId = 7;</code>
-       */
-      public int getGroupId() {
-        return groupId_;
-      }
-      /**
-       * <code>required int32 groupId = 7;</code>
-       */
-      public Builder setGroupId(int value) {
-        bitField0_ |= 0x00000040;
-        groupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 groupId = 7;</code>
-       */
-      public Builder clearGroupId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        groupId_ = 0;
         onChanged();
         return this;
       }
 
       private java.lang.Object token_ = "";
       /**
-       * <code>required string token = 8;</code>
+       * <code>required string token = 9;</code>
        */
       public boolean hasToken() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>required string token = 8;</code>
+       * <code>required string token = 9;</code>
        */
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
@@ -1606,7 +1606,7 @@ public final class Client {
         }
       }
       /**
-       * <code>required string token = 8;</code>
+       * <code>required string token = 9;</code>
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
@@ -1622,7 +1622,7 @@ public final class Client {
         }
       }
       /**
-       * <code>required string token = 8;</code>
+       * <code>required string token = 9;</code>
        */
       public Builder setToken(
           java.lang.String value) {
@@ -1635,7 +1635,7 @@ public final class Client {
         return this;
       }
       /**
-       * <code>required string token = 8;</code>
+       * <code>required string token = 9;</code>
        */
       public Builder clearToken() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -1644,7 +1644,7 @@ public final class Client {
         return this;
       }
       /**
-       * <code>required string token = 8;</code>
+       * <code>required string token = 9;</code>
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -1705,6 +1705,846 @@ public final class Client {
 
   }
 
+  public interface ROLE_LOGIN_INFOOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.client.ROLE_LOGIN_INFO)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 uid = 1;</code>
+     */
+    boolean hasUid();
+    /**
+     * <code>optional int32 uid = 1;</code>
+     */
+    int getUid();
+
+    /**
+     * <code>required string name = 2;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>required string name = 2;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>required string name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>required int32 areaId = 3;</code>
+     */
+    boolean hasAreaId();
+    /**
+     * <code>required int32 areaId = 3;</code>
+     */
+    int getAreaId();
+
+    /**
+     * <code>required int32 originalAreaId = 4;</code>
+     */
+    boolean hasOriginalAreaId();
+    /**
+     * <code>required int32 originalAreaId = 4;</code>
+     */
+    int getOriginalAreaId();
+  }
+  /**
+   * Protobuf type {@code protocol.client.ROLE_LOGIN_INFO}
+   */
+  public  static final class ROLE_LOGIN_INFO extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protocol.client.ROLE_LOGIN_INFO)
+      ROLE_LOGIN_INFOOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ROLE_LOGIN_INFO.newBuilder() to construct.
+    private ROLE_LOGIN_INFO(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ROLE_LOGIN_INFO() {
+      uid_ = 0;
+      name_ = "";
+      areaId_ = 0;
+      originalAreaId_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ROLE_LOGIN_INFO(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              uid_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              name_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              areaId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              originalAreaId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return protocol.client.Client.internal_static_protocol_client_ROLE_LOGIN_INFO_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return protocol.client.Client.internal_static_protocol_client_ROLE_LOGIN_INFO_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              protocol.client.Client.ROLE_LOGIN_INFO.class, protocol.client.Client.ROLE_LOGIN_INFO.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int UID_FIELD_NUMBER = 1;
+    private int uid_;
+    /**
+     * <code>optional int32 uid = 1;</code>
+     */
+    public boolean hasUid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 uid = 1;</code>
+     */
+    public int getUid() {
+      return uid_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>required string name = 2;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string name = 2;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AREAID_FIELD_NUMBER = 3;
+    private int areaId_;
+    /**
+     * <code>required int32 areaId = 3;</code>
+     */
+    public boolean hasAreaId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int32 areaId = 3;</code>
+     */
+    public int getAreaId() {
+      return areaId_;
+    }
+
+    public static final int ORIGINALAREAID_FIELD_NUMBER = 4;
+    private int originalAreaId_;
+    /**
+     * <code>required int32 originalAreaId = 4;</code>
+     */
+    public boolean hasOriginalAreaId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required int32 originalAreaId = 4;</code>
+     */
+    public int getOriginalAreaId() {
+      return originalAreaId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasAreaId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasOriginalAreaId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, uid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, areaId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, originalAreaId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, uid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, areaId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, originalAreaId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof protocol.client.Client.ROLE_LOGIN_INFO)) {
+        return super.equals(obj);
+      }
+      protocol.client.Client.ROLE_LOGIN_INFO other = (protocol.client.Client.ROLE_LOGIN_INFO) obj;
+
+      boolean result = true;
+      result = result && (hasUid() == other.hasUid());
+      if (hasUid()) {
+        result = result && (getUid()
+            == other.getUid());
+      }
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && (hasAreaId() == other.hasAreaId());
+      if (hasAreaId()) {
+        result = result && (getAreaId()
+            == other.getAreaId());
+      }
+      result = result && (hasOriginalAreaId() == other.hasOriginalAreaId());
+      if (hasOriginalAreaId()) {
+        result = result && (getOriginalAreaId()
+            == other.getOriginalAreaId());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasUid()) {
+        hash = (37 * hash) + UID_FIELD_NUMBER;
+        hash = (53 * hash) + getUid();
+      }
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasAreaId()) {
+        hash = (37 * hash) + AREAID_FIELD_NUMBER;
+        hash = (53 * hash) + getAreaId();
+      }
+      if (hasOriginalAreaId()) {
+        hash = (37 * hash) + ORIGINALAREAID_FIELD_NUMBER;
+        hash = (53 * hash) + getOriginalAreaId();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protocol.client.Client.ROLE_LOGIN_INFO parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(protocol.client.Client.ROLE_LOGIN_INFO prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocol.client.ROLE_LOGIN_INFO}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protocol.client.ROLE_LOGIN_INFO)
+        protocol.client.Client.ROLE_LOGIN_INFOOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return protocol.client.Client.internal_static_protocol_client_ROLE_LOGIN_INFO_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return protocol.client.Client.internal_static_protocol_client_ROLE_LOGIN_INFO_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                protocol.client.Client.ROLE_LOGIN_INFO.class, protocol.client.Client.ROLE_LOGIN_INFO.Builder.class);
+      }
+
+      // Construct using protocol.client.Client.ROLE_LOGIN_INFO.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        uid_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        areaId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        originalAreaId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return protocol.client.Client.internal_static_protocol_client_ROLE_LOGIN_INFO_descriptor;
+      }
+
+      public protocol.client.Client.ROLE_LOGIN_INFO getDefaultInstanceForType() {
+        return protocol.client.Client.ROLE_LOGIN_INFO.getDefaultInstance();
+      }
+
+      public protocol.client.Client.ROLE_LOGIN_INFO build() {
+        protocol.client.Client.ROLE_LOGIN_INFO result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public protocol.client.Client.ROLE_LOGIN_INFO buildPartial() {
+        protocol.client.Client.ROLE_LOGIN_INFO result = new protocol.client.Client.ROLE_LOGIN_INFO(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.uid_ = uid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.areaId_ = areaId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.originalAreaId_ = originalAreaId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof protocol.client.Client.ROLE_LOGIN_INFO) {
+          return mergeFrom((protocol.client.Client.ROLE_LOGIN_INFO)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(protocol.client.Client.ROLE_LOGIN_INFO other) {
+        if (other == protocol.client.Client.ROLE_LOGIN_INFO.getDefaultInstance()) return this;
+        if (other.hasUid()) {
+          setUid(other.getUid());
+        }
+        if (other.hasName()) {
+          bitField0_ |= 0x00000002;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasAreaId()) {
+          setAreaId(other.getAreaId());
+        }
+        if (other.hasOriginalAreaId()) {
+          setOriginalAreaId(other.getOriginalAreaId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasName()) {
+          return false;
+        }
+        if (!hasAreaId()) {
+          return false;
+        }
+        if (!hasOriginalAreaId()) {
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        protocol.client.Client.ROLE_LOGIN_INFO parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (protocol.client.Client.ROLE_LOGIN_INFO) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int uid_ ;
+      /**
+       * <code>optional int32 uid = 1;</code>
+       */
+      public boolean hasUid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 uid = 1;</code>
+       */
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>optional int32 uid = 1;</code>
+       */
+      public Builder setUid(int value) {
+        bitField0_ |= 0x00000001;
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 uid = 1;</code>
+       */
+      public Builder clearUid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int areaId_ ;
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public boolean hasAreaId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public int getAreaId() {
+        return areaId_;
+      }
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public Builder setAreaId(int value) {
+        bitField0_ |= 0x00000004;
+        areaId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public Builder clearAreaId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        areaId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int originalAreaId_ ;
+      /**
+       * <code>required int32 originalAreaId = 4;</code>
+       */
+      public boolean hasOriginalAreaId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required int32 originalAreaId = 4;</code>
+       */
+      public int getOriginalAreaId() {
+        return originalAreaId_;
+      }
+      /**
+       * <code>required int32 originalAreaId = 4;</code>
+       */
+      public Builder setOriginalAreaId(int value) {
+        bitField0_ |= 0x00000008;
+        originalAreaId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 originalAreaId = 4;</code>
+       */
+      public Builder clearOriginalAreaId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        originalAreaId_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protocol.client.ROLE_LOGIN_INFO)
+    }
+
+    // @@protoc_insertion_point(class_scope:protocol.client.ROLE_LOGIN_INFO)
+    private static final protocol.client.Client.ROLE_LOGIN_INFO DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new protocol.client.Client.ROLE_LOGIN_INFO();
+    }
+
+    public static protocol.client.Client.ROLE_LOGIN_INFO getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ROLE_LOGIN_INFO>
+        PARSER = new com.google.protobuf.AbstractParser<ROLE_LOGIN_INFO>() {
+      public ROLE_LOGIN_INFO parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ROLE_LOGIN_INFO(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ROLE_LOGIN_INFO> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ROLE_LOGIN_INFO> getParserForType() {
+      return PARSER;
+    }
+
+    public protocol.client.Client.ROLE_LOGIN_INFO getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MSG_GC_USER_LOGINOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.client.MSG_GC_USER_LOGIN)
       com.google.protobuf.MessageOrBuilder {
@@ -1733,41 +2573,50 @@ public final class Client {
         getUsernameBytes();
 
     /**
-     * <code>optional string token = 3;</code>
+     * <code>required int32 areaId = 3;</code>
+     */
+    boolean hasAreaId();
+    /**
+     * <code>required int32 areaId = 3;</code>
+     */
+    int getAreaId();
+
+    /**
+     * <code>optional string token = 4;</code>
      */
     boolean hasToken();
     /**
-     * <code>optional string token = 3;</code>
+     * <code>optional string token = 4;</code>
      */
     java.lang.String getToken();
     /**
-     * <code>optional string token = 3;</code>
+     * <code>optional string token = 4;</code>
      */
     com.google.protobuf.ByteString
         getTokenBytes();
 
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
-    java.util.List<protocol.client.Client.ROLE_INFO> 
+    java.util.List<protocol.client.Client.ROLE_LOGIN_INFO> 
         getRoleListList();
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
-    protocol.client.Client.ROLE_INFO getRoleList(int index);
+    protocol.client.Client.ROLE_LOGIN_INFO getRoleList(int index);
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
     int getRoleListCount();
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
-    java.util.List<? extends protocol.client.Client.ROLE_INFOOrBuilder> 
+    java.util.List<? extends protocol.client.Client.ROLE_LOGIN_INFOOrBuilder> 
         getRoleListOrBuilderList();
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
-    protocol.client.Client.ROLE_INFOOrBuilder getRoleListOrBuilder(
+    protocol.client.Client.ROLE_LOGIN_INFOOrBuilder getRoleListOrBuilder(
         int index);
   }
   /**
@@ -1785,6 +2634,7 @@ public final class Client {
     private MSG_GC_USER_LOGIN() {
       result_ = 0;
       username_ = "";
+      areaId_ = 0;
       token_ = "";
       roleList_ = java.util.Collections.emptyList();
     }
@@ -1831,19 +2681,24 @@ public final class Client {
               username_ = bs;
               break;
             }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 24: {
               bitField0_ |= 0x00000004;
-              token_ = bs;
+              areaId_ = input.readInt32();
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                roleList_ = new java.util.ArrayList<protocol.client.Client.ROLE_INFO>();
-                mutable_bitField0_ |= 0x00000008;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              token_ = bs;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                roleList_ = new java.util.ArrayList<protocol.client.Client.ROLE_LOGIN_INFO>();
+                mutable_bitField0_ |= 0x00000010;
               }
               roleList_.add(
-                  input.readMessage(protocol.client.Client.ROLE_INFO.PARSER, extensionRegistry));
+                  input.readMessage(protocol.client.Client.ROLE_LOGIN_INFO.PARSER, extensionRegistry));
               break;
             }
           }
@@ -1854,7 +2709,7 @@ public final class Client {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           roleList_ = java.util.Collections.unmodifiableList(roleList_);
         }
         this.unknownFields = unknownFields.build();
@@ -1931,16 +2786,31 @@ public final class Client {
       }
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 3;
-    private volatile java.lang.Object token_;
+    public static final int AREAID_FIELD_NUMBER = 3;
+    private int areaId_;
     /**
-     * <code>optional string token = 3;</code>
+     * <code>required int32 areaId = 3;</code>
      */
-    public boolean hasToken() {
+    public boolean hasAreaId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional string token = 3;</code>
+     * <code>required int32 areaId = 3;</code>
+     */
+    public int getAreaId() {
+      return areaId_;
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 4;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>optional string token = 4;</code>
+     */
+    public boolean hasToken() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string token = 4;</code>
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -1957,7 +2827,7 @@ public final class Client {
       }
     }
     /**
-     * <code>optional string token = 3;</code>
+     * <code>optional string token = 4;</code>
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
@@ -1973,37 +2843,37 @@ public final class Client {
       }
     }
 
-    public static final int ROLELIST_FIELD_NUMBER = 4;
-    private java.util.List<protocol.client.Client.ROLE_INFO> roleList_;
+    public static final int ROLELIST_FIELD_NUMBER = 5;
+    private java.util.List<protocol.client.Client.ROLE_LOGIN_INFO> roleList_;
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
-    public java.util.List<protocol.client.Client.ROLE_INFO> getRoleListList() {
+    public java.util.List<protocol.client.Client.ROLE_LOGIN_INFO> getRoleListList() {
       return roleList_;
     }
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
-    public java.util.List<? extends protocol.client.Client.ROLE_INFOOrBuilder> 
+    public java.util.List<? extends protocol.client.Client.ROLE_LOGIN_INFOOrBuilder> 
         getRoleListOrBuilderList() {
       return roleList_;
     }
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
     public int getRoleListCount() {
       return roleList_.size();
     }
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
-    public protocol.client.Client.ROLE_INFO getRoleList(int index) {
+    public protocol.client.Client.ROLE_LOGIN_INFO getRoleList(int index) {
       return roleList_.get(index);
     }
     /**
-     * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+     * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
      */
-    public protocol.client.Client.ROLE_INFOOrBuilder getRoleListOrBuilder(
+    public protocol.client.Client.ROLE_LOGIN_INFOOrBuilder getRoleListOrBuilder(
         int index) {
       return roleList_.get(index);
     }
@@ -2019,6 +2889,10 @@ public final class Client {
         return false;
       }
       if (!hasUsername()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasAreaId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -2041,10 +2915,13 @@ public final class Client {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, token_);
+        output.writeInt32(3, areaId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, token_);
       }
       for (int i = 0; i < roleList_.size(); i++) {
-        output.writeMessage(4, roleList_.get(i));
+        output.writeMessage(5, roleList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2062,11 +2939,15 @@ public final class Client {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, token_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, areaId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, token_);
       }
       for (int i = 0; i < roleList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, roleList_.get(i));
+          .computeMessageSize(5, roleList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2094,6 +2975,11 @@ public final class Client {
         result = result && getUsername()
             .equals(other.getUsername());
       }
+      result = result && (hasAreaId() == other.hasAreaId());
+      if (hasAreaId()) {
+        result = result && (getAreaId()
+            == other.getAreaId());
+      }
       result = result && (hasToken() == other.hasToken());
       if (hasToken()) {
         result = result && getToken()
@@ -2119,6 +3005,10 @@ public final class Client {
       if (hasUsername()) {
         hash = (37 * hash) + USERNAME_FIELD_NUMBER;
         hash = (53 * hash) + getUsername().hashCode();
+      }
+      if (hasAreaId()) {
+        hash = (37 * hash) + AREAID_FIELD_NUMBER;
+        hash = (53 * hash) + getAreaId();
       }
       if (hasToken()) {
         hash = (37 * hash) + TOKEN_FIELD_NUMBER;
@@ -2262,11 +3152,13 @@ public final class Client {
         bitField0_ = (bitField0_ & ~0x00000001);
         username_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        token_ = "";
+        areaId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
+        token_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (roleListBuilder_ == null) {
           roleList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           roleListBuilder_.clear();
         }
@@ -2305,11 +3197,15 @@ public final class Client {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
+        result.areaId_ = areaId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
         result.token_ = token_;
         if (roleListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
             roleList_ = java.util.Collections.unmodifiableList(roleList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.roleList_ = roleList_;
         } else {
@@ -2365,8 +3261,11 @@ public final class Client {
           username_ = other.username_;
           onChanged();
         }
+        if (other.hasAreaId()) {
+          setAreaId(other.getAreaId());
+        }
         if (other.hasToken()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           token_ = other.token_;
           onChanged();
         }
@@ -2374,7 +3273,7 @@ public final class Client {
           if (!other.roleList_.isEmpty()) {
             if (roleList_.isEmpty()) {
               roleList_ = other.roleList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureRoleListIsMutable();
               roleList_.addAll(other.roleList_);
@@ -2387,7 +3286,7 @@ public final class Client {
               roleListBuilder_.dispose();
               roleListBuilder_ = null;
               roleList_ = other.roleList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
               roleListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRoleListFieldBuilder() : null;
@@ -2406,6 +3305,9 @@ public final class Client {
           return false;
         }
         if (!hasUsername()) {
+          return false;
+        }
+        if (!hasAreaId()) {
           return false;
         }
         for (int i = 0; i < getRoleListCount(); i++) {
@@ -2543,15 +3445,47 @@ public final class Client {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private int areaId_ ;
       /**
-       * <code>optional string token = 3;</code>
+       * <code>required int32 areaId = 3;</code>
        */
-      public boolean hasToken() {
+      public boolean hasAreaId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>required int32 areaId = 3;</code>
+       */
+      public int getAreaId() {
+        return areaId_;
+      }
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public Builder setAreaId(int value) {
+        bitField0_ |= 0x00000004;
+        areaId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 areaId = 3;</code>
+       */
+      public Builder clearAreaId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        areaId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>optional string token = 4;</code>
+       */
+      public boolean hasToken() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string token = 4;</code>
        */
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
@@ -2568,7 +3502,7 @@ public final class Client {
         }
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>optional string token = 4;</code>
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
@@ -2584,57 +3518,57 @@ public final class Client {
         }
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>optional string token = 4;</code>
        */
       public Builder setToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         token_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>optional string token = 4;</code>
        */
       public Builder clearToken() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         token_ = getDefaultInstance().getToken();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>optional string token = 4;</code>
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         token_ = value;
         onChanged();
         return this;
       }
 
-      private java.util.List<protocol.client.Client.ROLE_INFO> roleList_ =
+      private java.util.List<protocol.client.Client.ROLE_LOGIN_INFO> roleList_ =
         java.util.Collections.emptyList();
       private void ensureRoleListIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          roleList_ = new java.util.ArrayList<protocol.client.Client.ROLE_INFO>(roleList_);
-          bitField0_ |= 0x00000008;
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          roleList_ = new java.util.ArrayList<protocol.client.Client.ROLE_LOGIN_INFO>(roleList_);
+          bitField0_ |= 0x00000010;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          protocol.client.Client.ROLE_INFO, protocol.client.Client.ROLE_INFO.Builder, protocol.client.Client.ROLE_INFOOrBuilder> roleListBuilder_;
+          protocol.client.Client.ROLE_LOGIN_INFO, protocol.client.Client.ROLE_LOGIN_INFO.Builder, protocol.client.Client.ROLE_LOGIN_INFOOrBuilder> roleListBuilder_;
 
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
-      public java.util.List<protocol.client.Client.ROLE_INFO> getRoleListList() {
+      public java.util.List<protocol.client.Client.ROLE_LOGIN_INFO> getRoleListList() {
         if (roleListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(roleList_);
         } else {
@@ -2642,7 +3576,7 @@ public final class Client {
         }
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
       public int getRoleListCount() {
         if (roleListBuilder_ == null) {
@@ -2652,9 +3586,9 @@ public final class Client {
         }
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
-      public protocol.client.Client.ROLE_INFO getRoleList(int index) {
+      public protocol.client.Client.ROLE_LOGIN_INFO getRoleList(int index) {
         if (roleListBuilder_ == null) {
           return roleList_.get(index);
         } else {
@@ -2662,10 +3596,10 @@ public final class Client {
         }
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
       public Builder setRoleList(
-          int index, protocol.client.Client.ROLE_INFO value) {
+          int index, protocol.client.Client.ROLE_LOGIN_INFO value) {
         if (roleListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2679,10 +3613,10 @@ public final class Client {
         return this;
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
       public Builder setRoleList(
-          int index, protocol.client.Client.ROLE_INFO.Builder builderForValue) {
+          int index, protocol.client.Client.ROLE_LOGIN_INFO.Builder builderForValue) {
         if (roleListBuilder_ == null) {
           ensureRoleListIsMutable();
           roleList_.set(index, builderForValue.build());
@@ -2693,9 +3627,9 @@ public final class Client {
         return this;
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
-      public Builder addRoleList(protocol.client.Client.ROLE_INFO value) {
+      public Builder addRoleList(protocol.client.Client.ROLE_LOGIN_INFO value) {
         if (roleListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2709,10 +3643,10 @@ public final class Client {
         return this;
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
       public Builder addRoleList(
-          int index, protocol.client.Client.ROLE_INFO value) {
+          int index, protocol.client.Client.ROLE_LOGIN_INFO value) {
         if (roleListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2726,10 +3660,10 @@ public final class Client {
         return this;
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
       public Builder addRoleList(
-          protocol.client.Client.ROLE_INFO.Builder builderForValue) {
+          protocol.client.Client.ROLE_LOGIN_INFO.Builder builderForValue) {
         if (roleListBuilder_ == null) {
           ensureRoleListIsMutable();
           roleList_.add(builderForValue.build());
@@ -2740,10 +3674,10 @@ public final class Client {
         return this;
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
       public Builder addRoleList(
-          int index, protocol.client.Client.ROLE_INFO.Builder builderForValue) {
+          int index, protocol.client.Client.ROLE_LOGIN_INFO.Builder builderForValue) {
         if (roleListBuilder_ == null) {
           ensureRoleListIsMutable();
           roleList_.add(index, builderForValue.build());
@@ -2754,10 +3688,10 @@ public final class Client {
         return this;
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
       public Builder addAllRoleList(
-          java.lang.Iterable<? extends protocol.client.Client.ROLE_INFO> values) {
+          java.lang.Iterable<? extends protocol.client.Client.ROLE_LOGIN_INFO> values) {
         if (roleListBuilder_ == null) {
           ensureRoleListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2769,12 +3703,12 @@ public final class Client {
         return this;
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
       public Builder clearRoleList() {
         if (roleListBuilder_ == null) {
           roleList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           roleListBuilder_.clear();
@@ -2782,7 +3716,7 @@ public final class Client {
         return this;
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
       public Builder removeRoleList(int index) {
         if (roleListBuilder_ == null) {
@@ -2795,16 +3729,16 @@ public final class Client {
         return this;
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
-      public protocol.client.Client.ROLE_INFO.Builder getRoleListBuilder(
+      public protocol.client.Client.ROLE_LOGIN_INFO.Builder getRoleListBuilder(
           int index) {
         return getRoleListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
-      public protocol.client.Client.ROLE_INFOOrBuilder getRoleListOrBuilder(
+      public protocol.client.Client.ROLE_LOGIN_INFOOrBuilder getRoleListOrBuilder(
           int index) {
         if (roleListBuilder_ == null) {
           return roleList_.get(index);  } else {
@@ -2812,9 +3746,9 @@ public final class Client {
         }
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
-      public java.util.List<? extends protocol.client.Client.ROLE_INFOOrBuilder> 
+      public java.util.List<? extends protocol.client.Client.ROLE_LOGIN_INFOOrBuilder> 
            getRoleListOrBuilderList() {
         if (roleListBuilder_ != null) {
           return roleListBuilder_.getMessageOrBuilderList();
@@ -2823,35 +3757,35 @@ public final class Client {
         }
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
-      public protocol.client.Client.ROLE_INFO.Builder addRoleListBuilder() {
+      public protocol.client.Client.ROLE_LOGIN_INFO.Builder addRoleListBuilder() {
         return getRoleListFieldBuilder().addBuilder(
-            protocol.client.Client.ROLE_INFO.getDefaultInstance());
+            protocol.client.Client.ROLE_LOGIN_INFO.getDefaultInstance());
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
-      public protocol.client.Client.ROLE_INFO.Builder addRoleListBuilder(
+      public protocol.client.Client.ROLE_LOGIN_INFO.Builder addRoleListBuilder(
           int index) {
         return getRoleListFieldBuilder().addBuilder(
-            index, protocol.client.Client.ROLE_INFO.getDefaultInstance());
+            index, protocol.client.Client.ROLE_LOGIN_INFO.getDefaultInstance());
       }
       /**
-       * <code>repeated .protocol.client.ROLE_INFO roleList = 4;</code>
+       * <code>repeated .protocol.client.ROLE_LOGIN_INFO roleList = 5;</code>
        */
-      public java.util.List<protocol.client.Client.ROLE_INFO.Builder> 
+      public java.util.List<protocol.client.Client.ROLE_LOGIN_INFO.Builder> 
            getRoleListBuilderList() {
         return getRoleListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          protocol.client.Client.ROLE_INFO, protocol.client.Client.ROLE_INFO.Builder, protocol.client.Client.ROLE_INFOOrBuilder> 
+          protocol.client.Client.ROLE_LOGIN_INFO, protocol.client.Client.ROLE_LOGIN_INFO.Builder, protocol.client.Client.ROLE_LOGIN_INFOOrBuilder> 
           getRoleListFieldBuilder() {
         if (roleListBuilder_ == null) {
           roleListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              protocol.client.Client.ROLE_INFO, protocol.client.Client.ROLE_INFO.Builder, protocol.client.Client.ROLE_INFOOrBuilder>(
+              protocol.client.Client.ROLE_LOGIN_INFO, protocol.client.Client.ROLE_LOGIN_INFO.Builder, protocol.client.Client.ROLE_LOGIN_INFOOrBuilder>(
                   roleList_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
           roleList_ = null;
@@ -4397,6 +5331,658 @@ public final class Client {
 
   }
 
+  public interface MSG_CG_CREATE_ROLEOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.client.MSG_CG_CREATE_ROLE)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string name = 1;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>required string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>required string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional int32 areaId = 2;</code>
+     */
+    boolean hasAreaId();
+    /**
+     * <code>optional int32 areaId = 2;</code>
+     */
+    int getAreaId();
+  }
+  /**
+   * Protobuf type {@code protocol.client.MSG_CG_CREATE_ROLE}
+   */
+  public  static final class MSG_CG_CREATE_ROLE extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protocol.client.MSG_CG_CREATE_ROLE)
+      MSG_CG_CREATE_ROLEOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MSG_CG_CREATE_ROLE.newBuilder() to construct.
+    private MSG_CG_CREATE_ROLE(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MSG_CG_CREATE_ROLE() {
+      name_ = "";
+      areaId_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MSG_CG_CREATE_ROLE(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              areaId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              protocol.client.Client.MSG_CG_CREATE_ROLE.class, protocol.client.Client.MSG_CG_CREATE_ROLE.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>required string name = 1;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AREAID_FIELD_NUMBER = 2;
+    private int areaId_;
+    /**
+     * <code>optional int32 areaId = 2;</code>
+     */
+    public boolean hasAreaId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 areaId = 2;</code>
+     */
+    public int getAreaId() {
+      return areaId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, areaId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, areaId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof protocol.client.Client.MSG_CG_CREATE_ROLE)) {
+        return super.equals(obj);
+      }
+      protocol.client.Client.MSG_CG_CREATE_ROLE other = (protocol.client.Client.MSG_CG_CREATE_ROLE) obj;
+
+      boolean result = true;
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && (hasAreaId() == other.hasAreaId());
+      if (hasAreaId()) {
+        result = result && (getAreaId()
+            == other.getAreaId());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasAreaId()) {
+        hash = (37 * hash) + AREAID_FIELD_NUMBER;
+        hash = (53 * hash) + getAreaId();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(protocol.client.Client.MSG_CG_CREATE_ROLE prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocol.client.MSG_CG_CREATE_ROLE}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protocol.client.MSG_CG_CREATE_ROLE)
+        protocol.client.Client.MSG_CG_CREATE_ROLEOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                protocol.client.Client.MSG_CG_CREATE_ROLE.class, protocol.client.Client.MSG_CG_CREATE_ROLE.Builder.class);
+      }
+
+      // Construct using protocol.client.Client.MSG_CG_CREATE_ROLE.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        areaId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_descriptor;
+      }
+
+      public protocol.client.Client.MSG_CG_CREATE_ROLE getDefaultInstanceForType() {
+        return protocol.client.Client.MSG_CG_CREATE_ROLE.getDefaultInstance();
+      }
+
+      public protocol.client.Client.MSG_CG_CREATE_ROLE build() {
+        protocol.client.Client.MSG_CG_CREATE_ROLE result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public protocol.client.Client.MSG_CG_CREATE_ROLE buildPartial() {
+        protocol.client.Client.MSG_CG_CREATE_ROLE result = new protocol.client.Client.MSG_CG_CREATE_ROLE(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.areaId_ = areaId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof protocol.client.Client.MSG_CG_CREATE_ROLE) {
+          return mergeFrom((protocol.client.Client.MSG_CG_CREATE_ROLE)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(protocol.client.Client.MSG_CG_CREATE_ROLE other) {
+        if (other == protocol.client.Client.MSG_CG_CREATE_ROLE.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          bitField0_ |= 0x00000001;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasAreaId()) {
+          setAreaId(other.getAreaId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasName()) {
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        protocol.client.Client.MSG_CG_CREATE_ROLE parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (protocol.client.Client.MSG_CG_CREATE_ROLE) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int areaId_ ;
+      /**
+       * <code>optional int32 areaId = 2;</code>
+       */
+      public boolean hasAreaId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 areaId = 2;</code>
+       */
+      public int getAreaId() {
+        return areaId_;
+      }
+      /**
+       * <code>optional int32 areaId = 2;</code>
+       */
+      public Builder setAreaId(int value) {
+        bitField0_ |= 0x00000002;
+        areaId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 areaId = 2;</code>
+       */
+      public Builder clearAreaId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        areaId_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protocol.client.MSG_CG_CREATE_ROLE)
+    }
+
+    // @@protoc_insertion_point(class_scope:protocol.client.MSG_CG_CREATE_ROLE)
+    private static final protocol.client.Client.MSG_CG_CREATE_ROLE DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new protocol.client.Client.MSG_CG_CREATE_ROLE();
+    }
+
+    public static protocol.client.Client.MSG_CG_CREATE_ROLE getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_CG_CREATE_ROLE>
+        PARSER = new com.google.protobuf.AbstractParser<MSG_CG_CREATE_ROLE>() {
+      public MSG_CG_CREATE_ROLE parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MSG_CG_CREATE_ROLE(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MSG_CG_CREATE_ROLE> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MSG_CG_CREATE_ROLE> getParserForType() {
+      return PARSER;
+    }
+
+    public protocol.client.Client.MSG_CG_CREATE_ROLE getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ROLE_INFOOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.client.ROLE_INFO)
       com.google.protobuf.MessageOrBuilder {
@@ -4425,22 +6011,13 @@ public final class Client {
         getNameBytes();
 
     /**
-     * <code>optional int32 sex = 3;</code>
+     * <code>optional int32 areaId = 3;</code>
      */
-    boolean hasSex();
+    boolean hasAreaId();
     /**
-     * <code>optional int32 sex = 3;</code>
+     * <code>optional int32 areaId = 3;</code>
      */
-    int getSex();
-
-    /**
-     * <code>optional int32 faceIconId = 4;</code>
-     */
-    boolean hasFaceIconId();
-    /**
-     * <code>optional int32 faceIconId = 4;</code>
-     */
-    int getFaceIconId();
+    int getAreaId();
   }
   /**
    * Protobuf type {@code protocol.client.ROLE_INFO}
@@ -4457,8 +6034,7 @@ public final class Client {
     private ROLE_INFO() {
       uid_ = 0;
       name_ = "";
-      sex_ = 0;
-      faceIconId_ = 0;
+      areaId_ = 0;
     }
 
     @java.lang.Override
@@ -4505,12 +6081,7 @@ public final class Client {
             }
             case 24: {
               bitField0_ |= 0x00000004;
-              sex_ = input.readInt32();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              faceIconId_ = input.readInt32();
+              areaId_ = input.readInt32();
               break;
             }
           }
@@ -4595,34 +6166,19 @@ public final class Client {
       }
     }
 
-    public static final int SEX_FIELD_NUMBER = 3;
-    private int sex_;
+    public static final int AREAID_FIELD_NUMBER = 3;
+    private int areaId_;
     /**
-     * <code>optional int32 sex = 3;</code>
+     * <code>optional int32 areaId = 3;</code>
      */
-    public boolean hasSex() {
+    public boolean hasAreaId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional int32 sex = 3;</code>
+     * <code>optional int32 areaId = 3;</code>
      */
-    public int getSex() {
-      return sex_;
-    }
-
-    public static final int FACEICONID_FIELD_NUMBER = 4;
-    private int faceIconId_;
-    /**
-     * <code>optional int32 faceIconId = 4;</code>
-     */
-    public boolean hasFaceIconId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional int32 faceIconId = 4;</code>
-     */
-    public int getFaceIconId() {
-      return faceIconId_;
+    public int getAreaId() {
+      return areaId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4648,10 +6204,7 @@ public final class Client {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, sex_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt32(4, faceIconId_);
+        output.writeInt32(3, areaId_);
       }
       unknownFields.writeTo(output);
     }
@@ -4670,11 +6223,7 @@ public final class Client {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, sex_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, faceIconId_);
+          .computeInt32Size(3, areaId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4702,15 +6251,10 @@ public final class Client {
         result = result && getName()
             .equals(other.getName());
       }
-      result = result && (hasSex() == other.hasSex());
-      if (hasSex()) {
-        result = result && (getSex()
-            == other.getSex());
-      }
-      result = result && (hasFaceIconId() == other.hasFaceIconId());
-      if (hasFaceIconId()) {
-        result = result && (getFaceIconId()
-            == other.getFaceIconId());
+      result = result && (hasAreaId() == other.hasAreaId());
+      if (hasAreaId()) {
+        result = result && (getAreaId()
+            == other.getAreaId());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -4731,13 +6275,9 @@ public final class Client {
         hash = (37 * hash) + NAME_FIELD_NUMBER;
         hash = (53 * hash) + getName().hashCode();
       }
-      if (hasSex()) {
-        hash = (37 * hash) + SEX_FIELD_NUMBER;
-        hash = (53 * hash) + getSex();
-      }
-      if (hasFaceIconId()) {
-        hash = (37 * hash) + FACEICONID_FIELD_NUMBER;
-        hash = (53 * hash) + getFaceIconId();
+      if (hasAreaId()) {
+        hash = (37 * hash) + AREAID_FIELD_NUMBER;
+        hash = (53 * hash) + getAreaId();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4872,10 +6412,8 @@ public final class Client {
         bitField0_ = (bitField0_ & ~0x00000001);
         name_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        sex_ = 0;
+        areaId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
-        faceIconId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -4911,11 +6449,7 @@ public final class Client {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.sex_ = sex_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.faceIconId_ = faceIconId_;
+        result.areaId_ = areaId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4966,11 +6500,8 @@ public final class Client {
           name_ = other.name_;
           onChanged();
         }
-        if (other.hasSex()) {
-          setSex(other.getSex());
-        }
-        if (other.hasFaceIconId()) {
-          setFaceIconId(other.getFaceIconId());
+        if (other.hasAreaId()) {
+          setAreaId(other.getAreaId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5111,66 +6642,34 @@ public final class Client {
         return this;
       }
 
-      private int sex_ ;
+      private int areaId_ ;
       /**
-       * <code>optional int32 sex = 3;</code>
+       * <code>optional int32 areaId = 3;</code>
        */
-      public boolean hasSex() {
+      public boolean hasAreaId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional int32 sex = 3;</code>
+       * <code>optional int32 areaId = 3;</code>
        */
-      public int getSex() {
-        return sex_;
+      public int getAreaId() {
+        return areaId_;
       }
       /**
-       * <code>optional int32 sex = 3;</code>
+       * <code>optional int32 areaId = 3;</code>
        */
-      public Builder setSex(int value) {
+      public Builder setAreaId(int value) {
         bitField0_ |= 0x00000004;
-        sex_ = value;
+        areaId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 sex = 3;</code>
+       * <code>optional int32 areaId = 3;</code>
        */
-      public Builder clearSex() {
+      public Builder clearAreaId() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        sex_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int faceIconId_ ;
-      /**
-       * <code>optional int32 faceIconId = 4;</code>
-       */
-      public boolean hasFaceIconId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional int32 faceIconId = 4;</code>
-       */
-      public int getFaceIconId() {
-        return faceIconId_;
-      }
-      /**
-       * <code>optional int32 faceIconId = 4;</code>
-       */
-      public Builder setFaceIconId(int value) {
-        bitField0_ |= 0x00000008;
-        faceIconId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 faceIconId = 4;</code>
-       */
-      public Builder clearFaceIconId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        faceIconId_ = 0;
+        areaId_ = 0;
         onChanged();
         return this;
       }
@@ -5223,612 +6722,6 @@ public final class Client {
 
   }
 
-  public interface MSG_CG_CREATE_ROLEOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protocol.client.MSG_CG_CREATE_ROLE)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-     */
-    boolean hasRoleInfo();
-    /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-     */
-    protocol.client.Client.ROLE_INFO getRoleInfo();
-    /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-     */
-    protocol.client.Client.ROLE_INFOOrBuilder getRoleInfoOrBuilder();
-  }
-  /**
-   * Protobuf type {@code protocol.client.MSG_CG_CREATE_ROLE}
-   */
-  public  static final class MSG_CG_CREATE_ROLE extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protocol.client.MSG_CG_CREATE_ROLE)
-      MSG_CG_CREATE_ROLEOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MSG_CG_CREATE_ROLE.newBuilder() to construct.
-    private MSG_CG_CREATE_ROLE(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MSG_CG_CREATE_ROLE() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MSG_CG_CREATE_ROLE(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              protocol.client.Client.ROLE_INFO.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                subBuilder = roleInfo_.toBuilder();
-              }
-              roleInfo_ = input.readMessage(protocol.client.Client.ROLE_INFO.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(roleInfo_);
-                roleInfo_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              protocol.client.Client.MSG_CG_CREATE_ROLE.class, protocol.client.Client.MSG_CG_CREATE_ROLE.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int ROLEINFO_FIELD_NUMBER = 1;
-    private protocol.client.Client.ROLE_INFO roleInfo_;
-    /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-     */
-    public boolean hasRoleInfo() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-     */
-    public protocol.client.Client.ROLE_INFO getRoleInfo() {
-      return roleInfo_ == null ? protocol.client.Client.ROLE_INFO.getDefaultInstance() : roleInfo_;
-    }
-    /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-     */
-    public protocol.client.Client.ROLE_INFOOrBuilder getRoleInfoOrBuilder() {
-      return roleInfo_ == null ? protocol.client.Client.ROLE_INFO.getDefaultInstance() : roleInfo_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasRoleInfo()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!getRoleInfo().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(1, getRoleInfo());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getRoleInfo());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof protocol.client.Client.MSG_CG_CREATE_ROLE)) {
-        return super.equals(obj);
-      }
-      protocol.client.Client.MSG_CG_CREATE_ROLE other = (protocol.client.Client.MSG_CG_CREATE_ROLE) obj;
-
-      boolean result = true;
-      result = result && (hasRoleInfo() == other.hasRoleInfo());
-      if (hasRoleInfo()) {
-        result = result && getRoleInfo()
-            .equals(other.getRoleInfo());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRoleInfo()) {
-        hash = (37 * hash) + ROLEINFO_FIELD_NUMBER;
-        hash = (53 * hash) + getRoleInfo().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(protocol.client.Client.MSG_CG_CREATE_ROLE prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code protocol.client.MSG_CG_CREATE_ROLE}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protocol.client.MSG_CG_CREATE_ROLE)
-        protocol.client.Client.MSG_CG_CREATE_ROLEOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                protocol.client.Client.MSG_CG_CREATE_ROLE.class, protocol.client.Client.MSG_CG_CREATE_ROLE.Builder.class);
-      }
-
-      // Construct using protocol.client.Client.MSG_CG_CREATE_ROLE.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRoleInfoFieldBuilder();
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (roleInfoBuilder_ == null) {
-          roleInfo_ = null;
-        } else {
-          roleInfoBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return protocol.client.Client.internal_static_protocol_client_MSG_CG_CREATE_ROLE_descriptor;
-      }
-
-      public protocol.client.Client.MSG_CG_CREATE_ROLE getDefaultInstanceForType() {
-        return protocol.client.Client.MSG_CG_CREATE_ROLE.getDefaultInstance();
-      }
-
-      public protocol.client.Client.MSG_CG_CREATE_ROLE build() {
-        protocol.client.Client.MSG_CG_CREATE_ROLE result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public protocol.client.Client.MSG_CG_CREATE_ROLE buildPartial() {
-        protocol.client.Client.MSG_CG_CREATE_ROLE result = new protocol.client.Client.MSG_CG_CREATE_ROLE(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        if (roleInfoBuilder_ == null) {
-          result.roleInfo_ = roleInfo_;
-        } else {
-          result.roleInfo_ = roleInfoBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protocol.client.Client.MSG_CG_CREATE_ROLE) {
-          return mergeFrom((protocol.client.Client.MSG_CG_CREATE_ROLE)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(protocol.client.Client.MSG_CG_CREATE_ROLE other) {
-        if (other == protocol.client.Client.MSG_CG_CREATE_ROLE.getDefaultInstance()) return this;
-        if (other.hasRoleInfo()) {
-          mergeRoleInfo(other.getRoleInfo());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasRoleInfo()) {
-          return false;
-        }
-        if (!getRoleInfo().isInitialized()) {
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        protocol.client.Client.MSG_CG_CREATE_ROLE parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protocol.client.Client.MSG_CG_CREATE_ROLE) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private protocol.client.Client.ROLE_INFO roleInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.client.Client.ROLE_INFO, protocol.client.Client.ROLE_INFO.Builder, protocol.client.Client.ROLE_INFOOrBuilder> roleInfoBuilder_;
-      /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-       */
-      public boolean hasRoleInfo() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-       */
-      public protocol.client.Client.ROLE_INFO getRoleInfo() {
-        if (roleInfoBuilder_ == null) {
-          return roleInfo_ == null ? protocol.client.Client.ROLE_INFO.getDefaultInstance() : roleInfo_;
-        } else {
-          return roleInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-       */
-      public Builder setRoleInfo(protocol.client.Client.ROLE_INFO value) {
-        if (roleInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          roleInfo_ = value;
-          onChanged();
-        } else {
-          roleInfoBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-       */
-      public Builder setRoleInfo(
-          protocol.client.Client.ROLE_INFO.Builder builderForValue) {
-        if (roleInfoBuilder_ == null) {
-          roleInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          roleInfoBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-       */
-      public Builder mergeRoleInfo(protocol.client.Client.ROLE_INFO value) {
-        if (roleInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001) &&
-              roleInfo_ != null &&
-              roleInfo_ != protocol.client.Client.ROLE_INFO.getDefaultInstance()) {
-            roleInfo_ =
-              protocol.client.Client.ROLE_INFO.newBuilder(roleInfo_).mergeFrom(value).buildPartial();
-          } else {
-            roleInfo_ = value;
-          }
-          onChanged();
-        } else {
-          roleInfoBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-       */
-      public Builder clearRoleInfo() {
-        if (roleInfoBuilder_ == null) {
-          roleInfo_ = null;
-          onChanged();
-        } else {
-          roleInfoBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-      /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-       */
-      public protocol.client.Client.ROLE_INFO.Builder getRoleInfoBuilder() {
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return getRoleInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-       */
-      public protocol.client.Client.ROLE_INFOOrBuilder getRoleInfoOrBuilder() {
-        if (roleInfoBuilder_ != null) {
-          return roleInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return roleInfo_ == null ?
-              protocol.client.Client.ROLE_INFO.getDefaultInstance() : roleInfo_;
-        }
-      }
-      /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          protocol.client.Client.ROLE_INFO, protocol.client.Client.ROLE_INFO.Builder, protocol.client.Client.ROLE_INFOOrBuilder> 
-          getRoleInfoFieldBuilder() {
-        if (roleInfoBuilder_ == null) {
-          roleInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              protocol.client.Client.ROLE_INFO, protocol.client.Client.ROLE_INFO.Builder, protocol.client.Client.ROLE_INFOOrBuilder>(
-                  getRoleInfo(),
-                  getParentForChildren(),
-                  isClean());
-          roleInfo_ = null;
-        }
-        return roleInfoBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:protocol.client.MSG_CG_CREATE_ROLE)
-    }
-
-    // @@protoc_insertion_point(class_scope:protocol.client.MSG_CG_CREATE_ROLE)
-    private static final protocol.client.Client.MSG_CG_CREATE_ROLE DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new protocol.client.Client.MSG_CG_CREATE_ROLE();
-    }
-
-    public static protocol.client.Client.MSG_CG_CREATE_ROLE getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MSG_CG_CREATE_ROLE>
-        PARSER = new com.google.protobuf.AbstractParser<MSG_CG_CREATE_ROLE>() {
-      public MSG_CG_CREATE_ROLE parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MSG_CG_CREATE_ROLE(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MSG_CG_CREATE_ROLE> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MSG_CG_CREATE_ROLE> getParserForType() {
-      return PARSER;
-    }
-
-    public protocol.client.Client.MSG_CG_CREATE_ROLE getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface MSG_GC_CREATE_ROLEOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.client.MSG_GC_CREATE_ROLE)
       com.google.protobuf.MessageOrBuilder {
@@ -5843,15 +6736,15 @@ public final class Client {
     int getResult();
 
     /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+     * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
      */
     boolean hasRoleInfo();
     /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+     * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
      */
     protocol.client.Client.ROLE_INFO getRoleInfo();
     /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+     * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
      */
     protocol.client.Client.ROLE_INFOOrBuilder getRoleInfoOrBuilder();
   }
@@ -5963,19 +6856,19 @@ public final class Client {
     public static final int ROLEINFO_FIELD_NUMBER = 2;
     private protocol.client.Client.ROLE_INFO roleInfo_;
     /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+     * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
      */
     public boolean hasRoleInfo() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+     * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
      */
     public protocol.client.Client.ROLE_INFO getRoleInfo() {
       return roleInfo_ == null ? protocol.client.Client.ROLE_INFO.getDefaultInstance() : roleInfo_;
     }
     /**
-     * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+     * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
      */
     public protocol.client.Client.ROLE_INFOOrBuilder getRoleInfoOrBuilder() {
       return roleInfo_ == null ? protocol.client.Client.ROLE_INFO.getDefaultInstance() : roleInfo_;
@@ -5991,13 +6884,11 @@ public final class Client {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasRoleInfo()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!getRoleInfo().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
+      if (hasRoleInfo()) {
+        if (!getRoleInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
       }
       memoizedIsInitialized = 1;
       return true;
@@ -6303,11 +7194,10 @@ public final class Client {
         if (!hasResult()) {
           return false;
         }
-        if (!hasRoleInfo()) {
-          return false;
-        }
-        if (!getRoleInfo().isInitialized()) {
-          return false;
+        if (hasRoleInfo()) {
+          if (!getRoleInfo().isInitialized()) {
+            return false;
+          }
         }
         return true;
       }
@@ -6367,13 +7257,13 @@ public final class Client {
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.client.Client.ROLE_INFO, protocol.client.Client.ROLE_INFO.Builder, protocol.client.Client.ROLE_INFOOrBuilder> roleInfoBuilder_;
       /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+       * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
        */
       public boolean hasRoleInfo() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+       * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
        */
       public protocol.client.Client.ROLE_INFO getRoleInfo() {
         if (roleInfoBuilder_ == null) {
@@ -6383,7 +7273,7 @@ public final class Client {
         }
       }
       /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+       * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
        */
       public Builder setRoleInfo(protocol.client.Client.ROLE_INFO value) {
         if (roleInfoBuilder_ == null) {
@@ -6399,7 +7289,7 @@ public final class Client {
         return this;
       }
       /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+       * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
        */
       public Builder setRoleInfo(
           protocol.client.Client.ROLE_INFO.Builder builderForValue) {
@@ -6413,7 +7303,7 @@ public final class Client {
         return this;
       }
       /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+       * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
        */
       public Builder mergeRoleInfo(protocol.client.Client.ROLE_INFO value) {
         if (roleInfoBuilder_ == null) {
@@ -6433,7 +7323,7 @@ public final class Client {
         return this;
       }
       /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+       * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
        */
       public Builder clearRoleInfo() {
         if (roleInfoBuilder_ == null) {
@@ -6446,7 +7336,7 @@ public final class Client {
         return this;
       }
       /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+       * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
        */
       public protocol.client.Client.ROLE_INFO.Builder getRoleInfoBuilder() {
         bitField0_ |= 0x00000002;
@@ -6454,7 +7344,7 @@ public final class Client {
         return getRoleInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+       * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
        */
       public protocol.client.Client.ROLE_INFOOrBuilder getRoleInfoOrBuilder() {
         if (roleInfoBuilder_ != null) {
@@ -6465,7 +7355,7 @@ public final class Client {
         }
       }
       /**
-       * <code>required .protocol.client.ROLE_INFO roleInfo = 2;</code>
+       * <code>optional .protocol.client.ROLE_INFO roleInfo = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           protocol.client.Client.ROLE_INFO, protocol.client.Client.ROLE_INFO.Builder, protocol.client.Client.ROLE_INFOOrBuilder> 
@@ -6535,6 +7425,11 @@ public final class Client {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protocol_client_MSG_CG_USER_LOGIN_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocol_client_ROLE_LOGIN_INFO_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protocol_client_ROLE_LOGIN_INFO_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protocol_client_MSG_GC_USER_LOGIN_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6550,15 +7445,15 @@ public final class Client {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protocol_client_MSG_GC_RECONNECT_LOGIN_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_client_ROLE_INFO_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protocol_client_ROLE_INFO_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protocol_client_MSG_CG_CREATE_ROLE_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protocol_client_MSG_CG_CREATE_ROLE_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocol_client_ROLE_INFO_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protocol_client_ROLE_INFO_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protocol_client_MSG_GC_CREATE_ROLE_descriptor;
   private static final 
@@ -6573,23 +7468,25 @@ public final class Client {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Client.proto\022\017protocol.client\"\243\001\n\021MSG_" +
+      "\n\014Client.proto\022\017protocol.client\"\242\001\n\021MSG_" +
       "CG_USER_LOGIN\022\020\n\010username\030\001 \002(\t\022\020\n\010passw" +
-      "ord\030\002 \002(\t\022\017\n\007version\030\003 \002(\t\022\020\n\010deviceId\030\004" +
-      " \002(\t\022\022\n\nregisterId\030\005 \002(\t\022\023\n\013channelName\030" +
-      "\006 \002(\t\022\017\n\007groupId\030\007 \002(\005\022\r\n\005token\030\010 \002(\t\"r\n" +
-      "\021MSG_GC_USER_LOGIN\022\016\n\006result\030\001 \002(\005\022\020\n\010us" +
-      "ername\030\002 \002(\t\022\r\n\005token\030\003 \001(\t\022,\n\010roleList\030" +
-      "\004 \003(\0132\032.protocol.client.ROLE_INFO\"[\n\026MSG" +
-      "_CG_RECONNECT_LOGIN\022\020\n\010username\030\001 \002(\t\022\r\n" +
-      "\005token\030\002 \002(\t\022\013\n\003uid\030\003 \002(\005\022\023\n\013oldBlowFish" +
-      "\030\004 \002(\t\"(\n\026MSG_GC_RECONNECT_LOGIN\022\016\n\006resu" +
-      "lt\030\001 \002(\005\"G\n\tROLE_INFO\022\013\n\003uid\030\001 \001(\005\022\014\n\004na" +
-      "me\030\002 \002(\t\022\013\n\003sex\030\003 \001(\005\022\022\n\nfaceIconId\030\004 \001(" +
-      "\005\"B\n\022MSG_CG_CREATE_ROLE\022,\n\010roleInfo\030\001 \002(" +
-      "\0132\032.protocol.client.ROLE_INFO\"R\n\022MSG_GC_" +
-      "CREATE_ROLE\022\016\n\006result\030\001 \002(\005\022,\n\010roleInfo\030" +
-      "\002 \002(\0132\032.protocol.client.ROLE_INFO"
+      "ord\030\002 \002(\t\022\016\n\006areaId\030\003 \002(\005\022\017\n\007version\030\005 \002" +
+      "(\t\022\020\n\010deviceId\030\006 \002(\t\022\022\n\nregisterId\030\007 \002(\t" +
+      "\022\023\n\013channelName\030\010 \002(\t\022\r\n\005token\030\t \002(\t\"T\n\017" +
+      "ROLE_LOGIN_INFO\022\013\n\003uid\030\001 \001(\005\022\014\n\004name\030\002 \002" +
+      "(\t\022\016\n\006areaId\030\003 \002(\005\022\026\n\016originalAreaId\030\004 \002" +
+      "(\005\"\210\001\n\021MSG_GC_USER_LOGIN\022\016\n\006result\030\001 \002(\005" +
+      "\022\020\n\010username\030\002 \002(\t\022\016\n\006areaId\030\003 \002(\005\022\r\n\005to" +
+      "ken\030\004 \001(\t\0222\n\010roleList\030\005 \003(\0132 .protocol.c" +
+      "lient.ROLE_LOGIN_INFO\"[\n\026MSG_CG_RECONNEC" +
+      "T_LOGIN\022\020\n\010username\030\001 \002(\t\022\r\n\005token\030\002 \002(\t" +
+      "\022\013\n\003uid\030\003 \002(\005\022\023\n\013oldBlowFish\030\004 \002(\t\"(\n\026MS" +
+      "G_GC_RECONNECT_LOGIN\022\016\n\006result\030\001 \002(\005\"2\n\022" +
+      "MSG_CG_CREATE_ROLE\022\014\n\004name\030\001 \002(\t\022\016\n\006area" +
+      "Id\030\002 \001(\005\"6\n\tROLE_INFO\022\013\n\003uid\030\001 \001(\005\022\014\n\004na" +
+      "me\030\002 \002(\t\022\016\n\006areaId\030\003 \001(\005\"R\n\022MSG_GC_CREAT" +
+      "E_ROLE\022\016\n\006result\030\001 \002(\005\022,\n\010roleInfo\030\002 \001(\013" +
+      "2\032.protocol.client.ROLE_INFO"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6608,39 +7505,45 @@ public final class Client {
     internal_static_protocol_client_MSG_CG_USER_LOGIN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_client_MSG_CG_USER_LOGIN_descriptor,
-        new java.lang.String[] { "Username", "Password", "Version", "DeviceId", "RegisterId", "ChannelName", "GroupId", "Token", });
-    internal_static_protocol_client_MSG_GC_USER_LOGIN_descriptor =
+        new java.lang.String[] { "Username", "Password", "AreaId", "Version", "DeviceId", "RegisterId", "ChannelName", "Token", });
+    internal_static_protocol_client_ROLE_LOGIN_INFO_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_protocol_client_ROLE_LOGIN_INFO_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protocol_client_ROLE_LOGIN_INFO_descriptor,
+        new java.lang.String[] { "Uid", "Name", "AreaId", "OriginalAreaId", });
+    internal_static_protocol_client_MSG_GC_USER_LOGIN_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_protocol_client_MSG_GC_USER_LOGIN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_client_MSG_GC_USER_LOGIN_descriptor,
-        new java.lang.String[] { "Result", "Username", "Token", "RoleList", });
+        new java.lang.String[] { "Result", "Username", "AreaId", "Token", "RoleList", });
     internal_static_protocol_client_MSG_CG_RECONNECT_LOGIN_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_protocol_client_MSG_CG_RECONNECT_LOGIN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_client_MSG_CG_RECONNECT_LOGIN_descriptor,
         new java.lang.String[] { "Username", "Token", "Uid", "OldBlowFish", });
     internal_static_protocol_client_MSG_GC_RECONNECT_LOGIN_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_protocol_client_MSG_GC_RECONNECT_LOGIN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_client_MSG_GC_RECONNECT_LOGIN_descriptor,
         new java.lang.String[] { "Result", });
-    internal_static_protocol_client_ROLE_INFO_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_protocol_client_ROLE_INFO_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protocol_client_ROLE_INFO_descriptor,
-        new java.lang.String[] { "Uid", "Name", "Sex", "FaceIconId", });
     internal_static_protocol_client_MSG_CG_CREATE_ROLE_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_protocol_client_MSG_CG_CREATE_ROLE_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_client_MSG_CG_CREATE_ROLE_descriptor,
-        new java.lang.String[] { "RoleInfo", });
-    internal_static_protocol_client_MSG_GC_CREATE_ROLE_descriptor =
+        new java.lang.String[] { "Name", "AreaId", });
+    internal_static_protocol_client_ROLE_INFO_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_protocol_client_ROLE_INFO_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protocol_client_ROLE_INFO_descriptor,
+        new java.lang.String[] { "Uid", "Name", "AreaId", });
+    internal_static_protocol_client_MSG_GC_CREATE_ROLE_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_protocol_client_MSG_GC_CREATE_ROLE_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_client_MSG_GC_CREATE_ROLE_descriptor,

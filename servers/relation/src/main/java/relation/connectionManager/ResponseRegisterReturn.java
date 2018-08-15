@@ -30,7 +30,7 @@ public class ResponseRegisterReturn implements IResponseHandler{
 
         //注册反馈 MSG_Server_Register_Return
         ServerType serverType = ServerType.values()[msg.getTag().getServerType()];
-        int groupId = msg.getTag().getGroupId();
+        int groupId = msg.getTag().getAreaId();
         int subId = msg.getTag().getSubId();
 
         ServerTag tag = new ServerTag();
@@ -45,17 +45,17 @@ public class ResponseRegisterReturn implements IResponseHandler{
                     registerResult = GlobalServerSessionMng.getInstance().register(session);
                     break;
                 case Manager:
-                    if (Context.tag.getGroupId() > tag.getGroupId() ) {
+                    if (Context.tag.getAreaId() > tag.getAreaId() ) {
                         registerResult = ManagerServerSessionMng.getInstance().register(session);
                     }
                     else {
-                        log.error("SERIOUS ERROR:  registerHandler result error from {} fail : groupId {} wrong",tag.toString(),tag.getGroupId());
+                        log.error("SERIOUS ERROR:  registerHandler result error from {} fail : areaId {} wrong",tag.toString(),tag.getAreaId());
                         RelationService.context.stop();
                         return;
                     }
                    break;
                 case Relation:
-                    if (Context.tag.getGroupId() > tag.getGroupId() ){
+                    if (Context.tag.getAreaId() > tag.getAreaId() ){
                         registerResult = RelationServerSessionMng.getInstance().register(session);
                     }
                     else {

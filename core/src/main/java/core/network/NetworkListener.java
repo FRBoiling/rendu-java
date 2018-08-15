@@ -51,7 +51,7 @@ public class NetworkListener implements INetworkEventListener {
             //下线
             log.error("[没有找到有效会话]");
         }else {
-            log.debug("remove session {}",session.getTag().toString());
+            log.debug("remove session {}",session.getChannel().toString());
             sessionMng.removeSession(session);
         }
     }

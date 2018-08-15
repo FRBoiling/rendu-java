@@ -13,7 +13,7 @@ public class Packet {
     private int msgId;
     private short msgLength;
     private byte[] msg;
-    private int playerId=0;
+    private int roleId =0;
 
     public Packet(){
 

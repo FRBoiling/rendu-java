@@ -1,7 +1,6 @@
 package gamedb.dao.account;
 
 import gamedb.Util.MybatisConfigUtil;
-import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.AccountMapper;
 import gamedb.pojo.account.AccountPOJO;
@@ -17,10 +16,10 @@ public class SelectAccountDBOperator extends AbstractDBOperator {
     @Override
     public boolean execute() {
         try{
-            sqlSession = MybatisConfigUtil.openSqlSession();
+            sqlSession = MybatisConfigUtil.openUniversalSqlSession();
             AccountMapper accountMapper=sqlSession.getMapper(AccountMapper.class);
 
-            account=accountMapper.getAccount(account.getUsername(),account.getChannelName());
+            account=accountMapper.getAccount(account.getUsername());
 
             sqlSession.commit();
             if(account==null) {

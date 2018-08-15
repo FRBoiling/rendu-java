@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 
 public class MaxRoleUidDBOperator extends AbstractDBOperator {
 
-    public int maxUid;
+    public Integer maxUid;
 
     public MaxRoleUidDBOperator() {
     }

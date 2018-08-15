@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gamedb.interfaces.AccountRoleMapper">
+    <insert id="insertAccountRole" parameterType="gamedb.pojo.role.RolePOJO">
+        INSERT INTO `account_role_list`(username,area_id,role_uid,role_name,channel_name) VALUES (#{username},#{areaId},#{uid},#{roleName},#{channelName})
+    </insert>
+    <select id="selectAccountRoles" resultType="gamedb.pojo.accountRoleList.AccountRolePOJO">
+        SELECT username,area_id,role_uid,role_name,channel_name FROM `account_role_list` WHERE username=#{username}
+    </select>
+    <select id="updateRoleName" >
+        UPDATE `account_role_list` SET role_name=#{roleName} where role_uid=#{roleUid}
+    </select>
+</mapper>

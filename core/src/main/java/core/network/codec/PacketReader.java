@@ -14,12 +14,12 @@ import java.util.List;
  * │     2       │      4      │     4      │
  * ├ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┤
  * │             │             │            │
- * │ Body Length     player Id      Invoke Id      Body Content        │
+ * │ Body Length     role Id      Invoke Id      Body Content        │
  * │             │             │            │
  * └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┘
  * <p>
  * 消息头10个字节定长
- *  = 4 // player id int 类型
+ *  = 4 // role id int 类型
  * = 4 // 消息 id int 类型
  * + 2 // 消息体body长度, short类型
  */

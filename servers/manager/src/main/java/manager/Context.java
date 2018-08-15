@@ -9,6 +9,10 @@ import gamedb.dao.AbstractDBOperator;
 import gamedb.dao.role.MaxRoleUidDBOperator;
 import lombok.extern.slf4j.Slf4j;
 import manager.connectionManager.ConnectionManager;
+import manager.gate.GateServerSessionMng;
+import manager.global.GlobalServerSessionMng;
+import manager.relation.RelationServerSessionMng;
+import manager.zone.ZoneServerSessionMng;
 import pathExt.PathManager;
 import protocol.gate.manager.G2MIdGenerater;
 import protocol.global.manager.GM2MIdGenerater;
@@ -59,6 +63,12 @@ public class Context extends AbstractServiceFrame {
         }
 
         initDB();
+
+        GlobalServerSessionMng.getInstance().init();
+        GateServerSessionMng.getInstance().init();
+        ZoneServerSessionMng.getInstance().init();
+//        ManagerServerSessionMng.getInstance().setContext(this);
+        RelationServerSessionMng.getInstance().init();
 
         connectManager = new ConnectionManager();
         initConnectManager(connectManager);
@@ -112,13 +122,16 @@ public class Context extends AbstractServiceFrame {
         dbThread = new DBDriverThread("ManagerDBThread", db);
 
 //        for (int i = 0; i < DBProxyDefault.TableBaseCount; i++) {
-        //String charTableName = db.GetTableName("role", i, DBTableParamType.Character);
+        //String charTableName = db.GetTableName("player", i, DBTableParamType.Character);
         //DBManagerPool charDBPool = db.GetWriteDbByName(charTableName);
         MaxRoleUidDBOperator operator = new MaxRoleUidDBOperator();
         db.Call(operator, (result) ->
         {
             if( operator.getResult()==1){
-                int max = operator.maxUid;
+                int max = 0;
+                if (operator.maxUid != null){
+                    max = operator.maxUid;
+                }
                 maxRoleUid = maxRoleUid > max ? maxRoleUid : max;
                 log.info("table {} max char uid {}", "role", maxRoleUid);
             }
@@ -148,7 +161,7 @@ public class Context extends AbstractServiceFrame {
     }
 
     @Override
-    public void updateService() {
+    public void updateService(long dt) {
         updateDB();
     }
 

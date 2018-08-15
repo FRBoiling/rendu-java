@@ -100,7 +100,7 @@ public class ConnectionManager implements IConnectionManager {
 
     @Override
     public void connect(ServerTag tag, String ip, int port) {
-        if (tag.getGroupId() == Context.tag.getGroupId()) {
+        if (tag.getAreaId() == Context.tag.getAreaId()) {
 
             switch (tag.getType()) {
                 case Manager:

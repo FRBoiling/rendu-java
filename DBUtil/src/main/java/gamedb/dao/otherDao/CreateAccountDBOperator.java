@@ -1,39 +1,44 @@
-package gamedb.dao.account;
+package gamedb.dao.otherDao;
 
-import com.mysql.jdbc.exceptions.MySQLNonTransientConnectionException;
-import com.mysql.jdbc.exceptions.MySQLTransientConnectionException;
 import gamedb.Util.MybatisConfigUtil;
-import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.AccountMapper;
+import gamedb.interfaces.AccountRoleMapper;
 import gamedb.pojo.account.AccountPOJO;
 import lombok.extern.slf4j.Slf4j;
 
-import java.sql.SQLException;
-
-import static com.mysql.jdbc.SQLError.SQL_STATE_UNABLE_TO_CONNECT_TO_DATASOURCE;
-
+/**
+ * Created with Intellij IDEA
+ * Description:
+ * User: Boil
+ * Date: 2018-08-14
+ * Time: 20:02
+ **/
 @Slf4j
 public class CreateAccountDBOperator extends AbstractDBOperator {
     private AccountPOJO account=null;
 
     public CreateAccountDBOperator(AccountPOJO account){
-            this.account=account;
+        this.account=account;
     }
 
     @Override
     public boolean execute() {
         try{
-            sqlSession = MybatisConfigUtil.openSqlSession();
+            sqlSession = MybatisConfigUtil.openUniversalSqlSession();
+            //
             AccountMapper accountMapper=sqlSession.getMapper(AccountMapper.class);
-
             int count=accountMapper.insertAccount(account);
+//            if(count>0) {
+//                //
+//                AccountRoleMapper accountRoleMapper=sqlSession.getMapper(AccountRoleMapper.class);
+//                count=accountRoleMapper.insertAccountRole(account);
+//            }
             sqlSession.commit();
             System.err.println("CreateAccountDBOperator execute count "+count);
             if(count>0){
                 m_result=1;
             }
-
         }catch (Exception ex){
             log.info(ex.getMessage());
             checkExCause(ex);
@@ -46,3 +51,4 @@ public class CreateAccountDBOperator extends AbstractDBOperator {
         }
     }
 }
+

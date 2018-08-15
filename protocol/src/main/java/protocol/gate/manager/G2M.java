@@ -907,18 +907,13 @@ public final class G2M {
         getUsernameBytes();
 
     /**
-     * <code>required string channelName = 2;</code>
+     * <code>required int32 areaId = 2;</code>
      */
-    boolean hasChannelName();
+    boolean hasAreaId();
     /**
-     * <code>required string channelName = 2;</code>
+     * <code>required int32 areaId = 2;</code>
      */
-    java.lang.String getChannelName();
-    /**
-     * <code>required string channelName = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getChannelNameBytes();
+    int getAreaId();
   }
   /**
    * Protobuf type {@code protocol.gate.manager.MSG_G2M_MAX_UID}
@@ -934,7 +929,7 @@ public final class G2M {
     }
     private MSG_G2M_MAX_UID() {
       username_ = "";
-      channelName_ = "";
+      areaId_ = 0;
     }
 
     @java.lang.Override
@@ -974,10 +969,9 @@ public final class G2M {
               username_ = bs;
               break;
             }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 16: {
               bitField0_ |= 0x00000002;
-              channelName_ = bs;
+              areaId_ = input.readInt32();
               break;
             }
           }
@@ -1047,46 +1041,19 @@ public final class G2M {
       }
     }
 
-    public static final int CHANNELNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object channelName_;
+    public static final int AREAID_FIELD_NUMBER = 2;
+    private int areaId_;
     /**
-     * <code>required string channelName = 2;</code>
+     * <code>required int32 areaId = 2;</code>
      */
-    public boolean hasChannelName() {
+    public boolean hasAreaId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string channelName = 2;</code>
+     * <code>required int32 areaId = 2;</code>
      */
-    public java.lang.String getChannelName() {
-      java.lang.Object ref = channelName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          channelName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string channelName = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getChannelNameBytes() {
-      java.lang.Object ref = channelName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        channelName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getAreaId() {
+      return areaId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1099,7 +1066,7 @@ public final class G2M {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasChannelName()) {
+      if (!hasAreaId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1113,7 +1080,7 @@ public final class G2M {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, channelName_);
+        output.writeInt32(2, areaId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1127,7 +1094,8 @@ public final class G2M {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, channelName_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, areaId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1150,10 +1118,10 @@ public final class G2M {
         result = result && getUsername()
             .equals(other.getUsername());
       }
-      result = result && (hasChannelName() == other.hasChannelName());
-      if (hasChannelName()) {
-        result = result && getChannelName()
-            .equals(other.getChannelName());
+      result = result && (hasAreaId() == other.hasAreaId());
+      if (hasAreaId()) {
+        result = result && (getAreaId()
+            == other.getAreaId());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -1170,9 +1138,9 @@ public final class G2M {
         hash = (37 * hash) + USERNAME_FIELD_NUMBER;
         hash = (53 * hash) + getUsername().hashCode();
       }
-      if (hasChannelName()) {
-        hash = (37 * hash) + CHANNELNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getChannelName().hashCode();
+      if (hasAreaId()) {
+        hash = (37 * hash) + AREAID_FIELD_NUMBER;
+        hash = (53 * hash) + getAreaId();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1305,7 +1273,7 @@ public final class G2M {
         super.clear();
         username_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        channelName_ = "";
+        areaId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -1338,7 +1306,7 @@ public final class G2M {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.channelName_ = channelName_;
+        result.areaId_ = areaId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1386,10 +1354,8 @@ public final class G2M {
           username_ = other.username_;
           onChanged();
         }
-        if (other.hasChannelName()) {
-          bitField0_ |= 0x00000002;
-          channelName_ = other.channelName_;
-          onChanged();
+        if (other.hasAreaId()) {
+          setAreaId(other.getAreaId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1400,7 +1366,7 @@ public final class G2M {
         if (!hasUsername()) {
           return false;
         }
-        if (!hasChannelName()) {
+        if (!hasAreaId()) {
           return false;
         }
         return true;
@@ -1501,78 +1467,34 @@ public final class G2M {
         return this;
       }
 
-      private java.lang.Object channelName_ = "";
+      private int areaId_ ;
       /**
-       * <code>required string channelName = 2;</code>
+       * <code>required int32 areaId = 2;</code>
        */
-      public boolean hasChannelName() {
+      public boolean hasAreaId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string channelName = 2;</code>
+       * <code>required int32 areaId = 2;</code>
        */
-      public java.lang.String getChannelName() {
-        java.lang.Object ref = channelName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            channelName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getAreaId() {
+        return areaId_;
       }
       /**
-       * <code>required string channelName = 2;</code>
+       * <code>required int32 areaId = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getChannelNameBytes() {
-        java.lang.Object ref = channelName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          channelName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string channelName = 2;</code>
-       */
-      public Builder setChannelName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        channelName_ = value;
+      public Builder setAreaId(int value) {
+        bitField0_ |= 0x00000002;
+        areaId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string channelName = 2;</code>
+       * <code>required int32 areaId = 2;</code>
        */
-      public Builder clearChannelName() {
+      public Builder clearAreaId() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        channelName_ = getDefaultInstance().getChannelName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string channelName = 2;</code>
-       */
-      public Builder setChannelNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        channelName_ = value;
+        areaId_ = 0;
         onChanged();
         return this;
       }
@@ -1651,8 +1573,8 @@ public final class G2M {
     java.lang.String[] descriptorData = {
       "\n\tG2M.proto\022\025protocol.gate.manager\"\023\n\021MS" +
       "G_G2M_HEARTBEAT\"#\n\024MSG_G2M_REPEAT_LOGIN\022" +
-      "\013\n\003uid\030\001 \002(\005\"8\n\017MSG_G2M_MAX_UID\022\020\n\010usern" +
-      "ame\030\001 \002(\t\022\023\n\013channelName\030\002 \002(\t"
+      "\013\n\003uid\030\001 \002(\005\"3\n\017MSG_G2M_MAX_UID\022\020\n\010usern" +
+      "ame\030\001 \002(\t\022\016\n\006areaId\030\002 \002(\005"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1683,7 +1605,7 @@ public final class G2M {
     internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_gate_manager_MSG_G2M_MAX_UID_descriptor,
-        new java.lang.String[] { "Username", "ChannelName", });
+        new java.lang.String[] { "Username", "AreaId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -26,7 +26,7 @@ public class AbstractSessionManagerTest {
     }
 
     /**
-     * Method: register(AbstractSession session)
+     * Method: initRegister(AbstractSession session)
      */
     @Test
     public void testRegister() throws Exception {
@@ -106,7 +106,7 @@ public class AbstractSessionManagerTest {
     }
 
     /**
-     * Method: broadcastByGroup(MessageLite msg, int groupId)
+     * Method: broadcastByArea(MessageLite msg, int areaId)
      */
     @Test
     public void testBroadcastByGroup() throws Exception {
@@ -157,7 +157,7 @@ public class AbstractSessionManagerTest {
 
 
     /**
-     * Method: broadcastByGroupExceptServer(MessageLite msg, int groupId, ServerTag tag)
+     * Method: broadcastByAreaExceptServer(MessageLite msg, int areaId, ServerTag tag)
      */
     @Test
     public void testBroadcastByGroupExceptServer() throws Exception {

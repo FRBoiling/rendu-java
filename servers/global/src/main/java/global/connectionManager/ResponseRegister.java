@@ -31,17 +31,17 @@ public class ResponseRegister implements IResponseHandler {
 
         //基本信息注册 MSG_Server_Register
         ServerType serverType = ServerType.values()[msg.getTag().getServerType()];
-        int groupId = msg.getTag().getGroupId();
+        int areaId = msg.getTag().getAreaId();
         int subId = msg.getTag().getSubId();
 
         ServerTag tag = new ServerTag();
-        tag.setTag(serverType,groupId,subId);
+        tag.setTag(serverType,areaId,subId);
         session.setTag(tag);
 
         //注册反馈 MSG_Server_Register_Return
         ServerRegister.Server_Tag.Builder serverTag = ServerRegister.Server_Tag.newBuilder();
         serverTag.setServerType(Context.tag.getType().ordinal());
-        serverTag.setGroupId(Context.tag.getGroupId());
+        serverTag.setAreaId(Context.tag.getAreaId());
         serverTag.setSubId(Context.tag.getSubId());
 
         log.debug("{} got register info from {}",Context.tag.toString(),tag.toString());

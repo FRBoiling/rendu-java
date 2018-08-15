@@ -153,7 +153,7 @@ public class ConnectionManager implements IConnectionManager {
 //        //send other managers connection info to this manager
 //        for (AbstractSession manager : ManagerServerSessionMng.getInstance().getRegisterSessions().values()) {
 //            ServerTag tag = (ServerTag) manager.getTag();
-//            if (tag.getGroupId() < managerTag.getGroupId()) {  //约定 groupId 大的为连接方 小的为监听方
+//            if (tag.getAreaId() < managerTag.getAreaId()) {  //约定 areaId 大的为连接方 小的为监听方
 //                sendAcceptorInfo2Connector(tag, managerTag);
 //            }
 //        }
@@ -168,7 +168,7 @@ public class ConnectionManager implements IConnectionManager {
         //send managers connection info to this zone
         for (Map.Entry<ISessionTag,AbstractSession> entry  : ManagerServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
             ServerTag tag = (ServerTag) entry.getKey();
-            if (zoneTag.getGroupId() == tag.getGroupId()){
+            if (zoneTag.getAreaId() == tag.getAreaId()){
                 sendAcceptorInfo2Connector(tag, zoneTag);
             }
         }
@@ -176,7 +176,7 @@ public class ConnectionManager implements IConnectionManager {
         //send relation connection info to this zone
         for (Map.Entry<ISessionTag,AbstractSession> entry : RelationServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
             ServerTag tag = (ServerTag) entry.getKey();
-            if (zoneTag.getGroupId() == tag.getGroupId()) {
+            if (zoneTag.getAreaId() == tag.getAreaId()) {
                 sendAcceptorInfo2Connector(tag, zoneTag);
             }
         }
@@ -201,7 +201,7 @@ public class ConnectionManager implements IConnectionManager {
         //send managers connection info to this gate
         for (Map.Entry<ISessionTag,AbstractSession> entry : ManagerServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
             ServerTag tag = (ServerTag) entry.getKey();
-            if (tag.getGroupId()== gateTag.getGroupId()){
+            if (tag.getAreaId()== gateTag.getAreaId()){
                 sendAcceptorInfo2Connector(tag, gateTag);
             }
         }
@@ -209,7 +209,7 @@ public class ConnectionManager implements IConnectionManager {
         //send zones connection info to this gate
         for (Map.Entry<ISessionTag,AbstractSession> entry : ZoneServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
             ServerTag tag = (ServerTag) entry.getKey();
-            if (tag.getGroupId()== gateTag.getGroupId()) {
+            if (tag.getAreaId()== gateTag.getAreaId()) {
                 sendAcceptorInfo2Connector(tag, gateTag);
             }
         }
@@ -224,7 +224,7 @@ public class ConnectionManager implements IConnectionManager {
         //send other manager's connection info to this relation
         for (Map.Entry<ISessionTag,AbstractSession> entry : ManagerServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
             ServerTag tag = (ServerTag) entry.getKey();
-            if (relationTag.getGroupId()==tag.getGroupId()){
+            if (relationTag.getAreaId()==tag.getAreaId()){
                 sendAcceptorInfo2Connector(tag, relationTag);
             }
         }
@@ -237,7 +237,7 @@ public class ConnectionManager implements IConnectionManager {
         //send other relation's connection info to this relation
         for (Map.Entry<ISessionTag,AbstractSession> entry : RelationServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
             ServerTag tag = (ServerTag) entry.getKey();
-            if (tag.getGroupId() < relationTag.getGroupId()) {  //约定 groupId 大的为连接方 小的为监听方
+            if (tag.getAreaId() < relationTag.getAreaId()) {  //约定 areaId 大的为连接方 小的为监听方
                 sendAcceptorInfo2Connector(tag, relationTag);
             }
         }
@@ -255,7 +255,7 @@ public class ConnectionManager implements IConnectionManager {
         String ip = serverData.getString("ip");
         int listenPort = getListenPortFromData(connectorTag.getType(), serverData);
 
-        ServerRegister.Server_Tag.Builder tagBuilder = getServerTag(acceptorTag.getType(), acceptorTag.getGroupId(), acceptorTag.getSubId());
+        ServerRegister.Server_Tag.Builder tagBuilder = getServerTag(acceptorTag.getType(), acceptorTag.getAreaId(), acceptorTag.getSubId());
         ServerRegister.Connect_Info.Builder connectInfoBuilder = getServerConnectInfo(ip, listenPort);
         ServerRegister.MSG_Server_Connect_Command.Builder commandBuilder = getConnectionCommand(tagBuilder, connectInfoBuilder);
 
@@ -290,7 +290,7 @@ public class ConnectionManager implements IConnectionManager {
         String ip = serverData.getString("ip");
         int listenPort = getListenPortFromData(connectorType, serverData);
 
-        ServerRegister.Server_Tag.Builder tagBuilder = getServerTag(acceptorTag.getType(), acceptorTag.getGroupId(), acceptorTag.getSubId());
+        ServerRegister.Server_Tag.Builder tagBuilder = getServerTag(acceptorTag.getType(), acceptorTag.getAreaId(), acceptorTag.getSubId());
         ServerRegister.Connect_Info.Builder infoBuilder = getServerConnectInfo(ip, listenPort);
         ServerRegister.MSG_Server_Connect_Command.Builder commandBuilder = getConnectionCommand(tagBuilder, infoBuilder);
 
@@ -304,16 +304,16 @@ public class ConnectionManager implements IConnectionManager {
                 break;
             case Relation:
                 if (connectorType == acceptorTag.getType()) {
-                    RelationServerSessionMng.getInstance().broadcastByGroupExceptServer(commandBuilder.build(), acceptorTag.getGroupId(), acceptorTag);
+                    RelationServerSessionMng.getInstance().broadcastByAreaExceptServer(commandBuilder.build(), acceptorTag.getAreaId(), acceptorTag);
                 } else {
-                    RelationServerSessionMng.getInstance().broadcastByGroup(commandBuilder.build(), acceptorTag.getGroupId());
+                    RelationServerSessionMng.getInstance().broadcastByArea(commandBuilder.build(), acceptorTag.getAreaId());
                 }
                 break;
             case Zone:
                 if (connectorType == acceptorTag.getType()) {
-                    ZoneServerSessionMng.getInstance().broadcastByGroupExceptServer(commandBuilder.build(), acceptorTag.getGroupId(), acceptorTag);
+                    ZoneServerSessionMng.getInstance().broadcastByAreaExceptServer(commandBuilder.build(), acceptorTag.getAreaId(), acceptorTag);
                 } else {
-                    ZoneServerSessionMng.getInstance().broadcastByGroup(commandBuilder.build(), acceptorTag.getGroupId());
+                    ZoneServerSessionMng.getInstance().broadcastByArea(commandBuilder.build(), acceptorTag.getAreaId());
                 }
                 break;
             case Gate:

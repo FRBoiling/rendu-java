@@ -1,10 +1,9 @@
 package gamedb.dao.role;
 
 import gamedb.Util.MybatisConfigUtil;
-import gamedb.Util.SqlSessionFactoryUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.RoleMapper;
-import gamedb.pojo.RolePOJO;
+import gamedb.pojo.role.RolePOJO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 @Slf4j

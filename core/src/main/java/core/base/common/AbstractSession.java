@@ -23,17 +23,31 @@ import java.net.InetSocketAddress;
  */
 @Slf4j
 @Getter
-@Setter
 public abstract class AbstractSession {
 
     private Channel channel;
 
+    @Setter
     private boolean isRegistered;
 
     private int sendDelay;
 
-    private volatile boolean offline = false;
+    /**
+     * 单位毫秒
+     */
+    @Setter
+    private long offlineCacheTime = 3600000;
 
+    /**
+     * 离线标示
+     */
+    private volatile boolean offline = false;
+    /**
+     * 离线时间
+     */
+    private long offlineTime = 0;
+
+    @Setter
     private ISessionTag tag;
 
     private MessageDriver messageDriver;
@@ -47,7 +61,7 @@ public abstract class AbstractSession {
     public boolean equals(Object obj) {
         if (obj instanceof AbstractSession) {
             AbstractSession p = (AbstractSession) obj;
-            return p.tag.equals(this.tag)&&p.getChannel().equals(this.channel) ;
+            return p.tag.equals(this.tag) && p.getChannel().equals(this.channel);
         } else {
             return false;
         }
@@ -59,29 +73,48 @@ public abstract class AbstractSession {
         messageDriver = new MessageDriver(1024);
     }
 
-    public void setResponseMng(IResponseHandlerManager responseMng){
+    public void setResponseMng(IResponseHandlerManager responseMng) {
         this.messageDriver.setResponseMng(responseMng);
     }
 
-    public void onConnected()
-    {
+    /**
+     * 初始化注册状态
+     */
+    void initRegister() {
+        isRegistered = true;
+        offline = false;
+        offlineTime = 0;
+    }
+
+    void setOffline(long time) {
+        if (!offline) {
+            offline = true;
+            offlineTime = time;
+        }
+    }
+
+    void unRegister(long time) {
+        setOffline(time);
+        isRegistered = false;
+    }
+
+    public void onConnected() {
         //TODO:会话层连接处理
 //        log.info("{}",channel.remoteAddress());
     }
 
-    public void onDisConnected()
-    {
+    public void onDisConnected() {
         offline = true;
         clearAttribute();
         if (isRegistered) {
-            log.info("{} disconnect :{}",getTag().toString(),channel.toString());
+            log.info("disconnected session {} {}", getTag().toString(), channel.toString());
         } else {
             //下线
-            log.error("[没有找到会话注册信息]:{} disconnect",channel.toString());
+            log.error("[没有找到会话注册信息]:{} disconnect", channel.toString());
         }
     }
 
-     String getIP() {
+    String getIP() {
         if (channel == null) {
             return "";
         }
@@ -115,30 +148,39 @@ public abstract class AbstractSession {
         }
     }
 
-    public void update(){
+    public void update() {
         messageDriver.update(this);
+    }
+
+    public boolean checkClearOfflineCache(long now) {
+        if (offline) {
+            if (offlineTime > 0 && (now - offlineTime) >= offlineCacheTime) {
+                offlineTime = 0;
+                return true;
+            }
+        }
+        return false;
     }
 
     public void sendMessage(MessageLite msg) {
         Packet packet = new Packet();
-        packet.setPlayerId(0).setMsgId(Id.getInst().getMessageId(msg.getClass())).setMsg(msg.toByteArray());
+        packet.setRoleId(0).setMsgId(Id.getInst().getMessageId(msg.getClass())).setMsg(msg.toByteArray());
         channel.writeAndFlush(packet);
     }
 
-    public void sendMessage(MessageLite msg,int playerId) {
+    public void sendMessage(MessageLite msg, int roleId) {
         Packet packet = new Packet();
-        packet.setPlayerId(playerId).setMsgId(Id.getInst().getMessageId(msg.getClass())).setMsg(msg.toByteArray());
+        packet.setRoleId(roleId).setMsgId(Id.getInst().getMessageId(msg.getClass())).setMsg(msg.toByteArray());
         channel.writeAndFlush(packet);
     }
 
     public abstract void sendHeartBeat();
 
-    public void sendRegister(ServerTag tag)
-    {
-        log.debug("send register msg : {} register to {}",tag.toString(),getTag().toString());
+    public void sendRegister(ServerTag tag) {
+        log.debug("send initRegister msg : {} initRegister to {}", tag.toString(), getTag().toString());
         ServerRegister.Server_Tag.Builder serverTag = ServerRegister.Server_Tag.newBuilder();
         serverTag.setServerType(tag.getType().ordinal());
-        serverTag.setGroupId(tag.getGroupId());
+        serverTag.setAreaId(tag.getAreaId());
         serverTag.setSubId(tag.getSubId());
 
         ServerRegister.MSG_Server_Register.Builder builder = ServerRegister.MSG_Server_Register.newBuilder();

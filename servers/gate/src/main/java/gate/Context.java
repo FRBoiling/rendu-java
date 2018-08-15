@@ -8,8 +8,14 @@ import core.base.serviceframe.DBDriverThread;
 import gamedb.DBManager;
 import gamedb.dao.AbstractDBOperator;
 import gate.client.AuthorizationMng;
+import gate.client.ClientSessionMng;
 import gate.connectionManager.ConnectionManager;
+import gate.global.GlobalServerSessionMng;
+import gate.manager.ManagerServerResponseMng;
+import gate.manager.ManagerServerSessionMng;
+import gate.zone.ZoneServerSessionMng;
 import pathExt.PathManager;
+import protocol.client.Client;
 import protocol.client.ClientIdGenerater;
 import protocol.gate.global.G2GMIdGenerater;
 import protocol.gate.manager.G2MIdGenerater;
@@ -45,12 +51,17 @@ public class Context extends AbstractServiceFrame {
         ServerType serverType = ServerType.Gate;
         tag = new ServerTag();
         if (args.length >= 2) {
-            Integer groupId = Integer.parseInt(args[0]);
+            Integer areaId = Integer.parseInt(args[0]);
             Integer subId = Integer.parseInt(args[1]);
-            tag.setTag(serverType, groupId, subId);
+            tag.setTag(serverType, areaId, subId);
         }
 
         initDB();
+
+        GlobalServerSessionMng.getInstance().init();
+        ClientSessionMng.getInstance().init();
+        ZoneServerSessionMng.getInstance().init();
+        ManagerServerSessionMng.getInstance().init();
 
         connectManager = new ConnectionManager();
         initConnectManager(connectManager);
@@ -109,7 +120,7 @@ public class Context extends AbstractServiceFrame {
 //            boolean watchdog = date.getBoolean("watchdog");
 //            String type = date.getString("type");
 //            if (watchdog && type.equals(ServerType.Manager.toString())) {
-//                managerWatchDogGroupId = date.getInteger("groupId");
+//                managerWatchDogGroupId = date.getInteger("areaId");
 //                managerWatchDogSubId = date.getInteger("subId");
 //            }
 //        }
@@ -143,7 +154,7 @@ public class Context extends AbstractServiceFrame {
     }
 
     @Override
-    public void updateService() {
+    public void updateService(long dt) {
         updateDB();
     }
 

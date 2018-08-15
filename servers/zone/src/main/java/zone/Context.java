@@ -15,6 +15,10 @@ import protocol.zone.global.Z2GMIdGenerater;
 import protocol.zone.relation.Z2RIdGenerater;
 import util.FileUtil;
 import zone.connectionManager.ConnectionManager;
+import zone.gate.GateServerSessionMng;
+import zone.global.GlobalServerSessionMng;
+import zone.manager.ManagerServerSessionMng;
+import zone.relation.RelationServerSessionMng;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,10 +43,16 @@ public class Context extends AbstractServiceFrame {
         ServerType serverType = ServerType.Zone;
         tag = new ServerTag();
         if (args.length>=2){
-            Integer groupId = Integer.parseInt(args[0]);
+            Integer areaId = Integer.parseInt(args[0]);
             Integer subId = Integer.parseInt(args[1]);
-            tag.setTag(serverType,groupId,subId);
+            tag.setTag(serverType,areaId,subId);
         }
+
+        GlobalServerSessionMng.getInstance().init();
+        GateServerSessionMng.getInstance().init();
+        ManagerServerSessionMng.getInstance().init();
+        RelationServerSessionMng.getInstance().init();
+
         connectManager = new ConnectionManager();
         initConnectManager(connectManager);
         initMainThread("ZoneDriverThread");
@@ -103,7 +113,7 @@ public class Context extends AbstractServiceFrame {
     }
 
     @Override
-    public void updateService() {
+    public void updateService(long dt) {
 
     }
 }

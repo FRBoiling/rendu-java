@@ -37,9 +37,9 @@ public class RelationServerSessionMng extends AbstractSessionManager {
         return session;
     }
 
-    public void broadcastByGroup(MessageLite msg, int groupId) {
+    public void broadcastByArea(MessageLite msg, int areaId) {
         for (AbstractSession session : getRegisterSessions().values()) {
-            if (groupId == ((ServerTag) session.getTag()).getGroupId()) {
+            if (areaId == ((ServerTag) session.getTag()).getAreaId()) {
                 session.sendMessage(msg);
             }
         }

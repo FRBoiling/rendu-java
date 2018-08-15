@@ -35,9 +35,35 @@
                 <!--<property name="poolPingConnectionsNotUsedFor" value="3600000"/>-->
             </dataSource>
         </environment>
+
+        <environment id="universalEnv">
+            <transactionManager type="JDBC"/>
+            <dataSource type="DRUID">
+                <!--<property name="driver" value="com.mysql.jdbc.Driver"/>-->
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?autoReconnect=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="111112lst"/>
+
+                <!-- 配置Druid相关 -->
+                <property name="initialSize" value="10"/>
+                <property name="maxActive" value="20"/>
+                <property name="minIdle" value="1"/>
+
+                <property name="maxWait" value="60000"/>
+
+
+                <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+                <property name="validationQuery" value="select 1"/>
+                <property name="testWhileIdle" value="true"/>
+                <!--<property name="poolPingEnabled" value="true"/>-->
+                <!--<property name="poolPingQuery" value="select 1"/>-->
+                <!--<property name="poolPingConnectionsNotUsedFor" value="3600000"/>-->
+            </dataSource>
+        </environment>
     </environments>
     <mappers>
         <mapper resource="Role.xml"/>
         <mapper resource="Account.xml"/>
+        <mapper resource="AccountRoleList.xml"/>
     </mappers>
 </configuration>

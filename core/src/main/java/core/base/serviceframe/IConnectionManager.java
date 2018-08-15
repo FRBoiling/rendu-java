@@ -39,7 +39,7 @@ public interface IConnectionManager {
 
     default void executeConnectCommand(ServerRegister.MSG_Server_Connect_Command command) {
         ServerType serverType =  ServerType.values()[command.getTag().getServerType()];
-        int groupId = command.getTag().getGroupId();
+        int groupId = command.getTag().getAreaId();
         int subId = command.getTag().getSubId();
 
         String ip = command.getInfo().getIp();
@@ -63,7 +63,7 @@ public interface IConnectionManager {
     default ServerRegister.Server_Tag.Builder getServerTag(ServerType type, int groupId, int subId) {
         ServerRegister.Server_Tag.Builder tagBuilder = ServerRegister.Server_Tag.newBuilder();
         tagBuilder.setServerType(type.ordinal());
-        tagBuilder.setGroupId(groupId);
+        tagBuilder.setAreaId(groupId);
         tagBuilder.setSubId(subId);
         return tagBuilder;
     }

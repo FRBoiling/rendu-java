@@ -26,7 +26,7 @@ public class ResponseMaxUid implements IResponseHandler {
         int maxUid= ++ ManagerService.context.maxRoleUid;
         M2G.MSG_M2G_MAX_UID.Builder response=M2G.MSG_M2G_MAX_UID.newBuilder();
         response.setUsername(msg.getUsername());
-        response.setChannelName(msg.getChannelName());
+        response.setAreaId(msg.getAreaId());
         response.setMaxUid(maxUid);
         response.setResult(ErrorCode.SUCCESS.getValue());
         gateSession.sendMessage(response.build());

@@ -7,6 +7,10 @@ import core.base.serviceframe.AbstractServiceFrame;
 import gamedb.DBManager;
 import gamedb.Util.MybatisConfigUtil;
 import global.connectionManager.ConnectionManager;
+import global.gate.GateServerSessionMng;
+import global.manager.ManagerServerSessionMng;
+import global.relation.RelationServerSessionMng;
+import global.zone.ZoneServerSessionMng;
 import pathExt.PathManager;
 import protocol.gate.global.G2GMIdGenerater;
 import protocol.global.gate.GM2GIdGenerater;
@@ -40,6 +44,11 @@ public class Context extends AbstractServiceFrame {
         ServerType serverType = ServerType.Global;
         tag = new ServerTag();
         tag.setTag(serverType,0,0);
+
+        GateServerSessionMng.getInstance().init();
+        ZoneServerSessionMng.getInstance().init();
+        ManagerServerSessionMng.getInstance().init();
+        RelationServerSessionMng.getInstance().init();
 
         connectMng = new ConnectionManager();
         initConnectManager(connectMng);
@@ -101,7 +110,7 @@ public class Context extends AbstractServiceFrame {
     }
 
     @Override
-    public void updateService() {
+    public void updateService(long dt) {
 
     }
 

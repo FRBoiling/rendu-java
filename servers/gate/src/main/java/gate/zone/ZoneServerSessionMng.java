@@ -2,6 +2,8 @@ package gate.zone;
 
 import core.base.common.AbstractSession;
 import core.base.common.AbstractSessionManager;
+import gate.Context;
+import gate.GateService;
 import io.netty.channel.Channel;
 
 /**

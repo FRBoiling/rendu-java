@@ -14,6 +14,8 @@ public class SqlSessionFactoryUtil {
 
     private static SqlSessionFactory sqlSessionFactory=null;
 
+    private static SqlSessionFactory universalSqlSessionFactory=null;
+
     private static final Class CLASS_LOCK=SqlSessionFactoryUtil.class;
 
     private SqlSessionFactoryUtil(){}
@@ -37,10 +39,38 @@ public class SqlSessionFactoryUtil {
         return sqlSessionFactory;
     }
 
+    public static SqlSessionFactory initUniversalSqlSessionFactory(){
+        String resource = "mybatis_config.xml";
+        InputStream inputStream=null;
+        if(sqlSessionFactory==null){
+            try{
+                inputStream=Resources.getResourceAsStream(resource);
+            }catch (IOException ex){
+                Logger.getLogger(SqlSessionFactoryUtil.class.getName()).log(Level.SEVERE,null,ex);
+            }
+
+            synchronized (CLASS_LOCK) {
+                if(universalSqlSessionFactory==null){
+                    universalSqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream,"universalEnv");
+                }
+            }
+        }
+        return sqlSessionFactory;
+    }
+
     public static SqlSession openSqlSession(){
         if(sqlSessionFactory==null){
             initSqlSessionFactory();
         }
         return sqlSessionFactory.openSession();
     }
+
+    public static SqlSession openUniversalSqlSession(){
+        if(universalSqlSessionFactory==null){
+            initUniversalSqlSessionFactory();
+        }
+        return universalSqlSessionFactory.openSession();
+    }
+
+    //public static SqlSessionFactory init
 }

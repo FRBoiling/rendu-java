@@ -92,7 +92,7 @@ public class Context extends AbstractServiceFrame {
     }
 
     @Override
-    public void updateService() {
+    public void updateService(long dt) {
 
     }
 }

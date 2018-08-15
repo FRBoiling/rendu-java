@@ -28,13 +28,13 @@ public final class ServerRegister {
     int getServerType();
 
     /**
-     * <code>optional int32 groupId = 2;</code>
+     * <code>optional int32 areaId = 2;</code>
      */
-    boolean hasGroupId();
+    boolean hasAreaId();
     /**
-     * <code>optional int32 groupId = 2;</code>
+     * <code>optional int32 areaId = 2;</code>
      */
-    int getGroupId();
+    int getAreaId();
 
     /**
      * <code>optional int32 subId = 3;</code>
@@ -59,7 +59,7 @@ public final class ServerRegister {
     }
     private Server_Tag() {
       serverType_ = 0;
-      groupId_ = 0;
+      areaId_ = 0;
       subId_ = 0;
     }
 
@@ -101,7 +101,7 @@ public final class ServerRegister {
             }
             case 16: {
               bitField0_ |= 0x00000002;
-              groupId_ = input.readInt32();
+              areaId_ = input.readInt32();
               break;
             }
             case 24: {
@@ -149,19 +149,19 @@ public final class ServerRegister {
       return serverType_;
     }
 
-    public static final int GROUPID_FIELD_NUMBER = 2;
-    private int groupId_;
+    public static final int AREAID_FIELD_NUMBER = 2;
+    private int areaId_;
     /**
-     * <code>optional int32 groupId = 2;</code>
+     * <code>optional int32 areaId = 2;</code>
      */
-    public boolean hasGroupId() {
+    public boolean hasAreaId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional int32 groupId = 2;</code>
+     * <code>optional int32 areaId = 2;</code>
      */
-    public int getGroupId() {
-      return groupId_;
+    public int getAreaId() {
+      return areaId_;
     }
 
     public static final int SUBID_FIELD_NUMBER = 3;
@@ -199,7 +199,7 @@ public final class ServerRegister {
         output.writeInt32(1, serverType_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, groupId_);
+        output.writeInt32(2, areaId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, subId_);
@@ -218,7 +218,7 @@ public final class ServerRegister {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, groupId_);
+          .computeInt32Size(2, areaId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -245,10 +245,10 @@ public final class ServerRegister {
         result = result && (getServerType()
             == other.getServerType());
       }
-      result = result && (hasGroupId() == other.hasGroupId());
-      if (hasGroupId()) {
-        result = result && (getGroupId()
-            == other.getGroupId());
+      result = result && (hasAreaId() == other.hasAreaId());
+      if (hasAreaId()) {
+        result = result && (getAreaId()
+            == other.getAreaId());
       }
       result = result && (hasSubId() == other.hasSubId());
       if (hasSubId()) {
@@ -270,9 +270,9 @@ public final class ServerRegister {
         hash = (37 * hash) + SERVERTYPE_FIELD_NUMBER;
         hash = (53 * hash) + getServerType();
       }
-      if (hasGroupId()) {
-        hash = (37 * hash) + GROUPID_FIELD_NUMBER;
-        hash = (53 * hash) + getGroupId();
+      if (hasAreaId()) {
+        hash = (37 * hash) + AREAID_FIELD_NUMBER;
+        hash = (53 * hash) + getAreaId();
       }
       if (hasSubId()) {
         hash = (37 * hash) + SUBID_FIELD_NUMBER;
@@ -409,7 +409,7 @@ public final class ServerRegister {
         super.clear();
         serverType_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        groupId_ = 0;
+        areaId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
         subId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -444,7 +444,7 @@ public final class ServerRegister {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.groupId_ = groupId_;
+        result.areaId_ = areaId_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -494,8 +494,8 @@ public final class ServerRegister {
         if (other.hasServerType()) {
           setServerType(other.getServerType());
         }
-        if (other.hasGroupId()) {
-          setGroupId(other.getGroupId());
+        if (other.hasAreaId()) {
+          setAreaId(other.getAreaId());
         }
         if (other.hasSubId()) {
           setSubId(other.getSubId());
@@ -563,34 +563,34 @@ public final class ServerRegister {
         return this;
       }
 
-      private int groupId_ ;
+      private int areaId_ ;
       /**
-       * <code>optional int32 groupId = 2;</code>
+       * <code>optional int32 areaId = 2;</code>
        */
-      public boolean hasGroupId() {
+      public boolean hasAreaId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional int32 groupId = 2;</code>
+       * <code>optional int32 areaId = 2;</code>
        */
-      public int getGroupId() {
-        return groupId_;
+      public int getAreaId() {
+        return areaId_;
       }
       /**
-       * <code>optional int32 groupId = 2;</code>
+       * <code>optional int32 areaId = 2;</code>
        */
-      public Builder setGroupId(int value) {
+      public Builder setAreaId(int value) {
         bitField0_ |= 0x00000002;
-        groupId_ = value;
+        areaId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 groupId = 2;</code>
+       * <code>optional int32 areaId = 2;</code>
        */
-      public Builder clearGroupId() {
+      public Builder clearAreaId() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        groupId_ = 0;
+        areaId_ = 0;
         onChanged();
         return this;
       }
@@ -3581,18 +3581,18 @@ public final class ServerRegister {
   static {
     java.lang.String[] descriptorData = {
       "\n\024ServerRegister.proto\022\030protocol.server." +
-      "register\"@\n\nServer_Tag\022\022\n\nserverType\030\001 \002" +
-      "(\005\022\017\n\007groupId\030\002 \001(\005\022\r\n\005subId\030\003 \001(\005\"H\n\023MS" +
-      "G_Server_Register\0221\n\003tag\030\001 \002(\0132$.protoco" +
-      "l.server.register.Server_Tag\"_\n\032MSG_Serv" +
-      "er_Register_Return\022\016\n\006result\030\001 \002(\r\0221\n\003ta" +
-      "g\030\002 \002(\0132$.protocol.server.register.Serve" +
-      "r_Tag\"(\n\014Connect_Info\022\014\n\004port\030\001 \002(\005\022\n\n\002i" +
-      "p\030\002 \002(\t\"\232\001\n\032MSG_Server_Connect_Command\0221" +
-      "\n\003tag\030\001 \002(\0132$.protocol.server.register.S" +
-      "erver_Tag\0224\n\004info\030\002 \002(\0132&.protocol.serve" +
-      "r.register.Connect_Info\022\023\n\013connectType\030\004" +
-      " \001(\005"
+      "register\"?\n\nServer_Tag\022\022\n\nserverType\030\001 \002" +
+      "(\005\022\016\n\006areaId\030\002 \001(\005\022\r\n\005subId\030\003 \001(\005\"H\n\023MSG" +
+      "_Server_Register\0221\n\003tag\030\001 \002(\0132$.protocol" +
+      ".server.register.Server_Tag\"_\n\032MSG_Serve" +
+      "r_Register_Return\022\016\n\006result\030\001 \002(\r\0221\n\003tag" +
+      "\030\002 \002(\0132$.protocol.server.register.Server" +
+      "_Tag\"(\n\014Connect_Info\022\014\n\004port\030\001 \002(\005\022\n\n\002ip" +
+      "\030\002 \002(\t\"\232\001\n\032MSG_Server_Connect_Command\0221\n" +
+      "\003tag\030\001 \002(\0132$.protocol.server.register.Se" +
+      "rver_Tag\0224\n\004info\030\002 \002(\0132&.protocol.server" +
+      ".register.Connect_Info\022\023\n\013connectType\030\004 " +
+      "\001(\005"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3611,7 +3611,7 @@ public final class ServerRegister {
     internal_static_protocol_server_register_Server_Tag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_server_register_Server_Tag_descriptor,
-        new java.lang.String[] { "ServerType", "GroupId", "SubId", });
+        new java.lang.String[] { "ServerType", "AreaId", "SubId", });
     internal_static_protocol_server_register_MSG_Server_Register_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable = new

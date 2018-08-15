@@ -2,7 +2,6 @@ package gate.client;
 
 import core.base.common.AbstractSession;
 import core.base.model.ClientTag;
-import gamedb.pojo.RolePOJO;
 import gamedb.pojo.account.AccountPOJO;
 import io.netty.channel.Channel;
 import lombok.Getter;
@@ -24,6 +23,8 @@ public class ClientSession extends AbstractSession {
         super(channel);
         ClientTag tag = new ClientTag();
         setTag(tag);
+        //TODO:session离线缓存时间预设
+        setOfflineCacheTime(300000);
     }
 
     @Override

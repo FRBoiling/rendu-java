@@ -1,10 +1,9 @@
 import basicCallBack.ArgObject;
 import basicCallBack.ObjectBeCalled;
-import com.mysql.jdbc.exceptions.MySQLNonTransientConnectionException;
 import gamedb.dao.CheckDBOperator;
 import gamedb.dao.account.SelectAccountDBOperator;
 import gamedb.dao.role.*;
-import gamedb.pojo.RolePOJO;
+import gamedb.pojo.role.RolePOJO;
 import gamedb.pojo.account.AccountPOJO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -43,17 +42,17 @@ public class TestCallBack {
 
     @Test
     public void checkConn(){
-        CheckDBOperator operator=new CheckDBOperator();
-        operator.execute();
-        operator.PostUpdate();
-        System.out.println("checking");
+//        CheckDBOperator operator=new CheckDBOperator();
+//        operator.execute();
+//        operator.PostUpdate();
+//        System.out.println("checking");
     }
 
     @Test
     public void testQueryAccount() {
         AccountPOJO pojo=new AccountPOJO();
         pojo.setUsername("root");
-        pojo.setChannelName("default");
+//        pojo.setChannelName("default");
         SelectAccountDBOperator operator=new SelectAccountDBOperator(pojo);
 
 
@@ -63,9 +62,9 @@ public class TestCallBack {
                 SelectAccountDBOperator op=(SelectAccountDBOperator)operator;
                 AccountPOJO temppojo=op.account;
                 log.info("result {}",op.getResult());
-                log.info("pojo root default createTime {} {} {} {} {}",
-                        temppojo.getCreateTime(),temppojo.getUsername(),temppojo.getRegisterId(),
-                        temppojo.getChannelName(),temppojo.getPassword());
+//                log.info("pojo root default createTime {} {} {} {} {}",
+//                        temppojo.getCreateTime(),temppojo.getUsername(),temppojo.getRegisterId(),
+//                        temppojo.getChannelName(),temppojo.getPassword());
             }
         });
         operator.execute();

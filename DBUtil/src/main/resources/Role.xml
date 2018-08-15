@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="gamedb.interfaces.RoleMapper">
-    <select id="getMaxUid" resultType="int">
+    <select id="getMaxUid" resultType="Integer">
         select Max(uid) from  ${tableName}
     </select>
     <select id="getUIdByName" resultType="Integer">
         select uid from ${tableName} where role_name=#{roleName}
     </select>
-    <select id="getRole" resultType="gamedb.pojo.RolePOJO">
-        select uid,role_name,group_id,create_time,username,channel_name from ${tableName} where uid=#{uid}
+    <select id="getRole" resultType="gamedb.pojo.role.RolePOJO">
+        select uid,role_name,area_Id,create_time,username,channel_name from ${tableName} where uid=#{uid}
     </select>
-    <insert id="insertRole" parameterType="gamedb.pojo.RolePOJO">
-        insert into ${tableName}(uid,role_name,group_id,username,channel_name)values(#{uid},#{roleName},#{groupId},#{username},#{channelName})
+    <insert id="insertRole" parameterType="gamedb.pojo.role.RolePOJO">
+        insert into ${tableName}(uid,role_name,area_Id,username,channel_name)values(#{uid},#{roleName},#{areaId},#{username},#{channelName})
     </insert>
-    <update id="updateRole" parameterType="gamedb.pojo.RolePOJO">
+    <update id="updateRole" parameterType="gamedb.pojo.role.RolePOJO">
         update ${tableName} set role_name=#{roleName} where uid=#{uid}
     </update>
-    <delete id="deleteRole" parameterType="gamedb.pojo.RolePOJO">
+    <delete id="deleteRole" parameterType="gamedb.pojo.role.RolePOJO">
         delete from ${tableName} where uid=#{uid}
     </delete>
 </mapper>

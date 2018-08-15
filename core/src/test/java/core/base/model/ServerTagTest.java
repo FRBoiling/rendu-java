@@ -56,7 +56,7 @@ public void testInitTag() throws Exception {
 
 /** 
 * 
-* Method: setTag(ServerType type, int groupId, int subId) 
+* Method: setTag(ServerType type, int areaId, int subId)
 * 
 */ 
 @Test
@@ -66,7 +66,7 @@ public void testSetTag() throws Exception {
 
 /** 
 * 
-* Method: getGroupId() 
+* Method: getAreaId()
 * 
 */ 
 @Test

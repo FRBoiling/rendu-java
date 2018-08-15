@@ -3,7 +3,7 @@ package gamedb.dao.role;
 import gamedb.Util.MybatisConfigUtil;
 import gamedb.dao.AbstractDBOperator;
 import gamedb.interfaces.RoleMapper;
-import gamedb.pojo.RolePOJO;
+import gamedb.pojo.role.RolePOJO;
 import lombok.Getter;
 import org.apache.ibatis.session.SqlSession;
 @Getter

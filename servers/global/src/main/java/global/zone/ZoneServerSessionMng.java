@@ -5,9 +5,7 @@ import core.base.common.AbstractSession;
 import core.base.common.AbstractSessionManager;
 import core.base.common.ISessionTag;
 import core.base.model.ServerTag;
-import core.base.model.ServerType;
 import io.netty.channel.Channel;
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.util.Map;
 
@@ -45,11 +43,11 @@ public class ZoneServerSessionMng extends AbstractSessionManager {
     /**
      * 按组发
      * @param msg 消息
-     * @param groupId 服务端组号
+     * @param areaId 服务端组号
      */
-    public void broadcastByGroup(MessageLite msg, int groupId) {
+    public void broadcastByArea(MessageLite msg, int areaId) {
         for (Map.Entry<ISessionTag, AbstractSession> entry : getRegisterSessions().entrySet()) {
-            if (((ServerTag)entry.getKey()).getGroupId() == groupId) {
+            if (((ServerTag)entry.getKey()).getAreaId() == areaId) {
                 entry.getValue().sendMessage(msg);
             }
         }

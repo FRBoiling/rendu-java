@@ -29,7 +29,7 @@ public class ResponseRegisterReturn implements IResponseHandler{
 
         //注册反馈 MSG_Server_Register_Return
         ServerType serverType = ServerType.values()[msg.getTag().getServerType()];
-        int groupId = msg.getTag().getGroupId();
+        int groupId = msg.getTag().getAreaId();
         int subId = msg.getTag().getSubId();
 
         ServerTag tag = new ServerTag();

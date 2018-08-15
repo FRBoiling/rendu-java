@@ -14,6 +14,9 @@ import protocol.relation.zone.R2ZIdGenerater;
 import protocol.server.register.ServerRegisterIdGenerater;
 import protocol.zone.relation.Z2RIdGenerater;
 import relation.connectionManager.ConnectionManager;
+import relation.global.GlobalServerSessionMng;
+import relation.manager.ManagerServerSessionMng;
+import relation.zone.ZoneServerSessionMng;
 import util.FileUtil;
 
 import java.io.File;
@@ -41,6 +44,12 @@ public class Context extends AbstractServiceFrame {
             Integer groupId = Integer.parseInt(args[0]);
             tag.setTag(serverType, groupId, 0);
         }
+
+        GlobalServerSessionMng.getInstance().init();
+        ZoneServerSessionMng.getInstance().init();
+        ManagerServerSessionMng.getInstance().init();
+//        RelationServerSessionMng.getInstance().setContext(this);
+
         connectManager = new ConnectionManager();
         initConnectManager(connectManager);
         initMainThread("RelationDriverThread");
@@ -100,7 +109,8 @@ public class Context extends AbstractServiceFrame {
     }
 
     @Override
-    public void updateService() {
+    public void updateService(long dt) {
 
     }
+
 }

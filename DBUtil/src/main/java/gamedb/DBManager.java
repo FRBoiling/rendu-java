@@ -54,7 +54,7 @@ public class DBManager {
         if (fileList.size() > 0) {
             for (File file : fileList) {
                 MybatisConfigUtil.InitWithFile(file);
-                checkConn();
+                MybatisConfigUtil.checkConnections(this);
                 log.info("-------------- Mybatis Config Done---------------");
                 break;
             }
@@ -63,13 +63,6 @@ public class DBManager {
         }
     }
 
-    public void checkConn(){
-        CheckDBOperator operator=new CheckDBOperator();
-        operator.Init(this);
-        operator.execute();
-        operator.PostUpdate();
-        log.info("checking connection with CheckDBOperator");
-    }
 
 
     public boolean Exit() {

@@ -26,8 +26,12 @@ public class GlobalServerSessionMng extends AbstractSessionManager {
     }
 
     @Override
-    public void updateLogic(long dt) {
+    public void init(){
+        super.init();
+    }
 
+    @Override
+    public void updateLogic(long dt) {
     }
 
     @Override

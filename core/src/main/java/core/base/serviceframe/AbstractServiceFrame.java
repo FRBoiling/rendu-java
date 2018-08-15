@@ -8,6 +8,7 @@ import gamedb.DBManagerPool;
 import gamedb.DBMngPoolManager;
 import gamedb.DBOperateType;
 import gamedb.Util.MybatisConfigUtil;
+import lombok.Getter;
 import pathExt.PathManager;
 import util.FileUtil;
 import util.Time;
@@ -26,6 +27,7 @@ import java.util.Map;
  **/
 public abstract class AbstractServiceFrame implements IService, IServiceFrame {
     private ServiceState state = ServiceState.STOPPED;
+
     public static ServerTag tag;
     public static long now;
 
@@ -71,9 +73,9 @@ public abstract class AbstractServiceFrame implements IService, IServiceFrame {
         time.init();
         while (isOpened()) {
             try {
-                now = time.init();
                 long lastTime=time.update();
-                updateService();
+                now = time.getNow();
+                updateService(lastTime);
                 connectManager.update(lastTime);
             } catch (Exception e) {
                 e.printStackTrace();

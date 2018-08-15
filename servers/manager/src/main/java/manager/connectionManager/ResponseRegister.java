@@ -31,7 +31,7 @@ public class ResponseRegister implements IResponseHandler {
 
         //基本信息注册 MSG_Server_Register
         ServerType serverType = ServerType.values()[msg.getTag().getServerType()];
-        int groupId = msg.getTag().getGroupId();
+        int groupId = msg.getTag().getAreaId();
         int subId = msg.getTag().getSubId();
 
         ServerTag tag = new ServerTag();
@@ -41,7 +41,7 @@ public class ResponseRegister implements IResponseHandler {
         //注册反馈 MSG_Server_Register_Return
         ServerRegister.Server_Tag.Builder serverTag = ServerRegister.Server_Tag.newBuilder();
         serverTag.setServerType(Context.tag.getType().ordinal());
-        serverTag.setGroupId(Context.tag.getGroupId());
+        serverTag.setAreaId(Context.tag.getAreaId());
         serverTag.setSubId(Context.tag.getSubId());
 
         ServerRegister.MSG_Server_Register_Return.Builder response = ServerRegister.MSG_Server_Register_Return.newBuilder();
@@ -53,7 +53,7 @@ public class ResponseRegister implements IResponseHandler {
                 registerResult = GateServerSessionMng.getInstance().register(session);
                 break;
             case Manager:
-                if (Context.tag.getGroupId() < groupId )
+                if (Context.tag.getAreaId() < groupId )
                 {
                     registerResult = ManagerServerSessionMng.getInstance().register(session);
                 }
@@ -61,14 +61,14 @@ public class ResponseRegister implements IResponseHandler {
                 }
                 break;
             case Zone:
-                if (Context.tag.getGroupId() == groupId ){
+                if (Context.tag.getAreaId() == groupId ){
                     registerResult = ZoneServerSessionMng.getInstance().register(session);
                 }
                 else {
                 }
                 break;
             case Relation:
-                if (Context.tag.getGroupId() == groupId ) {
+                if (Context.tag.getAreaId() == groupId ) {
                     registerResult = RelationServerSessionMng.getInstance().register(session);
                 }
                 else {

@@ -15,12 +15,12 @@ import static io.netty.buffer.Unpooled.wrappedBuffer;
  * │     2       │      4      │     4      │
  * ├ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┤
  * │             │             │            │
- * │ Body Length     player Id      Invoke Id      Body Content        │
+ * │ Body Length     role Id      Invoke Id      Body Content        │
  * │             │             │            │
  * └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┘
  * <p>
  * 消息头10个字节定长
- *  = 4 // player id int 类型
+ *  = 4 // role id int 类型
  * = 4 // 消息 id int 类型
  * + 2 // 消息体body长度, short类型
  */
@@ -34,13 +34,13 @@ public class PacketWriter extends MessageToByteEncoder<Packet> {
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, Packet packet, ByteBuf out) throws Exception {
         int msgLength =packet.getMsgLength();
-        int playerId = packet.getPlayerId();
+        int roleId = packet.getRoleId();
         int msgId = packet.getMsgId();
 //        ByteBuf msg = wrappedBuffer(packet.getMsg());
 
         out.ensureWritable(Short.BYTES +Integer.BYTES+Integer.BYTES+ msgLength);
         out.writeShort(msgLength);
-        out.writeInt(playerId);
+        out.writeInt(roleId);
         out.writeInt(msgId);
         out.writeBytes(packet.getMsg());
 //        log.info("packet writer msgId {} msgLength {}",msgId,msgLength);
