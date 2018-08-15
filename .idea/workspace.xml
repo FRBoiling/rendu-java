@@ -8,12 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="7f6fefc0-f06f-4c72-9459-fc5815b54bcd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBUtil/src/main/java/gamedb/pojo/accountRoleList/AccountRolePOJO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBUtil/src/main/java/gamedb/pojo/accountRoleList/AccountRolePOJO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/NetworkListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/NetworkListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientLoginMng.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientLoginMng.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientSession.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/common/target/" />
@@ -65,25 +59,6 @@
     <expand />
     <select />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="InsertAccountRoleDBOperator.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/accountRoleList/InsertAccountRoleDBOperator.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="399">
-                    <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1303216949">
       <usages-collector id="statistics.lifecycle.project">
@@ -131,11 +106,9 @@
       <file leaf-file-name="AbstractSession.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="95" column="32" lean-forward="true" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+            <state relative-caret-position="1501">
+              <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
               <folding>
-                <element signature="e#1024#1025#0" expanded="true" />
-                <element signature="e#1065#1066#0" expanded="true" />
                 <element signature="e#1631#1632#0" expanded="true" />
                 <element signature="e#1693#1694#0" expanded="true" />
                 <element signature="e#3334#3335#0" expanded="true" />
@@ -148,8 +121,8 @@
       <file leaf-file-name="ClientLoginMng.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientLoginMng.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="177" column="58" lean-forward="true" selection-start-line="177" selection-start-column="58" selection-end-line="177" selection-end-column="58" />
+            <state relative-caret-position="3021">
+              <caret line="177" column="58" selection-start-line="177" selection-start-column="58" selection-end-line="177" selection-end-column="58" />
               <folding>
                 <element signature="e#1252#1253#0" expanded="true" />
                 <element signature="e#1295#1296#0" expanded="true" />
@@ -161,8 +134,8 @@
       <file leaf-file-name="ClientSession.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            <state relative-caret-position="294">
+              <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -170,7 +143,7 @@
       <file leaf-file-name="AbstractSessionManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
+            <state relative-caret-position="3116">
               <caret line="173" column="30" selection-start-line="173" selection-start-column="20" selection-end-line="173" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -182,7 +155,7 @@
       <file leaf-file-name="NetworkListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/NetworkListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
+            <state relative-caret-position="855">
               <caret line="54" column="36" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="36" />
             </state>
           </provider>
@@ -326,8 +299,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -336,398 +307,12 @@
               <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceframe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="accountRoleList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="otherDao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="role" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-              <item name="accountRoleList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-              <item name="otherPOJO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-              <item name="role" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedb" type="462c0819:PsiDirectoryNode" />
-              <item name="Util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="DBUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="response" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="connectionManager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
-              <item name="response" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ServerCluster-Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ServerCluster-Java" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="zone" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -752,126 +337,6 @@
       <recent name="D:\ProjectA\ServerCluster-Java\protocol\src\main\java\protocol\client" />
       <recent name="D:\ProjectA\ServerCluster-Java\protocol\src\main\java\protocol" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\main\resources\logback.xml</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\test\java\TestLog.java</PATH>
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\test\java\TestLogThread.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\main\java\gamedb\dao\role</PATH>
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\main\java\gamedb\dao\role\DeleteRoleDBOperator.java</PATH>
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\main\java\gamedb\dao\role\UpdateRoleDBOperator.java</PATH>
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\main\java\gamedb\dao\role\CreateRoleDBOperator.java</PATH>
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\main\java\gamedb\dao\role\InsertRoleNameDBOperator.java</PATH>
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\main\java\gamedb\dao\role\MaxRoleUidDBOperator.java</PATH>
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\main\java\gamedb\dao\role\GetRoleUIdByNameDBOperator.java</PATH>
-          <PATH vcs="svn" revision="24257">D:\ProjectA\ServerCluster-Java\DBUtil\src\main\java\gamedb\dao\role\SelectRoleDBOperator.java</PATH>
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1190,6 +655,7 @@
       <workItem from="1534242176945" duration="17000" />
       <workItem from="1534242389936" duration="55000" />
       <workItem from="1534242505177" duration="34158000" />
+      <workItem from="1534323956865" duration="789000" />
     </task>
     <task id="LOCAL-00001" summary="清理项目文件">
       <created>1533389310056</created>
@@ -1380,7 +846,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534319746816</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="简单创角流程">
+      <created>1534324156253</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1534324156253</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1416,7 +889,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224170000" />
+    <option name="totallyTimeSpent" value="224959000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1428,8 +901,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-8" width="1873" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32953367" />
@@ -1437,30 +909,30 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.22338665" side_tool="true" visible="true" weight="0.3284974" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.22338665" side_tool="true" visible="true" weight="0.3286004" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32928848" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32746115" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4975179" weight="0.3284974" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32746115" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4997233" weight="0.32953367" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49827588" visible="true" weight="0.3127413" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49827588" visible="true" weight="0.17007536" />
       <window_info anchor="right" id="Database" order="5" sideWeight="0.49922958" weight="0.19911748" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48869276" weight="0.23212436" />
-      <window_info anchor="right" id="Structure" order="1" sideWeight="0.5007704" side_tool="true" visible="true" weight="0.17870933" />
+      <window_info anchor="right" id="Structure" order="1" sideWeight="0.5007704" side_tool="true" visible="true" weight="0.17868675" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24931054" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.77661335" weight="0.3284974" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.77661335" visible="true" weight="0.3284974" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="SVN Properties" order="10" weight="0.32953367" />
       <window_info anchor="right" id="Coverage" order="10" sideWeight="0.50051814" side_tool="true" weight="0.13458356" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="SVN Properties" order="10" weight="0.32953367" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48869276" weight="0.23212436" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24980047" />
@@ -1505,7 +977,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="优化代码" />
     <MESSAGE value="优化代码，连接逻辑改错" />
     <MESSAGE value="连接逻辑" />
     <MESSAGE value="项目结构整理" />
@@ -1530,7 +1001,8 @@
     <MESSAGE value="创角简单流程，创角成功" />
     <MESSAGE value="添加登录获取角色列表的逻辑和DB相关&#10;更改原来group概念为area区概念" />
     <MESSAGE value="创角" />
-    <option name="LAST_COMMIT_MESSAGE" value="创角" />
+    <MESSAGE value="简单创角流程" />
+    <option name="LAST_COMMIT_MESSAGE" value="简单创角流程" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1562,6 +1034,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/servers/global/src/main/java/global/connectionManager/ResponseRegister.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1569,13 +1048,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/pojo/otherPOJO/RoleLoginInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/pojo/otherPOJO/RoleLoginInfo.java" />
     <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/pojo/otherPOJO/RoleLoginInfoPOJO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1636,13 +1109,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/otherDao/GetAccountRoleListDBOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/otherDao/GetAccountRoleListDBOperator.java" />
     <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/interfaces/RoleMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1684,9 +1151,6 @@
           <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBUtil/src/main/resources/Character.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/session/SqlSessionFactoryBuilder.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1857,13 +1321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/accountRoleList/InsertAccountRoleDBOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/manager/response/ResponseMaxUid.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
@@ -1908,14 +1365,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/NetworkListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
+        <state relative-caret-position="855">
           <caret line="54" column="36" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSessionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
+        <state relative-caret-position="3116">
           <caret line="173" column="30" selection-start-line="173" selection-start-column="20" selection-end-line="173" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1925,11 +1382,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/common/AbstractSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="95" column="32" lean-forward="true" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+        <state relative-caret-position="1501">
+          <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
           <folding>
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#1065#1066#0" expanded="true" />
             <element signature="e#1631#1632#0" expanded="true" />
             <element signature="e#1693#1694#0" expanded="true" />
             <element signature="e#3334#3335#0" expanded="true" />
@@ -1940,8 +1395,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientLoginMng.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="177" column="58" lean-forward="true" selection-start-line="177" selection-start-column="58" selection-end-line="177" selection-end-column="58" />
+        <state relative-caret-position="3021">
+          <caret line="177" column="58" selection-start-line="177" selection-start-column="58" selection-end-line="177" selection-end-column="58" />
           <folding>
             <element signature="e#1252#1253#0" expanded="true" />
             <element signature="e#1295#1296#0" expanded="true" />
@@ -1949,10 +1404,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DBUtil/src/main/java/gamedb/dao/accountRoleList/InsertAccountRoleDBOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="294">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
         </state>
       </provider>
     </entry>
