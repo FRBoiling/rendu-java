@@ -48,10 +48,9 @@ public class ReaderHandler extends ByteToMessageDecoder {
     }
 
     private int ReadPacketLength(ByteBuf buffer) {
-        if (!buffer.isReadable()) {
+        if (buffer.readableBytes() < Short.BYTES) {
             return 0;
         }
-
         buffer.markReaderIndex();
 
        short tmp = buffer.readShortLE(); //客户端是c#的，用LE的函数

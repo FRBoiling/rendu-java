@@ -17,8 +17,8 @@ import core.base.serviceframe.AbstractAcceptor;
 public class ManagerAcceptor extends AbstractAcceptor {
     @Override
     public void init(String[] args) {
-        acceptorGroupCount=1;
-        IOGroupCount =SystemConst.AVAILABLE_PROCESSORS;
+        acceptorGroupCount = 1;
+        IOGroupCount = 1;
 
         sessionMng = ManagerServerSessionMng.getInstance();
 

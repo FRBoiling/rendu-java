@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ZoneAcceptor extends AbstractConnector {
     @Override
     public void init(String[] args) {
-        IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
+        IOGroupCount = 1;
 
         sessionMng = ZoneServerSessionMng.getInstance();
 

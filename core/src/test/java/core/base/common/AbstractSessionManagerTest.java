@@ -4,9 +4,9 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
 
 /**
  * AbstractSessionManager Tester.
@@ -62,7 +62,31 @@ public class AbstractSessionManagerTest {
      */
     @Test
     public void testPutSession() throws Exception {
-//TODO: Test goes here... 
+        ConcurrentHashMap<Integer, Integer> hashMap = new ConcurrentHashMap<>(16);
+        Set<Integer> set = new HashSet();
+        for (int i = 0; i < 10000; i++) {
+            hashMap.put(i, i);
+        }
+        for (Map.Entry<Integer, Integer> entry : hashMap.entrySet()) {
+            Integer key = entry.getKey();
+            Integer value = entry.getValue();
+
+            hashMap.remove(key);
+            Integer a = value;
+            set.add(a);
+            if (!value.equals(key) || !a.equals(key)) {
+                    System.out.println("error!!!!!!!!");
+            }
+        }
+        for (Integer v:set) {
+            if(v == null){
+                break;
+            }else {
+                System.out.println("--->"+v);
+            }
+        }
+        System.out.println("end");
+//TODO: Test goes here...
     }
 
     /**

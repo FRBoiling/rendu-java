@@ -42,7 +42,7 @@ public class ClientAcceptor implements IService {
     @Override
     public void init(String[] args) {
         acceptorGroupCount=1;
-        IOGroupCount =SystemConst.AVAILABLE_PROCESSORS;
+        IOGroupCount = SystemConst.AVAILABLE_PROCESSORS / 2;
 
         AbstractSessionManager sessionMng = ClientSessionMng.getInstance();
 

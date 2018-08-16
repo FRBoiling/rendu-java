@@ -16,7 +16,7 @@ import core.base.serviceframe.AbstractConnector;
 public class GlobalConnector extends AbstractConnector {
     @Override
     public void init(String[] args) {
-        IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
+        IOGroupCount = 1;
 
         sessionMng = GlobalServerSessionMng.getInstance();
 

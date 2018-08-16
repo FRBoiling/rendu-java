@@ -47,7 +47,7 @@ public class PacketReader  extends ByteToMessageDecoder {
     }
 
     private int ReadPacketLength(ByteBuf buffer) {
-        if (!buffer.isReadable()) {
+        if (buffer.readableBytes() < Short.BYTES) {
             return 0;
         }
         buffer.markReaderIndex();

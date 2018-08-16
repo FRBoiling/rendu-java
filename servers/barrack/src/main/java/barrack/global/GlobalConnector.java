@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 public class GlobalConnector extends AbstractConnector {
     @Override
     public void init(String[] args) {
-        IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
+        IOGroupCount = 1;
 
         sessionMng = GlobalServerSessionMng.getInstance();
 

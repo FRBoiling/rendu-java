@@ -18,7 +18,7 @@ public class ZoneAcceptor extends AbstractAcceptor {
     @Override
     public void init(String[] args) {
         acceptorGroupCount = 1;
-        IOGroupCount = SystemConst.AVAILABLE_PROCESSORS;
+        IOGroupCount = 1;
 
         sessionMng = ZoneServerSessionMng.getInstance();
 

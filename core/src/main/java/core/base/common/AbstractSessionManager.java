@@ -21,17 +21,15 @@ import static core.base.serviceframe.AbstractServiceFrame.now;
 @Slf4j
 public abstract class AbstractSessionManager {
 
-    private ConcurrentHashMap<Integer, AbstractSession> connectingHashMap = new ConcurrentHashMap<>(128);
+    private ConcurrentHashMap<Integer, AbstractSession> connectingHashMap = new ConcurrentHashMap<>(16);
+    private ConcurrentHashMap<Integer, AbstractSession> removingHashMap = new ConcurrentHashMap<>(16);
 
     private Set<AbstractSession> allSession = new HashSet<>();
 
-    private ArrayList<AbstractSession> removeSessions = new ArrayList<>();
-
     private HashMap<ISessionTag, AbstractSession> registerSessions = new HashMap<>(16);
-    private ArrayList<AbstractSession> removeCacheSessions = new ArrayList<>();
+    private ArrayList<AbstractSession> removeCacheSessions = new ArrayList<>(16);
 
-    public void init(){
-
+    public void init() {
     }
 
     public RegisterResult register(AbstractSession session) {
@@ -87,28 +85,15 @@ public abstract class AbstractSessionManager {
         if (registerSessions.containsKey(session.getTag()) && session.isRegistered()) {
             registerSessions.remove(session.getTag());
             session.unRegister(now);
-        }
-        else {
+        } else {
             log.error("unregister session fail: can't found initRegister session {}", session.getTag());
         }
-        log.info("unregister session success:{}",session.getTag().toString());
+        log.info("unregister session success:{}", session.getTag().toString());
     }
 
     public void update(long dt) {
-        addConnectingSession();
-        if (removeSessions.size() > 0) {
-            for (AbstractSession session : removeSessions) {
-                //remove from allSession
-                if (allSession.contains(session)) {
-                    session.onDisConnected();
-                    allSession.remove(session);
-                    log.info("update to remove session success: {}", session.getChannel().toString());
-                } else {
-                    log.error("update to remove session fail: session {} not exist", session.getTag().toString());
-                }
-            }
-            removeSessions.clear();
-        }
+        connectingSessionOperator();
+        removingSessionOperator();
         updateLogic(dt);
         for (AbstractSession session : allSession) {
             try {
@@ -117,7 +102,6 @@ public abstract class AbstractSessionManager {
                 log.error("session mng update error:{}", e.toString());
             }
         }
-
         registerSessionsUpdate(now);
     }
 
@@ -148,20 +132,11 @@ public abstract class AbstractSessionManager {
 
     /**
      * 添加session
+     *
+     * @param session 会话
      */
     public void putSession(AbstractSession session) {
         connectingHashMap.put(session.hashCode(), session); //线程安全的connectingHashMap先接过来
-    }
-
-    /**
-     * 从connectingHashMap添加到主线程循环中的allSession
-     */
-    private void addConnectingSession() {
-        if (connectingHashMap.size() > 0) {
-//            log.debug("addConnectingSession count {}",connectingHashMap.size());
-            allSession.addAll(connectingHashMap.values());
-            connectingHashMap.clear();
-        }
     }
 
     /**
@@ -172,7 +147,54 @@ public abstract class AbstractSessionManager {
     public void removeSession(AbstractSession session) {
         if (session != null) {
             session.setOffline(now);
-            removeSessions.add(session);
+            removingHashMap.put(session.hashCode(), session);
+        }
+    }
+
+    private void connectingSessionOperator() {
+        int size = connectingHashMap.size();
+        if (size > 0) {
+            int count = 0;
+            for (Map.Entry<Integer, AbstractSession> entry : connectingHashMap.entrySet()) {
+                count++;
+                AbstractSession session = entry.getValue();
+                Integer k = entry.getKey();
+                connectingHashMap.remove(k);
+
+                if (allSession.contains(session)) {
+                    log.error("connecting session operator fail: session {} not exist", session.getTag().toString());
+                } else {
+                    log.info("connecting session operator success: {}", session.getChannel().toString());
+                    allSession.add(session);
+                }
+                if (count ==size){
+                    break;
+                }
+            }
+        }
+    }
+
+    private void removingSessionOperator() {
+        int size = removingHashMap.size();
+        if (size> 0) {
+            int count = 0;
+            for (Map.Entry<Integer, AbstractSession> entry : removingHashMap.entrySet()) {
+                count++;
+                AbstractSession session = entry.getValue();
+                Integer k = entry.getKey();
+                removingHashMap.remove(k);
+
+                if (allSession.contains(session)) {
+                    session.onDisConnected();
+                    allSession.remove(session);
+                    log.info("removing session operator success: {}", session.getChannel().toString());
+                } else {
+                    log.error("removing session operator fail: session {} not exist", session.getTag().toString());
+                }
+                if (count == size){
+                    break;
+                }
+            }
         }
     }
 
@@ -207,7 +229,7 @@ public abstract class AbstractSessionManager {
     /**
      * 按组发
      *
-     * @param msg     消息
+     * @param msg    消息
      * @param areaId 服务端组号
      */
     public void broadcastByArea(MessageLite msg, int areaId) {
