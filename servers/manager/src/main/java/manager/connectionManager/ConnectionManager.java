@@ -1,6 +1,5 @@
 package manager.connectionManager;
 
-import core.base.common.AbstractSession;
 import core.base.model.ServerTag;
 import core.base.serviceframe.IConnectionManager;
 import lombok.extern.slf4j.Slf4j;
@@ -36,9 +35,9 @@ public class ConnectionManager implements IConnectionManager {
     private RelationAcceptor relationAcceptor;
     private GateAcceptor gateAcceptor;
 
-    private ManagerAcceptor managerAcceptor;
+//    private ManagerAcceptor managerAcceptor;
 
-    private HashMap<ServerTag, ManagerConnector> managerConnectorHashMap;
+//    private HashMap<ServerTag, ManagerConnector> managerConnectorHashMap;
 
     private GlobalConnector createGlobalAcceptor() {
         return new GlobalConnector();
@@ -56,13 +55,13 @@ public class ConnectionManager implements IConnectionManager {
         return new GateAcceptor();
     }
 
-    private ManagerAcceptor createManagerAcceptor() {
-        return new ManagerAcceptor();
-    }
-
-    private ManagerConnector createManagerConnector() {
-        return new ManagerConnector();
-    }
+//    private ManagerAcceptor createManagerAcceptor() {
+//        return new ManagerAcceptor();
+//    }
+//
+//    private ManagerConnector createManagerConnector() {
+//        return new ManagerConnector();
+//    }
 
     @Override
     public void init() {
@@ -79,10 +78,10 @@ public class ConnectionManager implements IConnectionManager {
         gateAcceptor = createGateAcceptor();
         gateAcceptor.init(null);
 
-        managerAcceptor = createManagerAcceptor();
-        managerAcceptor.init(null);
+//        managerAcceptor = createManagerAcceptor();
+//        managerAcceptor.init(null);
 
-        managerConnectorHashMap = new HashMap<>();
+//        managerConnectorHashMap = new HashMap<>();
     }
 
     @Override
@@ -93,7 +92,7 @@ public class ConnectionManager implements IConnectionManager {
         gateAcceptor.start();
         relationAcceptor.start();
 
-        managerAcceptor.start();
+//        managerAcceptor.start();
     }
 
     @Override
@@ -104,17 +103,17 @@ public class ConnectionManager implements IConnectionManager {
         zoneAcceptor.stop();
         relationAcceptor.stop();
 
-        managerAcceptor.stop();
+//        managerAcceptor.stop();
 
-        for (ManagerConnector manager : managerConnectorHashMap.values()) {
-            manager.stop();
-        }
+//        for (ManagerConnector manager : managerConnectorHashMap.values()) {
+//            manager.stop();
+//        }
     }
 
     @Override
     public void update(long dt) {
         GlobalServerSessionMng.getInstance().update(dt);
-        ManagerServerSessionMng.getInstance().update(dt);
+//        ManagerServerSessionMng.getInstance().update(dt);
         ZoneServerSessionMng.getInstance().update(dt);
         GateServerSessionMng.getInstance().update(dt);
         RelationServerSessionMng.getInstance().update(dt);
@@ -139,18 +138,18 @@ public class ConnectionManager implements IConnectionManager {
 //        }
     }
 
-    private void connectManagerServer(String ip, int port, ServerTag tag) {
-        ManagerConnector managerConnector = managerConnectorHashMap.get(tag);
-        if (managerConnector == null) {
-            managerConnector = createManagerConnector();
-            managerConnector.init(null);
-            managerConnectorHashMap.put(tag, managerConnector);
-        }
-        if (managerConnector.isOpened()) {
-            log.error("{} already started an manager acceptor!", Context.tag.toString());
-        } else {
-            managerConnector.connect(ip, port);
-            managerConnector.start();
-        }
-    }
+//    private void connectManagerServer(String ip, int port, ServerTag tag) {
+//        ManagerConnector managerConnector = managerConnectorHashMap.get(tag);
+//        if (managerConnector == null) {
+//            managerConnector = createManagerConnector();
+//            managerConnector.init(null);
+//            managerConnectorHashMap.put(tag, managerConnector);
+//        }
+//        if (managerConnector.isOpened()) {
+//            log.error("{} already started an manager acceptor!", Context.tag.toString());
+//        } else {
+//            managerConnector.connect(ip, port);
+//            managerConnector.start();
+//        }
+//    }
 }

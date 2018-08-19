@@ -1,5 +1,7 @@
 package relation;
 
+import configuration.dataManager.Data;
+import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -11,6 +13,7 @@ import protocol.relation.global.R2GMIdGenerater;
 import protocol.relation.manager.R2MIdGenerater;
 import protocol.relation.relation.R2RIdGenerater;
 import protocol.relation.zone.R2ZIdGenerater;
+import protocol.server.register.ServerRegister;
 import protocol.server.register.ServerRegisterIdGenerater;
 import protocol.zone.relation.Z2RIdGenerater;
 import relation.connectionManager.ConnectionManager;
@@ -113,4 +116,18 @@ public class Context extends AbstractServiceFrame {
 
     }
 
+    public static List<ServerRegister.LISTEN_INFO> getListenInfoList(){
+        List<ServerRegister.LISTEN_INFO> listen_info_list = new ArrayList<>();
+        DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
+        Data serviceData =dateList.getData(tag.toString());
+
+        int zonePort = serviceData.getInteger("zonePort");
+
+        ServerRegister.LISTEN_INFO.Builder zoneInfo = ServerRegister.LISTEN_INFO.newBuilder();
+        zoneInfo.setServerType(ServerType.Zone.ordinal());
+        zoneInfo.setPort(zonePort);
+        listen_info_list.add(zoneInfo.build());
+
+        return listen_info_list;
+    }
 }

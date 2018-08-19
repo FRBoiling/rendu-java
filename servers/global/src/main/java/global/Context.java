@@ -1,5 +1,7 @@
 package global;
 
+import configuration.dataManager.Data;
+import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -19,13 +21,13 @@ import protocol.global.relation.GM2RIdGenerater;
 import protocol.global.zone.GM2ZIdGenerater;
 import protocol.manager.global.M2GMIdGenerater;
 import protocol.relation.global.R2GMIdGenerater;
+import protocol.server.register.ServerRegister;
 import protocol.server.register.ServerRegisterIdGenerater;
 import protocol.zone.global.Z2GMIdGenerater;
 import util.FileUtil;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.

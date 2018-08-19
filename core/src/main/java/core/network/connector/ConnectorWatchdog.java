@@ -1,8 +1,11 @@
 package core.network.connector;
 
+import core.base.serviceframe.IService;
 import core.network.IChannelHandlerHolder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
+import io.netty.handler.timeout.IdleStateEvent;
+import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.Timeout;
 import io.netty.util.Timer;
 import io.netty.util.TimerTask;
@@ -21,42 +24,42 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 @Slf4j
 @ChannelHandler.Sharable
 public abstract class ConnectorWatchdog extends ChannelInboundHandlerAdapter implements TimerTask, IChannelHandlerHolder {
-    private int port;
-    private String host;
-
-    private Bootstrap bootstrap;
+    ConnectorNetworkService netWorkService;
     private Timer timer;
 
     private volatile boolean reconnect = true;
-    private int attempts;
+//    private int attempts;
+
+    private long timeoutDelay = 1;
 
     ConnectorWatchdog(Timer timer) {
         this.timer = timer;
     }
 
-    public void init(Bootstrap bootstrap, String host, int port) {
-        this.bootstrap = bootstrap;
-        this.port = port;
-        this.host = host;
+    public void init(ConnectorNetworkService service, String host, int port) {
+        this.netWorkService = service;
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         Channel channel = ctx.channel();
-        attempts = 0;
-        log.info("Connect with {}.", channel);
+//        attempts = 0;
+        log.debug("Connect with {}.", channel);
         ctx.fireChannelActive();
     }
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         if (isReconnect()) {
-            if (attempts < 12) { //尝试连接12次
-                attempts++;
-                long timeout = 2 << attempts;
-                timer.newTimeout(this, timeout, MILLISECONDS);
-                log.warn("Disconnect on {}, host {}, listenPort: {}, reconnect: {} attempts:{}.", ctx.channel(), port, host, reconnect, attempts);
-            }
+//            if (attempts < 12) { //尝试连接12次
+//                attempts++;
+//                long timeout = 2 << attempts;
+//                timer.newTimeout(this, timeout, MILLISECONDS);
+//                log.warn("Disconnect on {}, host {}, listenPort: {}, reconnect: {} attempts:{}.", ctx.channel(), port, host, reconnect, attempts);
+//            }
+            //timeoutDelay 秒后重连
+            timer.newTimeout(this, timeoutDelay, MILLISECONDS);
+            log.warn("Disconnect on {},try to reconnect.", ctx.channel());
         }
         ctx.fireChannelInactive();
     }
@@ -71,31 +74,6 @@ public abstract class ConnectorWatchdog extends ChannelInboundHandlerAdapter imp
 
     @Override
     public void run(Timeout timeout) throws Exception {
-        ChannelFuture future;
-
-        //TODO:Boiling 这里这个 synchronized是否必要？
-        synchronized (bootstrap) {
-            bootstrap.handler(new ChannelInitializer<Channel>() {
-
-                @Override
-                protected void initChannel(Channel ch) throws Exception {
-                    ch.pipeline().addLast(handlers());
-                }
-            });
-            future = bootstrap.connect(host, port);
-        }
-
-        future.addListener(new ChannelFutureListener() {
-            public void operationComplete(ChannelFuture f) throws Exception {
-                boolean succeed = f.isSuccess();
-//                log.warn("Reconnect with {}:{}, {}.", host, listenPort, succeed ? "succeed" : "failed");
-                if (!succeed) {
-                    f.channel().pipeline().fireChannelInactive();
-                }else{
-//                    System.out.println("重连成功");
-                    log.info("重连成功");
-                }
-            }
-        });
+       netWorkService.start();
     }
 }

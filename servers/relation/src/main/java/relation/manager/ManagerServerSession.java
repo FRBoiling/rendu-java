@@ -5,7 +5,7 @@ import core.base.model.ServerTag;
 import core.base.model.ServerType;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
-import protocol.zone.global.Z2GM;
+import protocol.relation.manager.R2M;
 import relation.Context;
 
 /**
@@ -26,7 +26,7 @@ public class ManagerServerSession extends AbstractSession {
 
     public void onConnected() {
         super.onConnected();
-        sendRegister(Context.tag);
+        sendRegister(Context.tag,Context.getListenInfoList());
     }
 
     public void onDisConnected() {
@@ -35,7 +35,7 @@ public class ManagerServerSession extends AbstractSession {
 
     @Override
     public void sendHeartBeat() {
-        Z2GM.MSG_Z2GM_HEARTBEAT.Builder builder = Z2GM.MSG_Z2GM_HEARTBEAT.newBuilder();
+        R2M.MSG_R2M_HEARTBEAT.Builder builder = R2M.MSG_R2M_HEARTBEAT.newBuilder();
         sendMessage(builder.build());
     }
 }

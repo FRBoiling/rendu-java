@@ -19,6 +19,7 @@ import global.zone.ZoneServerSessionMng;
 import lombok.extern.slf4j.Slf4j;
 import protocol.server.register.ServerRegister;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -170,6 +171,7 @@ public class ConnectionManager implements IConnectionManager {
             ServerTag tag = (ServerTag) entry.getKey();
             if (zoneTag.getAreaId() == tag.getAreaId()){
                 sendAcceptorInfo2Connector(tag, zoneTag);
+                break;
             }
         }
 
@@ -178,6 +180,7 @@ public class ConnectionManager implements IConnectionManager {
             ServerTag tag = (ServerTag) entry.getKey();
             if (zoneTag.getAreaId() == tag.getAreaId()) {
                 sendAcceptorInfo2Connector(tag, zoneTag);
+                break;
             }
         }
 
@@ -203,6 +206,7 @@ public class ConnectionManager implements IConnectionManager {
             ServerTag tag = (ServerTag) entry.getKey();
             if (tag.getAreaId()== gateTag.getAreaId()){
                 sendAcceptorInfo2Connector(tag, gateTag);
+                break;
             }
         }
 
@@ -226,6 +230,7 @@ public class ConnectionManager implements IConnectionManager {
             ServerTag tag = (ServerTag) entry.getKey();
             if (relationTag.getAreaId()==tag.getAreaId()){
                 sendAcceptorInfo2Connector(tag, relationTag);
+                break;
             }
         }
 
@@ -235,12 +240,12 @@ public class ConnectionManager implements IConnectionManager {
         //send this relation connection info to other relations
         broadcastAcceptorInfo2Connectors(relationTag, ServerType.Relation);
         //send other relation's connection info to this relation
-        for (Map.Entry<ISessionTag,AbstractSession> entry : RelationServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
-            ServerTag tag = (ServerTag) entry.getKey();
-            if (tag.getAreaId() < relationTag.getAreaId()) {  //约定 areaId 大的为连接方 小的为监听方
-                sendAcceptorInfo2Connector(tag, relationTag);
-            }
-        }
+        //for (Map.Entry<ISessionTag,AbstractSession> entry : RelationServerSessionMng.getInstance().getRegisterSessions().entrySet()) {
+        //    ServerTag tag = (ServerTag) entry.getKey();
+        //    if (tag.getAreaId() < relationTag.getAreaId()) {  //约定 areaId 大的为连接方 小的为监听方
+        //        sendAcceptorInfo2Connector(tag, relationTag);
+        //    }
+        //}
     }
 
     /**
@@ -250,14 +255,21 @@ public class ConnectionManager implements IConnectionManager {
      * @param connectorTag 连接发起方
      */
     private void sendAcceptorInfo2Connector(ServerTag acceptorTag, ServerTag connectorTag) {
-        DataList dataList = DataListManager.getInstance().getDataList("ServerConfig");
-        Data serverData = dataList.getData(acceptorTag.toString());
-        String ip = serverData.getString("ip");
-        int listenPort = getListenPortFromData(connectorTag.getType(), serverData);
+//        DataList dataList = DataListManager.getInstance().getDataList("ServerConfig");
+//
+//        Data serverData = dataList.getData(acceptorTag.toString());
+//        String ip = serverData.getString("ip");
+//        int listenPort = getListenPortFromData(connectorTag.getType(), serverData);
+//
+//        ServerRegister.Connect_Info.Builder connectInfoBuilder = getServerConnectInfo(ip, listenPort);
 
         ServerRegister.Server_Tag.Builder tagBuilder = getServerTag(acceptorTag.getType(), acceptorTag.getAreaId(), acceptorTag.getSubId());
-        ServerRegister.Connect_Info.Builder connectInfoBuilder = getServerConnectInfo(ip, listenPort);
-        ServerRegister.MSG_Server_Connect_Command.Builder commandBuilder = getConnectionCommand(tagBuilder, connectInfoBuilder);
+        ServerRegister.Connect_Info connect_info = ListenInfoMng.getInstance().getConnectInfo(acceptorTag,connectorTag.getType());
+        if (connect_info ==null){
+            log.error("sendAcceptorInfo2Connector got an error:acceptorTag {} connectorTag{}",acceptorTag.toString(),connectorTag.toString());
+            return;
+        }
+        ServerRegister.MSG_Server_Connect_Command.Builder commandBuilder = getConnectionCommand(tagBuilder,  connect_info.toBuilder());
 
         switch (connectorTag.getType()) {
             case Manager:
@@ -285,14 +297,19 @@ public class ConnectionManager implements IConnectionManager {
      * @param connectorType 连接方
      */
     private void broadcastAcceptorInfo2Connectors(ServerTag acceptorTag, ServerType connectorType) {
-        DataList dataList = DataListManager.getInstance().getDataList("ServerConfig");
-        Data serverData = dataList.getData(acceptorTag.toString());
-        String ip = serverData.getString("ip");
-        int listenPort = getListenPortFromData(connectorType, serverData);
-
+//        DataList dataList = DataListManager.getInstance().getDataList("ServerConfig");
+//        Data serverData = dataList.getData(acceptorTag.toString());
+//        String ip = serverData.getString("ip");
+//        int listenPort = getListenPortFromData(connectorType, serverData);
+//
+//        ServerRegister.Connect_Info.Builder infoBuilder = getServerConnectInfo(ip, listenPort);
         ServerRegister.Server_Tag.Builder tagBuilder = getServerTag(acceptorTag.getType(), acceptorTag.getAreaId(), acceptorTag.getSubId());
-        ServerRegister.Connect_Info.Builder infoBuilder = getServerConnectInfo(ip, listenPort);
-        ServerRegister.MSG_Server_Connect_Command.Builder commandBuilder = getConnectionCommand(tagBuilder, infoBuilder);
+        ServerRegister.Connect_Info connect_info = ListenInfoMng.getInstance().getConnectInfo(acceptorTag,connectorType);
+        if (connect_info ==null){
+            log.error("broadcastAcceptorInfo2Connectors got an error:acceptorTag {} connectorType {}",acceptorTag.toString(),connectorType.toString());
+            return;
+        }
+        ServerRegister.MSG_Server_Connect_Command.Builder commandBuilder = getConnectionCommand(tagBuilder, connect_info.toBuilder());
 
         switch (connectorType) {
             case Manager:

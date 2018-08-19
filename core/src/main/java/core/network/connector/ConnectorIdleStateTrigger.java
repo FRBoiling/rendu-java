@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @ChannelHandler.Sharable
 public class ConnectorIdleStateTrigger extends ChannelInboundHandlerAdapter {
-//    private static final Logger logger = LoggerFactory.getLogger(ConnectorIdleStateTrigger.class);
+    //    private static final Logger logger = LoggerFactory.getLogger(ConnectorIdleStateTrigger.class);
     @Override
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
         if (evt instanceof IdleStateEvent) {

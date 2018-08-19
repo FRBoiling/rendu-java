@@ -691,6 +691,30 @@ public final class ServerRegister {
      * <code>required .protocol.server.register.Server_Tag tag = 1;</code>
      */
     protocol.server.register.ServerRegister.Server_TagOrBuilder getTagOrBuilder();
+
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    java.util.List<protocol.server.register.ServerRegister.LISTEN_INFO> 
+        getListenInfosList();
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    protocol.server.register.ServerRegister.LISTEN_INFO getListenInfos(int index);
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    int getListenInfosCount();
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    java.util.List<? extends protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder> 
+        getListenInfosOrBuilderList();
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder getListenInfosOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code protocol.server.register.MSG_Server_Register}
@@ -705,6 +729,7 @@ public final class ServerRegister {
       super(builder);
     }
     private MSG_Server_Register() {
+      listenInfos_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -751,6 +776,15 @@ public final class ServerRegister {
               bitField0_ |= 0x00000001;
               break;
             }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                listenInfos_ = new java.util.ArrayList<protocol.server.register.ServerRegister.LISTEN_INFO>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              listenInfos_.add(
+                  input.readMessage(protocol.server.register.ServerRegister.LISTEN_INFO.PARSER, extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -759,6 +793,9 @@ public final class ServerRegister {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          listenInfos_ = java.util.Collections.unmodifiableList(listenInfos_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -797,6 +834,41 @@ public final class ServerRegister {
       return tag_ == null ? protocol.server.register.ServerRegister.Server_Tag.getDefaultInstance() : tag_;
     }
 
+    public static final int LISTENINFOS_FIELD_NUMBER = 2;
+    private java.util.List<protocol.server.register.ServerRegister.LISTEN_INFO> listenInfos_;
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    public java.util.List<protocol.server.register.ServerRegister.LISTEN_INFO> getListenInfosList() {
+      return listenInfos_;
+    }
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    public java.util.List<? extends protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder> 
+        getListenInfosOrBuilderList() {
+      return listenInfos_;
+    }
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    public int getListenInfosCount() {
+      return listenInfos_.size();
+    }
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    public protocol.server.register.ServerRegister.LISTEN_INFO getListenInfos(int index) {
+      return listenInfos_.get(index);
+    }
+    /**
+     * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+     */
+    public protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder getListenInfosOrBuilder(
+        int index) {
+      return listenInfos_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -811,6 +883,12 @@ public final class ServerRegister {
         memoizedIsInitialized = 0;
         return false;
       }
+      for (int i = 0; i < getListenInfosCount(); i++) {
+        if (!getListenInfos(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -819,6 +897,9 @@ public final class ServerRegister {
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getTag());
+      }
+      for (int i = 0; i < listenInfos_.size(); i++) {
+        output.writeMessage(2, listenInfos_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -831,6 +912,10 @@ public final class ServerRegister {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getTag());
+      }
+      for (int i = 0; i < listenInfos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, listenInfos_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -853,6 +938,8 @@ public final class ServerRegister {
         result = result && getTag()
             .equals(other.getTag());
       }
+      result = result && getListenInfosList()
+          .equals(other.getListenInfosList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -867,6 +954,10 @@ public final class ServerRegister {
       if (hasTag()) {
         hash = (37 * hash) + TAG_FIELD_NUMBER;
         hash = (53 * hash) + getTag().hashCode();
+      }
+      if (getListenInfosCount() > 0) {
+        hash = (37 * hash) + LISTENINFOS_FIELD_NUMBER;
+        hash = (53 * hash) + getListenInfosList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -994,6 +1085,7 @@ public final class ServerRegister {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getTagFieldBuilder();
+          getListenInfosFieldBuilder();
         }
       }
       public Builder clear() {
@@ -1004,6 +1096,12 @@ public final class ServerRegister {
           tagBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        if (listenInfosBuilder_ == null) {
+          listenInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          listenInfosBuilder_.clear();
+        }
         return this;
       }
 
@@ -1035,6 +1133,15 @@ public final class ServerRegister {
           result.tag_ = tag_;
         } else {
           result.tag_ = tagBuilder_.build();
+        }
+        if (listenInfosBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            listenInfos_ = java.util.Collections.unmodifiableList(listenInfos_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.listenInfos_ = listenInfos_;
+        } else {
+          result.listenInfos_ = listenInfosBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -1081,6 +1188,32 @@ public final class ServerRegister {
         if (other.hasTag()) {
           mergeTag(other.getTag());
         }
+        if (listenInfosBuilder_ == null) {
+          if (!other.listenInfos_.isEmpty()) {
+            if (listenInfos_.isEmpty()) {
+              listenInfos_ = other.listenInfos_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureListenInfosIsMutable();
+              listenInfos_.addAll(other.listenInfos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.listenInfos_.isEmpty()) {
+            if (listenInfosBuilder_.isEmpty()) {
+              listenInfosBuilder_.dispose();
+              listenInfosBuilder_ = null;
+              listenInfos_ = other.listenInfos_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              listenInfosBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getListenInfosFieldBuilder() : null;
+            } else {
+              listenInfosBuilder_.addAllMessages(other.listenInfos_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1092,6 +1225,11 @@ public final class ServerRegister {
         }
         if (!getTag().isInitialized()) {
           return false;
+        }
+        for (int i = 0; i < getListenInfosCount(); i++) {
+          if (!getListenInfos(i).isInitialized()) {
+            return false;
+          }
         }
         return true;
       }
@@ -1232,6 +1370,246 @@ public final class ServerRegister {
         }
         return tagBuilder_;
       }
+
+      private java.util.List<protocol.server.register.ServerRegister.LISTEN_INFO> listenInfos_ =
+        java.util.Collections.emptyList();
+      private void ensureListenInfosIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          listenInfos_ = new java.util.ArrayList<protocol.server.register.ServerRegister.LISTEN_INFO>(listenInfos_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          protocol.server.register.ServerRegister.LISTEN_INFO, protocol.server.register.ServerRegister.LISTEN_INFO.Builder, protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder> listenInfosBuilder_;
+
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public java.util.List<protocol.server.register.ServerRegister.LISTEN_INFO> getListenInfosList() {
+        if (listenInfosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(listenInfos_);
+        } else {
+          return listenInfosBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public int getListenInfosCount() {
+        if (listenInfosBuilder_ == null) {
+          return listenInfos_.size();
+        } else {
+          return listenInfosBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public protocol.server.register.ServerRegister.LISTEN_INFO getListenInfos(int index) {
+        if (listenInfosBuilder_ == null) {
+          return listenInfos_.get(index);
+        } else {
+          return listenInfosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public Builder setListenInfos(
+          int index, protocol.server.register.ServerRegister.LISTEN_INFO value) {
+        if (listenInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureListenInfosIsMutable();
+          listenInfos_.set(index, value);
+          onChanged();
+        } else {
+          listenInfosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public Builder setListenInfos(
+          int index, protocol.server.register.ServerRegister.LISTEN_INFO.Builder builderForValue) {
+        if (listenInfosBuilder_ == null) {
+          ensureListenInfosIsMutable();
+          listenInfos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          listenInfosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public Builder addListenInfos(protocol.server.register.ServerRegister.LISTEN_INFO value) {
+        if (listenInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureListenInfosIsMutable();
+          listenInfos_.add(value);
+          onChanged();
+        } else {
+          listenInfosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public Builder addListenInfos(
+          int index, protocol.server.register.ServerRegister.LISTEN_INFO value) {
+        if (listenInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureListenInfosIsMutable();
+          listenInfos_.add(index, value);
+          onChanged();
+        } else {
+          listenInfosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public Builder addListenInfos(
+          protocol.server.register.ServerRegister.LISTEN_INFO.Builder builderForValue) {
+        if (listenInfosBuilder_ == null) {
+          ensureListenInfosIsMutable();
+          listenInfos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          listenInfosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public Builder addListenInfos(
+          int index, protocol.server.register.ServerRegister.LISTEN_INFO.Builder builderForValue) {
+        if (listenInfosBuilder_ == null) {
+          ensureListenInfosIsMutable();
+          listenInfos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          listenInfosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public Builder addAllListenInfos(
+          java.lang.Iterable<? extends protocol.server.register.ServerRegister.LISTEN_INFO> values) {
+        if (listenInfosBuilder_ == null) {
+          ensureListenInfosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, listenInfos_);
+          onChanged();
+        } else {
+          listenInfosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public Builder clearListenInfos() {
+        if (listenInfosBuilder_ == null) {
+          listenInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          listenInfosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public Builder removeListenInfos(int index) {
+        if (listenInfosBuilder_ == null) {
+          ensureListenInfosIsMutable();
+          listenInfos_.remove(index);
+          onChanged();
+        } else {
+          listenInfosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public protocol.server.register.ServerRegister.LISTEN_INFO.Builder getListenInfosBuilder(
+          int index) {
+        return getListenInfosFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder getListenInfosOrBuilder(
+          int index) {
+        if (listenInfosBuilder_ == null) {
+          return listenInfos_.get(index);  } else {
+          return listenInfosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public java.util.List<? extends protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder> 
+           getListenInfosOrBuilderList() {
+        if (listenInfosBuilder_ != null) {
+          return listenInfosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(listenInfos_);
+        }
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public protocol.server.register.ServerRegister.LISTEN_INFO.Builder addListenInfosBuilder() {
+        return getListenInfosFieldBuilder().addBuilder(
+            protocol.server.register.ServerRegister.LISTEN_INFO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public protocol.server.register.ServerRegister.LISTEN_INFO.Builder addListenInfosBuilder(
+          int index) {
+        return getListenInfosFieldBuilder().addBuilder(
+            index, protocol.server.register.ServerRegister.LISTEN_INFO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protocol.server.register.LISTEN_INFO listenInfos = 2;</code>
+       */
+      public java.util.List<protocol.server.register.ServerRegister.LISTEN_INFO.Builder> 
+           getListenInfosBuilderList() {
+        return getListenInfosFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          protocol.server.register.ServerRegister.LISTEN_INFO, protocol.server.register.ServerRegister.LISTEN_INFO.Builder, protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder> 
+          getListenInfosFieldBuilder() {
+        if (listenInfosBuilder_ == null) {
+          listenInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              protocol.server.register.ServerRegister.LISTEN_INFO, protocol.server.register.ServerRegister.LISTEN_INFO.Builder, protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder>(
+                  listenInfos_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          listenInfos_ = null;
+        }
+        return listenInfosBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -1286,11 +1664,11 @@ public final class ServerRegister {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 result = 1;</code>
+     * <code>required int32 result = 1;</code>
      */
     boolean hasResult();
     /**
-     * <code>required uint32 result = 1;</code>
+     * <code>required int32 result = 1;</code>
      */
     int getResult();
 
@@ -1356,7 +1734,7 @@ public final class ServerRegister {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              result_ = input.readUInt32();
+              result_ = input.readInt32();
               break;
             }
             case 18: {
@@ -1400,13 +1778,13 @@ public final class ServerRegister {
     public static final int RESULT_FIELD_NUMBER = 1;
     private int result_;
     /**
-     * <code>required uint32 result = 1;</code>
+     * <code>required int32 result = 1;</code>
      */
     public boolean hasResult() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 result = 1;</code>
+     * <code>required int32 result = 1;</code>
      */
     public int getResult() {
       return result_;
@@ -1458,7 +1836,7 @@ public final class ServerRegister {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, result_);
+        output.writeInt32(1, result_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getTag());
@@ -1473,7 +1851,7 @@ public final class ServerRegister {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, result_);
+          .computeInt32Size(1, result_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1785,19 +2163,19 @@ public final class ServerRegister {
 
       private int result_ ;
       /**
-       * <code>required uint32 result = 1;</code>
+       * <code>required int32 result = 1;</code>
        */
       public boolean hasResult() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 result = 1;</code>
+       * <code>required int32 result = 1;</code>
        */
       public int getResult() {
         return result_;
       }
       /**
-       * <code>required uint32 result = 1;</code>
+       * <code>required int32 result = 1;</code>
        */
       public Builder setResult(int value) {
         bitField0_ |= 0x00000001;
@@ -1806,7 +2184,7 @@ public final class ServerRegister {
         return this;
       }
       /**
-       * <code>required uint32 result = 1;</code>
+       * <code>required int32 result = 1;</code>
        */
       public Builder clearResult() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3546,6 +3924,587 @@ public final class ServerRegister {
 
   }
 
+  public interface LISTEN_INFOOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.server.register.LISTEN_INFO)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required int32 serverType = 1;</code>
+     */
+    boolean hasServerType();
+    /**
+     * <code>required int32 serverType = 1;</code>
+     */
+    int getServerType();
+
+    /**
+     * <code>required int32 port = 2;</code>
+     */
+    boolean hasPort();
+    /**
+     * <code>required int32 port = 2;</code>
+     */
+    int getPort();
+  }
+  /**
+   * Protobuf type {@code protocol.server.register.LISTEN_INFO}
+   */
+  public  static final class LISTEN_INFO extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protocol.server.register.LISTEN_INFO)
+      LISTEN_INFOOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LISTEN_INFO.newBuilder() to construct.
+    private LISTEN_INFO(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LISTEN_INFO() {
+      serverType_ = 0;
+      port_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LISTEN_INFO(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              serverType_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              port_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_LISTEN_INFO_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return protocol.server.register.ServerRegister.internal_static_protocol_server_register_LISTEN_INFO_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              protocol.server.register.ServerRegister.LISTEN_INFO.class, protocol.server.register.ServerRegister.LISTEN_INFO.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SERVERTYPE_FIELD_NUMBER = 1;
+    private int serverType_;
+    /**
+     * <code>required int32 serverType = 1;</code>
+     */
+    public boolean hasServerType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 serverType = 1;</code>
+     */
+    public int getServerType() {
+      return serverType_;
+    }
+
+    public static final int PORT_FIELD_NUMBER = 2;
+    private int port_;
+    /**
+     * <code>required int32 port = 2;</code>
+     */
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 port = 2;</code>
+     */
+    public int getPort() {
+      return port_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasServerType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPort()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, serverType_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, port_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, serverType_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, port_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof protocol.server.register.ServerRegister.LISTEN_INFO)) {
+        return super.equals(obj);
+      }
+      protocol.server.register.ServerRegister.LISTEN_INFO other = (protocol.server.register.ServerRegister.LISTEN_INFO) obj;
+
+      boolean result = true;
+      result = result && (hasServerType() == other.hasServerType());
+      if (hasServerType()) {
+        result = result && (getServerType()
+            == other.getServerType());
+      }
+      result = result && (hasPort() == other.hasPort());
+      if (hasPort()) {
+        result = result && (getPort()
+            == other.getPort());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasServerType()) {
+        hash = (37 * hash) + SERVERTYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getServerType();
+      }
+      if (hasPort()) {
+        hash = (37 * hash) + PORT_FIELD_NUMBER;
+        hash = (53 * hash) + getPort();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protocol.server.register.ServerRegister.LISTEN_INFO parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(protocol.server.register.ServerRegister.LISTEN_INFO prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocol.server.register.LISTEN_INFO}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protocol.server.register.LISTEN_INFO)
+        protocol.server.register.ServerRegister.LISTEN_INFOOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_LISTEN_INFO_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_LISTEN_INFO_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                protocol.server.register.ServerRegister.LISTEN_INFO.class, protocol.server.register.ServerRegister.LISTEN_INFO.Builder.class);
+      }
+
+      // Construct using protocol.server.register.ServerRegister.LISTEN_INFO.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        serverType_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        port_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return protocol.server.register.ServerRegister.internal_static_protocol_server_register_LISTEN_INFO_descriptor;
+      }
+
+      public protocol.server.register.ServerRegister.LISTEN_INFO getDefaultInstanceForType() {
+        return protocol.server.register.ServerRegister.LISTEN_INFO.getDefaultInstance();
+      }
+
+      public protocol.server.register.ServerRegister.LISTEN_INFO build() {
+        protocol.server.register.ServerRegister.LISTEN_INFO result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public protocol.server.register.ServerRegister.LISTEN_INFO buildPartial() {
+        protocol.server.register.ServerRegister.LISTEN_INFO result = new protocol.server.register.ServerRegister.LISTEN_INFO(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.serverType_ = serverType_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.port_ = port_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof protocol.server.register.ServerRegister.LISTEN_INFO) {
+          return mergeFrom((protocol.server.register.ServerRegister.LISTEN_INFO)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(protocol.server.register.ServerRegister.LISTEN_INFO other) {
+        if (other == protocol.server.register.ServerRegister.LISTEN_INFO.getDefaultInstance()) return this;
+        if (other.hasServerType()) {
+          setServerType(other.getServerType());
+        }
+        if (other.hasPort()) {
+          setPort(other.getPort());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasServerType()) {
+          return false;
+        }
+        if (!hasPort()) {
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        protocol.server.register.ServerRegister.LISTEN_INFO parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (protocol.server.register.ServerRegister.LISTEN_INFO) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int serverType_ ;
+      /**
+       * <code>required int32 serverType = 1;</code>
+       */
+      public boolean hasServerType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 serverType = 1;</code>
+       */
+      public int getServerType() {
+        return serverType_;
+      }
+      /**
+       * <code>required int32 serverType = 1;</code>
+       */
+      public Builder setServerType(int value) {
+        bitField0_ |= 0x00000001;
+        serverType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 serverType = 1;</code>
+       */
+      public Builder clearServerType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        serverType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int port_ ;
+      /**
+       * <code>required int32 port = 2;</code>
+       */
+      public boolean hasPort() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 port = 2;</code>
+       */
+      public int getPort() {
+        return port_;
+      }
+      /**
+       * <code>required int32 port = 2;</code>
+       */
+      public Builder setPort(int value) {
+        bitField0_ |= 0x00000002;
+        port_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 port = 2;</code>
+       */
+      public Builder clearPort() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        port_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protocol.server.register.LISTEN_INFO)
+    }
+
+    // @@protoc_insertion_point(class_scope:protocol.server.register.LISTEN_INFO)
+    private static final protocol.server.register.ServerRegister.LISTEN_INFO DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new protocol.server.register.ServerRegister.LISTEN_INFO();
+    }
+
+    public static protocol.server.register.ServerRegister.LISTEN_INFO getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<LISTEN_INFO>
+        PARSER = new com.google.protobuf.AbstractParser<LISTEN_INFO>() {
+      public LISTEN_INFO parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LISTEN_INFO(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LISTEN_INFO> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LISTEN_INFO> getParserForType() {
+      return PARSER;
+    }
+
+    public protocol.server.register.ServerRegister.LISTEN_INFO getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protocol_server_register_Server_Tag_descriptor;
   private static final 
@@ -3571,6 +4530,11 @@ public final class ServerRegister {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protocol_server_register_MSG_Server_Connect_Command_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocol_server_register_LISTEN_INFO_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protocol_server_register_LISTEN_INFO_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3582,17 +4546,19 @@ public final class ServerRegister {
     java.lang.String[] descriptorData = {
       "\n\024ServerRegister.proto\022\030protocol.server." +
       "register\"?\n\nServer_Tag\022\022\n\nserverType\030\001 \002" +
-      "(\005\022\016\n\006areaId\030\002 \001(\005\022\r\n\005subId\030\003 \001(\005\"H\n\023MSG" +
-      "_Server_Register\0221\n\003tag\030\001 \002(\0132$.protocol" +
-      ".server.register.Server_Tag\"_\n\032MSG_Serve" +
-      "r_Register_Return\022\016\n\006result\030\001 \002(\r\0221\n\003tag" +
-      "\030\002 \002(\0132$.protocol.server.register.Server" +
-      "_Tag\"(\n\014Connect_Info\022\014\n\004port\030\001 \002(\005\022\n\n\002ip" +
-      "\030\002 \002(\t\"\232\001\n\032MSG_Server_Connect_Command\0221\n" +
-      "\003tag\030\001 \002(\0132$.protocol.server.register.Se" +
-      "rver_Tag\0224\n\004info\030\002 \002(\0132&.protocol.server" +
-      ".register.Connect_Info\022\023\n\013connectType\030\004 " +
-      "\001(\005"
+      "(\005\022\016\n\006areaId\030\002 \001(\005\022\r\n\005subId\030\003 \001(\005\"\204\001\n\023MS" +
+      "G_Server_Register\0221\n\003tag\030\001 \002(\0132$.protoco" +
+      "l.server.register.Server_Tag\022:\n\013listenIn" +
+      "fos\030\002 \003(\0132%.protocol.server.register.LIS" +
+      "TEN_INFO\"_\n\032MSG_Server_Register_Return\022\016" +
+      "\n\006result\030\001 \002(\005\0221\n\003tag\030\002 \002(\0132$.protocol.s" +
+      "erver.register.Server_Tag\"(\n\014Connect_Inf" +
+      "o\022\014\n\004port\030\001 \002(\005\022\n\n\002ip\030\002 \002(\t\"\232\001\n\032MSG_Serv" +
+      "er_Connect_Command\0221\n\003tag\030\001 \002(\0132$.protoc" +
+      "ol.server.register.Server_Tag\0224\n\004info\030\002 " +
+      "\002(\0132&.protocol.server.register.Connect_I" +
+      "nfo\022\023\n\013connectType\030\004 \001(\005\"/\n\013LISTEN_INFO\022" +
+      "\022\n\nserverType\030\001 \002(\005\022\014\n\004port\030\002 \002(\005"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3617,7 +4583,7 @@ public final class ServerRegister {
     internal_static_protocol_server_register_MSG_Server_Register_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_server_register_MSG_Server_Register_descriptor,
-        new java.lang.String[] { "Tag", });
+        new java.lang.String[] { "Tag", "ListenInfos", });
     internal_static_protocol_server_register_MSG_Server_Register_Return_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_protocol_server_register_MSG_Server_Register_Return_fieldAccessorTable = new
@@ -3636,6 +4602,12 @@ public final class ServerRegister {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_server_register_MSG_Server_Connect_Command_descriptor,
         new java.lang.String[] { "Tag", "Info", "ConnectType", });
+    internal_static_protocol_server_register_LISTEN_INFO_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_protocol_server_register_LISTEN_INFO_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protocol_server_register_LISTEN_INFO_descriptor,
+        new java.lang.String[] { "ServerType", "Port", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

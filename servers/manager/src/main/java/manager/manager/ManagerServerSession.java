@@ -26,7 +26,7 @@ public class ManagerServerSession extends AbstractSession {
 
     public void onConnected() {
         super.onConnected();
-        sendRegister(Context.tag);
+        sendRegister(Context.tag,Context.getListenInfoList());
     }
 
     public void onDisConnected() {
@@ -35,7 +35,5 @@ public class ManagerServerSession extends AbstractSession {
 
     @Override
     public void sendHeartBeat() {
-        Z2GM.MSG_Z2GM_HEARTBEAT.Builder builder = Z2GM.MSG_Z2GM_HEARTBEAT.newBuilder();
-        sendMessage(builder.build());
     }
 }

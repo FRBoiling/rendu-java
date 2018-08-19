@@ -3,7 +3,6 @@ package relation.global;
 import configuration.dataManager.Data;
 import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
-import constant.SystemConst;
 import core.base.serviceframe.AbstractConnector;
 
 /**

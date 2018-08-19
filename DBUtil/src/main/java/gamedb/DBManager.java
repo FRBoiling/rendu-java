@@ -11,10 +11,7 @@ import util.Time;
 import gamedb.dao.AbstractDBOperator;
 
 import java.io.File;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Slf4j
@@ -37,7 +34,7 @@ public class DBManager {
 
     public boolean init() {
         saveQueue = new ConcurrentLinkedQueue<>();
-        executionQue = new ArrayDeque<>();
+        executionQue = new LinkedList<>();
         postUpdateQue = new ConcurrentLinkedQueue<>();
         exceptionLogQueue = new ConcurrentLinkedQueue<>();
         Opened = true;

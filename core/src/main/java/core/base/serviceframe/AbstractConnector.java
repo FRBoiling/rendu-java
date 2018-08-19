@@ -39,7 +39,7 @@ public abstract class AbstractConnector implements IService {
         builder.setName(name);
     }
 
-    public void connect(String ip,int port){
+    public void connect(String ip, int port){
         this.ip = ip;
         this.port = port;
         builder.setIp(ip);

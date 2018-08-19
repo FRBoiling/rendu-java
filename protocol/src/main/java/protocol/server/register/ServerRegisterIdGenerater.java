@@ -13,5 +13,6 @@ public class ServerRegisterIdGenerater{
           Id.getInst().SetMessage(protocol.server.register.ServerRegister.MSG_Server_Register_Return.class, 0xff0002);
           Id.getInst().SetMessage(protocol.server.register.ServerRegister.Connect_Info.class, 0xff0003);
           Id.getInst().SetMessage(protocol.server.register.ServerRegister.MSG_Server_Connect_Command.class, 0xff0004);
+          Id.getInst().SetMessage(protocol.server.register.ServerRegister.LISTEN_INFO.class, 0xff0005);
      }
 }

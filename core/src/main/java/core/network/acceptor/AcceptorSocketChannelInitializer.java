@@ -1,6 +1,7 @@
 package core.network.acceptor;
 
 import core.network.IChannelHandlerHolder;
+import core.network.NetWorkConst;
 import core.network.codec.*;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
@@ -51,8 +52,8 @@ public class AcceptorSocketChannelInitializer extends ChannelInitializer<SocketC
     protected void initChannel(SocketChannel channel) throws Exception {
         ChannelPipeline pip = channel.pipeline();
         handlers = new ChannelHandler[]{
-                //每隔60s的时间内如果没有接受到任何的read事件的话，则会触发userEventTriggered事件，并指定IdleState的类型为READER_IDLE
-                new IdleStateHandler(60, 0, 0, TimeUnit.SECONDS),
+                //每隔readerIdleTime秒的时间内如果没有接受到任何的read事件的话，则会触发userEventTriggered事件，并指定IdleState的类型为READER_IDLE
+                new IdleStateHandler(NetWorkConst.READER_IDLE_TIME, 0, 0, TimeUnit.SECONDS),
                 idleStateTrigger,
                 writer,
 //                encoder,

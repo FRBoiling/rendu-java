@@ -8,7 +8,6 @@ import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
-import io.netty.channel.epoll.EpollDomainSocketChannel;
 import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.epoll.EpollSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -27,7 +26,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 /**
  * Copyright © 2018 四月
  * Boil blood. All rights reserved.
- *
+ * <p>
  * Project: ServerCluster-Java
  * Package: core.network.connector
  * Description: ${todo}
@@ -38,11 +37,10 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 @Slf4j
 @Data
-public class ConnectorNetworkService implements IService ,ISocketConnector {
-    private  ServiceState state;
+public class ConnectorNetworkService implements IService, ISocketConnector {
+    private ServiceState state;
     private final EventLoopGroup IOGroup;
     private final Bootstrap bootstrap;
-    private final Object bootstrapLock;
     private final ConnectorNetworkServiceBuilder builder;
     private final ConnectorSocketChannelInitializer channelInitializer;
     protected volatile ByteBufAllocator allocator;
@@ -54,11 +52,10 @@ public class ConnectorNetworkService implements IService ,ISocketConnector {
 
 //      IOGroup = new NioEventLoopGroup(IOLoopGroupCount);
 
-        ThreadFactory IOFactory = new DefaultThreadFactory(builder.getName()+".io");
-        IOGroup = initEventLoopGroup(IOLoopGroupCount,IOFactory);
+        ThreadFactory IOFactory = new DefaultThreadFactory(builder.getName() + ".io");
+        IOGroup = initEventLoopGroup(IOLoopGroupCount, IOFactory);
         channelInitializer = new ConnectorSocketChannelInitializer(builder);
 
-        bootstrapLock =new Object();
         bootstrap = new Bootstrap();
         bootstrap.group(IOGroup);
         if (NativeSupport.isSupportNativeET()) {
@@ -79,11 +76,11 @@ public class ConnectorNetworkService implements IService ,ISocketConnector {
         bootstrap.option(ChannelOption.TCP_NODELAY, true);
         bootstrap.option(ChannelOption.SO_RCVBUF, 128 * 1024);
         bootstrap.option(ChannelOption.SO_SNDBUF, 128 * 1024);
-        bootstrap.option(ChannelOption.WRITE_BUFFER_WATER_MARK ,new WriteBufferWaterMark(64*1024,1024* 1024));
+        bootstrap.option(ChannelOption.WRITE_BUFFER_WATER_MARK, new WriteBufferWaterMark(64 * 1024, 1024 * 1024));
         bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 15000);
     }
-    public void InitOption2()
-    {
+
+    public void InitOption2() {
         bootstrap.option(ChannelOption.ALLOCATOR, allocator)
                 .option(ChannelOption.MESSAGE_SIZE_ESTIMATOR, DefaultMessageSizeEstimator.DEFAULT)
                 .option(ChannelOption.SO_REUSEADDR, true)
@@ -108,8 +105,9 @@ public class ConnectorNetworkService implements IService ,ISocketConnector {
     }
 
     @Override
-    public void start(){
-        connect(builder.getIp(),builder.getPort());
+    public void start() {
+//        log.debug("network service start");
+        connect(builder.getIp(), builder.getPort());
     }
 
     @Override
@@ -136,15 +134,15 @@ public class ConnectorNetworkService implements IService ,ISocketConnector {
     @Override
     public void connect(String host, int port) {
         try {
-            channelInitializer.getWatchdog().init(bootstrap,host, port);
+            channelInitializer.getWatchdog().init(this, host, port);
             channelInitializer.getWatchdog().setReconnect(true);
-            ChannelFuture f;
-            synchronized (bootstrapLock) {
+            synchronized (bootstrap) {  //TODO:这里synchronized貌似没必要
                 bootstrap.handler(channelInitializer);
+                ChannelFuture f;
                 f = bootstrap.connect(host, port);
                 f.addListener(new ConnectorListener(this));
             }
-//           f.sync();
+//         f.sync();
         } catch (Exception e) {
 //            throw new RuntimeException(e);
 //            throw new ConnectFailedException("connects to [" + builder.getIp() + ":"+builder.getPort()+"] fails", e);

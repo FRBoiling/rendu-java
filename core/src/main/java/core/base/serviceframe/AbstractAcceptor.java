@@ -31,8 +31,8 @@ public abstract class AbstractAcceptor implements IService{
 
     public AbstractAcceptor(){
         builder= new AcceptorNetworkServiceBuilder();
-        acceptorGroupCount=1;
-        IOGroupCount =1;
+        acceptorGroupCount = 1;
+        IOGroupCount = 1;
         state = ServiceState.STOPPED;
         init(null);
     }

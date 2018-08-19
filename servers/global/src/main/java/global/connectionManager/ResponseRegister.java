@@ -15,6 +15,8 @@ import global.zone.ZoneServerSessionMng;
 import lombok.extern.slf4j.Slf4j;
 import protocol.server.register.ServerRegister;
 
+import java.util.HashMap;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -69,6 +71,16 @@ public class ResponseRegister implements IResponseHandler {
 
         switch (registerResult) {
             case SUCCESS:
+                if (msg.getListenInfosList()!=null){
+                    String ip = session.getIP();
+                    for (ServerRegister.LISTEN_INFO info: msg.getListenInfosList()) {
+                        ServerRegister.Connect_Info.Builder connect_info = ServerRegister.Connect_Info.newBuilder();
+                        connect_info.setIp(ip);
+                        connect_info.setPort(info.getPort());
+                        ServerType type = ServerType.values()[info.getServerType()];
+                        ListenInfoMng.getInstance().setRegisteredConnectInfo(tag, type ,connect_info.build());
+                    }
+                }
                 Context.connectMng.sendConnectionCommand(tag);
                 break;
             case FAIL:

@@ -2,7 +2,7 @@ package manager.zone;
 
 import core.network.IResponseHandlerManager;
 import manager.connectionManager.ResponseRegister;
-import manager.relation.response.ResponseHeartBeat;
+import manager.zone.response.*;
 import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;
 import protocol.zone.manager.Z2M;

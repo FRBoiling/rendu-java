@@ -26,7 +26,7 @@ public class GlobalServerSession extends AbstractSession {
 
     public void onConnected() {
         super.onConnected();
-        sendRegister(Context.tag);
+        sendRegister(Context.tag,null);
     }
 
     public void onDisConnected() {

@@ -1,5 +1,7 @@
 package manager;
 
+import configuration.dataManager.Data;
+import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -22,6 +24,7 @@ import protocol.manager.manager.M2MIdGenerater;
 import protocol.manager.relation.M2RIdGenerater;
 import protocol.manager.zone.M2ZIdGenerater;
 import protocol.relation.manager.R2MIdGenerater;
+import protocol.server.register.ServerRegister;
 import protocol.server.register.ServerRegisterIdGenerater;
 import protocol.zone.manager.Z2MIdGenerater;
 import util.FileUtil;
@@ -172,5 +175,33 @@ public class Context extends AbstractServiceFrame {
             AbstractDBOperator query = queue.poll();
             query.PostUpdate();
         }
+    }
+
+    public static List<ServerRegister.LISTEN_INFO> getListenInfoList(){
+        List<ServerRegister.LISTEN_INFO> listen_info_list = new ArrayList<>();
+        DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
+        Data serviceData =dateList.getData(tag.toString());
+
+
+        int zonePort = serviceData.getInteger("zonePort");
+        int gatePort = serviceData.getInteger("gatePort");
+        int relationPort = serviceData.getInteger("relationPort");
+
+        ServerRegister.LISTEN_INFO.Builder zoneInfo = ServerRegister.LISTEN_INFO.newBuilder();
+        zoneInfo.setServerType(ServerType.Zone.ordinal());
+        zoneInfo.setPort(zonePort);
+        listen_info_list.add(zoneInfo.build());
+
+        ServerRegister.LISTEN_INFO.Builder gateInfo = ServerRegister.LISTEN_INFO.newBuilder();
+        gateInfo.setServerType(ServerType.Gate.ordinal());
+        gateInfo.setPort(gatePort);
+        listen_info_list.add(gateInfo.build());
+
+        ServerRegister.LISTEN_INFO.Builder relationInfo = ServerRegister.LISTEN_INFO.newBuilder();
+        relationInfo.setServerType(ServerType.Relation.ordinal());
+        relationInfo.setPort(relationPort);
+        listen_info_list.add(relationInfo.build());
+
+        return listen_info_list;
     }
 }

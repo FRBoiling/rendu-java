@@ -31,11 +31,11 @@ public class ResponseRegister implements IResponseHandler {
 
         //基本信息注册 MSG_Server_Register
         ServerType serverType = ServerType.values()[msg.getTag().getServerType()];
-        int groupId = msg.getTag().getAreaId();
+        int areaId = msg.getTag().getAreaId();
         int subId = msg.getTag().getSubId();
 
         ServerTag tag = new ServerTag();
-        tag.setTag(serverType,groupId,subId);
+        tag.setTag(serverType,areaId,subId);
         session.setTag(tag);
 
         //注册反馈 MSG_Server_Register_Return
@@ -53,7 +53,7 @@ public class ResponseRegister implements IResponseHandler {
                 registerResult = GateServerSessionMng.getInstance().register(session);
                 break;
             case Manager:
-                if (Context.tag.getAreaId() < groupId )
+                if (Context.tag.getAreaId() < areaId )
                 {
                     registerResult = ManagerServerSessionMng.getInstance().register(session);
                 }
@@ -61,14 +61,14 @@ public class ResponseRegister implements IResponseHandler {
                 }
                 break;
             case Zone:
-                if (Context.tag.getAreaId() == groupId ){
+                if (Context.tag.getAreaId() == areaId ){
                     registerResult = ZoneServerSessionMng.getInstance().register(session);
                 }
                 else {
                 }
                 break;
             case Relation:
-                if (Context.tag.getAreaId() == groupId ) {
+                if (Context.tag.getAreaId() == areaId ) {
                     registerResult = RelationServerSessionMng.getInstance().register(session);
                 }
                 else {

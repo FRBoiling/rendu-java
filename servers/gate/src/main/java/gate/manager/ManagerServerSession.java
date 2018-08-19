@@ -6,7 +6,7 @@ import core.base.model.ServerType;
 import gate.Context;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
-import protocol.zone.global.Z2GM;
+import protocol.gate.manager.G2M;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,7 +26,7 @@ public class ManagerServerSession extends AbstractSession {
 
     public void onConnected() {
         super.onConnected();
-        sendRegister(Context.tag);
+        sendRegister(Context.tag,null);
     }
 
     public void onDisConnected() {
@@ -35,7 +35,7 @@ public class ManagerServerSession extends AbstractSession {
 
     @Override
     public void sendHeartBeat() {
-        Z2GM.MSG_Z2GM_HEARTBEAT.Builder builder = Z2GM.MSG_Z2GM_HEARTBEAT.newBuilder();
+        G2M.MSG_G2M_HEARTBEAT.Builder builder = G2M.MSG_G2M_HEARTBEAT.newBuilder();
         sendMessage(builder.build());
     }
 }

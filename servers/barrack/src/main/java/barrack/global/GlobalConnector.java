@@ -3,7 +3,6 @@ package barrack.global;
 import configuration.dataManager.Data;
 import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
-import constant.SystemConst;
 import core.base.serviceframe.AbstractConnector;
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,5 +1,7 @@
 package zone;
 
+import configuration.dataManager.Data;
+import configuration.dataManager.DataList;
 import configuration.dataManager.DataListManager;
 import core.base.model.ServerTag;
 import core.base.model.ServerType;
@@ -9,9 +11,11 @@ import protocol.gate.zone.G2ZIdGenerater;
 import protocol.global.zone.GM2ZIdGenerater;
 import protocol.manager.zone.M2ZIdGenerater;
 import protocol.relation.zone.R2ZIdGenerater;
+import protocol.server.register.ServerRegister;
 import protocol.server.register.ServerRegisterIdGenerater;
 import protocol.zone.gate.Z2GIdGenerater;
 import protocol.zone.global.Z2GMIdGenerater;
+import protocol.zone.manager.Z2MIdGenerater;
 import protocol.zone.relation.Z2RIdGenerater;
 import util.FileUtil;
 import zone.connectionManager.ConnectionManager;
@@ -64,7 +68,7 @@ public class Context extends AbstractServiceFrame {
         GM2ZIdGenerater.GenerateId();
         Z2GMIdGenerater.GenerateId();
         M2ZIdGenerater.GenerateId();
-        Z2GIdGenerater.GenerateId();
+        Z2MIdGenerater.GenerateId();
         G2ZIdGenerater.GenerateId();
         Z2GIdGenerater.GenerateId();
         R2ZIdGenerater.GenerateId();
@@ -115,5 +119,20 @@ public class Context extends AbstractServiceFrame {
     @Override
     public void updateService(long dt) {
 
+    }
+
+    public static List<ServerRegister.LISTEN_INFO> getListenInfoList(){
+        List<ServerRegister.LISTEN_INFO> listen_info_list = new ArrayList<>();
+        DataList dateList = DataListManager.getInstance().getDataList("ServerConfig");
+        Data serviceData =dateList.getData(tag.toString());
+
+        int gatePort = serviceData.getInteger("gatePort");
+
+        ServerRegister.LISTEN_INFO.Builder gateInfo = ServerRegister.LISTEN_INFO.newBuilder();
+        gateInfo.setServerType(ServerType.Gate.ordinal());
+        gateInfo.setPort(gatePort);
+        listen_info_list.add(gateInfo.build());
+
+        return listen_info_list;
     }
 }

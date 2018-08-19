@@ -26,7 +26,7 @@ public class RelationServerSession extends AbstractSession {
 
     public void onConnected() {
         super.onConnected();
-        sendRegister(Context.tag);
+        sendRegister(Context.tag,Context.getListenInfoList());
     }
 
     public void onDisConnected() {

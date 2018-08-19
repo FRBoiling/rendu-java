@@ -13,6 +13,7 @@ import protocol.msgId.Id;
 import protocol.server.register.ServerRegister;
 
 import java.net.InetSocketAddress;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -114,7 +115,7 @@ public abstract class AbstractSession {
         }
     }
 
-    String getIP() {
+    public String getIP() {
         if (channel == null) {
             return "";
         }
@@ -164,19 +165,23 @@ public abstract class AbstractSession {
 
     public void sendMessage(MessageLite msg) {
         Packet packet = new Packet();
-        packet.setRoleId(0).setMsgId(Id.getInst().getMessageId(msg.getClass())).setMsg(msg.toByteArray());
+        packet.setRoleId(0)
+                .setMsgId(Id.getInst().getMessageId(msg.getClass()))
+                .setMsg(msg.toByteArray());
         channel.writeAndFlush(packet);
     }
 
     public void sendMessage(MessageLite msg, int roleId) {
         Packet packet = new Packet();
-        packet.setRoleId(roleId).setMsgId(Id.getInst().getMessageId(msg.getClass())).setMsg(msg.toByteArray());
+        packet.setRoleId(roleId)
+                .setMsgId(Id.getInst().getMessageId(msg.getClass()))
+                .setMsg(msg.toByteArray());
         channel.writeAndFlush(packet);
     }
 
     public abstract void sendHeartBeat();
 
-    public void sendRegister(ServerTag tag) {
+    public void sendRegister(ServerTag tag, List<ServerRegister.LISTEN_INFO> listen_infos) {
         log.debug("send initRegister msg : {} initRegister to {}", tag.toString(), getTag().toString());
         ServerRegister.Server_Tag.Builder serverTag = ServerRegister.Server_Tag.newBuilder();
         serverTag.setServerType(tag.getType().ordinal());
@@ -185,7 +190,9 @@ public abstract class AbstractSession {
 
         ServerRegister.MSG_Server_Register.Builder builder = ServerRegister.MSG_Server_Register.newBuilder();
         builder.setTag(serverTag);
-
+        if (listen_infos != null) {
+            builder.addAllListenInfos(listen_infos);
+        }
         sendMessage(builder.build());
     }
 }

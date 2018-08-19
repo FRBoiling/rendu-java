@@ -18,7 +18,7 @@ public class ResponseHeartBeat implements IResponseHandler{
     @Override
     public void onResponse(Packet packet, AbstractSession session) throws InvalidProtocolBufferException {
         //        Session session = (Session) this.session;
-        log.info("ResponseHeartBeat");
+        log.info("From gate ResponseHeartBeat");
 //        UserManager.getInstance().login(session, message.getLoginName());
     }
 }

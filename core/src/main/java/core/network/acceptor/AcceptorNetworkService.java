@@ -39,7 +39,7 @@ public class AcceptorNetworkService implements IService, ISocketAcceptor {
     private final EventLoopGroup IOGroup;
     private final ServerBootstrap bootstrap;
     private final AcceptorNetworkServiceBuilder builder;
-    protected volatile ByteBufAllocator allocator;
+    //protected volatile ByteBufAllocator allocator; 默认使用 池化队外直接内存分配器
 
     int port;
 
@@ -145,8 +145,8 @@ public class AcceptorNetworkService implements IService, ISocketAcceptor {
          * 堆外内存处理的不好容易发生堆外内存OOM
          * 当然也要看当前的JVM是否只是使用堆外内存，换而言之就是是否能够获取到Unsafe对象#PlatformDependent.directBufferPreferred()
          */
-        allocator = new PooledByteBufAllocator(PlatformDependent.directBufferPreferred());
-        bootstrap.childOption(ChannelOption.ALLOCATOR, allocator);
+        //allocator = new PooledByteBufAllocator(PlatformDependent.directBufferPreferred());
+        //bootstrap.childOption(ChannelOption.ALLOCATOR, allocator);
     }
 
     @Override
