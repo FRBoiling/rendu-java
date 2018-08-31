@@ -159,7 +159,7 @@ public class ConnectorNetworkService implements IService, ISocketConnector {
         try {
             wf.get(5000, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
-            log.error("Netty connector shutdownGracefully stop failed ", e);
+            log.error("Netty connector shutdownGracefully failed {}", e);
         }
         log.info("Netty connector shutdownGracefully stop!");
     }

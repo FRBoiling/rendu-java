@@ -6,11 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f6fefc0-f06f-4c72-9459-fc5815b54bcd" name="Default" comment="网络io线程数量更改，协议拆包最短数据容错，并发容器用法优化。">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/global_jar.xml" afterDir="false" />
+    <list default="true" id="7f6fefc0-f06f-4c72-9459-fc5815b54bcd" name="Default" comment="option设置整理">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/NetWorkConst.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/NetWorkConst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorIdleStateTrigger.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorIdleStateTrigger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/AcceptorNetworkService_client.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/AcceptorNetworkService_client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/core/network/connector/ConnectorNetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/core/network/connector/ConnectorNetworkService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -137,25 +137,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="19" />
+          <entry key="java" value="26" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="19" />
+          <entry key="JAVA" value="26" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="99" />
+          <entry key="java" value="150" />
+          <entry key="txt" value="17" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="99" />
+          <entry key="JAVA" value="150" />
+          <entry key="PLAIN_TEXT" value="17" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -164,10 +166,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/ServiceState.java">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/connector/ConnectorNetworkService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" selection-start-line="3" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="450">
+              <caret line="164" column="5" lean-forward="true" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="197" column="5" lean-forward="true" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -175,26 +186,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/connector/ISocketConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="210">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/connector/ConnectorNetworkService.java">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkServiceBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="88" column="60" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="60" />
+            <state relative-caret-position="-165">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorIdleStateTrigger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorSocketChannelInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="55" column="66" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="66" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkService.java">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/NetWorkConst.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="45" column="73" lean-forward="true" selection-start-line="45" selection-start-column="73" selection-end-line="45" selection-end-column="73" />
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/ISocketAcceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/timeout/IdleStateHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="170" column="11" selection-start-line="170" selection-start-column="11" selection-end-line="170" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -202,44 +249,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/AcceptorNetworkService_client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="84" column="66" lean-forward="true" selection-start-line="84" selection-start-column="66" selection-end-line="84" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/AcceptorNetworkServiceBuilder_client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/AcceptorListener_client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/AbstractAcceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/core/base/serviceframe/AbstractConnector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            <state relative-caret-position="271">
+              <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -256,7 +267,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>service</find>
       <find>initMainThread</find>
       <find>tempPostUpdateQueue</find>
       <find>public void initDB\(\) \{\n\n            for \(int i \= 0\; i \&lt; DBProxyDefault\.TableBaseCount\; i\+\+\) \{\n                \/\/String charTableName \= db\.GetTableName\(\&quot;character\&quot;\, i\, DBTableParamType\.Character\)\;\n                \/\/DBManagerPool charDBPool \= db\.GetWriteDbByName\(charTableName\)\;\n                ManagerService\.context\.db\.Call\(new MaxCharUidDBOperator\(\&quot;character\&quot;\)\, \(temp\) \-\&gt;\n                \{\n                    MaxCharUidDBOperator op \= \(MaxCharUidDBOperator\) temp\;\n                    int max \= op\.maxUid\;\n                    maxCharUid \= maxCharUid \&gt; max \? maxCharUid \: max\;\n                    log\.info\(\&quot;table \{0\} max char uid \{1\}\&quot;\, \&quot;character\&quot;\, maxCharUid\)\;\n                \}\)\;\n            \}\n    \}</find>
@@ -286,6 +296,7 @@
       <find>disconnect</find>
       <find>断开连接：</find>
       <find>puts</find>
+      <find>shutdownGracefully</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -297,8 +308,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/connectionManager/ResponseRegister.java" />
-        <option value="$PROJECT_DIR$/servers/manager/src/main/java/manager/connectionManager/ResponseRegisterReturn.java" />
         <option value="$PROJECT_DIR$/servers/global/src/main/java/global/connectionManager/ResponseRegister.java" />
         <option value="$PROJECT_DIR$/servers/gate/src/main/java/gate/connectionManager/ResponseRegisterReturn.java" />
         <option value="$PROJECT_DIR$/servers/global/src/main/java/global/zone/ZoneServerSessionMng.java" />
@@ -346,8 +355,10 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/ISocketAcceptor.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/AcceptorNetworkService_client.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/core/network/connector/ConnectorNetworkService.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorIdleStateTrigger.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkService.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/core/network/connector/ConnectorNetworkService.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/core/network/NetWorkConst.java" />
       </list>
     </option>
   </component>
@@ -884,7 +895,7 @@
       <workItem from="1535021957971" duration="410000" />
       <workItem from="1535022396267" duration="1030000" />
       <workItem from="1535100976784" duration="747000" />
-      <workItem from="1535596417679" duration="13442000" />
+      <workItem from="1535596417679" duration="15502000" />
     </task>
     <task id="LOCAL-00001" summary="清理项目文件">
       <created>1533389310056</created>
@@ -1082,7 +1093,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534418645561</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="option设置整理">
+      <created>1535705067474</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1535705067474</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1118,7 +1136,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256679000" />
+    <option name="totallyTimeSpent" value="258739000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1131,6 +1149,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49827588" visible="true" weight="0.25235197" />
       <window_info id="Designer" order="1" />
@@ -1139,9 +1158,9 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48869276" visible="true" weight="0.23135135" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48869276" weight="0.23135135" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4975179" weight="0.3284974" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7761033" weight="0.3275862" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7761033" visible="true" weight="0.32756758" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32953367" />
@@ -1206,7 +1225,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="优化代码，连接逻辑改错" />
     <MESSAGE value="连接逻辑" />
     <MESSAGE value="项目结构整理" />
     <MESSAGE value="断线重连占坑" />
@@ -1231,7 +1249,8 @@
     <MESSAGE value="添加登录获取角色列表的逻辑和DB相关&#10;更改原来group概念为area区概念" />
     <MESSAGE value="创角" />
     <MESSAGE value="网络io线程数量更改，协议拆包最短数据容错，并发容器用法优化。" />
-    <option name="LAST_COMMIT_MESSAGE" value="网络io线程数量更改，协议拆包最短数据容错，并发容器用法优化。" />
+    <MESSAGE value="option设置整理" />
+    <option name="LAST_COMMIT_MESSAGE" value="option设置整理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1267,27 +1286,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/codec/Packet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/codec/PacketDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/codec/PacketReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/codec/PacketWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -1432,20 +1430,6 @@
     </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/concurrent/ConcurrentHashMap.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/channel/nio/NioEventLoopGroup.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorSocketChannelInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkServiceBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servers/gate/src/main/java/gate/client/ClientAcceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -1471,13 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="172" column="13" lean-forward="true" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/ISocketAcceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -1513,13 +1490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="3" selection-start-line="3" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/connector/ISocketConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1572,13 +1542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/AcceptorNetworkService_client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="84" column="66" lean-forward="true" selection-start-line="84" selection-start-column="66" selection-end-line="84" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/channel/WriteBufferWaterMark.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1597,17 +1560,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorIdleStateTrigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/timeout/IdleStateHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="170" column="11" selection-start-line="170" selection-start-column="11" selection-end-line="170" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkServiceBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorSocketChannelInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="55" column="66" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/ISocketAcceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/connector/ISocketConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/forClientApp/AcceptorNetworkService_client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/connector/ConnectorNetworkService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="88" column="60" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="60" />
+        <state relative-caret-position="450">
+          <caret line="164" column="5" lean-forward="true" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/acceptor/AcceptorNetworkService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="45" column="73" lean-forward="true" selection-start-line="45" selection-start-column="73" selection-end-line="45" selection-end-column="73" />
+        <state relative-caret-position="195">
+          <caret line="197" column="5" lean-forward="true" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/core/network/NetWorkConst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>

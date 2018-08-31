@@ -209,8 +209,8 @@ public class AcceptorNetworkService implements IService, ISocketAcceptor {
             bf.get(5000, TimeUnit.MILLISECONDS);
             wf.get(5000, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
-            log.info("Netty服务器关闭失败", e);
+            log.info("Netty acceptor shutdownGracefully fail {}", e);
         }
-        log.info("Netty Server on listenPort:{} is closed", port);
+        log.info("Netty Server shutdownGracefully on listenPort {}", port);
     }
 }

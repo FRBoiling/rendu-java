@@ -36,10 +36,10 @@ public class AcceptorIdleStateTrigger extends ChannelInboundHandlerAdapter {
             }
 
             log.warn(ctx.channel().remoteAddress() + "超时事件:" + eventType);
-//            ctx.channel().closeConnection();
-           if (state == IdleState.READER_IDLE) {
-               //TODO:Boiling 读空闲操作
+            if (state == IdleState.READER_IDLE) {
+                //TODO:Boiling 读空闲操作
                 log.error("occor exception");
+                ctx.channel().close();
                 throw new Exception("NO SIGNAL");
             }
         } else {
