@@ -76,10 +76,16 @@ public class AcceptorNetworkService implements IService, ISocketAcceptor {
 
     private void InitOption1() {
         bootstrap.option(ChannelOption.SO_BACKLOG, 1024);
+        bootstrap.option(ChannelOption.SO_REUSEADDR, true);
+        bootstrap.childOption(ChannelOption.SO_REUSEADDR, true);
         bootstrap.childOption(ChannelOption.TCP_NODELAY, true);
-        bootstrap.childOption(ChannelOption.SO_RCVBUF, 64 * 1024);
-        bootstrap.childOption(ChannelOption.SO_SNDBUF, 64 * 1024);
-        bootstrap.childOption(ChannelOption.WRITE_BUFFER_WATER_MARK, new WriteBufferWaterMark(32 * 1024, 256 * 1024));
+        bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true);
+
+        bootstrap.childOption(ChannelOption.ALLOW_HALF_CLOSURE, false);
+
+        bootstrap.childOption(ChannelOption.SO_RCVBUF, 128 * 1024);
+        bootstrap.childOption(ChannelOption.SO_SNDBUF, 128 * 1024);
+//        bootstrap.childOption(ChannelOption.WRITE_BUFFER_WATER_MARK, new WriteBufferWaterMark(64 * 1024, 128 * 1024));
     }
 
     private void InitOption2() {

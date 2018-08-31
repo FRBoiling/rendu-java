@@ -74,20 +74,23 @@ public class ConnectorNetworkService implements IService, ISocketConnector {
 
     private void InitOption1() {
         bootstrap.option(ChannelOption.TCP_NODELAY, true);
+        bootstrap.option(ChannelOption.SO_REUSEADDR, true);
         bootstrap.option(ChannelOption.SO_RCVBUF, 128 * 1024);
         bootstrap.option(ChannelOption.SO_SNDBUF, 128 * 1024);
-        bootstrap.option(ChannelOption.WRITE_BUFFER_WATER_MARK, new WriteBufferWaterMark(64 * 1024, 1024 * 1024));
         bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 15000);
+        bootstrap.option(ChannelOption.SO_KEEPALIVE, true);
+        bootstrap.option(ChannelOption.ALLOW_HALF_CLOSURE, false);
     }
 
     public void InitOption2() {
-        bootstrap.option(ChannelOption.ALLOCATOR, allocator)
-                .option(ChannelOption.MESSAGE_SIZE_ESTIMATOR, DefaultMessageSizeEstimator.DEFAULT)
+        bootstrap.option(ChannelOption.TCP_NODELAY, true)
                 .option(ChannelOption.SO_REUSEADDR, true)
+                .option(ChannelOption.ALLOCATOR, allocator)
+                .option(ChannelOption.MESSAGE_SIZE_ESTIMATOR, DefaultMessageSizeEstimator.DEFAULT)
+
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, (int) SECONDS.toMillis(3))
 
                 .option(ChannelOption.SO_KEEPALIVE, true)
-                .option(ChannelOption.TCP_NODELAY, true)
                 .option(ChannelOption.ALLOW_HALF_CLOSURE, false);
         //使用池化的directBuffer
         allocator = new PooledByteBufAllocator(PlatformDependent.directBufferPreferred());
